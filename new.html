@@ -45,11 +45,17 @@
             font-size: clamp(2rem, 5vw, 5rem); /* Dinamikus betűméret */
             font-weight: 700;
             color: #ffffff;
+            transition: 0.5s;
             text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
             opacity: 0;
             animation: fadeInUp 2s forwards ease-in-out 1s;
             text-align: center;
             padding: 0 10px; /* Kisebb behúzás mobilon */
+        }
+
+        .text-container:hover {
+            color: black;
+            transition: 0.5s;
         }
 
         @keyframes fadeInUp {
@@ -67,7 +73,13 @@
             width: clamp(40px, 8vw, 60px); /* Logó méretének igazítása */
             height: auto;
             fill: #ffeb3b;
+            transition: 0.5s;
             filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+        }
+
+        .logo:hover {
+            fill: #ff8c42;
+            transition: 0.5s;
         }
     </style>
     <!-- Betűtípus importálása -->
