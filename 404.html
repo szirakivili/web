@@ -8,7 +8,9 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
+            background: linear-gradient(120deg, #ff0000, #ffffff);
+            background-size: 300% 300%;
+            animation: backgroundAnimation 10s infinite;
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -16,39 +18,47 @@
             justify-content: center;
             height: 100vh;
             text-align: center;
+            overflow: hidden;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         h1 {
             font-size: 4rem;
-            color: #333;
+            color: #000000;
             margin-bottom: 1rem;
         }
 
         h2 {
             font-size: 2rem;
-            color: #333;
+            color: #000000;
             margin-bottom: 1rem;
         }
 
         p {
             font-size: 1.5rem;
-            color: #555;
+            color: #000000;
             margin-bottom: 2rem;
         }
 
         a {
             display: inline-block;
             padding: 0.8rem 1.5rem;
-            background-color: #007bff;
-            color: #fff;
+            background-color: rgba(0, 0, 0, 0);
+            color: #000000;
             text-decoration: none;
+            border: 1px solid black;
             border-radius: 5px;
             font-size: 1.2rem;
             transition: background-color 0.3s;
         }
 
         a:hover {
-            background-color: #0056b3;
+            background-color: rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
