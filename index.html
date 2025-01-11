@@ -77,13 +77,13 @@
             width: clamp(40px, 8vw, 60px); /* Logó méretének igazítása */
             height: auto;
             fill: #ffeb3b;
-            transition: 0.5s;
+            transition: fill 0.5s;
             filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
         }
 
         .logo:hover {
             fill: #ff8c42;
-            transition: 0.5s;
+            transition: fill 0.5s;
         }
 
         .contact-button {
@@ -98,7 +98,7 @@
             border-radius: 5px;
             cursor: pointer;
             text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-            transition: background-color 0.5s;
+            transition: padding 0.5s, background-color 0.5s, font-size 0.5s;
             z-index: 2;
             opacity: 0;
             animation: fadeInUp 2s forwards ease-in-out 1.5s;
@@ -106,6 +106,7 @@
 
         .contact-button:hover {
             background-color: rgba(0, 0, 0, 0.1);
+            font-size: 1.2rem;
         }
 
         .contact-button a {
