@@ -36,6 +36,7 @@ body {
     font-size: 3rem;
     position: relative;
     display: inline-block;
+    margin: 20px 10px;
   }
 
   .dropdown button {
@@ -49,7 +50,7 @@ body {
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(221,221,221,0.4);
     width: clamp(20rem, 50vw, 50rem);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -62,7 +63,7 @@ body {
     display: block;
   }
   
-  .dropdown-content a:hover {background-color: #ddd;}
+  .dropdown-content a:hover {background-color: rgb(221, 221, 221);}
   
   .dropdown:hover .dropdown-content {display: block;}
   
