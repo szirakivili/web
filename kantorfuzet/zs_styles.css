@@ -47,6 +47,30 @@ h1 {
     font-family: sans-serif;
 }
 
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.back-button a {
+    background-color: #c20000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.back-button a:hover {
+    background-color: #8e0000;
+}
+
 .font-buttons {
     position: fixed;
     bottom: 20px;

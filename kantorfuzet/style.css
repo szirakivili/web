@@ -1,70 +1,93 @@
 body {
-    margin: 0;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    background-image: url('hatter.jpg');
-    backdrop-filter: brightness(0.4) blur(2px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
+  margin: 0;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-image: url('hatter.jpg');
+  backdrop-filter: brightness(0.4) blur(2px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .cim-kep {
-    width: 40rem;
-    max-width: 80%;
-    margin: 30px 10px;
-    pointer-events: none;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 20px 0;
+  pointer-events: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=DM+Serif+Text:ital@0;1&display=swap');
-
 .dropbtn {
-    background-color: rgba(0,0,0,0.3);
-    color: white;
-    width: clamp(20rem, 50vw, 50rem);
-    padding: 16px;
-    border: none;
-  }
-  
-  .dropdown {
-    font-family: "DM Serif Text", serif;
-    font-weight: 400;
-    font-style: normal;
-    text-align: center;
-    font-size: 3rem;
-    position: relative;
-    display: inline-block;
-    margin: 20px 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 100%;
+  max-width: 300px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropbtn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dropdown {
+  position: relative;
+  margin: 30px 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-width: 100%;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(200, 200, 200, 0.6);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .dropbtn {
+      font-size: 3rem;
+      padding: 12px;
   }
 
-  .dropdown button {
-    font-family: "DM Serif Text", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 3rem;
-    text-align: center;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: rgba(221,221,221,0.4);
-    width: clamp(20rem, 50vw, 50rem);
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
   .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+      font-size: 2.5rem;
+      padding: 8px;
   }
-  
-  .dropdown-content a:hover {background-color: rgb(221, 221, 221);}
-  
-  .dropdown:hover .dropdown-content {display: block;}
-  
-  .dropdown:hover .dropbtn {background-color: rgba(0,0,0,0.5);}
+
+  .cim-kep {
+      max-width: 80%;
+  }
+}
