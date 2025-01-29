@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SZVU énekek</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #232323;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 0px;
+            margin-bottom: 6px;
+        }
+        h2 {
+            margin-top: 0px;
+            font-weight: normal;
+            font-style: italic;
+            font-size: 20px;
+        }
+        .search-box {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border-width: 1px;
+            border-color: black;
+        }
+        .enek {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .sorszam {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-right: 10px;
+        }
+        .cim {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .alcim {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        .versszak {
+            white-space: pre-line;
+            margin-bottom: 15px;
+        }
+        .versszak .elso-sor {
+            font-style: italic;
+            color: black;
+            display: inline-block;
+            font-size: 14px;
+            padding: 3px 5px;
+            border: 0px;
+            border-radius: 5px;
+            background-color: #8ECAE6;
+        }
+        .back-btn {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 1;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            color: red;
+            background-color: white;
+            border: 1px red solid;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+    <a class="back-btn" href="..">&leftarrow;</a>
+
+    <h1 id="focim1">Szent vagy, Uram!</h1>
+    <h2 id="focim2">ének szövegek</h2>
+
+    <input type="text" id="search" class="search-box" placeholder="Keresés" oninput="filterSongs()">
+
+    <div id="enekek"></div>
+
+    <script>
+        function getQueryParam(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name);
+        }
+
+        async function loadSongs() {
+            const response = await fetch('szvu_szoveg.txt');
+            const decoder = new TextDecoder('ISO-8859-2');
+            const text = decoder.decode(await response.arrayBuffer());
+            const songs = text.split('========================================================================');
+            const container = document.getElementById('enekek');
+            const requestedSorszam = getQueryParam('szam');
+            
+            // Ha van 'szam' paraméter az URL-ben, elrejtjük a keresőmezőt
+            if (requestedSorszam) {
+                document.getElementById('search').style.display = 'none';
+                document.getElementById('focim1').style.display = 'none';
+                document.getElementById('focim2').style.display = 'none';
+            }
+
+            songs.forEach(song => {
+                const lines = song.trim().split('\n').map(line => line.trim()).filter(line => line);
+                if (lines.length < 2) return;
+                
+                let sorszamCim = lines[0].replace('SZVU/', '').trim();
+                let alcim = '';
+                let sorszam = '';
+                let cim = sorszamCim;
+                const match = sorszamCim.match(/^([\dA-Z]+)\.?\s*(.*?)\s*(\(.*?\))?$/);
+                if (match) {
+                    sorszam = match[1];
+                    cim = match[2].replace(': ', '').trim();
+                    if (match[3]) alcim = match[3].trim();
+                }
+                
+                if (requestedSorszam && requestedSorszam !== sorszam) return;
+                
+                let verses = [];
+                let currentVerse = "";
+                
+                lines.slice(1).forEach(line => {
+                    if (/^\d+\.?\s*/.test(line)) {
+                        if (currentVerse) verses.push(currentVerse);
+                        currentVerse = line.replace(/^\d+\.?\s*/, '') + "\n";
+                    } else {
+                        currentVerse += line + "\n";
+                    }
+                });
+                if (currentVerse) verses.push(currentVerse);
+                
+                const versszakok = verses.map(verse => {
+                    let lines = verse.trim().split("\n");
+                    let elsoSor = "";
+                    if (lines[0].match(/^\(.*\)$/)) {
+                        elsoSor = `<span class='elso-sor'>${lines[0].replace(/[()]/g, '')}</span><br>`;
+                        lines.shift();
+                    }
+                    return `<li class="versszak">${elsoSor}${lines.join("\n")}</li>`;
+                }).join('');
+                
+                const enekElem = document.createElement('div');
+                enekElem.classList.add('enek');
+                enekElem.innerHTML = `<div class="cim"><span class="sorszam">${sorszam}</span> ${cim}</div>
+                                    <div class="alcim">${alcim}</div>
+                                    <ol>${versszakok}</ol>`;
+                container.appendChild(enekElem);
+            });
+        }
+
+
+        function filterSongs() {
+            const query = document.getElementById('search').value.toLowerCase();
+            document.querySelectorAll('.enek').forEach(enek => {
+                enek.style.display = enek.innerText.toLowerCase().includes(query) ? '' : 'none';
+            });
+        }
+
+        loadSongs();
+    </script>
+</body>
+</html>

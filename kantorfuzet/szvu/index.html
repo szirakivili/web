@@ -49,7 +49,7 @@
         .song-subtitle {
             font-size: 14px;
             color: #666;
-            margin-bottom: 15px; /* Térköz az alcím után */
+            margin-bottom: 15px;
         }
         .song-categories {
             display: flex;
@@ -85,6 +85,14 @@
             border-radius: 5px;
             border-width: 1px;
             border-color: black;
+        }
+        #filters a {
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px black solid;
+            text-decoration: none;
+            color: black;
         }
         .back-btn {
             position: fixed;
@@ -131,6 +139,7 @@
         <select id="utemmutato-filter", class="utemmutato">
             <option value="">Ütemmutató</option>
         </select>
+        <a href="enek/">Ének szövegek</a>
     </div>
 
     <div id="song-container">Betöltés folyamatban...</div>
@@ -183,13 +192,19 @@
             data.forEach(columns => {
                 const songBlock = document.createElement('div');
                 songBlock.className = 'song-block';
+                songBlock.style.cursor = 'pointer';
+
+                const songNumber = columns[0]; // Az ének száma (pl. 123 vagy 123a)
+                songBlock.addEventListener('click', () => {
+                    window.location.href = `enek/?szam=${encodeURIComponent(songNumber)}`;
+                });
 
                 const songHeader = document.createElement('div');
                 songHeader.className = 'song-header';
 
-                const songNumber = document.createElement('div');
-                songNumber.className = 'song-number';
-                songNumber.textContent = columns[0];
+                const songNumberDiv = document.createElement('div');
+                songNumberDiv.className = 'song-number';
+                songNumberDiv.textContent = songNumber;
 
                 const songTitle = document.createElement('div');
                 songTitle.className = 'song-title';
@@ -199,7 +214,7 @@
                 songSubtitle.className = 'song-subtitle';
                 songSubtitle.textContent = columns[2];
 
-                songHeader.appendChild(songNumber);
+                songHeader.appendChild(songNumberDiv);
                 songHeader.appendChild(songTitle);
                 songBlock.appendChild(songHeader);
                 if (columns[2]) songBlock.appendChild(songSubtitle);
@@ -207,7 +222,7 @@
                 const songCategories = document.createElement('div');
                 songCategories.className = 'song-categories';
 
-                const versesCount = columns[7]; // Feltételezve, hogy a versszakok száma a 8. oszlopban található
+                const versesCount = columns[7]; // Versszakok száma
 
                 const categories = [
                     { value: columns[3], className: 'unnepkor' },
@@ -230,6 +245,7 @@
                 songContainer.appendChild(songBlock);
             });
         }
+
 
         function filterSongs(data) {
             const searchValue = document.getElementById('search').value.toLowerCase();
