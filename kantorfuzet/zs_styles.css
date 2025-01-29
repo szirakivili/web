@@ -9,6 +9,7 @@ body {
 h1 {
     text-align: center;
     font-size: 30px;
+    padding-top: 35px;
 }
 
 .container {
@@ -25,6 +26,7 @@ h1 {
     font-size: 20px;
     text-align: left;
     font-weight: normal;
+    padding-top: 0px;
 }
 
 .container p {
@@ -52,7 +54,6 @@ h1 {
     top: 20px;
     left: 20px;
     display: flex;
-    gap: 10px;
 }
 
 .back-button a {
@@ -60,7 +61,7 @@ h1 {
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 5px 10px;
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s;
