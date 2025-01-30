@@ -77,18 +77,33 @@
             border-radius: 5px;
             background-color: #8ECAE6;
         }
-        .back-btn {
-            position: fixed;
-            right: 20px;
-            top: 20px;
-            z-index: 1;
+        footer {
+            background-color: #b7b7b7;
+            text-align: center;
+            font-size: 14px;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0;
+        }
+        footer .author {
+            color: black;
+            display: block;
+            margin: 6px;
+        }
+        footer a {
+            cursor: pointer;
+            display: block;
+            margin: 6px;
+        }   
+        footer .contact {
+            color: #111;
+            font-style: italic;
+            text-decoration: underline;
+        }
+        footer .source {
+            font-size: 10px;
+            color: #666;
             text-decoration: none;
-            font-family: Arial, Helvetica, sans-serif;
-            color: red;
-            background-color: white;
-            border: 1px red solid;
-            padding: 5px;
-            border-radius: 5px;
         }
     </style>
 </head>
@@ -102,7 +117,6 @@
   gtag('config', 'G-F7NERFLG67');
 </script>
 <body>
-    <a class="back-btn" href="..">&leftarrow;</a>
 
     <h1 id="focim1">Szent vagy, Uram!</h1>
     <h2 id="focim2">ének szövegek</h2>
@@ -110,6 +124,12 @@
     <input type="text" id="search" class="search-box" placeholder="Keresés" oninput="filterSongs()">
 
     <div id="enekek"></div>
+
+    <footer>
+        <span class="author"><strong>Készítette:</strong><br>Sziráki Vilmos</span>
+        <a class="contact" href="mailto:info@szvili.hu?subject=SZVU oldal">kapcsolat</a>
+        <a class="source" href="http://www.ppek.hu/text/szvu01.txt">forrás</span>
+    </footer>
 
     <script>
         function getQueryParam(name) {
