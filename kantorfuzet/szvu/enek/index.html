@@ -39,6 +39,11 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: relative;
         }
+        .fejlec {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
         .sorszam {
             font-size: 24px;
             font-weight: bold;
@@ -169,7 +174,7 @@
                 
                 const enekElem = document.createElement('div');
                 enekElem.classList.add('enek');
-                enekElem.innerHTML = `<div class="cim"><span class="sorszam">${sorszam}</span> ${cim}</div>
+                enekElem.innerHTML = `<div class="fejlec"><span class="sorszam">${sorszam}</span> <span class="cim">${cim}</span></div>
                                     <div class="alcim">${alcim}</div>
                                     <ol>${versszakok}</ol>`;
                 container.appendChild(enekElem);
