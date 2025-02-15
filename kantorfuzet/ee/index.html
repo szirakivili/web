@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SZVU énekek</title>
+    <title>ÉE énekek</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
@@ -62,11 +62,10 @@
             font-size: 14px;
             
         }
-        .unnepkor { background-color: #8ECAE6; color: black; }
-        .kategoria { background-color: #219EBC; color: black; }
-        .elojegyzes { background-color: #023047; color: white; }
-        .utemmutato { background-color: #FFB703; color: black; }
-        .versek { background-color: #FB8500; color: black; }
+        .unnepkor { background-color: #606C38; color: white; }
+        .kategoria { background-color: #283618; color: white; }
+        .elojegyzes { background-color: #FEFAE0; color: black; }
+        .versek { background-color: #DDA15E; color: black; }
         #filters {
             margin-bottom: 20px;
             display: flex;
@@ -135,7 +134,7 @@
 </script>
 <body>
     
-    <h1>Szent vagy, Uram!</h1>
+    <h1>Éneklő Egyház</h1>
     <h2>énekek listája</h2>
 
     <div id="filters">
@@ -146,11 +145,8 @@
         <select id="kategoria-filter" class="kategoria">
             <option value="">Kategória</option>
         </select>
-        <select id="elojegyzes-filter" class="elojegyzes">
+        <select id="elojegyzes-filter", class="elojegyzes">
             <option value="">Előjegyzés</option>
-        </select>
-        <select id="utemmutato-filter", class="utemmutato">
-            <option value="">Ütemmutató</option>
         </select>
         <a href="enek/">Ének szövegek</a>
     </div>
@@ -159,13 +155,14 @@
 
     <footer>
         <span class="author"><strong>Készítette:</strong><br>Sziráki Vilmos</span>
-        <a class="contact" href="mailto:info@szvili.hu?subject=SZVU oldal">kapcsolat</a>
-        <a class="source" href="http://www.ppek.hu/text/szvu01.txt">forrás</a>
+        <a class="contact" href="mailto:info@szvili.hu?subject=ÉE oldal">kapcsolat</a>
+        <a class="source" href="https://nepenektar.hu/">1. forrás</a>
+        <a class="source" href="https://diatar.eu/letoltes.php?letoltes=./downloads/enektarak/eneklo_egyhaz.dtx">2. forrás</a>
     </footer>
 
     <script>
         async function loadCSV() {
-            const response = await fetch('szvu_data.csv');
+            const response = await fetch('ee_data.csv');
             const csvText = await response.text();
             const rows = csvText.trim().split('\n');
 
@@ -180,7 +177,6 @@
             document.getElementById('unnepkor-filter').addEventListener('change', () => filterSongs(data));
             document.getElementById('kategoria-filter').addEventListener('change', () => filterSongs(data));
             document.getElementById('elojegyzes-filter').addEventListener('change', () => filterSongs(data));
-            document.getElementById('utemmutato-filter').addEventListener('change', () => filterSongs(data));
         }
 
         function populateFilters(data) {
@@ -189,8 +185,7 @@
             const filters = {
                 'unnepkor-filter': uniqueValues(3),
                 'kategoria-filter': uniqueValues(4),
-                'elojegyzes-filter': uniqueValues(5),
-                'utemmutato-filter': uniqueValues(6)
+                'elojegyzes-filter': uniqueValues(5)
             };
 
             Object.entries(filters).forEach(([filterId, values]) => {
@@ -241,13 +236,12 @@
                 const songCategories = document.createElement('div');
                 songCategories.className = 'song-categories';
 
-                const versesCount = columns[7]; // Versszakok száma
+                const versesCount = columns[6]; // Versszakok száma
 
                 const categories = [
                     { value: columns[3], className: 'unnepkor' },
                     { value: columns[4], className: 'kategoria' },
                     { value: columns[5], className: 'elojegyzes' },
-                    { value: columns[6], className: 'utemmutato' },
                     { value: `${versesCount} versszak`, className: 'versek'}
                 ];
 
@@ -271,8 +265,7 @@
             const filters = {
                 unnepkor: document.getElementById('unnepkor-filter').value,
                 kategoria: document.getElementById('kategoria-filter').value,
-                elojegyzes: document.getElementById('elojegyzes-filter').value,
-                utemmutato: document.getElementById('utemmutato-filter').value
+                elojegyzes: document.getElementById('elojegyzes-filter').value
             };
 
             const filteredData = data.filter(columns => {
@@ -282,8 +275,7 @@
                     const columnIndex = {
                         unnepkor: 3,
                         kategoria: 4,
-                        elojegyzes: 5,
-                        utemmutato: 6
+                        elojegyzes: 5
                     }[key];
                     return columns[columnIndex]?.split(',').map(v => v.trim()).includes(value);
                 });

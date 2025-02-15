@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SZVU énekek</title>
+    <title>ÉE énekek</title>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <style>
         body {
@@ -69,13 +69,13 @@
         }
         .versszak .elso-sor {
             font-style: italic;
-            color: black;
+            color: white;
             display: inline-block;
             font-size: 14px;
             padding: 3px 5px;
             border: 0px;
             border-radius: 5px;
-            background-color: #8ECAE6;
+            background-color: #606C38;
         }
         footer {
             background-color: #b7b7b7;
@@ -118,7 +118,7 @@
 </script>
 <body>
 
-    <h1 id="focim1">Szent vagy, Uram!</h1>
+    <h1 id="focim1">Éneklő Egyház</h1>
     <h2 id="focim2">ének szövegek</h2>
 
     <input type="text" id="search" class="search-box" placeholder="Keresés" oninput="filterSongs()">
@@ -127,8 +127,9 @@
 
     <footer>
         <span class="author"><strong>Készítette:</strong><br>Sziráki Vilmos</span>
-        <a class="contact" href="mailto:info@szvili.hu?subject=SZVU oldal">kapcsolat</a>
-        <a class="source" href="http://www.ppek.hu/text/szvu01.txt">forrás</a>
+        <a class="contact" href="mailto:info@szvili.hu?subject=ÉE oldal">kapcsolat</a>
+        <a class="source" href="https://nepenektar.hu/">1. forrás</a>
+        <a class="source" href="https://diatar.eu/letoltes.php?letoltes=./downloads/enektarak/eneklo_egyhaz.dtx">2. forrás</a>
     </footer>
 
     <script>
@@ -138,8 +139,8 @@
         }
 
         async function loadSongs() {
-            const response = await fetch('szvu_szoveg.txt');
-            const decoder = new TextDecoder('ISO-8859-2');
+            const response = await fetch('ee_szoveg.txt');
+            const decoder = new TextDecoder('UTF-8');
             const text = decoder.decode(await response.arrayBuffer());
             const songs = text.split('========================================================================');
             const container = document.getElementById('enekek');
@@ -156,7 +157,7 @@
                 const lines = song.trim().split('\n').map(line => line.trim()).filter(line => line);
                 if (lines.length < 2) return;
                 
-                let sorszamCim = lines[0].replace('SZVU/', '').trim();
+                let sorszamCim = lines[0].replace('ÉE/', '').trim();
                 let alcim = '';
                 let sorszam = '';
                 let cim = sorszamCim;
