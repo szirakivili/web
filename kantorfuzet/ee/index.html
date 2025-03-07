@@ -23,6 +23,7 @@
             font-size: 20px;
         }
         .song-block {
+            z-index: 0;
             border: 1px solid #ccc;
             border-radius: 10px;
             padding: 15px;
@@ -67,10 +68,14 @@
         .elojegyzes { background-color: #FEFAE0; color: black; }
         .versek { background-color: #DDA15E; color: black; }
         #filters {
-            margin-bottom: 20px;
+            padding: 10px 0px;
             display: flex;
+            background-color: #f9f9f9;
             flex-wrap: wrap;
             gap: 10px;
+            position: sticky;
+            top: 0px;
+            z-index: 1;
         }
         #filters select {
             padding: 10px;
