@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sátrazós Túrák</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+    .details.open {
+      max-height: 500px;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen px-4 py-6 font-sans">
+  <h1 class="text-3xl font-bold text-center mb-8">🏕️ Sátrazós túrák</h1>
+
+  <div class="grid gap-6 max-w-3xl mx-auto">
+
+    <!-- Túra blokk -->
+    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg">
+      <button onclick="toggleDetails(this)" class="relative w-full">
+        <img src="https://vagabundus.blog.hu/media/image/imported/2012-08-24/14049184/h_SAM_1964.JPG" class="w-full h-48 object-cover opacity-80 hover:opacity-100 transition duration-300" alt="Túra Kép">
+        <div class="absolute inset-0 flex items-center justify-center text-2xl font-semibold bg-black bg-opacity-40">🌲 Fenyveshegy</div>
+      </button>
+      <div class="details px-6 py-4 text-sm">
+        <p>📅 <strong>Dátum:</strong> május 1-jei hosszú hétvégén</p>
+        <p>📍 <strong>Indulás:</strong> Verőce vasútállomás</p>
+        <p>🥾 <strong>1. nap:</strong> 3.6 km / +160 m</p>
+        <p>🥾 <strong>2. nap:</strong> 1.7 km / -150 m</p>
+        <p>🎯 <strong>Érkezés:</strong> Fenyveshegy vasútállomás</p>
+        <p>📝 <strong>Infó:</strong> Fullos pihenőhely is van.</p>
+        <a href="https://www.termeszetjaro.hu/hu/tour/toebbnapos-gyalogtura/fenyveshegy/313697209/?share=%7E3iwtqpok%244osskvn7" class="inline-block mt-3 px-4 py-2 bg-indigo-600 rounded-lg hover:bg-indigo-700 transition text-white font-semibold">🗺️ Útvonal</a>
+      </div>
+    </div>
+
+    <!-- Itt jöhet több túra blokk ugyanilyen mintára -->
+    <!-- Másolat kezdete -->
+    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg">
+      <button onclick="toggleDetails(this)" class="relative w-full">
+        <img src="https://img3.oastatic.com/img2/28545419/max/variant.jpg" class="w-full h-48 object-cover opacity-80 hover:opacity-100 transition duration-300" alt="Túra Kép">
+        <div class="absolute inset-0 flex items-center justify-center text-2xl font-semibold bg-black bg-opacity-40">⛰️ Három-kő</div>
+      </button>
+      <div class="details px-6 py-4 text-sm">
+        <p>📅 <strong>Dátum:</strong> bükki tábor idején</p>
+        <p>📍 <strong>Indulás:</strong> Olasz-kapu parkoló</p>
+        <p>🥾 <strong>1. nap:</strong> 3.4 km / +62 m / -45 m</p>
+        <p>🥾 <strong>2. nap:</strong> 3.4 km / +45 m / -62 m</p>
+        <p>🎯 <strong>Érkezés:</strong> Olasz-kapu parkoló</p>
+        <p>📝 <strong>Infó:</strong> Tilos a vadkemping, ezért ügyeskedni kell.</p>
+        <a href="https://www.termeszetjaro.hu/hu/tour/toebbnapos-gyalogtura/harom-ko/313696916/?share=%7E3iwtmjsk%244osskvmr" class="inline-block mt-3 px-4 py-2 bg-indigo-600 rounded-lg hover:bg-indigo-700 transition text-white font-semibold">🗺️ Útvonal</a>
+      </div>
+    </div>
+    <!-- Másolat vége -->
+
+    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg">
+      <button onclick="toggleDetails(this)" class="relative w-full">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ2sUqJJ-2VjsRjrQPig7Vja4P5t59xYlukA&s" class="w-full h-48 object-cover opacity-80 hover:opacity-100 transition duration-300" alt="Túra Kép">
+        <div class="absolute inset-0 flex items-center justify-center text-2xl font-semibold bg-black bg-opacity-40">⛰️ Magas-Tax</div>
+      </button>
+      <div class="details px-6 py-4 text-sm">
+        <p>📅 <strong>Dátum:</strong> valamikor a nyáron</p>
+        <p>📍 <strong>Indulás:</strong> Diósjenő vasútállomás</p>
+        <p>🥾 <strong>1. nap:</strong> 13 km / +845 m / -389 m</p>
+        <p>🥾 <strong>2. nap:</strong> 5.8 km / -448 m</p>
+        <p>🎯 <strong>Érkezés:</strong> Királyrét, buszmegálló</p>
+        <p>📝 <strong>Infó:</strong> Csóványos, Nagy-Hideg-hegy az első napon</p>
+        <a href="https://www.termeszetjaro.hu/hu/tour/toebbnapos-gyalogtura/magas-tax/313697559/?share=%7E3iwtwori%244osskvna" class="inline-block mt-3 px-4 py-2 bg-indigo-600 rounded-lg hover:bg-indigo-700 transition text-white font-semibold">🗺️ Útvonal</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleDetails(button) {
+      const details = button.nextElementSibling;
+      details.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
