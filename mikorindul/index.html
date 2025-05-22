@@ -2,6 +2,7 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Következő indulás</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
@@ -25,6 +26,8 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .departure-info {
@@ -53,6 +56,7 @@
       border-radius: 50%;
       animation: blink 3s infinite ease-in-out;
       box-shadow: 0 0 8px 2px rgba(40, 167, 69, 0.6);
+      flex-shrink: 0;
     }
 
     @keyframes blink {
@@ -105,7 +109,9 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       text-align: center;
       max-width: 500px;
-      width: 90%;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0 auto; /* Ez középre igazítja */
     }
 
     .search-container h1 {
@@ -166,6 +172,74 @@
     .scrollable-box a:hover {
       background-color: #f1f1f1;
     }
+
+    /* Mobil optimalizálás */
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      .time-remaining {
+        font-size: 4rem;
+      }
+
+      .departure-info {
+        font-size: 1rem;
+      }
+
+      .route-info {
+        font-size: 1rem;
+      }
+
+      .delay-info {
+        font-size: 1rem;
+      }
+
+      input[type="text"],
+      .search-container input[type="text"] {
+        font-size: 1.1rem;
+        padding: 0.6rem 0.8rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .search-container button {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .search-container h1 {
+        font-size: 1.6rem;
+      }
+
+      #searchResults a {
+        font-size: 1.1rem;
+      }
+
+      .scrollable-box a {
+        font-size: 1.05rem;
+        padding: 0.4rem 0.6rem;
+      }
+
+      .search-container {
+        padding: 1.5rem 1rem;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .time-remaining {
+        font-size: 4rem;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .realtime-indicator {
+        width: 14px;
+        height: 14px;
+        margin-bottom: 0.5rem;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -275,7 +349,14 @@
           if (route) {
             const routeInfo = document.createElement("div");
             routeInfo.className = "route-info";
-            routeInfo.textContent = `${route.shortName} \u25B6 ${next.stopHeadsign || ""}`;
+            const routeColor = `#${route.color || "333"}`;
+            const textColor = `#${route.textColor || "fff"}`;
+            routeInfo.innerHTML = `
+              <span style="display: inline-block; background-color: ${routeColor}; color: ${textColor}; padding: 4px 10px; border-radius: 6px; font-weight: bold; margin-right: 8px; font-size: 1rem; min-width: 40px; text-align: center;">
+                ${route.shortName}
+              </span>
+              <span style="color: black;">\u25B6 ${next.stopHeadsign || ""}</span>
+            `;
             timeInfoEl.appendChild(routeInfo);
           }
         }
