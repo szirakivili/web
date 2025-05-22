@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Következő indulás</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .time-remaining {
+      font-size: 6rem;
+      font-weight: bold;
+      color: #222;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .departure-info {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      color: #444;
+    }
+
+    .route-info {
+      font-size: 1.2rem;
+      color: #333;
+      margin-top: 0.5rem;
+    }
+
+    .delay-info {
+      font-size: 1rem;
+      margin-top: 0.3rem;
+      color: #666;
+    }
+
+    .realtime-indicator {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #28a745;
+      border-radius: 50%;
+      animation: blink 3s infinite ease-in-out;
+      box-shadow: 0 0 8px 2px rgba(40, 167, 69, 0.6);
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.3; }
+      100% { opacity: 1; }
+    }
+
+    .error {
+      color: red;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .time-on-time {
+      color: #28a745;
+    }
+
+    .time-delayed {
+      color: #dc3545;
+    }
+
+    input[type="text"] {
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    button {
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+    }
+
+    #searchResults > div {
+      margin: 0.5rem;
+    }
+
+    #searchResults a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: #007bff;
+    }
+
+    .search-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .search-container h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .search-container input[type="text"] {
+      font-size: 1.2rem;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .search-container button {
+      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+      margin-top: 1rem;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .search-container button:hover {
+      background-color: #0056b3;
+    }
+
+    .scrollable-box {
+      margin-top: 2rem;
+      max-height: 250px;
+      overflow-y: auto;
+      border-top: 1px solid #ddd;
+      padding-top: 1rem;
+      text-align: left;
+    }
+
+    .scrollable-box div {
+      margin: 0.5rem 0;
+    }
+
+    .scrollable-box a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      color: #007bff;
+      display: block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+    }
+
+    .scrollable-box a:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Dinamikusan betöltött tartalom ide kerül -->
+  </div>
+
+  <script>
+    const apiKey = "05f00c85-2177-4345-9103-e72960f3918d";
+    const app = document.getElementById("app");
+    const params = new URLSearchParams(window.location.search);
+    const stopId = params.get("stop");
+
+    function normalizeQuery(str) {
+      return str
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, "-");
+    }
+
+    async function fetchDepartures(url) {
+      app.innerHTML = `
+        <div class="time-remaining" id="timeRemainingContainer"><span>--</span></div>
+        <div class="departure-info" id="departureTimeInfo"></div>
+        <div class="delay-info" id="delayInfo"></div>
+        <div class="error" id="errorMessage"></div>
+      `;
+
+      const timeRemainingContainer = document.getElementById("timeRemainingContainer");
+      const timeInfoEl = document.getElementById("departureTimeInfo");
+      const delayEl = document.getElementById("delayInfo");
+      const errEl = document.getElementById("errorMessage");
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const stopTimes = data.data.entry.stopTimes;
+        const references = data.data.references;
+
+        const stopData = references.stops?.[stopId];
+        if (stopData?.name) {
+          document.title = stopData.name + " – Következő indulás";
+        }
+
+        if (!stopTimes || stopTimes.length === 0) {
+          timeRemainingContainer.innerHTML = `<span></span>`;
+          timeInfoEl.textContent = "Nem indul járat a következő 3 órában";
+          return;
+        }
+
+        const sorted = stopTimes
+          .map(e => ({
+            ...e,
+            actualDeparture: e.predictedDepartureTime || e.departureTime
+          }))
+          .filter(e => e.actualDeparture * 1000 > Date.now())
+          .sort((a, b) => a.actualDeparture - b.actualDeparture);
+
+        const next = sorted[0];
+        if (!next) {
+          timeRemainingContainer.innerHTML = `<span>--</span>`;
+          timeInfoEl.textContent = "Nincs több indulás";
+          return;
+        }
+
+        const now = Date.now();
+        const scheduled = next.departureTime * 1000;
+        const actual = next.predictedDepartureTime ? next.predictedDepartureTime * 1000 : scheduled;
+
+        const remainingMin = Math.floor((actual - now) / 60000);
+        const departureDate = new Date(actual);
+        const timeStr = departureDate.toLocaleTimeString("hu-HU", { hour: '2-digit', minute: '2-digit' });
+
+        let displayTime = "";
+        if (remainingMin < 1) {
+          displayTime = "1 percen belül";
+        } else if (remainingMin < 30) {
+          displayTime = `${remainingMin} perc múlva`;
+        } else {
+          displayTime = timeStr;
+        }
+
+        let html = "";
+        if (next.predictedDepartureTime) {
+          html += `<span class="realtime-indicator"></span>`;
+        }
+        html += `<span id="timeRemaining">${displayTime}</span>`;
+        timeRemainingContainer.innerHTML = html;
+
+        timeInfoEl.classList.remove("time-delayed", "time-on-time");
+
+        if (next.predictedDepartureTime && next.predictedDepartureTime !== next.departureTime) {
+          const delay = Math.round((next.predictedDepartureTime - next.departureTime) / 60);
+          timeInfoEl.textContent = `${timeStr} (${delay}')`;
+          timeInfoEl.classList.add("time-delayed");
+        } else if (next.predictedDepartureTime) {
+          timeInfoEl.textContent = `${timeStr}`;
+          timeInfoEl.classList.add("time-on-time");
+        } else {
+          timeInfoEl.textContent = `${timeStr}`;
+        }
+
+        if (next.tripId && references.trips?.[next.tripId]) {
+          const trip = references.trips[next.tripId];
+          const route = references.routes?.[trip.routeId];
+          if (route) {
+            const routeInfo = document.createElement("div");
+            routeInfo.className = "route-info";
+            routeInfo.textContent = `${route.shortName} \u25B6 ${next.stopHeadsign || ""}`;
+            timeInfoEl.appendChild(routeInfo);
+          }
+        }
+
+      } catch (err) {
+        timeRemainingContainer.innerHTML = `<span>--</span>`;
+        timeInfoEl.textContent = "";
+        delayEl.textContent = "";
+        errEl.textContent = "Hiba történt az adatok lekérésekor.";
+        console.error("Hiba:", err);
+      }
+    }
+
+    function renderSearch() {
+      app.innerHTML = `
+        <div class="search-container">
+          <h1>Keress egy megállót!</h1>
+          <input type="text" id="searchInput" placeholder="Állomás neve...">
+          <div style="margin-top: 1rem; font-size: 1rem;">
+            <label><input type="radio" name="stopType" value="stop-area" checked> Megállócsoport</label>
+            <label style="margin-left: 1rem;"><input type="radio" name="stopType" value="stop"> Megálló</label>
+          </div>
+          <br>
+          <button id="searchBtn">Keresés</button>
+          <div id="searchResults" class="scrollable-box"></div>
+        </div>
+      `;
+
+      const searchInput = document.getElementById("searchInput");
+      const searchButton = document.getElementById("searchBtn");
+      const resultsContainer = document.getElementById("searchResults");
+
+      async function performSearch() {
+        const input = searchInput.value.trim();
+        const query = normalizeQuery(input);
+        const selectedType = document.querySelector('input[name="stopType"]:checked').value;
+
+        const url = `https://futar.bkk.hu/api/query/v1/ws/otp/api/where/search?minResult=1&appVersion=1.0&includeReferences=true&query=${query}&version=4&key=${apiKey}`;
+        resultsContainer.innerHTML = "Keresés...";
+
+        try {
+          const res = await fetch(url);
+          const json = await res.json();
+          const stops = json.data.references.stops;
+          const stopIds = json.data.entry.stopIds || [];
+
+          const filteredStops = stopIds
+            .map(id => stops[id])
+            .filter(stop => {
+              if (selectedType === "stop-area") {
+                return stop.locationSubType === "stop-area";
+              } else {
+                return stop.locationSubType !== "stop-area";
+              }
+            });
+
+          if (filteredStops.length === 0) {
+            resultsContainer.innerHTML = "Nincs találat.";
+            return;
+          }
+
+          const html = filteredStops.map(stop => {
+            return `<div><a href="?stop=${encodeURIComponent(stop.id)}">${stop.name}</a></div>`;
+          }).join("");
+
+          resultsContainer.innerHTML = html;
+        } catch (e) {
+          resultsContainer.innerHTML = "Hiba történt a keresés során.";
+          console.error(e);
+        }
+      }
+
+      searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          performSearch();
+        }
+      });
+
+      searchButton.addEventListener("click", performSearch);
+    }
+
+    if (!stopId) {
+      renderSearch();
+    } else {
+      const url = `https://futar.bkk.hu/api/query/v1/ws/otp/api/where/arrivals-and-departures-for-stop?minResult=1&appVersion=1.0&includeReferences=true&minutesAfter=180&stopId=${stopId}&version=4&onlyDepartures=false&minutesBefore=0&key=${apiKey}`;
+      fetchDepartures(url);
+      setInterval(() => fetchDepartures(url), 60000);
+    }
+  </script>
+</body>
+</html>
