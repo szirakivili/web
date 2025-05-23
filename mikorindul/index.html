@@ -269,7 +269,7 @@
 
     async function fetchDepartures(url) {
       app.innerHTML = `
-        <div class="time-remaining" id="timeRemainingContainer"><span>--</span></div>
+        <div class="time-remaining" id="timeRemainingContainer"><span></span></div>
         <div class="departure-info" id="departureTimeInfo"></div>
         <div class="error" id="errorMessage"></div>
       `;
@@ -305,7 +305,7 @@
 
         const next = sorted[0];
         if (!next) {
-          timeRemainingContainer.innerHTML = `<span>--</span>`;
+          timeRemainingContainer.innerHTML = `<span></span>`;
           timeInfoEl.textContent = "Nincs több indulás";
           return;
         }
@@ -383,7 +383,7 @@
                 const stopTimes = tripData.data.entry.stopTimes;
                 const found = stopTimes.find(item => item.stopSequence === stopSequence);
                 if (found) {
-                  if (found.stopId !== stopId) {
+                  if (found.stopId !== stopId && tripData.data.references.stops[found.stopId].parentStationId !== stopId) {
                     const nextStopName = tripData.data.references.stops[found.stopId].name;
                     const nextStop = document.createElement("div");
                     nextStop.className = "next-stop";
