@@ -33,19 +33,20 @@
     .departure-info {
       font-size: 1.5rem;
       margin-top: 1rem;
-      color: #444;
+      color: black;
     }
 
     .route-info {
-      font-size: 1.2rem;
-      color: #333;
-      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: black;
+      margin-top: 0.8rem;
     }
 
-    .delay-info {
-      font-size: 1rem;
+    .vehicle-info {
       margin-top: 0.3rem;
-      color: #666;
+      font-size: 0.8rem;
+      color: black;
+      font-style: italic;
     }
 
     .realtime-indicator {
@@ -191,10 +192,6 @@
         font-size: 1rem;
       }
 
-      .delay-info {
-        font-size: 1rem;
-      }
-
       input[type="text"],
       .search-container input[type="text"] {
         font-size: 1.1rem;
@@ -274,13 +271,11 @@
       app.innerHTML = `
         <div class="time-remaining" id="timeRemainingContainer"><span>--</span></div>
         <div class="departure-info" id="departureTimeInfo"></div>
-        <div class="delay-info" id="delayInfo"></div>
         <div class="error" id="errorMessage"></div>
       `;
 
       const timeRemainingContainer = document.getElementById("timeRemainingContainer");
       const timeInfoEl = document.getElementById("departureTimeInfo");
-      const delayEl = document.getElementById("delayInfo");
       const errEl = document.getElementById("errorMessage");
 
       try {
@@ -291,7 +286,7 @@
 
         const stopData = references.stops?.[stopId];
         if (stopData?.name) {
-          document.title = stopData.name + " – Következő indulás";
+          document.title = stopData.name + " – indul";
         }
 
         if (!stopTimes || stopTimes.length === 0) {
@@ -361,13 +356,31 @@
             const routeColor = `#${route.color || "333"}`;
             const textColor = `#${route.textColor || "fff"}`;
             routeInfo.innerHTML = `
-              <span style="display: inline-block; background-color: ${routeColor}; color: ${textColor}; padding: 4px 10px; border-radius: 6px; font-weight: bold; margin-right: 8px; font-size: 1rem; min-width: 40px; text-align: center;">
+              <span style="display: inline-block; background-color: ${routeColor}; color: ${textColor}; padding: 4px 4px; border-radius: 6px; font-weight: bold; margin-right: 8px; font-size: 1rem; min-width: 40px; text-align: center;">
                 ${route.shortName}
               </span>
               <span style="color: black; font-size: 1rem;">\u25B6</span>
               <span style="color: black; font-size: 1rem;">${next.stopHeadsign || ""}</span>
             `;
             timeInfoEl.appendChild(routeInfo);
+
+            // Járat információ lekérdezés
+            const tripDetailsUrl = `https://futar.bkk.hu/api/query/v1/ws/otp/api/where/trip-details?date=20250523&minResult=1&appVersion=1.0&includeReferences=true&tripId=${next.tripId}&version=4&key=${apiKey}`;
+            try {
+              const tripResponse = await fetch(tripDetailsUrl);
+              const tripData = await tripResponse.json();
+              const vehicle = tripData?.data?.entry?.vehicle;
+
+              if (vehicle?.model) {
+                const modelInfo = document.createElement("div");
+                modelInfo.className = "vehicle-info";
+                modelInfo.textContent = vehicle.model;
+                timeInfoEl.appendChild(modelInfo);
+              }
+            } catch (tripErr) {
+              console.error("Trip részletek lekérése sikertelen:", tripErr);
+            }
+
           }
         }
 
@@ -409,7 +422,7 @@
 
           item.innerHTML = `
             ${isRealtime ? '<span class="realtime-indicator" style="width: 8px; height: 8px;"></span>' : '<span style="width: 8px; height: 8px;"></span>'}  
-            <span style="flex-shrink: 0; background-color: ${routeColor}; color: ${textColor}; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">${shortName}</span>
+            <span style="flex-shrink: 0; background-color: ${routeColor}; color: ${textColor}; padding: 2px 4px; min-width: 20px; text-align: center; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">${shortName}</span>
             <span style="flex-shrink: 0; font-size: 0.8rem;">\u25B6</span>
             <span style="flex-grow: 1; font-size: 0.8rem;">${trip.stopHeadsign || ""}</span>
             <span style="text-align: right; font-size: 0.8rem; ${isDelayed ? 'color: #dc3545;' : (isRealtime ? 'color: #28a745;' : '')}">
@@ -426,9 +439,8 @@
 
 
       } catch (err) {
-        timeRemainingContainer.innerHTML = `<span>--</span>`;
+        timeRemainingContainer.innerHTML = `<span></span>`;
         timeInfoEl.textContent = "";
-        delayEl.textContent = "";
         errEl.textContent = "Hiba történt az adatok lekérésekor.";
         console.error("Hiba:", err);
       }
@@ -507,7 +519,7 @@
     } else {
       const url = `https://futar.bkk.hu/api/query/v1/ws/otp/api/where/arrivals-and-departures-for-stop?minResult=1&appVersion=1.0&includeReferences=true&minutesAfter=180&stopId=${stopId}&version=4&onlyDepartures=false&minutesBefore=0&key=${apiKey}`;
       fetchDepartures(url);
-      setInterval(() => fetchDepartures(url), 60000);
+      setInterval(() => fetchDepartures(url), 30000);
     }
   </script>
 </body>
