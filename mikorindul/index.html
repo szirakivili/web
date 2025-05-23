@@ -49,6 +49,12 @@
       font-style: italic;
     }
 
+    .next-stop {
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+      color: blue;
+    }
+
     .realtime-indicator {
       display: inline-block;
       width: 10px;
@@ -364,17 +370,31 @@
               const tripResponse = await fetch(tripDetailsUrl);
               const tripData = await tripResponse.json();
               const vehicle = tripData?.data?.entry?.vehicle;
-
+            
               if (vehicle?.model) {
                 const modelInfo = document.createElement("div");
                 modelInfo.className = "vehicle-info";
                 modelInfo.textContent = vehicle.model;
                 timeInfoEl.appendChild(modelInfo);
               }
+
+              if (vehicle?.stopSequence) {
+                const stopSequence = vehicle.stopSequence;
+                const stopTimes = tripData.data.entry.stopTimes;
+                const found = stopTimes.find(item => item.stopSequence === stopSequence);
+                if (found) {
+                  if (found.stopId !== stopId) {
+                    const nextStopName = tripData.data.references.stops[found.stopId].name;
+                    const nextStop = document.createElement("div");
+                    nextStop.className = "next-stop";
+                    nextStop.textContent = `${nextStopName} előtt tart`;
+                    timeInfoEl.appendChild(nextStop);
+                  }
+                }
+              }
             } catch (tripErr) {
               console.error("Trip részletek lekérése sikertelen:", tripErr);
             }
-
           }
         }
 
@@ -463,6 +483,21 @@
       const searchButton = document.getElementById("searchBtn");
       const resultsContainer = document.getElementById("searchResults");
 
+      function getTypeEmoji(type) {
+        switch (type) {
+          case "RAIL": return "🚂"; // Vonat
+          case "SUBWAY": return "🚇"; // Metró
+          case "SUBURBAN_RAILWAY": return "🚈"; // HÉV
+          case "TRAM": return "🚋"; // Villamos
+          case "BUS": return "🚌"; // Busz
+          case "COACH": return "🚌"; // Busz
+          case "TROLLEYBUS": return "🚎"; // Troli
+          case "FERRY": return "🛳️"; // Hajó
+          case "CABLE_CAR": return "🚠"; // Libegő
+          default: return "🚏"; // Általános
+        }
+      }
+
       async function performSearch() {
         const input = searchInput.value.trim();
         const query = normalizeQuery(input);
@@ -493,7 +528,8 @@
           }
 
           const html = filteredStops.map(stop => {
-            return `<div><a href="?stop=${encodeURIComponent(stop.id)}">${stop.name}</a></div>`;
+            const typeEmoji = getTypeEmoji(stop.type);
+            return `<div><a href="?stop=${encodeURIComponent(stop.id)}">${typeEmoji} ${stop.name}</a></div>`;
           }).join("");
 
           resultsContainer.innerHTML = html;
