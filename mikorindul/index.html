@@ -344,7 +344,7 @@
           timeInfoEl.textContent = `${timeStr}`;
           timeInfoEl.classList.add("time-on-time");
         } else {
-          timeInfoEl.textContent = `${timeStr}`;
+          timeInfoEl.textContent = displayTime === timeStr ? `` : `${timeStr}`;
         }
 
         if (next.tripId && references.trips?.[next.tripId]) {
