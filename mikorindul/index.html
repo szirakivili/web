@@ -112,7 +112,7 @@
       max-width: 500px;
       width: 100%;
       box-sizing: border-box;
-      margin: 0 auto; /* Ez középre igazítja */
+      margin: 0 auto;
     }
 
     .search-container h1 {
@@ -229,12 +229,6 @@
         flex-direction: column;
         gap: 0.5rem;
       }
-
-      /*.realtime-indicator {
-        width: 14px;
-        height: 14px;
-        margin-bottom: 0.5rem;
-      }*/
     }
 
   </style>
@@ -450,14 +444,18 @@
       app.innerHTML = `
         <div class="search-container">
           <h1>Keress egy megállót!</h1>
-          <input type="text" id="searchInput" placeholder="Állomás neve...">
+          <input type="text" id="searchInput" placeholder="Megálló neve...">
           <div style="margin-top: 1rem; font-size: 1rem;">
             <label><input type="radio" name="stopType" value="stop-area" checked> Megállócsoport</label>
-            <label style="margin-left: 1rem;"><input type="radio" name="stopType" value="stop"> Megálló</label>
+            <label style="margin-left: 1rem;"><input type="radio" name="stopType" value="stop"> Konkrét megálló</label>
           </div>
           <br>
           <button id="searchBtn">Keresés</button>
           <div id="searchResults" class="scrollable-box"></div>
+          <div style="margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.7rem;">
+            <span>Adatforrás:</span>
+            <a href="https://opendata.bkk.hu/home" target="_blank"><img src="BKK_logo.png" alt="BKK logo" style="height: 20px; object-fit: contain;"></a>
+          </div>
         </div>
       `;
 
