@@ -233,11 +233,11 @@
         gap: 0.5rem;
       }
 
-      .realtime-indicator {
+      /*.realtime-indicator {
         width: 14px;
         height: 14px;
         margin-bottom: 0.5rem;
-      }
+      }*/
     }
 
   </style>
@@ -334,7 +334,7 @@
 
         if (next.predictedDepartureTime && next.predictedDepartureTime !== next.departureTime) {
           const delay = Math.round((next.predictedDepartureTime - next.departureTime) / 60);
-          timeInfoEl.textContent = `${timeStr} (${delay}')`;
+          timeInfoEl.textContent = delay > 0 ? `${timeStr} (+${delay}')` : (delay < 0 ? `${timeStr} (${delay}')` : `${timeStr}`);
           timeInfoEl.classList.add("time-delayed");
         } else if (next.predictedDepartureTime) {
           timeInfoEl.textContent = `${timeStr}`;
@@ -355,11 +355,66 @@
               <span style="display: inline-block; background-color: ${routeColor}; color: ${textColor}; padding: 4px 10px; border-radius: 6px; font-weight: bold; margin-right: 8px; font-size: 1rem; min-width: 40px; text-align: center;">
                 ${route.shortName}
               </span>
-              <span style="color: black;">\u25B6 ${next.stopHeadsign || ""}</span>
+              <span style="color: black; font-size: 1rem;">\u25B6</span>
+              <span style="color: black; font-size: 1rem;">${next.stopHeadsign || ""}</span>
             `;
             timeInfoEl.appendChild(routeInfo);
           }
         }
+
+        if (!sorted[1]) {
+          return;
+        }
+        // További járatok
+        const upcomingContainer = document.createElement("div");
+        upcomingContainer.style.margin = "2rem";
+        upcomingContainer.style.textAlign = "left";
+        upcomingContainer.innerHTML = `<strong style="font-size: 1rem;">További induló járatok:</strong>`;
+
+        const upcomingList = document.createElement("div");
+        upcomingList.style.marginTop = "0.5rem";
+
+        sorted.slice(1, 4).forEach(trip => {
+          const scheduled = trip.departureTime * 1000;
+          const actual = trip.predictedDepartureTime ? trip.predictedDepartureTime * 1000 : scheduled;
+          const delayMin = trip.predictedDepartureTime && trip.predictedDepartureTime !== trip.departureTime
+            ? Math.round((trip.predictedDepartureTime - trip.departureTime) / 60)
+            : 0;
+          const remainingMin = Math.floor((actual - Date.now()) / 60000);
+          const timeStr = new Date(actual).toLocaleTimeString("hu-HU", { hour: '2-digit', minute: '2-digit' });
+
+          const isRealtime = trip.predictedDepartureTime !== undefined;
+          const isDelayed = delayMin !== 0;
+
+          const route = references.trips?.[trip.tripId]?.routeId;
+          const routeData = references.routes?.[route];
+          const shortName = routeData?.shortName || "";
+          const routeColor = `#${routeData?.color || "333"}`;
+          const textColor = `#${routeData?.textColor || "fff"}`;
+
+          const item = document.createElement("div");
+          item.style.display = "flex";
+          item.style.alignItems = "center";
+          item.style.gap = "10px";
+          item.style.margin = "0.4rem 0";
+
+          item.innerHTML = `
+            ${isRealtime ? '<span class="realtime-indicator" style="width: 8px; height: 8px;"></span>' : '<span style="width: 8px; height: 8px;"></span>'}  
+            <span style="flex-shrink: 0; background-color: ${routeColor}; color: ${textColor}; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">${shortName}</span>
+            <span style="flex-shrink: 0; font-size: 0.8rem;">\u25B6</span>
+            <span style="flex-grow: 1; font-size: 0.8rem;">${trip.stopHeadsign || ""}</span>
+            <span style="text-align: right; font-size: 0.8rem; ${isDelayed ? 'color: #dc3545;' : (isRealtime ? 'color: #28a745;' : '')}">
+              ${remainingMin < 30 ? (remainingMin < 1 ? `<1'` : `${remainingMin}'`) : `${timeStr}`}
+              ${isDelayed ? (delayMin > 0 ? `(+${delayMin}')` : `(${delayMin}')`) : ''}
+            </span>
+          `;
+
+          upcomingList.appendChild(item);
+        });
+
+        upcomingContainer.appendChild(upcomingList);
+        app.appendChild(upcomingContainer);
+
 
       } catch (err) {
         timeRemainingContainer.innerHTML = `<span>--</span>`;
