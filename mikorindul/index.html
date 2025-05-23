@@ -291,7 +291,7 @@
 
         if (!stopTimes || stopTimes.length === 0) {
           timeRemainingContainer.innerHTML = `<span></span>`;
-          timeInfoEl.textContent = "Nem indul járat a következő 3 órában";
+          timeInfoEl.textContent = "Nem indul járat a következő 3 órában.";
           return;
         }
 
@@ -306,7 +306,7 @@
         const next = sorted[0];
         if (!next) {
           timeRemainingContainer.innerHTML = `<span></span>`;
-          timeInfoEl.textContent = "Nincs több indulás";
+          timeInfoEl.textContent = "Nem indul járat a megállóból.";
           return;
         }
 
