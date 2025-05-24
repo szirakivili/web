@@ -142,7 +142,7 @@
   <div id="title">🚆 MyTrainMap</div>
   <div id="map"></div>
 
-  <button id="legendToggle" aria-expanded="false" aria-controls="legend" title="Jelmagyarázat mutatása">Jelmagyarázat ▼</button>
+  <button id="legendToggle" aria-expanded="false" aria-controls="legend" title="Jelmagyarázat mutatása">Jelmagyarázat ▲</button>
   <div id="legend" role="region" aria-label="Jelmagyarázat">
     <div class="item">
       <div class="lineWithCircle blue">
@@ -274,7 +274,7 @@
       const isVisible = legend.style.display === 'block';
       legend.style.display = isVisible ? 'none' : 'block';
       legendToggle.setAttribute('aria-expanded', !isVisible);
-      legendToggle.textContent = isVisible ? 'Jelmagyarázat ▼' : 'Jelmagyarázat ▲';
+      legendToggle.textContent = isVisible ? 'Jelmagyarázat ▲' : 'Jelmagyarázat ▼';
     });
   </script>
 </body>
