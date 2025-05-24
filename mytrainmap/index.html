@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyTrainMap</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    html, body, #map {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #title {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .leaflet-bottom.leaflet-right {
+      margin-bottom: 20px;
+      margin-right: 20px;
+    }
+
+    /* Jelmagyarázat gomb és panel */
+    #legendToggle {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      z-index: 1100;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: background-color 0.2s ease;
+    }
+    #legendToggle:hover {
+      background-color: rgba(240,240,240,1);
+    }
+
+    #legend {
+      position: absolute;
+      bottom: 48px;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      line-height: 1.4;
+      min-width: 230px;
+      display: none;
+    }
+
+    #legend .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    /* Vonalkázó és kör jelölő (egy elemként) */
+    #legend .lineWithCircle {
+    position: relative;
+    width: 40px;
+    height: 14px;  /* magasabb, hogy a kör középen legyen */
+    margin-right: 12px;
+    flex-shrink: 0;
+    }
+
+    #legend .lineWithCircle .line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    border-radius: 2px;
+    transform: translateY(-50%);
+    background-color: currentColor; /* szín a szülőtől */
+    border: none;
+    }
+
+    #legend .lineWithCircle .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    background-color: currentColor;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    }
+
+    /* Színek beállítása szülőn */
+    #legend .lineWithCircle.blue {
+    color: blue;
+    }
+    #legend .lineWithCircle.orange {
+    color: orange;
+    }
+    #legend .lineWithCircle.green {
+    color: green;
+    }
+    #legend .lineWithCircle.black-dashed {
+    color: black;
+    }
+    #legend .lineWithCircle.black-dashed .line {
+    background: none;
+    background-image: repeating-linear-gradient(
+        45deg,
+        black,
+        black 4px,
+        transparent 4px,
+        transparent 8px
+    );
+    }
+    #legend .lineWithCircle.black-dashed .circle {
+    background-color: transparent;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="title">🚆 MyTrainMap</div>
+  <div id="map"></div>
+
+  <button id="legendToggle" aria-expanded="false" aria-controls="legend" title="Jelmagyarázat mutatása">Jelmagyarázat ▼</button>
+  <div id="legend" role="region" aria-label="Jelmagyarázat">
+    <div class="item">
+      <div class="lineWithCircle blue">
+        <div class="line"></div>
+        <div class="circle"></div>
+      </div>
+      Normál- / szélesnyomtáv
+    </div>
+    <div class="item">
+      <div class="lineWithCircle orange">
+        <div class="line"></div>
+        <div class="circle"></div>
+      </div>
+      Keskenynyomtáv
+    </div>
+    <div class="item">
+      <div class="lineWithCircle green">
+        <div class="line"></div>
+        <div class="circle"></div>
+      </div>
+      HÉV
+    </div>
+    <div class="item">
+      <div class="lineWithCircle black-dashed">
+        <div class="line"></div>
+        <div class="circle"></div>
+      </div>
+      Jövőbeni
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
+
+  <script>
+    const map = L.map('map', { zoomControl: false }).setView([47.0, 19.0], 7);
+    L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    // Stílusok vonalakra és pontokra
+    const styleLine = (color) => ({ color, weight: 3, opacity: 0.8 });
+    const styleDashedLine = { color: 'black', weight: 2, opacity: 0.6, dashArray: '4 4' };
+
+    const stylePoint = (color) => (feature, latlng) =>
+      L.circleMarker(latlng, {
+        radius: 3,
+        fillColor: color,
+        color: color,
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.9
+      }).bindTooltip(feature?.properties?.name || '', { permanent: false });
+
+    // Jövőbeli vonal és pont egyben: a pontok kitöltetlen fekete körök,
+    // és vonalak szaggatott fekete vonal
+    const styleFuturePoint = (feature, latlng) =>
+      L.circleMarker(latlng, {
+        radius: 4,
+        color: 'black',
+        weight: 1,
+        fillOpacity: 0
+      }).bindTooltip(feature?.properties?.name || '', { permanent: false });
+
+    function addLineLayer(file, color) {
+      omnivore.kml(file)
+        .on('ready', function () {
+          this.setStyle(styleLine(color));
+          this.eachLayer(layer => {
+            if (layer.feature?.properties?.name) {
+              layer.bindTooltip(layer.feature.properties.name, { permanent: false });
+            }
+          });
+        })
+        .addTo(map);
+    }
+
+    function addStationLayer(file, color) {
+      omnivore.kml(file, null, L.geoJson(null, {
+        pointToLayer: stylePoint(color)
+      }))
+        .on('ready', function () {
+          this.eachLayer(layer => {
+            if (layer.feature?.properties?.name) {
+              layer.bindTooltip(layer.feature.properties.name, { permanent: false });
+            }
+          });
+        })
+        .addTo(map);
+    }
+
+    function addFutureLayer(file) {
+      omnivore.kml(file, null, L.geoJson(null, {
+        style: feature => {
+          if (feature.geometry.type === "LineString") {
+            return styleDashedLine;
+          }
+          return {};
+        },
+        pointToLayer: styleFuturePoint
+      }))
+        .on('ready', function () {
+          this.eachLayer(layer => {
+            if (layer.feature?.properties?.name) {
+              layer.bindTooltip(layer.feature.properties.name, { permanent: false });
+            }
+          });
+        })
+        .addTo(map);
+    }
+
+    addLineLayer('normal_vasut.kml', 'blue');
+    addStationLayer('normal_allomasok.kml', 'blue');
+
+    addLineLayer('keskeny_vasut.kml', 'orange');
+    addStationLayer('keskeny_allomasok.kml', 'orange');
+
+    addLineLayer('hev_vasut.kml', 'green');
+    addStationLayer('hev_allomasok.kml', 'green');
+
+    addFutureLayer('jovo.kml');
+
+    // Jelmagyarázat gomb eseménykezelő
+    const legendToggle = document.getElementById('legendToggle');
+    const legend = document.getElementById('legend');
+    legendToggle.addEventListener('click', () => {
+      const isVisible = legend.style.display === 'block';
+      legend.style.display = isVisible ? 'none' : 'block';
+      legendToggle.setAttribute('aria-expanded', !isVisible);
+      legendToggle.textContent = isVisible ? 'Jelmagyarázat ▼' : 'Jelmagyarázat ▲';
+    });
+  </script>
+</body>
+</html>
