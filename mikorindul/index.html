@@ -267,7 +267,7 @@
         .replace(/\s+/g, "-");
     }
 
-    async function fetchDepartures(url) {
+    async function fetchDepartures(stopId) {
       app.innerHTML = `
         <div class="time-remaining" id="timeRemainingContainer"><span></span></div>
         <div class="departure-info" id="departureTimeInfo"></div>
@@ -279,7 +279,8 @@
       const errEl = document.getElementById("errorMessage");
 
       try {
-        const response = await fetch(url);
+        const stopUrl = `https://futar.bkk.hu/api/query/v1/ws/otp/api/where/arrivals-and-departures-for-stop?minResult=1&appVersion=1.0&includeReferences=true&minutesAfter=180&stopId=${stopId}&version=4&onlyDepartures=false&minutesBefore=0&key=${apiKey}`;
+        const response = await fetch(stopUrl);
         const data = await response.json();
         const stopTimes = data.data.entry.stopTimes;
         const references = data.data.references;
@@ -365,7 +366,7 @@
             timeInfoEl.appendChild(routeInfo);
 
             // Járat információ lekérdezés
-            const tripDetailsUrl = `https://futar.bkk.hu/api/query/v1/ws/otp/api/where/trip-details?date=20250523&minResult=1&appVersion=1.0&includeReferences=true&tripId=${next.tripId}&version=4&key=${apiKey}`;
+            const tripDetailsUrl = `https://futar.bkk.hu/api/query/v1/ws/otp/api/where/trip-details?minResult=1&appVersion=1.0&includeReferences=true&tripId=${next.tripId}&version=4&key=${apiKey}`;
             try {
               const tripResponse = await fetch(tripDetailsUrl);
               const tripData = await tripResponse.json();
@@ -503,11 +504,11 @@
         const query = normalizeQuery(input);
         const selectedType = document.querySelector('input[name="stopType"]:checked').value;
 
-        const url = `https://futar.bkk.hu/api/query/v1/ws/otp/api/where/search?minResult=1&appVersion=1.0&includeReferences=true&query=${query}&version=4&key=${apiKey}`;
+        const searchUrl = `https://futar.bkk.hu/api/query/v1/ws/otp/api/where/search?minResult=1&appVersion=1.0&includeReferences=true&query=${query}&version=4&key=${apiKey}`;
         resultsContainer.innerHTML = "Keresés...";
 
         try {
-          const res = await fetch(url);
+          const res = await fetch(searchUrl);
           const json = await res.json();
           const stops = json.data.references.stops;
           const stopIds = json.data.entry.stopIds || [];
@@ -551,9 +552,8 @@
     if (!stopId) {
       renderSearch();
     } else {
-      const url = `https://futar.bkk.hu/api/query/v1/ws/otp/api/where/arrivals-and-departures-for-stop?minResult=1&appVersion=1.0&includeReferences=true&minutesAfter=180&stopId=${stopId}&version=4&onlyDepartures=false&minutesBefore=0&key=${apiKey}`;
-      fetchDepartures(url);
-      setInterval(() => fetchDepartures(url), 30000);
+      fetchDepartures(stopId);
+      setInterval(() => fetchDepartures(stopId), 30000);
     }
   </script>
 </body>
