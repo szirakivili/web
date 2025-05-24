@@ -249,6 +249,7 @@
   gtag('config', 'G-F7NERFLG67');
 </script>
 <body>
+  <div id="stopHeader" style="font-size: 1rem; margin-top: 1rem; position: absolute; top: 0;"></div>
   <div id="app">
     <!-- Dinamikusan betöltött tartalom ide kerül -->
   </div>
@@ -265,6 +266,21 @@
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .replace(/\s+/g, "-");
+    }
+
+    function getTypeEmoji(type) {
+      switch (type) {
+        case "RAIL": return "🚂"; // Vonat
+        case "SUBWAY": return "🚇"; // Metró
+        case "SUBURBAN_RAILWAY": return "🚈"; // HÉV
+        case "TRAM": return "🚋"; // Villamos
+        case "BUS": return "🚌"; // Busz
+        case "COACH": return "🚌"; // Busz
+        case "TROLLEYBUS": return "🚎"; // Troli
+        case "FERRY": return "🛳️"; // Hajó
+        case "CABLE_CAR": return "🚠"; // Libegő
+        default: return "🚏"; // Általános
+      }
     }
 
     async function fetchDepartures(stopId) {
@@ -286,8 +302,12 @@
         const references = data.data.references;
 
         const stopData = references.stops?.[stopId];
-        if (stopData?.name) {
+        if (stopData) {
           document.title = stopData.name + " – indul";
+
+          const emoji = getTypeEmoji(stopData.type);
+          const stopHeader = document.getElementById("stopHeader");
+          stopHeader.textContent = `${emoji} ${stopData.name}`;
         }
 
         if (!stopTimes || stopTimes.length === 0) {
@@ -483,21 +503,6 @@
       const searchInput = document.getElementById("searchInput");
       const searchButton = document.getElementById("searchBtn");
       const resultsContainer = document.getElementById("searchResults");
-
-      function getTypeEmoji(type) {
-        switch (type) {
-          case "RAIL": return "🚂"; // Vonat
-          case "SUBWAY": return "🚇"; // Metró
-          case "SUBURBAN_RAILWAY": return "🚈"; // HÉV
-          case "TRAM": return "🚋"; // Villamos
-          case "BUS": return "🚌"; // Busz
-          case "COACH": return "🚌"; // Busz
-          case "TROLLEYBUS": return "🚎"; // Troli
-          case "FERRY": return "🛳️"; // Hajó
-          case "CABLE_CAR": return "🚠"; // Libegő
-          default: return "🚏"; // Általános
-        }
-      }
 
       async function performSearch() {
         const input = searchInput.value.trim();
