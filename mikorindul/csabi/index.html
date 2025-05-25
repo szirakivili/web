@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>GPS lekérés</title>
+</head>
+<body>
+  <h2>GPS pozíció lekérése</h2>
+  <button onclick="getLocation()">Koordináták lekérése</button>
+  <p id="output">Koordináták: </p>
+
+  <script>
+    function getLocation() {
+      const output = document.getElementById("output");
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          function(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            output.textContent = `Koordináták: Szélesség = ${lat}, Hosszúság = ${lon}`;
+          },
+          function(error) {
+            output.textContent = "Hiba a helymeghatározás során: " + error.message;
+          }
+        );
+      } else {
+        output.textContent = "A böngésződ nem támogatja a geolokációt.";
+      }
+    }
+  </script>
+</body>
+</html>
