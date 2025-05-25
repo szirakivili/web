@@ -152,6 +152,15 @@
     .search-container button:hover {
       background-color: #0056b3;
     }
+    
+    #nearbySearchBtn {
+      margin: 1rem;
+      background-color: #008c15;
+    }
+
+    #nearbySearchBtn:hover {
+      background-color: #006c10;
+    }
 
     .scrollable-box {
       margin-top: 2rem;
@@ -491,6 +500,7 @@
             <label style="margin-left: 1rem;"><input type="radio" name="stopType" value="stop"> Konkrét megálló</label>
           </div>
           <br>
+          <button id="nearbySearchBtn">A közelben</button>
           <button id="searchBtn">Keresés</button>
           <div id="searchResults" class="scrollable-box"></div>
           <div style="margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.7rem;">
@@ -502,6 +512,7 @@
 
       const searchInput = document.getElementById("searchInput");
       const searchButton = document.getElementById("searchBtn");
+      const nearbyButton = document.getElementById("nearbySearchBtn");
       const resultsContainer = document.getElementById("searchResults");
 
       async function performSearch() {
@@ -545,6 +556,47 @@
         }
       }
 
+      async function performNearbySearch() {
+        if (!navigator.geolocation) {
+          resultsContainer.innerHTML = "A böngésződ nem támogatja a helyzetmeghatározást.";
+          return;
+        }
+        navigator.geolocation.getCurrentPosition(async function(position) {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+
+          const selectedType = document.querySelector('input[name="stopType"]:checked').value;
+
+          const searchUrl = `https://futar.bkk.hu/api/query/v1/ws/otp/api/where/stops-for-location?minResult=1&appVersion=1.0&includeReferences=true&lonSpan=0.002634&latSpan=0.001796&radius=100&version=4&lon=${lon}&lat=${lat}&key=${apiKey}`;
+          resultsContainer.innerHTML = "Keresés...";
+
+          try {
+            const res = await fetch(searchUrl);
+            const json = await res.json();
+            const stops = json.data.list;
+
+            if (stops.length === 0) {
+              resultsContainer.innerHTML = "Nincs találat.";
+              return;
+            }
+
+            const html = stops.map(stop => {
+              const typeEmoji = getTypeEmoji(stop.type);
+              if ((selectedType === "stop-area" && stop.locationSubType === "stop-area") || (selectedType === "stop" && !stop.locationSubType)) {
+                return `<div><a href="?stop=${encodeURIComponent(stop.id)}">${typeEmoji} ${stop.name}</a></div>`;
+              }
+            }).join("");
+
+            resultsContainer.innerHTML = html;
+          } catch (e) {
+            resultsContainer.innerHTML = "Hiba történt a keresés során.";
+            console.error(e);
+          }
+        }, function(error) {
+          resultsContainer.innerHTML = "Hiba a helymeghatározás során: " + error.message;
+        });
+      }
+
       searchInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
           performSearch();
@@ -552,6 +604,7 @@
       });
 
       searchButton.addEventListener("click", performSearch);
+      nearbyButton.addEventListener("click", performNearbySearch)
     }
 
     if (!stopId) {
