@@ -197,6 +197,40 @@
       background-color: #f1f1f1;
     }
 
+    #helpIcon {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #007bff;
+      color: white;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #helpPopup {
+      position: fixed;
+      bottom: 70px;
+      left: 20px;
+      background-color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      font-size: 0.9rem;
+      z-index: 999;
+      display: none;
+      max-width: 250px;
+      color: black;
+      text-align: left;
+    }
+
     /* Mobil optimalizálás */
     @media (max-width: 600px) {
       body {
@@ -270,6 +304,17 @@
   <div id="stopHeader" style="font-size: 1rem; margin-top: 1rem; position: absolute; top: 0;"></div>
   <div id="app">
     <!-- Dinamikusan betöltött tartalom ide kerül -->
+  </div>
+  <div id="helpIcon">?</div>
+  <div id="helpPopup">
+    <strong>Jelmagyarázat</strong><br><br>
+    <span style="color: black;">13:40</span> - mentrendi indulás<br>
+    <span class="realtime-indicator"></span> - valós idejű adat<br>
+    <span style="color: #28a745;">12:34</span> - pontos<br>
+    <span style="color: #dc3545;">12:37 (+3')</span> - késik<br>
+    <span style="color: #dc3545;">12:33 (-1')</span> - előbb indul<br>
+    🚏 - megállócsoport<br>
+    🚌🚎🚋🚇🚂🚈 - megálló típusa: busz/troli/villamos/metró/vasút/HÉV
   </div>
 
   <script>
@@ -628,6 +673,19 @@
       fetchDepartures(stopId);
       setInterval(() => fetchDepartures(stopId), 30000);
     }
+
+    const helpIcon = document.getElementById("helpIcon");
+    const helpPopup = document.getElementById("helpPopup");
+
+    helpIcon.addEventListener("click", () => {
+      helpPopup.style.display = helpPopup.style.display === "none" || !helpPopup.style.display ? "block" : "none";
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!helpIcon.contains(e.target) && !helpPopup.contains(e.target)) {
+        helpPopup.style.display = "none";
+      }
+    });
   </script>
 </body>
 </html>
