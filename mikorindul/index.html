@@ -49,6 +49,14 @@
       font-style: italic;
     }
 
+    .license-info {
+      margin-top: 0.1rem;
+      font-size: 0.6rem;
+      color: black;
+      /*background-color: #a4a4a4;*/
+      font-family: monospace;
+    }
+
     .next-stop {
       margin-top: 0.3rem;
       font-size: 0.8rem;
@@ -406,6 +414,12 @@
                 const modelInfo = document.createElement("div");
                 modelInfo.className = "vehicle-info";
                 modelInfo.textContent = vehicle.model;
+                timeInfoEl.appendChild(modelInfo);
+              }
+              if (vehicle?.licensePlate) {
+                const modelInfo = document.createElement("div");
+                modelInfo.className = "license-info";
+                modelInfo.textContent = vehicle.licensePlate;
                 timeInfoEl.appendChild(modelInfo);
               }
 
