@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <title>GYSEV-infó</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header img {
+      max-height: 60px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #018940;
+      margin: 2rem 0 1rem;
+    }
+
+    .news-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+      padding: 0 2rem;
+    }
+
+    .news-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 1.5rem;
+      transition: transform 0.2s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .news-card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #018940;
+    }
+
+    .news-card p.date {
+      font-size: 0.9rem;
+      color: #888;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .news-card p.description {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://www2.gysev.hu/themes/custom/gysev/logo.svg" alt="GYSEV logo">
+  </header>
+
+  <h1>GYSEV-infó</h1>
+  <div class="news-container" id="feed"></div>
+
+  <script>
+    const feedUrl = "https://www2.gysev.hu/traffic-rss.xml";
+
+    function formatHungarianDate(pubDateStr) {
+      const itemDate = new Date(pubDateStr);
+      const today = new Date();
+
+      const todayDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      const itemDay = new Date(itemDate.getFullYear(), itemDate.getMonth(), itemDate.getDate());
+
+      const diffDays = Math.floor((todayDay - itemDay) / (1000 * 60 * 60 * 24));
+
+      const hours = itemDate.getHours().toString().padStart(2, '0');
+      const minutes = itemDate.getMinutes().toString().padStart(2, '0');
+      const timePart = `${hours}:${minutes}`;
+
+      if (diffDays === 0) {
+        return `ma ${timePart}`;
+      } else if (diffDays === 1) {
+        return `tegnap ${timePart}`;
+      } else {
+        const options = { month: "long", day: "numeric" };
+        return `${itemDate.toLocaleDateString("hu-HU", options)} ${timePart}`;
+      }
+    }
+
+    fetch(feedUrl)
+      .then(response => response.text())
+      .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+      .then(data => {
+        const items = data.querySelectorAll("item");
+        const container = document.getElementById("feed");
+
+        items.forEach(item => {
+          const title = item.querySelector("title").textContent;
+          const link = item.querySelector("link").textContent;
+          const description = item.querySelector("description").textContent;
+          const pubDate = item.querySelector("pubDate").textContent;
+
+          const div = document.createElement("div");
+          div.className = "news-card";
+          div.innerHTML = `
+            <h3><a href="${link}" target="_blank" rel="noopener">${title}</a></h3>
+            <p class="date">${formatHungarianDate(pubDate)}</p>
+            <p class="description">${description}</p>
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(error => {
+        document.getElementById("feed").innerText = "Hiba történt a hírek betöltésekor.";
+        console.error("Hiba az RSS betöltésénél:", error);
+      });
+  </script>
+</body>
+</html>
