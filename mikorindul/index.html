@@ -402,12 +402,13 @@
         const scheduled = next.departureTime * 1000;
         const actual = next.predictedDepartureTime ? next.predictedDepartureTime * 1000 : scheduled;
 
-        const remainingMin = Math.floor((actual - now) / 60000);
+        const remainingSec = (Math.floor(actual - now) / 1000)
+        const remainingMin = Math.floor((actual - now + 30000) / 60000); // kerekítve
         const departureDate = new Date(actual);
         const timeStr = departureDate.toLocaleTimeString("hu-HU", { hour: '2-digit', minute: '2-digit' });
 
         let displayTime = "";
-        if (remainingMin < 1) {
+        if (remainingSec < 60) {
           displayTime = "1 percen belül";
         } else if (remainingMin < 30) {
           displayTime = `${remainingMin} perc múlva`;
@@ -510,7 +511,8 @@
           const delayMin = trip.predictedDepartureTime && trip.predictedDepartureTime !== trip.departureTime
             ? Math.round((trip.predictedDepartureTime - trip.departureTime) / 60)
             : 0;
-          const remainingMin = Math.floor((actual - Date.now()) / 60000);
+          const remainingSec = Math.floor((actual - Date.now()) / 1000)
+          const remainingMin = Math.floor((actual - Date.now() + 30000) / 60000); // kerekítve
           const timeStr = new Date(actual).toLocaleTimeString("hu-HU", { hour: '2-digit', minute: '2-digit' });
 
           const isRealtime = trip.predictedDepartureTime !== undefined;
@@ -534,7 +536,7 @@
             <span style="flex-shrink: 0; font-size: 0.8rem;">\u25B6</span>
             <span style="flex-grow: 1; font-size: 0.8rem;">${trip.stopHeadsign || ""}</span>
             <span style="text-align: right; font-size: 0.8rem; ${isDelayed ? 'color: #dc3545;' : (isRealtime ? 'color: #28a745;' : '')}">
-              ${remainingMin < 30 ? (remainingMin < 1 ? `<1'` : `${remainingMin}'`) : `${timeStr}`}
+              ${remainingMin < 30 ? (remainingSec < 60 ? `<1'` : `${remainingMin}'`) : `${timeStr}`}
               ${isDelayed ? (delayMin > 0 ? `(+${delayMin}')` : `(${delayMin}')`) : ''}
             </span>
           `;
