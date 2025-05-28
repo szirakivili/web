@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MÁVINFORM Hírek</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header img {
+      max-height: 60px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00477b;
+      margin: 2rem 0 1rem;
+    }
+
+    .news-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+      padding: 0 2rem;
+    }
+
+    .news-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 1.5rem;
+      transition: transform 0.2s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .news-card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #00477b;
+    }
+
+    .news-card p.date {
+      font-size: 0.9rem;
+      color: #888;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .news-card p.description {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://www.mavcsoport.hu/sites/all/themes/mav/images/logo.png" alt="MÁV logo">
+  </header>
+
+  <h1>MÁVINFORM</h1>
+  <div class="news-container" id="feed"></div>
+
+  <script>
+    const feedUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://www.mavcsoport.hu/mavinform/rss.xml";
+
+    function formatHungarianDate(pubDate) {
+        const itemDate = new Date(pubDate);
+        const today = new Date();
+
+        // Másolatokat hozunk létre a dátumokból a nap szintű összehasonlításhoz
+        const todayDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        const itemDay = new Date(itemDate.getFullYear(), itemDate.getMonth(), itemDate.getDate());
+
+        const diffDays = Math.floor((todayDay - itemDay) / (1000 * 60 * 60 * 24));
+
+        const hours = itemDate.getHours().toString().padStart(2, '0');
+        const minutes = itemDate.getMinutes().toString().padStart(2, '0');
+        const timePart = `${hours}:${minutes}`;
+
+        if (diffDays === 0) {
+            return `ma ${timePart}`;
+        } else if (diffDays === 1) {
+            return `tegnap ${timePart}`;
+        } else {
+            const options = { month: "long", day: "numeric" };
+            return `${itemDate.toLocaleDateString("hu-HU", options)} ${timePart}`;
+        }
+    }
+
+    fetch(feedUrl)
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById("feed");
+        data.items.forEach(item => {
+          const div = document.createElement("div");
+          div.className = "news-card";
+          div.innerHTML = `
+            <h3><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h3>
+            <p class="date">${formatHungarianDate(item.pubDate)}</p>
+            <p class="description">${item.description}</p>
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(error => {
+        document.getElementById("feed").innerText = "Hiba történt a hírek betöltésekor.";
+        console.error("Hiba az RSS betöltésénél:", error);
+      });
+  </script>
+</body>
+</html>
