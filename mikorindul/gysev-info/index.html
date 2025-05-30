@@ -98,34 +98,42 @@
     const feedUrl = "https://www2.gysev.hu/traffic-rss.xml";
 
     function formatHungarianDate(pubDateStr) {
-      const itemDate = new Date(pubDateStr);
+      const pubDate = new Date(pubDateStr);
+
+      const options = {
+        timeZone: "Europe/Budapest",
+        hour: "2-digit",
+        minute: "2-digit",
+      };
+
       const today = new Date();
+      const todayStr = today.toLocaleDateString("hu-HU", { timeZone: "Europe/Budapest" });
+      const pubDateStrLocal = pubDate.toLocaleDateString("hu-HU", { timeZone: "Europe/Budapest" });
 
-      const todayDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-      const itemDay = new Date(itemDate.getFullYear(), itemDate.getMonth(), itemDate.getDate());
+      const timeStr = pubDate.toLocaleTimeString("hu-HU", options);
 
-      const diffDays = Math.floor((todayDay - itemDay) / (1000 * 60 * 60 * 24));
-
-      const hours = itemDate.getHours().toString().padStart(2, '0');
-      const minutes = itemDate.getMinutes().toString().padStart(2, '0');
-      const timePart = `${hours}:${minutes}`;
-
-      if (diffDays === 0) {
-        return `ma ${timePart}`;
-      } else if (diffDays === 1) {
-        return `tegnap ${timePart}`;
-      } else {
-        const options = { month: "long", day: "numeric" };
-        return `${itemDate.toLocaleDateString("hu-HU", options)} ${timePart}`;
+      if (todayStr === pubDateStrLocal) {
+        return `ma ${timeStr}`;
       }
+
+      const yesterday = new Date(today);
+      yesterday.setDate(today.getDate() - 1);
+      const yesterdayStr = yesterday.toLocaleDateString("hu-HU", { timeZone: "Europe/Budapest" });
+
+      if (pubDateStrLocal === yesterdayStr) {
+        return `tegnap ${timeStr}`;
+      }
+
+      const optionsDate = { day: "numeric", month: "long" };
+      return `${pubDate.toLocaleDateString("hu-HU", optionsDate)} ${timeStr}`;
     }
 
     fetch(feedUrl)
       .then(response => response.text())
-      .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+      .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
       .then(data => {
-        const items = data.querySelectorAll("item");
         const container = document.getElementById("feed");
+        const items = data.querySelectorAll("item");
 
         items.forEach(item => {
           const title = item.querySelector("title").textContent;
