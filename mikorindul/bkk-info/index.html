@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BKK-infó</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    /* Alap stílusok */
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 1.5rem;
+      background: linear-gradient(135deg, #f9f7fb, #fff);
+      color: #52155a;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 16px; /* alap betűméret normális mobilon */
+      line-height: 1.5;
+    }
+
+    /* Logó és fejléc */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    header img {
+      height: 40px;
+      width: auto;
+      flex-shrink: 0;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #52155a;
+      margin: 0;
+      user-select: none;
+    }
+
+    /* Szűrők */
+    .filters {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    select, input[type="search"] {
+      padding: 0.5rem 0.75rem;
+      font-size: 1rem;
+      border: 2px solid #52155a;
+      border-radius: 8px;
+      transition: border-color 0.3s ease;
+      min-width: 180px;
+      flex-grow: 1;
+      max-width: 280px;
+      color: #52155a;
+      background: #fff;
+    }
+    select:focus, input[type="search"]:focus {
+      border-color: #7e3a89;
+      outline: none;
+      box-shadow: 0 0 6px rgba(82, 21, 90, 0.5);
+    }
+    label {
+      font-weight: 600;
+      margin-right: 0.5rem;
+      user-select: none;
+      color: #52155a;
+    }
+
+    /* Kategória konténer */
+    .category {
+      background-color: #fff;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(82, 21, 90, 0.15);
+      border: 1px solid #7e3a89;
+    }
+    .category h2 {
+      font-weight: 700;
+      color: #52155a;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid #7e3a89;
+      padding-bottom: 0.3rem;
+      font-size: 1.3rem;
+    }
+
+    /* Riasztások rács */
+    .alerts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    /* Egyedi riasztás */
+    .alert {
+      background: white;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem 1.5rem 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(82, 21, 90, 0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.15s ease, box-shadow 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid transparent;
+      color: #52155a;
+    }
+    .alert:hover, .alert:focus {
+      outline: none;
+      box-shadow: 0 8px 20px rgba(82, 21, 90, 0.25);
+      transform: translateY(-4px);
+      border-color: #7e3a89;
+      background: #f6e8fb;
+    }
+
+    /* Járat ikonok */
+    .route-icons {
+      margin-bottom: 0.7rem;
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .route-icon {
+      padding: 0.3rem 0.5rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1;
+      user-select: none;
+      color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      white-space: nowrap;
+      text-shadow: 0 0 3px rgba(0,0,0,0.25);
+    }
+
+    /* Riasztás címe és idő */
+    .alert h3 {
+      margin: 0 0 0.3rem 0;
+      font-size: 1.3rem;
+      color: #52155a;
+      font-weight: 700;
+    }
+    .alert time {
+      color: #7e3a89;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+      display: block;
+      font-weight: 600;
+    }
+    .alert time.modified {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #6b3373;
+    }
+    .alert .description {
+      margin-top: 0.6rem;
+      color: #52155a;
+      font-size: 1rem;
+      line-height: 1.4;
+      flex-grow: 1;
+      overflow: hidden;
+    }
+
+    /* Mobilra normális méret */
+    @media (max-width: 480px) {
+      body {
+        font-size: 16px;
+      }
+      header h1 {
+        font-size: 1.6rem;
+      }
+      .category h2 {
+        font-size: 1.1rem;
+      }
+      .alert h3 {
+        font-size: 1.2rem;
+      }
+      select, input[type="search"] {
+        font-size: 1rem;
+        min-width: 140px;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+  <header>
+    <img src="https://m.bkkinfo.hu/img/bkkinfo_logo-40px.png" alt="BKK-infó logo" />
+    <h1>BKK-infó</h1>
+  </header>
+
+  <div class="filters" role="search" aria-label="Szűrők és keresőmező">
+    <select id="group-filter" aria-label="Szűrés csoport szerint">
+      <option value="ACTIVE-ALERT">Aktuális</option>
+      <option value="FUTURE-ALERT">Jövőbeni</option>
+    </select>
+
+    <select id="vehicle-filter" aria-label="Szűrés járműtípus szerint">
+      <option value="all">Minden járműtípus</option>
+    </select>
+
+    <input type="search" id="route-search" placeholder="Keresés járatszám alapján" aria-label="Járatszám keresés" />
+  </div>
+
+  <div id="alerts-container" aria-live="polite" aria-atomic="true">Betöltés...</div>
+
+  <script>
+    const url = 'https://futar.bkk.hu/api/query/v1/ws/otp/api/where/alert-search?key=05f00c85-2177-4345-9103-e72960f3918d';
+
+    function formatEpoch(epoch) {
+      if (!epoch) return '';
+      const date = new Date(epoch * 1000);
+      return date.toLocaleString('hu-HU', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+    }
+
+    const vehicleTypeNames = {
+      'RAIL': 'Vonat',
+      'SUBWAY': 'Metró',
+      'SUBURBAN_RAILWAY': 'HÉV',
+      'TRAM': 'Villamos',
+      'BUS': 'Busz',
+      'COACH': 'Távolsági busz',
+      'TROLLEYBUS': 'Trolibusz',
+      'FERRY': 'Hajó',
+      'CABLE_CAR': 'Libegő'
+    };
+
+    let alertGroups = [];
+    let alertRefs = {};
+    let routes = {};
+    let allVehicleTypes = new Set();
+
+    let selectedGroupId = 'ACTIVE-ALERT';
+    let selectedVehicleType = 'all';
+    let routeSearchTerm = '';
+
+    function getVehicleTypeName(type) {
+      return vehicleTypeNames[type] ?? type;
+    }
+
+    function createRouteIcons(routeIds) {
+      if (!routeIds || routeIds.length === 0) return null;
+
+      const fragment = document.createDocumentFragment();
+      routeIds.forEach(routeId => {
+        const route = routes[routeId];
+        if (!route) return;
+
+        const icon = document.createElement('div');
+        icon.className = 'route-icon';
+        icon.textContent = route.shortName || '';
+        icon.style.backgroundColor = route.color ? ('#' + route.color) : '#666';
+        icon.style.color = route.textColor ? ('#' + route.textColor) : '#fff';
+        fragment.appendChild(icon);
+      });
+
+      return fragment;
+    }
+
+    function alertMatchesSearch(alert) {
+      if (!routeSearchTerm) return true;
+      if (!alert.routeIds) return false;
+
+      const searchLC = routeSearchTerm.toLowerCase();
+
+      return alert.routeIds.some(rid => {
+        const route = routes[rid];
+        if (!route) return false;
+        return (route.shortName || '').toLowerCase().includes(searchLC);
+      });
+    }
+
+    function renderAlerts() {
+      const container = document.getElementById('alerts-container');
+      container.innerHTML = '';
+
+      const group = alertGroups.find(g => g.id === selectedGroupId);
+      if (!group) {
+        container.textContent = 'Nincs adat a kiválasztott kategóriában.';
+        return;
+      }
+
+      const groupDiv = document.createElement('div');
+      groupDiv.className = 'category';
+
+      const groupTitle = document.createElement('h2');
+      groupTitle.textContent = selectedGroupId === 'ACTIVE-ALERT' ? 'Aktuális figyelmeztetések' : 'Jövőbeni figyelmeztetések';
+      groupDiv.appendChild(groupTitle);
+
+      const alertsGrid = document.createElement('div');
+      alertsGrid.className = 'alerts-grid';
+
+      let displayedAny = false;
+
+      group.alertIds.forEach(id => {
+        if (id.toLowerCase().includes('máv')) return;
+
+        const alert = alertRefs[id];
+        if (!alert) return;
+
+        const vehicleTypes = alert.vehicleRouteTypes || [];
+        if (selectedVehicleType !== 'all' && !vehicleTypes.includes(selectedVehicleType)) return;
+
+        if (!alertMatchesSearch(alert)) return;
+
+        const title = alert.header?.translations?.hu || "";
+        const desc = alert.description?.translations?.hu || "";
+        const start = formatEpoch(alert.start);
+        const end = formatEpoch(alert.end);
+        const modified = alert.modifiedTime ? formatEpoch(alert.modifiedTime) : null;
+        const link = alert.url?.translations?.hu || null;
+
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'alert';
+        alertDiv.tabIndex = 0;
+
+        // route icons above title
+        const iconsWrapper = document.createElement('div');
+        iconsWrapper.className = 'route-icons';
+        const icons = createRouteIcons(alert.routeIds);
+        if (icons) iconsWrapper.appendChild(icons);
+        alertDiv.appendChild(iconsWrapper);
+
+        if (link) {
+          alertDiv.addEventListener('click', () => {
+            window.open(link, '_blank');
+          });
+          alertDiv.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              window.open(link, '_blank');
+              e.preventDefault();
+            }
+          });
+        }
+
+        const h3 = document.createElement('h3');
+        h3.textContent = title;
+        alertDiv.appendChild(h3);
+
+        const timeValid = document.createElement('time');
+        timeValid.textContent = `Érvényes: ${start}${end ? ' – ' + end : '-től'}`;
+        alertDiv.appendChild(timeValid);
+
+        if (modified) {
+          const timeModified = document.createElement('time');
+          timeModified.className = 'modified';
+          timeModified.textContent = `(módosítva: ${modified})`;
+          alertDiv.appendChild(timeModified);
+        }
+
+        const descDiv = document.createElement('div');
+        descDiv.className = 'description';
+        descDiv.innerHTML = desc;
+        alertDiv.appendChild(descDiv);
+
+        alertsGrid.appendChild(alertDiv);
+        displayedAny = true;
+      });
+
+      if (!displayedAny) {
+        container.textContent = 'Nincs megjeleníthető infó.';
+        return;
+      }
+
+      groupDiv.appendChild(alertsGrid);
+      container.appendChild(groupDiv);
+    }
+
+    function fillVehicleFilter() {
+      const vehicleSelect = document.getElementById('vehicle-filter');
+      vehicleSelect.innerHTML = '<option value="all">Összes járműtípus</option>';
+
+      const vehicleTypesSorted = Array.from(allVehicleTypes).sort((a,b) => getVehicleTypeName(a).localeCompare(getVehicleTypeName(b)));
+
+      vehicleTypesSorted.forEach(type => {
+        const option = document.createElement('option');
+        option.value = type;
+        option.textContent = getVehicleTypeName(type);
+        vehicleSelect.appendChild(option);
+      });
+    }
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        alertRefs = data.data.references.alerts;
+        alertGroups = data.data.entry.alertGroups.filter(g => g.id === 'ACTIVE-ALERT' || g.id === 'FUTURE-ALERT');
+        routes = data.data.references.routes || {};
+
+        Object.values(alertRefs).forEach(alert => {
+          if (alert.vehicleRouteTypes && alert.vehicleRouteTypes.length) {
+            alert.vehicleRouteTypes.forEach(type => allVehicleTypes.add(type));
+          }
+        });
+
+        fillVehicleFilter();
+
+        renderAlerts();
+
+        document.getElementById('group-filter').addEventListener('change', e => {
+          selectedGroupId = e.target.value;
+          renderAlerts();
+        });
+
+        document.getElementById('vehicle-filter').addEventListener('change', e => {
+          selectedVehicleType = e.target.value;
+          renderAlerts();
+        });
+
+        document.getElementById('route-search').addEventListener('input', e => {
+          routeSearchTerm = e.target.value.trim();
+          renderAlerts();
+        });
+      })
+      .catch(err => {
+        const container = document.getElementById('alerts-container');
+        container.textContent = 'Hiba történt az adatok lekérésekor.';
+        console.error('Fetch error:', err);
+      });
+  </script>
+</body>
+</html>
