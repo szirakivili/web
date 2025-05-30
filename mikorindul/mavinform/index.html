@@ -98,36 +98,36 @@
     const feedUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://www.mavcsoport.hu/mavinform/rss.xml";
 
     function formatHungarianDate(pubDate) {
-  const utcDate = new Date(pubDate);
+      const utcDate = new Date(pubDate);
 
-  // Budapest időzónába konvertálás
-  const budapestDate = new Date(
-    utcDate.toLocaleString("en-US", { timeZone: "Europe/Budapest" })
-  );
+      // Budapest időzónába konvertálás
+      const budapestDate = new Date(
+        utcDate.toLocaleString("hu-HU", { timeZone: "Europe/Budapest" })
+      );
 
-  const today = new Date();
-  const todayBudapest = new Date(
-    today.toLocaleString("en-US", { timeZone: "Europe/Budapest" })
-  );
+      const today = new Date();
+      const todayBudapest = new Date(
+        today.toLocaleString("hu-HU", { timeZone: "Europe/Budapest" })
+      );
 
-  const todayDay = new Date(todayBudapest.getFullYear(), todayBudapest.getMonth(), todayBudapest.getDate());
-  const itemDay = new Date(budapestDate.getFullYear(), budapestDate.getMonth(), budapestDate.getDate());
+      const todayDay = new Date(todayBudapest.getFullYear(), todayBudapest.getMonth(), todayBudapest.getDate());
+      const itemDay = new Date(budapestDate.getFullYear(), budapestDate.getMonth(), budapestDate.getDate());
 
-  const diffDays = Math.floor((todayDay - itemDay) / (1000 * 60 * 60 * 24));
+      const diffDays = Math.floor((todayDay - itemDay) / (1000 * 60 * 60 * 24));
+      const hours = budapestDate.getHours() +2;
+      const hourss = hours.toString().padStart(2, '0');
+      const minutes = budapestDate.getMinutes().toString().padStart(2, '0');
+      const timePart = `${hourss}:${minutes}`;
 
-  const hours = budapestDate.getHours().toString().padStart(2, '0');
-  const minutes = budapestDate.getMinutes().toString().padStart(2, '0');
-  const timePart = `${hours}:${minutes}`;
-
-  if (diffDays === 0) {
-    return `ma ${timePart}`;
-  } else if (diffDays === 1) {
-    return `tegnap ${timePart}`;
-  } else {
-    const options = { month: "long", day: "numeric" };
-    return `${budapestDate.toLocaleDateString("hu-HU", options)} ${timePart}`;
-  }
-}
+      if (diffDays === 0) {
+        return `ma ${timePart}`;
+      } else if (diffDays === 1) {
+        return `tegnap ${timePart}`;
+      } else {
+        const options = { month: "long", day: "numeric" };
+        return `${budapestDate.toLocaleDateString("hu-HU", options)} ${timePart}`;
+      }
+    }
 
     fetch(feedUrl)
       .then(response => response.json())
