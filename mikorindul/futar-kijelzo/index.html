@@ -233,7 +233,7 @@
                 }
 
                 if (!stopTimes || stopTimes.length === 0) {
-                    departuresList.innerHTML = `<div style="text-align: center; color: white; font-size: 1.5rem; margin-top: 20px;">Nem indul járat a következő 3 órában.</div>`;
+                    departuresList.innerHTML = `<div><div class="departure-row center-align">Nem indul járat a következő 3 órában.</div></div>`;
                     return;
                 }
 
@@ -246,7 +246,7 @@
                     .sort((a, b) => a.actualDeparture - b.actualDeparture);
 
                 if (sorted.length === 0) {
-                    departuresList.innerHTML = `<div style="text-align: center; color: white; font-size: 1.5rem; margin-top: 20px;">Nem indul járat a megállóból.</div>`;
+                    departuresList.innerHTML = `<div><div class="departure-row center-align">Nem indul járat a megállóból</div></div>`;
                     return;
                 }
 
@@ -276,7 +276,7 @@
                 departuresList.innerHTML = html;
 
             } catch (err) {
-                departuresList.innerHTML = `<div style="text-align: center; color: red; font-size: 1.5rem; margin-top: 20px;">Hiba történt az adatok lekérésekor.</div>`;
+                departuresList.innerHTML = `<div><div class="departure-row center-align">Hiba az adatok lekérésekor.</div></div>`;
                 console.error("Hiba:", err);
             }
         }
