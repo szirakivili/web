@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUTÁR kijelző</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* led_counter-7.ttf betűtípus beágyazása */
+        @font-face {
+            font-family: 'LED Counter 7';
+            src: url('led_counter-7.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif; /* Alapértelmezett betűtípus */
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9; /* Alap háttér, de a kijelző fekete lesz */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            color: white; /* Alapértelmezett szövegszín */
+        }
+
+        #displayContainer {
+            background-color: #0d0d0d; /* Sötét háttér a kijelzőnek */
+            width: 90%;
+            max-width: 800px;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            display: flex; /* Always flex for layout */
+            flex-direction: column;
+            gap: 15px;
+            /* A kijelzőn belüli alap betűtípus */
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: 1.1rem; /* Kicsit kisebb a fejléc */
+            color: #ccc; /* Halványabb szöveg a fejlécnek */
+            padding-bottom: 10px;
+            border-bottom: 2px solid #333;
+            gap: 10px; /* Hozzáadva a fejlécoszlopok közötti távolságért */
+        }
+
+        .header-column {
+            text-align: left;
+            /* Fejléc oszlopok szélességének igazítása a tartalmi oszlopokhoz */
+        }
+
+        .header-column.left-align {
+            flex: 1;
+            max-width: 10ch;
+        }
+
+        .header-column.center-align {
+            flex: 2;
+        }
+
+        .header-column.right-align {
+            flex: 3;
+            text-align: right;
+        }
+
+
+        .departure-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 2rem; /* Nagyobb méret a járatoknak, de egységesebb a kijelzőn */
+            line-height: 1.2;
+            font-family: 'LED Counter 7', monospace; /* LED betűtípus csak itt */
+            color: orange; /* Minden szöveg narancssárga a kijelzőn */
+            gap: 10px; /* Oszlopok közötti távolság */
+        }
+
+        /* Járat oszlop - max 5 karakter szélesség */
+        .departure-column.route-number {
+            flex: 0 0 5ch; /* Fix szélesség 5 karakterre */
+            max-width: 5ch; /* Biztosítja, hogy ne nyúljon tovább */
+            text-align: left; /* Igazítás balra */
+            overflow: hidden; /* Tartalom elrejtése, ha túl hosszú */
+            white-space: nowrap; /* Megakadályozza a sortörést */
+            text-overflow: ellipsis; /* Pontokkal jelzi a levágott szöveget */
+        }
+
+        /* Irány oszlop - jobban kihasznált szélesség, pontokkal levágva */
+        .departure-column.center-align {
+            flex: 2; /* Hosszabb irányoknak több hely */
+            text-align: left; /* Igazítás balra */
+            overflow: hidden; /* Tartalom elrejtése, ha túl hosszú */
+            white-space: nowrap; /* Megakadályozza a sortörést */
+            text-overflow: ellipsis; /* Pontokkal jelzi a levágott szöveget */
+        }
+
+        /* Indulás (perc) oszlop */
+        .departure-column.right-align {
+            flex: 1; /* Alapértelmezett flex érték */
+            text-align: right; /* Igazítás jobbra */
+            overflow: hidden; /* Elrejtés, ha túl hosszú */
+            white-space: nowrap; /* Megakadályozza a sortörést */
+            text-overflow: ellipsis; /* Pontokkal jelzi a levágott szöveget */
+        }
+
+        .stop-name-footer {
+            font-size: 1.4rem; /* Kicsit kisebb, mint a járatok, de nagyobb, mint a fejléc */
+            text-align: left;
+            color: #ccc; /* Halványabb szöveg */
+            margin-top: 10px;
+            padding-top: 5px;
+            border-top: 2px solid #333;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        /* Rejtett elemek, amik nem szerepelnek a kijelzőn */
+        #stopHeader, #app, #helpIcon, #helpPopup, #timetableModal, .search-container {
+            display: none !important;
+        }
+
+        /* Blinking effect for the entire row */
+        @keyframes blink-row {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .blink-animation {
+            animation: blink-row 1.5s infinite;
+        }
+
+
+        /* Mobil optimalizálás */
+        @media (max-width: 600px) {
+            #displayContainer {
+                padding: 15px 20px;
+                font-size: 1rem;
+                max-width: 80%;
+            }
+
+            .header-row {
+                font-size: 1rem;
+                gap: 5px;
+            }
+
+            .departure-row {
+                font-size: 1rem;
+                gap: 5px;
+            }
+
+            .stop-name-footer {
+                font-size: 1rem;
+            }
+            .departure-column.route-number {
+                flex: 0 0 5ch;
+                max-width: 5ch;
+            }
+        }
+    </style>
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+    <div id="displayContainer">
+        <div class="header-row">
+            <div class="header-column left-align">Járat</div>
+            <div class="header-column center-align">Irány</div>
+            <div class="header-column right-align">Indulás <span style="font-size: 0.8rem;">(perc)</span></div>
+        </div>
+        <div id="departuresList">
+            </div>
+        <div id="stopNameFooter" class="stop-name-footer"></div>
+    </div>
+
+    <div id="app"></div>
+    <div id="stopHeader"></div>
+    <div id="helpIcon">?</div>
+    <div id="helpPopup"></div>
+    <div id="timetableModal" class="modal"></div>
+
+
+    <script>
+        const apiUrl = "https://futar.bkk.hu/api/query/v1/ws/otp/api/where/";
+        const appVersion = "1.1";
+        const apiVersion = "4";
+        const apiKey = "05f00c85-2177-4345-9103-e72960f3918d";
+
+        const params = new URLSearchParams(window.location.search);
+        const stopId = params.get("stop");
+        const rowNum = parseInt(params.get("r")) || 5;
+
+        async function fetchDepartures(stopId) {
+            const departuresList = document.getElementById("departuresList");
+            const stopNameFooter = document.getElementById("stopNameFooter");
+            departuresList.innerHTML = `<div style="text-align: center; color: white; font-size: 1.5rem; margin-top: 20px;">Adatok betöltése...</div>`;
+            stopNameFooter.textContent = "";
+
+            try {
+                const stopUrl = `${apiUrl}arrivals-and-departures-for-stop?stopId=${stopId}&minutesBefore=0&minutesAfter=180&onlyDepartures=false&includeReferences=true&minResult=1&appVersion=${appVersion}&version=${apiVersion}&key=${apiKey}`;
+                const response = await fetch(stopUrl);
+                const data = await response.json();
+                const stopTimes = data.data.entry.stopTimes;
+                const references = data.data.references;
+
+                const stopData = references.stops?.[stopId];
+                if (stopData) {
+                    document.title = stopData.name + " – FUTÁR";
+                    stopNameFooter.textContent = stopData.name; // Megálló neve a láblécben
+                }
+
+                if (!stopTimes || stopTimes.length === 0) {
+                    departuresList.innerHTML = `<div style="text-align: center; color: white; font-size: 1.5rem; margin-top: 20px;">Nem indul járat a következő 3 órában.</div>`;
+                    return;
+                }
+
+                const sorted = stopTimes
+                    .map(e => ({
+                        ...e,
+                        actualDeparture: e.predictedDepartureTime || e.departureTime
+                    }))
+                    .filter(e => e.actualDeparture * 1000 > Date.now())
+                    .sort((a, b) => a.actualDeparture - b.actualDeparture);
+
+                if (sorted.length === 0) {
+                    departuresList.innerHTML = `<div style="text-align: center; color: white; font-size: 1.5rem; margin-top: 20px;">Nem indul járat a megállóból.</div>`;
+                    return;
+                }
+
+                let html = "";
+                sorted.slice(0, rowNum).forEach(next => {
+                    const now = Date.now();
+                    const actual = next.predictedDepartureTime ? next.predictedDepartureTime * 1000 : next.departureTime * 1000;
+
+                    const remainingSec = (Math.floor(actual - now) / 1000)
+                    const remainingMin = Math.max(0, Math.floor((actual - now + 30000) / 60000)); // kerekítve, minimum 0
+
+                    const route = references.trips?.[next.tripId]?.routeId;
+                    const routeData = references.routes?.[route];
+                    const shortName = routeData?.shortName || "";
+
+                    const blinkClass = remainingMin === 0 ? ' blink-animation' : '';
+                    const displayMinutes = remainingMin === 0 ? '' : `${remainingMin}'`;
+
+                    html += `
+                        <div class="departure-row${blinkClass}">
+                            <div class="departure-column route-number">${shortName}</div>
+                            <div class="departure-column center-align">${next.stopHeadsign || ""}</div>
+                            <div class="departure-column right-align">${displayMinutes}</div>
+                        </div>
+                    `;
+                });
+                departuresList.innerHTML = html;
+
+            } catch (err) {
+                departuresList.innerHTML = `<div style="text-align: center; color: red; font-size: 1.5rem; margin-top: 20px;">Hiba történt az adatok lekérésekor.</div>`;
+                console.error("Hiba:", err);
+            }
+        }
+
+        if (!stopId) {
+            document.getElementById("displayContainer").style.display = "none";
+            window.location.href = "..";
+        } else {
+            document.getElementById("displayContainer").style.display = "flex";
+            fetchDepartures(stopId);
+            setInterval(() => fetchDepartures(stopId), 30000);
+        }
+
+    </script>
+</body>
+</html>
