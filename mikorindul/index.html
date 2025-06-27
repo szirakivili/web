@@ -132,16 +132,11 @@
             max-width: 500px;
             width: 100%;
             box-sizing: border-box;
-            margin-bottom: 30px;
+            margin: 0 auto;
         }
 
         .search-container h1 {
             font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        .search-container h2 {
-            font-size: 1.2rem;
             margin-bottom: 1rem;
             color: #333;
         }
@@ -206,25 +201,6 @@
 
         .scrollable-box a:hover {
             background-color: #f1f1f1;
-        }
-
-        #displayRowsContainer {
-            /* Initially hidden */
-            display: none;
-            margin-top: 0.5rem;
-            font-size: 1rem;
-            text-align: center;
-        }
-
-        #displayRowsContainer label {
-            margin-right: 5px; /* Space between label and input */
-        }
-
-        #numRowsInput {
-            width: 60px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
         }
 
         #helpIcon {
@@ -378,9 +354,6 @@
             .search-container h1 {
                 font-size: 1.6rem;
             }
-            .search-container h2 {
-                font-size: 1.1rem;
-            }
 
             #searchResults a {
                 font-size: 1.1rem;
@@ -394,6 +367,7 @@
             .search-container {
                 padding: 1.5rem 1rem;
                 width: 100%;
+                margin: 0 auto;
             }
 
             .time-remaining {
@@ -811,67 +785,33 @@
         }
 
         function renderSearch() {
-            const displayContainer = document.getElementById("displayContainer");
-            if (displayContainer) {
-                displayContainer.style.display = "none"; // Hide the display container if in search mode
-            }
-
-            const appDiv = document.getElementById("app");
-            if (appDiv) {
-                appDiv.style.display = "block"; // Make the app div visible for search
-                appDiv.innerHTML = `
-                    <div class="search-container">
-                        <h1>Keress egy megállót!</h1>
-                        <input type="text" id="searchInput" placeholder="Megálló neve...">
-                        <div style="margin-top: 1rem; font-size: 1rem;">
-                            <label><input type="radio" name="stopType" value="stop-area" checked> Megállócsoport</label>
-                            <label style="margin-left: 1rem;"><input type="radio" name="stopType" value="stop"> Konkrét megálló</label>
-                        </div>
-                        <br>
-                        <button id="nearbySearchBtn">A közelben</button>
-                        <button id="searchBtn">Keresés</button>
-                        <div id="searchResults" class="scrollable-box"></div>
-                        <div style="margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.7rem;">
-                            <span>Adatforrás:</span>
-                            <a href="https://opendata.bkk.hu/home" target="_blank"><img src="BKK_logo.png" alt="BKK logo" style="height: 20px; object-fit: contain;"></a>
-                        </div>
+            app.innerHTML = `
+                <div class="search-container">
+                    <h1>Keress egy megállót!</h1>
+                    <input type="text" id="searchInput" placeholder="Megálló neve...">
+                    <div style="margin-top: 1rem; font-size: 1rem;">
+                        <label><input type="radio" name="stopType" value="stop-area" checked> Megállócsoport</label>
+                        <label style="margin-left: 1rem;"><input type="radio" name="stopType" value="stop"> Konkrét megálló</label>
                     </div>
-
-                    <div class="search-container">
-                        <h2>FUTÁR kijelző</h2>
-                        <div>
-                            <label style="margin: 0;">
-                                <input type="checkbox" id="displayModeToggle"> Bekapcsol
-                            </label>
-                        </div>
-                        <div id="displayRowsContainer" style="align-items: center;">
-                            <label for="numRowsInput">Sorok száma:</label>
-                            <input type="number" id="numRowsInput" value="5" min="1" max="30" style="width: 60px; padding: 5px; margin-left: 0.5rem;">
-                        </div>
+                    <br>
+                    <button id="nearbySearchBtn">A közelben</button>
+                    <button id="searchBtn">Keresés</button>
+                    <div id="searchResults" class="scrollable-box"></div>
+                    <div style="margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.7rem;">
+                        <span>Adatforrás:</span>
+                        <a href="https://opendata.bkk.hu/home" target="_blank"><img src="BKK_logo.png" alt="BKK logo" style="height: 20px; object-fit: contain;"></a>
                     </div>
-                `;
-            }
+                </div>
+            `;
 
             const searchInput = document.getElementById("searchInput");
             const searchButton = document.getElementById("searchBtn");
             const nearbyButton = document.getElementById("nearbySearchBtn");
             const resultsContainer = document.getElementById("searchResults");
-            const displayModeToggle = document.getElementById("displayModeToggle");
-            const displayRowsContainer = document.getElementById("displayRowsContainer");
-            const numRowsInput = document.getElementById("numRowsInput");
-
-
-            displayModeToggle.addEventListener("change", () => {
-                if (displayModeToggle.checked) {
-                    displayRowsContainer.style.display = "block";
-                } else {
-                    displayRowsContainer.style.display = "none";
-                }
-            });
 
             async function performSearch() {
                 const input = searchInput.value.trim();
-                const query = input.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-"); // normalizeQuery
+                const query = normalizeQuery(input);
                 const selectedType = document.querySelector('input[name="stopType"]:checked').value;
 
                 const searchUrl = `${apiUrl}search?query=${query}&minResult=1&appVersion=${appVersion}&includeReferences=true&version=${apiVersion}&key=${apiKey}`;
@@ -898,16 +838,9 @@
                         return;
                     }
 
-                    const isDisplayMode = displayModeToggle.checked;
-                    const numRows = isDisplayMode ? (numRowsInput.value || 3) : 3;
-
                     const html = filteredStops.map(stop => {
                         const typeEmoji = getTypeEmoji(stop.type);
-                        let linkHref = `?stop=${encodeURIComponent(stop.id)}`;
-                        if (isDisplayMode) {
-                            linkHref = `./futar-kijelzo/?stop=${encodeURIComponent(stop.id)}&r=${numRows}`;
-                        }
-                        return `<div><a href="${linkHref}">${typeEmoji} ${stop.name}</a></div>`;
+                        return `<div><a href="?stop=${encodeURIComponent(stop.id)}">${typeEmoji} ${stop.name}</a></div>`;
                     }).join("");
 
                     resultsContainer.innerHTML = html;
@@ -941,19 +874,11 @@
                             return;
                         }
 
-                        const isDisplayMode = displayModeToggle.checked;
-                        const numRows = isDisplayMode ? (numRowsInput.value || 3) : 3;
-
                         const html = stops.map(stop => {
                             const typeEmoji = getTypeEmoji(stop.type);
                             if ((selectedType === "stop-area" && stop.locationSubType === "stop-area") || (selectedType === "stop" && !stop.locationSubType)) {
-                                let linkHref = `?stop=${encodeURIComponent(stop.id)}`;
-                                if (isDisplayMode) {
-                                    linkHref += `&display=true&rows=${numRows}`;
-                                }
-                                return `<div><a href="${linkHref}">${typeEmoji} ${stop.name}</a></div>`;
+                                return `<div><a href="?stop=${encodeURIComponent(stop.id)}">${typeEmoji} ${stop.name}</a></div>`;
                             }
-                            return '';
                         }).join("");
 
                         resultsContainer.innerHTML = html;
