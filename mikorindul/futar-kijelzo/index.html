@@ -33,6 +33,7 @@
 
         #displayContainer {
             background-color: #0d0d0d; /* Sötét háttér a kijelzőnek */
+            color: white;
             width: 90%;
             max-width: 800px;
             padding: 20px 30px;
@@ -131,11 +132,6 @@
             margin-top: 1rem;
         }
 
-        /* Rejtett elemek, amik nem szerepelnek a kijelzőn */
-        #stopHeader, #app, #helpIcon, #helpPopup, #timetableModal, .search-container {
-            display: none !important;
-        }
-
         /* Blinking effect for the entire row */
         @keyframes blink-row {
             0% { opacity: 1; }
@@ -145,6 +141,121 @@
 
         .blink-animation {
             animation: blink-row 1.5s infinite;
+        }
+
+        input[type="text"] {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        button {
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+        }
+
+        #searchResults > div {
+            margin: 0.5rem;
+        }
+
+        #searchResults a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #007bff;
+        }
+
+        .search-container {
+            background: black;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .search-container h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: orange;
+            font-family: 'LED Counter 7';
+        }
+
+        .search-container input[type="text"] {
+            font-size: 1.2rem;
+            padding: 0.75rem 1rem;
+            width: 100%;
+            max-width: 100%;
+            border: 1px solid black;
+            background: rgb(65, 65, 65);
+            color: white;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        .search-container input[type="number"] {
+            font-size: 1rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid black;
+            background: rgb(65, 65, 65);
+            color: white;
+            border-radius: 8px;
+        }
+
+        .search-container button {
+            font-size: 1rem;
+            padding: 0.6rem 1.2rem;
+            margin-top: 1rem;
+            border: none;
+            background-color: #00438a;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .search-container button:hover {
+            background-color: #0056b3;
+        }
+
+        #nearbySearchBtn {
+            margin: 1rem;
+            background-color: #00550d;
+        }
+
+        #nearbySearchBtn:hover {
+            background-color: #006c10;
+        }
+
+        .scrollable-box {
+            margin-top: 2rem;
+            max-height: 250px;
+            overflow-y: auto;
+            border-top: 1px solid #ddd;
+            padding-top: 1rem;
+            text-align: left;
+            color: #80bdff;
+        }
+
+        .scrollable-box div {
+            margin: 0.5rem 0;
+        }
+
+        .scrollable-box a {
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: #80bdff;
+            display: block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .scrollable-box a:hover {
+            background-color: #3b3b3b;
         }
 
 
@@ -173,6 +284,39 @@
                 flex: 0 0 5ch;
                 max-width: 5ch;
             }
+
+            input[type="text"],
+            .search-container input[type="text"] {
+                font-size: 1.1rem;
+                padding: 0.6rem 0.8rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .search-container button {
+                width: 100%;
+                box-sizing: border-box;
+                max-width: fit-content;
+            }
+
+            .search-container h1 {
+                font-size: 1.6rem;
+            }
+
+            #searchResults a {
+                font-size: 1.1rem;
+            }
+
+            .scrollable-box a {
+                font-size: 1.05rem;
+                padding: 0.4rem 0.6rem;
+            }
+
+            .search-container {
+                padding: 1.5rem 1rem;
+                width: 100%;
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
@@ -198,20 +342,43 @@
 
     <div id="app"></div>
     <div id="stopHeader"></div>
-    <div id="helpIcon">?</div>
-    <div id="helpPopup"></div>
     <div id="timetableModal" class="modal"></div>
 
 
     <script>
         const apiUrl = "https://futar.bkk.hu/api/query/v1/ws/otp/api/where/";
-        const appVersion = "1.1";
+        const appVersion = "2.1";
         const apiVersion = "4";
         const apiKey = "05f00c85-2177-4345-9103-e72960f3918d";
 
         const params = new URLSearchParams(window.location.search);
         const stopId = params.get("stop");
         const rowNum = parseInt(params.get("r")) || 5;
+
+        function getTypeEmoji(type) {
+            switch (type) {
+                case "RAIL":
+                    return "🚂"; // Vonat
+                case "SUBWAY":
+                    return "🚇"; // Metró
+                case "SUBURBAN_RAILWAY":
+                    return "🚈"; // HÉV
+                case "TRAM":
+                    return "🚋"; // Villamos
+                case "BUS":
+                    return "🚌"; // Busz
+                case "COACH":
+                    return "🚌"; // Busz
+                case "TROLLEYBUS":
+                    return "🚎"; // Troli
+                case "FERRY":
+                    return "🛳️"; // Hajó
+                case "CABLE_CAR":
+                    return "🚠"; // Libegő
+                default:
+                    return "🚏"; // Általános
+            }
+        }
 
         async function fetchDepartures(stopId) {
             const departuresList = document.getElementById("departuresList");
@@ -281,9 +448,148 @@
             }
         }
 
+        function renderSearch() {
+            const displayContainer = document.getElementById("displayContainer");
+            if (displayContainer) {
+                displayContainer.style.display = "none"; // Hide the display container if in search mode
+            }
+
+            const appDiv = document.getElementById("app");
+            if (appDiv) {
+                appDiv.style.display = "block"; // Make the app div visible for search
+                appDiv.innerHTML = `
+                    <div class="search-container">
+                        <h1>Keress egy megállót!</h1>
+                        <input type="text" id="searchInput" placeholder="Megálló neve...">
+                        <div style="margin-top: 1rem; font-size: 1rem;">
+                            <label><input type="radio" name="stopType" value="stop-area" checked> Megállócsoport</label>
+                            <label style="margin-left: 1rem;"><input type="radio" name="stopType" value="stop"> Konkrét megálló</label>
+                            <br><br>
+                            <label for="numRowsInput">Sorok száma:</label>
+                            <input type="number" id="numRowsInput" value="5" min="1" max="30" style="width: 60px; padding: 5px; margin-left: 0.5rem;">
+                        </div>
+                        <br>
+                        <button id="nearbySearchBtn">A közelben</button>
+                        <button id="searchBtn">Keresés</button>
+                        <div id="searchResults" class="scrollable-box"></div>
+                        <div style="margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.7rem;">
+                            <span>Adatforrás:</span>
+                            <a href="https://opendata.bkk.hu/home" target="_blank"><img src="../BKK_logo.png" alt="BKK logo" style="height: 20px; object-fit: contain;"></a>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const searchInput = document.getElementById("searchInput");
+            const searchButton = document.getElementById("searchBtn");
+            const nearbyButton = document.getElementById("nearbySearchBtn");
+            const resultsContainer = document.getElementById("searchResults");
+            const displayRowsContainer = document.getElementById("displayRowsContainer");
+            const numRowsInput = document.getElementById("numRowsInput");
+
+            async function performSearch() {
+                const input = searchInput.value.trim();
+                const query = input.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-"); // normalizeQuery
+                const selectedType = document.querySelector('input[name="stopType"]:checked').value;
+
+                const searchUrl = `${apiUrl}search?query=${query}&minResult=1&appVersion=${appVersion}&includeReferences=true&version=${apiVersion}&key=${apiKey}`;
+                resultsContainer.innerHTML = "Keresés...";
+
+                try {
+                    const res = await fetch(searchUrl);
+                    const json = await res.json();
+                    const stops = json.data.references.stops;
+                    const stopIds = json.data.entry.stopIds || [];
+
+                    const filteredStops = stopIds
+                        .map(id => stops[id])
+                        .filter(stop => {
+                            if (selectedType === "stop-area") {
+                                return stop.locationSubType === "stop-area";
+                            } else {
+                                return stop.locationSubType !== "stop-area";
+                            }
+                        });
+
+                    if (filteredStops.length === 0) {
+                        resultsContainer.innerHTML = "Nincs találat.";
+                        return;
+                    }
+
+                    const numRows = numRowsInput.value || 5;
+
+                    const html = filteredStops.map(stop => {
+                        const typeEmoji = getTypeEmoji(stop.type);
+                        let linkHref = `?stop=${encodeURIComponent(stop.id)}&r=${numRows}`;
+                        return `<div><a href="${linkHref}">${typeEmoji} ${stop.name}</a></div>`;
+                    }).join("");
+
+                    resultsContainer.innerHTML = html;
+                } catch (e) {
+                    resultsContainer.innerHTML = "Hiba történt a keresés során.";
+                    console.error(e);
+                }
+            }
+
+            async function performNearbySearch() {
+                if (!navigator.geolocation) {
+                    resultsContainer.innerHTML = "A böngésződ nem támogatja a helyzetmeghatározást.";
+                    return;
+                }
+                navigator.geolocation.getCurrentPosition(async function(position) {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+
+                    const selectedType = document.querySelector('input[name="stopType"]:checked').value;
+
+                    const searchUrl = `${apiUrl}stops-for-location?lon=${lon}&lat=${lat}&lonSpan=0.002634&latSpan=0.001796&radius=100&minResult=1&appVersion=${appVersion}&includeReferences=true&version=${apiVersion}&key=${apiKey}`;
+                    resultsContainer.innerHTML = "Keresés...";
+
+                    try {
+                        const res = await fetch(searchUrl);
+                        const json = await res.json();
+                        const stops = json.data.list;
+
+                        if (stops.length === 0) {
+                            resultsContainer.innerHTML = "Nincs találat a 100 m-es körzetben.";
+                            return;
+                        }
+
+                        const numRows = numRowsInput.value || 5;
+
+                        const html = stops.map(stop => {
+                            const typeEmoji = getTypeEmoji(stop.type);
+                            if ((selectedType === "stop-area" && stop.locationSubType === "stop-area") || (selectedType === "stop" && !stop.locationSubType)) {
+                                let linkHref = `?stop=${encodeURIComponent(stop.id)}&r=${numRows}`;
+                                return `<div><a href="${linkHref}">${typeEmoji} ${stop.name}</a></div>`;
+                            }
+                            return '';
+                        }).join("");
+
+                        resultsContainer.innerHTML = html;
+                    } catch (e) {
+                        resultsContainer.innerHTML = "Hiba történt a keresés során.";
+                        console.error(e);
+                    }
+                }, function(error) {
+                    resultsContainer.innerHTML = "Hiba a helymeghatározás során: " + error.message;
+                });
+            }
+
+            searchInput.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    performSearch();
+                }
+            });
+
+            searchButton.addEventListener("click", performSearch);
+            nearbyButton.addEventListener("click", performNearbySearch)
+        }
+
         if (!stopId) {
-            document.getElementById("displayContainer").style.display = "none";
-            window.location.href = "..";
+            renderSearch();
+            //document.getElementById("displayContainer").style.display = "none";
+            //window.location.href = "..";
         } else {
             document.getElementById("displayContainer").style.display = "flex";
             fetchDepartures(stopId);
