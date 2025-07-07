@@ -63,6 +63,13 @@
             color: blue;
         }
 
+        .update-alert
+        {
+            margin-top: 0.3rem;
+            font-size: 0.8rem;
+            color: red;
+        }
+
         .realtime-indicator {
             display: inline-block;
             width: 10px;
@@ -512,7 +519,7 @@
                 const scheduled = next.departureTime * 1000;
                 const actual = next.predictedDepartureTime ? next.predictedDepartureTime * 1000 : scheduled;
 
-                const remainingSec = (Math.floor(actual - now) / 1000)
+                const remainingSec = (Math.floor(actual - now) / 1000);
                 const remainingMin = Math.floor((actual - now + 30000) / 60000); // kerekítve
                 const departureDate = new Date(actual);
                 const timeStr = departureDate.toLocaleTimeString("hu-HU", {
@@ -603,6 +610,18 @@
                                         nextStop.textContent = `${nextStopName} előtt tart`;
                                         timeInfoEl.appendChild(nextStop);
                                     }
+                                }
+                            }
+
+                            if (vehicle?.lastUpdateTime) {
+                                const time = vehicle.lastUpdateTime * 1000;
+                                const lastUpdate = Math.floor((now - time) / 1000);
+                                if (lastUpdate > 60) {
+                                    const lastUpdateMin = Math.floor(lastUpdate / 60);
+                                    const updateLabel = document.createElement("div");
+                                    updateLabel.className = "update-alert";
+                                    updateLabel.textContent = `több, mint ${lastUpdateMin} perce nem frissült!`;
+                                    timeInfoEl.appendChild(updateLabel);
                                 }
                             }
                         } catch (tripErr) {
