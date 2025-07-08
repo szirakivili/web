@@ -747,7 +747,7 @@
                 }
 
                 if (data.data.entry.vehicle) {
-                    timetableVehicleInformation.innerText = `${data.data.entry.vehicle.licensePlate} • ${data.data.entry.vehicle.model}`;
+                    timetableVehicleInformation.innerText = `${data.data.entry.vehicle.licensePlate || ""} • ${data.data.entry.vehicle.model || ""}`;
                 }
 
                 if (!stopTimes || stopTimes.length === 0) {
