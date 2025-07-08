@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobókocka</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 550px;
+            max-width: 80%;
+        }
+
+        h1 {
+            color: rgb(38, 38, 38);
+            margin-bottom: 25px;
+        }
+
+        .dice-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        /* Dobókocka alap stílusa */
+        .dice {
+            width: 90px;
+            height: 90px;
+            background-color: #e0e0e0; /* Alapértelmezett háttérszín */
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            padding: 10px;
+            box-sizing: border-box;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.1s ease-out, background-color 0.3s ease; /* Színátmenet is */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dice.rolling {
+            animation: roll 0.2s infinite alternate;
+        }
+
+        @keyframes roll {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        /* Színes kockák stílusai */
+        .dice.colored-0 { background-color: #ffcccc; border-color: #cc0000; } /* Világos piros */
+        .dice.colored-1 { background-color: #ccffcc; border-color: #008000; } /* Világos zöld */
+        .dice.colored-2 { background-color: #ccccff; border-color: #0000cc; } /* Világos kék */
+        .dice.colored-3 { background-color: #ffffcc; border-color: #cc9900; } /* Világos sárga */
+        .dice.colored-4 { background-color: #ffccff; border-color: #800080; } /* Világos lila */
+        .dice.colored-5 { background-color: #ccffff; border-color: #008080; } /* Világos cián */
+        .dice.colored-6 { background-color: #e6ccff; border-color: #6600cc; } /* Világos indígo */
+        .dice.colored-7 { background-color: #ffedcc; border-color: #d46a00; } /* Világos narancs */
+        .dice.colored-8 { background-color: #cceeff; border-color: #0066cc; } /* Világos azúr */
+        .dice.colored-9 { background-color: #ffe6cc; border-color: #cc3300; } /* Világos terrakotta */
+
+
+        /* Pöttyök stílusa */
+        .dot {
+            width: 18px;
+            height: 18px;
+            background-color: #333; /* Pöttyök színe marad fekete */
+            border-radius: 50%;
+            place-self: center;
+            display: none;
+        }
+
+        /* Pöttyök rácspozíciói - FIX */
+        .dot.dot-1 { grid-area: 1 / 1; }
+        .dot.dot-2 { grid-area: 1 / 2; }
+        .dot.dot-3 { grid-area: 1 / 3; }
+        .dot.dot-4 { grid-area: 2 / 1; }
+        .dot.dot-5 { grid-area: 2 / 2; }
+        .dot.dot-6 { grid-area: 2 / 3; }
+        .dot.dot-7 { grid-area: 3 / 1; }
+        .dot.dot-8 { grid-area: 3 / 2; }
+        .dot.dot-9 { grid-area: 3 / 3; }
+
+
+        /* Pöttyök láthatósága a dobott érték alapján - FIX */
+        .dice[data-value="1"] .dot-5 { display: block; }
+        .dice[data-value="2"] .dot-1, .dice[data-value="2"] .dot-9 { display: block; }
+        .dice[data-value="3"] .dot-1, .dice[data-value="3"] .dot-5, .dice[data-value="3"] .dot-9 { display: block; }
+        .dice[data-value="4"] .dot-1, .dice[data-value="4"] .dot-3, .dice[data-value="4"] .dot-7, .dice[data-value="4"] .dot-9 { display: block; }
+        .dice[data-value="5"] .dot-1, .dice[data-value="5"] .dot-3, .dice[data-value="5"] .dot-5, .dice[data-value="5"] .dot-7, .dice[data-value="5"] .dot-9 { display: block; }
+        .dice[data-value="6"] .dot-1, .dice[data-value="6"] .dot-3, .dice[data-value="6"] .dot-4, .dice[data-value="6"] .dot-6, .dice[data-value="6"] .dot-7, .dice[data-value="6"] .dot-9 { display: block; }
+
+
+        .setting-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .setting-form label {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #555;
+            display: flex; /* Flexbox a checkbox és szöveg igazításához */
+            align-items: center;
+            gap: 10px;
+        }
+
+        .setting-form input[type="number"] {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 100px;
+            text-align: center;
+            margin-bottom: 15px; /* Kicsit feljebb tolva a checkbox miatt */
+            -moz-appearance: textfield;
+        }
+
+        .setting-form input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+            margin-top: 10px; /* Eltartás a checkbox-tól */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .total-score {
+            font-size: 1em;
+            font-weight: bold;
+            color: rgb(38, 38, 38);
+            margin-top: 20px;
+        }
+
+        @media (max-width: 1000px) {
+            .dice {
+                width: 70px;
+                height: 70px;
+                padding: 7px;
+            }
+            .dot {
+                width: 14px;
+                height: 14px;
+            }
+            .container {
+                padding: 20px;
+            }
+            button {
+                padding: 12px 25px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="settingScreen">
+        <h1>Dobókocka</h1>
+        <form class="setting-form" onsubmit="setDiceCount(event)">
+            <label for="numDice">Hány kockával szeretnél dobni?</label>
+            <input type="number" id="numDice" name="n" min="1" max="10" value="1" required>
+
+            <label for="coloredDice">
+                <input type="checkbox" id="coloredDice" name="d" value="true">
+                Különböző kockák
+            </label>
+
+            <button type="submit">Start!</button>
+        </form>
+    </div>
+
+    <div class="container" id="diceScreen" style="display: none;">
+        <div class="dice-container" id="diceContainer">
+            </div>
+        <div class="total-score" id="totalScore"></div>
+        <button onclick="rollDice()">Dobás!</button>
+    </div>
+
+    <script>
+        let currentNumDice = 0;
+        let areDiceColored = false; // Új változó a színes mód tárolására
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const nParam = urlParams.get('n');
+            const dParam = urlParams.get('d'); // Olvassuk be a 'd' paramétert is
+
+            // Állítsuk be a 'd' paraméter értékét
+            if (dParam === 'true') {
+                areDiceColored = true;
+                const coloredDiceCheckbox = document.getElementById('coloredDice');
+                if (coloredDiceCheckbox) {
+                    coloredDiceCheckbox.checked = true; // Jelöljük be a checkboxot a beállító képernyőn
+                }
+            }
+
+            if (nParam) {
+                const numDice = parseInt(nParam, 10);
+                if (!isNaN(numDice) && numDice >= 1 && numDice <= 10) {
+                    currentNumDice = numDice;
+                    showDiceScreen(numDice, areDiceColored); // Passzoljuk tovább a színes módot
+                } else {
+                    showSettingScreen();
+                }
+            } else {
+                showSettingScreen();
+            }
+        });
+
+        function showSettingScreen() {
+            document.getElementById('settingScreen').style.display = 'block';
+            document.getElementById('diceScreen').style.display = 'none';
+        }
+
+        function showDiceScreen(numDice, colored) {
+            document.getElementById('settingScreen').style.display = 'none';
+            document.getElementById('diceScreen').style.display = 'block';
+            createDiceElements(numDice, colored); // A createDiceElements is kapja meg
+            rollDice();
+        }
+
+        function setDiceCount(event) {
+            event.preventDefault();
+            const numDiceInput = document.getElementById('numDice');
+            const coloredDiceCheckbox = document.getElementById('coloredDice');
+
+            const numDice = parseInt(numDiceInput.value, 10);
+            const colored = coloredDiceCheckbox.checked; // Lekérdezzük a checkbox állapotát
+
+            if (!isNaN(numDice) && numDice >= 1 && numDice <= 10) {
+                let url = `?n=${numDice}`;
+                if (colored) {
+                    url += '&d=true'; // Hozzáadjuk a 'd=true' paramétert, ha be van jelölve
+                }
+                window.location.href = url;
+            } else {
+                alert('Kérlek, adj meg egy érvényes számot 1 és 10 között!');
+            }
+        }
+
+        function createDiceElements(numDice, colored) {
+            const diceContainer = document.getElementById('diceContainer');
+            diceContainer.innerHTML = '';
+            for (let i = 0; i < numDice; i++) {
+                const diceElement = document.createElement('div');
+                diceElement.classList.add('dice');
+
+                if (colored) {
+                    diceElement.classList.add(`colored-${i}`); // Hozzáadjuk a színosztályt
+                }
+
+                for (let j = 1; j <= 9; j++) {
+                    const dotElement = document.createElement('div');
+                    dotElement.classList.add('dot', `dot-${j}`);
+                    diceElement.appendChild(dotElement);
+                }
+                diceContainer.appendChild(diceElement);
+            }
+        }
+
+        function rollDice() {
+            const diceElements = document.querySelectorAll('.dice');
+            let totalScore = 0;
+
+            diceElements.forEach(dice => {
+                dice.classList.add('rolling');
+
+                const randomNumber = Math.floor(Math.random() * 6) + 1;
+
+                setTimeout(() => {
+                    dice.setAttribute('data-value', randomNumber);
+                    totalScore += randomNumber;
+                    dice.classList.remove('rolling');
+                }, 200);
+            });
+
+            const totalScoreDiv = document.getElementById('totalScore');
+            if (currentNumDice > 1) {
+                totalScoreDiv.style.display = 'block';
+                setTimeout(() => {
+                    totalScoreDiv.textContent = `Összesen: ${totalScore}`;
+                }, 250);
+            } else {
+                totalScoreDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
