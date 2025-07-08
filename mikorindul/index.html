@@ -70,6 +70,12 @@
             color: red;
         }
 
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
         .realtime-indicator {
             display: inline-block;
             width: 10px;
@@ -313,6 +319,15 @@
           padding: 0;
         }
 
+        .traffic-disruption-notification {
+            background-color: #dc3545; /* Piros háttér */
+            color: white; /* Fehér szöveg */
+            padding: 5px;
+            margin-bottom: 10px; /* Hagyjunk egy kis helyet alatta */
+            border-radius: 5px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
 
         /* Mobil optimalizálás */
         @media (max-width: 600px) {
@@ -394,6 +409,7 @@
         <span style="color: #28a745;">12:34</span> - pontos<br>
         <span style="color: #dc3545;">12:37 (+3')</span> - késik<br>
         <span style="color: #dc3545;">12:33 (-1')</span> - előbb indul<br>
+        <span style="color: black;">⚠️ - rendkívüli változás</span><br>
         🚏 - megállócsoport<br>
         🚌🚎🚋🚇🚂🚈 - megálló típusa: busz/troli/villamos/metró/vasút/HÉV
     </div>
@@ -576,6 +592,9 @@
                             <span style="color: black; font-size: 1rem;">\u25B6</span>
                             <span style="color: black; font-size: 1rem;">${next.stopHeadsign || ""}</span>
                         `;
+                        if (next.alertIds && next.alertIds.length > 0) {
+                            routeInfo.innerHTML += `<span style="font-size: 1rem;">⚠️</span>`;
+                        }
                         timeInfoEl.appendChild(routeInfo);
 
                         // Járat információ lekérdezés
@@ -661,6 +680,7 @@
                     const route = references.trips?.[trip.tripId]?.routeId;
                     const routeData = references.routes?.[route];
                     const shortName = routeData?.shortName || "";
+                    const alert = (trip.alertIds && trip.alertIds.length > 0) ? ` ⚠️` : ``;
                     const routeColor = `#${routeData?.color || "333"}`;
                     const textColor = `#${routeData?.textColor || "fff"}`;
 
@@ -676,13 +696,12 @@
                         ${isRealtime ? '<span class="realtime-indicator" style="width: 8px; height: 8px;"></span>' : '<span style="width: 8px; height: 8px;"></span>'}
                         <span style="flex-shrink: 0; background-color: ${routeColor}; color: ${textColor}; padding: 2px 4px; min-width: 20px; text-align: center; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">${shortName}</span>
                         <span style="flex-shrink: 0; font-size: 0.8rem;">\u25B6</span>
-                        <span style="flex-grow: 1; font-size: 0.8rem;">${trip.stopHeadsign || ""}</span>
+                        <span style="flex-grow: 1; font-size: 0.8rem;">${trip.stopHeadsign || ""}${alert}</span>
                         <span style="text-align: right; font-size: 0.8rem; ${isDelayed ? 'color: #dc3545;' : (isRealtime ? 'color: #28a745;' : '')}">
                             ${remainingMin < 30 ? (remainingSec < 60 ? `<1'` : `${remainingMin}'`) : `${timeStr}`}
                             ${isDelayed ? (delayMin > 0 ? `(+${delayMin}')` : `(${delayMin}')`) : ''}
                         </span>
                     `;
-
                     upcomingList.appendChild(item);
                 });
 
@@ -713,21 +732,22 @@
                 const references = data.data.references;
                 const route = references.routes?.[references.trips?.[data.data.entry.tripId].routeId];
                 const vehicleStopSequence = data.data.entry.vehicle?.stopSequence; // Jármű aktuális megállója
+                const alerts = data.data.entry.alertIds; // Feltételezett forgalmi zavar értesítések
 
                 if (route) {
-                  const routeColor = `#${route.color || "333"}`;
-                  const textColor = `#${route.textColor || "fff"}`;
-                  timetableTitle.innerHTML = `
-                      <span style="display: inline-block; background-color: ${routeColor}; color: ${textColor}; padding: 2px 2px; border-radius: 5px; font-weight: bold; margin-right: 2px; font-size: 1rem; min-width: 35px; text-align: center;">
-                          ${route.shortName}
-                      </span>
-                      <span style="color: black; font-size: 1rem;">\u25B6</span>
-                      <span style="color: black; font-size: 1rem;">${data.data.entry.stopTimes[0].stopHeadsign || ""}</span>
-                  `;
+                    const routeColor = `#${route.color || "333"}`;
+                    const textColor = `#${route.textColor || "fff"}`;
+                    timetableTitle.innerHTML = `
+                        <span style="display: inline-block; background-color: ${routeColor}; color: ${textColor}; padding: 2px 2px; border-radius: 5px; font-weight: bold; margin-right: 2px; font-size: 1rem; min-width: 35px; text-align: center;">
+                            ${route.shortName}
+                        </span>
+                        <span style="color: black; font-size: 1rem;">\u25B6</span>
+                        <span style="color: black; font-size: 1rem;">${data.data.entry.stopTimes[0].stopHeadsign || ""}</span>
+                    `;
                 }
 
                 if (data.data.entry.vehicle) {
-                  timetableVehicleInformation.innerText = `${data.data.entry.vehicle.licensePlate} • ${data.data.entry.vehicle.model}`;
+                    timetableVehicleInformation.innerText = `${data.data.entry.vehicle.licensePlate} • ${data.data.entry.vehicle.model}`;
                 }
 
                 if (!stopTimes || stopTimes.length === 0) {
@@ -736,6 +756,16 @@
                 }
 
                 let timetableHtml = ``;
+
+                // Értesítések megjelenítése
+                if (alerts && alerts.length > 0) {
+                    alerts.forEach(alert => {
+                        const alertHeader = references.alerts[alert].header.translations.hu || "";
+                        const alertURL = (references.alerts[alert].url?.translations.hu) ? `onclick="window.open('${references.alerts[alert].url?.translations.hu}', '_blank');"` : ``;
+                        timetableHtml += `<div class="traffic-disruption-notification" ${alertURL}>${alertHeader}</div>`;
+                    });
+                }
+
                 stopTimes.forEach(stopTime => {
                     const stopName = references.stops[stopTime.stopId]?.name || "Ismeretlen megálló";
 
@@ -775,7 +805,6 @@
                     if (vehicleStopSequence && stopTime.stopSequence === vehicleStopSequence) {
                         highlightClass = 'current-stop-highlight';
                     }
-
 
                     timetableHtml += `
                         <div class="timetable-entry">
