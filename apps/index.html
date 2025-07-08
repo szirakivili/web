@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appok</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5; /* Könnyed háttérszín */
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 900px; /* Max szélesség a jobb olvashatóságért */
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.8em;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+
+        .app-grid {
+            display: grid;
+            /* Alapértelmezetten 3 oszlop, de reszponzívan változik */
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 25px; /* Rács elemei közötti térköz */
+            justify-content: center;
+        }
+
+        .app-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none; /* Link aláhúzás eltávolítása */
+            color: #333; /* Szöveg színe */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-radius: 10px;
+            padding: 15px 10px;
+            background-color: #f9f9f9; /* Enyhe háttér a kártyáknak */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .app-item:hover {
+            transform: translateY(-5px); /* Enyhe felfelé mozgás hoverre */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Erősebb árnyék */
+        }
+
+        .app-icon {
+            width: 80px; /* Ikon mérete */
+            height: 80px;
+            border-radius: 18%; /* Lekerekített sarkok, app ikonra jellemzően */
+            margin-bottom: 15px;
+            object-fit: cover; /* Képek skálázása a keretbe */
+        }
+
+        .app-name {
+            font-size: 1.1em;
+            font-weight: 600;
+            text-align: center;
+            word-break: break-word; /* Hosszú nevek törése */
+            line-height: 1.3;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-top: 30px;
+        }
+
+        footer p {
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+
+        /* Reszponzív beállítások */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+                margin-bottom: 30px;
+            }
+
+            .app-grid {
+                /* Tablet méreten 2 oszlop */
+                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+                gap: 20px;
+            }
+
+            .app-icon {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 12px;
+            }
+
+            .app-name {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 25px;
+            }
+
+            .app-grid {
+                /* Telefonon 2 oszlop, de kisebb min-width */
+                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+                gap: 15px;
+            }
+
+            .app-item {
+                padding: 10px 5px;
+                border-radius: 8px;
+            }
+
+            .app-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 10px;
+            }
+
+            .app-name {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Appok</h1>
+
+        <div class="app-grid">
+            <a href="../dobokocka" class="app-item">
+                <img src="../dobokocka/favicon.ico" alt="Dobókocka ikon" class="app-icon">
+                <span class="app-name">Dobókocka</span>
+            </a>
+
+            <a href="../mikorindul/futar-kijelzo/" class="app-item">
+                <img src="../mikorindul/favicon.ico" alt="Megálló ikon" class="app-icon">
+                <span class="app-name">FUTÁR kijelző</span>
+            </a>
+
+            </div>
+    </div>
+
+    <footer>
+        <p>Kapcsolat:</p>
+        <a href="mailto:hello@szvili.hu">hello@szvili.hu</a>
+    </footer>
+
+</body>
+</html>
