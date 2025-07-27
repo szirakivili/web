@@ -7,7 +7,28 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
-    #map { height: 100vh; display: none; }
+    body {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #map {
+      min-height: 65vh;
+      display: none;
+      margin-bottom: 2vh;
+      border-radius: 10px;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    #vehicle-data {
+      min-height: 20vh;
+      padding: 2vh;
+      display: none;
+      text-align: center;
+      align-content: center;
+      background-color: #eee;
+      border-radius: 10px;
+      line-height: 100%;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    }
     #search-container {
       display: flex;
       flex-direction: column;
@@ -38,6 +59,7 @@
 <body>
 
 <div id="map"></div>
+<div id="vehicle-data"></div>
 
 <div id="search-container">
   <h2>Kérlek add meg a trip azonosítót:</h2>
@@ -54,6 +76,7 @@
 
   let map, polyline, vehicleMarker;
   let stopMarkers = [];
+  let lastUpdateEpoch = null;
 
   function decodePolyline(encoded) {
     let points = [], index = 0, lat = 0, lng = 0;
@@ -121,35 +144,37 @@
   }
 
   function getTypeEmoji(type) {
-        switch (type) {
-            case "rail":
-                return "🚂"; // Vonat
-            case "subway":
-                return "🚇"; // Metró
-            case "suburban_railway":
-                return "🚈"; // HÉV
-            case "tram":
-                return "🚋"; // Villamos
-            case "bus":
-                return "🚌"; // Busz
-            case "coach":
-                return "🚌"; // Busz
-            case "trolleybus":
-                return "🚎"; // Troli
-            case "ferry":
-                return "🛳️"; // Hajó
-            case "cable_car":
-                return "🚠"; // Libegő
-            default:
-                return "🚏"; // Általános
-       }
+    switch (type) {
+        case "rail":
+            return "🚂"; // Vonat
+        case "subway":
+            return "🚇"; // Metró
+        case "suburban_railway":
+            return "🚈"; // HÉV
+        case "tram":
+            return "🚋"; // Villamos
+        case "bus":
+            return "🚌"; // Busz
+        case "coach":
+            return "🚌"; // Busz
+        case "trolleybus":
+            return "🚎"; // Troli
+        case "ferry":
+            return "🛳️"; // Hajó
+        case "cable_car":
+            return "🚠"; // Libegő
+        default:
+            return ""; // ismeretlen
     }
+  }
 
-  function showMapWithPolyline(encodedPolyline, stopTimes, stopsReference, vehicle = null, route = null) {
+  function showContent(encodedPolyline, stopTimes, stopsReference, vehicle = null, route = null, tripReference = null, alertIds = null, alertReference = null) {
     const coordinates = decodePolyline(encodedPolyline);
     const mapElement = document.getElementById('map');
+    const vehicleDataElement = document.getElementById('vehicle-data');
     const searchContainer = document.getElementById('search-container');
     mapElement.style.display = 'block';
+    vehicleDataElement.style.display = 'block';
     searchContainer.style.display = 'none';
 
     const lineColor = route?.style?.color ? `#${route.style.color}` : 'blue';
@@ -233,11 +258,70 @@
 
       vehicleMarker.bindPopup(`
         <span style="line-height: 180%;">${routeDisplay} \u25B6 <b>${label}</b><br>
-        ${plate} • ${model}</span>
+        ${model}<br>
+        <span style="font-family: 'Courier New', Courier, monospace;">${plate}</span></span>
       `);
     }
 
     map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
+
+    // --- Járatinformációk megjelenítése a vehicle-data szekcióban ---
+    let contentHTML = "";
+
+    if (route) {
+      const iconDisplay = route.iconDisplayText || '';
+      const destination = tripReference.tripHeadsign || "Ismeretlen célállomás";
+      contentHTML += `<div style="font-size: 18px; padding: 5px;">
+        <span style="color: #${route.textColor}; background-color: #${route.style.color}; padding: 3px 6px; border-radius: 5px; font-weight: bold;">
+        ${iconDisplay}</span> ▶ <b>${destination}</b></div>`;
+    }
+
+    if (vehicle) {
+      // Késés számítása
+      let delayHTML = '';
+      if (vehicle.status === "IN_TRANSIT_TO") {
+        const currentStopIndex = stopTimes.findIndex(st => st.stopSequence === vehicle.stopSequence);
+        const nextStop = stopTimes[currentStopIndex];
+        if (nextStop?.departureTime && nextStop?.predictedDepartureTime) {
+          const delaySec = nextStop.predictedDepartureTime - nextStop.departureTime;
+          const delayMin = Math.round(delaySec / 60);
+          const delayColor = delayMin === 0 ? 'green' : 'red';
+          const delayText = delayMin === 0 ? 'pontos' : `${delayMin} perc késében`;
+          delayHTML = `<div style="padding: 3px;"><span style="color: ${delayColor};">${delayText}</span></div>`;
+        }
+      }
+
+      // Figyelmeztetések
+      let alertsHTML = '';
+      const alerts = alertIds?.map(id => alertReference?.[id])?.filter(Boolean) || [];
+
+      if (alerts.length > 0) {
+        alertsHTML = `<div style="padding: 5px;">
+          ${alerts.map(a => {
+            const alertUrl = a.url?.translations?.hu ? `onclick="window.open('${a.url?.translations?.hu}', '_blank');" ` : '';
+            const alertText = a.header?.translations?.hu || 'Figyelmeztetés';
+            return `<div ${alertUrl}style="color: white; background-color: #dc3545; text-decoration: none; padding: 5px; border-radius: 5px;">${alertText}</div>`;
+          }).join("<br>")}
+        </div>`;
+      }
+
+      // Rendszám és típus
+      const plate = vehicle.licensePlate || 'Ismeretlen';
+      const model = vehicle.model || 'Ismeretlen típus';
+      lastUpdateEpoch = vehicle?.lastUpdateTime || null;
+      const now = Date.now() / 1000;
+      const age = lastUpdateEpoch ? Math.round(now - lastUpdateEpoch) : null;
+      const ageText = age !== null
+        ? `<span id="age-indicator">${age} másodperce frissítve</span>`
+        : `<span id="age-indicator">frissítési idő ismeretlen</span>`;
+
+      contentHTML += delayHTML;
+      contentHTML += `<div style="padding: 5px;">${model}<br><span style="font-family: 'Courier New', Courier, monospace;">${plate}</span></div>`;
+      contentHTML += `<div style="padding: 5px; font-size: 90%; color: gray;">${ageText}</div>`;
+      contentHTML += alertsHTML;
+    }
+
+    vehicleDataElement.innerHTML = contentHTML;
   }
 
   function fetchPolylineForTrip(tripId, dateParam = null) {
@@ -250,22 +334,26 @@
         return response.json();
       })
       .then(data => {
-        const encoded = data.data?.entry?.polyline?.points;
+        const encodedPolyLine = data.data?.entry?.polyline?.points;
         const stopTimes = data.data?.entry?.stopTimes;
         const stops = data.data?.references?.stops;
         const vehicle = data.data?.entry?.vehicle;
         const tripId = data.data?.entry?.tripId;
         const routeId = data.data?.references?.trips?.[tripId]?.routeId;
         const route = data.data?.references?.routes?.[routeId];
+        const tripReference = data.data?.references?.trips?.[tripId];
+        const alertIds = data.data?.entry?.alertIds;
+        const alertReference = data.data?.references?.alerts;
 
-        if (!encoded) {
+        if (!encodedPolyLine) {
           return;
         }
 
-        showMapWithPolyline(encoded, stopTimes, stops, vehicle, route);
+        showContent(encodedPolyLine, stopTimes, stops, vehicle, route, tripReference, alertIds, alertReference);
       })
       .catch(error => {
         alert("Hiba történt az adatok lekérésekor. Lehet, hogy hiba van az URL cím paraméterében. (Pl. Az adott napon nem közlekedik ilyen járat.)");
+        console.log(error);
       });
   }
 
@@ -281,8 +369,18 @@
   const dateParam = getUrlParam('date');
   if (tripParam) {
     fetchPolylineForTrip(tripParam, dateParam);
-    setInterval(() => fetchPolylineForTrip(tripParam), 30000);
+    setInterval(() => fetchPolylineForTrip(tripParam, dateParam), 30000);
   }
+  setInterval(() => {
+    if (lastUpdateEpoch) {
+      const now = Date.now() / 1000;
+      const age = Math.round(now - lastUpdateEpoch);
+      const el = document.getElementById("age-indicator");
+      if (el) {
+        el.textContent = `${age} másodperce frissítve`;
+      }
+    }
+  }, 1000);
 </script>
 
 </body>
