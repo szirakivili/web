@@ -479,7 +479,29 @@
       `);
     }
 
-    map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
+    // Az utolsó megálló meghatározása
+    let lastStopLatLng = null;
+      if (stopTimes && stopsReference && stopTimes.length > 0) {
+          const lastStopTime = stopTimes[stopTimes.length - 1];
+          const lastStopInfo = stopsReference[lastStopTime.stopId];
+          if (lastStopInfo && lastStopInfo.lat && lastStopInfo.lon) {
+              lastStopLatLng = L.latLng(lastStopInfo.lat, lastStopInfo.lon);
+          }
+      }
+
+      let vehicleLatLng = null;
+      if (vehicle?.location?.lat && vehicle?.location?.lon) {
+          vehicleLatLng = L.latLng(vehicle.location.lat, vehicle.location.lon);
+      }
+
+      if (lastStopLatLng && vehicleLatLng) {
+          const bounds = L.latLngBounds(lastStopLatLng, vehicleLatLng);
+          map.fitBounds(bounds, {
+              padding: [30, 30]
+          });
+      } else {
+          map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
+      }
 
     // --- Járatinformációk megjelenítése a vehicle-data szekcióban ---
     let contentHTML = "";
