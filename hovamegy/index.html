@@ -219,6 +219,9 @@
         const headsign = vehicle.label;
         const plate = vehicle.licensePlate || '';
         const model = vehicle.model || '';
+        if (!vehicle.tripId) {
+          return;
+        }
         
         return `<div><a href="?trip=${encodeURIComponent(vehicle.tripId)}&date=${vehicle.serviceDate}"><span style="background-color: #${routeBC}; color: #${routeTC}; padding: 3px; border-radius: 6px;">${routeName}</span> \u25B6 ${headsign}<br>
         <span style="font-size: 75%;">${plate} • ${model}</span></a></div>`;
