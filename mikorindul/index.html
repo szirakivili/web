@@ -278,6 +278,16 @@
             cursor: pointer;
         }
 
+        .map-button {
+            float: right;
+            font-size: 25px;
+            margin-right: 15px;
+        }
+        .map-button:hover,
+        .map-button:focus {
+            cursor: pointer;
+        }
+
         .timetable-entry {
             color: black;
             margin-bottom: 5px;
@@ -417,6 +427,7 @@
     <div id="timetableModal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
+            <span class="map-button">🗺️</span>
             <div id="timetableTitle"></div>
             <p id="timetableVehicleInformation"></p>
             <div id="timetableContent"></div>
@@ -436,12 +447,17 @@
         // Modal elements
         const timetableModal = document.getElementById("timetableModal");
         const closeButton = document.getElementsByClassName("close-button")[0];
+        const mapButton = document.getElementsByClassName("map-button")[0];
         const timetableTitle = document.getElementById("timetableTitle")
         const timetableVehicleInformation = document.getElementById("timetableVehicleInformation");
         const timetableContent = document.getElementById("timetableContent");
 
         closeButton.onclick = function() {
             timetableModal.style.display = "none";
+        }
+
+        mapButton.onclick = function() {
+            window.open('../hovamegy', '_blank');
         }
 
         window.onclick = function(event) {
@@ -722,6 +738,10 @@
             timetableVehicleInformation.innerText = '';
             timetableContent.innerHTML = "Menetrend betöltése...";
             timetableModal.style.display = "block";
+
+            mapButton.onclick = function() {
+                window.open(`../hovamegy/?trip=${tripId}&date=${date}`, '_blank');
+            };
 
             try {
                 const tripDetailsUrl = `${apiUrl}trip-details?tripId=${tripId}&date=${date}&includeReferences=true&appVersion=${appVersion}&version=${apiVersion}&key=${apiKey}`;
