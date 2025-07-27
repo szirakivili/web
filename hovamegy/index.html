@@ -254,9 +254,9 @@
         }
 
         const html = vehicleList.map(vehicle => {
-          const routeName = json2.data.references.routes[vehicle.routeId].shortName;
-          const routeBC = json2.data.references.routes[vehicle.routeId].style.color;
-          const routeTC = json2.data.references.routes[vehicle.routeId].textColor;
+          const routeName = json.data.references.routes[vehicle.routeId].shortName;
+          const routeBC = json.data.references.routes[vehicle.routeId].style.color;
+          const routeTC = json.data.references.routes[vehicle.routeId].textColor;
           const headsign = vehicle.label;
           const plate = vehicle.licensePlate || '';
           const model = vehicle.model || '';
