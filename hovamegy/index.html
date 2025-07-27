@@ -29,21 +29,111 @@
       line-height: 100%;
       box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
     }
-    #search-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      font-family: sans-serif;
-    }
-    input, button {
-      font-size: 16px;
-      padding: 8px;
-      margin: 5px;
-    }
     .leaflet-popup-content {
       text-align: center;
+    }
+
+    input[type="text"] {
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    button {
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+    }
+
+    #searchResults > div {
+      margin: 0.5rem;
+    }
+
+    #searchResults a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: #007bff;
+    }
+
+    .search-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+
+    .search-container h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .search-container input[type="text"] {
+      font-size: 1.2rem;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .search-container button {
+      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+      margin-top: 1rem;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .search-container button:hover {
+      background-color: #0056b3;
+    }
+
+    #nearbySearchBtn {
+      margin: 1rem;
+      background-color: #008c15;
+    }
+
+    #nearbySearchBtn:hover {
+      background-color: #006c10;
+    }
+
+    .scrollable-box {
+      margin-top: 2rem;
+      max-height: 250px;
+      overflow-y: auto;
+      border-top: 1px solid #ddd;
+      padding-top: 1rem;
+      text-align: left;
+    }
+
+    .scrollable-box div {
+      margin: 0.5rem 0;
+    }
+
+    .scrollable-box a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      color: black;
+      display: block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+    }
+
+    .scrollable-box a:hover {
+      background-color: #f1f1f1;
     }
   </style>
 </head>
@@ -61,10 +151,16 @@
 <div id="map"></div>
 <div id="vehicle-data"></div>
 
-<div id="search-container">
-  <h2>Kérlek add meg a trip azonosítót:</h2>
-  <input type="text" id="tripInput" placeholder="pl. BKK_B1043" />
-  <button onclick="searchTrip()">Keresés</button>
+<div class="search-container" id="search-container">
+    <h1>Keress egy közlekedő járművet!</h1>
+    <button id="nearbySearchBtn">Járművek a közelben</button>
+    <input type="text" id="searchInput" placeholder="Keresés járatszám alapján">
+    <button id="searchBtn">Keresés</button>
+    <div id="searchResults" class="scrollable-box"></div>
+    <div style="margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.7rem;">
+        <span>Adatforrás:</span>
+        <a href="https://opendata.bkk.hu/home" target="_blank"><img src="../mikorindul/BKK_logo.png" alt="BKK logo" style="height: 20px; object-fit: contain;"></a>
+    </div>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -73,6 +169,120 @@
   const apiKey = "05f00c85-2177-4345-9103-e72960f3918d";
   const apiVersion = "4";
   const appVersion = "1.1";
+
+  const searchInput = document.getElementById("searchInput");
+  const searchButton = document.getElementById("searchBtn");
+  const nearbyButton = document.getElementById("nearbySearchBtn");
+  const resultsContainer = document.getElementById("searchResults");
+
+  function normalizeQuery(str) {
+    return str
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, "-");
+  }
+
+  async function performSearch() {
+    const input = searchInput.value.trim();
+    const query = normalizeQuery(input);
+
+    const searchUrl = `${apiUrl}/search?query=${query}&minResult=1&appVersion=${appVersion}&includeReferences=true&version=${apiVersion}&key=${apiKey}`;
+    resultsContainer.innerHTML = "Keresés...";
+
+    try {
+      const res = await fetch(searchUrl);
+      const json = await res.json();
+      const routeIds = json.data.entry.routeIds || [];
+
+      if (routeIds.length === 0) {
+        resultsContainer.innerHTML = "Nincs találat.";
+        return;
+      }
+      const filteredRouteIds = routeIds.filter(route =>{
+        return json.data.references.routes[route].shortName.toLowerCase().includes(query.toLowerCase());
+      });
+      const routeIdString = filteredRouteIds.map(item => item).join("&routeId=");
+      const vehicleSearchUrl = `${apiUrl}/vehicles-for-route?routeId=${routeIdString}&minResult=1&appVersion=${appVersion}&includeReferences=true&version=${apiVersion}&key=${apiKey}`;
+      const res2 = await fetch(vehicleSearchUrl);
+      const json2 = await res2.json();
+      const vehicleList = json2.data.list;
+      if (vehicleList.length === 0) {
+        resultsContainer.innerHTML = "Nincs találat.";
+        return;
+      }
+
+      const html = vehicleList.map(vehicle => {
+        const routeName = json2.data.references.routes[vehicle.routeId].shortName;
+        const routeBC = json2.data.references.routes[vehicle.routeId].style.color;
+        const routeTC = json2.data.references.routes[vehicle.routeId].textColor;
+        const headsign = vehicle.label;
+        const plate = vehicle.licensePlate || '';
+        const model = vehicle.model || '';
+        
+        return `<div><a href="?trip=${encodeURIComponent(vehicle.tripId)}"><span style="background-color: #${routeBC}; color: #${routeTC}; padding: 3px; border-radius: 6px;">${routeName}</span> \u25B6 ${headsign}<br>
+        <span style="font-size: 75%;">${plate} • ${model}</span></a></div>`;
+      }).join("");
+
+      resultsContainer.innerHTML = html;
+    } catch (e) {
+      resultsContainer.innerHTML = "Hiba történt a keresés során.";
+      console.error(e);
+    }
+  }
+
+  async function performNearbySearch() {
+    if (!navigator.geolocation) {
+      resultsContainer.innerHTML = "A böngésződ nem támogatja a helyzetmeghatározást.";
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(async function(position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+
+      const searchUrl = `${apiUrl}/vehicles-for-location?lon=${lon}&lat=${lat}&lonSpan=0.007902&latSpan=0.005388&radius=300&minResult=1&appVersion=${appVersion}&includeReferences=true&version=${apiVersion}&key=${apiKey}`;
+      resultsContainer.innerHTML = "Keresés...";
+
+      try {
+        const res = await fetch(searchUrl);
+        const json = await res.json();
+        const vehicleList = json.data.entry.list || [];
+
+        if (vehicleList.length === 0) {
+          resultsContainer.innerHTML = "Nincs találat.";
+          return;
+        }
+
+        const html = vehicleList.map(vehicle => {
+          const routeName = json2.data.references.routes[vehicle.routeId].shortName;
+          const routeBC = json2.data.references.routes[vehicle.routeId].style.color;
+          const routeTC = json2.data.references.routes[vehicle.routeId].textColor;
+          const headsign = vehicle.label;
+          const plate = vehicle.licensePlate || '';
+          const model = vehicle.model || '';
+          
+          return `<div><a href="?trip=${encodeURIComponent(vehicle.tripId)}"><span style="background-color: #${routeBC}; color: #${routeTC}; padding: 3px; border-radius: 6px;">${routeName}</span> \u25B6 ${headsign}<br>
+          <span style="font-size: 75%;">${plate} • ${model}</span></a></div>`;
+        }).join("");
+
+        resultsContainer.innerHTML = html;
+      } catch (e) {
+        resultsContainer.innerHTML = "Hiba történt a keresés során.";
+        console.error(e);
+      }
+    }, function(error) {
+      resultsContainer.innerHTML = "Hiba a helymeghatározás során: " + error.message;
+    });
+  }
+
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      performSearch();
+    }
+  });
+
+  searchButton.addEventListener("click", performSearch);
+  nearbyButton.addEventListener("click", performNearbySearch)
 
   let map, polyline, vehicleMarker;
   let stopMarkers = [];
@@ -145,26 +355,26 @@
 
   function getTypeEmoji(type) {
     switch (type) {
-        case "rail":
-            return "🚂"; // Vonat
-        case "subway":
-            return "🚇"; // Metró
-        case "suburban_railway":
-            return "🚈"; // HÉV
-        case "tram":
-            return "🚋"; // Villamos
-        case "bus":
-            return "🚌"; // Busz
-        case "coach":
-            return "🚌"; // Busz
-        case "trolleybus":
-            return "🚎"; // Troli
-        case "ferry":
-            return "🛳️"; // Hajó
-        case "cable_car":
-            return "🚠"; // Libegő
-        default:
-            return ""; // ismeretlen
+      case "rail":
+          return "🚂"; // Vonat
+      case "subway":
+          return "🚇"; // Metró
+      case "vehicle-suburban-railway":
+          return "🚈"; // HÉV
+      case "tram":
+          return "🚋"; // Villamos
+      case "bus":
+          return "🚌"; // Busz
+      case "coach":
+          return "🚌"; // Busz
+      case "trolleybus":
+          return "🚎"; // Troli
+      case "ferry":
+          return "🛳️"; // Hajó
+      case "cable-car":
+          return "🚠"; // Libegő
+      default:
+          return ""; // ismeretlen
     }
   }
 
