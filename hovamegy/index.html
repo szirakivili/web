@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Járat információk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    #map { height: 100vh; display: none; }
+    #search-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+    input, button {
+      font-size: 16px;
+      padding: 8px;
+      margin: 5px;
+    }
+    .leaflet-popup-content {
+      text-align: center;
+    }
+  </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+
+<div id="map"></div>
+
+<div id="search-container">
+  <h2>Kérlek add meg a trip azonosítót:</h2>
+  <input type="text" id="tripInput" placeholder="pl. BKK_B1043" />
+  <button onclick="searchTrip()">Keresés</button>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const apiUrl = "https://futar.bkk.hu/api/query/v1/ws/otp/api/where";
+  const apiKey = "05f00c85-2177-4345-9103-e72960f3918d";
+  const apiVersion = "4";
+  const appVersion = "1.1";
+
+  let map, polyline, vehicleMarker;
+  let stopMarkers = [];
+
+  function decodePolyline(encoded) {
+    let points = [], index = 0, lat = 0, lng = 0;
+
+    while (index < encoded.length) {
+      let result = 0, shift = 0, b;
+      do {
+        b = encoded.charCodeAt(index++) - 63;
+        result |= (b & 0x1f) << shift;
+        shift += 5;
+      } while (b >= 0x20);
+      const dlat = ((result & 1) ? ~(result >> 1) : (result >> 1));
+      lat += dlat;
+
+      result = 0;
+      shift = 0;
+      do {
+        b = encoded.charCodeAt(index++) - 63;
+        result |= (b & 0x1f) << shift;
+        shift += 5;
+      } while (b >= 0x20);
+      const dlng = ((result & 1) ? ~(result >> 1) : (result >> 1));
+      lng += dlng;
+
+      points.push([lat / 1e5, lng / 1e5]);
+    }
+    return points;
+  }
+
+  function getUrlParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  function formatTime(epochSec) {
+    const d = new Date(epochSec * 1000);
+    const h = d.getHours().toString().padStart(2, '0');
+    const m = d.getMinutes().toString().padStart(2, '0');
+    return `${h}:${m}`;
+  }
+
+  function formatTimeInfo(stopTime, isLastStop) {
+    const timeType = isLastStop ? 'arrivalTime' : 'departureTime';
+    const predictedType = isLastStop ? 'predictedArrivalTime' : 'predictedDepartureTime';
+
+    const actualTime = stopTime[timeType];
+    const predictedTime = stopTime[predictedType];
+
+    if (!actualTime) return '';
+
+    const actualFormatted = formatTime(actualTime);
+
+    if (!predictedTime) {
+      return `<span style="color:black;">${actualFormatted}</span>`;
+    }
+
+    const delaySec = predictedTime - actualTime;
+    const delayMin = Math.round(delaySec / 60);
+    let color = 'green';
+    if (delayMin > 0 || delayMin < 0) color = 'red';
+
+    const delayText = delayMin !== 0 ? ` (${delayMin > 0 ? '+' : ''}${delayMin}')` : '';
+
+    return `<span style="color:${color};">${actualFormatted}${delayText}</span>`;
+  }
+
+  function getTypeEmoji(type) {
+        switch (type) {
+            case "rail":
+                return "🚂"; // Vonat
+            case "subway":
+                return "🚇"; // Metró
+            case "suburban_railway":
+                return "🚈"; // HÉV
+            case "tram":
+                return "🚋"; // Villamos
+            case "bus":
+                return "🚌"; // Busz
+            case "coach":
+                return "🚌"; // Busz
+            case "trolleybus":
+                return "🚎"; // Troli
+            case "ferry":
+                return "🛳️"; // Hajó
+            case "cable_car":
+                return "🚠"; // Libegő
+            default:
+                return "🚏"; // Általános
+       }
+    }
+
+  function showMapWithPolyline(encodedPolyline, stopTimes, stopsReference, vehicle = null, route = null) {
+    const coordinates = decodePolyline(encodedPolyline);
+    const mapElement = document.getElementById('map');
+    const searchContainer = document.getElementById('search-container');
+    mapElement.style.display = 'block';
+    searchContainer.style.display = 'none';
+
+    const lineColor = route?.style?.color ? `#${route.style.color}` : 'blue';
+
+    if (!map) {
+      map = L.map('map').setView(coordinates[0], 16);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap',
+        maxZoom: 19
+      }).addTo(map);
+    }
+
+    if (polyline) map.removeLayer(polyline);
+    polyline = L.polyline(coordinates, {
+      color: lineColor,
+      weight: 4,
+      opacity: 0.8
+    }).addTo(map);
+
+    stopMarkers.forEach(marker => map.removeLayer(marker));
+    stopMarkers = [];
+
+    const vehicleStopSequence = vehicle?.stopSequence;
+
+    if (stopTimes && stopsReference) {
+      stopTimes.forEach((stopTime, idx) => {
+        const stopId = stopTime.stopId;
+        const stopInfo = stopsReference[stopId];
+
+        if (stopInfo && stopInfo.lat && stopInfo.lon) {
+          const lat = stopInfo.lat;
+          const lon = stopInfo.lon;
+          const name = stopInfo.name || "Megálló";
+          const isLastStop = (idx === stopTimes.length - 1);
+          const stopSequence = stopTime.stopSequence;
+
+          const isPast = vehicleStopSequence !== undefined && stopSequence < vehicleStopSequence;
+
+          const circleMarker = L.circleMarker([lat, lon], {
+            radius: 6,
+            fillColor: isPast ? "#dddddd" : "#ffffff",
+            color: isPast ? "#888888" : lineColor,
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 1
+          }).addTo(map);
+
+          const timeInfoHTML = formatTimeInfo(stopTime, isLastStop);
+          const popupContent = `<b>${name}</b><br>${timeInfoHTML}`;
+
+          circleMarker.bindPopup(popupContent);
+          stopMarkers.push(circleMarker);
+        }
+      });
+    }
+
+    if (vehicleMarker) map.removeLayer(vehicleMarker);
+
+    if (vehicle?.location?.lat && vehicle?.location?.lon) {
+      const lat = vehicle.location.lat;
+      const lon = vehicle.location.lon;
+
+      const vehicleEmoji = getTypeEmoji(vehicle.style.icon.name);
+
+      const icon = L.divIcon({
+        className: '',
+        html: `<div style="width: 20px; height: 20px; background-color: ${lineColor}; border: 1px solid black; border-radius: 50%; text-align: center;">${vehicleEmoji}</div>`,
+        iconSize: [20, 20],
+        iconAnchor: [10, 10]
+      });
+
+      vehicleMarker = L.marker([lat, lon], { icon }).addTo(map);
+
+      const routeDisplay = route
+        ? `<span style="color: #${route.textColor}; background-color: #${route.style.color}; font-weight: bold; padding: 3px; border-radius: 5px;">${route.iconDisplayText}</span>`
+        : "";
+
+      const label = vehicle.label || 'Ismeretlen célállomás';
+      const plate = vehicle.licensePlate || '';
+      const model = vehicle.model || '';
+
+      vehicleMarker.bindPopup(`
+        <span style="line-height: 180%;">${routeDisplay} \u25B6 <b>${label}</b><br>
+        ${plate} • ${model}</span>
+      `);
+    }
+
+    map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
+  }
+
+  function fetchPolylineForTrip(tripId, dateParam = null) {
+    const dateString = dateParam ? `&date=${dateParam}` : '';
+    const url = `${apiUrl}/trip-details?tripId=${tripId}${dateString}&includeReferences=true&appVersion=${appVersion}&version=${apiVersion}&key=${apiKey}`;
+
+    fetch(url)
+      .then(response => {
+        if (!response.ok) throw new Error("API hiba");
+        return response.json();
+      })
+      .then(data => {
+        const encoded = data.data?.entry?.polyline?.points;
+        const stopTimes = data.data?.entry?.stopTimes;
+        const stops = data.data?.references?.stops;
+        const vehicle = data.data?.entry?.vehicle;
+        const tripId = data.data?.entry?.tripId;
+        const routeId = data.data?.references?.trips?.[tripId]?.routeId;
+        const route = data.data?.references?.routes?.[routeId];
+
+        if (!encoded) {
+          return;
+        }
+
+        showMapWithPolyline(encoded, stopTimes, stops, vehicle, route);
+      })
+      .catch(error => {
+        alert("Hiba történt az adatok lekérésekor. Lehet, hogy hiba van az URL cím paraméterében. (Pl. Az adott napon nem közlekedik ilyen járat.)");
+      });
+  }
+
+  function searchTrip() {
+    const input = document.getElementById("tripInput");
+    const tripId = input.value.trim();
+    if (tripId) {
+      window.location.href = `?trip=${encodeURIComponent(tripId)}`;
+    }
+  }
+
+  const tripParam = getUrlParam("trip");
+  const dateParam = getUrlParam('date');
+  if (tripParam) {
+    fetchPolylineForTrip(tripParam, dateParam);
+    setInterval(() => fetchPolylineForTrip(tripParam), 30000);
+  }
+</script>
+
+</body>
+</html>
