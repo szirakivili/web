@@ -241,7 +241,7 @@
       const lon = position.coords.longitude;
 
       //const searchUrl = `${apiUrl}/vehicles-for-location?lon=19.054838&lat=47.497443&lonSpan=0.007902&latSpan=0.005388&radius=300&minResult=1&appVersion=${appVersion}&includeReferences=true&version=${apiVersion}&key=${apiKey}`;
-      const searchUrl = `${apiUrl}/vehicles-for-location?lon=${lon}&lat=${lat}&lonSpan=0.007902&latSpan=0.005388&radius=300&minResult=1&appVersion=${appVersion}&includeReferences=true&version=${apiVersion}&key=${apiKey}`;
+      const searchUrl = `${apiUrl}/vehicles-for-location?lon=${lon}&lat=${lat}&lonSpan=0.002634&latSpan=0.001796&radius=100&minResult=1&appVersion=${appVersion}&includeReferences=true&version=${apiVersion}&key=${apiKey}`;
       resultsContainer.innerHTML = "Keresés...";
 
       try {
@@ -250,7 +250,7 @@
         const vehicleList = json.data.list || [];
 
         if (vehicleList.length === 0) {
-          resultsContainer.innerHTML = "Nincs találat a 300 m-es körzetben.";
+          resultsContainer.innerHTML = "Nincs találat a 100 m-es körzetben.";
           return;
         }
 
