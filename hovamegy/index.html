@@ -240,16 +240,17 @@
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
 
+      //const searchUrl = `${apiUrl}/vehicles-for-location?lon=19.054838&lat=47.497443&lonSpan=0.007902&latSpan=0.005388&radius=300&minResult=1&appVersion=${appVersion}&includeReferences=true&version=${apiVersion}&key=${apiKey}`;
       const searchUrl = `${apiUrl}/vehicles-for-location?lon=${lon}&lat=${lat}&lonSpan=0.007902&latSpan=0.005388&radius=300&minResult=1&appVersion=${appVersion}&includeReferences=true&version=${apiVersion}&key=${apiKey}`;
       resultsContainer.innerHTML = "Keresés...";
 
       try {
         const res = await fetch(searchUrl);
         const json = await res.json();
-        const vehicleList = json.data.entry.list || [];
+        const vehicleList = json.data.list || [];
 
         if (vehicleList.length === 0) {
-          resultsContainer.innerHTML = "Nincs találat.";
+          resultsContainer.innerHTML = "Nincs találat a 300 m-es körzetben.";
           return;
         }
 
