@@ -502,7 +502,7 @@
     let contentHTML = "";
 
     if (route) {
-      const iconDisplay = route.iconDisplayText || '?';
+      const iconDisplay = route.shortName || '?';
       const destination = tripReference.tripHeadsign || "?";
       contentHTML += `<div style="font-size: 18px; padding: 5px;">
         <span style="color: #${route.textColor}; background-color: #${route.style.color}; padding: 3px 6px; border-radius: 5px; font-weight: bold;">
