@@ -633,18 +633,15 @@
                                 timeInfoEl.appendChild(modelInfo);
                             }
 
-                            if (vehicle?.stopSequence) {
-                                const stopSequence = vehicle.stopSequence;
-                                const stopTimes = tripData.data.entry.stopTimes;
-                                const found = stopTimes.find(item => item.stopSequence === stopSequence);
-                                if (found) {
-                                    if (found.stopId !== stopId && tripData.data.references.stops[found.stopId].parentStationId !== stopId) {
-                                        const nextStopName = tripData.data.references.stops[found.stopId].name;
-                                        const nextStop = document.createElement("div");
-                                        nextStop.className = "next-stop";
-                                        nextStop.textContent = `${nextStopName} előtt tart`;
-                                        timeInfoEl.appendChild(nextStop);
-                                    }
+                            if (vehicle?.stopId) {
+                                const vehicleStop = vehicle.stopId;
+                                if (vehicleStop !== stopId && tripData.data.references.stops[vehicleStop].parentStationId !== stopId) {
+                                    const nextStopName = tripData.data.references.stops[vehicleStop].name;
+                                    const nextStopStatus = vehicle.status === "STOPPED_AT" ? 'megállóban áll' : 'előtt tart';
+                                    const nextStop = document.createElement("div");
+                                    nextStop.className = "next-stop";
+                                    nextStop.textContent = `${nextStopName} ${nextStopStatus}`;
+                                    timeInfoEl.appendChild(nextStop);
                                 }
                             }
 
