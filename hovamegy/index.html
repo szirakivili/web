@@ -243,7 +243,6 @@
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
 
-      //const searchUrl = `${apiUrl}/vehicles-for-location?lon=19.054838&lat=47.497443&lonSpan=0.007902&latSpan=0.005388&radius=300&minResult=1&appVersion=${appVersion}&includeReferences=true&version=${apiVersion}&key=${apiKey}`;
       const searchUrl = `${apiUrl}/vehicles-for-location?lon=${lon}&lat=${lat}&lonSpan=0.002634&latSpan=0.001796&radius=100&minResult=1&appVersion=${appVersion}&includeReferences=true&version=${apiVersion}&key=${apiKey}`;
       resultsContainer.innerHTML = "Keresés...";
 
@@ -384,7 +383,7 @@
     }
   }
 
-  function showContent(encodedPolyline, stopTimes, stopsReference, vehicle = null, route = null, tripReference = null, alertIds = null, alertReference = null) {
+  function showContent(encodedPolyline, stopTimes, stopsReference, vehicle = null, route = null, tripReference = null, alertIds = null, alertReference = null, refresh = true) {
     const coordinates = decodePolyline(encodedPolyline);
     const mapElement = document.getElementById('map');
     const vehicleDataElement = document.getElementById('vehicle-data');
@@ -398,8 +397,7 @@
     if (!map) {
       map = L.map('map').setView(coordinates[0], 16);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap',
-        maxZoom: 19
+        attribution: '© OpenStreetMap'
       }).addTo(map);
     }
 
@@ -414,6 +412,11 @@
     stopMarkers = [];
 
     const vehicleStopSequence = vehicle?.stopSequence;
+    const boundsCoordinates = [];
+
+    if (vehicle?.location?.lat && vehicle?.location?.lon) {
+        boundsCoordinates.push(L.latLng(vehicle.location.lat, vehicle.location.lon));
+    }
 
     if (stopTimes && stopsReference) {
       stopTimes.forEach((stopTime, idx) => {
@@ -443,6 +446,10 @@
 
           circleMarker.bindPopup(popupContent);
           stopMarkers.push(circleMarker);
+
+          if (!isPast) {
+            boundsCoordinates.push(L.latLng(lat, lon));
+          }
         }
       });
     }
@@ -468,7 +475,7 @@
         ? `<span style="color: #${route.textColor}; background-color: #${route.style.color}; font-weight: bold; padding: 3px; border-radius: 5px;">${route.iconDisplayText}</span>`
         : "";
 
-      const label = vehicle.label || 'Ismeretlen célállomás';
+      const label = vehicle.label || '?';
       const plate = vehicle.licensePlate || '';
       const model = vehicle.model || '';
 
@@ -479,36 +486,24 @@
       `);
     }
 
-    // Az utolsó megálló meghatározása
-    let lastStopLatLng = null;
-      if (stopTimes && stopsReference && stopTimes.length > 0) {
-          const lastStopTime = stopTimes[stopTimes.length - 1];
-          const lastStopInfo = stopsReference[lastStopTime.stopId];
-          if (lastStopInfo && lastStopInfo.lat && lastStopInfo.lon) {
-              lastStopLatLng = L.latLng(lastStopInfo.lat, lastStopInfo.lon);
-          }
-      }
-
-      let vehicleLatLng = null;
-      if (vehicle?.location?.lat && vehicle?.location?.lon) {
-          vehicleLatLng = L.latLng(vehicle.location.lat, vehicle.location.lon);
-      }
-
-      if (lastStopLatLng && vehicleLatLng) {
-          const bounds = L.latLngBounds(lastStopLatLng, vehicleLatLng);
+    // térkép beigazítása
+    if (!refresh) {
+      if (boundsCoordinates.length > 0) {
+          const bounds = L.latLngBounds(boundsCoordinates);
           map.fitBounds(bounds, {
-              padding: [30, 30]
+              padding: [15, 15]
           });
       } else {
-          map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
+          map.fitBounds(polyline.getBounds(), { padding: [15, 15] });
       }
+    }
 
     // --- Járatinformációk megjelenítése a vehicle-data szekcióban ---
     let contentHTML = "";
 
     if (route) {
-      const iconDisplay = route.iconDisplayText || '';
-      const destination = tripReference.tripHeadsign || "Ismeretlen célállomás";
+      const iconDisplay = route.iconDisplayText || '?';
+      const destination = tripReference.tripHeadsign || "?";
       contentHTML += `<div style="font-size: 18px; padding: 5px;">
         <span style="color: #${route.textColor}; background-color: #${route.style.color}; padding: 3px 6px; border-radius: 5px; font-weight: bold;">
         ${iconDisplay}</span> ▶ <b>${destination}</b></div>`;
@@ -517,7 +512,8 @@
     if (vehicle) {
       // Késés számítása
       let delayHTML = '';
-      if (vehicle.status === "IN_TRANSIT_TO") {
+      let nextStopHTML = '';
+      if (vehicle.status === "IN_TRANSIT_TO" || vehicle.status === "STOPPED_AT" || vehicle.status === "INCOMING_AT") {
         const currentStopIndex = stopTimes.findIndex(st => st.stopSequence === vehicle.stopSequence);
         const nextStop = stopTimes[currentStopIndex];
         if (nextStop?.departureTime && nextStop?.predictedDepartureTime) {
@@ -526,7 +522,15 @@
           const delayColor = delayMin === 0 ? 'green' : 'red';
           const delayText = delayMin === 0 ? 'pontos' : `${delayMin} perc késében`;
           delayHTML = `<div style="padding: 3px;"><span style="color: ${delayColor};">${delayText}</span></div>`;
+        } else if (nextStop?.arrivalTime && nextStop?.predictedArrivalTime) {
+          const delaySec = nextStop.predictedArrivalTime - nextStop.arrivalTime;
+          const delayMin = Math.round(delaySec / 60);
+          const delayColor = delayMin === 0 ? 'green' : 'red';
+          const delayText = delayMin === 0 ? 'pontos' : `${delayMin} perc késében`;
+          delayHTML = `<div style="padding: 3px;"><span style="color: ${delayColor};">${delayText}</span></div>`;
         }
+        const nextStopType = vehicle.status === "STOPPED_AT" ? 'megállóban áll' : 'következik';
+        nextStopHTML = `<div style="padding: 3px;">${stopsReference[stopTimes[currentStopIndex].stopId].name} ${nextStopType}</div>`
       }
 
       // Figyelmeztetések
@@ -534,7 +538,7 @@
       const alerts = alertIds?.map(id => alertReference?.[id])?.filter(Boolean) || [];
 
       if (alerts.length > 0) {
-        alertsHTML = `<div style="padding: 5px;">
+        alertsHTML = `<div style="padding: 5px; cursor: pointer;">
           ${alerts.map(a => {
             const alertUrl = a.url?.translations?.hu ? `onclick="window.open('${a.url?.translations?.hu}', '_blank');" ` : '';
             const alertText = a.header?.translations?.hu || 'Figyelmeztetés';
@@ -553,6 +557,7 @@
         ? `<span id="age-indicator">${age} másodperce frissítve</span>`
         : `<span id="age-indicator">frissítési idő ismeretlen</span>`;
 
+      contentHTML += nextStopHTML;
       contentHTML += delayHTML;
       contentHTML += `<div style="padding: 5px;">${model}<br><span style="font-family: 'Courier New', Courier, monospace;">${plate}</span></div>`;
       contentHTML += `<div style="padding: 5px; font-size: 90%; color: gray;">${ageText}</div>`;
@@ -562,7 +567,7 @@
     vehicleDataElement.innerHTML = contentHTML;
   }
 
-  function fetchPolylineForTrip(tripId, dateParam = null) {
+  function fetchPolylineForTrip(tripId, dateParam = null, refresh = true) {
     const dateString = dateParam ? `&date=${dateParam}` : '';
     const url = `${apiUrl}/trip-details?tripId=${tripId}${dateString}&includeReferences=true&appVersion=${appVersion}&version=${apiVersion}&key=${apiKey}`;
 
@@ -587,7 +592,7 @@
           return;
         }
 
-        showContent(encodedPolyLine, stopTimes, stops, vehicle, route, tripReference, alertIds, alertReference);
+        showContent(encodedPolyLine, stopTimes, stops, vehicle, route, tripReference, alertIds, alertReference, refresh);
       })
       .catch(error => {
         alert("Hiba történt az adatok lekérésekor. Lehet, hogy hiba van az URL cím paraméterében. (Pl. Az adott napon nem közlekedik ilyen járat.)");
@@ -606,8 +611,8 @@
   const tripParam = getUrlParam("trip");
   const dateParam = getUrlParam('date');
   if (tripParam) {
-    fetchPolylineForTrip(tripParam, dateParam);
-    setInterval(() => fetchPolylineForTrip(tripParam, dateParam), 30000);
+    fetchPolylineForTrip(tripParam, dateParam, false);
+    setInterval(() => fetchPolylineForTrip(tripParam, dateParam, true), 30000);
   }
   setInterval(() => {
     if (lastUpdateEpoch) {
