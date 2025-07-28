@@ -520,13 +520,13 @@
           const delaySec = nextStop.predictedDepartureTime - nextStop.departureTime;
           const delayMin = Math.round(delaySec / 60);
           const delayColor = delayMin === 0 ? 'green' : 'red';
-          const delayText = delayMin === 0 ? 'pontos' : `${delayMin} perc késében`;
+          const delayText = delayMin === 0 ? 'pontos' : `${delayMin} perc késésben`;
           delayHTML = `<div style="padding: 3px;"><span style="color: ${delayColor};">${delayText}</span></div>`;
         } else if (nextStop?.arrivalTime && nextStop?.predictedArrivalTime) {
           const delaySec = nextStop.predictedArrivalTime - nextStop.arrivalTime;
           const delayMin = Math.round(delaySec / 60);
           const delayColor = delayMin === 0 ? 'green' : 'red';
-          const delayText = delayMin === 0 ? 'pontos' : `${delayMin} perc késében`;
+          const delayText = delayMin === 0 ? 'pontos' : `${delayMin} perc késésben`;
           delayHTML = `<div style="padding: 3px;"><span style="color: ${delayColor};">${delayText}</span></div>`;
         }
         const nextStopType = vehicle.status === "STOPPED_AT" ? 'megállóban áll' : 'következik';
