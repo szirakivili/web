@@ -340,7 +340,7 @@
 
     if (!actualTime) return '';
 
-    const actualFormatted = formatTime(actualTime);
+    const actualFormatted = formatTime(predictedTime);
 
     if (!predictedTime) {
       return `<span style="color:black;">${actualFormatted}</span>`;
