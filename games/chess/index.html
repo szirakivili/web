@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakk</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #333;
+            color: #eee;
+        }
+
+        .chess-container {
+            display: grid;
+            grid-template-columns: 20px repeat(8, 60px) 20px;
+            grid-template-rows: 20px repeat(8, 60px) 20px;
+            gap: 0;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            grid-template-rows: repeat(8, 60px);
+            border: 2px solid #ccc;
+            grid-column: 2 / 10;
+            grid-row: 2 / 10;
+        }
+
+        .square {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            position: relative;
+        }
+
+        .white {
+            background-color: #f0d9b5;
+        }
+
+        .black {
+            background-color: #b58863;
+        }
+
+        .piece {
+            font-size: 40px;
+            cursor: pointer;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            position: relative; /* Fontos, hogy a pseudo-elemek pozícionálása működjön */
+        }
+
+        .white-piece {
+            color: #fff;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        .black-piece {
+            color: #000;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+        }
+
+        .selected {
+            background-color: rgba(255, 255, 0, 0.5);
+            box-shadow: inset 0 0 0 3px #ffff00;
+        }
+        
+        /* Az összes lehetséges lépést jelző mezőhöz adjunk egy kört. */
+        .square.possible-move::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1; /* Alacsonyabb z-index, mint a bábué */
+        }
+
+        /* Ha a lehetséges lépés egy olyan mezőre mutat, ahol van bábu,
+        akkor a piros kör legyen, és a bábu is látszódjon. */
+        .square.possible-move .piece {
+            z-index: 2; /* A bábu legyen felül */
+            position: relative; /* Fontos, hogy a z-index működjön */
+        }
+
+        .square.possible-move .piece::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 0, 0, 0.5); /* Piros kitöltés, áttetszően */
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3; /* Hogy a bábu felett legyen, de a .piece eleme */
+        }
+
+        .label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #eee;
+        }
+
+        .file-label {
+            grid-row: 1 / 2;
+        }
+
+        .rank-label {
+            grid-column: 1 / 2;
+        }
+        
+        #game-status {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .promotion-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .promotion-box {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .promotion-box h3 {
+            margin-top: 0;
+            color: white;
+        }
+
+        .promotion-pieces {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .promotion-piece {
+            font-size: 60px;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #555;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .promotion-piece:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) and (orientation: portrait) {
+            .chess-container {
+                /* A tábla méretének dinamikus beállítása */
+                grid-template-columns: 15px repeat(8, 40px) 15px;
+                grid-template-rows: 15px repeat(8, 40px) 15px;
+                
+                /* Középre igazítás, hogy a tábla jobban illeszkedjen a képernyőhöz */
+                height: auto;
+            }
+
+            .board {
+                grid-template-columns: repeat(8, 40px);
+                grid-template-rows: repeat(8, 40px);
+                border-width: 1px;
+            }
+
+            .square {
+                width: 40px;
+                height: 40px;
+            }
+
+            .piece {
+                font-size: 28px; /* A bábuk kisebb mérete */
+            }
+            
+            .square.possible-move::after {
+                width: 15px;
+                height: 15px;
+            }
+
+            .square.possible-move .piece::before {
+                width: 15px;
+                height: 15px;
+            }
+
+            .label {
+                font-size: 12px; /* A jelölések kisebb mérete */
+            }
+            
+            #game-status {
+                font-size: 18px; /* A státusz kisebb mérete */
+                top: 10px;
+            }
+            
+            .promotion-box {
+                padding: 10px;
+            }
+
+            .promotion-box h3 {
+                font-size: 16px;
+            }
+
+            .promotion-pieces {
+                gap: 10px;
+            }
+
+            .promotion-piece {
+                font-size: 40px; /* A promóciós bábuk kisebb mérete */
+                padding: 5px;
+            }
+        }
+        @media (max-width: 768px) and (orientation: landscape) {
+            .chess-container {
+                /* A tábla mérete még kisebb, hogy minden elférjen */
+                grid-template-columns: 10px repeat(8, 35px) 10px;
+                grid-template-rows: 10px repeat(8, 35px) 10px;
+                height: auto;
+            }
+
+            .board {
+                grid-template-columns: repeat(8, 35px);
+                grid-template-rows: repeat(8, 35px);
+                border-width: 1px;
+            }
+
+            .square {
+                width: 35px;
+                height: 35px;
+            }
+
+            .piece {
+                font-size: 24px;
+            }
+            
+            .square.possible-move::after {
+                width: 12px;
+                height: 12px;
+            }
+
+            .square.possible-move .piece::before {
+                width: 12px;
+                height: 12px;
+            }
+
+            .label {
+                font-size: 10px;
+            }
+            
+            #game-status {
+                font-size: 16px; /* Kisebb betűméret */
+                top: 50%; /* Függőlegesen középre igazítás */
+                right: 10px; /* Jobb oldalra helyezés */
+                left: auto; /* A bal pozíció törlése */
+                transform: translateY(-50%); /* A felirat pontos középre helyezése */
+                white-space: nowrap; /* Megakadályozza, hogy a szöveg több sorba törjön */
+            }
+
+            .promotion-box {
+                padding: 5px;
+            }
+
+            .promotion-box h3 {
+                font-size: 14px;
+            }
+
+            .promotion-pieces {
+                gap: 5px;
+            }
+
+            .promotion-piece {
+                font-size: 30px;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+    <div class="chess-container">
+        <div id="game-status"><span id="current-player">Világos következik</span></div>
+        <div class="board"></div>
+    </div>
+    
+    <div id="promotion-overlay" class="promotion-overlay">
+        <div class="promotion-box">
+            <h3>Válassz bábút:</h3>
+            <div id="promotion-pieces-container" class="promotion-pieces">
+                </div>
+        </div>
+    </div>
+
+<script>
+    const board = document.querySelector('.board');
+    const chessContainer = document.querySelector('.chess-container');
+    const playerStatus = document.getElementById('current-player');
+    const promotionOverlay = document.getElementById('promotion-overlay');
+    const promotionPiecesContainer = document.getElementById('promotion-pieces-container');
+    let selectedSquare = null;
+    let activePlayer = 'white';
+    let isPieceSelected = false;
+    let isMoveCompleted = false;
+    let isGameOver = false; // Új változó a játék állapotának kezelésére
+
+    let canCastle = {
+        white: { kingSide: true, queenSide: true },
+        black: { kingSide: true, queenSide: true }
+    };
+    let lastPawnMove = null;
+
+    const pieces = {
+        'r': '♜', 'n': '♞', 'b': '♝', 'q': '♛', 'k': '♚', 'p': '♟',
+        'R': '♜', 'N': '♞', 'B': '♝', 'Q': '♛', 'K': '♚', 'P': '♟'
+    };
+
+    const startPosition = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR';
+    
+    // --- Segédfüggvények a pozíciók konvertálásához ---
+    function getCoords(square) {
+        const file = square.dataset.id.charCodeAt(0) - 'a'.charCodeAt(0);
+        const rank = parseInt(square.dataset.id[1]) - 1;
+        return { row: rank, col: file };
+    }
+
+    function getSquare(row, col) {
+        if (row < 0 || row > 7 || col < 0 || col > 7) return null;
+        const file = String.fromCharCode('a'.charCodeAt(0) + col);
+        const rank = row + 1;
+        return board.querySelector(`[data-id="${file}${rank}"]`);
+    }
+
+    // Új függvény: Ellenőrzi, hogy egy adott játékos királya sakkban van-e
+    function isKingInCheck(boardState, player) {
+        let kingSquare = null;
+        const squares = boardState.querySelectorAll('.square');
+
+        // Megkeressük a királyt
+        for (const square of squares) {
+            const pieceElement = square.querySelector('.piece');
+            if (pieceElement && pieceElement.textContent === '♚') {
+                const isWhite = pieceElement.classList.contains('white-piece');
+                if ((player === 'white' && isWhite) || (player === 'black' && !isWhite)) {
+                    kingSquare = square;
+                    break;
+                }
+            }
+        }
+
+        if (!kingSquare) return false;
+
+        const opponent = player === 'white' ? 'black' : 'white';
+        
+        // Végigmegyünk az ellenfél bábujain, és megnézzük, fenyegetik-e a királyt
+        for (const square of squares) {
+            const pieceElement = square.querySelector('.piece');
+            if (pieceElement && pieceElement.classList.contains(`${opponent}-piece`)) {
+                // A királyt nem lehet "getPossibleMoves"-zal támadni, mert az nem engedi be lépni
+                const isRookLike = pieceElement.textContent === '♜' || pieceElement.textContent === '♛';
+                const isBishopLike = pieceElement.textContent === '♝' || pieceElement.textContent === '♛';
+
+                if (isRookLike) {
+                    const { row, col } = getCoords(square);
+                    const directions = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+                    for (const [dr, dc] of directions) {
+                        let r = row + dr;
+                        let c = col + dc;
+                        while (r >= 0 && r < 8 && c >= 0 && c < 8) {
+                            const nextSquare = getSquare(r, c);
+                            if (nextSquare === kingSquare) return true;
+                            if (nextSquare.querySelector('.piece')) break;
+                            r += dr;
+                            c += dc;
+                        }
+                    }
+                }
+                
+                if (isBishopLike) {
+                    const { row, col } = getCoords(square);
+                    const directions = [[1, 1], [1, -1], [-1, 1], [-1, -1]];
+                    for (const [dr, dc] of directions) {
+                        let r = row + dr;
+                        let c = col + dc;
+                        while (r >= 0 && r < 8 && c >= 0 && c < 8) {
+                            const nextSquare = getSquare(r, c);
+                            if (nextSquare === kingSquare) return true;
+                            if (nextSquare.querySelector('.piece')) break;
+                            r += dr;
+                            c += dc;
+                        }
+                    }
+                }
+
+                if (pieceElement.textContent === '♞') {
+                    const { row, col } = getCoords(square);
+                    const directions = [[2, 1], [2, -1], [-2, 1], [-2, -1], [1, 2], [1, -2], [-1, 2], [-1, -2]];
+                    for (const [dr, dc] of directions) {
+                        const nextSquare = getSquare(row + dr, col + dc);
+                        if (nextSquare === kingSquare) return true;
+                    }
+                }
+
+                if (pieceElement.textContent === '♟') {
+                    const { row, col } = getCoords(square);
+                    const direction = opponent === 'white' ? 1 : -1;
+                    const capture1 = getSquare(row + direction, col + 1);
+                    const capture2 = getSquare(row + direction, col - 1);
+                    if (capture1 === kingSquare || capture2 === kingSquare) return true;
+                }
+
+                if (pieceElement.textContent === '♚') {
+                    const { row, col } = getCoords(square);
+                    const directions = [[1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1], [1, -1]];
+                    for (const [dr, dc] of directions) {
+                        const nextSquare = getSquare(row + dr, col + dc);
+                        if (nextSquare === kingSquare) return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    
+    // Új függvény: Ellenőrzi, hogy egy lépés legális-e
+    function isMoveLegal(startSquare, endSquare, isCastlingMove = false, isEnPassantMove = false) {
+        // Átmeneti tábla állapotának mentése
+        const pieceToMove = startSquare.querySelector('.piece');
+        const capturedPiece = endSquare.querySelector('.piece');
+        
+        let tempRook = null;
+        let tempRookStartSquare = null;
+        let tempRookEndSquare = null;
+        
+        // Sáncolás esetén az ideiglenes bástya lépés mentése
+        if (isCastlingMove) {
+            const { row, col } = getCoords(endSquare);
+            const rookCol = col > getCoords(startSquare).col ? 7 : 0;
+            tempRookStartSquare = getSquare(row, rookCol);
+            tempRook = tempRookStartSquare.querySelector('.piece');
+            tempRookEndSquare = getSquare(row, col > getCoords(startSquare).col ? col - 1 : col + 1);
+        }
+
+        // En passant esetén a gyalog mentése
+        let capturedEnPassantPawn = null;
+        if (isEnPassantMove) {
+            const { row: startRow, col: endCol } = getCoords(endSquare);
+            capturedEnPassantPawn = getSquare(startRow, endCol).querySelector('.piece');
+        }
+
+        // Lépés szimulálása
+        if (capturedPiece) {
+            endSquare.removeChild(capturedPiece);
+        }
+        if (pieceToMove) {
+            endSquare.appendChild(pieceToMove);
+            startSquare.innerHTML = '';
+        }
+        if (isCastlingMove && tempRook) {
+            tempRookEndSquare.appendChild(tempRook);
+            tempRookStartSquare.innerHTML = '';
+        }
+        if (isEnPassantMove && capturedEnPassantPawn) {
+            capturedEnPassantPawn.remove();
+        }
+
+        // Ellenőrizzük, hogy a király sakkban van-e
+        const isLegal = !isKingInCheck(board, activePlayer);
+
+        // Visszaállítjuk a táblát
+        if (pieceToMove) {
+            startSquare.appendChild(pieceToMove);
+            endSquare.innerHTML = '';
+        }
+        if (capturedPiece) {
+            endSquare.appendChild(capturedPiece);
+        }
+        if (isCastlingMove && tempRook) {
+            tempRookStartSquare.appendChild(tempRook);
+            tempRookEndSquare.innerHTML = '';
+        }
+        if (isEnPassantMove && capturedEnPassantPawn) {
+            const { row: startRow, col: endCol } = getCoords(endSquare);
+            getSquare(startRow, endCol).appendChild(capturedEnPassantPawn);
+        }
+        
+        return isLegal;
+    }
+
+    // Új függvény: Ellenőrzi a mattot és a patthelyzetet
+    function checkGameStatus() {
+        const hasLegalMoves = Array.from(board.querySelectorAll(`.square`))
+            .some(square => {
+                const pieceElement = square.querySelector('.piece');
+                if (pieceElement && pieceElement.classList.contains(`${activePlayer}-piece`)) {
+                    return getPossibleMoves(square).length > 0;
+                }
+                return false;
+            });
+
+        if (!hasLegalMoves) {
+            isGameOver = true;
+            if (isKingInCheck(board, activePlayer)) {
+                // Matt!
+                playerStatus.textContent = `${activePlayer === 'white' ? 'Sötét' : 'Világos'} nyert! Matt!`;
+            } else {
+                // Patthelyzet
+                playerStatus.textContent = `Döntetlen! Patthelyzet!`;
+            }
+        }
+    }
+
+    // --- Lépések kiszámítása ---
+    function getPossibleMoves(square) {
+        const moves = [];
+        const pieceElement = square.querySelector('.piece');
+        if (!pieceElement) return moves;
+
+        const piece = pieceElement.textContent;
+        const { row, col } = getCoords(square);
+
+        const isWhite = pieceElement.classList.contains('white-piece');
+
+        // Gyalog
+        if (piece === '♟') {
+            const direction = isWhite ? 1 : -1;
+            const startRow = isWhite ? 1 : 6;
+            
+            const oneStepForward = getSquare(row + direction, col);
+            if (oneStepForward && !oneStepForward.querySelector('.piece')) {
+                moves.push(oneStepForward);
+            }
+            
+            if (row === startRow) {
+                const twoStepsForward = getSquare(row + 2 * direction, col);
+                if (oneStepForward && !oneStepForward.querySelector('.piece') && twoStepsForward && !twoStepsForward.querySelector('.piece')) {
+                    moves.push(twoStepsForward);
+                }
+            }
+
+            [-1, 1].forEach(side => {
+                const captureSquare = getSquare(row + direction, col + side);
+                if (captureSquare && captureSquare.querySelector('.piece') &&
+                    (captureSquare.querySelector('.piece').classList.contains('white-piece') !== isWhite)) {
+                    moves.push(captureSquare);
+                }
+            });
+
+            const enPassantRow = isWhite ? 4 : 3;
+            if (row === enPassantRow && lastPawnMove && lastPawnMove.piece.classList.contains('white-piece') !== isWhite) {
+                const { row: lastPawnRow, col: lastPawnCol } = getCoords(lastPawnMove.endSquare);
+                if (lastPawnRow === row && Math.abs(lastPawnCol - col) === 1) {
+                    const enPassantTargetSquare = getSquare(row + direction, lastPawnCol);
+                    if (enPassantTargetSquare) {
+                        moves.push(enPassantTargetSquare);
+                    }
+                }
+            }
+        }
+        // Futó
+        else if (piece === '♝') {
+            const directions = [[1, 1], [1, -1], [-1, 1], [-1, -1]];
+            directions.forEach(([dr, dc]) => {
+                let r = row + dr;
+                let c = col + dc;
+                while (r >= 0 && r < 8 && c >= 0 && c < 8) {
+                    const nextSquare = getSquare(r, c);
+                    if (nextSquare.querySelector('.piece')) {
+                        if (nextSquare.querySelector('.piece').classList.contains('white-piece') !== isWhite) {
+                            moves.push(nextSquare);
+                        }
+                        break;
+                    }
+                    moves.push(nextSquare);
+                    r += dr;
+                    c += dc;
+                }
+            });
+        }
+        // Bástya
+        else if (piece === '♜') {
+            const directions = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+            directions.forEach(([dr, dc]) => {
+                let r = row + dr;
+                let c = col + dc;
+                while (r >= 0 && r < 8 && c >= 0 && c < 8) {
+                    const nextSquare = getSquare(r, c);
+                    if (nextSquare.querySelector('.piece')) {
+                        if (nextSquare.querySelector('.piece').classList.contains('white-piece') !== isWhite) {
+                            moves.push(nextSquare);
+                        }
+                        break;
+                    }
+                    moves.push(nextSquare);
+                    r += dr;
+                    c += dc;
+                }
+            });
+        }
+        // Vezér
+        else if (piece === '♛') {
+            const directions = [[1, 1], [1, -1], [-1, 1], [-1, -1], [1, 0], [-1, 0], [0, 1], [0, -1]];
+            directions.forEach(([dr, dc]) => {
+                let r = row + dr;
+                let c = col + dc;
+                while (r >= 0 && r < 8 && c >= 0 && c < 8) {
+                    const nextSquare = getSquare(r, c);
+                    if (nextSquare.querySelector('.piece')) {
+                        if (nextSquare.querySelector('.piece').classList.contains('white-piece') !== isWhite) {
+                            moves.push(nextSquare);
+                        }
+                        break;
+                    }
+                    moves.push(nextSquare);
+                    r += dr;
+                    c += dc;
+                }
+            });
+        }
+        // Király
+        else if (piece === '♚') {
+            const directions = [[1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1], [1, -1]];
+            directions.forEach(([dr, dc]) => {
+                const nextSquare = getSquare(row + dr, col + dc);
+                if (nextSquare) {
+                    if (nextSquare.querySelector('.piece')) {
+                        if (nextSquare.querySelector('.piece').classList.contains('white-piece') !== isWhite) {
+                            moves.push(nextSquare);
+                        }
+                    } else {
+                        moves.push(nextSquare);
+                    }
+                }
+            });
+
+            // Sáncolás
+            if (!isKingInCheck(board, activePlayer)) {
+                // Királyoldali sáncolás
+                if ((isWhite && canCastle.white.kingSide) || (!isWhite && canCastle.black.kingSide)) {
+                    const path1 = getSquare(row, col + 1);
+                    const path2 = getSquare(row, col + 2);
+                    const rookSquare = getSquare(row, 7);
+                    
+                    if (path1 && !path1.querySelector('.piece') && path2 && !path2.querySelector('.piece') && rookSquare && rookSquare.querySelector('.piece') && rookSquare.querySelector('.piece').textContent === '♜') {
+                        // Ellenőrizzük, hogy a király nem megy át sakkban lévő mezőn
+                        if (isMoveLegal(square, path1) && isMoveLegal(square, path2)) {
+                            moves.push(path2);
+                        }
+                    }
+                }
+
+                // Vezéroldali sáncolás
+                if ((isWhite && canCastle.white.queenSide) || (!isWhite && canCastle.black.queenSide)) {
+                    const path1 = getSquare(row, col - 1);
+                    const path2 = getSquare(row, col - 2);
+                    const path3 = getSquare(row, col - 3);
+                    const rookSquare = getSquare(row, 0);
+                    
+                    if (path1 && !path1.querySelector('.piece') && path2 && !path2.querySelector('.piece') && path3 && !path3.querySelector('.piece') && rookSquare && rookSquare.querySelector('.piece') && rookSquare.querySelector('.piece').textContent === '♜') {
+                        // Ellenőrizzük, hogy a király nem megy át sakkban lévő mezőn
+                        if (isMoveLegal(square, path1) && isMoveLegal(square, path2)) {
+                            moves.push(path2);
+                        }
+                    }
+                }
+            }
+        }
+        // Huszár
+        else if (piece === '♞') {
+            const directions = [[2, 1], [2, -1], [-2, 1], [-2, -1], [1, 2], [1, -2], [-1, 2], [-1, -2]];
+            directions.forEach(([dr, dc]) => {
+                const nextSquare = getSquare(row + dr, col + dc);
+                if (nextSquare) {
+                    if (nextSquare.querySelector('.piece')) {
+                        if (nextSquare.querySelector('.piece').classList.contains('white-piece') !== isWhite) {
+                            moves.push(nextSquare);
+                        }
+                    } else {
+                        moves.push(nextSquare);
+                    }
+                }
+            });
+        }
+
+        // Lépések szűrése, hogy ne kerüljön a király sakkba
+        const legalMoves = moves.filter(move => {
+            const isCastling = (piece === '♚' && Math.abs(getCoords(square).col - getCoords(move).col) === 2);
+            const isEnPassant = (piece === '♟' && !move.querySelector('.piece') && getCoords(square).col !== getCoords(move).col);
+            return isMoveLegal(square, move, isCastling, isEnPassant);
+        });
+
+        return legalMoves;
+    }
+    
+    // --- Játéklogika (marad a régi) ---
+    function createLabels() {
+        const files = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+        const ranks = [8, 7, 6, 5, 4, 3, 2, 1];
+    
+        files.forEach((file, index) => {
+            const topLabel = document.createElement('div');
+            topLabel.classList.add('label', 'file-label');
+            topLabel.style.gridColumn = `${index + 2} / span 1`;
+            topLabel.textContent = file;
+            chessContainer.appendChild(topLabel);
+    
+            const bottomLabel = topLabel.cloneNode(true);
+            bottomLabel.style.gridRow = '10 / 11';
+            chessContainer.appendChild(bottomLabel);
+        });
+    
+        ranks.forEach((rank, index) => {
+            const leftLabel = document.createElement('div');
+            leftLabel.classList.add('label', 'rank-label');
+            leftLabel.style.gridRow = `${index + 2} / span 1`;
+            leftLabel.textContent = rank;
+            chessContainer.appendChild(leftLabel);
+    
+            const rightLabel = leftLabel.cloneNode(true);
+            rightLabel.style.gridColumn = '10 / 11';
+            chessContainer.appendChild(rightLabel);
+        });
+    }
+    
+    function createBoard() {
+        for (let row = 0; row < 8; row++) {
+            for (let col = 0; col < 8; col++) {
+                const square = document.createElement('div');
+                square.classList.add('square');
+    
+                const isEvenRow = (row % 2 === 0);
+                const isEvenCol = (col % 2 === 0);
+    
+                if ((isEvenRow && isEvenCol) || (!isEvenRow && !isEvenCol)) {
+                    square.classList.add('white');
+                } else {
+                    square.classList.add('black');
+                }
+    
+                const file = String.fromCharCode(97 + col);
+                const rank = 8 - row;
+                square.dataset.id = `${file}${rank}`;
+                
+                board.appendChild(square);
+            }
+        }
+    }
+    
+    function setupPieces(fen) {
+        const rows = fen.split('/');
+        const squares = board.querySelectorAll('.square');
+        let squareIndex = 0;
+    
+        for (let i = 0; i < rows.length; i++) {
+            const row = rows[i];
+            for (let j = 0; j < row.length; j++) {
+                const char = row[j];
+                if (isNaN(char)) {
+                    const piece = document.createElement('span');
+                    piece.classList.add('piece');
+    
+                    if (char.toUpperCase() === char) {
+                        piece.classList.add('white-piece');
+                        piece.textContent = pieces[char];
+                    } else {
+                        piece.classList.add('black-piece');
+                        piece.textContent = pieces[char];
+                    }
+                    
+                    squares[squareIndex].appendChild(piece);
+                    squareIndex++;
+                } else {
+                    squareIndex += parseInt(char);
+                }
+            }
+        }
+    }
+    
+    function updatePlayerStatus() {
+        playerStatus.textContent = activePlayer === 'white' ? 'Világos következik' : 'Sötét következik';
+    }
+    
+    function clearPossibleMoves() {
+        const highlightedMoves = document.querySelectorAll('.possible-move');
+        highlightedMoves.forEach(square => {
+            square.classList.remove('possible-move');
+        });
+    }
+    
+    function handlePawnPromotion(pawnSquare, isWhite) {
+        promotionOverlay.style.display = 'flex';
+        promotionPiecesContainer.innerHTML = '';
+        
+        const promotionPieces = isWhite ? ['Q', 'R', 'B', 'N'] : ['q', 'r', 'b', 'n'];
+    
+        promotionPieces.forEach(pieceCode => {
+            const pieceElement = document.createElement('span');
+            pieceElement.classList.add('piece', 'promotion-piece');
+            pieceElement.textContent = pieces[pieceCode];
+            
+            if (isWhite) {
+                pieceElement.classList.add('white-piece');
+            } else {
+                pieceElement.classList.add('black-piece');
+            }
+
+            pieceElement.addEventListener('click', () => {
+                const pawn = pawnSquare.querySelector('.piece');
+                pawn.textContent = pieceElement.textContent;
+                pawn.classList.remove('white-piece', 'black-piece');
+                if (isWhite) {
+                    pawn.classList.add('white-piece');
+                } else {
+                    pawn.classList.add('black-piece');
+                }
+                promotionOverlay.style.display = 'none';
+                checkGameStatus(); // Ellenőrizzük a játék végét a promóció után is
+            });
+            promotionPiecesContainer.appendChild(pieceElement);
+        });
+    }
+    
+    board.addEventListener('click', (event) => {
+        if (isGameOver) {
+            return; // A játék már véget ért, ne lehessen lépni
+        }
+
+        const clickedSquare = event.target.closest('.square');
+        if (!clickedSquare) {
+            return;
+        }
+        
+        const clickedPiece = clickedSquare.querySelector('.piece');
+        
+        if (isPieceSelected && clickedSquare.classList.contains('possible-move')) {
+            const pieceToMove = selectedSquare.querySelector('.piece');
+            const { row: startRow, col: startCol } = getCoords(selectedSquare);
+            const { row: endRow, col: endCol } = getCoords(clickedSquare);
+            const piece = pieceToMove.textContent;
+            
+            // Sáncolás
+            if ((piece === '♚') && Math.abs(startCol - endCol) === 2) {
+                const rookStartCol = endCol > startCol ? 7 : 0;
+                const rookEndCol = endCol > startCol ? endCol - 1 : endCol + 1;
+                const rookSquare = getSquare(startRow, rookStartCol);
+                const rookPiece = rookSquare.querySelector('.piece');
+                const targetRookSquare = getSquare(startRow, rookEndCol);
+                
+                if (rookPiece && targetRookSquare) {
+                    targetRookSquare.appendChild(rookPiece);
+                    rookSquare.innerHTML = '';
+                }
+                
+                if (pieceToMove.classList.contains('white-piece')) {
+                    canCastle.white.kingSide = false;
+                    canCastle.white.queenSide = false;
+                } else {
+                    canCastle.black.kingSide = false;
+                    canCastle.black.queenSide = false;
+                }
+            }
+
+            // En passant
+            const isEnPassantMove = (piece === '♟' && !clickedPiece && startCol !== endCol);
+            if (isEnPassantMove) {
+                const capturedPawnSquare = getSquare(startRow, endCol);
+                if (capturedPawnSquare) {
+                    capturedPawnSquare.querySelector('.piece').remove();
+                }
+            }
+            
+            if (clickedPiece) {
+                clickedPiece.remove();
+            }
+            if (pieceToMove) {
+                clickedSquare.appendChild(pieceToMove);
+                selectedSquare.innerHTML = '';
+            }
+            
+            selectedSquare.classList.remove('selected');
+            clearPossibleMoves();
+            
+            // Sáncolás jogának frissítése
+            if (piece === '♚') {
+                if (pieceToMove.classList.contains('white-piece')) {
+                    canCastle.white.kingSide = false;
+                    canCastle.white.queenSide = false;
+                } else {
+                    canCastle.black.kingSide = false;
+                    canCastle.black.queenSide = false;
+                }
+            } else if (piece === '♜') {
+                if (pieceToMove.classList.contains('white-piece')) {
+                    if (startCol === 7) canCastle.white.kingSide = false;
+                    else if (startCol === 0) canCastle.white.queenSide = false;
+                } else {
+                    if (startCol === 7) canCastle.black.kingSide = false;
+                    else if (startCol === 0) canCastle.black.queenSide = false;
+                }
+            }
+
+            // Gyaloglépés tárolása en passant-hoz
+            if ((piece === '♟') && Math.abs(startRow - endRow) === 2) {
+                lastPawnMove = { piece: pieceToMove, endSquare: clickedSquare };
+            } else {
+                lastPawnMove = null;
+            }
+
+            // Gyalogpromóció ellenőrzése
+            if ((piece === '♟' && pieceToMove.classList.contains('white-piece') && endRow === 7) || (piece === '♟' && !pieceToMove.classList.contains('white-piece') && endRow === 0)) {
+                handlePawnPromotion(clickedSquare, activePlayer === 'white');
+            }
+            // Ha nincs promóció, akkor váltunk játékost és ellenőrizzük a játék végét
+            activePlayer = activePlayer === 'white' ? 'black' : 'white';
+            updatePlayerStatus();
+            checkGameStatus();
+            
+            isMoveCompleted = true;
+            selectedSquare = null;
+            isPieceSelected = false;
+
+        } else if (isPieceSelected) {
+            if (selectedSquare) {
+                selectedSquare.classList.remove('selected');
+            }
+            clearPossibleMoves();
+            selectedSquare = null;
+            isPieceSelected = false;
+            isMoveCompleted = false;
+        }
+        
+        if (clickedPiece && !isMoveCompleted) {
+            const isWhitePiece = clickedPiece.classList.contains('white-piece');
+            const isBlackPiece = clickedPiece.classList.contains('black-piece');
+
+            if ((activePlayer === 'white' && isWhitePiece) || (activePlayer === 'black' && isBlackPiece)) {
+                if (selectedSquare) {
+                    selectedSquare.classList.remove('selected');
+                }
+                clearPossibleMoves();
+                
+                selectedSquare = clickedSquare;
+                selectedSquare.classList.add('selected');
+                isPieceSelected = true;
+                
+                const moves = getPossibleMoves(selectedSquare);
+                moves.forEach(moveSquare => {
+                    moveSquare.classList.add('possible-move');
+                });
+            }
+        }
+        
+        if (isMoveCompleted) {
+            isMoveCompleted = false;
+        }
+    });
+    
+    createLabels();
+    createBoard();
+    setupPieces(startPosition);
+    updatePlayerStatus();
+</script>
+</body>
+</html>
