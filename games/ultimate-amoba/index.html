@@ -51,6 +51,7 @@
 
         #reset-button {
             background-color: #00bcd4;
+            display: none;
         }
 
         #reset-button:hover {
@@ -469,6 +470,7 @@
                     statusDisplay.classList.add('winner');
                     gameActive = false;
                     gameBoard.classList.add('game-won');
+                    resetButton.style.display = 'block';
                 } else if (!macroBoardState.includes(null)) {
                     statusDisplay.textContent = 'Döntetlen!';
                     gameActive = false;
@@ -517,6 +519,7 @@
             statusDisplay.classList.remove('winner');
             gameBoard.classList.remove('game-won');
             createBoard();
+            resetButton.style.display = 'none';
         }
         
         // Modal eseménykezelők
