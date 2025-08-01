@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akasztófa játék</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #e9eef2;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            width: 100%;
+            max-width: 1000px;
+        }
+        .container {
+            width: 80%;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        /* Új stílus a játék elrendezéséhez */
+        .game-layout {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            width: 100%;
+            align-items: flex-start;
+        }
+        .game-image-column {
+            flex: 0 0 auto;
+        }
+        .game-image-column img {
+            width: 100%;
+            max-width: 250px;
+            display: block;
+        }
+        .game-content-column {
+            flex: 1;
+        }
+
+        h1 {
+            color: #1a5276;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            margin: 15px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            text-align: center;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        button:hover:not(:disabled) {
+            background-color: #2980b9;
+        }
+        button:active:not(:disabled) {
+            transform: scale(0.98);
+        }
+        button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        #encoded-link-container {
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        #encoded-link {
+            padding: 12px;
+            background-color: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            border-radius: 6px;
+            font-size: 0.9em;
+            word-break: break-all;
+            flex-grow: 1;
+            text-align: left;
+        }
+        #copy-button {
+            margin-left: 0;
+        }
+        /* Játék specifikus stílusok */
+        #game-board {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 15px 0;
+            text-align: center;
+            color: #2c3e50;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 10px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        #game-board.lost {
+            color: #e74c3c;
+        }
+        #keyboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 30px;
+        }
+        .key {
+            background-color: #f1f1f1;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+            text-align: center;
+        }
+        .key:hover:not(.correct):not(.incorrect) {
+            background-color: #e0e0e0;
+        }
+        .key.correct {
+            background-color: #2ecc71;
+            color: white;
+            cursor: not-allowed;
+        }
+        .key.incorrect {
+            background-color: #e74c3c;
+            color: white;
+            cursor: not-allowed;
+        }
+        .status-message {
+            margin-top: 10px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .correct-message {
+            color: #27ae60;
+        }
+        /* Mobilos elrendezés */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .container {
+                order: 2;
+            }
+            #decoder-section {
+                order: 1;
+                margin-bottom: 20px;
+            }
+            .game-layout {
+                flex-direction: column;
+                align-items: center;
+            }
+            .game-image-column {
+                order: 1;
+            }
+            .game-content-column {
+                order: 2;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+
+<div class="main-content">
+    <div id="decoder-section" class="container">
+        <div class="game-layout">
+            <div class="game-image-column">
+                <img id="hangman-image" src="" alt="Akasztófa játék állapota">
+            </div>
+            <div class="game-content-column">
+                <h1>Akasztófa játék</h1>
+                <p>Kattints a betűkre vagy használd a billentyűzetet.</p>
+                <p id="guess-counter"></p>
+                <div id="game-board"></div>
+                <p id="game-status"></p>
+                <div id="keyboard"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="encoder-section" class="container">
+        <h1>Játék generálása</h1>
+        <p>Írj be egy szót vagy kifejezést, amit másokkal ki szeretnél találtatni. A linket elküldheted a barátodnak, abból nem lehet rájönni.</p>
+        <input type="text" id="input-text" placeholder="PL.: GONDOLATOLVASÓ">
+        <button id="encode-button">Link generálása</button>
+        <p id="encoder-status-message" class="status-message"></p>
+        
+        <div id="encoded-link-container">
+            <p id="encoded-link"></p>
+            <button id="copy-button" style="display: none;">Másolás</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const passphrase = "2445a218-ad62-4e48-af79-307e0d5a8647";
+        const decoderSection = document.getElementById('decoder-section');
+        const encoderSection = document.getElementById('encoder-section');
+        
+        const inputTextElement = document.getElementById('input-text');
+        const encodeButton = document.getElementById('encode-button');
+        const encodedLinkElement = document.getElementById('encoded-link');
+        const copyButton = document.getElementById('copy-button');
+        const encoderStatusMessage = document.getElementById('encoder-status-message');
+
+        const gameBoardElement = document.getElementById('game-board');
+        const keyboardElement = document.getElementById('keyboard');
+        const gameStatusElement = document.getElementById('game-status');
+        const guessCounterElement = document.getElementById('guess-counter');
+        const hangmanImageElement = document.getElementById('hangman-image');
+
+        const hungarianLettersRegex = /^[A-ZÁÉÍÓÖŐÚÜŰ\s]*$/;
+        const alphabet = ["A", "Á", "B", "C", "D", "E", "É", "F", "G", "H", "I", "Í", "J", "K", "L", "M", "N", "O", "Ó", "Ö", "Ő", "P", "Q", "R", "S", "T", "U", "Ú", "Ü", "Ű", "V", "W", "X", "Y", "Z"];
+        const maxGuesses = 7;
+        let incorrectGuesses = 0;
+
+        // URL paraméterek lekérése
+        const urlParams = new URLSearchParams(window.location.search);
+        const encodedValue = urlParams.get('x');
+
+        function updateHangmanImage() {
+            hangmanImageElement.src = `${incorrectGuesses}.png`;
+        }
+
+        if (encodedValue) {
+            decoderSection.style.display = 'block';
+            encoderSection.style.display = 'none';
+            updateHangmanImage();
+
+            try {
+                const decrypted = CryptoJS.AES.decrypt(encodedValue, passphrase);
+                const secretPhrase = decrypted.toString(CryptoJS.enc.Utf8).toUpperCase();
+
+                if (secretPhrase.length > 0) {
+                    let displayPhraseArray = secretPhrase.split('').map(char => (char === ' ' ? ' ' : '_'));
+                    let gameActive = true;
+
+                    function updateGameBoard() {
+                        gameBoardElement.textContent = displayPhraseArray.join('');
+                    }
+
+                    function endGame(isWin) {
+                        gameActive = false;
+                        const keys = document.querySelectorAll('.key');
+                        keys.forEach(key => key.style.pointerEvents = 'none');
+                        if (!isWin) {
+                            gameBoardElement.classList.add('lost');
+                            gameBoardElement.textContent = secretPhrase;
+                            gameStatusElement.textContent = `Sajnálom, kifutottál a lehetőségekből.`;
+                        }
+                    }
+
+                    function handleGuess(guess) {
+                        if (!gameActive) return;
+
+                        const keyElement = [...keyboardElement.children].find(key => key.textContent === guess);
+                        if (!keyElement || keyElement.classList.contains('correct') || keyElement.classList.contains('incorrect')) {
+                            return;
+                        }
+
+                        let found = false;
+                        for (let i = 0; i < secretPhrase.length; i++) {
+                            if (secretPhrase[i] === guess) {
+                                displayPhraseArray[i] = guess;
+                                found = true;
+                            }
+                        }
+
+                        if (found) {
+                            keyElement.classList.add('correct');
+                        } else {
+                            keyElement.classList.add('incorrect');
+                            incorrectGuesses++;
+                            updateHangmanImage();
+                        }
+                        
+                        updateGameBoard();
+                        checkStatus();
+                    }
+
+                    function createKeyboard() {
+                        keyboardElement.innerHTML = '';
+                        const sortedAlphabet = ["A", "Á", "B", "C", "D", "E", "É", "F", "G", "H", "I", "Í", "J", "K", "L", "M", "N", "O", "Ó", "Ö", "Ő", "P", "Q", "R", "S", "T", "U", "Ú", "Ü", "Ű", "V", "W", "X", "Y", "Z"];
+                        
+                        sortedAlphabet.forEach(char => {
+                            const key = document.createElement('div');
+                            key.classList.add('key');
+                            key.textContent = char;
+                            key.addEventListener('click', () => handleGuess(char));
+                            keyboardElement.appendChild(key);
+                        });
+                    }
+
+                    function checkStatus() {
+                        if (!displayPhraseArray.includes('_')) {
+                            gameStatusElement.textContent = 'Gratulálok, kitaláltad!';
+                            gameStatusElement.classList.add('correct-message');
+                            gameStatusElement.classList.remove('status-message');
+                            endGame(true);
+                        } else if (incorrectGuesses >= maxGuesses) {
+                            gameStatusElement.classList.add('status-message');
+                            gameStatusElement.classList.remove('correct-message');
+                            endGame(false);
+                        }
+                    }
+
+                    document.addEventListener('keydown', (event) => {
+                        const key = event.key.toUpperCase();
+                        if (alphabet.includes(key) && !event.repeat) {
+                            handleGuess(key);
+                        }
+                    });
+
+                    createKeyboard();
+                    updateGameBoard();
+                } else {
+                    gameStatusElement.textContent = 'Hibás URL cím.';
+                }
+            } catch (e) {
+                gameStatusElement.textContent = 'Hiba: ' + e.message;
+            }
+        } else {
+            decoderSection.style.display = 'none';
+            encoderSection.style.display = 'block';
+
+            encodeButton.addEventListener('click', () => {
+                let textToEncode = inputTextElement.value;
+                encodedLinkElement.textContent = '';
+                copyButton.style.display = 'none';
+                encoderStatusMessage.textContent = '';
+                encoderStatusMessage.classList.remove('correct-message');
+                encoderStatusMessage.classList.add('status-message');
+
+                const textToEncodeUpper = textToEncode.toUpperCase();
+                
+                if (textToEncodeUpper.trim() === '') {
+                    encoderStatusMessage.textContent = 'Érvényes szöveget írj be.';
+                    return;
+                }
+
+                const hungarianAlphabetRegex = /^[A-ZÁÉÍÓÖŐÚÜŰ\s]*$/;
+                if (!hungarianAlphabetRegex.test(textToEncodeUpper)) {
+                    encoderStatusMessage.textContent = 'Hiba: Csak magyar betűk és szóközök használhatók!';
+                    return;
+                }
+                
+                const encrypted = CryptoJS.AES.encrypt(textToEncodeUpper, passphrase);
+                const encodedUrlParam = encodeURIComponent(encrypted.toString());
+                const fullUrl = `${window.location.origin}${window.location.pathname}?x=${encodedUrlParam}`;
+
+                encodedLinkElement.textContent = fullUrl;
+                copyButton.style.display = 'block';
+                encoderStatusMessage.textContent = 'Sikeresen generált link.';
+                encoderStatusMessage.classList.add('correct-message');
+                encoderStatusMessage.classList.remove('status-message');
+            });
+
+            copyButton.addEventListener('click', () => {
+                const linkToCopy = encodedLinkElement.textContent;
+                navigator.clipboard.writeText(linkToCopy).then(() => {
+                    copyButton.textContent = 'Másolva!';
+                    setTimeout(() => {
+                        copyButton.textContent = 'Másolás';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Hiba a másolás során:', err);
+                });
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
