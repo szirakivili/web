@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szuper amőba</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #f0f0f0;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 2em;
+        }
+        
+        .game-controls {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        button {
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: 600;
+            color: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #reset-button {
+            background-color: #00bcd4;
+        }
+
+        #reset-button:hover {
+            background-color: #0097a7;
+            transform: translateY(-2px);
+        }
+        
+        #rules-button {
+            background-color: #4caf50;
+        }
+        
+        #rules-button:hover {
+            background-color: #388e3c;
+            transform: translateY(-2px);
+        }
+
+        #game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            border: 3px solid #666;
+            padding: 12px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .macro-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3px;
+            width: 180px;
+            height: 180px;
+            border: 2px solid #555;
+            box-sizing: border-box;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            transition: background-color 0.3s, border-color 0.3s;
+            position: relative;
+        }
+
+        .cell {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            cursor: pointer;
+            border: 1px solid #4a4a4a;
+            box-sizing: border-box;
+            user-select: none;
+            transition: background-color 0.2s, transform 0.2s, color 0.3s;
+            border-radius: 4px;
+        }
+        
+        .macro-board.active {
+            background-color: #383838;
+            border-color: #888;
+        }
+
+        .macro-board.won-X {
+            background-color: #4a1f1f;
+        }
+
+        .macro-board.won-O {
+            background-color: #1f3a4a;
+        }
+        
+        .macro-board.won-X .cell,
+        .macro-board.won-O .cell,
+        .macro-board.draw .cell {
+            visibility: hidden;
+        }
+        
+        #game-board.game-won .macro-board.won-X,
+        #game-board.game-won .macro-board.won-O {
+            background-color: #4a1f1f;
+        }
+        
+        #game-board.game-won .macro-board.won-O {
+            background-color: #1f3a4a;
+        }
+
+        .macro-board::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+            font-weight: bold;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .macro-board.won-X::after {
+            content: 'X';
+            color: #ef5350;
+        }
+
+        .macro-board.won-O::after {
+            content: 'O';
+            color: #42a5f5;
+        }
+        
+        .macro-board.draw {
+            background-color: #3a3a3a;
+        }
+        
+        .macro-board.draw::after {
+            content: none;
+        }
+
+        .cell:hover:not(.occupied):not(.disabled) {
+            background-color: #3a3a3a;
+            transform: scale(1.05);
+        }
+
+        .cell.occupied {
+            cursor: not-allowed;
+            z-index: 5;
+        }
+
+        .X {
+            color: #ef5350;
+        }
+
+        .O {
+            color: #42a5f5;
+        }
+
+        #status {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: 600;
+            text-align: center;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        #status-icon {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        #status.winner {
+            color: #4caf50;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Modal (Felugró ablak) stílusa */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border: 2px solid #555;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            color: #00bcd4;
+            text-align: center;
+        }
+        
+        .modal-content p, .modal-content li {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .modal-content ul {
+            padding-left: 20px;
+        }
+        
+        .modal-content li {
+            margin-bottom: 10px;
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #f00;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            body {
+                height: auto;
+            }
+            #game-board {
+                gap: 8px;
+                padding: 8px;
+            }
+            .macro-board {
+                width: 100px;
+                height: 100px;
+                gap: 2px;
+            }
+            .cell {
+                width: 32px;
+                height: 32px;
+                font-size: 1.5em;
+            }
+            .macro-board.won-X::after,
+            .macro-board.won-O::after {
+                font-size: 3em;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            #status {
+                font-size: 1.2em;
+            }
+            button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+            .modal-content {
+                margin: 1vh;
+                width: 80%;
+                position: fixed;
+                z-index: 100;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+
+    <h1>Szuper amőba</h1>
+    <div id="game-board"></div>
+    <div id="status"><span id="status-icon" class="X">X</span> következik</div>
+    
+    <div class="game-controls">
+        <button id="reset-button">Új játék</button>
+        <button id="rules-button">Játékszabály</button>
+    </div>
+
+    <div id="rules-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Játékszabályok</h2>
+            <p>
+                A szuper amőba egy kibővített amőba játék. A cél, hogy megnyerj három kis pályát egy sorban, oszlopban, vagy átlóban a nagypályán.
+            </p>
+            <ul>
+                <li><strong>Lépések:</strong> Amikor egy játékos lép egy kisméretű pályán, a következő játékosnak a nagypálya azon részére kell lépnie, amelyik megfelel a korábbi lépés pozíciójának a kispályán.
+                    <ul>
+                        <li><strong>Példa:</strong> Ha az első játékos a bal felső kispálya jobb alsó sarkába lép, a következő játékosnak a nagypálya jobb alsó kispályáján kell lépnie.</li>
+                    </ul>
+                </li>
+                <li><strong>Szabad választás:</strong> Ha a következő lépésed egy már megnyert vagy döntetlenre végződött pályára mutat, akkor szabadon választhatsz a többi még meg nem nyert pálya közül.</li>
+                <li><strong>Győzelem:</strong> Aki először nyer meg három kispályát egy sorban, oszlopban vagy átlóban a nagypályán, az nyeri a játékot.</li>
+                <li><strong>Döntetlen:</strong> Ha a nagypálya összes kispályája betelik, és senki sem nyer, a játék döntetlennel zárul.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const gameBoard = document.getElementById('game-board');
+        const statusDisplay = document.getElementById('status');
+        const statusIcon = document.getElementById('status-icon');
+        const resetButton = document.getElementById('reset-button');
+        const rulesButton = document.getElementById('rules-button');
+        const rulesModal = document.getElementById('rules-modal');
+        const closeButton = document.querySelector('.close-button');
+        
+        let currentPlayer = 'X'; // X kezd
+        let gameActive = true;
+        let boardState = Array(9).fill(null).map(() => Array(9).fill(null));
+        let macroBoardState = Array(9).fill(null);
+        let nextMacroBoardIndex = null;
+        let lastMove = { macroIndex: null, cellIndex: null };
+
+        const winningConditions = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+
+        function createBoard() {
+            gameBoard.innerHTML = '';
+            for (let i = 0; i < 9; i++) {
+                const macroBoard = document.createElement('div');
+                macroBoard.classList.add('macro-board');
+                macroBoard.dataset.macroIndex = i;
+
+                for (let j = 0; j < 9; j++) {
+                    const cell = document.createElement('div');
+                    cell.classList.add('cell');
+                    cell.dataset.macroIndex = i;
+                    cell.dataset.cellIndex = j;
+                    cell.addEventListener('click', handleCellClick);
+                    macroBoard.appendChild(cell);
+                }
+                gameBoard.appendChild(macroBoard);
+            }
+            updateStatus();
+            updateBoardState();
+        }
+
+        function updateBoardState() {
+            document.querySelectorAll('.macro-board').forEach((macroBoard, macroIndex) => {
+                macroBoard.classList.remove('active');
+                macroBoard.classList.remove('won-X', 'won-O', 'draw');
+                
+                // Frissítés a nyertes és döntetlen állapotra
+                if (macroBoardState[macroIndex] !== null) {
+                    if (macroBoardState[macroIndex] === 'draw') {
+                        macroBoard.classList.add('draw');
+                    } else {
+                        macroBoard.classList.add('won-' + macroBoardState[macroIndex]);
+                    }
+                }
+            });
+
+            if (gameActive) {
+                if (nextMacroBoardIndex !== null && macroBoardState[nextMacroBoardIndex] === null) {
+                    document.querySelector(`.macro-board[data-macro-index='${nextMacroBoardIndex}']`).classList.add('active');
+                } else if (nextMacroBoardIndex === null) {
+                    document.querySelectorAll('.macro-board').forEach(macroBoard => {
+                        if (macroBoardState[parseInt(macroBoard.dataset.macroIndex)] === null) {
+                            macroBoard.classList.add('active');
+                        }
+                    });
+                }
+            }
+        }
+
+        function handleCellClick(event) {
+            const macroIndex = parseInt(event.target.dataset.macroIndex);
+            const cellIndex = parseInt(event.target.dataset.cellIndex);
+
+            if (!gameActive || boardState[macroIndex][cellIndex] !== null || macroBoardState[macroIndex] !== null) {
+                return;
+            }
+
+            if (nextMacroBoardIndex !== null && nextMacroBoardIndex !== macroIndex) {
+                return;
+            }
+
+            boardState[macroIndex][cellIndex] = currentPlayer;
+            event.target.textContent = currentPlayer;
+            event.target.classList.add(currentPlayer);
+            event.target.classList.add('occupied');
+            
+            lastMove = { macroIndex, cellIndex };
+
+            if (checkWin(boardState[macroIndex])) {
+                macroBoardState[macroIndex] = currentPlayer;
+                
+                if (checkMacroWin()) {
+                    statusDisplay.innerHTML = `<span id="status-icon" class="${currentPlayer}">${currentPlayer}</span> nyert!`;
+                    statusDisplay.classList.add('winner');
+                    gameActive = false;
+                    gameBoard.classList.add('game-won');
+                } else if (!macroBoardState.includes(null)) {
+                    statusDisplay.textContent = 'Döntetlen!';
+                    gameActive = false;
+                }
+            } else if (!boardState[macroIndex].includes(null)) {
+                macroBoardState[macroIndex] = 'draw';
+            }
+
+            nextMacroBoardIndex = cellIndex;
+            if (macroBoardState[nextMacroBoardIndex] !== null) {
+                nextMacroBoardIndex = null;
+            }
+
+            currentPlayer = currentPlayer === 'O' ? 'X' : 'O';
+            updateStatus();
+            updateBoardState();
+        }
+
+        function checkWin(board) {
+            return winningConditions.some(condition => {
+                const [a, b, c] = condition;
+                return board[a] && board[a] === board[b] && board[a] === board[c];
+            });
+        }
+        
+        function checkMacroWin() {
+            return winningConditions.some(condition => {
+                const [a, b, c] = condition;
+                return macroBoardState[a] && macroBoardState[a] === macroBoardState[b] && macroBoardState[a] === macroBoardState[c];
+            });
+        }
+        
+        function updateStatus() {
+            if (gameActive) {
+                statusDisplay.innerHTML = `<span id="status-icon" class="${currentPlayer}">${currentPlayer}</span> következik`;
+            }
+        }
+        
+        function resetGame() {
+            currentPlayer = 'X';
+            gameActive = true;
+            boardState = Array(9).fill(null).map(() => Array(9).fill(null));
+            macroBoardState = Array(9).fill(null);
+            nextMacroBoardIndex = null;
+            lastMove = { macroIndex: null, cellIndex: null };
+            statusDisplay.classList.remove('winner');
+            gameBoard.classList.remove('game-won');
+            createBoard();
+        }
+        
+        // Modal eseménykezelők
+        rulesButton.addEventListener('click', () => {
+            rulesModal.style.display = 'flex';
+        });
+
+        closeButton.addEventListener('click', () => {
+            rulesModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target == rulesModal) {
+                rulesModal.style.display = 'none';
+            }
+        });
+
+        resetButton.addEventListener('click', resetGame);
+        
+        createBoard();
+        rulesModal.style.display = 'none';
+    </script>
+</body>
+</html>
