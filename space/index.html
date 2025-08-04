@@ -125,6 +125,15 @@
     }
   </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
 <body>
   <div class="container">
     <h2>A Nemzetközi Űrállomás aktuális pozíciója</h2>
@@ -156,7 +165,7 @@
     const map = L.map('map').setView([0, 0], 2);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap hozzájárulók'
+      attribution: '&copy; OpenStreetMap'
     }).addTo(map);
 
     const issIcon = L.icon({
@@ -176,8 +185,6 @@
       weight: 1
     }).addTo(map);
 
-    let firstUpdate = true;
-
     async function updateISSPosition() {
       try {
         const response = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
@@ -187,11 +194,7 @@
 
         marker.setLatLng([lat, lon]);
         issCircle.setLatLng([lat, lon]);
-
-        if (firstUpdate) {
-          map.setView([lat, lon], 3);
-          firstUpdate = false;
-        }
+        map.setView([lat, lon], 2);
 
         renderISSInfo(data);
       } catch (error) {
