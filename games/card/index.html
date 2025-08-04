@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Játékok francia kártyával</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-color: #f0f0f0;
+            --primary-orange: #ff9900;
+            --secondary-orange: #e68a00;
+            --card-bg-light: #fff;
+            --card-text-dark: #333;
+            --card-red-suit: #d63333;
+            --card-black-suit: #333;
+            --border-color: #333;
+            --accordion-bg: #2a2a2a;
+            --accordion-hover: #3a3a3a;
+            --panel-bg: #222222;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: var(--primary-orange);
+            font-weight: 700;
+        }
+
+        /* Kártyák sora - "kiterített" kéz effekt */
+        .card-row {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 40px auto;
+            position: relative;
+            height: 180px;
+            width: 100%;
+            max-width: 900px;
+        }
+        
+        .card {
+            width: 80px;
+            height: 120px;
+            background-color: var(--card-bg-light);
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 2px solid var(--border-color);
+            font-weight: 700;
+            transition: transform 0.3s ease, box-shadow 0.2s ease, z-index 0.1s;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        /* A lapértékek kisebbek és jobban illeszkednek */
+        .card .corner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1;
+            font-size: 1.5em; /* A betűméret csökkentése */
+        }
+        .card .value { font-size: 1em; }
+        .card .suit { font-size: 0.8em; }
+
+        .card .bottom-corner {
+            transform: rotate(180deg);
+            align-self: flex-end;
+        }
+        
+        /* A lapok egyedi pozíciói és forgatása */
+        .card:nth-child(1) { transform: translateX(-240px) rotate(-20deg); }
+        .card:nth-child(2) { transform: translateX(-200px) rotate(-16deg); }
+        .card:nth-child(3) { transform: translateX(-160px) rotate(-12deg); }
+        .card:nth-child(4) { transform: translateX(-120px) rotate(-8deg); }
+        .card:nth-child(5) { transform: translateX(-80px) rotate(-4deg); }
+        .card:nth-child(6) { transform: translateX(-40px) rotate(0deg); }
+        .card:nth-child(7) { transform: translateX(0px) rotate(4deg); }
+        .card:nth-child(8) { transform: translateX(40px) rotate(8deg); }
+        .card:nth-child(9) { transform: translateX(80px) rotate(12deg); }
+        .card:nth-child(10) { transform: translateX(120px) rotate(16deg); }
+        .card:nth-child(11) { transform: translateX(160px) rotate(20deg); }
+        .card:nth-child(12) { transform: translateX(200px) rotate(24deg); }
+        .card:nth-child(13) { transform: translateX(240px) rotate(28deg); }
+
+        /* A lapok kiemelése rákattintáskor vagy rámutatáskor */
+        .card:hover, .card:focus {
+            transform: translateY(-50px) scale(1.1);
+            z-index: 10;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card.red { color: var(--card-red-suit); }
+        .card.black { color: var(--card-black-suit); }
+
+        /* Játékszabályok menü */
+        .game-menu {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion {
+            background-color: var(--accordion-bg);
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 20px 25px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: background-color 0.4s;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion:hover { background-color: var(--accordion-hover); }
+        .accordion.active { background-color: var(--accordion-hover); border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+        
+        .accordion::after {
+            content: '\002B';
+            color: var(--primary-orange);
+            font-weight: bold;
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion.active::after {
+            content: "\2212";
+            transform: rotate(180deg);
+        }
+
+        .panel {
+            padding: 0 25px;
+            background-color: var(--panel-bg);
+            display: none;
+            overflow: hidden;
+            border-radius: 0 0 8px 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .panel p, .panel ul { padding: 15px 0; }
+        .panel ul { list-style-type: none; padding-left: 0; }
+        .panel ul li {
+            padding: 5px 0;
+            border-left: 2px solid var(--primary-orange);
+            padding-left: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .panel h3 {
+            color: var(--primary-orange);
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        /* Mobil nézet */
+        @media (max-width: 768px) {
+            .card-row { height: 90px; }
+            .card {
+                width: 45px;
+                height: 65px;
+                padding: 4px;
+            }
+            .card .corner { font-size: 1em; } /* Mobil nézetben még kisebb betűméret */
+            
+            /* Mobilra optimalizált pozíciók */
+            .card:nth-child(1) { transform: translateX(-110px) rotate(-15deg); }
+            .card:nth-child(2) { transform: translateX(-95px) rotate(-12deg); }
+            .card:nth-child(3) { transform: translateX(-80px) rotate(-9deg); }
+            .card:nth-child(4) { transform: translateX(-65px) rotate(-6deg); }
+            .card:nth-child(5) { transform: translateX(-50px) rotate(-3deg); }
+            .card:nth-child(6) { transform: translateX(-35px) rotate(0deg); }
+            .card:nth-child(7) { transform: translateX(-20px) rotate(3deg); }
+            .card:nth-child(8) { transform: translateX(-5px) rotate(6deg); }
+            .card:nth-child(9) { transform: translateX(10px) rotate(9deg); }
+            .card:nth-child(10) { transform: translateX(25px) rotate(12deg); }
+            .card:nth-child(11) { transform: translateX(40px) rotate(15deg); }
+            .card:nth-child(12) { transform: translateX(55px) rotate(18deg); }
+            .card:nth-child(13) { transform: translateX(70px) rotate(21deg); }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+
+    <h1>Játékok francia kártyával</h1>
+
+    <div class="card-row">
+        <div class="card black">
+            <div class="corner">
+                <span class="value">A</span>
+                <span class="suit">♠</span>
+            </div>
+            <div class="corner bottom-corner">
+                <span class="value">A</span>
+                <span class="suit">♠</span>
+            </div>
+        </div>
+        <div class="card black">
+            <div class="corner">
+                <span class="value">2</span>
+                <span class="suit">♣</span>
+            </div>
+            <div class="corner bottom-corner">
+                <span class="value">2</span>
+                <span class="suit">♣</span>
+            </div>
+        </div>
+        <div class="card red">
+            <div class="corner">
+                <span class="value">3</span>
+                <span class="suit">♥</span>
+            </div>
+            <div class="corner bottom-corner">
+                <span class="value">3</span>
+                <span class="suit">♥</span>
+            </div>
+        </div>
+        <div class="card red">
+            <div class="corner">
+                <span class="value">4</span>
+                <span class="suit">♦</span>
+            </div>
+            <div class="corner bottom-corner">
+                <span class="value">4</span>
+                <span class="suit">♦</span>
+            </div>
+        </div>
+        <div class="card black">
+            <div class="corner">
+                <span class="value">5</span>
+                <span class="suit">♠</span>
+            </div>
+            <div class="corner bottom-corner">
+                <span class="value">5</span>
+                <span class="suit">♠</span>
+            </div>
+        </div>
+        <div class="card black">
+            <div class="corner">
+                <span class="value">6</span>
+                <span class="suit">♣</span>
+            </div>
+            <div class="corner bottom-corner">
+                <span class="value">6</span>
+                <span class="suit">♣</span>
+            </div>
+        </div>
+        <div class="card red">
+            <div class="corner">
+                <span class="value">7</span>
+                <span class="suit">♥</span>
+            </div>
+            <div class="corner bottom-corner">
+                <span class="value">7</span>
+                <span class="suit">♥</span>
+            </div>
+        </div>
+        <div class="card red">
+            <div class="corner">
+                <span class="value">8</span>
+                <span class="suit">♦</span>
+            </div>
+            <div class="corner bottom-corner">
+                <span class="value">8</span>
+                <span class="suit">♦</span>
+            </div>
+        </div>
+        <div class="card black">
+            <div class="corner">
+                <span class="value">9</span>
+                <span class="suit">♠</span>
+            </div>
+            <div class="corner bottom-corner">
+                <span class="value">9</span>
+                <span class="suit">♠</span>
+            </div>
+        </div>
+        <div class="card black">
+            <div class="corner">
+                <span class="value">10</span>
+                <span class="suit">♣</span>
+            </div>
+            <div class="corner bottom-corner">
+                <span class="value">10</span>
+                <span class="suit">♣</span>
+            </div>
+        </div>
+        <div class="card red">
+            <div class="corner">
+                <span class="value">J</span>
+                <span class="suit">♥</span>
+            </div>
+            <div class="corner bottom-corner">
+                <span class="value">J</span>
+                <span class="suit">♥</span>
+            </div>
+        </div>
+        <div class="card red">
+            <div class="corner">
+                <span class="value">Q</span>
+                <span class="suit">♦</span>
+            </div>
+            <div class="corner bottom-corner">
+                <span class="value">Q</span>
+                <span class="suit">♦</span>
+            </div>
+        </div>
+        <div class="card black">
+            <div class="corner">
+                <span class="value">K</span>
+                <span class="suit">♠</span>
+            </div>
+            <div class="corner bottom-corner">
+                <span class="value">K</span>
+                <span class="suit">♠</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-menu">
+        <button class="accordion">Egyptian Ratscrew</button>
+        <div class="panel">
+            <h3>Cél</h3>
+            <p>Az összes lap megszerzése a kártyapakliból a megfelelő kártyapárok lecsapásával.</p>
+            <h3>Alapvető tudnivalók</h3>
+            <ul>
+                <li><strong>Lapok:</strong> 52 lapos francia pakli (Jokerek nélkül)</li>
+                <li><strong>Játékosok száma:</strong> 2 fő (lehet akár többen is)</li>
+                <li><strong>Játéktípus:</strong> lecsapós</li>
+            </ul>
+            <h3>Játékszabály</h3>
+            <p>
+                A játék kezdetekor egyenlően el kell osztani az egész paklit egymás között.
+                Mindenki fogja a kezében a lapokat egy pakliban, hátoldallal felfelé.
+                Felváltva (sorban) raknak a játékosok egy dobópakli tetejére, de úgy, hogy kilógjanak a korábbi lapok.
+                Ha különleges párok szerepelnek, azokat le kell csapni:
+            </p>
+            <ul>
+                <li><strong>Pár: </strong> két egyforma értékű lap egymás után</li>
+                <li><strong>Szendvics: </strong> két egyforma értékű lap és köztük egy bármilyen egyéb lap</li>
+                <li><strong>Házaspár: </strong> király (<strong>K</strong>) és dáma (<strong>Q</strong>) egymásután</li>
+                <li><strong>Hetes:</strong> két egymást követő lap, aminek az összértéke 7</li>
+            </ul>
+            <p>
+                Aki a gyorsabb, megkapja az addig lerakott kártyalapokat. Akinek elfogynak a kezéből a lapjai, az kiesik a játékból.
+                Ha egy játékos egyedül birtokolja mind az 52 kártyalapot, akkor ő megnyerte a játékot.
+            </p>
+        </div>
+        
+        <button class="accordion">Old Maid</button>
+        <div class="panel">
+            <h3>Cél</h3>
+            <p>Párok alkotása és eldobása úgy, hogy a játék végén ne nálad maradjon a kakukktojás dáma.</p>
+            <h3>Alapvető tudnivalók</h3>
+            <ul>
+                <li><strong>Lapok:</strong> az egyik dámát (<strong>Q</strong>) el kell távolítani - 51 lap (Jokerek nélkül)</li>
+                <li><strong>Játékosok száma:</strong> 2 vagy több</li>
+                <li><strong>Játéktípus:</strong> pár alkotós, kártya továbbadós</li>
+            </ul>
+            <h3>Játékszabály</h3>
+            <p>
+                A pakli megkeverése után az osztó egyesével kiosztja az összes lapot a játékosok között.
+                (Nem baj, ha nem lesz mindenkinek pontosan ugyanannyi lapja.) Ezután minden játékos leteszi maga elé a lapjai közül a
+                párokat alkotó (azonos értékű) lapokat. (Ha valakinek 3 azonos értékű lapja van, akkor kiválaszt 2-t, amit letesz, a
+                maradék 1-et megtartja)<br>
+                Ezután az osztó kezd: a saját lapjai közül lefordítva átad a tőle balra ülő játékosnak egy lapot. Az illető leteheti a
+                kezéből az ezzel a lappal keletkezett párokat, majd kiválaszt egy lapot ő is, amit lefordítva átad balra és így tovább.<br>
+                A játék végére egyetlen játékos kezében egyetlen lap marad: a dáma, aminek nincs párja - ő lett az Old Maid (vénlány).
+            </p>
+        </div>
+        
+        <button class="accordion">GOPS - Game of Pure Strategy</button>
+        <div class="panel">
+            <h3>Cél</h3>
+            <p>Ügyes licitálással minél több pont begyűjtése.</p>
+            <h3>Alapvető tudnivalók</h3>
+            <ul>
+                <li><strong>Lapok:</strong> 52 lapos pakli (Jokerek nélkül)</li>
+                <li><strong>Játékosok száma:</strong> 2 fő</li>
+                <li><strong>Lapértékek:</strong> A=1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J=11, Q=12, K=13</li>
+                <li><strong>Játéktípus:</strong> licitálós, stratégiai</li>
+            </ul>
+            <h3>Játékszabály</h3>
+            <p>
+                Szedjük szét a paklit a 4 szín szerint, majd mindkét játékos válasszon egy paklit. Egy harmadikat keverjünk össze, ebből
+                fordítjuk fel mindig a legfelső lapot, amire lehet licitálni. Licitáláskor mindkét játékos lefordítva licitál egy kártyalappal
+                a kezéből, amit eygszerre felfordítanak. Aki magasabb értékű lappal licitált, megnyeri a lapot és maga mellé teszi. A lapokat,
+                amivel licitáltunk eldobjuk. Ha döntetlen a licit, akkor fordítsuk fel a következő lapot is és így már mindkettőre licitáltunk
+                egyszerre. Ha elfogytak a lapok, vége a körnek és összeadjuk az elnyert lapok értékét. Akinek több pontja van, az nyerte a kört.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
