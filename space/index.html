@@ -47,6 +47,40 @@
       border-bottom: 2px solid var(--border);
       padding-bottom: 0.5rem;
     }
+    
+    #docked-objects-container {
+      margin-top: 1rem;
+    }
+
+    .button-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    #fetch-button {
+      background-color: var(--accent);
+      color: var(--bg);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    #fetch-button:hover:not(:disabled) {
+      background-color: #0099e6;
+      transform: translateY(-2px);
+    }
+    
+    #fetch-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
 
     #map {
       width: 100%;
@@ -125,7 +159,6 @@
     }
   </style>
 </head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -141,11 +174,17 @@
     <div id="iss-info" class="object-card" style="margin-bottom: 2rem;"></div>
 
     <h2>Űrállomások és dokkolt járművek az űrben</h2>
-    <div id="objects" class="object-list"></div>
+    <div id="docked-objects-container">
+      <button id="fetch-button">Lista letöltése</button>
+      <div id="objects" class="object-list"></div>
+    </div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
+    let marker = null;
+    let issCircle = null;
+
     function formatTimeAgo(isoString) {
       const then = new Date(isoString);
       const now = new Date();
@@ -174,17 +213,6 @@
       iconAnchor: [35, 22.5]
     });
 
-    const marker = L.marker([0, 0], { icon: issIcon }).addTo(map);
-    marker.bindPopup("ISS");
-
-    const issCircle = L.circle([0, 0], {
-      radius: 1700000, // 1700 km méterben
-      color: '#00b7ff',
-      fillColor: '#00b7ff',
-      fillOpacity: 0.2,
-      weight: 1
-    }).addTo(map);
-
     async function updateISSPosition() {
       try {
         const response = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
@@ -192,10 +220,22 @@
         const lat = data.latitude;
         const lon = data.longitude;
 
-        marker.setLatLng([lat, lon]);
-        issCircle.setLatLng([lat, lon]);
-        map.setView([lat, lon], 2);
+        if (!marker) {
+          marker = L.marker([lat, lon], { icon: issIcon }).addTo(map);
+          marker.bindPopup("ISS");
+          issCircle = L.circle([lat, lon], {
+            radius: 1700000,
+            color: '#00b7ff',
+            fillColor: '#00b7ff',
+            fillOpacity: 0.2,
+            weight: 1
+          }).addTo(map);
+        } else {
+          marker.setLatLng([lat, lon]);
+          issCircle.setLatLng([lat, lon]);
+        }
 
+        map.setView([lat, lon], 2);
         renderISSInfo(data);
       } catch (error) {
         console.error('Hiba az ISS pozíció lekérdezésénél:', error);
@@ -205,8 +245,8 @@
     const issInfoDiv = document.getElementById('iss-info');
 
     function renderISSInfo(data) {
-    const visibility = data.visibility === 'daylight' ? 'nappali' : 'éjszakai';
-    issInfoDiv.innerHTML = `
+      const visibility = data.visibility === 'daylight' ? 'nappali' : 'éjszakai';
+      issInfoDiv.innerHTML = `
         <div class="object-name">
         <h3>ISS</h3>
         <span class="object-id">ID: ${data.id}</span>
@@ -220,13 +260,18 @@
     }
 
     async function fetchDockedObjects() {
+      const listContainer = document.getElementById('objects');
+      const button = document.getElementById('fetch-button');
+
+      button.disabled = true;
+      button.textContent = 'Betöltés...';
+
       try {
         const response = await fetch('https://celestrak.org/NORAD/elements/gp.php?GROUP=stations&FORMAT=json');
         const data = await response.json();
 
         data.sort((a, b) => b.OBJECT_ID.localeCompare(a.OBJECT_ID));
-        const container = document.getElementById('objects');
-        container.innerHTML = '';
+        listContainer.innerHTML = '';
 
         data.forEach(obj => {
           const div = document.createElement('div');
@@ -241,17 +286,21 @@
               <p>Keringési pálya szöge: <strong>${obj.INCLINATION}°</strong></p>
             </div>
           `;
-          container.appendChild(div);
+          listContainer.appendChild(div);
         });
-
+        button.style.display = 'none';
       } catch (error) {
         console.error('Nem sikerült lekérni a dokkolt objektumokat:', error);
+        button.textContent = 'Hiba történt';
+        button.disabled = false;
       }
     }
 
     updateISSPosition();
     setInterval(updateISSPosition, 5000);
-    fetchDockedObjects();
+    
+    const fetchButton = document.getElementById('fetch-button');
+    fetchButton.addEventListener('click', fetchDockedObjects);
   </script>
 </body>
 </html>
