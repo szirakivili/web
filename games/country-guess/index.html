@@ -250,16 +250,16 @@
 
         /* A zászló stílusa */
         .flag-img {
-            max-width: 150px;
-            max-height: 100px;
+            height: 100px;
+            max-width: fit-content;
             border: 1px solid var(--border-color);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* A címer stílusa, keret és árnyék nélkül */
+        /* A címer stílusa */
         .coat-of-arms-img {
-            max-width: 150px;
-            max-height: 100px;
+            height: 100px;
+            max-width: fit-content;
             border: none;
             box-shadow: none;
             background: none;
@@ -304,10 +304,7 @@
         }
         .question-item img {
             width: 100%;
-            height: auto;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            max-height: 150px;
+            height: 100px;
         }
         .question-item h3 {
             font-size: 1.5em;
@@ -478,12 +475,12 @@
 
 <script>
     const apiUrls = {
-        'world': 'https://restcountries.com/v3.1/all?fields=translations,flags,capital,continents,subregion,coatOfArms',
-        'europe': 'https://restcountries.com/v3.1/region/europe?fields=translations,flags,capital,continents,subregion,coatOfArms',
-        'asia': 'https://restcountries.com/v3.1/region/asia?fields=translations,flags,capital,continents,subregion,coatOfArms',
-        'africa': 'https://restcountries.com/v3.1/region/africa?fields=translations,flags,capital,continents,subregion,coatOfArms',
-        'oceania': 'https://restcountries.com/v3.1/region/oceania?fields=translations,flags,capital,continents,subregion,coatOfArms',
-        'america': 'https://restcountries.com/v3.1/region/america?fields=translations,flags,capital,continents,subregion,coatOfArms'
+        'world': 'https://restcountries.com/v3.1/all?fields=translations,flags,capital,continents,subregion,coatOfArms,independent',
+        'europe': 'https://restcountries.com/v3.1/region/europe?fields=translations,flags,capital,continents,subregion,coatOfArms,independent',
+        'asia': 'https://restcountries.com/v3.1/region/asia?fields=translations,flags,capital,continents,subregion,coatOfArms,independent',
+        'africa': 'https://restcountries.com/v3.1/region/africa?fields=translations,flags,capital,continents,subregion,coatOfArms,independent',
+        'oceania': 'https://restcountries.com/v3.1/region/oceania?fields=translations,flags,capital,continents,subregion,coatOfArms,independent',
+        'america': 'https://restcountries.com/v3.1/region/america?fields=translations,flags,capital,continents,subregion,coatOfArms,independent'
     };
     
     let countriesDataGlobal = [];
@@ -504,7 +501,6 @@
             'Europe': 'Európa',
             'North America': 'Észak-Amerika',
             'South America': 'Dél-Amerika',
-            'Central America' : 'Közép-Amerika',
             'America' : 'Amerika',
             'Oceania': 'Óceánia'
         };
@@ -547,7 +543,10 @@
             }
             const data = await response.json();
             
-            return data;
+            // Szűrés: csak azok az elemek, ahol independent === false
+            const filtered = data.filter(item => item.independent === true);
+
+            return filtered;
         } catch (error) {
             console.error('Hiba az adatok letöltésekor:', error);
             document.getElementById('loading-message').innerText = `Hiba történt az adatok betöltésekor: ${error.message}`;
@@ -600,12 +599,12 @@
         // Kérdés felépítése a type alapján
         switch (paramsGlobal.type) {
             case 'country-from-flag':
-                questionItemHTML = `<img class="flag-img" src="${questionCountry.flags.svg}" alt="Zászló">`;
+                questionItemHTML = `<img class="flag-img" src="${questionCountry.flags.png}" alt="Zászló">`;
                 correctOptionValue = questionCountry.translations.hun?.common || questionCountry.translations.hun.official;
                 questionText = 'Melyik ország zászlaját látod?';
                 break;
             case 'country-from-coat-of-arms':
-                questionItemHTML = (questionCountry.coatOfArms.svg === '') ? `<h3>nincs címere</h3>` : `<img class="coat-of-arms-img" src="${questionCountry.coatOfArms.svg}" alt="Címer">`;
+                questionItemHTML = (questionCountry.coatOfArms.png === '') ? `<h3>nincs címere</h3>` : `<img class="coat-of-arms-img" src="${questionCountry.coatOfArms.png}" alt="Címer">`;
                 correctOptionValue = questionCountry.translations.hun?.common || questionCountry.translations.hun.official;
                 questionText = 'Melyik ország címerét látod?';
                 break;
@@ -621,12 +620,12 @@
                 break;
             case 'flag-from-country':
                 questionItemHTML = `<h3>${questionCountry.translations.hun?.common || questionCountry.translations.hun.official}</h3>`;
-                correctOptionValue = questionCountry.flags.svg; // Az URL lesz a válasz
+                correctOptionValue = questionCountry.flags.png; // Az URL lesz a válasz
                 questionText = 'Melyik a zászlaja?';
                 break;
             case 'coat-of-arms-from-country':
                 questionItemHTML = `<h3>${questionCountry.translations.hun?.common || questionCountry.translations.hun.official}</h3>`;
-                correctOptionValue = questionCountry.coatOfArms.svg === '' ? 'nincs címere' : questionCountry.coatOfArms.svg; // Az URL lesz a válasz
+                correctOptionValue = questionCountry.coatOfArms.png === '' ? 'nincs címere' : questionCountry.coatOfArms.png; // Az URL lesz a válasz
                 questionText = 'Melyik a címere?';
                 break;
             case 'continent-from-country':
@@ -656,10 +655,10 @@
                     option = randomCountry.capital?.[0] || 'nincs fővárosa';
                     break;
                 case 'flag-from-country':
-                    option = randomCountry.flags.svg; // Az URL
+                    option = randomCountry.flags.png; // Az URL
                     break;
                 case 'coat-of-arms-from-country':
-                    option = randomCountry.coatOfArms.svg === '' ? 'nincs címere' : randomCountry.coatOfArms.svg; // Az URL
+                    option = randomCountry.coatOfArms.png === '' ? 'nincs címere' : randomCountry.coatOfArms.png; // Az URL
                     break;
             }
 
@@ -677,9 +676,10 @@
         const optionsHTML = allOptions.map(option => {
             const isImageOption = (paramsGlobal.type === 'flag-from-country' || paramsGlobal.type === 'coat-of-arms-from-country');
             const imageClass = paramsGlobal.type === 'flag-from-country' ? 'flag-img' : 'coat-of-arms-img';
+            const height = imageClass === 'flag-img' ? 35 : 80;
             
             const buttonContent = (isImageOption && option !== 'nincs fővárosa' && option !== 'nincs címere') ? 
-                `<img class="${imageClass}" src="${option}" style="pointer-events: none;" alt="Válasz">` :
+                `<img class="${imageClass}" style="height: ${height}px;" src="${option}" style="pointer-events: none;" alt="Válasz">` :
                 option;
 
             return `<button onclick="checkAnswer(this, '${btoa(option)}')">${buttonContent}</button>`;
@@ -712,10 +712,10 @@
                 correctAnswer = currentQuestion.capital?.[0] || 'nincs fővárosa';
                 break;
             case 'flag-from-country':
-                correctAnswer = currentQuestion.flags.svg;
+                correctAnswer = currentQuestion.flags.png;
                 break;
             case 'coat-of-arms-from-country':
-                correctAnswer = currentQuestion.coatOfArms.svg;
+                correctAnswer = currentQuestion.coatOfArms.png;
                 break;
         }
         
@@ -784,8 +784,8 @@
         }
 
         const capital = currentCountry.capital?.[0] || 'nincs fővárosa';
-        const flagUrl = currentCountry.flags?.svg || '';
-        const coatOfArmsUrl = currentCountry.coatOfArms?.svg || '';
+        const flagUrl = currentCountry.flags?.png || '';
+        const coatOfArmsUrl = currentCountry.coatOfArms?.png || '';
         const continents = currentCountry.continents?.map(getContinentName).join(', ') || 'nincs adat';
 
         const studyCardHTML = `
@@ -800,8 +800,8 @@
                     <p><strong>Kontinens:</strong> ${continents}</p>
                 </div>
                 <div class="buttons">
-                    <button class="study-mode" onclick="displayStudyCard(-1)">Vissza</button>
-                    <button class="start-game" onclick="displayStudyCard(1)">Tovább</button>
+                    <button class="study-mode" onclick="displayStudyCard(-1)">Előző</button>
+                    <button class="start-game" onclick="displayStudyCard(1)">Következő</button>
                 </div>
             </div>
         `;
