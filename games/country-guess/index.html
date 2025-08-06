@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Földrajzi Kvíz</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --bg-color-light: #ecf0f1;
+            --bg-color-dark: #bdc3c7;
+            --text-color: #2c3e50;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --border-color: #ddd;
+            --option-hover: #eaf6ff;
+            --correct-answer: #2ecc71;
+            --incorrect-answer: #e74c3c;
+            --warning-color: #e67e22;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2ebf2 100%);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .game-content {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            color: var(--text-color);
+            font-size: 1.2em;
+        }
+
+        #game-container {
+            display: none;
+        }
+
+        .loading-message {
+            font-size: 1.5em;
+            font-weight: 500;
+            color: var(--primary-color);
+            display: none;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 1.8em;
+            color: var(--primary-color);
+        }
+
+        .option-group {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            color: var(--text-color);
+        }
+        
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: #fff;
+            color: var(--text-color);
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232c3e50%22%20d%3D%22M287%20197.3l-136.2-136.2c-5.3-5.3-13.8-5.3-19.1%200L5%20197.3c-5.3%205.3-5.3%2013.8%200%2019.1l19.1%2019.1c5.3%205.3%2013.8%205.3%2019.1%200l98.8-98.8%2098.8%2098.8c5.3%205.3%2013.8%205.3%2019.1%200l19.1-19.1c5.3-5.3%205.3-13.8%200-19.1z%22%2F%3E%3C%2Fsvg%3E');
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 10px;
+            cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        select:disabled {
+            background-color: #f5f5f5;
+            color: #aaa;
+            cursor: not-allowed;
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .checkbox-container label {
+            margin-bottom: 0;
+            font-weight: 400;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            margin-right: 15px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        input[type="checkbox"]:checked::after {
+            content: '✔';
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column; /* Alapértelmezett oszlopos elrendezés */
+            justify-content: center;
+            gap: 15px;
+            margin-top: 35px;
+        }
+        
+        .buttons button {
+            flex: 1;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            color: white;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .buttons button:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons button:active:not(:disabled) {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .buttons button.start-game {
+            background-color: var(--secondary-color);
+        }
+        
+        .buttons button.study-mode {
+            background-color: var(--primary-color);
+        }
+        
+        .buttons button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        /* Hibajavítás: Ez a rész a gombok alá került. */
+        .unavailable-message {
+            color: var(--warning-color);
+            font-size: 0.9em;
+            margin-top: 10px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .unavailable-message.visible {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .question-content {
+            margin-bottom: 20px;
+        }
+
+        .study-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* A zászló stílusa */
+        .flag-img {
+            max-width: 150px;
+            max-height: 100px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* A címer stílusa, keret és árnyék nélkül */
+        .coat-of-arms-img {
+            max-width: 150px;
+            max-height: 100px;
+            border: none;
+            box-shadow: none;
+            background: none;
+        }
+
+        .study-card h2, .study-card p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .study-card h2 {
+            font-size: 2em;
+            color: var(--primary-color);
+        }
+
+        .study-card h2 .common-name {
+            font-size: 0.6em;
+            font-weight: 400;
+            color: var(--text-color);
+            vertical-align: middle;
+        }
+
+        .study-card p strong {
+            font-weight: 700;
+        }
+
+        .study-info {
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        /* Játék mód specifikus stílusok */
+        .question-item {
+            margin: 20px auto;
+            max-width: 250px;
+            pointer-events: none;     /* letiltja az egérrel való interakciókat */
+            user-select: none;        /* nem lehet kijelölni */
+            -webkit-user-drag: none;  /* Safari/Chrome: nem lehet elhúzni */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        .question-item img {
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-height: 150px;
+        }
+        .question-item h3 {
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .options-grid button {
+            background-color: var(--bg-color-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1em;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+        .options-grid button:not([disabled]):hover {
+            background-color: var(--option-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .options-grid button.correct {
+            background-color: var(--correct-answer);
+            color: white;
+            border-color: var(--correct-answer);
+            animation: pulse-correct 0.5s ease-in-out;
+        }
+        .options-grid button.incorrect {
+            background-color: var(--incorrect-answer);
+            color: white;
+            border-color: var(--incorrect-answer);
+            animation: shake 0.5s ease-in-out;
+        }
+        .options-grid button img {
+            max-width: 150px;
+            max-height: 100px;
+            border: none;
+            box-shadow: none;
+            background: none;
+        }
+        @keyframes pulse-correct {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-5px); }
+            40%, 80% { transform: translateX(5px); }
+        }
+        
+        /* Új stílusok a szélesebb elrendezéshez */
+        @media (min-width: 600px) {
+            .options-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .container {
+                max-width: 800px;
+            }
+            .game-content {
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: center;
+            }
+            .question-item {
+                max-width: 100%;
+            }
+            .buttons {
+                flex-direction: row; /* Vízszintes elrendezés nagyobb képernyőn */
+            }
+        }
+        
+        /* Módosított elrendezés 10 opcióhoz */
+        @media (min-width: 1000px) {
+            .options-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            .options-grid button img {
+                max-width: 100px;
+            }
+            .question-item img {
+                max-height: 150px;
+                max-width: auto;
+            }
+        }
+
+        .score-display {
+            font-size: 1.2em;
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+
+<div class="container" id="menu-container">
+    <h1>Földrajzi Kvíz</h1>
+    <form id="game-form" onsubmit="startGame(event)">
+        <div class="option-group">
+            <label for="difficulty">Nehézség:</label>
+            <select id="difficulty" name="difficulty">
+                <option value="normal">Normál</option>
+                <option value="hard">Nehéz</option>
+            </select>
+        </div>
+
+        <div class="option-group">
+            <label for="type">Mit kell kitalálni:</label>
+            <select id="type" name="type">
+                <option value="country-from-flag">Országot zászló alapján</option>
+                <option value="country-from-capital">Országot főváros alapján</option>
+                <option value="country-from-coat-of-arms">Országot címer alapján</option>
+                <option value="flag-from-country">Zászlót ország alapján</option>
+                <option value="capital-from-country">Fővárost ország alapján</option>
+                <option value="coat-of-arms-from-country">Címert ország alapján</option>
+                <option value="continent-from-country">Kontinenst ország alapján</option>
+                <option value="continent-from-flag">Kontinenst zászló alapján</option>
+            </select>
+        </div>
+
+        <div class="option-group">
+            <label for="area">Terület:</label>
+            <select id="area" name="area">
+                <option value="world">Világ</option>
+                <option value="europe">Európa</option>
+                <option value="asia">Ázsia</option>
+                <option value="africa">Afrika</option>
+                <option value="oceania">Óceánia</option>
+                <option value="america">Amerika</option>
+            </select>
+        </div>
+
+        <div class="option-group">
+            <div class="checkbox-container">
+                <input type="checkbox" id="timed" name="timed">
+                <label for="timed">Időre menjen</label>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button type="submit" class="start-game">Játék indítása</button>
+            <button type="button" class="study-mode" onclick="startStudyMode()">Tanulás</button>
+        </div>
+        <div id="unavailable-message" class="unavailable-message"></div>
+    </form>
+</div>
+
+<div class="container game-content" id="game-container">
+    <div id="game-area">
+        <p class="loading-message" id="loading-message">Adatok betöltése...</p>
+    </div>
+</div>
+
+<script>
+    const apiUrls = {
+        'world': 'https://restcountries.com/v3.1/all?fields=translations,flags,capital,continents,subregion,coatOfArms',
+        'europe': 'https://restcountries.com/v3.1/region/europe?fields=translations,flags,capital,continents,subregion,coatOfArms',
+        'asia': 'https://restcountries.com/v3.1/region/asia?fields=translations,flags,capital,continents,subregion,coatOfArms',
+        'africa': 'https://restcountries.com/v3.1/region/africa?fields=translations,flags,capital,continents,subregion,coatOfArms',
+        'oceania': 'https://restcountries.com/v3.1/region/oceania?fields=translations,flags,capital,continents,subregion,coatOfArms',
+        'america': 'https://restcountries.com/v3.1/region/america?fields=translations,flags,capital,continents,subregion,coatOfArms'
+    };
+    
+    let countriesDataGlobal = [];
+    let shuffledCountries = []; // A kevert országok tömbje
+    let currentCountryIndex = 0; 
+    let currentQuestion = null;
+    let score = 0;
+    let incorrectAnswers = 0;
+    let paramsGlobal = {};
+    let isGameActive = false;
+    let gameArea = null;
+
+    function getContinentName(continent) {
+        const translations = {
+            'Africa': 'Afrika',
+            'Antarctica': 'Antarktika',
+            'Asia': 'Ázsia',
+            'Europe': 'Európa',
+            'North America': 'Észak-Amerika',
+            'South America': 'Dél-Amerika',
+            'Central America' : 'Közép-Amerika',
+            'America' : 'Amerika',
+            'Oceania': 'Óceánia'
+        };
+        return translations[continent] || continent;
+    }
+    
+    function getParams() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+            difficulty: params.get('difficulty'),
+            type: params.get('type'),
+            area: params.get('area'),
+            timed: params.get('timed'),
+            mode: params.get('mode')
+        };
+    }
+
+    function hideMenu() {
+        document.getElementById('menu-container').style.display = 'none';
+        const gameContainer = document.getElementById('game-container');
+        gameContainer.style.display = 'block';
+        gameArea = document.getElementById('game-area');
+    }
+
+    function showLoading() {
+        hideMenu();
+        document.getElementById('loading-message').style.display = 'block';
+    }
+
+    async function fetchData(area) {
+        const url = apiUrls[area];
+        if (!url) {
+            throw new Error(`Nincs API URL a következő területhez: ${area}`);
+        }
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP hiba: ${response.status}`);
+            }
+            const data = await response.json();
+            
+            return data;
+        } catch (error) {
+            console.error('Hiba az adatok letöltésekor:', error);
+            document.getElementById('loading-message').innerText = `Hiba történt az adatok betöltésekor: ${error.message}`;
+            throw error;
+        }
+    }
+
+    function initGame(params, countriesData) {
+        paramsGlobal = params;
+        countriesDataGlobal = countriesData;
+        
+        const hardMode = params.difficulty === 'hard' || params.timed === 'on';
+        const continentGame = params.type.startsWith('continent-');
+        
+        if (hardMode || continentGame) {
+            gameArea.innerHTML = `
+                <h2>Később...</h2>
+                <p>Ezt a játékmódot (${hardMode ? (params.difficulty === 'hard' ? '<strong>Nehéz</strong>' : '<strong>Időre menő</strong>') : '<strong>Kontinens kitalálós</strong>'}) még nem fejlesztettük ki.</p>
+                <div class="buttons">
+                    <button class="study-mode" onclick="window.location.href = './'">Vissza a menübe</button>
+                </div>
+            `;
+            return;
+        }
+        
+        document.getElementById('loading-message').style.display = 'none';
+        score = 0;
+        incorrectAnswers = 0;
+        currentCountryIndex = 0;
+        shuffledCountries = [...countriesData].sort(() => Math.random() - 0.5);
+        displayQuestion();
+    }
+
+    function displayQuestion() {
+        if (currentCountryIndex >= shuffledCountries.length) {
+            showEndGameScreen();
+            return;
+        }
+
+        const questionCountry = shuffledCountries[currentCountryIndex];
+        currentQuestion = questionCountry;
+        isGameActive = true;
+        
+        let questionItemHTML = '';
+        let correctOptionValue = '';
+        let allOptions = [];
+        let questionText = '';
+        const numOptions = 10; // Normál nehézség esetén 10 opció
+
+        // Kérdés felépítése a type alapján
+        switch (paramsGlobal.type) {
+            case 'country-from-flag':
+                questionItemHTML = `<img class="flag-img" src="${questionCountry.flags.svg}" alt="Zászló">`;
+                correctOptionValue = questionCountry.translations.hun?.common || questionCountry.translations.hun.official;
+                questionText = 'Melyik ország zászlaját látod?';
+                break;
+            case 'country-from-coat-of-arms':
+                questionItemHTML = (questionCountry.coatOfArms.svg === '') ? `<h3>nincs címere</h3>` : `<img class="coat-of-arms-img" src="${questionCountry.coatOfArms.svg}" alt="Címer">`;
+                correctOptionValue = questionCountry.translations.hun?.common || questionCountry.translations.hun.official;
+                questionText = 'Melyik ország címerét látod?';
+                break;
+            case 'country-from-capital':
+                questionItemHTML = `<h3>${questionCountry.capital?.[0] || 'nincs fővárosa'}?</h3>`;
+                correctOptionValue = questionCountry.translations.hun?.common || questionCountry.translations.hun.official;
+                questionText = 'Melyik ország fővárosa';
+                break;
+            case 'capital-from-country':
+                questionItemHTML = `<h3>${questionCountry.translations.hun?.common || questionCountry.translations.hun.official}</h3>`;
+                correctOptionValue = questionCountry.capital?.[0] || 'nincs fővárosa';
+                questionText = 'Mi a fővárosa ennek az országnak?';
+                break;
+            case 'flag-from-country':
+                questionItemHTML = `<h3>${questionCountry.translations.hun?.common || questionCountry.translations.hun.official}</h3>`;
+                correctOptionValue = questionCountry.flags.svg; // Az URL lesz a válasz
+                questionText = 'Melyik a zászlaja?';
+                break;
+            case 'coat-of-arms-from-country':
+                questionItemHTML = `<h3>${questionCountry.translations.hun?.common || questionCountry.translations.hun.official}</h3>`;
+                correctOptionValue = questionCountry.coatOfArms.svg === '' ? 'nincs címere' : questionCountry.coatOfArms.svg; // Az URL lesz a válasz
+                questionText = 'Melyik a címere?';
+                break;
+            case 'continent-from-country':
+            case 'continent-from-flag':
+                // Ez a játékmód nem támogatott
+                return;
+        }
+
+        // Töltsük fel az opciókat
+        allOptions.push(correctOptionValue);
+        
+        // Szűrjük ki a helyes választ a rossz opciók közül
+        const incorrectOptions = countriesDataGlobal.filter(c => c !== questionCountry);
+        
+        while (allOptions.length < numOptions && allOptions.length < countriesDataGlobal.length) {
+            const randomIndex = Math.floor(Math.random() * incorrectOptions.length);
+            const randomCountry = incorrectOptions[randomIndex];
+            let option = '';
+            
+            switch (paramsGlobal.type) {
+                case 'country-from-flag':
+                case 'country-from-coat-of-arms':
+                case 'country-from-capital':
+                    option = randomCountry.translations.hun?.common || randomCountry.translations.hun.official;
+                    break;
+                case 'capital-from-country':
+                    option = randomCountry.capital?.[0] || 'nincs fővárosa';
+                    break;
+                case 'flag-from-country':
+                    option = randomCountry.flags.svg; // Az URL
+                    break;
+                case 'coat-of-arms-from-country':
+                    option = randomCountry.coatOfArms.svg === '' ? 'nincs címere' : randomCountry.coatOfArms.svg; // Az URL
+                    break;
+            }
+
+            if (!allOptions.includes(option) && option !== correctOptionValue) {
+                allOptions.push(option);
+            }
+            // Ne használjuk fel újra a már kiválasztott rossz választ
+            incorrectOptions.splice(randomIndex, 1);
+        }
+
+        // Keverjük meg a válaszokat
+        allOptions.sort(() => Math.random() - 0.5);
+
+        // HTML generálása
+        const optionsHTML = allOptions.map(option => {
+            const isImageOption = (paramsGlobal.type === 'flag-from-country' || paramsGlobal.type === 'coat-of-arms-from-country');
+            const imageClass = paramsGlobal.type === 'flag-from-country' ? 'flag-img' : 'coat-of-arms-img';
+            
+            const buttonContent = (isImageOption && option !== 'nincs fővárosa' && option !== 'nincs címere') ? 
+                `<img class="${imageClass}" src="${option}" style="pointer-events: none;" alt="Válasz">` :
+                option;
+
+            return `<button onclick="checkAnswer(this, '${btoa(option)}')">${buttonContent}</button>`;
+        }).join('');
+
+        gameArea.innerHTML = `
+            <div class="score-display">Helyes: ${score} | Rossz: ${incorrectAnswers}</div>
+            <div class="question-item">
+                <p>${questionText}</p>
+                ${questionItemHTML}
+            </div>
+            <div class="options-grid">${optionsHTML}</div>
+        `;
+    }
+
+    function checkAnswer(button, encodedAnswer) {
+        if (!isGameActive) return;
+        isGameActive = false;
+        
+        const selectedAnswer = atob(encodedAnswer);
+        let correctAnswer = '';
+
+        switch (paramsGlobal.type) {
+            case 'country-from-flag':
+            case 'country-from-coat-of-arms':
+            case 'country-from-capital':
+                correctAnswer = currentQuestion.translations.hun?.common || currentQuestion.name.common;
+                break;
+            case 'capital-from-country':
+                correctAnswer = currentQuestion.capital?.[0] || 'nincs fővárosa';
+                break;
+            case 'flag-from-country':
+                correctAnswer = currentQuestion.flags.svg;
+                break;
+            case 'coat-of-arms-from-country':
+                correctAnswer = currentQuestion.coatOfArms.svg;
+                break;
+        }
+        
+        const buttons = document.querySelectorAll('.options-grid button');
+        buttons.forEach(btn => {
+            btn.disabled = true;
+        });
+        
+        let isCorrect = false;
+        if (selectedAnswer === correctAnswer) {
+            button.classList.add('correct');
+            score++;
+            isCorrect = true;
+        } else {
+            button.classList.add('incorrect');
+            incorrectAnswers++;
+            const correctButton = Array.from(buttons).find(btn => atob(btn.onclick.toString().split("'")[1]) === correctAnswer);
+            if (correctButton) {
+                correctButton.classList.add('correct');
+            }
+        }
+        
+        document.querySelector('.score-display').innerText = `Helyes: ${score} | Rossz: ${incorrectAnswers}`;
+
+        // 3 másodperc után a következő kérdés
+        currentCountryIndex++;
+        setTimeout(displayQuestion, 3000);
+    }
+
+    function showEndGameScreen() {
+        gameArea.innerHTML = `
+            <h2>Játék vége!</h2>
+            <p>Elért pontszám: <strong>${score} / ${score + incorrectAnswers}</strong></p>
+            <div class="buttons">
+                <button class="start-game" onclick="window.location.href = './'">Új játék</button>
+            </div>
+        `;
+    }
+
+    function initStudyMode(countriesData) {
+        countriesDataGlobal = countriesData;
+        currentCountryIndex = 0;
+        document.getElementById('loading-message').style.display = 'none';
+        displayStudyCard();
+    }
+    
+    function displayStudyCard(direction = 0) { 
+        gameArea = document.getElementById('game-area');
+        
+        currentCountryIndex += direction;
+        
+        if (currentCountryIndex >= countriesDataGlobal.length) {
+            currentCountryIndex = 0; 
+        }
+        if (currentCountryIndex < 0) {
+            currentCountryIndex = countriesDataGlobal.length - 1; 
+        }
+
+        const currentCountry = countriesDataGlobal[currentCountryIndex];
+        const officialName = currentCountry.translations.hun?.official || currentCountry.name.common;
+        const commonName = currentCountry.translations.hun?.common || '';
+
+        let countryTitle = officialName;
+        if (commonName && commonName !== officialName) {
+            countryTitle += `<br><span class="common-name">(${commonName})</span>`;
+        }
+
+        const capital = currentCountry.capital?.[0] || 'nincs fővárosa';
+        const flagUrl = currentCountry.flags?.svg || '';
+        const coatOfArmsUrl = currentCountry.coatOfArms?.svg || '';
+        const continents = currentCountry.continents?.map(getContinentName).join(', ') || 'nincs adat';
+
+        const studyCardHTML = `
+            <div class="study-card">
+                <h2>${countryTitle}</h2>
+                <div class="image-container">
+                    ${flagUrl ? `<img class="flag-img" src="${flagUrl}" alt="${officialName} zászlaja">` : ''}
+                    ${coatOfArmsUrl ? `<img class="coat-of-arms-img" src="${coatOfArmsUrl}" alt="${officialName} címere">` : ''}
+                </div>
+                <div class="study-info">
+                    <p><strong>Főváros:</strong> ${capital}</p>
+                    <p><strong>Kontinens:</strong> ${continents}</p>
+                </div>
+                <div class="buttons">
+                    <button class="study-mode" onclick="displayStudyCard(-1)">Vissza</button>
+                    <button class="start-game" onclick="displayStudyCard(1)">Tovább</button>
+                </div>
+            </div>
+        `;
+        
+        gameArea.innerHTML = studyCardHTML;
+    }
+    
+    function toggleAreaSelect() {
+        const typeSelect = document.getElementById('type');
+        const areaSelect = document.getElementById('area');
+        
+        const isContinentGame = typeSelect.value === 'continent-from-country' || typeSelect.value === 'continent-from-flag';
+
+        if (isContinentGame) {
+            areaSelect.value = 'world';
+            areaSelect.disabled = true;
+        } else {
+            areaSelect.disabled = false;
+        }
+    }
+
+    function checkUnavailable() {
+        const typeSelect = document.getElementById('type');
+        const difficultySelect = document.getElementById('difficulty');
+        const timedCheckbox = document.getElementById('timed');
+        const startGameButton = document.querySelector('.start-game');
+        const unavailableMessage = document.getElementById('unavailable-message');
+
+        const type = typeSelect.value;
+        const difficulty = difficultySelect.value;
+        const isTimed = timedCheckbox.checked;
+
+        let isDisabled = false;
+        let message = '';
+
+        if (difficulty === 'hard') {
+            isDisabled = true;
+            message = 'A Nehéz játékmód még nem elérhető.';
+        } else if (isTimed) {
+            isDisabled = true;
+            message = 'Az időre menő játékmód még nem elérhető.';
+        } else if (type === 'continent-from-country' || type === 'continent-from-flag') {
+            isDisabled = true;
+            message = 'Ez a játékmód még nem elérhető.';
+        }
+
+        startGameButton.disabled = isDisabled;
+        unavailableMessage.textContent = message;
+
+        if (isDisabled) {
+            unavailableMessage.classList.add('visible');
+        } else {
+            unavailableMessage.classList.remove('visible');
+        }
+    }
+    
+    window.onload = async function() {
+        const params = new URLSearchParams(window.location.search);
+        const mode = params.get('mode');
+
+        const typeSelect = document.getElementById('type');
+        typeSelect.addEventListener('change', toggleAreaSelect);
+        
+        const difficultySelect = document.getElementById('difficulty');
+        const timedCheckbox = document.getElementById('timed');
+
+        typeSelect.addEventListener('change', checkUnavailable);
+        difficultySelect.addEventListener('change', checkUnavailable);
+        timedCheckbox.addEventListener('change', checkUnavailable);
+        
+        toggleAreaSelect();
+        checkUnavailable();
+        
+        if (mode === 'game') {
+            const area = params.get('area') || 'world';
+            const difficulty = params.get('difficulty');
+            const type = params.get('type');
+            const timed = params.get('timed');
+
+            if (difficulty) document.getElementById('difficulty').value = difficulty;
+            if (type) document.getElementById('type').value = type;
+            if (area) document.getElementById('area').value = area;
+            if (timed === 'on') document.getElementById('timed').checked = true;
+            
+            showLoading();
+            try {
+                const countriesData = await fetchData(area);
+                initGame(getParams(), countriesData);
+            } catch (error) {
+                console.error('Játék indítása sikertelen:', error);
+            }
+        } else if (mode === 'study') {
+            const area = params.get('area') || 'world';
+            showLoading();
+            try {
+                const countriesData = await fetchData(area);
+                initStudyMode(countriesData);
+            } catch (error) {
+                console.error('Tanuló mód indítása sikertelen:', error);
+            }
+        }
+    };
+
+    function getFormParams() {
+        const form = document.getElementById('game-form');
+        const formData = new FormData(form);
+        const params = new URLSearchParams();
+
+        for (const [key, value] of formData.entries()) {
+            if (key === 'timed') {
+                params.append(key, 'on');
+            } else {
+                params.append(key, value);
+            }
+        }
+        
+        const timedCheckbox = document.getElementById('timed');
+        if (timedCheckbox.checked) {
+            params.append('timed', 'on');
+        } else if (params.has('timed')) {
+            params.delete('timed');
+        }
+        
+        return params;
+    }
+
+    function startGame(event) {
+        event.preventDefault();
+        const params = getFormParams();
+        params.append('mode', 'game');
+        window.location.href = '?' + params.toString();
+    }
+
+    function startStudyMode() {
+        const params = getFormParams();
+        window.location.href = '?mode=study&area=' + (params.get('area') || 'world');
+    }
+</script>
+
+</body>
+</html>
