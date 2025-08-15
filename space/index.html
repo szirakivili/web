@@ -209,7 +209,16 @@
       return `${seconds} másodperce`;
     }
 
-    const map = L.map('map').setView([0, 0], 2);
+    const map = L.map('map', {
+      zoomControl: false,       // gombok eltávolítása
+      dragging: false,          // egér húzás tiltása
+      scrollWheelZoom: false,   // egérgörgős zoom tiltása
+      doubleClickZoom: false,   // dupla kattintásos zoom tiltása
+      touchZoom: false,         // érintéses zoom tiltása
+      boxZoom: false,           // kijelöléses zoom tiltása
+      keyboard: false           // billentyűzet vezérlés tiltása
+    });
+    map.setView([0, 0], 2);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap'
@@ -311,14 +320,15 @@
         const data = await response.json();
 
         if (data.media_type !== 'image') {
-          apodDiv.innerHTML = '<p>Mai napra nincs kép elérhető.</p>';
-          return;
-        }
-
-        apodDiv.innerHTML = `
+          apodDiv.innerHTML = '<p>Mai napra nincs elérhető kép.</p>';
+        } else {
+          apodDiv.innerHTML = `
           <a href="${data.hdurl}" target="_blank" style="display:block; margin-bottom:1rem;">
             <img src="${data.url}" alt="${data.title}" style="max-width:100%; border-radius:12px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0, 183, 255, 0.1);" />
-          </a>
+          </a>`;
+        }
+
+        apodDiv.innerHTML += `
           <h3 style="color: var(--accent); font-size: 1.10rem; margin-bottom: 0.5rem;">${data.title}</h3>
           <p style="font-size: 0.95rem; color: var(--subtle-text);">${data.explanation}</p>
         `;
