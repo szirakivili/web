@@ -506,6 +506,17 @@
         };
         return translations[continent] || continent;
     }
+
+    getContinentName.translations = {
+        'Africa': 'Afrika',
+        'Antarctica': 'Antarktika',
+        'Asia': 'Ázsia',
+        'Europe': 'Európa',
+        'North America': 'Észak-Amerika',
+        'South America': 'Dél-Amerika',
+        'America' : 'Amerika',
+        'Oceania': 'Óceánia'
+    };
     
     function getParams() {
         const params = new URLSearchParams(window.location.search);
@@ -561,7 +572,7 @@
         const hardMode = params.difficulty === 'hard' || params.timed === 'on';
         const continentGame = params.type.startsWith('continent-');
         
-        if (hardMode || continentGame) {
+        if (hardMode) {
             gameArea.innerHTML = `
                 <h2>Később...</h2>
                 <p>Ezt a játékmódot (${hardMode ? (params.difficulty === 'hard' ? '<strong>Nehéz</strong>' : '<strong>Időre menő</strong>') : '<strong>Kontinens kitalálós</strong>'}) még nem fejlesztettük ki.</p>
@@ -591,88 +602,92 @@
         isGameActive = true;
         
         let questionItemHTML = '';
-        let correctOptionValue = '';
+        let correctOptionValues = [];
         let allOptions = [];
         let questionText = '';
-        const numOptions = 10; // Normál nehézség esetén 10 opció
+        const numOptions = 10;
 
-        // Kérdés felépítése a type alapján
         switch (paramsGlobal.type) {
             case 'country-from-flag':
                 questionItemHTML = `<img class="flag-img" src="${questionCountry.flags.png}" alt="Zászló">`;
-                correctOptionValue = questionCountry.translations.hun?.common || questionCountry.translations.hun.official;
+                correctOptionValues.push(questionCountry.translations.hun?.common || questionCountry.translations.hun.official);
                 questionText = 'Melyik ország zászlaját látod?';
                 break;
             case 'country-from-coat-of-arms':
                 questionItemHTML = (questionCountry.coatOfArms.png === '') ? `<h3>nincs címere</h3>` : `<img class="coat-of-arms-img" src="${questionCountry.coatOfArms.png}" alt="Címer">`;
-                correctOptionValue = questionCountry.translations.hun?.common || questionCountry.translations.hun.official;
+                correctOptionValues.push(questionCountry.translations.hun?.common || questionCountry.translations.hun.official);
                 questionText = 'Melyik ország címerét látod?';
                 break;
             case 'country-from-capital':
                 questionItemHTML = `<h3>${questionCountry.capital?.[0] || 'nincs fővárosa'}?</h3>`;
-                correctOptionValue = questionCountry.translations.hun?.common || questionCountry.translations.hun.official;
+                correctOptionValues.push(questionCountry.translations.hun?.common || questionCountry.translations.hun.official);
                 questionText = 'Melyik ország fővárosa';
                 break;
             case 'capital-from-country':
                 questionItemHTML = `<h3>${questionCountry.translations.hun?.common || questionCountry.translations.hun.official}</h3>`;
-                correctOptionValue = questionCountry.capital?.[0] || 'nincs fővárosa';
+                correctOptionValues.push(questionCountry.capital?.[0] || 'nincs fővárosa');
                 questionText = 'Mi a fővárosa ennek az országnak?';
                 break;
             case 'flag-from-country':
                 questionItemHTML = `<h3>${questionCountry.translations.hun?.common || questionCountry.translations.hun.official}</h3>`;
-                correctOptionValue = questionCountry.flags.png; // Az URL lesz a válasz
+                correctOptionValues.push(questionCountry.flags.png);
                 questionText = 'Melyik a zászlaja?';
                 break;
             case 'coat-of-arms-from-country':
                 questionItemHTML = `<h3>${questionCountry.translations.hun?.common || questionCountry.translations.hun.official}</h3>`;
-                correctOptionValue = questionCountry.coatOfArms.png === '' ? 'nincs címere' : questionCountry.coatOfArms.png; // Az URL lesz a válasz
+                correctOptionValues.push(questionCountry.coatOfArms.png === '' ? 'nincs címere' : questionCountry.coatOfArms.png);
                 questionText = 'Melyik a címere?';
                 break;
             case 'continent-from-country':
+                questionItemHTML = `<h3>${questionCountry.translations.hun?.common || questionCountry.translations.hun.official}?</h3>`;
+                correctOptionValues = questionCountry.continents.map(c => getContinentName(c));
+                questionText = 'Melyik kontinensen van';
+                break;
             case 'continent-from-flag':
-                // Ez a játékmód nem támogatott
-                return;
+                questionItemHTML = `<img class="flag-img" src="${questionCountry.flags.png}" alt="Zászló">`;
+                correctOptionValues = questionCountry.continents.map(c => getContinentName(c));
+                questionText = 'Melyik kontinensen van az alábbi ország?';
+                break;
         }
 
-        // Töltsük fel az opciókat
-        allOptions.push(correctOptionValue);
-        
-        // Szűrjük ki a helyes választ a rossz opciók közül
-        const incorrectOptions = countriesDataGlobal.filter(c => c !== questionCountry);
-        
-        while (allOptions.length < numOptions && allOptions.length < countriesDataGlobal.length) {
-            const randomIndex = Math.floor(Math.random() * incorrectOptions.length);
-            const randomCountry = incorrectOptions[randomIndex];
-            let option = '';
+        if (paramsGlobal.type === 'continent-from-country' || paramsGlobal.type === 'continent-from-flag') {
+            allOptions = Object.values(getContinentName.translations);
+        } else {
+            allOptions.push(correctOptionValues[0]);
+            const incorrectOptions = countriesDataGlobal.filter(c => c !== questionCountry);
             
-            switch (paramsGlobal.type) {
-                case 'country-from-flag':
-                case 'country-from-coat-of-arms':
-                case 'country-from-capital':
-                    option = randomCountry.translations.hun?.common || randomCountry.translations.hun.official;
-                    break;
-                case 'capital-from-country':
-                    option = randomCountry.capital?.[0] || 'nincs fővárosa';
-                    break;
-                case 'flag-from-country':
-                    option = randomCountry.flags.png; // Az URL
-                    break;
-                case 'coat-of-arms-from-country':
-                    option = randomCountry.coatOfArms.png === '' ? 'nincs címere' : randomCountry.coatOfArms.png; // Az URL
-                    break;
+            while (allOptions.length < numOptions && allOptions.length < countriesDataGlobal.length) {
+                const randomIndex = Math.floor(Math.random() * incorrectOptions.length);
+                const randomCountry = incorrectOptions[randomIndex];
+                let option = '';
+                
+                switch (paramsGlobal.type) {
+                    case 'country-from-flag':
+                    case 'country-from-coat-of-arms':
+                    case 'country-from-capital':
+                        option = randomCountry.translations.hun?.common || randomCountry.translations.hun.official;
+                        break;
+                    case 'capital-from-country':
+                        option = randomCountry.capital?.[0] || 'nincs fővárosa';
+                        break;
+                    case 'flag-from-country':
+                        option = randomCountry.flags.png;
+                        break;
+                    case 'coat-of-arms-from-country':
+                        option = randomCountry.coatOfArms.png === '' ? 'nincs címere' : randomCountry.coatOfArms.png;
+                        break;
+                }
+                if (!allOptions.includes(option)) {
+                    allOptions.push(option);
+                }
+                incorrectOptions.splice(randomIndex, 1);
             }
-
-            if (!allOptions.includes(option) && option !== correctOptionValue) {
-                allOptions.push(option);
-            }
-            // Ne használjuk fel újra a már kiválasztott rossz választ
-            incorrectOptions.splice(randomIndex, 1);
         }
 
-        // Keverjük meg a válaszokat
-        allOptions.sort(() => Math.random() - 0.5);
+        if (paramsGlobal.type !== 'continent-from-country' && paramsGlobal.type !== 'continent-from-flag') {
+            allOptions.sort(() => Math.random() - 0.5);
+        }
 
-        // HTML generálása
         const optionsHTML = allOptions.map(option => {
             const isImageOption = (paramsGlobal.type === 'flag-from-country' || paramsGlobal.type === 'coat-of-arms-from-country');
             const imageClass = paramsGlobal.type === 'flag-from-country' ? 'flag-img' : 'coat-of-arms-img';
@@ -700,22 +715,26 @@
         isGameActive = false;
         
         const selectedAnswer = atob(encodedAnswer);
-        let correctAnswer = '';
+        let correctAnswers = [];
 
         switch (paramsGlobal.type) {
             case 'country-from-flag':
             case 'country-from-coat-of-arms':
             case 'country-from-capital':
-                correctAnswer = currentQuestion.translations.hun?.common || currentQuestion.name.common;
+                correctAnswers.push(currentQuestion.translations.hun?.common || currentQuestion.name.common);
                 break;
             case 'capital-from-country':
-                correctAnswer = currentQuestion.capital?.[0] || 'nincs fővárosa';
+                correctAnswers.push(currentQuestion.capital?.[0] || 'nincs fővárosa');
                 break;
             case 'flag-from-country':
-                correctAnswer = currentQuestion.flags.png;
+                correctAnswers.push(currentQuestion.flags.png);
                 break;
             case 'coat-of-arms-from-country':
-                correctAnswer = currentQuestion.coatOfArms.png;
+                correctAnswers.push(currentQuestion.coatOfArms.png);
+                break;
+            case 'continent-from-country':
+            case 'continent-from-flag':
+                correctAnswers = currentQuestion.continents.map(c => getContinentName(c));
                 break;
         }
         
@@ -724,23 +743,22 @@
             btn.disabled = true;
         });
         
-        let isCorrect = false;
-        if (selectedAnswer === correctAnswer) {
+        if (correctAnswers.includes(selectedAnswer)) {
             button.classList.add('correct');
             score++;
-            isCorrect = true;
         } else {
             button.classList.add('incorrect');
             incorrectAnswers++;
-            const correctButton = Array.from(buttons).find(btn => atob(btn.onclick.toString().split("'")[1]) === correctAnswer);
-            if (correctButton) {
-                correctButton.classList.add('correct');
-            }
+            correctAnswers.forEach(ans => {
+                const correctButton = Array.from(buttons).find(btn => atob(btn.onclick.toString().split("'")[1]) === ans);
+                if (correctButton) {
+                    correctButton.classList.add('correct');
+                }
+            });
         }
         
         document.querySelector('.score-display').innerText = `Helyes: ${score} | Rossz: ${incorrectAnswers}`;
 
-        // 3 másodperc után a következő kérdés
         currentCountryIndex++;
         setTimeout(displayQuestion, 3000);
     }
@@ -843,9 +861,6 @@
         } else if (isTimed) {
             isDisabled = true;
             message = 'Az időre menő játékmód még nem elérhető.';
-        } else if (type === 'continent-from-country' || type === 'continent-from-flag') {
-            isDisabled = true;
-            message = 'Ez a játékmód még nem elérhető.';
         }
 
         startGameButton.disabled = isDisabled;
