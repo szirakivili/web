@@ -514,7 +514,6 @@
         'Europe': 'Európa',
         'North America': 'Észak-Amerika',
         'South America': 'Dél-Amerika',
-        'America' : 'Amerika',
         'Oceania': 'Óceánia'
     };
     
@@ -554,7 +553,7 @@
             }
             const data = await response.json();
             
-            // Szűrés: csak azok az elemek, ahol independent === false
+            // Szűrés: csak azok az elemek, ahol independent === true
             const filtered = data.filter(item => item.independent === true);
 
             return filtered;
