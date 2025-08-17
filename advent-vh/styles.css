@@ -1,45 +1,85 @@
+:root {
+  --advent-red: #B33030;
+  --advent-green: #306530;
+  --advent-gold: #D4AF37;
+  --advent-white: #F8F4EF;
+  --advent-blue: #0A3D62;
+  --bg-gradient: linear-gradient(to bottom, #d6eaf8, #b0d3e8);
+  --card-gradient-locked: linear-gradient(145deg, #a7b7c2, #94a4ae);
+  --card-gradient-unlocked: linear-gradient(145deg, #f5f5f5, #e0e0e0);
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #f0f8ff;
+    background-image: url('https://images.unsplash.com/photo-1518873890627-d4b177c06e51?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2ludGVyJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     margin: 0;
     padding: 20px;
+    text-align: center;
+    color: var(--advent-white);
 }
-
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 50% átlátszóságú fekete */
+  backdrop-filter: blur(5px); /* 5px-es elmosás */
+  z-index: -1;
+}
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--advent-gold);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+}
 .messenger-link {
     margin-top: 30px;
     font-size: 9px;
-    color: grey;
+    text-shadow: none;
 }
-
 .calendar {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* oszlopok száma */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* oszlopok száma */
     gap: 10px;
     width: 100%;
     max-width: 800px;
 }
 .day-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 15px;
     text-align: center;
-    background-color: #fff;
+    background: var(--card-gradient-unlocked);
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333
 }
 .day-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
 .day-card.locked {
     cursor: not-allowed;
-    background-color: #e0e0e0;
+    background: var(--card-gradient-locked);
+    color: #888;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
 }
 .day-card.locked:hover {
     transform: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 .modal {
     display: none;
@@ -48,50 +88,96 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(10, 61, 98, 0.9);
+    align-items: flex-start;
+    overflow: auto; /* Enable scroll if needed */
+    max-height: fit-content;
+    backdrop-filter: blur(5px);
 }
 .modal-content {
-    background-color: #fff;
+    position: relative;
+    background: var(--advent-white);
     padding: 20px;
-    border-radius: 8px;
+    margin: 10% auto;
+    border-radius: 15px;
     text-align: center;
     max-width: 500px;
     width: 80%;
-    max-height: 90%;
+    max-height: fit-content;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    animation: modal-open 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    color: #333;
+}
+@keyframes modal-open {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.modal-content p {
+    font-size: 1em;
+    line-height: 1.3;
+    margin: 15px 0;
 }
 .modal-content img {
     max-height: 400px;
     max-width: 300px;
     height: auto;
     width: 60vh;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 .close-button {
-    background: #ff4d4d;
+    background: var(--advent-red);
     color: white;
     border: none;
     border-radius: 50%;
-    padding: 10px;
+    padding: 7px 10px;
     cursor: pointer;
     font-size: 16px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    font-weight: bold;
+    float: right;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.close-button:hover {
+  background-color: #8C2525;
+  transform: scale(1.1);
 }
 .fb-button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #1877f2;
+    background-color: var(--advent-blue);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
     font-size: 16px;
+    font-weight: bold;
     display: inline-block;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .fb-button:hover {
-    background-color: #145dbf;
+    background-color: #082A43;
+    transform: translateY(-2px);
+}
+#snow-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Fontos, hogy a háttérben lévő elemekre is lehessen kattintani! */
+    z-index: 999;
+}
+@media (max-width: 600px) {
+    .calendar {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
 }
