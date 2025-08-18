@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Útvonaltervező</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #6C757D;
+            --background-color: #F8F9FA;
+            --card-background: #FFFFFF;
+            --border-color: #E0E0E0;
+            --text-color: #343A40;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 40px;
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--card-background);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .cards-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            /* MÓDOSÍTÁS: A kártyák oszlopban jelennek meg */
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .card {
+            background-color: #F8F9FA;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            flex: 1 1 250px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="time"],
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: border-color 0.2s ease;
+        }
+        
+        .form-group input[type="text"]:focus,
+        .form-group input[type="date"]:focus,
+        .form-group input[type="time"]:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .button-group button {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .button-group button:hover {
+            background-color: #357ABD;
+            transform: translateY(-2px);
+        }
+        
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .checkbox-group label, .radio-group label {
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        /* ÚJ STÍLUS: Inaktív rádiógomb jelölő */
+        .radio-group label.disabled {
+            color: var(--secondary-color);
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background-color: #28A745;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-top: 10px;
+        }
+
+        .submit-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+        
+        .autocomplete-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            max-height: 200px;
+            overflow-y: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .autocomplete-list-item {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .autocomplete-list-item.stop {
+            font-weight: bold;
+        }
+
+        .autocomplete-list-item:hover {
+            background-color: #F0F0F0;
+        }
+        
+        @media (max-width: 768px) {
+            .cards-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+
+    <div class="container">
+        <h1>Útvonaltervező 🗺️</h1>
+                <div class="cards-row">
+
+            <div class="card">
+                <h3>1. Melyik nap?</h3>
+                <div class="form-group button-group">
+                    <button type="button" id="today-btn">Ma</button>
+                    <button type="button" id="tomorrow-btn">Holnap</button>
+                </div>
+                <div class="form-group">
+                    <label for="date-input">Vagy válassz dátumot:</label>
+                    <input type="date" id="date-input">
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>2. Hová?</h3>
+                <div class="form-group">
+                    <label for="destination-input">Hely keresése:</label>
+                    <input type="text" id="destination-input" placeholder="pl. Várna utca 3...">
+                    <div id="destination-results" class="autocomplete-list"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>3. Hányra?</h3>
+                <div class="form-group">
+                    <div class="radio-group">
+                                                <label id="timing-now-label">
+                            <input type="radio" name="timing" value="now" id="timing-now" checked> Most indulok
+                        </label>
+                        <label>
+                            <input type="radio" name="timing" value="arrival" id="timing-arrival"> Érkezési idő
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="arrival-time">Időpont:</label>
+                    <input type="time" id="arrival-time" disabled>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>4. Honnan?</h3>
+                <div class="form-group button-group">
+                    <button type="button" id="current-location-btn">Aktuális pozíció</button>
+                </div>
+                <div class="form-group">
+                    <label for="origin-input">Hely keresése:</label>
+                    <input type="text" id="origin-input" placeholder="pl. Kelenföld pályaudvar...">
+                    <div id="origin-results" class="autocomplete-list"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>5. Beállítások</h3>
+                <div class="form-group">
+                    <label for="walk-speed">Séta sebessége:</label>
+                    <select id="walk-speed">
+                        <option value="MID">Normál</option>
+                        <option value="FAST">Gyors</option>
+                        <option value="SLOW">Lassú</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tömegközlekedési eszközök:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="transport" value="BUS" checked> Busz</label>
+                        <label><input type="checkbox" name="transport" value="TRAM" checked> Villamos</label>
+                        <label><input type="checkbox" name="transport" value="SUBWAY" checked> Metró</label>
+                        <label><input type="checkbox" name="transport" value="RAIL" checked> Vonat</label>
+                        <label><input type="checkbox" name="transport" value="SUBURBAN_RAILWAY" checked> HÉV</label>
+                        <label><input type="checkbox" name="transport" value="TROLLEYBUS" checked> Troli</label>
+                        <label><input type="checkbox" name="transport" value="COACH" checked> Távolsági busz</label>
+                        <label><input type="checkbox" name="transport" value="FERRY" checked> Hajó</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Optimalizálás:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="optimization" value="QUICK" checked> Leggyorsabb</label>
+                        <label><input type="radio" name="optimization" value="WALK"> Legkevesebb séta</label>
+                        <label><input type="radio" name="optimization" value="TRANSFERS"> Legkevesebb átszállás</label>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <button class="submit-button" id="submit-btn">Útvonal tervezése</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const submitBtn = document.getElementById('submit-btn');
+            const originInput = document.getElementById('origin-input');
+            const destinationInput = document.getElementById('destination-input');
+            const dateInput = document.getElementById('date-input');
+            const arrivalTimeInput = document.getElementById('arrival-time');
+            const todayBtn = document.getElementById('today-btn');
+            const tomorrowBtn = document.getElementById('tomorrow-btn');
+            const timingNow = document.getElementById('timing-now');
+            const timingArrival = document.getElementById('timing-arrival');
+            const currentLocationBtn = document.getElementById('current-location-btn');
+            // ÚJ: 'Most indulok' label elemének referenciája
+            const timingNowLabel = document.getElementById('timing-now-label');
+            
+            // Keresési találatok tárolására szolgáló rejtett mezők
+            let originVertex = '';
+            let destinationVertex = '';
+
+            // Kezdeti beállítások
+            function setInitialState() {
+                const today = new Date().toISOString().slice(0, 10);
+                dateInput.value = today;
+                timingNow.checked = true;
+                arrivalTimeInput.disabled = true;
+            }
+            setInitialState();
+
+            // Funkció a 'Most indulok' gomb állapotának frissítésére
+            function updateTimingNowState() {
+                const today = new Date().toISOString().slice(0, 10);
+                if (dateInput.value === today) {
+                    timingNow.disabled = false;
+                    timingNowLabel.classList.remove('disabled');
+                } else {
+                    timingNow.disabled = true;
+                    timingNowLabel.classList.add('disabled');
+                    // Ha 'Most indulok' volt kiválasztva, de a dátum megváltozott,
+                    // átállítjuk 'Érkezési idő'-re
+                    if (timingNow.checked) {
+                        timingArrival.checked = true;
+                        arrivalTimeInput.disabled = false;
+                    }
+                }
+            }
+
+            // Eseménykezelők a rádiógombokhoz
+            timingNow.addEventListener('change', () => {
+                arrivalTimeInput.disabled = true;
+            });
+            timingArrival.addEventListener('change', () => {
+                arrivalTimeInput.disabled = false;
+            });
+
+            // Eseménykezelők a dátumválasztóhoz és a gombokhoz
+            dateInput.addEventListener('change', updateTimingNowState);
+            
+            todayBtn.addEventListener('click', () => {
+                const today = new Date();
+                dateInput.value = today.toISOString().slice(0, 10);
+                updateTimingNowState(); // Frissítjük a 'Most indulok' állapotát
+            });
+
+            tomorrowBtn.addEventListener('click', () => {
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                dateInput.value = tomorrow.toISOString().slice(0, 10);
+                updateTimingNowState(); // Frissítjük a 'Most indulok' állapotát
+            });
+
+            // Aktuális pozíció lekérése és a vertex beállítása
+            currentLocationBtn.addEventListener('click', () => {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition((position) => {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        originInput.value = 'Aktuális pozíció';
+                        originVertex = `Aktuális pozíció::${lat},${lon}`;
+                    }, (error) => {
+                        alert('Nem sikerült lekérni a pozíciót. Kérjük, engedélyezze a helymeghatározást.');
+                    });
+                } else {
+                    alert('A böngészője nem támogatja a helymeghatározást.');
+                }
+            });
+
+            /**
+             * Autocomplete funkcionalitás beállítása
+             * @param {HTMLElement} inputElement - A beviteli mező
+             * @param {HTMLElement} resultsElement - A találatokat tartalmazó div
+             * @param {Function} setVertexFn - A vertex értékét beállító callback
+             */
+            const setupAutocomplete = (inputElement, resultsElement, setVertexFn) => {
+                inputElement.addEventListener('input', async (e) => {
+                    const query = e.target.value.trim();
+                    if (query.length < 2) {
+                        resultsElement.innerHTML = '';
+                        resultsElement.style.display = 'none';
+                        return;
+                    }
+
+                    resultsElement.innerHTML = '';
+                    resultsElement.style.display = 'block';
+
+                    try {
+                        const response = await fetch(`https://go.bkk.hu/api/geocoder/v1/geocode?q=${encodeURIComponent(query)}&types=places&types=stop-areas&version=44&appVersion=1.0&key=05f00c85-2177-4345-9103-e72960f3918d`);
+                        const data = await response.json();
+
+                        const { otp, osm } = data.data.entry.places;
+                        const results = [];
+                        if (otp) {
+                            otp.forEach(item => results.push({ ...item, type: 'otp' }));
+                        }
+                        if (osm) {
+                            osm.forEach(item => results.push({ ...item, type: 'osm' }));
+                        }
+                        
+                        if (results.length > 0) {
+                            results.forEach(item => {
+                                const resultItem = document.createElement('div');
+                                resultItem.className = 'autocomplete-list-item';
+                                if (item.type === 'otp') {
+                                    resultItem.classList.add('stop');
+                                }
+                                resultItem.textContent = item.mainTitle;
+                                resultItem.addEventListener('click', () => {
+                                    inputElement.value = item.mainTitle;
+                                    
+                                    let vertex = '';
+                                    if (item.type === 'otp') {
+                                        const stopId = item.vertex;
+                                        vertex = `${item.name}::${stopId}`;
+                                    } else if (item.type === 'osm') {
+                                        vertex = `${item.name}::${item.lat},${item.lon}`;
+                                    }
+                                    setVertexFn(vertex);
+                                    
+                                    resultsElement.innerHTML = '';
+                                    resultsElement.style.display = 'none';
+                                });
+                                resultsElement.appendChild(resultItem);
+                            });
+                        } else {
+                            resultsElement.innerHTML = '<div style="padding: 10px; color: var(--secondary-color);">Nincs találat</div>';
+                        }
+                    } catch (error) {
+                        console.error('Hiba a keresés során:', error);
+                        resultsElement.innerHTML = '<div style="padding: 10px; color: red;">Hiba történt a keresés közben.</div>';
+                    }
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!resultsElement.contains(e.target) && e.target !== inputElement) {
+                        resultsElement.innerHTML = '';
+                        resultsElement.style.display = 'none';
+                    }
+                });
+            };
+
+            // Beállítjuk az autocomplete funkciót mindkét beviteli mezőre
+            setupAutocomplete(originInput, document.getElementById('origin-results'), (vertex) => originVertex = vertex);
+            setupAutocomplete(destinationInput, document.getElementById('destination-results'), (vertex) => destinationVertex = vertex);
+            
+            // Útvonaltervezés gomb eseménykezelője
+            submitBtn.addEventListener('click', () => {
+                const origin = originVertex;
+                const destination = destinationVertex;
+
+                if (!destination) {
+                    alert('Kérjük, adja meg a célállomást!');
+                    return;
+                }
+                if (!origin) {
+                    alert('Kérjük, adja meg a kiindulási helyet!');
+                    return;
+                }
+
+                const baseUrl = `./terv/`;
+                const date = dateInput.value;
+                const time = arrivalTimeInput.value;
+                const today = new Date().toISOString().slice(0, 10);
+
+                let futarUrl = `${baseUrl}?fromPlace=${origin}&toPlace=${destination}`;
+
+                // MÓDOSÍTÁS: Feltételes paraméterek hozzáadása
+                if (timingArrival.checked) {
+                    futarUrl += `&arriveBy=true`;
+                    if (date && date !== today) futarUrl += `&date=${date}`;
+                    if (time) futarUrl += `&time=${time}`;
+                } else {
+                    futarUrl += `&arriveBy=false`;
+                    if (date && date !== today) futarUrl += `&date=${date}`;
+                    // ÚJ: ha 'Most indulok', a time paraméter elmarad
+                }
+
+                // **ÚJ KÓD RÉSZ: Beállítások paramétereinek gyűjtése**
+                const walkSpeed = document.getElementById('walk-speed').value;
+                futarUrl += `&walkProfile=${walkSpeed}`;
+
+                const optimization = document.querySelector('input[name="optimization"]:checked').value;
+                futarUrl += `&optimize=${optimization}`;
+
+                const modes = [];
+                modes.push('WALK');
+                document.querySelectorAll('input[name="transport"]').forEach(checkbox => {
+                    if (checkbox.checked) {
+                        modes.push(checkbox.value);
+                    }
+                });
+
+                futarUrl += `&mode=${modes.join(',')}`;
+                futarUrl += `&showIntermediateStops=true`
+                
+                window.open(futarUrl, '_blank');
+            });
+            
+            // Kezdeti állapot beállítása a betöltéskor
+            setInitialState();
+            updateTimingNowState();
+        });
+    </script>
+
+</body>
+</html>

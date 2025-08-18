@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Útvonalterv</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/polyline-encoded@0.0.9/Polyline.encoded.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; color: #374151; }
+        #map { height: 400px; width: 100%; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .point-marker { background-color: #ffffff; border-radius: 50%; border-width: 2px; width: 12px; height: 12px; transform: translate(-50%, -50%); }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body class="p-4 md:p-8 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-3xl">
+        <h1 id="site-title" class="text-2xl sm:text-3xl font-bold mb-6 text-center text-gray-800">Útvonal</h1>
+        <div id="loading" class="hidden text-center text-gray-500 font-medium">Adatok betöltése...</div>
+        <div id="error" class="hidden bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md mb-6" role="alert">
+            <p class="font-bold">Hiba történt!</p>
+            <p id="errorMessage"></p>
+        </div>
+        <div id="results" class="hidden">
+            <div id="map" class="mb-6"></div>
+            <div id="plan-details" class="space-y-4"></div>
+        </div>
+        <div id="no-params" class="text-center text-gray-600 font-medium p-4 bg-gray-100 rounded-lg">
+            <p>Kérjük, adja meg a paramétereket az URL-ben a lekérdezéshez.</p>
+            <p class="mt-2 text-sm text-gray-500">Példa: <span class="font-mono bg-gray-200 p-1 rounded">?fromPlace=Budapest, Blaha Lujza tér&toPlace=Budapest, Széll Kálmán tér</span></p>
+        </div>
+    </div>
+
+    <script>
+        const API_KEY = '05f00c85-2177-4345-9103-e72960f3918d';
+        const APP_VERSION = '1.0';
+        const API_VERSION = '4';
+
+        const getUrlParams = () => Object.fromEntries(new URLSearchParams(window.location.search).entries());
+
+        const buildApiUrl = (params) => {
+            const baseUrl = 'https://futar.bkk.hu/api/query/v1/ws/otp/api/where/plan-trip';
+            const allParams = { ...params, key: API_KEY, appVersion: APP_VERSION, version: API_VERSION, includeReferences: 'true' };
+            return `${baseUrl}?${new URLSearchParams(allParams).toString()}`;
+        };
+
+        let map, polylineGroup, markerGroup;
+        const initMap = () => {
+            if (map) map.remove();
+            map = L.map('map').setView([47.4979, 19.0402], 12);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(map);
+            polylineGroup = L.featureGroup().addTo(map);
+            markerGroup = L.featureGroup().addTo(map);
+        };
+
+        const formatWalkDuration = (ms) => {
+            const seconds = Math.round(ms/1000);
+            const minutes = Math.round(seconds/60);
+            const hours = Math.floor(minutes/60);
+            return hours>0 ? `${hours} óra ${minutes - hours*60} perc` : minutes>0 ? `${minutes} perc` : '<1 perc';
+        };
+        const formatDistance = m => { const meters = Math.round(m); return meters>=1000 ? `${(meters/1000).toFixed(1)} km` : `${meters} m`; };
+
+        function writeMode(type) {
+            switch (type) {
+                case "RAIL": return "Vonat";
+                case "SUBWAY": return "Metró";
+                case "SUBURBAN-RAILWAY": return "Hév";
+                case "TRAM": return "Villamos";
+                case "BUS": return "Busz";
+                case "NIGHT-BUS": return "Éjszakai busz";
+                case "COACH": return "Busz";
+                case "TROLLEYBUS": return "Troli";
+                case "FERRY": return "Hajó";
+                case "CABLE-CAR": return "Libegő";
+                case "GONDOLA": return "Libegő";
+                case "WALK": return "Séta";
+                default: return "Járat";
+            }
+        }
+
+        // Összegző leírás egy itinerary-hoz (pl. "Séta → 4-es villamos → Busz 9")
+        const itinerarySummary = (it, refs) => {
+            return it.displayedLegs
+            .filter(l => l.type !== 'destination')
+            .map(l => {
+                if (l.type === 'walk') return 'Séta';
+                const routeRef = refs && refs.routes && refs.routes[l.routeId];
+                return routeRef ? (routeRef.shortName || routeRef.longName || writeMode(l.type)) : writeMode(l.type);
+            }).join(' → ');
+        };
+
+        // Törli a régi elemeket a térképről
+        const clearMapLayers = () => {
+            if (polylineGroup) polylineGroup.clearLayers();
+            if (markerGroup) markerGroup.clearLayers();
+        };
+
+        // Kirajzol egy adott itinerary-t a térképre és visszaadja a bounds-t
+        const drawItineraryOnMap = (plan, itinerary, references) => {
+            clearMapLayers();
+            const bounds = [];
+            const walkedPoints = new Set();
+
+            const startMarker = L.marker([plan.from.lat, plan.from.lon]).addTo(markerGroup).bindPopup(`<b>Kezdőpont</b><br>${plan.from.name}`);
+            const endMarker = L.marker([plan.to.lat, plan.to.lon]).addTo(markerGroup).bindPopup(`<b>Végpont</b><br>${plan.to.name}`);
+            walkedPoints.add(`${plan.from.lat} ${plan.from.lon}`);
+            walkedPoints.add(`${plan.to.lat} ${plan.to.lon}`);
+            bounds.push(startMarker.getLatLng(), endMarker.getLatLng());
+
+            itinerary.legs.forEach(leg => {
+                if (leg.mode === 'WALK') {
+                    const startKey = `${leg.from.lat} ${leg.from.lon}`;
+                    const isPathway = leg.pathway;
+                    const walkColor = isPathway ? 'blue' : 'black';
+                    if (!walkedPoints.has(startKey)) {
+                        walkedPoints.add(startKey);
+                        L.marker([leg.from.lat, leg.from.lon], { icon: L.divIcon({ className: '', html: `<div class="point-marker" style="border-color: blue; background-color: blue; width: 8px; height: 8px;"></div>`, iconSize:[12,12] }) }).addTo(markerGroup);
+                    }
+                    if (leg.legGeometry && leg.legGeometry.points) {
+                        const poly = L.Polyline.fromEncoded(leg.legGeometry.points, { color: walkColor, weight: 4, dashArray: '4,7' }).addTo(polylineGroup);
+                        bounds.push(...poly.getLatLngs());
+                    }
+                } else {
+                    const routeRef = references.routes[leg.routeId];
+                    const routeColor = routeRef && routeRef.style && routeRef.style.color ? `#${routeRef.style.color}` : '#000000';
+                    const startM = L.marker([leg.from.lat, leg.from.lon], { icon: L.divIcon({ className:'', html:`<div class="point-marker" style="border-color: ${routeColor};"></div>`, iconSize:[12,12] })}).addTo(markerGroup).bindPopup(`${leg.from.name}`);
+                    const endM = L.marker([leg.to.lat, leg.to.lon], { icon: L.divIcon({ className:'', html:`<div class="point-marker" style="border-color: ${routeColor};"></div>`, iconSize:[12,12] })}).addTo(markerGroup).bindPopup(`${leg.to.name}`);
+                    bounds.push(startM.getLatLng(), endM.getLatLng());
+                    const startKey = `${leg.from.lat} ${leg.from.lon}`;
+                    const endKey = `${leg.to.lat} ${leg.to.lon}`;
+                    walkedPoints.add(startKey);
+                    walkedPoints.add(endKey);
+                    if (leg.legGeometry && leg.legGeometry.points) {
+                        const poly = L.Polyline.fromEncoded(leg.legGeometry.points, { color: routeColor, weight: 5 }).addTo(polylineGroup);
+                        bounds.push(...poly.getLatLngs());
+                    }
+                }
+            });
+
+            if (bounds.length>1) map.fitBounds(L.latLngBounds(bounds).pad(0.1));
+        };
+
+        // Létrehoz egy itinerary accordionelemet (fejléc + tartalom)
+        const createItineraryAccordion = (plan, itinerary, references, index, expanded=false) => {
+            const container = document.createElement('div');
+            container.className = 'border rounded-lg overflow-hidden';
+
+            const totalDurationMinutes = Math.round(itinerary.duration/60);
+            const hours = Math.floor(totalDurationMinutes/60);
+            const totalTime = hours>0 ? `${hours} óra ${totalDurationMinutes - hours*60} perc` : `${totalDurationMinutes} perc`;
+            const startTimeFormatted = new Date(itinerary.startTime).toLocaleTimeString('hu-HU', { hour:'2-digit', minute:'2-digit' });
+            const endTimeFormatted = new Date(itinerary.endTime).toLocaleTimeString('hu-HU', { hour:'2-digit', minute:'2-digit' });
+
+            const summary = itinerarySummary(itinerary, references);
+
+            const header = document.createElement('button');
+            header.className = 'w-full text-left p-4 flex items-center justify-between bg-white hover:bg-gray-50';
+            header.innerHTML = `
+                <div>
+                    <div class="font-semibold">${summary}</div>
+                    <div class="text-sm text-gray-500">${startTimeFormatted} → ${endTimeFormatted} | ${totalTime} | ${itinerary.transfers || 0} átszállás</div>
+                </div>
+                <div class="ml-4 text-gray-400"><i class="fas fa-chevron-down"></i></div>
+            `;
+
+            const content = document.createElement('div');
+            content.className = 'p-4 bg-gray-50 space-y-3';
+            content.style.display = expanded ? 'block' : 'none';
+
+            // Legs részletek (lemásolt a korábbi logikából, de most itt per-itinerary)
+            itinerary.legs.forEach(leg => {
+                const legEl = document.createElement('div');
+                legEl.className = 'p-3 rounded-lg bg-white flex items-center space-x-4 shadow-sm';
+
+                if (leg.mode === 'WALK') {
+                    const walkType = leg.pathway ? 'Aluljáró' : 'Séta';
+                    const walkColor = leg.pathway ? 'bg-blue-400' : 'bg-gray-200';
+                    const walkColor2 = leg.pathway ? 'text-gray-100' : 'text-gray-700';
+                    legEl.innerHTML = `
+                        <div class="w-10 h-10 flex items-center justify-center ${walkColor} rounded-full ${walkColor2} flex-shrink-0">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold">${walkType}</div>
+                            <div class="text-sm text-gray-600">${leg.from.name} → ${leg.to.name}</div>
+                            <div class="text-xs text-gray-500">${formatDistance(leg.distance)} • ${formatWalkDuration(leg.duration)}</div>
+                        </div>
+                    `;
+                } else {
+                    const routeRef = references.routes[leg.routeId];
+                    const routeName = routeRef ? (routeRef.shortName || routeRef.longName) : 'Járat';
+                    const routeColor = routeRef && routeRef.style && routeRef.style.color ? `#${routeRef.style.color}` : '#000000';
+                    const textColor = routeRef && routeRef.style && routeRef.style.icon && routeRef.style.icon.textColor ? `#${routeRef.style.icon.textColor}` : '#ffffff';
+
+                    legEl.innerHTML = `
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full font-bold text-sm" style="background-color: ${routeColor}; color:${textColor}; flex-shrink:0;">
+                            ${routeName}
+                        </div>
+                        <div>
+                            <div class="font-semibold">${writeMode(leg.mode)}: ${leg.from.name} → ${leg.to.name}</div>
+                            <div class="text-sm text-gray-600"><span class="font-medium">${new Date(leg.startTime).toLocaleTimeString('hu-HU',{hour:'2-digit',minute:'2-digit'})}</span> → <span class="font-medium">${new Date(leg.endTime).toLocaleTimeString('hu-HU',{hour:'2-digit',minute:'2-digit'})}</span></div>
+                            <div class="text-xs text-gray-500">${formatDistance(leg.distance)} • ${formatWalkDuration(leg.duration)}</div>
+                        </div>
+                    `;
+
+                    legEl.style.cursor = 'pointer';
+                    legEl.onclick = () => {
+                        window.open(`../../hovamegy/?trip=${leg.tripId}&date=${leg.serviceDate}`, '_blank');
+                    };
+                }
+
+                content.appendChild(legEl);
+            });
+
+            header.addEventListener('click', () => {
+                const currentlyExpanded = content.style.display === 'block';
+                // collapse all other accordions
+                document.querySelectorAll('#plan-details > .border > div[role="content"]').forEach(c => c.style.display = 'none');
+                document.querySelectorAll('#plan-details > .border > button').forEach(btn => btn.querySelector('i').classList.remove('fa-rotate-180'));
+
+                if (!currentlyExpanded) {
+                    content.style.display = 'block';
+                    header.querySelector('i').classList.add('fa-rotate-180');
+                    drawItineraryOnMap(plan, itinerary, references);
+                } else {
+                    content.style.display = 'none';
+                    clearMapLayers();
+                }
+            });
+
+            // accessibility marker for selecting content nodes quickly
+            content.setAttribute('role', 'content');
+
+            container.appendChild(header);
+            container.appendChild(content);
+            return container;
+        };
+
+        const renderTripPlan = (plan, references) => {
+            const siteTitle = document.getElementById('site-title');
+            const resultsDiv = document.getElementById('results');
+            const planDetailsDiv = document.getElementById('plan-details');
+            resultsDiv.classList.remove('hidden');
+            document.getElementById('no-params').classList.add('hidden');
+            planDetailsDiv.innerHTML = '';
+
+            siteTitle.textContent = `${plan.from.name} → ${plan.to.name}`;
+            initMap();
+
+            if (!plan || !plan.itineraries || plan.itineraries.length === 0) {
+                planDetailsDiv.innerHTML = `<p class="text-center text-gray-600">Nincs utazási terv az adott paraméterekkel.</p>`;
+                return;
+            }
+
+            // Létrehozzuk az accordion elemeket minden itineráriumhoz
+            plan.itineraries.forEach((it, idx) => {
+                const expanded = idx === 0; // az első alapból nyitva
+                const acc = createItineraryAccordion(plan, it, references, idx, expanded);
+                planDetailsDiv.appendChild(acc);
+                if (expanded) {
+                    // rajzoljuk is az elsőt a térképre
+                    drawItineraryOnMap(plan, it, references);
+                }
+            });
+        };
+
+        const fetchTripPlan = async () => {
+            const params = getUrlParams();
+            const loadingDiv = document.getElementById('loading');
+            const errorDiv = document.getElementById('error');
+            const errorMessageP = document.getElementById('errorMessage');
+
+            if (Object.keys(params).length === 0) { document.getElementById('no-params').classList.remove('hidden'); return; }
+            if (!params.fromPlace || !params.toPlace) { document.getElementById('no-params').classList.add('hidden'); errorDiv.classList.remove('hidden'); errorMessageP.textContent = 'A "fromPlace" és "toPlace" paraméterek kötelezőek!'; return; }
+
+            const apiUrl = buildApiUrl(params);
+            loadingDiv.classList.remove('hidden');
+            errorDiv.classList.add('hidden');
+            document.getElementById('results').classList.add('hidden');
+
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error(`Hálózati hiba: ${response.status}`);
+                const data = await response.json();
+                if (data.status !== 'OK') throw new Error(`API hiba: ${data.text}`);
+                renderTripPlan(data.data.entry.plan, data.data.references);
+            } catch (err) {
+                console.error('Fetch error:', err);
+                errorDiv.classList.remove('hidden');
+                errorMessageP.textContent = `Hiba történt a lekérdezés során: ${err.message}`;
+            } finally {
+                loadingDiv.classList.add('hidden');
+            }
+        };
+
+        window.addEventListener('load', fetchTripPlan);
+    </script>
+</body>
+</html>
