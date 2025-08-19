@@ -41,8 +41,8 @@
             <div id="plan-details" class="space-y-4"></div>
         </div>
         <div id="no-params" class="text-center text-gray-600 font-medium p-4 bg-gray-100 rounded-lg">
-            <p>Kérjük, adja meg a paramétereket az URL-ben a lekérdezéshez.</p>
-            <p class="mt-2 text-sm text-gray-500">Példa: <span class="font-mono bg-gray-200 p-1 rounded">?fromPlace=Budapest, Blaha Lujza tér&toPlace=Budapest, Széll Kálmán tér</span></p>
+            <p>Hiányoznak az URL paraméterei.</p>
+            <p class="mt-2 text-sm text-gray-500">Ugorj vissza a tervezéshez: <span class="font-mono bg-gray-200 p-1 rounded" style="cursor: pointer;" onclick="window.location.href='..'">útvonaltervezés</span></p>
         </div>
     </div>
 
@@ -257,7 +257,6 @@
             const resultsDiv = document.getElementById('results');
             const planDetailsDiv = document.getElementById('plan-details');
             resultsDiv.classList.remove('hidden');
-            document.getElementById('no-params').classList.add('hidden');
             planDetailsDiv.innerHTML = '';
 
             siteTitle.textContent = `${plan.from.name} → ${plan.to.name}`;
@@ -287,8 +286,9 @@
             const errorMessageP = document.getElementById('errorMessage');
 
             if (Object.keys(params).length === 0) { document.getElementById('no-params').classList.remove('hidden'); return; }
-            if (!params.fromPlace || !params.toPlace) { document.getElementById('no-params').classList.add('hidden'); errorDiv.classList.remove('hidden'); errorMessageP.textContent = 'A "fromPlace" és "toPlace" paraméterek kötelezőek!'; return; }
+            if (!params.fromPlace || !params.toPlace || !params.mode) { document.getElementById('no-params').classList.add('hidden'); errorDiv.classList.remove('hidden'); errorMessageP.textContent = 'A "fromPlace", "toPlace" és "mode" paraméterek kötelezőek!'; return; }
 
+            document.getElementById('no-params').classList.add('hidden');
             const apiUrl = buildApiUrl(params);
             loadingDiv.classList.remove('hidden');
             errorDiv.classList.add('hidden');
@@ -296,14 +296,13 @@
 
             try {
                 const response = await fetch(apiUrl);
-                if (!response.ok) throw new Error(`Hálózati hiba: ${response.status}`);
                 const data = await response.json();
-                if (data.status !== 'OK') throw new Error(`API hiba: ${data.text}`);
+                if (data.status !== 'OK') throw new Error(`${data.text}`);
                 renderTripPlan(data.data.entry.plan, data.data.references);
             } catch (err) {
                 console.error('Fetch error:', err);
                 errorDiv.classList.remove('hidden');
-                errorMessageP.textContent = `Hiba történt a lekérdezés során: ${err.message}`;
+                errorMessageP.textContent = `${err.message}`;
             } finally {
                 loadingDiv.classList.add('hidden');
             }
