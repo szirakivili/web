@@ -498,6 +498,7 @@
         </form>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('route-form');
@@ -783,11 +784,21 @@
             window.location.href = planUrl;
         });
 
-        // --- JSON paraméter feldolgozás ---
+        // --- JSON betöltés ---
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('json')) {
-            try {
-                customData = JSON.parse(urlParams.get('json'));
+        if (urlParams.has('file') && urlParams.has('pass')) {
+            const fileName = urlParams.get('file'); // pl. "adatok"
+            const password = urlParams.get('pass'); // jelszó
+
+            fetch(`${fileName}.szv`)
+            .then(response => response.text())
+            .then(encryptedText => {
+                // AES dekódolás a megadott jelszóval
+                const decrypted = CryptoJS.AES.decrypt(encryptedText, password);
+                const decryptedText = decrypted.toString(CryptoJS.enc.Utf8)
+
+                // JSON parse a dekódolt tartalomra
+                customData = JSON.parse(decryptedText);
 
                 // Beállítások előtöltése
                 if (customData.settings) {
@@ -810,9 +821,10 @@
                     createPlaceButtons(customData.places, document.getElementById('origin-buttons'), originInput, (v) => originVertex = v);
                     createPlaceButtons(customData.places, document.getElementById('destination-buttons'), destinationInput, (v) => destinationVertex = v);
                 }
-            } catch (e) {
-                console.error('Hibás JSON paraméter');
-            }
+            })
+            .catch(err => {
+                console.error("Hiba:", err);
+            });
         }
 
         setInitialState();
