@@ -494,7 +494,7 @@
                 <button type="button" id="back-btn" class="back-button">Előző</button>
                 <button type="button" id="next-btn" class="next-button">Következő</button>
             </div>
-            <button class="submit-button" id="submit-btn">Útvonal tervezése</button>
+            <button type="button" class="submit-button" id="submit-btn">Útvonal tervezése</button>
         </form>
     </div>
 
@@ -575,6 +575,7 @@
             const today = new Date();
             dateInput.value = today.toISOString().slice(0, 10);
             updateTimingNowState();
+            nextBtn.click();
         });
 
         tomorrowBtn.addEventListener('click', () => {
@@ -582,6 +583,7 @@
             tomorrow.setDate(tomorrow.getDate() + 1);
             dateInput.value = tomorrow.toISOString().slice(0, 10);
             updateTimingNowState();
+            nextBtn.click();
         });
 
         currentLocationBtn.addEventListener('click', () => {
@@ -615,7 +617,7 @@
                             resultItem.textContent = p.name;
                             resultItem.addEventListener('click', () => {
                                 inputElement.value = p.name;
-                                setVertexFn(`${p.name}::${p.vertex}`);
+                                setVertexFn(p.vertex);
                                 resultsElement.innerHTML = '';
                                 resultsElement.style.display = 'none';
                                 if (type === 'destination') updateArrivalOptions();
@@ -688,8 +690,9 @@
                 btn.textContent = p.name;
                 btn.addEventListener('click', () => {
                     inputEl.value = p.name;
-                    setVertexFn(`${p.name}::${p.vertex}`);
+                    setVertexFn(p.vertex);
                     if (container.id === 'destination-buttons') updateArrivalOptions();
+                    nextBtn.click();
                 });
                 container.appendChild(btn);
             });
@@ -700,11 +703,12 @@
             times.forEach(t => {
                 const btn = document.createElement('button');
                 btn.type = 'button';
-                btn.textContent = t.title;
+                btn.innerHTML = `${t.title}<br><span style="font-size: smaller; font-style: none;">${t.subtitle}</span>`;
                 btn.addEventListener('click', () => {
                     inputEl.value = t.time;
                     timingArrival.checked = true;
                     arrivalTimeInput.disabled = false;
+                    nextBtn.click();
                 });
                 container.appendChild(btn);
             });
@@ -713,7 +717,7 @@
         // --- Arrival times a JSON alapján ---
         function updateArrivalOptions() {
             if (!customData || !customData.places) return;
-            const dest = customData.places.find(p => `${p.name}::${p.vertex}` === destinationVertex);
+            const dest = customData.places.find(p => p.vertex === destinationVertex);
             if (!dest || !dest.arriveTimes) return;
 
             const date = new Date(dateInput.value);
@@ -757,12 +761,11 @@
 
             if (timingArrival.checked) {
                 planUrl += `&arriveBy=true`;
-                if (date && date !== today) planUrl += `&date=${date}`;
                 if (time) planUrl += `&time=${time}`;
             } else {
                 planUrl += `&arriveBy=false`;
-                if (date && date !== today) planUrl += `&date=${date}`;
             }
+            planUrl += `&date=${date}`;
 
             const walkSpeed = document.getElementById('walk-speed').value;
             planUrl += `&walkProfile=${walkSpeed}`;
@@ -777,7 +780,7 @@
             planUrl += `&mode=${modes.join(',')}`;
             planUrl += `&showIntermediateStops=true`;
 
-            window.open(planUrl, '_blank');
+            window.location.href = planUrl;
         });
 
         // --- JSON paraméter feldolgozás ---
