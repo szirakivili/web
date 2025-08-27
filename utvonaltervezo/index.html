@@ -790,7 +790,7 @@
             const fileName = urlParams.get('file'); // pl. "adatok"
             const password = urlParams.get('pass'); // jelszó
 
-            fetch(`./${fileName}.txt`)
+            fetch(`${fileName}.txt`)
             .then(response => response.text())
             .then(encryptedText => {
                 // AES dekódolás a megadott jelszóval
