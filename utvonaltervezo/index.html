@@ -147,6 +147,7 @@
 
         .button-group {
             display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             justify-content: center;
         }
@@ -366,6 +367,7 @@
                 <div class="form-group">
                     <label for="destination-input">Hely keresése:</label>
                     <input type="text" id="destination-input" placeholder="pl. Várna utca 3...">
+                    <div id="destination-buttons" class="button-group"></div> <!-- JSON hely gombok -->
                     <div id="destination-results" class="autocomplete-list"></div>
                 </div>
             </div>
@@ -393,6 +395,7 @@
                 <div class="form-group">
                     <label for="arrival-time">Érkezési idő:</label>
                     <input type="time" id="arrival-time" disabled>
+                    <div id="arrival-buttons" class="button-group"></div> <!-- JSON időpont gombok -->
                 </div>
             </div>
 
@@ -410,6 +413,7 @@
                 <div class="form-group">
                     <label for="origin-input">Hely keresése:</label>
                     <input type="text" id="origin-input" placeholder="pl. Kelenföld pályaudvar...">
+                    <div id="origin-buttons" class="button-group"></div> <!-- JSON hely gombok -->
                     <div id="origin-results" class="autocomplete-list"></div>
                 </div>
             </div>
@@ -495,276 +499,323 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('route-form');
-            const cards = document.querySelectorAll('.card');
-            const nextBtn = document.getElementById('next-btn');
-            const backBtn = document.getElementById('back-btn');
-            const submitBtn = document.getElementById('submit-btn');
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('route-form');
+        const cards = document.querySelectorAll('.card');
+        const nextBtn = document.getElementById('next-btn');
+        const backBtn = document.getElementById('back-btn');
+        const submitBtn = document.getElementById('submit-btn');
 
-            let currentStep = 0;
+        let currentStep = 0;
 
-            const originInput = document.getElementById('origin-input');
-            const destinationInput = document.getElementById('destination-input');
-            const dateInput = document.getElementById('date-input');
-            const arrivalTimeInput = document.getElementById('arrival-time');
-            const todayBtn = document.getElementById('today-btn');
-            const tomorrowBtn = document.getElementById('tomorrow-btn');
-            const timingNow = document.getElementById('timing-now');
-            const timingArrival = document.getElementById('timing-arrival');
-            const currentLocationBtn = document.getElementById('current-location-btn');
-            const timingNowLabel = document.getElementById('timing-now-label');
-            
-            let originVertex = '';
-            let destinationVertex = '';
+        const originInput = document.getElementById('origin-input');
+        const destinationInput = document.getElementById('destination-input');
+        const dateInput = document.getElementById('date-input');
+        const arrivalTimeInput = document.getElementById('arrival-time');
+        const todayBtn = document.getElementById('today-btn');
+        const tomorrowBtn = document.getElementById('tomorrow-btn');
+        const timingNow = document.getElementById('timing-now');
+        const timingArrival = document.getElementById('timing-arrival');
+        const currentLocationBtn = document.getElementById('current-location-btn');
 
-            const stepValidators = {
-                1: () => {
-                    return dateInput.value !== '';
-                },
-                2: () => {
-                    return destinationVertex !== '';
-                },
-                3: () => {
-                    if (timingArrival.checked) {
-                        return arrivalTimeInput.value !== '';
-                    }
-                    return true;
-                },
-                4: () => {
-                    return originVertex !== '';
-                },
-                5: () => {
-                    return true; // A beállítások lépése mindig valid
-                }
-            };
-            
-            function showStep(step) {
-                cards.forEach(card => card.classList.remove('active'));
-                cards[step].classList.add('active');
+        let originVertex = '';
+        let destinationVertex = '';
+        let customData = null; // JSON-ből betöltött extra adatok
 
-                // Navigációs gombok frissítése
-                backBtn.style.display = step > 0 ? 'block' : 'none';
-                nextBtn.style.display = step < cards.length - 1 ? 'block' : 'none';
-                submitBtn.style.display = step === cards.length - 1 ? 'block' : 'none';
+        const stepValidators = {
+            1: () => dateInput.value !== '',
+            2: () => destinationVertex !== '',
+            3: () => timingArrival.checked ? arrivalTimeInput.value !== '' : true,
+            4: () => originVertex !== '',
+            5: () => true
+        };
 
-                // Gomb szöveg frissítése a következő lépés alapján
-                if (step === 0) {
-                    nextBtn.textContent = 'Következő';
-                }
-                
-                // Beállítjuk a befejezett lépéseket
-                cards.forEach((card, index) => {
-                    if (index < step) {
-                        card.classList.add('completed');
-                    } else {
-                        card.classList.remove('completed');
-                    }
-                });
+        function showStep(step) {
+            cards.forEach(card => card.classList.remove('active'));
+            cards[step].classList.add('active');
+
+            backBtn.style.display = step > 0 ? 'block' : 'none';
+            nextBtn.style.display = step < cards.length - 1 ? 'block' : 'none';
+            submitBtn.style.display = step === cards.length - 1 ? 'block' : 'none';
+
+            cards.forEach((card, index) => {
+                if (index < step) card.classList.add('completed');
+                else card.classList.remove('completed');
+            });
+
+            // ha érkezési idő választás van → frissítés
+            if (step === 3) {
+                updateArrivalOptions();
             }
+        }
 
-            function setInitialState() {
-                const today = new Date().toISOString().slice(0, 10);
-                dateInput.value = today;
-                timingNow.checked = true;
-                arrivalTimeInput.disabled = true;
-                showStep(currentStep);
+        function setInitialState() {
+            const today = new Date().toISOString().slice(0, 10);
+            dateInput.value = today;
+            timingNow.checked = true;
+            arrivalTimeInput.disabled = true;
+            showStep(currentStep);
+        }
+
+        function updateTimingNowState() {
+            const today = new Date().toISOString().slice(0, 10);
+            const isToday = dateInput.value === today;
+
+            timingNow.disabled = !isToday;
+            timingNow.checked = isToday;
+            timingArrival.checked = !isToday;
+            arrivalTimeInput.disabled = !timingArrival.checked;
+        }
+
+        timingNow.addEventListener('change', () => arrivalTimeInput.disabled = true);
+        timingArrival.addEventListener('change', () => arrivalTimeInput.disabled = false);
+        dateInput.addEventListener('change', updateTimingNowState);
+
+        todayBtn.addEventListener('click', () => {
+            const today = new Date();
+            dateInput.value = today.toISOString().slice(0, 10);
+            updateTimingNowState();
+        });
+
+        tomorrowBtn.addEventListener('click', () => {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.value = tomorrow.toISOString().slice(0, 10);
+            updateTimingNowState();
+        });
+
+        currentLocationBtn.addEventListener('click', () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    originInput.value = 'Aktuális pozíció';
+                    originVertex = `Aktuális pozíció::${lat},${lon}`;
+                    nextBtn.click();
+                }, () => alert('Nem sikerült lekérni a pozíciót.'));
+            } else {
+                alert('A böngésző nem támogatja a helymeghatározást.');
             }
-            
-            function updateTimingNowState() {
-                const today = new Date().toISOString().slice(0, 10);
-                const isToday = dateInput.value === today;
+        });
 
-                timingNow.disabled = !isToday;
-                timingNow.checked = isToday;
-                timingArrival.checked = !isToday;
+        // --- Autocomplete eredeti API-val ---
+        const setupAutocomplete = (inputElement, resultsElement, setVertexFn, type) => {
+            inputElement.addEventListener('input', async (e) => {
+                const query = e.target.value.trim();
+                resultsElement.innerHTML = '';
 
-                if (isToday) {
-                    timingNow.closest('.box-option').classList.remove('disabled');
-                    timingArrival.closest('.box-option').classList.remove('disabled');
-                } else {
-                    timingNow.closest('.box-option').classList.add('disabled');
-                    timingArrival.closest('.box-option').classList.remove('disabled');
-                }
-
-                if (timingArrival.checked) {
-                    arrivalTimeInput.disabled = false;
-                } else {
-                    arrivalTimeInput.disabled = true;
-                }
-            }
-            
-            timingNow.addEventListener('change', () => {
-                arrivalTimeInput.disabled = true;
-            });
-            timingArrival.addEventListener('change', () => {
-                arrivalTimeInput.disabled = false;
-            });
-
-            dateInput.addEventListener('change', updateTimingNowState);
-            
-            todayBtn.addEventListener('click', () => {
-                const today = new Date();
-                dateInput.value = today.toISOString().slice(0, 10);
-                updateTimingNowState();
-            });
-
-            tomorrowBtn.addEventListener('click', () => {
-                const tomorrow = new Date();
-                tomorrow.setDate(tomorrow.getDate() + 1);
-                dateInput.value = tomorrow.toISOString().slice(0, 10);
-                updateTimingNowState();
-            });
-
-            currentLocationBtn.addEventListener('click', () => {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition((position) => {
-                        const lat = position.coords.latitude;
-                        const lon = position.coords.longitude;
-                        originInput.value = 'Aktuális pozíció';
-                        originVertex = `Aktuális pozíció::${lat},${lon}`;
-                        nextBtn.click();
-                    }, () => {
-                        alert('Nem sikerült lekérni a pozíciót. Kérjük, engedélyezze a helymeghatározást.');
-                    });
-                } else {
-                    alert('A böngészője nem támogatja a helymeghatározást.');
-                }
-            });
-
-            const setupAutocomplete = (inputElement, resultsElement, setVertexFn) => {
-                inputElement.addEventListener('input', async (e) => {
-                    const query = e.target.value.trim();
-                    if (query.length < 2) {
-                        resultsElement.innerHTML = '';
-                        resultsElement.style.display = 'none';
-                        setVertexFn('');
+                // ha van custom JSON és egyező hely
+                if (customData && customData.places) {
+                    const matches = customData.places.filter(p => p.name.toLowerCase().includes(query.toLowerCase()));
+                    if (matches.length > 0) {
+                        resultsElement.style.display = 'block';
+                        matches.forEach(p => {
+                            const resultItem = document.createElement('div');
+                            resultItem.className = 'autocomplete-list-item stop';
+                            resultItem.textContent = p.name;
+                            resultItem.addEventListener('click', () => {
+                                inputElement.value = p.name;
+                                setVertexFn(`${p.name}::${p.vertex}`);
+                                resultsElement.innerHTML = '';
+                                resultsElement.style.display = 'none';
+                                if (type === 'destination') updateArrivalOptions();
+                            });
+                            resultsElement.appendChild(resultItem);
+                        });
                         return;
                     }
-
-                    resultsElement.innerHTML = '';
-                    resultsElement.style.display = 'block';
-
-                    try {
-                        const response = await fetch(`https://go.bkk.hu/api/geocoder/v1/geocode?q=${encodeURIComponent(query)}&types=places&types=stop-areas&version=44&appVersion=1.0&key=05f00c85-2177-4345-9103-e72960f3918d`);
-                        const data = await response.json();
-
-                        const { otp, osm } = data.data.entry.places;
-                        const results = [];
-                        if (otp) {
-                            otp.forEach(item => results.push({ ...item, type: 'otp' }));
-                        }
-                        if (osm) {
-                            osm.forEach(item => results.push({ ...item, type: 'osm' }));
-                        }
-                        
-                        if (results.length > 0) {
-                            results.forEach(item => {
-                                const resultItem = document.createElement('div');
-                                resultItem.className = 'autocomplete-list-item';
-                                if (item.type === 'otp') {
-                                    resultItem.classList.add('stop');
-                                }
-                                resultItem.textContent = item.mainTitle;
-                                resultItem.addEventListener('click', () => {
-                                    inputElement.value = item.mainTitle;
-                                    
-                                    let vertex = '';
-                                    if (item.type === 'otp') {
-                                        vertex = `${item.name}::${item.vertex}`;
-                                    } else if (item.type === 'osm') {
-                                        vertex = `${item.name}::${item.lat},${item.lon}`;
-                                    }
-                                    setVertexFn(vertex);
-                                    
-                                    resultsElement.innerHTML = '';
-                                    resultsElement.style.display = 'none';
-                                });
-                                resultsElement.appendChild(resultItem);
-                            });
-                        } else {
-                            resultsElement.innerHTML = '<div style="padding: 10px; color: var(--secondary-color);">Nincs találat</div>';
-                        }
-                    } catch (error) {
-                        console.error('Hiba a keresés során:', error);
-                        resultsElement.innerHTML = '<div style="padding: 10px; color: red;">Hiba történt a keresés közben.</div>';
-                    }
-                });
-
-                document.addEventListener('click', (e) => {
-                    if (!resultsElement.contains(e.target) && e.target !== inputElement) {
-                        resultsElement.innerHTML = '';
-                        resultsElement.style.display = 'none';
-                    }
-                });
-            };
-
-            setupAutocomplete(originInput, document.getElementById('origin-results'), (vertex) => originVertex = vertex);
-            setupAutocomplete(destinationInput, document.getElementById('destination-results'), (vertex) => destinationVertex = vertex);
-            
-            nextBtn.addEventListener('click', () => {
-                if (stepValidators[currentStep + 1]()) {
-                    currentStep++;
-                    showStep(currentStep);
-                } else {
-                    alert('Kérjük, töltse ki a mezőt a folytatáshoz!');
                 }
-            });
 
-            backBtn.addEventListener('click', () => {
-                if (currentStep > 0) {
-                    currentStep--;
-                    showStep(currentStep);
-                }
-            });
-
-            submitBtn.addEventListener('click', () => {
-                const origin = originVertex;
-                const destination = destinationVertex;
-
-                if (!destination || !origin) {
-                    alert('Kérjük, adja meg a kiindulási és a célállomást is!');
+                if (query.length < 2) {
+                    resultsElement.style.display = 'none';
+                    setVertexFn('');
                     return;
                 }
 
-                const baseUrl = `./terv/`;
-                const date = dateInput.value;
-                const time = arrivalTimeInput.value;
-                const today = new Date().toISOString().slice(0, 10);
-                
-                let planUrl = `${baseUrl}?fromPlace=${origin}&toPlace=${destination}`;
+                resultsElement.style.display = 'block';
 
-                if (timingArrival.checked) {
-                    planUrl += `&arriveBy=true`;
-                    if (date && date !== today) planUrl += `&date=${date}`;
-                    if (time) planUrl += `&time=${time}`;
-                } else {
-                    planUrl += `&arriveBy=false`;
-                    if (date && date !== today) planUrl += `&date=${date}`;
+                try {
+                    const response = await fetch(`https://go.bkk.hu/api/geocoder/v1/geocode?q=${encodeURIComponent(query)}&types=places&types=stop-areas&version=44&appVersion=1.0&key=05f00c85-2177-4345-9103-e72960f3918d`);
+                    const data = await response.json();
+
+                    const { otp, osm } = data.data.entry.places;
+                    const results = [];
+                    if (otp) otp.forEach(item => results.push({ ...item, type: 'otp' }));
+                    if (osm) osm.forEach(item => results.push({ ...item, type: 'osm' }));
+
+                    if (results.length > 0) {
+                        results.forEach(item => {
+                            const resultItem = document.createElement('div');
+                            resultItem.className = 'autocomplete-list-item';
+                            if (item.type === 'otp') resultItem.classList.add('stop');
+                            resultItem.textContent = item.mainTitle;
+                            resultItem.addEventListener('click', () => {
+                                inputElement.value = item.mainTitle;
+                                let vertex = '';
+                                if (item.type === 'otp') vertex = `${item.name}::${item.vertex}`;
+                                else vertex = `${item.name}::${item.lat},${item.lon}`;
+                                setVertexFn(vertex);
+                                resultsElement.innerHTML = '';
+                                resultsElement.style.display = 'none';
+                                if (type === 'destination') updateArrivalOptions();
+                            });
+                            resultsElement.appendChild(resultItem);
+                        });
+                    } else {
+                        resultsElement.innerHTML = '<div style="padding:10px; color:gray;">Nincs találat</div>';
+                    }
+                } catch {
+                    resultsElement.innerHTML = '<div style="padding:10px; color:red;">Hiba a keresésben</div>';
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!resultsElement.contains(e.target) && e.target !== inputElement) {
+                    resultsElement.innerHTML = '';
+                    resultsElement.style.display = 'none';
+                }
+            });
+        };
+
+        setupAutocomplete(originInput, document.getElementById('origin-results'), (v) => originVertex = v, 'origin');
+        setupAutocomplete(destinationInput, document.getElementById('destination-results'), (v) => destinationVertex = v, 'destination');
+
+        function createPlaceButtons(places, container, inputEl, setVertexFn) {
+            container.innerHTML = '';
+            places.forEach(p => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.textContent = p.name;
+                btn.addEventListener('click', () => {
+                    inputEl.value = p.name;
+                    setVertexFn(`${p.name}::${p.vertex}`);
+                    if (container.id === 'destination-buttons') updateArrivalOptions();
+                });
+                container.appendChild(btn);
+            });
+        }
+
+        function createArrivalButtons(times, container, inputEl) {
+            container.innerHTML = '';
+            times.forEach(t => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.textContent = t.title;
+                btn.addEventListener('click', () => {
+                    inputEl.value = t.time;
+                    timingArrival.checked = true;
+                    arrivalTimeInput.disabled = false;
+                });
+                container.appendChild(btn);
+            });
+        }
+        
+        // --- Arrival times a JSON alapján ---
+        function updateArrivalOptions() {
+            if (!customData || !customData.places) return;
+            const dest = customData.places.find(p => `${p.name}::${p.vertex}` === destinationVertex);
+            if (!dest || !dest.arriveTimes) return;
+
+            const date = new Date(dateInput.value);
+            const dayIndex = date.getDay() - 1;
+            const timesForDay = dest.arriveTimes[dayIndex] || [];
+
+            const container = document.getElementById('arrival-buttons');
+            createArrivalButtons(timesForDay, container, arrivalTimeInput);
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (stepValidators[currentStep + 1]()) {
+                currentStep++;
+                showStep(currentStep);
+            } else {
+                alert('Töltsd ki ezt a mezőt!');
+            }
+        });
+
+        backBtn.addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        submitBtn.addEventListener('click', () => {
+            const origin = originVertex;
+            const destination = destinationVertex;
+            if (!destination || !origin) {
+                alert('Add meg a kiindulási és a célállomást is!');
+                return;
+            }
+
+            const baseUrl = `./terv/`;
+            const date = dateInput.value;
+            const time = arrivalTimeInput.value;
+            const today = new Date().toISOString().slice(0, 10);
+
+            let planUrl = `${baseUrl}?fromPlace=${origin}&toPlace=${destination}`;
+
+            if (timingArrival.checked) {
+                planUrl += `&arriveBy=true`;
+                if (date && date !== today) planUrl += `&date=${date}`;
+                if (time) planUrl += `&time=${time}`;
+            } else {
+                planUrl += `&arriveBy=false`;
+                if (date && date !== today) planUrl += `&date=${date}`;
+            }
+
+            const walkSpeed = document.getElementById('walk-speed').value;
+            planUrl += `&walkProfile=${walkSpeed}`;
+
+            const optimize = document.querySelector('input[name="optimize"]:checked').value;
+            planUrl += `&optimize=${optimize}`;
+
+            const modes = ['WALK'];
+            document.querySelectorAll('input[name="mode"]').forEach(c => {
+                if (c.checked) modes.push(c.value);
+            });
+            planUrl += `&mode=${modes.join(',')}`;
+            planUrl += `&showIntermediateStops=true`;
+
+            window.open(planUrl, '_blank');
+        });
+
+        // --- JSON paraméter feldolgozás ---
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('json')) {
+            try {
+                customData = JSON.parse(urlParams.get('json'));
+
+                // Beállítások előtöltése
+                if (customData.settings) {
+                    if (customData.settings.walkProfile) {
+                        document.getElementById('walk-speed').value = customData.settings.walkProfile;
+                    }
+                    if (customData.settings.optimize) {
+                        const radio = document.querySelector(`input[name="optimize"][value="${customData.settings.optimize}"]`);
+                        if (radio) radio.checked = true;
+                    }
+                    if (Array.isArray(customData.settings.mode)) {
+                        document.querySelectorAll('input[name="mode"]').forEach(cb => {
+                            cb.checked = customData.settings.mode.includes(cb.value);
+                        });
+                    }
                 }
 
-                const walkSpeed = document.getElementById('walk-speed').value;
-                planUrl += `&walkProfile=${walkSpeed}`;
+                // Helyválasztó gombok
+                if (customData.places) {
+                    createPlaceButtons(customData.places, document.getElementById('origin-buttons'), originInput, (v) => originVertex = v);
+                    createPlaceButtons(customData.places, document.getElementById('destination-buttons'), destinationInput, (v) => destinationVertex = v);
+                }
+            } catch (e) {
+                console.error('Hibás JSON paraméter');
+            }
+        }
 
-                const optimize = document.querySelector('input[name="optimize"]:checked').value;
-                planUrl += `&optimize=${optimize}`;
+        setInitialState();
+        updateTimingNowState();
+    });
+</script>
 
-                const modes = ['WALK'];
-                document.querySelectorAll('input[name="mode"]').forEach(checkbox => {
-                    if (checkbox.checked) {
-                        modes.push(checkbox.value);
-                    }
-                });
-
-                planUrl += `&mode=${modes.join(',')}`;
-                planUrl += `&showIntermediateStops=true`
-                
-                window.open(planUrl, '_blank');
-            });
-            
-            setInitialState();
-            updateTimingNowState();
-        });
-    </script>
 </body>
 </html>
