@@ -43,8 +43,6 @@
     align-items:center;
     justify-content:center;
   }
-  /* egyszerű KRÉTA-stílusú vektor */
-  .logo svg{ width:120px; height:56px; display:block; }
 
   /* fehér doboz (login card) */
   .card {
@@ -198,7 +196,6 @@
     .card, .info{ width:100%; }
     .card .head{ font-size:18px; padding:14px 18px; }
     input[type="text"], input[type="password"]{ padding:12px 44px 12px 12px; }
-    .logo svg{ width:96px; height:44px; }
   }
 </style>
 </head>
@@ -239,7 +236,7 @@
           </div>
 
           <div class="btn-outer">
-            <button class="btn">BEJELENTKEZÉS</button>
+            <button class="btn" onclick="buttonClick()">BEJELENTKEZÉS</button>
           </div>
         </div>
 
@@ -289,6 +286,10 @@
       }
     });
   })();
+
+  function buttonClick() {
+    window.location.href = "./faliujsag.html";
+  }
 </script>
 </body>
 </html>
