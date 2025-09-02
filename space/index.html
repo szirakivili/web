@@ -59,7 +59,7 @@
       margin-bottom: 1rem;
     }
 
-    #fetch-button, #launches-button, #crewed-launches-button {
+    #fetch-button, #launches-button, #crewed-launches-button, #station-button {
       background-color: var(--accent);
       color: var(--bg);
       border: none;
@@ -71,12 +71,12 @@
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    #fetch-button:hover:not(:disabled), #launches-button:hover:not(:disabled), #crewed-launches-button:hover:not(:disabled) {
+    #fetch-button:hover:not(:disabled), #launches-button:hover:not(:disabled), #crewed-launches-button:hover:not(:disabled), #station-button:hover:not(:disabled) {
       background-color: #0099e6;
       transform: translateY(-2px);
     }
     
-    #fetch-button:disabled, #launches-button:disabled, #crewed-launches-button:disabled {
+    #fetch-button:disabled, #launches-button:disabled, #crewed-launches-button:disabled, #station-button:disabled {
       background-color: #6c757d;
       cursor: not-allowed;
       opacity: 0.7;
@@ -183,8 +183,27 @@
       max-height: 100px;
       object-fit: contain;
       margin-bottom: 0.5rem;
-      border-radius: 10%;
+      border-radius: 5%;
     }
+
+    .station-logos {
+      display: flex;
+      flex-wrap: wrap; /* új sor, ha nem fér ki */
+      gap: 0.5rem;
+    }
+    .station-logo-patch {
+      max-width: 75px;
+      max-height: 50px;
+      object-fit: contain;
+    }
+
+    .station-image {
+      width: 100%;
+      border-radius: 5%;
+      margin-bottom: 20px;
+    }
+    
+
     .crew-list {
       margin-top: 0.5rem;
     }
@@ -265,10 +284,10 @@
       <div id="crewed-launches" class="object-list" style="margin-bottom:2rem;"></div>
     </div>
 
-    <h2>Űrállomások és dokkolt járművek az űrben</h2>
-    <div id="docked-objects-container">
-      <button id="fetch-button">Lista betöltése</button>
-      <div id="objects" class="object-list"></div>
+    <h2>Aktív űrállomások és dokkolt járművek</h2>
+    <div id="launches-container">
+      <button id="station-button">Lista betöltése</button>
+      <div id="stations" class="object-list" style="margin-bottom:2rem;"></div>
     </div>
   </div>
 
@@ -550,38 +569,91 @@
       }
     }
 
-    async function fetchDockedObjects() {
-      const listContainer = document.getElementById('objects');
-      const button = document.getElementById('fetch-button');
+    async function fetchStations() {
+      const container = document.getElementById('stations');
+      const button = document.getElementById('station-button');
       button.disabled = true;
-      button.textContent = 'Betöltés...';
+      button.textContent = "Betöltés...";
 
       try {
-        const response = await fetch('https://celestrak.org/NORAD/elements/gp.php?GROUP=stations&FORMAT=json');
+        const response = await fetch(`https://ll.thespacedevs.com/2.3.0/space_stations/?mode=detailed&status=1&format=json`);
         const data = await response.json();
+        container.innerHTML = "";
 
-        data.sort((a, b) => b.OBJECT_ID.localeCompare(a.OBJECT_ID));
-        listContainer.innerHTML = '';
+        if (data.detail) {
+          let waitSec = data.detail.split(" ")[6];
+          button.style.display = "none";
+          container.innerHTML = `<p>Próbáld újra ${waitSec} mp múlva!</p>`;
+          return;
+        }
 
-        data.forEach(obj => {
-          const div = document.createElement('div');
-          div.className = 'object-card';
+        for (const station of data.results) {
+          const div = document.createElement("div");
+          div.className = "object-card";
+          
+          let logo = "";
+          let owners = [];
+          if (station.owners && station.owners.length > 0) {
+            station.owners.forEach((owner) => {
+              logo += `<img class="station-logo-patch" src="${owner.logo.image_url || ""}" alt="${owner.name}" />`;
+              owners.push(`${owner.name} (${owner.abbrev})`);
+            });
+          }
+
+          let dockedVehicles = "";
+          station.docking_location.forEach(dock => {
+            if (dock.currently_docked !== null) {
+              dockedVehicles += `<li>${dock.name}: <strong>${dock.currently_docked.flight_vehicle_chaser.spacecraft.name}</strong> (${formatTimeAgo(dock.currently_docked.docking)} dokkolt)</li>`;
+            }
+          });
+
+          let expeditions = [];
+          let crew = "";
+          let missionPatches = "";
+          // Expedíciók betöltése
+          for (const exp of station.active_expeditions) {
+            expeditions.push(exp.name);
+            const response = await fetch(exp.url);
+            const expData = await response.json();
+            expData.crew.forEach(memb => {
+              crew += `<li>${memb.role.role || "Űrhajós"}: <strong>${memb.astronaut.name}</strong> (${memb.astronaut.nationality[0].alpha_2_code})</li>`;
+            });
+            expData.mission_patches.forEach(patch => {
+              missionPatches += `<img class="launch-logo-patch" src="${patch.image_url}">`;
+            });
+          }
+
           div.innerHTML = `
+            <img class="station-image" src="${station.image.image_url}" />
             <div class="object-name">
-              <h3>${obj.OBJECT_NAME}</h3>
-              <span class="object-id">${obj.OBJECT_ID}</span>
+              <h3>${station.name}</h3>
             </div>
             <div class="object-info">
-              <p>Frissítve: <strong>${formatTimeAgo(obj.EPOCH)}</strong></p>
-              <p>Keringési pálya szöge: <strong>${obj.INCLINATION}°</strong></p>
+              <p>Üzemelés kezdete: <strong>${station.founded}</strong></p>
+              <p>Méret: <strong>${station.width} × ${station.height} méter</strong>, <strong>${station.mass} tonna</strong></p>
+              <p>Lakható térfogat: <strong>${station.volume} m³</strong></p>
+              <div class="launch-logos">${missionPatches ? missionPatches : ""}</div>
+              <div class="crew-list">
+                <h4>Személyzet: ${station.onboard_crew} fő (${expeditions.join(', ')})</h4>
+                <ul>${crew}</ul>
+              </div>
+              <div class="crew-list">
+                <h4>Dokkolt járművek:</h4>
+                <ul>${dockedVehicles}</ul>
+              </div>
+              <p>Hely: <strong>${station.orbit || "ismeretlen"}</strong></p>
+              <p>Tulajdonos: <strong>${owners.join('</strong>, <strong>')}</strong></p>
             </div>
+            <div class="station-logos">${logo ? logo : ""}</div>
           `;
-          listContainer.appendChild(div);
-        });
-        button.style.display = 'none';
-      } catch (error) {
-        console.error('Nem sikerült lekérni a dokkolt objektumokat:', error);
-        button.textContent = 'Hiba történt';
+          container.appendChild(div);
+        }
+
+        button.style.display = "none"; // eltüntetjük a gombot sikeres betöltés után
+      } catch (err) {
+        console.error("Nem sikerült lekérni az űrállomásokat:", err);
+        container.innerHTML = "<p>Nem sikerült betölteni az űrállomásokat.</p>";
+        button.textContent = "Újra próbálkozás";
         button.disabled = false;
       }
     }
@@ -616,9 +688,9 @@
     updateISSPosition();
     setInterval(updateISSPosition, 5000);
 
-    document.getElementById('fetch-button').addEventListener('click', fetchDockedObjects);
     document.getElementById('launches-button').addEventListener('click', () => fetchLaunches(false));
     document.getElementById('crewed-launches-button').addEventListener('click', () => fetchLaunches(true));
+    document.getElementById('station-button').addEventListener('click', fetchStations);
   </script>
 </body>
 </html>
