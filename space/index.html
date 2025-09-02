@@ -615,6 +615,14 @@
             expeditions.push(exp.name);
             const response = await fetch(exp.url);
             const expData = await response.json();
+
+            if (expData.detail) {
+              let waitSec = expData.detail.split(" ")[6];
+              button.style.display = "none";
+              container.innerHTML = `<p>Próbáld újra ${waitSec} mp múlva!</p>`;
+              return;
+            }
+
             expData.crew.forEach(memb => {
               crew += `<li>${memb.role.role || "Űrhajós"}: <strong>${memb.astronaut.name}</strong> (${memb.astronaut.nationality[0].alpha_2_code})</li>`;
             });
