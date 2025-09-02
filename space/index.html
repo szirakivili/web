@@ -59,7 +59,7 @@
       margin-bottom: 1rem;
     }
 
-    #fetch-button, #launches-button {
+    #fetch-button, #launches-button, #crewed-launches-button {
       background-color: var(--accent);
       color: var(--bg);
       border: none;
@@ -71,12 +71,12 @@
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    #fetch-button:hover:not(:disabled), #launches-button:hover:not(:disabled) {
+    #fetch-button:hover:not(:disabled), #launches-button:hover:not(:disabled), #crewed-launches-button:hover:not(:disabled) {
       background-color: #0099e6;
       transform: translateY(-2px);
     }
     
-    #fetch-button:disabled, #launches-button:disabled {
+    #fetch-button:disabled, #launches-button:disabled, #crewed-launches-button:disabled {
       background-color: #6c757d;
       cursor: not-allowed;
       opacity: 0.7;
@@ -149,6 +149,12 @@
       font-weight: 600;
     }
 
+    .object-info h4 {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
     .status-badge {
       position: absolute;
       top: 1rem;
@@ -161,11 +167,16 @@
       color: var(--accent);
     }
 
+    .launch-logos {
+      display: flex;
+      flex-wrap: wrap; /* új sor, ha nem fér ki */
+      gap: 0.5rem;
+    }
+
     .launch-logo-patch {
       max-width: 100px;
       max-height: 100px;
       object-fit: contain;
-      margin-bottom: 0.5rem;
     }
     .launch-logo-image {
       max-width: 100px;
@@ -173,6 +184,42 @@
       object-fit: contain;
       margin-bottom: 0.5rem;
       border-radius: 10%;
+    }
+    .crew-list {
+      margin-top: 0.5rem;
+    }
+
+    .crew-list h4 {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .crew-list ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .crew-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--subtle-text);
+    }
+
+    .crew-list li strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .crew-list li::before {
+      content: "✦";              /* egyszerű, modern "csillag" ikon */
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.9rem;
     }
 
     @media (max-width: 600px) {
@@ -206,10 +253,16 @@
     <div id="map"></div>
     <div id="iss-info" class="object-card" style="margin-bottom: 2rem;"></div>
 
-    <h2>Közelgő kilövések</h2>
+    <h2>Közelgő személyzet nélküli kilövések</h2>
     <div id="launches-container">
       <button id="launches-button">Lista betöltése</button>
       <div id="launches" class="object-list" style="margin-bottom:2rem;"></div>
+    </div>
+
+    <h2>Közelgő emberes kilövések</h2>
+    <div id="launches-container">
+      <button id="crewed-launches-button">Lista betöltése</button>
+      <div id="crewed-launches" class="object-list" style="margin-bottom:2rem;"></div>
     </div>
 
     <h2>Űrállomások és dokkolt járművek az űrben</h2>
@@ -258,6 +311,62 @@
       const ss = String(seconds).padStart(2, '0');
 
       return `T-${dd}:${hh}:${mm}:${ss}`;
+    }
+
+    function formatLaunchDate(isoString, precision) {
+      const date = new Date(isoString);
+
+      const months = [
+        "január", "február", "március", "április", "május", "június",
+        "július", "augusztus", "szeptember", "október", "november", "december"
+      ];
+
+      const pad = (n) => String(n).padStart(2, "0");
+
+      let formatted = "";
+
+      switch (precision) {
+        case "Y":
+          formatted = `${date.getFullYear()}`;
+          break;
+
+        case "M":
+          formatted = `${date.getFullYear()}. ${months[date.getMonth()]}`;
+          break;
+
+        case "DAY":
+          formatted = `${date.getFullYear()}. ${months[date.getMonth()]} ${date.getDate()}.`;
+          break;
+
+        case "HR":
+          formatted = `${date.getFullYear()}. ${months[date.getMonth()]} ${date.getDate()}. ${pad(date.getHours())}:00`;
+          break;
+
+        case "MIN":
+          formatted = `${date.getFullYear()}. ${months[date.getMonth()]} ${date.getDate()}. ${pad(date.getHours())}:${pad(date.getMinutes())}`;
+          break;
+
+        case "SEC":
+          formatted = `${date.getFullYear()}. ${months[date.getMonth()]} ${date.getDate()}. ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
+          break;
+
+        case "Q1":
+        case "Q2":
+        case "Q3":
+        case "Q4": 
+          formatted = `${date.getFullYear()}. ${precision[1]}. negyedév`;
+          break;
+
+        case "H1":
+        case "H2": 
+          formatted = `${date.getFullYear()}. ${precision[1]}. fele`;
+          break;
+
+        default:
+          formatted = `Ismeretlen (${date.toLocaleString("hu-HU")}`; // fallback: teljes dátum/idő magyarul
+      }
+
+      return formatted;
     }
 
     const map = L.map('map', {
@@ -357,14 +466,14 @@
       }
     }
 
-    async function fetchLaunches() {
-      const container = document.getElementById('launches');
-      const button = document.getElementById('launches-button');
+    async function fetchLaunches(isCrewed = false) {
+      const container = document.getElementById(`${isCrewed ? "crewed-" : ""}launches`);
+      const button = document.getElementById(`${isCrewed ? "crewed-" : ""}launches-button`);
       button.disabled = true;
       button.textContent = "Betöltés...";
 
       try {
-        const response = await fetch("https://ll.thespacedevs.com/2.3.0/launches/upcoming/?format=json&mode=normal&limit=10");
+        const response = await fetch(`https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=${isCrewed}&format=json&mode=detailed&limit=10`);
         const data = await response.json();
         container.innerHTML = "";
 
@@ -378,31 +487,48 @@
         data.results.forEach((launch, index) => {
           const div = document.createElement("div");
           div.className = "object-card";
-
+          
           let logo = "";
           let logoClass = "";
-          if (launch.program && launch.program.length > 0 && launch.program[0].mission_patches?.length > 0) {
-            logo = launch.program[0].mission_patches[0].image_url;
-            logoClass = "launch-logo-patch";
+          if (launch.mission_patches && launch.mission_patches.length > 0) {
+            launch.mission_patches.forEach((patch) => {
+              logo += `<img class="launch-logo-patch" src="${patch.image_url}" alt="${patch.name}" />`;
+            });
+          } else if (launch.program && launch.program.length > 0 && launch.program[0].image) {
+            logo = `<img class="launch-logo-image" src="${launch.program[0].image.image_url}" alt="${launch.program[0].image.name}" />`;
           } else if (launch.image) {
-            logo = launch.image.image_url;
-            logoClass = "launch-logo-image";
+            logo = `<img class="launch-logo-image" src="${launch.image.image_url}" alt="${launch.image.name}" />`;
+          }
+
+          let crew = "";
+          if (isCrewed && launch.rocket && launch.rocket.spacecraft_stage && launch.rocket.spacecraft_stage.length > 0 && launch.rocket.spacecraft_stage[0].launch_crew && launch.rocket.spacecraft_stage[0].launch_crew.length > 0)
+          {
+            launch.rocket.spacecraft_stage[0].launch_crew.forEach(member => {
+              crew += `<li>${member.role.role || "Űrhajós"}: <strong>${member.astronaut.name}</strong> (${member.astronaut.nationality[0].alpha_2_code || "?"})</li>`;
+            });
           }
 
           // minden launch-hoz adunk egy egyedi ID-t a visszaszámlálóhoz
-          const countdownId = `countdown-${index}`;
+          const countdownId = `countdown-${isCrewed ? "C" : "UC"}${index}`;
 
           div.innerHTML = `
             <span class="status-badge">${launch.status?.name || launch.status?.abbrev || ""}</span>
-            ${logo ? `<img class="${logoClass}" src="${logo}" alt="Logo" />` : ""}
+            <div class="launch-logos">${logo ? logo : ""}</div>
             <div class="object-name">
               <h3>${launch.name}</h3>
             </div>
             <div class="object-info">
-              <p>Indításig: <strong id="${countdownId}">${formatCountdown(launch.net)}</strong> (${launch.net_precision?.abbrev || ""})</p>
-              <p>Helyszín: <strong>${launch.pad?.location?.name || launch.pad?.name || "Ismeretlen"}</strong> (${launch.location_launch_attempt_count_year}. kilövés idén)</p>
-              <p>Szolgáltató: <strong>${launch.launch_service_provider?.name || "N/A"}</strong> (${launch.agency_launch_attempt_count_year}. kilövés idén)</p>
+              <h4><strong id="${countdownId}">${formatCountdown(launch.net)}</strong></h4>
+              <p>Indítás időpontja: <strong>${formatLaunchDate(launch.net, launch.net_precision?.abbrev || null)}</strong></p>
+              <p>Helyszín: <strong>${launch.pad?.location?.name || launch.pad?.name || "Ismeretlen"}</strong> (${launch.location_launch_attempt_count_year}. kilövés az évben)</p>
+              <p>Szolgáltató: <strong>${launch.launch_service_provider?.name || "N/A"}</strong> (${launch.agency_launch_attempt_count_year}. kilövés az évben)</p>
               <p>Keringési pálya: <strong>${launch.mission?.orbit?.name || "-"}</strong> (${launch.mission?.orbit?.abbrev || ""})</p>
+              ${isCrewed ? `<div class="crew-list">
+                  <h4>Személyzet:</h4>
+                  <ul>${crew}</ul>
+                </div>` : ""}
+              <h4>A küldetésről:</h4>
+              <p>${launch.mission?.description || "-"}</p>
               <p class="object-id" style="margin-top: 15px; cursor: pointer; width: fit-content;" onclick="window.open('https://go4liftoff.com/launch/${launch.slug}')">További információk</p>
             </div>
           `;
@@ -491,7 +617,8 @@
     setInterval(updateISSPosition, 5000);
 
     document.getElementById('fetch-button').addEventListener('click', fetchDockedObjects);
-    document.getElementById('launches-button').addEventListener('click', fetchLaunches);
+    document.getElementById('launches-button').addEventListener('click', () => fetchLaunches(false));
+    document.getElementById('crewed-launches-button').addEventListener('click', () => fetchLaunches(true));
   </script>
 </body>
 </html>
