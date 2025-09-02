@@ -427,6 +427,23 @@
                     <h3>Beállítások ⚙️</h3>
                 </div>
                 <div class="form-group">
+                    <label>Átszállási mód:</label>
+                    <div class="radio-group">
+                        <div class="box-option">
+                            <input type="radio" name="mode" value="WALK" id="transfer-mode-walk" checked>
+                            <label for="transfer-mode-walk">Séta</label>
+                        </div>
+                        <div class="box-option">
+                            <input type="radio" name="mode" value="BICYCLE" id="transfer-mode-bike">
+                            <label for="transfer-mode-bike">Kerékpár</label>
+                        </div>
+                        <div class="box-option">
+                            <input type="radio" name="mode" value="WALK,BICYCLE" id="transfer-mode-bubi">
+                            <label for="transfer-mode-bubi">MOL Bubi</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="walk-speed">Séta sebessége:</label>
                     <select id="walk-speed">
                         <option value="MID">Normál</option>
@@ -474,6 +491,10 @@
                 <div class="form-group">
                     <label>Optimalizálás:</label>
                     <div class="radio-group">
+                        <div class="box-option">
+                            <input type="radio" name="optimize" value="BEST" id="optimize-best" checked>
+                            <label for="optimize-best">Legjobb</label>
+                        </div>
                         <div class="box-option">
                             <input type="radio" name="optimize" value="QUICK" id="optimize-quick" checked>
                             <label for="optimize-quick">Leggyorsabb</label>
@@ -774,12 +795,16 @@
             const optimize = document.querySelector('input[name="optimize"]:checked').value;
             planUrl += `&optimize=${optimize}`;
 
-            const modes = ['WALK'];
+            const modes = [];
             document.querySelectorAll('input[name="mode"]').forEach(c => {
                 if (c.checked) modes.push(c.value);
             });
             planUrl += `&mode=${modes.join(',')}`;
             planUrl += `&showIntermediateStops=true`;
+
+            if (modes.includes('BICYCLE') || modes.includes('WALK,BICYCLE')) {
+                planUrl += `&triangleTimeFactor=0.5&triangleSafetyFactor=0&triangleSlopeFactor=0.5`;
+            }
 
             window.location.href = planUrl;
         });
