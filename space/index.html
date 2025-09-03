@@ -47,6 +47,22 @@
       border-bottom: 2px solid var(--border);
       padding-bottom: 0.5rem;
     }
+
+    .sources-title {
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    .sources p, .sources a {
+      color: var(--subtle-text);
+      font-size: 0.7rem;
+      text-decoration: none;
+    }
     
     #docked-objects-container {
       margin-top: 1rem;
@@ -59,7 +75,7 @@
       margin-bottom: 1rem;
     }
 
-    #fetch-button, #launches-button, #crewed-launches-button, #station-button {
+    #fetch-button, #launches-button, #crewed-launches-button, #station-button, #hungarian-button {
       background-color: var(--accent);
       color: var(--bg);
       border: none;
@@ -71,12 +87,12 @@
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    #fetch-button:hover:not(:disabled), #launches-button:hover:not(:disabled), #crewed-launches-button:hover:not(:disabled), #station-button:hover:not(:disabled) {
+    #fetch-button:hover:not(:disabled), #launches-button:hover:not(:disabled), #crewed-launches-button:hover:not(:disabled), #station-button:hover:not(:disabled), #hungarian-button:hover:not(:disabled) {
       background-color: #0099e6;
       transform: translateY(-2px);
     }
     
-    #fetch-button:disabled, #launches-button:disabled, #crewed-launches-button:disabled, #station-button:disabled {
+    #fetch-button:disabled, #launches-button:disabled, #crewed-launches-button:disabled, #station-button:disabled, #hungarian-button:disabled {
       background-color: #6c757d;
       cursor: not-allowed;
       opacity: 0.7;
@@ -196,13 +212,17 @@
       max-height: 50px;
       object-fit: contain;
     }
-
     .station-image {
       width: 100%;
       border-radius: 5%;
       margin-bottom: 20px;
     }
     
+    .astronaut-image {
+      max-width: 50%;
+      border-radius: 5%;
+      margin-bottom: 20px;
+    }
 
     .crew-list {
       margin-top: 0.5rem;
@@ -234,6 +254,51 @@
     }
 
     .crew-list li::before {
+      content: "✦";              /* egyszerű, modern "csillag" ikon */
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .flight-data-list {
+      margin-top: 0.5rem;
+    }
+
+    .flight-data-list h4 {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .flight-data-list ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .flight-data-list ol {
+      list-style-position: inside;
+    }
+    .flight-data-list ol ul {
+      list-style: none;
+      padding-left: 2rem;
+      margin: 0;
+    }
+
+    .flight-data-list ol li, .flight-data-list ol ul li  {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--subtle-text);
+    }
+
+    .flight-data-list li strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    .flight-data-list ul li::before {
       content: "✦";              /* egyszerű, modern "csillag" ikon */
       position: absolute;
       left: 0;
@@ -289,7 +354,21 @@
       <button id="station-button">Lista betöltése</button>
       <div id="stations" class="object-list" style="margin-bottom:2rem;"></div>
     </div>
+
+    <h2>Magyar űrhajósok</h2>
+    <div id="launches-container">
+      <button id="hungarian-button">Lista betöltése</button>
+      <div id="hungarians" class="object-list" style="margin-bottom:2rem;"></div>
+    </div>
+
+    <h2 class="sources-title">Források</h2>
+    <div class="sources">
+      <p><a href="https://apod.nasa.gov/apod/">NASA APOD</a>; 
+      <a href="https://wheretheiss.at/">ISS pozíció</a>; 
+      <a href="https://thespacedevs.com/">Kilövések, űrállomások, űrhajósok</a></p>
+    </div>
   </div>
+
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
@@ -386,6 +465,18 @@
       }
 
       return formatted;
+    }
+
+    function parseISODuration(duration) {
+      const regex = /P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/;
+      const matches = duration.match(regex);
+
+      const days = parseInt(matches[1] || 0, 10);
+      const hours = parseInt(matches[2] || 0, 10);
+      const minutes = parseInt(matches[3] || 0, 10);
+      const seconds = parseInt(matches[4] || 0, 10);
+
+      return `${days > 0 ? `${days} nap ` : ""}${hours > 0 ? `${hours} óra ` : ""}${minutes > 0 ? `${minutes} perc ` : ""}${seconds > 0 ? `${seconds} mp ` : ""}`;
     }
 
     const map = L.map('map', {
@@ -618,17 +709,15 @@
 
             if (expData.detail) {
               let waitSec = expData.detail.split(" ")[6];
-              button.style.display = "none";
-              container.innerHTML = `<p>Próbáld újra ${waitSec} mp múlva!</p>`;
-              return;
+              crew = `<li>Személyzet betöltése sikertelen, próbáld újra ${waitSec} mp múlva!</li>`;
+            } else {
+              expData.crew.forEach(memb => {
+                crew += `<li>${memb.role.role || "Űrhajós"}: <strong>${memb.astronaut.name}</strong> (${memb.astronaut.nationality[0].alpha_2_code})</li>`;
+              });
+              expData.mission_patches.forEach(patch => {
+                missionPatches += `<img class="launch-logo-patch" src="${patch.image_url}">`;
+              });
             }
-
-            expData.crew.forEach(memb => {
-              crew += `<li>${memb.role.role || "Űrhajós"}: <strong>${memb.astronaut.name}</strong> (${memb.astronaut.nationality[0].alpha_2_code})</li>`;
-            });
-            expData.mission_patches.forEach(patch => {
-              missionPatches += `<img class="launch-logo-patch" src="${patch.image_url}">`;
-            });
           }
 
           div.innerHTML = `
@@ -666,6 +755,80 @@
       }
     }
 
+    async function fetchHungarians() {
+      const container = document.getElementById('hungarians');
+      const button = document.getElementById('hungarian-button');
+      button.disabled = true;
+      button.textContent = "Betöltés...";
+
+      try {
+        const response = await fetch('./hungarians.json'); // https://ll.thespacedevs.com/2.3.0/astronauts/?mode=detailed&format=json&nationality=Hungarian
+        const data = await response.json();
+        container.innerHTML = "";
+
+        if (data.detail) {
+          let waitSec = data.detail.split(" ")[6];
+          button.style.display = "none";
+          container.innerHTML = `<p>Próbáld újra ${waitSec} mp múlva!</p>`;
+          return;
+        }
+
+        data.results.forEach(astronaut => {
+          const div = document.createElement("div");
+          div.className = "object-card";
+
+          let flights = "";
+          if (astronaut.landings && astronaut.landings.length > 0) {
+            astronaut.landings.forEach((flight, index) => {
+              launch = astronaut.flights[astronaut.flights.length - index - 1];
+              
+              flights += `
+                <li><strong>${launch.mission.name}</strong></li>
+                <ul>
+                  <li>Úticél: <strong>${flight.destination}</strong></li>
+                  <li>Űrhajó: <strong>${flight.spacecraft.name}</strong> (${flight.spacecraft.spacecraft_config.agency.abbrev})</li>
+                  <li>Indítás: <strong>${formatLaunchDate(launch.net, "MIN")}</strong></li>
+                  <ul>
+                    <li>Hely: <strong>${launch.pad.location.name}</strong></li>
+                    <li>Rakéta: <strong>${launch.rocket.configuration.full_name}</strong></li>
+                    <li>Szolgáltató: <strong>${launch.launch_service_provider.name}</strong></li>
+                  </ul>
+                  <li>Landolás: <strong>${formatLaunchDate(flight.mission_end, "MIN")}</strong></li>
+                  <ul>
+                    <li>Hely: <strong>${flight.landing.landing_location.name}</strong></li>
+                  </ul>
+                </ul>
+              `
+            });
+          }
+
+          div.innerHTML = `
+            <div class="launch-logos"><img class="astronaut-image" src="${astronaut.image.image_url}" alt="${astronaut.image.name}" /></div>
+            <div class="object-name">
+              <h3>${astronaut.name}</h3>
+            </div>
+            <div class="object-info">
+              <p><strong>${astronaut.bio}</strong></p>
+              <p>Születési dátum: <strong>${astronaut.date_of_birth}</strong></p>
+              <p>Űrben töltött idő: <strong>${parseISODuration(astronaut.time_in_space)}</strong></p>
+              <div class="flight-data-list">
+                <h4>Repülések: ${astronaut.flights_count}</h4>
+                <ol>${flights}</ol>
+              </div>
+            </div>
+          `;
+          container.appendChild(div);
+        });
+
+        button.style.display = "none"; // eltüntetjük a gombot sikeres betöltés után
+      } catch (err) {
+        console.error("Nem sikerült lekérni a kilövéseket:", err);
+        container.innerHTML = "<p>Nem sikerült betölteni a kilövéseket.</p>";
+        button.textContent = "Újra próbálkozás";
+        button.disabled = false;
+      }
+    }
+
     async function fetchAPOD() {
       const apodDiv = document.getElementById('apod-content');
       try {
@@ -695,10 +858,12 @@
 
     updateISSPosition();
     setInterval(updateISSPosition, 5000);
+    fetchHungarians();
 
     document.getElementById('launches-button').addEventListener('click', () => fetchLaunches(false));
     document.getElementById('crewed-launches-button').addEventListener('click', () => fetchLaunches(true));
     document.getElementById('station-button').addEventListener('click', fetchStations);
+    document.getElementById('hungarian-button').addEventListener('click', fetchHungarians);
   </script>
 </body>
 </html>
