@@ -583,8 +583,9 @@
       button.textContent = "Betöltés...";
 
       try {
-        const response = await fetch(`https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=${isCrewed}&format=json&mode=detailed&limit=10`);
-        const data = await response.json();
+        const response = await fetch(`../data/upcoming_${isCrewed ? "" : "un"}crewed_launches.json`); // https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=${isCrewed}&format=json&mode=detailed&limit=10
+        const file = await response.json();
+        const data = file.payload;
         container.innerHTML = "";
 
         if (data.detail) {
@@ -858,6 +859,9 @@
 
     updateISSPosition();
     setInterval(updateISSPosition, 5000);
+
+    fetchLaunches();
+    fetchLaunches(true);
     fetchHungarians();
 
     document.getElementById('launches-button').addEventListener('click', () => fetchLaunches(false));
