@@ -40,10 +40,10 @@ jobs:
             "source_url": url,
             "payload": payload
           }
-          os.makedirs('data', exist_ok=True)
-          with open('data/upcoming_crewed_launches.json', 'w', encoding='utf-8') as f:
+          os.makedirs('space', exist_ok=True)
+          with open('space/upcoming_crewed_launches.json', 'w', encoding='utf-8') as f:
               json.dump(out, f, ensure_ascii=False, indent=2)
-          print("Saved data/upcoming_crewed_launches.json")
+          print("Saved space/upcoming_crewed_launches.json")
           PY
 
       - name: Commit and push if changed
@@ -52,7 +52,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # csak akkor commitolunk, ha van változás
           if [ -n "$(git status --porcelain)" ]; then
-            git add data/upcoming_crewed_launches.json
+            git add space/upcoming_crewed_launches.json
             git commit -m "Hourly update: upcoming crewed launches $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           else

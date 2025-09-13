@@ -583,7 +583,7 @@
       button.textContent = "Betöltés...";
 
       try {
-        const response = await fetch(`../data/upcoming_${isCrewed ? "" : "un"}crewed_launches.json`); // https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=${isCrewed}&format=json&mode=detailed&limit=10
+        const response = await fetch(`upcoming_${isCrewed ? "" : "un"}crewed_launches.json`); // https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=${isCrewed}&format=json&mode=detailed&limit=10
         const file = await response.json();
         const data = file.payload;
         container.innerHTML = "";
