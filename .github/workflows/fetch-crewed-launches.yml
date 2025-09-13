@@ -2,7 +2,7 @@ name: Fetch Upcoming Crewed Launches (hourly)
 
 on:
   schedule:
-    - cron: '0 * * * *'   # óránként: minden egész órakor
+    - cron: '15 * * * *'   # óránként: minden egész óra 15 perckor
   workflow_dispatch:     # kézzel is indítható
 
 permissions:
