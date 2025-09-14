@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-09-14T20:23:52Z",
+  "fetched_at": "2025-09-14T21:19:42Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=10",
   "payload": {
     "count": 318,
@@ -19,7 +19,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-09-13T23:11:40Z",
+        "last_updated": "2025-09-14T20:42:37Z",
         "net": "2025-09-14T22:11:48Z",
         "net_precision": {
           "id": 0,
@@ -1560,7 +1560,7 @@
             "total_landing_count": 67
           }
         },
-        "webcast_live": false,
+        "webcast_live": true,
         "program": [
           {
             "response_mode": "normal",
@@ -1872,6 +1872,48 @@
             "start_time": "2025-09-14T21:50:00Z",
             "end_time": "2025-09-14T23:50:00Z",
             "live": false
+          },
+          {
+            "priority": 11,
+            "source": "youtube.com",
+            "publisher": "Spaceflight Now",
+            "title": "Watch Live: SpaceX Falcon 9 rocket to launch space station cargo mission",
+            "description": "Watch live coverage as SpaceX launches a Falcon 9 rocket carrying a Northrup Grumman Cygnus cargo ship to the International Space Station. Liftoff from Space Launch Complex 40 at Cape Canaveral Space ...",
+            "feature_image": "https://i.ytimg.com/vi/5Pv_dveKom4/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=5Pv_dveKom4",
+            "type": {
+              "id": 3,
+              "name": "Unofficial Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-09-14T20:42:05Z",
+            "end_time": null,
+            "live": true
+          },
+          {
+            "priority": 12,
+            "source": "youtube.com",
+            "publisher": "NASASpaceflight",
+            "title": "SpaceX Falcon 9 Launches CRS NG-23 to the ISS",
+            "description": "Cygnus NG-23 (Northrop Grumman-23) is a cargo resupply mission of the Northrop Grumman Cygnus spacecraft to the International Space Station under the Commercial Resupply Services (CRS) contract with N...",
+            "feature_image": "https://i.ytimg.com/vi/KPR5PvVtV38/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=KPR5PvVtV38",
+            "type": {
+              "id": 3,
+              "name": "Unofficial Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-09-14T21:13:06Z",
+            "end_time": null,
+            "live": true
           }
         ],
         "timeline": [
