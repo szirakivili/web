@@ -39,8 +39,8 @@ jobs:
 
           result = {
               "fetched_at": datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
-              "stations_url": stations_url,
-              "stations": []
+              "source_url": stations_url,
+              "payload": []
           }
 
           for station in stations.get("results", []):
@@ -57,7 +57,7 @@ jobs:
                       st["expeditions_data"].append({"error": str(e), "url": url})
                   # várunk 60 másodpercet a következő lekérés előtt
                   time.sleep(60)
-              result["stations"].append(st)
+              result["payload"].append(st)
 
           os.makedirs("space", exist_ok=True)
           outfile = "space/stations_and_expeditions.json"
