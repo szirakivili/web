@@ -38,6 +38,11 @@
       margin: auto;
     }
 
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
     h2 {
       margin-bottom: 1rem;
       color: var(--accent);
@@ -46,6 +51,30 @@
       letter-spacing: -0.5px;
       border-bottom: 2px solid var(--border);
       padding-bottom: 0.5rem;
+      cursor: pointer;
+      position: relative;
+      padding-right: 1.2rem;
+    }
+    h2::before {
+      content: "▽";
+      position: absolute;
+      right: 0;
+      color: var(--subtle-text);
+      transition: transform 0.3s ease;
+    }
+    h2.open::before {
+      transform: rotate(180deg);
+      color: var(--accent);
+    }
+
+    .collapsible-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .sources {
+      text-align: center;
     }
 
     .sources-title {
@@ -66,36 +95,6 @@
     
     #docked-objects-container {
       margin-top: 1rem;
-    }
-
-    .button-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-    }
-
-    #fetch-button, #launches-button, #crewed-launches-button, #station-button, #hungarian-button {
-      background-color: var(--accent);
-      color: var(--bg);
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    #fetch-button:hover:not(:disabled), #launches-button:hover:not(:disabled), #crewed-launches-button:hover:not(:disabled), #station-button:hover:not(:disabled), #hungarian-button:hover:not(:disabled) {
-      background-color: #0099e6;
-      transform: translateY(-2px);
-    }
-    
-    #fetch-button:disabled, #launches-button:disabled, #crewed-launches-button:disabled, #station-button:disabled, #hungarian-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-      opacity: 0.7;
     }
 
     #map {
@@ -152,6 +151,7 @@
       background-color: var(--border);
       padding: 0.2rem 0.5rem;
       border-radius: 8px;
+      white-space: nowrap;
     }
 
     .object-info p {
@@ -324,51 +324,46 @@
   gtag('config', 'G-F7NERFLG67');
 </script>
 <body>
+  <h1>Világűr ✨</h1>
+
   <div class="container">
-    <div id="apod-section" class="object-card" style="margin-bottom: 2rem;">
-      <h2>
-        A nap csillagászati képe a NASA-tól
-        <span class="object-id" style="margin: 5px; cursor: pointer;" onclick="window.open('https://apod.nasa.gov/apod/')">Forrás</span>
+    <h2>
+        A nap csillagászati képe a NASA-tól <span class="object-id" style="margin: 5px; cursor: pointer;" onclick="window.open('https://apod.nasa.gov/apod/')">Forrás: NASA</span>
       </h2>
+    <div id="apod-section" class="object-card" style="margin-bottom: 2rem;">
       <div id="apod-content">Betöltés...</div>
     </div>
     
-    <h2>A Nemzetközi Űrállomás aktuális pozíciója</h2>
+    <h2>A Nemzetközi Űrállomás aktuális pozíciója <span class="object-id" style="margin: 5px;">Folyamatosan frissül</span></h2>
     <div id="map"></div>
     <div id="iss-info" class="object-card" style="margin-bottom: 2rem;"></div>
 
     <h2>Közelgő személyzet nélküli kilövések <span id="uncrewed-refresh" class="object-id" style="margin: 5px;">Frissítve: -</span></h2>
     <div id="launches-container">
-      <button id="launches-button">Lista betöltése</button>
       <div id="launches" class="object-list" style="margin-bottom:2rem;"></div>
     </div>
 
     <h2>Közelgő emberes kilövések <span id="crewed-refresh" class="object-id" style="margin: 5px;">Frissítve: -</span></h2>
     <div id="launches-container">
-      <button id="crewed-launches-button">Lista betöltése</button>
       <div id="crewed-launches" class="object-list" style="margin-bottom:2rem;"></div>
     </div>
 
     <h2>Aktív űrállomások és dokkolt járművek <span id="station-refresh" class="object-id" style="margin: 5px;">Frissítve: -</span></h2>
     <div id="launches-container">
-      <button id="station-button">Lista betöltése</button>
       <div id="stations" class="object-list" style="margin-bottom:2rem;"></div>
     </div>
 
     <h2>Magyar űrhajósok</h2>
     <div id="launches-container">
-      <button id="hungarian-button">Lista betöltése</button>
       <div id="hungarians" class="object-list" style="margin-bottom:2rem;"></div>
-    </div>
-
-    <h2 class="sources-title">Források</h2>
-    <div class="sources">
-      <p><a href="https://apod.nasa.gov/apod/">NASA APOD</a>; 
-      <a href="https://wheretheiss.at/">ISS pozíció</a>; 
-      <a href="https://thespacedevs.com/">Kilövések, űrállomások, űrhajósok</a></p>
     </div>
   </div>
 
+  <div class="sources">
+    <p>Források: <a href="https://apod.nasa.gov/apod/">NASA APOD</a>; 
+    <a href="https://wheretheiss.at/">ISS pozíció</a>; 
+    <a href="https://thespacedevs.com/">Kilövések, űrállomások, űrhajósok</a></p>
+  </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
@@ -578,10 +573,7 @@
 
     async function fetchLaunches(isCrewed = false) {
       const container = document.getElementById(`${isCrewed ? "crewed-" : ""}launches`);
-      const button = document.getElementById(`${isCrewed ? "crewed-" : ""}launches-button`);
       const refreshTimeLabel = document.getElementById(`${isCrewed ? "" : "un"}crewed-refresh`);
-      button.disabled = true;
-      button.textContent = "Betöltés...";
 
       try {
         const response = await fetch(`upcoming_${isCrewed ? "" : "un"}crewed_launches.json`); // https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=${isCrewed}&format=json&mode=detailed&limit=10
@@ -593,7 +585,6 @@
 
         /*if (data.detail) {
           let waitSec = data.detail.split(" ")[6];
-          button.style.display = "none";
           container.innerHTML = `<p>Próbáld újra ${waitSec} mp múlva!</p>`;
           return;
         }*/
@@ -655,21 +646,15 @@
           }, 1000);
         });
 
-        button.style.display = "none"; // eltüntetjük a gombot sikeres betöltés után
       } catch (err) {
         console.error("Nem sikerült lekérni a kilövéseket:", err);
         container.innerHTML = "<p>Nem sikerült betölteni a kilövéseket.</p>";
-        button.textContent = "Újra próbálkozás";
-        button.disabled = false;
       }
     }
 
     async function fetchStations() {
       const container = document.getElementById('stations');
-      const button = document.getElementById('station-button');
       const refreshTimeLabel = document.getElementById(`station-refresh`);
-      button.disabled = true;
-      button.textContent = "Betöltés...";
 
       try {
         const response = await fetch(`stations_and_expeditions.json`); // https://ll.thespacedevs.com/2.3.0/space_stations/?mode=detailed&status=1&format=json
@@ -681,7 +666,6 @@
 
         /*if (data.detail) {
           let waitSec = data.detail.split(" ")[6];
-          button.style.display = "none";
           container.innerHTML = `<p>Próbáld újra ${waitSec} mp múlva!</p>`;
           return;
         }*/
@@ -754,20 +738,14 @@
           container.appendChild(div);
         }
 
-        button.style.display = "none"; // eltüntetjük a gombot sikeres betöltés után
       } catch (err) {
         console.error("Nem sikerült lekérni az űrállomásokat:", err);
         container.innerHTML = "<p>Nem sikerült betölteni az űrállomásokat.</p>";
-        button.textContent = "Újra próbálkozás";
-        button.disabled = false;
       }
     }
 
     async function fetchHungarians() {
       const container = document.getElementById('hungarians');
-      const button = document.getElementById('hungarian-button');
-      button.disabled = true;
-      button.textContent = "Betöltés...";
 
       try {
         const response = await fetch('./hungarians.json'); // https://ll.thespacedevs.com/2.3.0/astronauts/?mode=detailed&format=json&nationality=Hungarian
@@ -776,7 +754,6 @@
 
         if (data.detail) {
           let waitSec = data.detail.split(" ")[6];
-          button.style.display = "none";
           container.innerHTML = `<p>Próbáld újra ${waitSec} mp múlva!</p>`;
           return;
         }
@@ -828,12 +805,9 @@
           container.appendChild(div);
         });
 
-        button.style.display = "none"; // eltüntetjük a gombot sikeres betöltés után
       } catch (err) {
         console.error("Nem sikerült lekérni a kilövéseket:", err);
         container.innerHTML = "<p>Nem sikerült betölteni a kilövéseket.</p>";
-        button.textContent = "Újra próbálkozás";
-        button.disabled = false;
       }
     }
 
@@ -872,10 +846,55 @@
     fetchStations();
     fetchHungarians();
 
-    document.getElementById('launches-button').addEventListener('click', () => fetchLaunches(false));
-    document.getElementById('crewed-launches-button').addEventListener('click', () => fetchLaunches(true));
-    document.getElementById('station-button').addEventListener('click', fetchStations);
-    document.getElementById('hungarian-button').addEventListener('click', fetchHungarians);
+    // ÖSSZECSUKHATÓ PANELEK
+    document.addEventListener("DOMContentLoaded", () => {
+      const headers = document.querySelectorAll("h2:not(.sources-title)");
+
+      headers.forEach(h2 => {
+        // minden h2 után összegyűjtjük a tartalmat a következő h2-ig
+        let content = [];
+        let sibling = h2.nextElementSibling;
+        while (sibling && sibling.tagName !== "H2") {
+          content.push(sibling);
+          sibling = sibling.nextElementSibling;
+        }
+
+        // becsomagoljuk egy div-be
+        let wrapper = null;
+        if (content.length > 0) {
+          wrapper = document.createElement("div");
+          wrapper.classList.add("collapsible-content");
+          content[0].before(wrapper);
+          content.forEach(el => wrapper.appendChild(el));
+        }
+
+        // kattintásra nyit/zár
+        h2.addEventListener("click", () => {
+          if (!wrapper) return;
+
+          if (h2.classList.contains("open")) {
+            // összecsukás
+            wrapper.style.maxHeight = wrapper.scrollHeight + "px"; // fixáljuk először
+            requestAnimationFrame(() => {
+              wrapper.style.maxHeight = "0";
+            });
+            h2.classList.remove("open");
+          } else {
+            // kinyitás
+            wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+            h2.classList.add("open");
+
+            // ha bezárás után újra kinyitjuk, engedjük hogy "auto"-ra álljon
+            wrapper.addEventListener("transitionend", function setAuto(e) {
+              if (h2.classList.contains("open")) {
+                wrapper.style.maxHeight = "none";
+              }
+              wrapper.removeEventListener("transitionend", setAuto);
+            });
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
