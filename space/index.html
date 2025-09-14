@@ -337,13 +337,13 @@
     <div id="map"></div>
     <div id="iss-info" class="object-card" style="margin-bottom: 2rem;"></div>
 
-    <h2>Közelgő személyzet nélküli kilövések <span id="uncrewed-refresh" style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem; font-weight: 100; font-style: italic;">Frissítve: -</span></h2>
+    <h2>Közelgő személyzet nélküli kilövések <span id="uncrewed-refresh" class="object-id" style="margin: 5px;">Frissítve: -</span></h2>
     <div id="launches-container">
       <button id="launches-button">Lista betöltése</button>
       <div id="launches" class="object-list" style="margin-bottom:2rem;"></div>
     </div>
 
-    <h2>Közelgő emberes kilövések <span id="crewed-refresh" style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem; font-weight: 100; font-style: italic;">Frissítve: -</span></h2>
+    <h2>Közelgő emberes kilövések <span id="crewed-refresh" class="object-id" style="margin: 5px;">Frissítve: -</span></h2>
     <div id="launches-container">
       <button id="crewed-launches-button">Lista betöltése</button>
       <div id="crewed-launches" class="object-list" style="margin-bottom:2rem;"></div>
@@ -589,7 +589,7 @@
         const data = file.payload;
         container.innerHTML = "";
 
-        refreshTimeLabel.textContent = `Frissítve: ${formatLaunchDate(file.fetched_at, 'MIN')}`;
+        refreshTimeLabel.textContent = `Frissítve: ${formatTimeAgo(file.fetched_at, 'MIN')}`;
 
         if (data.detail) {
           let waitSec = data.detail.split(" ")[6];
