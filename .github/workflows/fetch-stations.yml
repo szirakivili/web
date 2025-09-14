@@ -1,0 +1,80 @@
+name: Fetch Space Stations and Expeditions (hourly)
+
+on:
+  schedule:
+    - cron: '30 * * * *'   # minden órában 30 perckor
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch stations and expeditions
+        run: |
+          python - <<'PY'
+          import os, time, json, requests, datetime
+
+          base_url = "https://ll.thespacedevs.com/2.3.0"
+          stations_url = f"{base_url}/space_stations/?mode=detailed&status=1&format=json"
+
+          print("Fetching stations...")
+          resp = requests.get(stations_url, timeout=30)
+          resp.raise_for_status()
+          stations = resp.json()
+
+          result = {
+              "fetched_at": datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
+              "stations_url": stations_url,
+              "stations": []
+          }
+
+          for station in stations.get("results", []):
+              st = station.copy()
+              st["expeditions_data"] = []
+              for exp in station.get("active_expeditions", []):
+                  url = exp["url"]
+                  print(f"Fetching expedition: {url}")
+                  try:
+                      exp_resp = requests.get(url, timeout=30)
+                      exp_resp.raise_for_status()
+                      st["expeditions_data"].append(exp_resp.json())
+                  except Exception as e:
+                      st["expeditions_data"].append({"error": str(e), "url": url})
+                  # várunk 60 másodpercet a következő lekérés előtt
+                  time.sleep(60)
+              result["stations"].append(st)
+
+          os.makedirs("space", exist_ok=True)
+          outfile = "space/stations_and_expeditions.json"
+          with open(outfile, "w", encoding="utf-8") as f:
+              json.dump(result, f, ensure_ascii=False, indent=2)
+
+          print(f"Saved {outfile}")
+          PY
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add space/stations_and_expeditions.json
+            git commit -m "Hourly update: stations and expeditions $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          else
+            echo "No changes to commit"
+          fi
