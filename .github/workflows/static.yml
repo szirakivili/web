@@ -11,6 +11,7 @@ on:
     workflows: 
       - "Fetch Upcoming Crewed Launches (hourly)"
       - "Fetch Upcoming Uncrewed Launches (hourly)"
+      - "Fetch Space Stations and Expeditions (hourly)"
     types:
       - completed
 

@@ -349,7 +349,7 @@
       <div id="crewed-launches" class="object-list" style="margin-bottom:2rem;"></div>
     </div>
 
-    <h2>Aktív űrállomások és dokkolt járművek</h2>
+    <h2>Aktív űrállomások és dokkolt járművek <span id="station-refresh" class="object-id" style="margin: 5px;">Frissítve: -</span></h2>
     <div id="launches-container">
       <button id="station-button">Lista betöltése</button>
       <div id="stations" class="object-list" style="margin-bottom:2rem;"></div>
@@ -591,12 +591,12 @@
 
         refreshTimeLabel.textContent = `Frissítve: ${formatTimeAgo(file.fetched_at, 'MIN')}`;
 
-        if (data.detail) {
+        /*if (data.detail) {
           let waitSec = data.detail.split(" ")[6];
           button.style.display = "none";
           container.innerHTML = `<p>Próbáld újra ${waitSec} mp múlva!</p>`;
           return;
-        }
+        }*/
 
         data.results.forEach((launch, index) => {
           const div = document.createElement("div");
@@ -667,22 +667,26 @@
     async function fetchStations() {
       const container = document.getElementById('stations');
       const button = document.getElementById('station-button');
+      const refreshTimeLabel = document.getElementById(`station-refresh`);
       button.disabled = true;
       button.textContent = "Betöltés...";
 
       try {
-        const response = await fetch(`https://ll.thespacedevs.com/2.3.0/space_stations/?mode=detailed&status=1&format=json`);
-        const data = await response.json();
+        const response = await fetch(`stations_and_expeditions.json`); // https://ll.thespacedevs.com/2.3.0/space_stations/?mode=detailed&status=1&format=json
+        const file = await response.json();
+        const data = file.payload;
         container.innerHTML = "";
 
-        if (data.detail) {
+        refreshTimeLabel.textContent = `Frissítve: ${formatTimeAgo(file.fetched_at, 'MIN')}`;
+
+        /*if (data.detail) {
           let waitSec = data.detail.split(" ")[6];
           button.style.display = "none";
           container.innerHTML = `<p>Próbáld újra ${waitSec} mp múlva!</p>`;
           return;
-        }
+        }*/
 
-        for (const station of data.results) {
+        for (const station of data) {
           const div = document.createElement("div");
           div.className = "object-card";
           
@@ -706,19 +710,19 @@
           let crew = "";
           let missionPatches = "";
           // Expedíciók betöltése
-          for (const exp of station.active_expeditions) {
+          for (const exp of station.expeditions_data) { // const exp of station.active_expeditions
             expeditions.push(exp.name);
-            const response = await fetch(exp.url);
-            const expData = await response.json();
+            //const response = await fetch(exp.url);
+            //const expData = await response.json();
 
-            if (expData.detail) {
-              let waitSec = expData.detail.split(" ")[6];
+            if (exp.detail) {
+              let waitSec = exp.detail.split(" ")[6];
               crew = `<li>Személyzet betöltése sikertelen, próbáld újra ${waitSec} mp múlva!</li>`;
             } else {
-              expData.crew.forEach(memb => {
+              exp.crew.forEach(memb => {
                 crew += `<li>${memb.role.role || "Űrhajós"}: <strong>${memb.astronaut.name}</strong> (${memb.astronaut.nationality[0].alpha_2_code})</li>`;
               });
-              expData.mission_patches.forEach(patch => {
+              exp.mission_patches.forEach(patch => {
                 missionPatches += `<img class="launch-logo-patch" src="${patch.image_url}">`;
               });
             }
