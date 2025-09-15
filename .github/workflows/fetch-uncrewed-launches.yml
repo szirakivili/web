@@ -26,7 +26,7 @@ jobs:
 
       - name: Fetch uncrewed launches JSON and save
         env:
-          API_URL: 'https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=10'
+          API_URL: 'https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30'
         run: |
           python - <<'PY'
           import os, requests, json, datetime
