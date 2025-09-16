@@ -2,7 +2,7 @@ name: Fetch Space Stations and Expeditions (hourly)
 
 on:
   schedule:
-    - cron: '0 0 * * *'   # minden nap UTC 00:00-kor
+    - cron: '15 0 * * *'   # minden nap UTC 00:15-kor
   workflow_dispatch:
 
 permissions:
