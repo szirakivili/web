@@ -2,7 +2,7 @@ name: Fetch Space Stations and Expeditions (hourly)
 
 on:
   schedule:
-    - cron: '30 * * * *'   # minden órában 30 perckor
+    - cron: '0 0 * * *'   # minden nap UTC 00:00-kor
   workflow_dispatch:
 
 permissions:
@@ -73,7 +73,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
             git add space/stations_and_expeditions.json
-            git commit -m "Hourly update: stations and expeditions $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git commit -m "Daily update: stations and expeditions $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           else
             echo "No changes to commit"
