@@ -9,9 +9,9 @@ on:
   # Run automatically when the fetch workflows complete successfully
   workflow_run:
     workflows: 
-      - "Fetch Upcoming Crewed Launches (hourly)"
+      - "Fetch Upcoming Crewed Launches (12 hours)"
       - "Fetch Upcoming Uncrewed Launches (hourly)"
-      - "Fetch Space Stations and Expeditions (hourly)"
+      - "Fetch Space Stations and Expeditions (daily)"
     types:
       - completed
 
