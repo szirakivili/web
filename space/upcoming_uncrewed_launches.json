@@ -1,8 +1,8 @@
 {
-  "fetched_at": "2025-09-16T06:37:05Z",
+  "fetched_at": "2025-09-16T07:24:44Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
-    "count": 321,
+    "count": 322,
     "next": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?format=json&is_crewed=false&limit=30&mode=detailed&offset=30",
     "previous": null,
     "results": [
@@ -25620,20 +25620,34 @@
               "image": null,
               "logo": {
                 "id": 194,
-                "name": "[AUTO] United States Space Force - logo",
+                "name": "United States Space Force logo",
                 "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/united2520states2520space2520force_logo_20221102113048.png",
                 "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185155.png",
-                "credit": null,
+                "credit": "USSF",
                 "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
+                  "id": 17,
+                  "name": "Department of Defense Image Use Policy",
+                  "priority": 6,
+                  "link": "https://www.dimoc.mil/resources/limitations/"
                 },
                 "single_use": true,
                 "variants": []
               },
-              "social_logo": null,
+              "social_logo": {
+                "id": 2472,
+                "name": "United States Space Force social logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/united_states_s_image_20250916065613.jpg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/united_states_s_image_thumbnail_20250916065613.jpeg",
+                "credit": "USSF",
+                "license": {
+                  "id": 17,
+                  "name": "Department of Defense Image Use Policy",
+                  "priority": 6,
+                  "link": "https://www.dimoc.mil/resources/limitations/"
+                },
+                "single_use": true,
+                "variants": []
+              },
               "total_launch_count": 0,
               "consecutive_successful_launches": 0,
               "successful_launches": 0,
@@ -30330,6 +30344,14 @@
                   "nationality_name_composed": "Swedo"
                 },
                 {
+                  "id": 20,
+                  "name": "Belgium",
+                  "alpha_2_code": "BE",
+                  "alpha_3_code": "BEL",
+                  "nationality_name": "Belgian",
+                  "nationality_name_composed": "Belgo"
+                },
+                {
                   "id": 23,
                   "name": "Portugal",
                   "alpha_2_code": "PT",
@@ -30432,14 +30454,6 @@
                   "alpha_3_code": "LUX",
                   "nationality_name": "Luxembourger",
                   "nationality_name_composed": "Luxembourgish"
-                },
-                {
-                  "id": 20,
-                  "name": "Belgium",
-                  "alpha_2_code": "BE",
-                  "alpha_3_code": "BEL",
-                  "nationality_name": "Belgian",
-                  "nationality_name_composed": "Belgo"
                 },
                 {
                   "id": 86,
