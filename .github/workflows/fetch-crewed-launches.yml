@@ -2,7 +2,7 @@ name: Fetch Upcoming Crewed Launches (hourly)
 
 on:
   schedule:
-    - cron: '15 * * * *'   # óránként: minden egész óra 15 perckor
+    - cron: '30 */12 * * *'   # 12 óránként: óra 30 perckor
   workflow_dispatch:     # kézzel is indítható
 
 permissions:
@@ -53,7 +53,7 @@ jobs:
           # csak akkor commitolunk, ha van változás
           if [ -n "$(git status --porcelain)" ]; then
             git add space/upcoming_crewed_launches.json
-            git commit -m "Hourly update: upcoming crewed launches $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git commit -m "Regular update: upcoming crewed launches $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           else
             echo "No changes to commit"
