@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-09-18T12:51:36Z",
+  "fetched_at": "2025-09-18T13:32:11Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 323,
@@ -1614,12 +1614,12 @@
         "slug": "new-shepard-ns-35",
         "launch_designator": null,
         "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
+          "id": 3,
+          "name": "Launch Successful",
+          "abbrev": "Success",
+          "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2025-09-18T12:34:16Z",
+        "last_updated": "2025-09-18T13:17:25Z",
         "net": "2025-09-18T13:00:00Z",
         "net_precision": {
           "id": 1,
@@ -1721,18 +1721,18 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 35,
-          "consecutive_successful_launches": 12,
-          "successful_launches": 34,
+          "total_launch_count": 36,
+          "consecutive_successful_launches": 13,
+          "successful_launches": 35,
           "failed_launches": 1,
-          "pending_launches": 5,
-          "consecutive_successful_landings": 6,
-          "successful_landings": 32,
+          "pending_launches": 4,
+          "consecutive_successful_landings": 7,
+          "successful_landings": 33,
           "failed_landings": 3,
-          "attempted_landings": 35,
-          "successful_landings_spacecraft": 34,
+          "attempted_landings": 36,
+          "successful_landings_spacecraft": 35,
           "failed_landings_spacecraft": 0,
-          "attempted_landings_spacecraft": 34,
+          "attempted_landings_spacecraft": 35,
           "successful_landings_payload": 0,
           "failed_landings_payload": 0,
           "attempted_landings_payload": 0,
@@ -1824,18 +1824,18 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 35,
-              "consecutive_successful_launches": 12,
-              "successful_launches": 34,
+              "total_launch_count": 36,
+              "consecutive_successful_launches": 13,
+              "successful_launches": 35,
               "failed_launches": 1,
-              "pending_launches": 5,
-              "consecutive_successful_landings": 6,
-              "successful_landings": 32,
+              "pending_launches": 4,
+              "consecutive_successful_landings": 7,
+              "successful_landings": 33,
               "failed_landings": 3,
-              "attempted_landings": 35,
-              "successful_landings_spacecraft": 34,
+              "attempted_landings": 36,
+              "successful_landings_spacecraft": 35,
               "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 34,
+              "attempted_landings_spacecraft": 35,
               "successful_landings_payload": 0,
               "failed_landings_payload": 0,
               "attempted_landings_payload": 0,
@@ -1877,15 +1877,15 @@
             "sso_capacity": null,
             "to_thrust": 490.0,
             "apogee": 100.0,
-            "total_launch_count": 34,
-            "consecutive_successful_launches": 11,
-            "successful_launches": 33,
+            "total_launch_count": 35,
+            "consecutive_successful_launches": 12,
+            "successful_launches": 34,
             "failed_launches": 1,
-            "pending_launches": 1,
-            "attempted_landings": 34,
-            "successful_landings": 32,
+            "pending_launches": 0,
+            "attempted_landings": 35,
+            "successful_landings": 33,
             "failed_landings": 2,
-            "consecutive_successful_landings": 11,
+            "consecutive_successful_landings": 12,
             "fastest_turnaround": "P20DT23H49M11S"
           },
           "launcher_stage": [
@@ -1921,10 +1921,10 @@
                   "variants": []
                 },
                 "details": "5th New Shepard booster.",
-                "successful_landings": 4,
-                "attempted_landings": 4,
-                "flights": 4,
-                "last_launch_date": "2025-06-29T14:39:56Z",
+                "successful_landings": 5,
+                "attempted_landings": 5,
+                "flights": 5,
+                "last_launch_date": "2025-09-18T13:00:00Z",
                 "first_launch_date": "2024-10-23T15:27:00Z",
                 "fastest_turnaround": "P68DT21H30M"
               },
@@ -1934,8 +1934,8 @@
                 "id": 1677,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1677/?format=json",
                 "attempt": true,
-                "success": null,
-                "description": "The New Shepard booster will attempt to land back on the landing pad.",
+                "success": true,
+                "description": "The New Shepard booster NS-5 has landed back on the landing pad.",
                 "downrange_distance": 3.2,
                 "landing_location": {
                   "id": 11,
@@ -1977,8 +1977,8 @@
                     "longitude": -104.757152,
                     "latitude": 31.422927,
                     "timezone_name": "America/Chicago",
-                    "total_launch_count": 34,
-                    "total_landing_count": 34
+                    "total_launch_count": 35,
+                    "total_landing_count": 35
                   },
                   "longitude": -104.762793,
                   "latitude": 31.451665,
@@ -2051,7 +2051,7 @@
               "id": 893,
               "url": "https://ll.thespacedevs.com/2.3.0/spacecraft_flights/893/?format=json",
               "destination": "Suborbital",
-              "mission_end": null,
+              "mission_end": "2025-09-18T13:10:16Z",
               "spacecraft": {
                 "response_mode": "normal",
                 "id": 276,
@@ -2075,13 +2075,13 @@
                   "variants": []
                 },
                 "in_space": false,
-                "time_in_space": "PT1H50M15S",
+                "time_in_space": "PT2H31S",
                 "time_docked": "P0D",
-                "flights_count": 11,
-                "mission_ends_count": 11,
+                "flights_count": 12,
+                "mission_ends_count": 12,
                 "status": {
-                  "id": 1,
-                  "name": "Active"
+                  "id": 2,
+                  "name": "Retired"
                 },
                 "description": "Second New Shepard capsule. It is dedicated to uncrewed flights.",
                 "spacecraft_config": {
@@ -2300,8 +2300,8 @@
                 "id": 1678,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1678/?format=json",
                 "attempt": true,
-                "success": null,
-                "description": "The RSS capsule will land at Blue Origin's Corn Ranch facility.",
+                "success": true,
+                "description": "The RSS capsule RSS H. G. Wells has landed at Blue Origin's Corn Ranch facility.",
                 "downrange_distance": null,
                 "landing_location": {
                   "id": 28,
@@ -2343,8 +2343,8 @@
                     "longitude": -104.757152,
                     "latitude": 31.422927,
                     "timezone_name": "America/Chicago",
-                    "total_launch_count": 34,
-                    "total_landing_count": 34
+                    "total_launch_count": 35,
+                    "total_landing_count": 35
                   },
                   "longitude": null,
                   "latitude": null,
@@ -2532,7 +2532,7 @@
             "nationality_name_composed": "Americano"
           },
           "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_90_20200803143233.jpg",
-          "total_launch_count": 34,
+          "total_launch_count": 35,
           "orbital_launch_attempt_count": 0,
           "fastest_turnaround": "P20DT23H49M11S",
           "location": {
@@ -2606,11 +2606,11 @@
             "longitude": -104.757152,
             "latitude": 31.422927,
             "timezone_name": "America/Chicago",
-            "total_launch_count": 34,
-            "total_landing_count": 34
+            "total_launch_count": 35,
+            "total_landing_count": 35
           }
         },
-        "webcast_live": true,
+        "webcast_live": false,
         "program": [],
         "orbital_launch_attempt_count": null,
         "location_launch_attempt_count": 35,
@@ -2622,6 +2622,22 @@
         "agency_launch_attempt_count_year": 8,
         "flightclub_url": null,
         "updates": [
+          {
+            "id": 12292,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Mission complete.",
+            "info_url": "https://www.youtube.com/watch?v=uTsgDDolXOA",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-09-18T13:15:00Z"
+          },
+          {
+            "id": 12291,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Liftoff.",
+            "info_url": "https://www.youtube.com/watch?v=uTsgDDolXOA",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-09-18T13:01:00Z"
+          },
           {
             "id": 12289,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/ll2_profile_20230311134739.png",
@@ -2741,9 +2757,9 @@
             "priority": 10,
             "source": "youtube.com",
             "publisher": "Blue Origin",
-            "title": "New Shepard Mission NS-35 Webcast",
-            "description": "Blue Origin’s 35th New Shepard flight and 15th payload mission will liftoff from Launch Site One in West Texas on Thursday, September 18. This flight will carry more than 40 scientific and research pa...",
-            "feature_image": "https://i.ytimg.com/vi/uTsgDDolXOA/maxresdefault_live.jpg",
+            "title": "Replay: New Shepard Mission NS-35 Webcast",
+            "description": "On September 18, Blue Origin completed its 35th New Shepard flight and 15th payload mission from Launch Site One in West Texas. The flight carried more than 40 payloads from students, NASA, research i...",
+            "feature_image": "https://i.ytimg.com/vi/uTsgDDolXOA/maxresdefault.jpg",
             "url": "https://www.youtube.com/watch?v=uTsgDDolXOA",
             "type": {
               "id": 1,
@@ -2755,8 +2771,8 @@
               "code": "en"
             },
             "start_time": "2025-09-18T12:28:21Z",
-            "end_time": null,
-            "live": true
+            "end_time": "2025-09-18T13:17:02Z",
+            "live": false
           }
         ],
         "timeline": [],
@@ -30918,6 +30934,14 @@
                   "nationality_name_composed": "Swedo"
                 },
                 {
+                  "id": 20,
+                  "name": "Belgium",
+                  "alpha_2_code": "BE",
+                  "alpha_3_code": "BEL",
+                  "nationality_name": "Belgian",
+                  "nationality_name_composed": "Belgo"
+                },
+                {
                   "id": 23,
                   "name": "Portugal",
                   "alpha_2_code": "PT",
@@ -31020,14 +31044,6 @@
                   "alpha_3_code": "LUX",
                   "nationality_name": "Luxembourger",
                   "nationality_name_composed": "Luxembourgish"
-                },
-                {
-                  "id": 20,
-                  "name": "Belgium",
-                  "alpha_2_code": "BE",
-                  "alpha_3_code": "BEL",
-                  "nationality_name": "Belgian",
-                  "nationality_name_composed": "Belgo"
                 },
                 {
                   "id": 86,
