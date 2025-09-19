@@ -1,1203 +1,11 @@
 {
-  "fetched_at": "2025-09-19T12:51:52Z",
+  "fetched_at": "2025-09-19T13:32:48Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
-    "count": 324,
+    "count": 323,
     "next": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?format=json&is_crewed=false&limit=30&mode=detailed&offset=30",
     "previous": null,
     "results": [
-      {
-        "id": "92ec4610-4576-4077-b538-65272a5d6491",
-        "url": "https://ll.thespacedevs.com/2.3.0/launches/92ec4610-4576-4077-b538-65272a5d6491/?format=json",
-        "name": "New Shepard | NS-35",
-        "response_mode": "detailed",
-        "slug": "new-shepard-ns-35",
-        "launch_designator": null,
-        "status": {
-          "id": 3,
-          "name": "Launch Successful",
-          "abbrev": "Success",
-          "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
-        },
-        "last_updated": "2025-09-18T13:32:43Z",
-        "net": "2025-09-18T13:00:00Z",
-        "net_precision": {
-          "id": 0,
-          "name": "Second",
-          "abbrev": "SEC",
-          "description": "The T-0 is accurate to the second."
-        },
-        "window_end": "2025-09-18T20:30:00Z",
-        "window_start": "2025-09-18T12:30:00Z",
-        "image": {
-          "id": 1795,
-          "name": "[AUTO] New Shepard - image",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new2520shepard_image_20190207032624.jpeg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193803.jpeg",
-          "credit": null,
-          "license": {
-            "id": 1,
-            "name": "Unknown",
-            "priority": 9,
-            "link": null
-          },
-          "single_use": true,
-          "variants": []
-        },
-        "infographic": null,
-        "probability": null,
-        "weather_concerns": null,
-        "failreason": "",
-        "hashtag": null,
-        "launch_service_provider": {
-          "response_mode": "normal",
-          "id": 141,
-          "url": "https://ll.thespacedevs.com/2.3.0/agencies/141/?format=json",
-          "name": "Blue Origin",
-          "abbrev": "BO",
-          "type": {
-            "id": 3,
-            "name": "Commercial"
-          },
-          "featured": true,
-          "country": [
-            {
-              "id": 2,
-              "name": "United States of America",
-              "alpha_2_code": "US",
-              "alpha_3_code": "USA",
-              "nationality_name": "American",
-              "nationality_name_composed": "Americano"
-            }
-          ],
-          "description": "Blue Origin is an American privately funded aerospace manufacturer and spaceflight services company set up by Amazon.com founder Jeff Bezos with its headquarters in Kent, Washington. The company is developing technologies to enable private human access to space with the goal to dramatically lower costs and increase reliability. Blue Origin currently launches its New Shepard sub-orbital vehicle from its West Texas launch site, they are currently constructing a launch pad for their orbital vehicle New Glenn at Cape Canaveral LC-36.",
-          "administrator": "CEO: Jeff Bezos",
-          "founding_year": 2000,
-          "launchers": "New Shepard | New Glenn",
-          "spacecraft": "",
-          "parent": null,
-          "image": {
-            "id": 5,
-            "name": "[AUTO] Blue Origin - image",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_image_20190207032427.jpeg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184551.jpeg",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "logo": {
-            "id": 116,
-            "name": "[AUTO] Blue Origin - logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_logo_20190207032427.png",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184921.png",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "social_logo": {
-            "id": 45,
-            "name": "[AUTO] Blue Origin - social_logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_nation_20240222073724.jpg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184738.jpeg",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "total_launch_count": 36,
-          "consecutive_successful_launches": 13,
-          "successful_launches": 35,
-          "failed_launches": 1,
-          "pending_launches": 4,
-          "consecutive_successful_landings": 7,
-          "successful_landings": 33,
-          "failed_landings": 3,
-          "attempted_landings": 36,
-          "successful_landings_spacecraft": 35,
-          "failed_landings_spacecraft": 0,
-          "attempted_landings_spacecraft": 35,
-          "successful_landings_payload": 0,
-          "failed_landings_payload": 0,
-          "attempted_landings_payload": 0,
-          "info_url": "https://www.blueorigin.com/",
-          "wiki_url": "https://en.wikipedia.org/wiki/Blue_Origin",
-          "social_media_links": []
-        },
-        "rocket": {
-          "id": 8685,
-          "configuration": {
-            "response_mode": "detailed",
-            "id": 137,
-            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/137/?format=json",
-            "name": "New Shepard",
-            "families": [],
-            "full_name": "New Shepard",
-            "variant": "",
-            "active": true,
-            "is_placeholder": false,
-            "manufacturer": {
-              "response_mode": "normal",
-              "id": 141,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/141/?format=json",
-              "name": "Blue Origin",
-              "abbrev": "BO",
-              "type": {
-                "id": 3,
-                "name": "Commercial"
-              },
-              "featured": true,
-              "country": [
-                {
-                  "id": 2,
-                  "name": "United States of America",
-                  "alpha_2_code": "US",
-                  "alpha_3_code": "USA",
-                  "nationality_name": "American",
-                  "nationality_name_composed": "Americano"
-                }
-              ],
-              "description": "Blue Origin is an American privately funded aerospace manufacturer and spaceflight services company set up by Amazon.com founder Jeff Bezos with its headquarters in Kent, Washington. The company is developing technologies to enable private human access to space with the goal to dramatically lower costs and increase reliability. Blue Origin currently launches its New Shepard sub-orbital vehicle from its West Texas launch site, they are currently constructing a launch pad for their orbital vehicle New Glenn at Cape Canaveral LC-36.",
-              "administrator": "CEO: Jeff Bezos",
-              "founding_year": 2000,
-              "launchers": "New Shepard | New Glenn",
-              "spacecraft": "",
-              "parent": null,
-              "image": {
-                "id": 5,
-                "name": "[AUTO] Blue Origin - image",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_image_20190207032427.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184551.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "logo": {
-                "id": 116,
-                "name": "[AUTO] Blue Origin - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_logo_20190207032427.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184921.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 45,
-                "name": "[AUTO] Blue Origin - social_logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_nation_20240222073724.jpg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184738.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "total_launch_count": 36,
-              "consecutive_successful_launches": 13,
-              "successful_launches": 35,
-              "failed_launches": 1,
-              "pending_launches": 4,
-              "consecutive_successful_landings": 7,
-              "successful_landings": 33,
-              "failed_landings": 3,
-              "attempted_landings": 36,
-              "successful_landings_spacecraft": 35,
-              "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 35,
-              "successful_landings_payload": 0,
-              "failed_landings_payload": 0,
-              "attempted_landings_payload": 0,
-              "info_url": "https://www.blueorigin.com/",
-              "wiki_url": "https://en.wikipedia.org/wiki/Blue_Origin",
-              "social_media_links": []
-            },
-            "program": [],
-            "reusable": true,
-            "image": {
-              "id": 1795,
-              "name": "[AUTO] New Shepard - image",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new2520shepard_image_20190207032624.jpeg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193803.jpeg",
-              "credit": null,
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "info_url": "https://www.blueorigin.com/new-shepard/",
-            "wiki_url": "https://en.wikipedia.org/wiki/New_Shepard",
-            "description": "The New Shepard reusable launch system is a vertical-takeoff, vertical-landing (VTVL), suborbital manned rocket that is being developed by Blue Origin as a commercial system for suborbital space tourism.",
-            "alias": "",
-            "min_stage": 1,
-            "max_stage": 1,
-            "length": 15.0,
-            "diameter": 3.7,
-            "maiden_flight": "2015-04-29",
-            "launch_cost": null,
-            "launch_mass": 75.0,
-            "leo_capacity": 0.0,
-            "gto_capacity": 0.0,
-            "geo_capacity": null,
-            "sso_capacity": null,
-            "to_thrust": 490.0,
-            "apogee": 100.0,
-            "total_launch_count": 35,
-            "consecutive_successful_launches": 12,
-            "successful_launches": 34,
-            "failed_launches": 1,
-            "pending_launches": 0,
-            "attempted_landings": 35,
-            "successful_landings": 33,
-            "failed_landings": 2,
-            "consecutive_successful_landings": 12,
-            "fastest_turnaround": "P20DT23H49M11S"
-          },
-          "launcher_stage": [
-            {
-              "id": 787,
-              "type": "Core",
-              "reused": true,
-              "launcher_flight_number": 5,
-              "launcher": {
-                "response_mode": "normal",
-                "id": 187,
-                "url": "https://ll.thespacedevs.com/2.3.0/launchers/187/?format=json",
-                "flight_proven": true,
-                "serial_number": "NS-5",
-                "is_placeholder": false,
-                "status": {
-                  "id": 3,
-                  "name": "active"
-                },
-                "image": {
-                  "id": 2317,
-                  "name": "NS-5 on the launch pad (NS-29)",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/ns-5_on_the_lau_image_20250204174818.jpg",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/ns-5_on_the_lau_image_thumbnail_20250204174819.jpeg",
-                  "credit": "Blue Origin",
-                  "license": {
-                    "id": 1,
-                    "name": "Unknown",
-                    "priority": 9,
-                    "link": null
-                  },
-                  "single_use": true,
-                  "variants": []
-                },
-                "details": "5th New Shepard booster.",
-                "successful_landings": 5,
-                "attempted_landings": 5,
-                "flights": 5,
-                "last_launch_date": "2025-09-18T13:00:00Z",
-                "first_launch_date": "2024-10-23T15:27:00Z",
-                "fastest_turnaround": "P68DT21H30M"
-              },
-              "previous_flight_date": "2025-06-29T14:39:56Z",
-              "turn_around_time": "P80DT22H20M4S",
-              "landing": {
-                "id": 1677,
-                "url": "https://ll.thespacedevs.com/2.3.0/landings/1677/?format=json",
-                "attempt": true,
-                "success": true,
-                "description": "The New Shepard booster NS-5 has landed back on the landing pad.",
-                "downrange_distance": 3.2,
-                "landing_location": {
-                  "id": 11,
-                  "name": "Corn Ranch Landing Pad, West Texas",
-                  "active": true,
-                  "abbrev": "CR",
-                  "description": "New Shepard landing site.",
-                  "location": {
-                    "response_mode": "normal",
-                    "id": 29,
-                    "url": "https://ll.thespacedevs.com/2.3.0/locations/29/?format=json",
-                    "name": "Corn Ranch, Van Horn, TX, USA",
-                    "active": true,
-                    "country": {
-                      "id": 2,
-                      "name": "United States of America",
-                      "alpha_2_code": "US",
-                      "alpha_3_code": "USA",
-                      "nationality_name": "American",
-                      "nationality_name_composed": "Americano"
-                    },
-                    "description": "Corn Ranch, commonly referred to as Launch Site One (LSO), is a spaceport owned and operated by Blue Origin which is located approximately 30 miles north of the town of Van Horn, Texas, United States.",
-                    "image": {
-                      "id": 2098,
-                      "name": "New Shepard liftoff (NS-25)",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_lif_image_20240621062033.jpeg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_lif_image_thumbnail_20240621062033.jpeg",
-                      "credit": "Blue Origin",
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_29_20200803142436.jpg",
-                    "longitude": -104.757152,
-                    "latitude": 31.422927,
-                    "timezone_name": "America/Chicago",
-                    "total_launch_count": 35,
-                    "total_landing_count": 35
-                  },
-                  "longitude": -104.762793,
-                  "latitude": 31.451665,
-                  "image": {
-                    "id": 1972,
-                    "name": "NS landing pad with booster landing on it",
-                    "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/ns_landing_pad__image_20240310165834.jpg",
-                    "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/ns_landing_pad__image_thumbnail_20240310165835.jpeg",
-                    "credit": "Blue Origin",
-                    "license": {
-                      "id": 1,
-                      "name": "Unknown",
-                      "priority": 9,
-                      "link": null
-                    },
-                    "single_use": true,
-                    "variants": []
-                  },
-                  "successful_landings": 30,
-                  "attempted_landings": 32,
-                  "failed_landings": 2,
-                  "celestial_body": {
-                    "response_mode": "normal",
-                    "id": 1,
-                    "name": "Earth",
-                    "type": {
-                      "id": 1,
-                      "name": "Planet"
-                    },
-                    "diameter": 12742000.0,
-                    "mass": 5.972168e+24,
-                    "gravity": 9.80655,
-                    "length_of_day": "1 00:00:00",
-                    "atmosphere": true,
-                    "image": {
-                      "id": 2040,
-                      "name": "Earth (Apollo 17)",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
-                      "credit": "NASA",
-                      "license": {
-                        "id": 4,
-                        "name": "NASA Image and Media Guidelines",
-                        "priority": 0,
-                        "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
-                    "wiki_url": "https://en.wikipedia.org/wiki/Earth"
-                  }
-                },
-                "type": {
-                  "id": 2,
-                  "name": "Return to Launch Site",
-                  "abbrev": "RTLS",
-                  "description": "A return to launch site usually means that after stage separation the booster flips and does a burn back towards the launch site, landing near where it initially launched from."
-                }
-              },
-              "previous_flight": {
-                "id": "b6283d07-cfec-41fb-a27d-ade407b46393",
-                "url": "https://ll.thespacedevs.com/2.3.0/launches/b6283d07-cfec-41fb-a27d-ade407b46393/?format=json",
-                "name": "New Shepard | NS-33"
-              }
-            }
-          ],
-          "spacecraft_stage": [
-            {
-              "id": 893,
-              "url": "https://ll.thespacedevs.com/2.3.0/spacecraft_flights/893/?format=json",
-              "destination": "Suborbital",
-              "mission_end": "2025-09-18T13:10:14Z",
-              "spacecraft": {
-                "response_mode": "normal",
-                "id": 276,
-                "url": "https://ll.thespacedevs.com/2.3.0/spacecraft/276/?format=json",
-                "name": "RSS H.G. Wells",
-                "serial_number": "2.0-1",
-                "is_placeholder": false,
-                "image": {
-                  "id": 1907,
-                  "name": "New Shepard M7 H. G. Wells landed",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/crew2520capsule25202.0_image_20190309095011.jpeg",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305194115.jpeg",
-                  "credit": "Blue Origin",
-                  "license": {
-                    "id": 1,
-                    "name": "Unknown",
-                    "priority": 9,
-                    "link": null
-                  },
-                  "single_use": true,
-                  "variants": []
-                },
-                "in_space": false,
-                "time_in_space": "PT2H29S",
-                "time_docked": "P0D",
-                "flights_count": 12,
-                "mission_ends_count": 12,
-                "status": {
-                  "id": 2,
-                  "name": "Retired"
-                },
-                "description": "Second New Shepard capsule. It is dedicated to uncrewed flights.",
-                "spacecraft_config": {
-                  "response_mode": "detailed",
-                  "id": 21,
-                  "url": "https://ll.thespacedevs.com/2.3.0/spacecraft_configurations/21/?format=json",
-                  "name": "Crew Capsule 2.0",
-                  "type": {
-                    "id": 2,
-                    "name": "Capsule"
-                  },
-                  "agency": {
-                    "response_mode": "normal",
-                    "id": 141,
-                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/141/?format=json",
-                    "name": "Blue Origin",
-                    "abbrev": "BO",
-                    "type": {
-                      "id": 3,
-                      "name": "Commercial"
-                    },
-                    "featured": true,
-                    "country": [
-                      {
-                        "id": 2,
-                        "name": "United States of America",
-                        "alpha_2_code": "US",
-                        "alpha_3_code": "USA",
-                        "nationality_name": "American",
-                        "nationality_name_composed": "Americano"
-                      }
-                    ],
-                    "description": "Blue Origin is an American privately funded aerospace manufacturer and spaceflight services company set up by Amazon.com founder Jeff Bezos with its headquarters in Kent, Washington. The company is developing technologies to enable private human access to space with the goal to dramatically lower costs and increase reliability. Blue Origin currently launches its New Shepard sub-orbital vehicle from its West Texas launch site, they are currently constructing a launch pad for their orbital vehicle New Glenn at Cape Canaveral LC-36.",
-                    "administrator": "CEO: Jeff Bezos",
-                    "founding_year": 2000,
-                    "launchers": "New Shepard | New Glenn",
-                    "spacecraft": "",
-                    "parent": null,
-                    "image": {
-                      "id": 5,
-                      "name": "[AUTO] Blue Origin - image",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_image_20190207032427.jpeg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184551.jpeg",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "logo": {
-                      "id": 116,
-                      "name": "[AUTO] Blue Origin - logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_logo_20190207032427.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184921.png",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "social_logo": {
-                      "id": 45,
-                      "name": "[AUTO] Blue Origin - social_logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_nation_20240222073724.jpg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184738.jpeg",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    }
-                  },
-                  "family": [
-                    {
-                      "response_mode": "normal",
-                      "id": 5,
-                      "name": "New Shepard Crew Capsule",
-                      "description": "Capsules built for suborbital human spaceflight on New Shepard",
-                      "manufacturer": {
-                        "response_mode": "normal",
-                        "id": 141,
-                        "url": "https://ll.thespacedevs.com/2.3.0/agencies/141/?format=json",
-                        "name": "Blue Origin",
-                        "abbrev": "BO",
-                        "type": {
-                          "id": 3,
-                          "name": "Commercial"
-                        },
-                        "featured": true,
-                        "country": [
-                          {
-                            "id": 2,
-                            "name": "United States of America",
-                            "alpha_2_code": "US",
-                            "alpha_3_code": "USA",
-                            "nationality_name": "American",
-                            "nationality_name_composed": "Americano"
-                          }
-                        ],
-                        "description": "Blue Origin is an American privately funded aerospace manufacturer and spaceflight services company set up by Amazon.com founder Jeff Bezos with its headquarters in Kent, Washington. The company is developing technologies to enable private human access to space with the goal to dramatically lower costs and increase reliability. Blue Origin currently launches its New Shepard sub-orbital vehicle from its West Texas launch site, they are currently constructing a launch pad for their orbital vehicle New Glenn at Cape Canaveral LC-36.",
-                        "administrator": "CEO: Jeff Bezos",
-                        "founding_year": 2000,
-                        "launchers": "New Shepard | New Glenn",
-                        "spacecraft": "",
-                        "parent": null,
-                        "image": {
-                          "id": 5,
-                          "name": "[AUTO] Blue Origin - image",
-                          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_image_20190207032427.jpeg",
-                          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184551.jpeg",
-                          "credit": null,
-                          "license": {
-                            "id": 1,
-                            "name": "Unknown",
-                            "priority": 9,
-                            "link": null
-                          },
-                          "single_use": true,
-                          "variants": []
-                        },
-                        "logo": {
-                          "id": 116,
-                          "name": "[AUTO] Blue Origin - logo",
-                          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_logo_20190207032427.png",
-                          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184921.png",
-                          "credit": null,
-                          "license": {
-                            "id": 1,
-                            "name": "Unknown",
-                            "priority": 9,
-                            "link": null
-                          },
-                          "single_use": true,
-                          "variants": []
-                        },
-                        "social_logo": {
-                          "id": 45,
-                          "name": "[AUTO] Blue Origin - social_logo",
-                          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_nation_20240222073724.jpg",
-                          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184738.jpeg",
-                          "credit": null,
-                          "license": {
-                            "id": 1,
-                            "name": "Unknown",
-                            "priority": 9,
-                            "link": null
-                          },
-                          "single_use": true,
-                          "variants": []
-                        }
-                      },
-                      "parent": null,
-                      "maiden_flight": "2015-04-29",
-                      "spacecraft_flown": 4,
-                      "total_launch_count": 35,
-                      "successful_launches": 34,
-                      "failed_launches": 1,
-                      "attempted_landings": 35,
-                      "successful_landings": 35,
-                      "failed_landings": 0
-                    }
-                  ],
-                  "in_use": true,
-                  "image": {
-                    "id": 1907,
-                    "name": "New Shepard M7 H. G. Wells landed",
-                    "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/crew2520capsule25202.0_image_20190309095011.jpeg",
-                    "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305194115.jpeg",
-                    "credit": "Blue Origin",
-                    "license": {
-                      "id": 1,
-                      "name": "Unknown",
-                      "priority": 9,
-                      "link": null
-                    },
-                    "single_use": true,
-                    "variants": []
-                  },
-                  "capability": "Crew and Cargo Flights",
-                  "history": "The Crew Capsule 2.0 is the newest version of Blue Origin's New Shepard rocket.",
-                  "details": "It is deisgned to spearate from the launcher stage below the Karman line and pursue a ballistic free flight above it before landing.",
-                  "maiden_flight": "2017-12-12",
-                  "height": null,
-                  "diameter": null,
-                  "human_rated": true,
-                  "crew_capacity": 6,
-                  "payload_capacity": null,
-                  "payload_return_capacity": null,
-                  "flight_life": "The capsule is designed to be reusable.",
-                  "wiki_link": "",
-                  "info_link": "",
-                  "spacecraft_flown": 3,
-                  "total_launch_count": 29,
-                  "successful_launches": 28,
-                  "failed_launches": 1,
-                  "attempted_landings": 29,
-                  "successful_landings": 29,
-                  "failed_landings": 0,
-                  "fastest_turnaround": "P59DT1M42S"
-                },
-                "fastest_turnaround": "P79DT21H42M"
-              },
-              "landing": {
-                "id": 1678,
-                "url": "https://ll.thespacedevs.com/2.3.0/landings/1678/?format=json",
-                "attempt": true,
-                "success": true,
-                "description": "The RSS capsule RSS H. G. Wells has landed at Blue Origin's Corn Ranch facility.",
-                "downrange_distance": null,
-                "landing_location": {
-                  "id": 28,
-                  "name": "Corn Ranch, West Texas",
-                  "active": true,
-                  "abbrev": "CR",
-                  "description": "Blue Origin launch and landing facility located in West Texas",
-                  "location": {
-                    "response_mode": "normal",
-                    "id": 29,
-                    "url": "https://ll.thespacedevs.com/2.3.0/locations/29/?format=json",
-                    "name": "Corn Ranch, Van Horn, TX, USA",
-                    "active": true,
-                    "country": {
-                      "id": 2,
-                      "name": "United States of America",
-                      "alpha_2_code": "US",
-                      "alpha_3_code": "USA",
-                      "nationality_name": "American",
-                      "nationality_name_composed": "Americano"
-                    },
-                    "description": "Corn Ranch, commonly referred to as Launch Site One (LSO), is a spaceport owned and operated by Blue Origin which is located approximately 30 miles north of the town of Van Horn, Texas, United States.",
-                    "image": {
-                      "id": 2098,
-                      "name": "New Shepard liftoff (NS-25)",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_lif_image_20240621062033.jpeg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_lif_image_thumbnail_20240621062033.jpeg",
-                      "credit": "Blue Origin",
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_29_20200803142436.jpg",
-                    "longitude": -104.757152,
-                    "latitude": 31.422927,
-                    "timezone_name": "America/Chicago",
-                    "total_launch_count": 35,
-                    "total_landing_count": 35
-                  },
-                  "longitude": null,
-                  "latitude": null,
-                  "image": {
-                    "id": 2152,
-                    "name": "New Shepard Crew Capsule Jules Verne under parachutes",
-                    "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_cre_image_20240812144851.jpg",
-                    "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_cre_image_thumbnail_20240812144851.jpeg",
-                    "credit": "Blue Origin",
-                    "license": {
-                      "id": 1,
-                      "name": "Unknown",
-                      "priority": 9,
-                      "link": null
-                    },
-                    "single_use": true,
-                    "variants": []
-                  },
-                  "successful_landings": 38,
-                  "attempted_landings": 38,
-                  "failed_landings": 0,
-                  "celestial_body": {
-                    "response_mode": "normal",
-                    "id": 1,
-                    "name": "Earth",
-                    "type": {
-                      "id": 1,
-                      "name": "Planet"
-                    },
-                    "diameter": 12742000.0,
-                    "mass": 5.972168e+24,
-                    "gravity": 9.80655,
-                    "length_of_day": "1 00:00:00",
-                    "atmosphere": true,
-                    "image": {
-                      "id": 2040,
-                      "name": "Earth (Apollo 17)",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
-                      "credit": "NASA",
-                      "license": {
-                        "id": 4,
-                        "name": "NASA Image and Media Guidelines",
-                        "priority": 0,
-                        "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
-                    "wiki_url": "https://en.wikipedia.org/wiki/Earth"
-                  }
-                },
-                "type": {
-                  "id": 4,
-                  "name": "Parachute Landing",
-                  "abbrev": "PCL",
-                  "description": "Unpowered landing using parachute(s)."
-                }
-              },
-              "duration": "PT10M14S",
-              "turn_around_time": "P225DT20H49M54S",
-              "response_mode": "detailed",
-              "launch_crew": [],
-              "onboard_crew": [],
-              "landing_crew": [],
-              "docking_events": []
-            }
-          ],
-          "payloads": []
-        },
-        "mission": {
-          "id": 7277,
-          "name": "NS-35",
-          "type": "Suborbital",
-          "description": "NS-35 is the 35th flight for the New Shepard program. This flight will fly more than 40 scientific and research payloads to space and back, including 24 experiments from NASA’s TechRise Student Challenge and payloads for Johns Hopkins Applied Physics Laboratory, Oklahoma State University, University of Florida, Carthage College, University of Central Florida, Teledyne, Space Lab Technologies, and Teachers in Space, among others.",
-          "image": null,
-          "orbit": {
-            "id": 15,
-            "name": "Suborbital",
-            "abbrev": "Sub",
-            "celestial_body": {
-              "response_mode": "list",
-              "id": 1,
-              "name": "Earth"
-            }
-          },
-          "agencies": [],
-          "info_urls": [],
-          "vid_urls": []
-        },
-        "pad": {
-          "id": 90,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/90/?format=json",
-          "active": true,
-          "agencies": [
-            {
-              "response_mode": "normal",
-              "id": 141,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/141/?format=json",
-              "name": "Blue Origin",
-              "abbrev": "BO",
-              "type": {
-                "id": 3,
-                "name": "Commercial"
-              },
-              "featured": true,
-              "country": [
-                {
-                  "id": 2,
-                  "name": "United States of America",
-                  "alpha_2_code": "US",
-                  "alpha_3_code": "USA",
-                  "nationality_name": "American",
-                  "nationality_name_composed": "Americano"
-                }
-              ],
-              "description": "Blue Origin is an American privately funded aerospace manufacturer and spaceflight services company set up by Amazon.com founder Jeff Bezos with its headquarters in Kent, Washington. The company is developing technologies to enable private human access to space with the goal to dramatically lower costs and increase reliability. Blue Origin currently launches its New Shepard sub-orbital vehicle from its West Texas launch site, they are currently constructing a launch pad for their orbital vehicle New Glenn at Cape Canaveral LC-36.",
-              "administrator": "CEO: Jeff Bezos",
-              "founding_year": 2000,
-              "launchers": "New Shepard | New Glenn",
-              "spacecraft": "",
-              "parent": null,
-              "image": {
-                "id": 5,
-                "name": "[AUTO] Blue Origin - image",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_image_20190207032427.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184551.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "logo": {
-                "id": 116,
-                "name": "[AUTO] Blue Origin - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_logo_20190207032427.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184921.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 45,
-                "name": "[AUTO] Blue Origin - social_logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/blue2520origin_nation_20240222073724.jpg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184738.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              }
-            }
-          ],
-          "name": "West Texas Suborbital Launch Site/ Corn Ranch",
-          "image": null,
-          "description": null,
-          "info_url": "https://www.blueorigin.com",
-          "wiki_url": "https://en.wikipedia.org/wiki/Corn_Ranch",
-          "map_url": "https://www.google.com/maps?q=31.422878000000000,-104.757121000000000",
-          "latitude": 31.422878,
-          "longitude": -104.757121,
-          "country": {
-            "id": 2,
-            "name": "United States of America",
-            "alpha_2_code": "US",
-            "alpha_3_code": "USA",
-            "nationality_name": "American",
-            "nationality_name_composed": "Americano"
-          },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_90_20200803143233.jpg",
-          "total_launch_count": 35,
-          "orbital_launch_attempt_count": 0,
-          "fastest_turnaround": "P20DT23H49M11S",
-          "location": {
-            "response_mode": "normal",
-            "id": 29,
-            "url": "https://ll.thespacedevs.com/2.3.0/locations/29/?format=json",
-            "name": "Corn Ranch, Van Horn, TX, USA",
-            "celestial_body": {
-              "response_mode": "normal",
-              "id": 1,
-              "name": "Earth",
-              "type": {
-                "id": 1,
-                "name": "Planet"
-              },
-              "diameter": 12742000.0,
-              "mass": 5.972168e+24,
-              "gravity": 9.80655,
-              "length_of_day": "1 00:00:00",
-              "atmosphere": true,
-              "image": {
-                "id": 2040,
-                "name": "Earth (Apollo 17)",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
-                "credit": "NASA",
-                "license": {
-                  "id": 4,
-                  "name": "NASA Image and Media Guidelines",
-                  "priority": 0,
-                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
-              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7276,
-              "successful_launches": 6729,
-              "failed_launches": 547,
-              "total_attempted_landings": 1185,
-              "successful_landings": 1140,
-              "failed_landings": 45
-            },
-            "active": true,
-            "country": {
-              "id": 2,
-              "name": "United States of America",
-              "alpha_2_code": "US",
-              "alpha_3_code": "USA",
-              "nationality_name": "American",
-              "nationality_name_composed": "Americano"
-            },
-            "description": "Corn Ranch, commonly referred to as Launch Site One (LSO), is a spaceport owned and operated by Blue Origin which is located approximately 30 miles north of the town of Van Horn, Texas, United States.",
-            "image": {
-              "id": 2098,
-              "name": "New Shepard liftoff (NS-25)",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_lif_image_20240621062033.jpeg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_lif_image_thumbnail_20240621062033.jpeg",
-              "credit": "Blue Origin",
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_29_20200803142436.jpg",
-            "longitude": -104.757152,
-            "latitude": 31.422927,
-            "timezone_name": "America/Chicago",
-            "total_launch_count": 35,
-            "total_landing_count": 35
-          }
-        },
-        "webcast_live": false,
-        "program": [],
-        "orbital_launch_attempt_count": null,
-        "location_launch_attempt_count": 35,
-        "pad_launch_attempt_count": 35,
-        "agency_launch_attempt_count": 36,
-        "orbital_launch_attempt_count_year": 0,
-        "location_launch_attempt_count_year": 7,
-        "pad_launch_attempt_count_year": 7,
-        "agency_launch_attempt_count_year": 8,
-        "flightclub_url": null,
-        "updates": [
-          {
-            "id": 12292,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Mission complete.",
-            "info_url": "https://www.youtube.com/watch?v=uTsgDDolXOA",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-09-18T13:15:00Z"
-          },
-          {
-            "id": 12291,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Liftoff.",
-            "info_url": "https://www.youtube.com/watch?v=uTsgDDolXOA",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-09-18T13:01:00Z"
-          },
-          {
-            "id": 12289,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/ll2_profile_20230311134739.png",
-            "comment": "Official Webcast by Blue Origin has started",
-            "info_url": "https://www.youtube.com/watch?v=uTsgDDolXOA",
-            "created_by": "LL2",
-            "created_on": "2025-09-18T12:34:00Z"
-          },
-          {
-            "id": 12232,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "GO for launch.",
-            "info_url": "https://x.com/blueorigin/status/1967286253113499962",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-09-14T18:02:00Z"
-          },
-          {
-            "id": 12205,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Rescheduled for NET September 18.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=63395.msg2716951#msg2716951",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-09-12T04:43:00Z"
-          },
-          {
-            "id": 12011,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Reverted back to August TBD.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=63395.msg2712559#msg2712559",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-08-27T16:30:00Z"
-          },
-          {
-            "id": 11994,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "NET August 28.",
-            "info_url": "https://www.fly.faa.gov/adv/adv_spt.jsp",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-08-26T15:44:00Z"
-          },
-          {
-            "id": 11993,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Scrubbed for the day due to booster avionics issue.",
-            "info_url": "https://x.com/blueorigin/status/1960324261970604491",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-08-26T12:53:00Z"
-          },
-          {
-            "id": 11982,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Setting GO.",
-            "info_url": "https://x.com/blueorigin/status/1960065024359039344",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-08-25T22:39:00Z"
-          },
-          {
-            "id": 11971,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Delayed till NET August 26.",
-            "info_url": "https://www.fly.faa.gov/adv/adv_spt.jsp",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-08-24T23:54:00Z"
-          },
-          {
-            "id": 11958,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/lucas2520stauder_profile_20230526163835.jpg",
-            "comment": "NET Aug 25 at 11:30 UTC",
-            "info_url": "https://www.fly.faa.gov/adv/adv_spt.jsp",
-            "created_by": "hitura-nobad",
-            "created_on": "2025-08-23T20:02:00Z"
-          },
-          {
-            "id": 11956,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/lucas2520stauder_profile_20230526163835.jpg",
-            "comment": "Launch scrubbed due to an issue with the booster's avionics. New date tbd.",
-            "info_url": "https://x.com/blueorigin/status/1959231190973440104",
-            "created_by": "hitura-nobad",
-            "created_on": "2025-08-23T12:32:00Z"
-          },
-          {
-            "id": 11955,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Holding at T-16 minutes.",
-            "info_url": "https://www.youtube.com/watch?v=J626rJR0v5g",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-08-23T12:17:00Z"
-          },
-          {
-            "id": 11954,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/ll2_profile_20230311134739.png",
-            "comment": "Official Webcast by Blue Origin has started",
-            "info_url": "https://www.youtube.com/watch?v=J626rJR0v5g",
-            "created_by": "LL2",
-            "created_on": "2025-08-23T12:04:00Z"
-          },
-          {
-            "id": 11913,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/arnaud2520muller_profile_20230607144351.jpg",
-            "comment": "Updating T-0 and setting GO",
-            "info_url": "https://www.blueorigin.com/news/new-shepard-ns-35-mission",
-            "created_by": "Nosu",
-            "created_on": "2025-08-19T16:43:00Z"
-          },
-          {
-            "id": 11906,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Added launch.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=63395.msg2710007#msg2710007",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-08-18T17:01:00Z"
-          }
-        ],
-        "info_urls": [],
-        "vid_urls": [
-          {
-            "priority": 10,
-            "source": "youtube.com",
-            "publisher": "Blue Origin",
-            "title": "Replay: New Shepard Mission NS-35 Webcast",
-            "description": "On September 18, Blue Origin successfully completed its 35th New Shepard flight and 15th payload mission from Launch Site One in West Texas. The flight carried more than 40 payloads from students, NAS...",
-            "feature_image": "https://i.ytimg.com/vi/uTsgDDolXOA/maxresdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=uTsgDDolXOA",
-            "type": {
-              "id": 1,
-              "name": "Official Webcast"
-            },
-            "language": {
-              "id": 1,
-              "name": "English",
-              "code": "en"
-            },
-            "start_time": "2025-09-18T12:28:21Z",
-            "end_time": "2025-09-18T13:17:02Z",
-            "live": false
-          }
-        ],
-        "timeline": [],
-        "pad_turnaround": "P46DT17M44S",
-        "mission_patches": [
-          {
-            "id": 1181,
-            "name": "NS-35 Patch",
-            "priority": 10,
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/mission_patch_images/ns-352520patch_mission_patch_20250819164245.png",
-            "agency": {
-              "response_mode": "list",
-              "id": 141,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/141/?format=json",
-              "name": "Blue Origin",
-              "abbrev": "BO",
-              "type": {
-                "id": 3,
-                "name": "Commercial"
-              }
-            },
-            "response_mode": "normal"
-          }
-        ]
-      },
       {
         "id": "64b19cd9-9b2a-4724-890b-6a7001eb3644",
         "url": "https://ll.thespacedevs.com/2.3.0/launches/64b19cd9-9b2a-4724-890b-6a7001eb3644/?format=json",
@@ -30514,6 +29322,833 @@
         "timeline": [],
         "pad_turnaround": "P31D",
         "mission_patches": []
+      },
+      {
+        "id": "b0ca3e7a-650e-4af6-bdf9-658e6e114763",
+        "url": "https://ll.thespacedevs.com/2.3.0/launches/b0ca3e7a-650e-4af6-bdf9-658e6e114763/?format=json",
+        "name": "Electron | LEO-PNT Pathfinder A",
+        "response_mode": "detailed",
+        "slug": "electron-leo-pnt-pathfinder-a",
+        "launch_designator": null,
+        "status": {
+          "id": 2,
+          "name": "To Be Determined",
+          "abbrev": "TBD",
+          "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
+        },
+        "last_updated": "2025-09-12T20:25:29Z",
+        "net": "2025-12-31T00:00:00Z",
+        "net_precision": {
+          "id": 7,
+          "name": "Month",
+          "abbrev": "M",
+          "description": "The T-0 is expected in the given month."
+        },
+        "window_end": "2025-12-31T00:00:00Z",
+        "window_start": "2025-12-31T00:00:00Z",
+        "image": {
+          "id": 1727,
+          "name": "[AUTO] Electron - image",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/electron_image_20190705175640.jpeg",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193613.jpeg",
+          "credit": null,
+          "license": {
+            "id": 1,
+            "name": "Unknown",
+            "priority": 9,
+            "link": null
+          },
+          "single_use": true,
+          "variants": []
+        },
+        "infographic": null,
+        "probability": null,
+        "weather_concerns": null,
+        "failreason": "",
+        "hashtag": null,
+        "launch_service_provider": {
+          "response_mode": "normal",
+          "id": 147,
+          "url": "https://ll.thespacedevs.com/2.3.0/agencies/147/?format=json",
+          "name": "Rocket Lab",
+          "abbrev": "RL",
+          "type": {
+            "id": 3,
+            "name": "Commercial"
+          },
+          "featured": true,
+          "country": [
+            {
+              "id": 2,
+              "name": "United States of America",
+              "alpha_2_code": "US",
+              "alpha_3_code": "USA",
+              "nationality_name": "American",
+              "nationality_name_composed": "Americano"
+            }
+          ],
+          "description": "Rocket Lab is an American aerospace manufacturer with a wholly owned New Zealand subsidiary. The company develops lightweight, cost-effective commercial rocket launch services. The Electron Program was founded on the premise that small payloads such as CubeSats require dedicated small launch vehicles and flexibility not currently offered by traditional rocket systems. Its rocket, the Electron, is a light-weight rocket and is now operating commercially. The company is also producing a variety of spacecrafts and spacecrafts components.",
+          "administrator": "CEO: Peter Beck",
+          "founding_year": 2006,
+          "launchers": "Electron",
+          "spacecraft": "",
+          "parent": null,
+          "image": {
+            "id": 24,
+            "name": "[AUTO] Rocket Lab - image",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rocket2520lab2520ltd_image_20190207032456.jpeg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184649.jpeg",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "logo": {
+            "id": 176,
+            "name": "[AUTO] Rocket Lab - logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rocket2520lab2520ltd_logo_20220218075411.png",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185115.png",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "social_logo": {
+            "id": 88,
+            "name": "[AUTO] Rocket Lab - social_logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rocket2520lab2520ltd_nation_20230531050352.jpg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184840.jpeg",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "total_launch_count": 70,
+          "consecutive_successful_launches": 29,
+          "successful_launches": 66,
+          "failed_launches": 4,
+          "pending_launches": 32,
+          "consecutive_successful_landings": 4,
+          "successful_landings": 7,
+          "failed_landings": 2,
+          "attempted_landings": 9,
+          "successful_landings_spacecraft": 0,
+          "failed_landings_spacecraft": 0,
+          "attempted_landings_spacecraft": 0,
+          "successful_landings_payload": 0,
+          "failed_landings_payload": 0,
+          "attempted_landings_payload": 0,
+          "info_url": "https://rocketlabcorp.com",
+          "wiki_url": "https://en.wikipedia.org/wiki/Rocket_Lab",
+          "social_media_links": []
+        },
+        "rocket": {
+          "id": 8648,
+          "configuration": {
+            "response_mode": "detailed",
+            "id": 26,
+            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/26/?format=json",
+            "name": "Electron",
+            "families": [],
+            "full_name": "Electron",
+            "variant": "",
+            "active": true,
+            "is_placeholder": false,
+            "manufacturer": {
+              "response_mode": "normal",
+              "id": 147,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/147/?format=json",
+              "name": "Rocket Lab",
+              "abbrev": "RL",
+              "type": {
+                "id": 3,
+                "name": "Commercial"
+              },
+              "featured": true,
+              "country": [
+                {
+                  "id": 2,
+                  "name": "United States of America",
+                  "alpha_2_code": "US",
+                  "alpha_3_code": "USA",
+                  "nationality_name": "American",
+                  "nationality_name_composed": "Americano"
+                }
+              ],
+              "description": "Rocket Lab is an American aerospace manufacturer with a wholly owned New Zealand subsidiary. The company develops lightweight, cost-effective commercial rocket launch services. The Electron Program was founded on the premise that small payloads such as CubeSats require dedicated small launch vehicles and flexibility not currently offered by traditional rocket systems. Its rocket, the Electron, is a light-weight rocket and is now operating commercially. The company is also producing a variety of spacecrafts and spacecrafts components.",
+              "administrator": "CEO: Peter Beck",
+              "founding_year": 2006,
+              "launchers": "Electron",
+              "spacecraft": "",
+              "parent": null,
+              "image": {
+                "id": 24,
+                "name": "[AUTO] Rocket Lab - image",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rocket2520lab2520ltd_image_20190207032456.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184649.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "logo": {
+                "id": 176,
+                "name": "[AUTO] Rocket Lab - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rocket2520lab2520ltd_logo_20220218075411.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185115.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 88,
+                "name": "[AUTO] Rocket Lab - social_logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rocket2520lab2520ltd_nation_20230531050352.jpg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184840.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 70,
+              "consecutive_successful_launches": 29,
+              "successful_launches": 66,
+              "failed_launches": 4,
+              "pending_launches": 32,
+              "consecutive_successful_landings": 4,
+              "successful_landings": 7,
+              "failed_landings": 2,
+              "attempted_landings": 9,
+              "successful_landings_spacecraft": 0,
+              "failed_landings_spacecraft": 0,
+              "attempted_landings_spacecraft": 0,
+              "successful_landings_payload": 0,
+              "failed_landings_payload": 0,
+              "attempted_landings_payload": 0,
+              "info_url": "https://rocketlabcorp.com",
+              "wiki_url": "https://en.wikipedia.org/wiki/Rocket_Lab",
+              "social_media_links": []
+            },
+            "program": [],
+            "reusable": false,
+            "image": {
+              "id": 1727,
+              "name": "[AUTO] Electron - image",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/electron_image_20190705175640.jpeg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193613.jpeg",
+              "credit": null,
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": true,
+              "variants": []
+            },
+            "info_url": "https://www.rocketlabusa.com/electron/",
+            "wiki_url": "https://en.wikipedia.org/wiki/Rocket_Lab_Electron",
+            "description": "Electron is a two-stage orbital expendable launch vehicle (with an optional third stage) developed by the American aerospace company Rocket Lab. Electron is a small-lift launch vehicle designed to launch small satellites and cubesats to sun-synchronous orbit and low earth orbit. The Electron is the first orbital class rocket to use electric-pump-fed engines, powered by the 9 Rutherford engines on the first stage. It is also used as a suborbital testbed (called HASTE) for hypersonics research.",
+            "alias": "",
+            "min_stage": 2,
+            "max_stage": 3,
+            "length": 18.0,
+            "diameter": 1.2,
+            "maiden_flight": "2017-05-25",
+            "launch_cost": 6000000,
+            "launch_mass": 13.0,
+            "leo_capacity": 300.0,
+            "gto_capacity": null,
+            "geo_capacity": null,
+            "sso_capacity": 225.0,
+            "to_thrust": 162.0,
+            "apogee": null,
+            "total_launch_count": 70,
+            "consecutive_successful_launches": 29,
+            "successful_launches": 66,
+            "failed_launches": 4,
+            "pending_launches": 30,
+            "attempted_landings": 9,
+            "successful_landings": 7,
+            "failed_landings": 2,
+            "consecutive_successful_landings": 4,
+            "fastest_turnaround": "PT21H55M"
+          },
+          "launcher_stage": [],
+          "spacecraft_stage": [],
+          "payloads": []
+        },
+        "mission": {
+          "id": 7240,
+          "name": "LEO-PNT Pathfinder A",
+          "type": "Navigation",
+          "description": "The European Space Agency (ESA)'s LEO-PNT (Low Earth Orbit Positioning, Navigation and Timing) demonstrator mission will feature a 10-satellite constellation demonstration mission that will assess how a low Earth orbit fleet of satellites can work in combination with the Galileo and EGNOS constellations in higher orbits that provide Europe’s own global navigation system.\r\n\r\nThis launch will lift 2 “Pathfinder A” satellites built by Thales Alenia Space and GMV to a 510 km altitude Low Earth Orbit.",
+          "image": null,
+          "orbit": {
+            "id": 8,
+            "name": "Low Earth Orbit",
+            "abbrev": "LEO",
+            "celestial_body": {
+              "response_mode": "list",
+              "id": 1,
+              "name": "Earth"
+            }
+          },
+          "agencies": [
+            {
+              "response_mode": "normal",
+              "id": 27,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/27/?format=json",
+              "name": "European Space Agency",
+              "abbrev": "ESA",
+              "type": {
+                "id": 2,
+                "name": "Multinational"
+              },
+              "featured": false,
+              "country": [
+                {
+                  "id": 1,
+                  "name": "France",
+                  "alpha_2_code": "FR",
+                  "alpha_3_code": "FRA",
+                  "nationality_name": "French",
+                  "nationality_name_composed": "Franco"
+                },
+                {
+                  "id": 3,
+                  "name": "Italy",
+                  "alpha_2_code": "IT",
+                  "alpha_3_code": "ITA",
+                  "nationality_name": "Italian",
+                  "nationality_name_composed": "Italo"
+                },
+                {
+                  "id": 4,
+                  "name": "Germany",
+                  "alpha_2_code": "DE",
+                  "alpha_3_code": "DEU",
+                  "nationality_name": "German",
+                  "nationality_name_composed": "Germano"
+                },
+                {
+                  "id": 7,
+                  "name": "Spain",
+                  "alpha_2_code": "ES",
+                  "alpha_3_code": "ESP",
+                  "nationality_name": "Spanish",
+                  "nationality_name_composed": "Hispano"
+                },
+                {
+                  "id": 8,
+                  "name": "Switzerland",
+                  "alpha_2_code": "CH",
+                  "alpha_3_code": "CHE",
+                  "nationality_name": "Swiss",
+                  "nationality_name_composed": "Swiss"
+                },
+                {
+                  "id": 10,
+                  "name": "United Kingdom",
+                  "alpha_2_code": "GB",
+                  "alpha_3_code": "GBR",
+                  "nationality_name": "British",
+                  "nationality_name_composed": "Brito"
+                },
+                {
+                  "id": 11,
+                  "name": "Austria",
+                  "alpha_2_code": "AT",
+                  "alpha_3_code": "AUT",
+                  "nationality_name": "Austrian",
+                  "nationality_name_composed": "Austro"
+                },
+                {
+                  "id": 15,
+                  "name": "Sweden",
+                  "alpha_2_code": "SE",
+                  "alpha_3_code": "SWE",
+                  "nationality_name": "Swedish",
+                  "nationality_name_composed": "Swedo"
+                },
+                {
+                  "id": 23,
+                  "name": "Portugal",
+                  "alpha_2_code": "PT",
+                  "alpha_3_code": "PRT",
+                  "nationality_name": "Portuguese",
+                  "nationality_name_composed": "Luso"
+                },
+                {
+                  "id": 27,
+                  "name": "Netherlands",
+                  "alpha_2_code": "NL",
+                  "alpha_3_code": "NLD",
+                  "nationality_name": "Dutch",
+                  "nationality_name_composed": "Dutch"
+                },
+                {
+                  "id": 31,
+                  "name": "Hungary",
+                  "alpha_2_code": "HU",
+                  "alpha_3_code": "HUN",
+                  "nationality_name": "Hungarian",
+                  "nationality_name_composed": "Hungarian"
+                },
+                {
+                  "id": 39,
+                  "name": "Poland",
+                  "alpha_2_code": "PL",
+                  "alpha_3_code": "POL",
+                  "nationality_name": "Polish",
+                  "nationality_name_composed": "Polono"
+                },
+                {
+                  "id": 45,
+                  "name": "Denmark",
+                  "alpha_2_code": "DK",
+                  "alpha_3_code": "DNK",
+                  "nationality_name": "Danish",
+                  "nationality_name_composed": "Dano"
+                },
+                {
+                  "id": 46,
+                  "name": "Czechia",
+                  "alpha_2_code": "CZ",
+                  "alpha_3_code": "CZE",
+                  "nationality_name": "Czech",
+                  "nationality_name_composed": "Czech"
+                },
+                {
+                  "id": 47,
+                  "name": "Romania",
+                  "alpha_2_code": "RO",
+                  "alpha_3_code": "ROU",
+                  "nationality_name": "Romanian",
+                  "nationality_name_composed": "Romanian"
+                },
+                {
+                  "id": 49,
+                  "name": "Norway",
+                  "alpha_2_code": "NO",
+                  "alpha_3_code": "NOR",
+                  "nationality_name": "Norwegian",
+                  "nationality_name_composed": "Norwegian"
+                },
+                {
+                  "id": 77,
+                  "name": "Finland",
+                  "alpha_2_code": "FI",
+                  "alpha_3_code": "FIN",
+                  "nationality_name": "Finnish",
+                  "nationality_name_composed": "Finno"
+                },
+                {
+                  "id": 78,
+                  "name": "Greece",
+                  "alpha_2_code": "GR",
+                  "alpha_3_code": "GRC",
+                  "nationality_name": "Greek",
+                  "nationality_name_composed": "Greco"
+                },
+                {
+                  "id": 80,
+                  "name": "Estonia",
+                  "alpha_2_code": "EE",
+                  "alpha_3_code": "EST",
+                  "nationality_name": "Estonian",
+                  "nationality_name_composed": "Estonian"
+                },
+                {
+                  "id": 81,
+                  "name": "Ireland",
+                  "alpha_2_code": "IE",
+                  "alpha_3_code": "IRL",
+                  "nationality_name": "Irish",
+                  "nationality_name_composed": "Irish"
+                },
+                {
+                  "id": 85,
+                  "name": "Luxembourg",
+                  "alpha_2_code": "LU",
+                  "alpha_3_code": "LUX",
+                  "nationality_name": "Luxembourger",
+                  "nationality_name_composed": "Luxembourgish"
+                },
+                {
+                  "id": 20,
+                  "name": "Belgium",
+                  "alpha_2_code": "BE",
+                  "alpha_3_code": "BEL",
+                  "nationality_name": "Belgian",
+                  "nationality_name_composed": "Belgo"
+                },
+                {
+                  "id": 86,
+                  "name": "Slovenia",
+                  "alpha_2_code": "SI",
+                  "alpha_3_code": "SVN",
+                  "nationality_name": "Slovenian",
+                  "nationality_name_composed": "Slovenian"
+                }
+              ],
+              "description": "The European Space Agency is an intergovernmental organisation of 22 member states. Established in 1975 and headquartered in Paris, France, ESA has a worldwide staff of about 2,000 employees.\r\n\r\nESA's space flight programme includes human spaceflight (mainly through participation in the International Space Station program); the launch and operation of unmanned exploration missions to other planets and the Moon; Earth observation, science and telecommunication; designing launch vehicles; and maintaining a major spaceport, the Guiana Space Centre at Kourou, French Guiana.",
+              "administrator": "Director General: Josef Aschbacher",
+              "founding_year": 1975,
+              "launchers": "Ariane | Vega",
+              "spacecraft": "Space Rider",
+              "parent": null,
+              "image": {
+                "id": 2324,
+                "name": "ESA patch floating in the ISS Cupola",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/esa_patch_float_image_20250211192109.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/esa_patch_float_image_thumbnail_20250211192110.png",
+                "credit": "ESA",
+                "license": {
+                  "id": 2,
+                  "name": "ESA Standard Licence",
+                  "priority": 2,
+                  "link": "https://www.esa.int/ESA_Multimedia/Terms_and_conditions_of_use_of_images_and_videos_available_on_the_esa_website"
+                },
+                "single_use": false,
+                "variants": []
+              },
+              "logo": {
+                "id": 130,
+                "name": "European Space Agency logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/european2520space2520agency_logo_20221130101442.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184947.png",
+                "credit": "ESA",
+                "license": {
+                  "id": 2,
+                  "name": "ESA Standard Licence",
+                  "priority": 2,
+                  "link": "https://www.esa.int/ESA_Multimedia/Terms_and_conditions_of_use_of_images_and_videos_available_on_the_esa_website"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 130,
+                "name": "European Space Agency logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/european2520space2520agency_logo_20221130101442.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184947.png",
+                "credit": "ESA",
+                "license": {
+                  "id": 2,
+                  "name": "ESA Standard Licence",
+                  "priority": 2,
+                  "link": "https://www.esa.int/ESA_Multimedia/Terms_and_conditions_of_use_of_images_and_videos_available_on_the_esa_website"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 7,
+              "consecutive_successful_launches": 5,
+              "successful_launches": 6,
+              "failed_launches": 1,
+              "pending_launches": 1,
+              "consecutive_successful_landings": 0,
+              "successful_landings": 0,
+              "failed_landings": 0,
+              "attempted_landings": 0,
+              "successful_landings_spacecraft": 0,
+              "failed_landings_spacecraft": 0,
+              "attempted_landings_spacecraft": 0,
+              "successful_landings_payload": 0,
+              "failed_landings_payload": 0,
+              "attempted_landings_payload": 0,
+              "info_url": "https://www.esa.int/",
+              "wiki_url": "https://en.wikipedia.org/wiki/European_Space_Agency",
+              "social_media_links": [
+                {
+                  "id": 242,
+                  "social_media": {
+                    "id": 3,
+                    "name": "Homepage",
+                    "url": null,
+                    "logo": null
+                  },
+                  "url": "https://www.esa.int/"
+                },
+                {
+                  "id": 243,
+                  "social_media": {
+                    "id": 4,
+                    "name": "LinkedIn",
+                    "url": "https://www.linkedin.com/",
+                    "logo": {
+                      "id": 2321,
+                      "name": "LinkedIn logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_20250211191111.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_thumbnail_20250211191112.png",
+                      "credit": "LinkedIn",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    }
+                  },
+                  "url": "https://www.linkedin.com/company/european-space-agency/"
+                },
+                {
+                  "id": 244,
+                  "social_media": {
+                    "id": 2,
+                    "name": "Instagram",
+                    "url": "https://instagram.com",
+                    "logo": {
+                      "id": 2322,
+                      "name": "Instagram logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_20250211191139.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_thumbnail_20250211191139.png",
+                      "credit": "Instagram",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    }
+                  },
+                  "url": "https://www.instagram.com/europeanspaceagency/"
+                },
+                {
+                  "id": 245,
+                  "social_media": {
+                    "id": 1,
+                    "name": "X",
+                    "url": "https://x.com",
+                    "logo": {
+                      "id": 2320,
+                      "name": "X logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_20250211191027.jpg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_thumbnail_20250211191027.jpeg",
+                      "credit": "X",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    }
+                  },
+                  "url": "https://x.com/esa"
+                },
+                {
+                  "id": 246,
+                  "social_media": {
+                    "id": 5,
+                    "name": "Bluesky",
+                    "url": "https://bsky.app/",
+                    "logo": {
+                      "id": 2323,
+                      "name": "Bluesky logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/bluesky_logo_image_20250211191214.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/bluesky_logo_image_thumbnail_20250211191214.png",
+                      "credit": "Bluesky",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    }
+                  },
+                  "url": "https://bsky.app/profile/esa.int"
+                }
+              ]
+            }
+          ],
+          "info_urls": [],
+          "vid_urls": []
+        },
+        "pad": {
+          "id": 210,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/210/?format=json",
+          "active": true,
+          "agencies": [],
+          "name": "Unknown Pad",
+          "image": null,
+          "description": null,
+          "info_url": null,
+          "wiki_url": null,
+          "map_url": null,
+          "latitude": -39.260881,
+          "longitude": 177.865826,
+          "country": {
+            "id": 51,
+            "name": "New Zealand",
+            "alpha_2_code": "NZ",
+            "alpha_3_code": "NZL",
+            "nationality_name": "Kiwi",
+            "nationality_name_composed": "Kiwi"
+          },
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_210_20230819165718.jpg",
+          "total_launch_count": 0,
+          "orbital_launch_attempt_count": 0,
+          "fastest_turnaround": null,
+          "location": {
+            "response_mode": "normal",
+            "id": 10,
+            "url": "https://ll.thespacedevs.com/2.3.0/locations/10/?format=json",
+            "name": "Rocket Lab Launch Complex 1, Mahia Peninsula, New Zealand",
+            "celestial_body": {
+              "response_mode": "normal",
+              "id": 1,
+              "name": "Earth",
+              "type": {
+                "id": 1,
+                "name": "Planet"
+              },
+              "diameter": 12742000.0,
+              "mass": 5.972168e+24,
+              "gravity": 9.80655,
+              "length_of_day": "1 00:00:00",
+              "atmosphere": true,
+              "image": {
+                "id": 2040,
+                "name": "Earth (Apollo 17)",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
+                "credit": "NASA",
+                "license": {
+                  "id": 4,
+                  "name": "NASA Image and Media Guidelines",
+                  "priority": 0,
+                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
+              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
+              "total_attempted_launches": 7276,
+              "successful_launches": 6729,
+              "failed_launches": 547,
+              "total_attempted_landings": 1185,
+              "successful_landings": 1140,
+              "failed_landings": 45
+            },
+            "active": true,
+            "country": {
+              "id": 51,
+              "name": "New Zealand",
+              "alpha_2_code": "NZ",
+              "alpha_3_code": "NZL",
+              "nationality_name": "Kiwi",
+              "nationality_name_composed": "Kiwi"
+            },
+            "description": "Rocket Lab Launch Complex 1 is a commercial spaceport located close to Ahuriri Point at the southern tip of Māhia Peninsula, on the east coast of New Zealand's North Island. It is owned and operated by private spaceflight company Rocket Lab and supports launches of the company's Electron rocket for small satellites. With the launch of Electron on 25 May 2017, it became the first private spaceport to host an orbital launch attempt, and the first site in New Zealand to host an orbital launch attempt. With the Electron launch of 21 January 2018, it became the first private spaceport to host a successful orbital launch.",
+            "image": {
+              "id": 2206,
+              "name": "Rocket Lab Launch Complex 1",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rocket_lab_laun_image_20240918164228.jpg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rocket_lab_laun_image_thumbnail_20240918164228.jpeg",
+              "credit": "Rocket Lab",
+              "license": {
+                "id": 7,
+                "name": "Rocket Lab Image Use Policy",
+                "priority": 3,
+                "link": "https://www.rocketlabusa.com/about/gallery/"
+              },
+              "single_use": true,
+              "variants": []
+            },
+            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_10_20200803142509.jpg",
+            "longitude": 177.86586,
+            "latitude": -39.26085,
+            "timezone_name": "Pacific/Auckland",
+            "total_launch_count": 64,
+            "total_landing_count": 17
+          }
+        },
+        "webcast_live": false,
+        "program": [],
+        "orbital_launch_attempt_count": 7162,
+        "location_launch_attempt_count": 75,
+        "pad_launch_attempt_count": 11,
+        "agency_launch_attempt_count": 90,
+        "orbital_launch_attempt_count_year": 313,
+        "location_launch_attempt_count_year": 23,
+        "pad_launch_attempt_count_year": 11,
+        "agency_launch_attempt_count_year": 32,
+        "flightclub_url": null,
+        "updates": [
+          {
+            "id": 11387,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Added launch.",
+            "info_url": "https://rocketlabcorp.com/updates/rocket-lab-to-launch-electron-mission-for-european-space-agencys-next-generation-navigation-system/",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-06-25T12:40:00Z"
+          }
+        ],
+        "info_urls": [],
+        "vid_urls": [],
+        "timeline": [],
+        "pad_turnaround": "P0D",
+        "mission_patches": [
+          {
+            "id": 1185,
+            "name": "Celeste Mission Patch",
+            "priority": 10,
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/mission_patch_images/celeste2520mis_mission_patch_20250912202431.png",
+            "agency": {
+              "response_mode": "list",
+              "id": 27,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/27/?format=json",
+              "name": "European Space Agency",
+              "abbrev": "ESA",
+              "type": {
+                "id": 2,
+                "name": "Multinational"
+              }
+            },
+            "response_mode": "normal"
+          }
+        ]
       }
     ]
   }
