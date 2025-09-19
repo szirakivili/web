@@ -2,37 +2,40 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <name>HÉV (normál/keskeny nyomtáv)</name>
-    <Style id="line-097138-2348-nodesc-normal">
+    <Style id="line-097138-2348-normal">
       <LineStyle>
         <color>ff387109</color>
         <width>2.348</width>
       </LineStyle>
-      <BalloonStyle>
-        <text><![CDATA[<h3>$[name]</h3>]]></text>
-      </BalloonStyle>
     </Style>
-    <Style id="line-097138-2348-nodesc-highlight">
+    <Style id="line-097138-2348-highlight">
       <LineStyle>
         <color>ff387109</color>
         <width>3.522</width>
       </LineStyle>
-      <BalloonStyle>
-        <text><![CDATA[<h3>$[name]</h3>]]></text>
-      </BalloonStyle>
     </Style>
-    <StyleMap id="line-097138-2348-nodesc">
+    <StyleMap id="line-097138-2348">
       <Pair>
         <key>normal</key>
-        <styleUrl>#line-097138-2348-nodesc-normal</styleUrl>
+        <styleUrl>#line-097138-2348-normal</styleUrl>
       </Pair>
       <Pair>
         <key>highlight</key>
-        <styleUrl>#line-097138-2348-nodesc-highlight</styleUrl>
+        <styleUrl>#line-097138-2348-highlight</styleUrl>
       </Pair>
     </StyleMap>
     <Placemark>
       <name>H-250</name>
-      <styleUrl>#line-097138-2348-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#line-097138-2348</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
         <coordinates>
@@ -304,7 +307,16 @@
     </Placemark>
     <Placemark>
       <name>I-(Sorrento-Nápoly)</name>
-      <styleUrl>#line-097138-2348-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#line-097138-2348</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
         <coordinates>
@@ -557,6 +569,87 @@
           14.270468,40.850273,0
           14.269903,40.849697,0
           14.269325,40.849191,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>H-253</name>
+      <description><![CDATA[leírás: <br>name: H-253]]></description>
+      <styleUrl>#line-097138-2348</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value>H-253</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          19.199493,47.513499,150.75
+          19.198905,47.513316,150
+          19.194914,47.512092,148.75
+          19.1948,47.51206,148.75
+          19.1935,47.511673,148.75
+          19.193348,47.511627,148.75
+          19.192755,47.511465,148
+          19.192065,47.511312,147.5
+          19.190073,47.510947,143.5
+          19.185416,47.510128,138.75
+          19.179785,47.509138,133
+          19.17966,47.509116,133.25
+          19.17953,47.509093,133.25
+          19.179421,47.509074,133.25
+          19.178008,47.508826,131.25
+          19.17789,47.508805,131.25
+          19.172506,47.50784,125.75
+          19.172406,47.507821,125.75
+          19.171922,47.507735,125.25
+          19.171152,47.507599,124.25
+          19.170709,47.507522,123.75
+          19.170206,47.507469,123.25
+          19.167619,47.507005,123
+          19.167423,47.506973,123
+          19.166032,47.506734,122.5
+          19.162213,47.506141,120
+          19.160243,47.505901,120.75
+          19.159873,47.505869,120.75
+          19.159698,47.505856,120.25
+          19.157202,47.505679,118
+          19.156648,47.505647,118.25
+          19.155788,47.505597,119.5
+          19.155286,47.505551,118.75
+          19.154078,47.505421,115.25
+          19.152731,47.50524,118.75
+          19.15238,47.505193,119
+          19.152251,47.505172,119
+          19.151949,47.505131,119
+          19.15175,47.50511,119
+          19.150511,47.504978,119
+          19.150109,47.504943,119
+          19.149131,47.504841,121.5
+          19.147533,47.504674,120.5
+          19.144899,47.504369,117
+          19.143527,47.504223,116.75
+          19.142683,47.504126,120
+          19.142502,47.504104,120.75
+          19.142382,47.504089,120.75
+          19.142075,47.504046,121
+          19.141774,47.503993,121.25
+          19.141468,47.503951,121
+          19.141444,47.503949,121
+          19.141125,47.503923,120.5
+          19.14051,47.5039,119.75
+          19.140296,47.503894,119.75
+          19.139432,47.503891,120.25
+          19.139208,47.503884,120.5
+          19.13899,47.503869,120.5
+          19.138695,47.503837,120.25
+          19.13869,47.503836,120.25
+          19.138651,47.503832,120.25
+          19.137904,47.503748,119.25
+          19.137828,47.503739,117.25
         </coordinates>
       </LineString>
     </Placemark>
