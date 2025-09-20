@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-09-20T18:30:45Z",
+  "fetched_at": "2025-09-20T19:16:31Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 325,
@@ -19,13 +19,13 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-09-19T21:01:52Z",
-        "net": "2025-09-21T09:20:00Z",
+        "last_updated": "2025-09-20T18:33:30Z",
+        "net": "2025-09-21T10:53:00Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2025-09-21T13:20:00Z",
         "window_start": "2025-09-21T09:20:00Z",
@@ -776,7 +776,7 @@
                 "fastest_turnaround": "P24DT16H10M"
               },
               "previous_flight_date": "2025-08-14T12:29:30Z",
-              "turn_around_time": "P37DT20H50M30S",
+              "turn_around_time": "P37DT22H23M30S",
               "landing": {
                 "id": 1695,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1695/?format=json",
@@ -1237,6 +1237,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=161ca0fe-fef2-40a3-88f8-de777c7fc895",
         "updates": [
           {
+            "id": 12317,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/arnaud2520muller_profile_20230607144351.jpg",
+            "comment": "Now targeting Sep 21 at 10:53 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-10-27",
+            "created_by": "Nosu",
+            "created_on": "2025-09-20T18:33:00Z"
+          },
+          {
             "id": 12308,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/lucas2520stauder_profile_20230526163835.jpg",
             "comment": "Weather is 90% favorable for launch.",
@@ -1523,7 +1531,7 @@
             "relative_time": "PT1H4M18S"
           }
         ],
-        "pad_turnaround": "P2DT23H50M",
+        "pad_turnaround": "P3DT1H23M",
         "mission_patches": [
           {
             "id": 7,
