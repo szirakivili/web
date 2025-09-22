@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-09-22T15:27:08Z",
+  "fetched_at": "2025-09-22T16:32:08Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 325,
@@ -1980,6 +1980,591 @@
         "mission_patches": []
       },
       {
+        "id": "b563b8fa-9f6c-4883-9a89-9cb5a073864f",
+        "url": "https://ll.thespacedevs.com/2.3.0/launches/b563b8fa-9f6c-4883-9a89-9cb5a073864f/?format=json",
+        "name": "Smart Dragon 3 | Unknown Payload",
+        "response_mode": "detailed",
+        "slug": "smart-dragon-3-unknown-payload",
+        "launch_designator": null,
+        "status": {
+          "id": 1,
+          "name": "Go for Launch",
+          "abbrev": "Go",
+          "description": "Current T-0 confirmed by official or reliable sources."
+        },
+        "last_updated": "2025-09-22T09:23:56Z",
+        "net": "2025-09-24T07:55:00Z",
+        "net_precision": {
+          "id": 2,
+          "name": "Hour",
+          "abbrev": "HR",
+          "description": "The T-0 is accurate to the hour."
+        },
+        "window_end": "2025-09-24T08:30:00Z",
+        "window_start": "2025-09-24T07:47:00Z",
+        "image": {
+          "id": 2251,
+          "name": "Smart Dragon 3 liftoff (8 satellites)",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_20240925074606.jpg",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_thumbnail_20240925074607.jpeg",
+          "credit": "CASC",
+          "license": {
+            "id": 1,
+            "name": "Unknown",
+            "priority": 9,
+            "link": null
+          },
+          "single_use": false,
+          "variants": []
+        },
+        "infographic": null,
+        "probability": null,
+        "weather_concerns": null,
+        "failreason": "",
+        "hashtag": null,
+        "launch_service_provider": {
+          "response_mode": "normal",
+          "id": 272,
+          "url": "https://ll.thespacedevs.com/2.3.0/agencies/272/?format=json",
+          "name": "China Rocket Co. Ltd.",
+          "abbrev": "CHNR",
+          "type": {
+            "id": 3,
+            "name": "Commercial"
+          },
+          "featured": false,
+          "country": [
+            {
+              "id": 6,
+              "name": "China",
+              "alpha_2_code": "CN",
+              "alpha_3_code": "CHN",
+              "nationality_name": "Chinese",
+              "nationality_name_composed": "Sino"
+            }
+          ],
+          "description": "China Rocket Co. Ltd. is a spinoff of China’s state-owned launch vehicle manufacturer using a “commercial business model”.",
+          "administrator": null,
+          "founding_year": null,
+          "launchers": "",
+          "spacecraft": "",
+          "parent": null,
+          "image": null,
+          "logo": {
+            "id": 126,
+            "name": "China Rocket Co. Ltd. - logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520rocket2520co.2520ltd._logo_20221001084159.png",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184937.png",
+            "credit": "China Rocket Co. Ltd",
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "social_logo": {
+            "id": 2250,
+            "name": "China Rocket Co. Ltd. - logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_20240922154013.jpg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_thumbnail_20240922154014.jpeg",
+            "credit": "China Rocket Co. Ltd.",
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "total_launch_count": 8,
+          "consecutive_successful_launches": 8,
+          "successful_launches": 8,
+          "failed_launches": 0,
+          "pending_launches": 1,
+          "consecutive_successful_landings": 0,
+          "successful_landings": 0,
+          "failed_landings": 0,
+          "attempted_landings": 0,
+          "successful_landings_spacecraft": 0,
+          "failed_landings_spacecraft": 0,
+          "attempted_landings_spacecraft": 0,
+          "successful_landings_payload": 0,
+          "failed_landings_payload": 0,
+          "attempted_landings_payload": 0,
+          "info_url": null,
+          "wiki_url": null,
+          "social_media_links": []
+        },
+        "rocket": {
+          "id": 8719,
+          "configuration": {
+            "response_mode": "detailed",
+            "id": 484,
+            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/484/?format=json",
+            "name": "Smart Dragon 3",
+            "families": [
+              {
+                "response_mode": "detailed",
+                "id": 145,
+                "name": "Smart Dragon",
+                "manufacturer": [
+                  {
+                    "response_mode": "normal",
+                    "id": 272,
+                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/272/?format=json",
+                    "name": "China Rocket Co. Ltd.",
+                    "abbrev": "CHNR",
+                    "type": {
+                      "id": 3,
+                      "name": "Commercial"
+                    },
+                    "featured": false,
+                    "country": [
+                      {
+                        "id": 6,
+                        "name": "China",
+                        "alpha_2_code": "CN",
+                        "alpha_3_code": "CHN",
+                        "nationality_name": "Chinese",
+                        "nationality_name_composed": "Sino"
+                      }
+                    ],
+                    "description": "China Rocket Co. Ltd. is a spinoff of China’s state-owned launch vehicle manufacturer using a “commercial business model”.",
+                    "administrator": null,
+                    "founding_year": null,
+                    "launchers": "",
+                    "spacecraft": "",
+                    "parent": null,
+                    "image": null,
+                    "logo": {
+                      "id": 126,
+                      "name": "China Rocket Co. Ltd. - logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520rocket2520co.2520ltd._logo_20221001084159.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184937.png",
+                      "credit": "China Rocket Co. Ltd",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "social_logo": {
+                      "id": 2250,
+                      "name": "China Rocket Co. Ltd. - logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_20240922154013.jpg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_thumbnail_20240922154014.jpeg",
+                      "credit": "China Rocket Co. Ltd.",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "total_launch_count": 8,
+                    "consecutive_successful_launches": 8,
+                    "successful_launches": 8,
+                    "failed_launches": 0,
+                    "pending_launches": 1,
+                    "consecutive_successful_landings": 0,
+                    "successful_landings": 0,
+                    "failed_landings": 0,
+                    "attempted_landings": 0,
+                    "successful_landings_spacecraft": 0,
+                    "failed_landings_spacecraft": 0,
+                    "attempted_landings_spacecraft": 0,
+                    "successful_landings_payload": 0,
+                    "failed_landings_payload": 0,
+                    "attempted_landings_payload": 0,
+                    "info_url": null,
+                    "wiki_url": null,
+                    "social_media_links": []
+                  }
+                ],
+                "parent": null,
+                "description": "",
+                "active": true,
+                "maiden_flight": "2019-08-17",
+                "total_launch_count": 8,
+                "consecutive_successful_launches": 8,
+                "successful_launches": 8,
+                "failed_launches": 0,
+                "pending_launches": 1,
+                "attempted_landings": 0,
+                "successful_landings": 0,
+                "failed_landings": 0,
+                "consecutive_successful_landings": 0
+              }
+            ],
+            "full_name": "Smart Dragon 3",
+            "variant": "",
+            "active": true,
+            "is_placeholder": false,
+            "manufacturer": {
+              "response_mode": "normal",
+              "id": 272,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/272/?format=json",
+              "name": "China Rocket Co. Ltd.",
+              "abbrev": "CHNR",
+              "type": {
+                "id": 3,
+                "name": "Commercial"
+              },
+              "featured": false,
+              "country": [
+                {
+                  "id": 6,
+                  "name": "China",
+                  "alpha_2_code": "CN",
+                  "alpha_3_code": "CHN",
+                  "nationality_name": "Chinese",
+                  "nationality_name_composed": "Sino"
+                }
+              ],
+              "description": "China Rocket Co. Ltd. is a spinoff of China’s state-owned launch vehicle manufacturer using a “commercial business model”.",
+              "administrator": null,
+              "founding_year": null,
+              "launchers": "",
+              "spacecraft": "",
+              "parent": null,
+              "image": null,
+              "logo": {
+                "id": 126,
+                "name": "China Rocket Co. Ltd. - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520rocket2520co.2520ltd._logo_20221001084159.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184937.png",
+                "credit": "China Rocket Co. Ltd",
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 2250,
+                "name": "China Rocket Co. Ltd. - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_20240922154013.jpg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_thumbnail_20240922154014.jpeg",
+                "credit": "China Rocket Co. Ltd.",
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 8,
+              "consecutive_successful_launches": 8,
+              "successful_launches": 8,
+              "failed_launches": 0,
+              "pending_launches": 1,
+              "consecutive_successful_landings": 0,
+              "successful_landings": 0,
+              "failed_landings": 0,
+              "attempted_landings": 0,
+              "successful_landings_spacecraft": 0,
+              "failed_landings_spacecraft": 0,
+              "attempted_landings_spacecraft": 0,
+              "successful_landings_payload": 0,
+              "failed_landings_payload": 0,
+              "attempted_landings_payload": 0,
+              "info_url": null,
+              "wiki_url": null,
+              "social_media_links": []
+            },
+            "program": [],
+            "reusable": false,
+            "image": {
+              "id": 2251,
+              "name": "Smart Dragon 3 liftoff (8 satellites)",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_20240925074606.jpg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_thumbnail_20240925074607.jpeg",
+              "credit": "CASC",
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": false,
+              "variants": []
+            },
+            "info_url": null,
+            "wiki_url": null,
+            "description": "Smart Dragon-3 is a solid fuel orbital rocket designed by a subsidiary of the state-owned CASC group built for the commercial market.",
+            "alias": "",
+            "min_stage": null,
+            "max_stage": null,
+            "length": 32.0,
+            "diameter": 2.64,
+            "maiden_flight": "2022-12-09",
+            "launch_cost": null,
+            "launch_mass": 140.0,
+            "leo_capacity": null,
+            "gto_capacity": null,
+            "geo_capacity": null,
+            "sso_capacity": 1500.0,
+            "to_thrust": null,
+            "apogee": null,
+            "total_launch_count": 7,
+            "consecutive_successful_launches": 7,
+            "successful_launches": 7,
+            "failed_launches": 0,
+            "pending_launches": 1,
+            "attempted_landings": 0,
+            "successful_landings": 0,
+            "failed_landings": 0,
+            "consecutive_successful_landings": 0,
+            "fastest_turnaround": "P31DT3H17M"
+          },
+          "launcher_stage": [],
+          "spacecraft_stage": [],
+          "payloads": []
+        },
+        "mission": {
+          "id": 6997,
+          "name": "Unknown Payload",
+          "type": "Unknown",
+          "description": "Details TBD.",
+          "image": null,
+          "orbit": {
+            "id": 25,
+            "name": "Unknown",
+            "abbrev": "N/A",
+            "celestial_body": {
+              "response_mode": "list",
+              "id": 1,
+              "name": "Earth"
+            }
+          },
+          "agencies": [],
+          "info_urls": [],
+          "vid_urls": []
+        },
+        "pad": {
+          "id": 221,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/221/?format=json",
+          "active": true,
+          "agencies": [
+            {
+              "response_mode": "normal",
+              "id": 88,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
+              "name": "China Aerospace Science and Technology Corporation",
+              "abbrev": "CASC",
+              "type": {
+                "id": 1,
+                "name": "Government"
+              },
+              "featured": true,
+              "country": [
+                {
+                  "id": 6,
+                  "name": "China",
+                  "alpha_2_code": "CN",
+                  "alpha_3_code": "CHN",
+                  "nationality_name": "Chinese",
+                  "nationality_name_composed": "Sino"
+                }
+              ],
+              "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
+              "administrator": "Chairman & President: Lei Fanpei",
+              "founding_year": 1999,
+              "launchers": "Long March",
+              "spacecraft": "",
+              "parent": null,
+              "image": {
+                "id": 8,
+                "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "logo": {
+                "id": 124,
+                "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 50,
+                "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              }
+            }
+          ],
+          "name": "Oriental Spaceport mobile launch ship",
+          "image": null,
+          "description": "",
+          "info_url": null,
+          "wiki_url": null,
+          "map_url": "https://www.google.com/maps?q=35.391667%2C119.598667",
+          "latitude": 35.391667,
+          "longitude": 119.598667,
+          "country": {
+            "id": 6,
+            "name": "China",
+            "alpha_2_code": "CN",
+            "alpha_3_code": "CHN",
+            "nationality_name": "Chinese",
+            "nationality_name_composed": "Sino"
+          },
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_oriental_spaceport_mobile_launch_ship_20240529085416.jpg",
+          "total_launch_count": 5,
+          "orbital_launch_attempt_count": 5,
+          "fastest_turnaround": "P31DT3H17M",
+          "location": {
+            "response_mode": "normal",
+            "id": 3,
+            "url": "https://ll.thespacedevs.com/2.3.0/locations/3/?format=json",
+            "name": "Sea Launch",
+            "celestial_body": {
+              "response_mode": "normal",
+              "id": 1,
+              "name": "Earth",
+              "type": {
+                "id": 1,
+                "name": "Planet"
+              },
+              "diameter": 12742000.0,
+              "mass": 5.972168e+24,
+              "gravity": 9.80655,
+              "length_of_day": "1 00:00:00",
+              "atmosphere": true,
+              "image": {
+                "id": 2040,
+                "name": "Earth (Apollo 17)",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
+                "credit": "NASA",
+                "license": {
+                  "id": 4,
+                  "name": "NASA Image and Media Guidelines",
+                  "priority": 0,
+                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
+              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
+              "total_attempted_launches": 7278,
+              "successful_launches": 6731,
+              "failed_launches": 547,
+              "total_attempted_landings": 1187,
+              "successful_landings": 1142,
+              "failed_landings": 45
+            },
+            "active": true,
+            "country": {
+              "id": 17,
+              "name": "Unknown",
+              "alpha_2_code": "??",
+              "alpha_3_code": "???",
+              "nationality_name": "Earthling",
+              "nationality_name_composed": "Earthling"
+            },
+            "description": "",
+            "image": {
+              "id": 1418,
+              "name": "Ceres-1S liftoff from DeFu-15002 (4x Tianqi)",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/ceres-1s25202_image_20230905114300.jpeg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192712.jpeg",
+              "credit": "CASC",
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": false,
+              "variants": []
+            },
+            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_3_20200803142448.jpg",
+            "longitude": null,
+            "latitude": null,
+            "timezone_name": "",
+            "total_launch_count": 58,
+            "total_landing_count": 0
+          }
+        },
+        "webcast_live": false,
+        "program": [],
+        "orbital_launch_attempt_count": 7070,
+        "location_launch_attempt_count": 59,
+        "pad_launch_attempt_count": 6,
+        "agency_launch_attempt_count": 9,
+        "orbital_launch_attempt_count_year": 221,
+        "location_launch_attempt_count_year": 5,
+        "pad_launch_attempt_count_year": 4,
+        "agency_launch_attempt_count_year": 4,
+        "flightclub_url": null,
+        "updates": [
+          {
+            "id": 12329,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Delayed to September 24 per NOTAMs.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2719766#msg2719766",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-09-22T09:23:00Z"
+          },
+          {
+            "id": 12293,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Added launch per NOTAMs; Payload and launch vehicle identities uncertain; probably with Geely Constellation Group 06.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2718764#msg2718764",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-09-18T13:41:00Z"
+          }
+        ],
+        "info_urls": [],
+        "vid_urls": [],
+        "timeline": [],
+        "pad_turnaround": "P15DT12H7M",
+        "mission_patches": []
+      },
+      {
         "id": "689d7129-10fa-4df9-b81e-2b8fb926bbaf",
         "url": "https://ll.thespacedevs.com/2.3.0/launches/689d7129-10fa-4df9-b81e-2b8fb926bbaf/?format=json",
         "name": "Falcon 9 Block 5 | IMAP & others",
@@ -1992,16 +2577,16 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-09-21T11:12:40Z",
-        "net": "2025-09-23T11:32:15Z",
+        "last_updated": "2025-09-22T16:15:49Z",
+        "net": "2025-09-24T11:30:35Z",
         "net_precision": {
           "id": 0,
           "name": "Second",
           "abbrev": "SEC",
           "description": "The T-0 is accurate to the second."
         },
-        "window_end": "2025-09-23T11:32:15Z",
-        "window_start": "2025-09-23T11:32:15Z",
+        "window_end": "2025-09-24T11:30:35Z",
+        "window_start": "2025-09-24T11:30:35Z",
         "image": {
           "id": 1736,
           "name": "[AUTO] Falcon 9 - image",
@@ -2018,8 +2603,8 @@
           "variants": []
         },
         "infographic": null,
-        "probability": 75,
-        "weather_concerns": "Thick Cloud Layers Rule, Anvil Cloud Rules, Cumulus Cloud Rule",
+        "probability": 85,
+        "weather_concerns": "Cumulus Cloud Rule",
         "failreason": "",
         "hashtag": null,
         "launch_service_provider": {
@@ -2749,7 +3334,7 @@
                 "fastest_turnaround": null
               },
               "previous_flight_date": "2025-07-16T06:30:00Z",
-              "turn_around_time": "P69DT5H2M15S",
+              "turn_around_time": "P70DT5H35S",
               "landing": {
                 "id": 1697,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1697/?format=json",
@@ -3054,6 +3639,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=689d7129-10fa-4df9-b81e-2b8fb926bbaf",
         "updates": [
           {
+            "id": 12334,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Delayed to September 24.",
+            "info_url": "https://x.com/NASAKennedy/status/1970158893113192880",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-09-22T16:15:00Z"
+          },
+          {
             "id": 12320,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Weather is 75% favorable for launch.",
@@ -3297,7 +3890,7 @@
             "source": "plus.nasa.gov",
             "publisher": "NASA",
             "title": "Three New Missions Launch to Track Space Weather",
-            "description": "Launch coverage of three space weather missions: NASA’s Interstellar Mapping and Acceleration Probe (IMAP); NASA’s Carruthers Geocorona Observatory; and the National Oceanic and Atmospheric Administration (NOAA) SWFO-L1. Launch is scheduled for 7:32 a.m.",
+            "description": "Launch coverage of three space weather missions: NASA’s Interstellar Mapping and Acceleration Probe (IMAP); NASA’s Carruthers Geocorona Observatory; and the National Oceanic and Atmospheric Administration (NOAA) SWFO-L1. Launch is scheduled for […]",
             "feature_image": "https://plus.nasa.gov/wp-content/uploads/2025/09/imap-swfo-l1-carruthers-launch-key-art-r4-horizontal-program-tile-16-9-without-title.jpg",
             "url": "https://plus.nasa.gov/scheduled-video/three-new-missions-launch-to-track-space-weather/",
             "type": {
@@ -3318,7 +3911,7 @@
             "source": "plus.nasa.gov",
             "publisher": "NASA",
             "title": "Lanzamiento de tres misiones de meteorología espacial",
-            "description": "Cobertura del lanzamiento de tres misiones de meteorología espacial: la Sonda de Cartografía y Aceleración Interestelar (IMAP, por sus siglas en inglés) de la NASA; el Observatorio Carruthers de la Geocorona de la NASA; y la sonda SWFO-L1 de la Administración Nacional Oceánica y Atmosférica. El lanzamiento está previsto para las 7:32 a. m ET (hora del este).",
+            "description": "Cobertura del lanzamiento de tres misiones de meteorología espacial: la Sonda de Cartografía y Aceleración Interestelar (IMAP, por sus siglas en inglés) de la NASA; el Observatorio Carruthers de la […]",
             "feature_image": "https://plus.nasa.gov/wp-content/uploads/2025/09/imap-swfo-l1-carruthers-launch-key-art-r4-horizontal-program-tile-16-9-without-title.jpg",
             "url": "https://plus.nasa.gov/scheduled-video/lanzamiento-tres-misiones-meteorologia-espacial/",
             "type": {
@@ -3537,592 +4130,7 @@
             "relative_time": "PT1H36M46S"
           }
         ],
-        "pad_turnaround": "P17DT22H59M45S",
-        "mission_patches": []
-      },
-      {
-        "id": "b563b8fa-9f6c-4883-9a89-9cb5a073864f",
-        "url": "https://ll.thespacedevs.com/2.3.0/launches/b563b8fa-9f6c-4883-9a89-9cb5a073864f/?format=json",
-        "name": "Smart Dragon 3 | Unknown Payload",
-        "response_mode": "detailed",
-        "slug": "smart-dragon-3-unknown-payload",
-        "launch_designator": null,
-        "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
-        },
-        "last_updated": "2025-09-22T09:23:56Z",
-        "net": "2025-09-24T07:55:00Z",
-        "net_precision": {
-          "id": 2,
-          "name": "Hour",
-          "abbrev": "HR",
-          "description": "The T-0 is accurate to the hour."
-        },
-        "window_end": "2025-09-24T08:30:00Z",
-        "window_start": "2025-09-24T07:47:00Z",
-        "image": {
-          "id": 2251,
-          "name": "Smart Dragon 3 liftoff (8 satellites)",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_20240925074606.jpg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_thumbnail_20240925074607.jpeg",
-          "credit": "CASC",
-          "license": {
-            "id": 1,
-            "name": "Unknown",
-            "priority": 9,
-            "link": null
-          },
-          "single_use": false,
-          "variants": []
-        },
-        "infographic": null,
-        "probability": null,
-        "weather_concerns": null,
-        "failreason": "",
-        "hashtag": null,
-        "launch_service_provider": {
-          "response_mode": "normal",
-          "id": 272,
-          "url": "https://ll.thespacedevs.com/2.3.0/agencies/272/?format=json",
-          "name": "China Rocket Co. Ltd.",
-          "abbrev": "CHNR",
-          "type": {
-            "id": 3,
-            "name": "Commercial"
-          },
-          "featured": false,
-          "country": [
-            {
-              "id": 6,
-              "name": "China",
-              "alpha_2_code": "CN",
-              "alpha_3_code": "CHN",
-              "nationality_name": "Chinese",
-              "nationality_name_composed": "Sino"
-            }
-          ],
-          "description": "China Rocket Co. Ltd. is a spinoff of China’s state-owned launch vehicle manufacturer using a “commercial business model”.",
-          "administrator": null,
-          "founding_year": null,
-          "launchers": "",
-          "spacecraft": "",
-          "parent": null,
-          "image": null,
-          "logo": {
-            "id": 126,
-            "name": "China Rocket Co. Ltd. - logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520rocket2520co.2520ltd._logo_20221001084159.png",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184937.png",
-            "credit": "China Rocket Co. Ltd",
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "social_logo": {
-            "id": 2250,
-            "name": "China Rocket Co. Ltd. - logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_20240922154013.jpg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_thumbnail_20240922154014.jpeg",
-            "credit": "China Rocket Co. Ltd.",
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "total_launch_count": 8,
-          "consecutive_successful_launches": 8,
-          "successful_launches": 8,
-          "failed_launches": 0,
-          "pending_launches": 1,
-          "consecutive_successful_landings": 0,
-          "successful_landings": 0,
-          "failed_landings": 0,
-          "attempted_landings": 0,
-          "successful_landings_spacecraft": 0,
-          "failed_landings_spacecraft": 0,
-          "attempted_landings_spacecraft": 0,
-          "successful_landings_payload": 0,
-          "failed_landings_payload": 0,
-          "attempted_landings_payload": 0,
-          "info_url": null,
-          "wiki_url": null,
-          "social_media_links": []
-        },
-        "rocket": {
-          "id": 8719,
-          "configuration": {
-            "response_mode": "detailed",
-            "id": 484,
-            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/484/?format=json",
-            "name": "Smart Dragon 3",
-            "families": [
-              {
-                "response_mode": "detailed",
-                "id": 145,
-                "name": "Smart Dragon",
-                "manufacturer": [
-                  {
-                    "response_mode": "normal",
-                    "id": 272,
-                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/272/?format=json",
-                    "name": "China Rocket Co. Ltd.",
-                    "abbrev": "CHNR",
-                    "type": {
-                      "id": 3,
-                      "name": "Commercial"
-                    },
-                    "featured": false,
-                    "country": [
-                      {
-                        "id": 6,
-                        "name": "China",
-                        "alpha_2_code": "CN",
-                        "alpha_3_code": "CHN",
-                        "nationality_name": "Chinese",
-                        "nationality_name_composed": "Sino"
-                      }
-                    ],
-                    "description": "China Rocket Co. Ltd. is a spinoff of China’s state-owned launch vehicle manufacturer using a “commercial business model”.",
-                    "administrator": null,
-                    "founding_year": null,
-                    "launchers": "",
-                    "spacecraft": "",
-                    "parent": null,
-                    "image": null,
-                    "logo": {
-                      "id": 126,
-                      "name": "China Rocket Co. Ltd. - logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520rocket2520co.2520ltd._logo_20221001084159.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184937.png",
-                      "credit": "China Rocket Co. Ltd",
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "social_logo": {
-                      "id": 2250,
-                      "name": "China Rocket Co. Ltd. - logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_20240922154013.jpg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_thumbnail_20240922154014.jpeg",
-                      "credit": "China Rocket Co. Ltd.",
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "total_launch_count": 8,
-                    "consecutive_successful_launches": 8,
-                    "successful_launches": 8,
-                    "failed_launches": 0,
-                    "pending_launches": 1,
-                    "consecutive_successful_landings": 0,
-                    "successful_landings": 0,
-                    "failed_landings": 0,
-                    "attempted_landings": 0,
-                    "successful_landings_spacecraft": 0,
-                    "failed_landings_spacecraft": 0,
-                    "attempted_landings_spacecraft": 0,
-                    "successful_landings_payload": 0,
-                    "failed_landings_payload": 0,
-                    "attempted_landings_payload": 0,
-                    "info_url": null,
-                    "wiki_url": null,
-                    "social_media_links": []
-                  }
-                ],
-                "parent": null,
-                "description": "",
-                "active": true,
-                "maiden_flight": "2019-08-17",
-                "total_launch_count": 8,
-                "consecutive_successful_launches": 8,
-                "successful_launches": 8,
-                "failed_launches": 0,
-                "pending_launches": 1,
-                "attempted_landings": 0,
-                "successful_landings": 0,
-                "failed_landings": 0,
-                "consecutive_successful_landings": 0
-              }
-            ],
-            "full_name": "Smart Dragon 3",
-            "variant": "",
-            "active": true,
-            "is_placeholder": false,
-            "manufacturer": {
-              "response_mode": "normal",
-              "id": 272,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/272/?format=json",
-              "name": "China Rocket Co. Ltd.",
-              "abbrev": "CHNR",
-              "type": {
-                "id": 3,
-                "name": "Commercial"
-              },
-              "featured": false,
-              "country": [
-                {
-                  "id": 6,
-                  "name": "China",
-                  "alpha_2_code": "CN",
-                  "alpha_3_code": "CHN",
-                  "nationality_name": "Chinese",
-                  "nationality_name_composed": "Sino"
-                }
-              ],
-              "description": "China Rocket Co. Ltd. is a spinoff of China’s state-owned launch vehicle manufacturer using a “commercial business model”.",
-              "administrator": null,
-              "founding_year": null,
-              "launchers": "",
-              "spacecraft": "",
-              "parent": null,
-              "image": null,
-              "logo": {
-                "id": 126,
-                "name": "China Rocket Co. Ltd. - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520rocket2520co.2520ltd._logo_20221001084159.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184937.png",
-                "credit": "China Rocket Co. Ltd",
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 2250,
-                "name": "China Rocket Co. Ltd. - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_20240922154013.jpg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_thumbnail_20240922154014.jpeg",
-                "credit": "China Rocket Co. Ltd.",
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "total_launch_count": 8,
-              "consecutive_successful_launches": 8,
-              "successful_launches": 8,
-              "failed_launches": 0,
-              "pending_launches": 1,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 0,
-              "failed_landings": 0,
-              "attempted_landings": 0,
-              "successful_landings_spacecraft": 0,
-              "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 0,
-              "successful_landings_payload": 0,
-              "failed_landings_payload": 0,
-              "attempted_landings_payload": 0,
-              "info_url": null,
-              "wiki_url": null,
-              "social_media_links": []
-            },
-            "program": [],
-            "reusable": false,
-            "image": {
-              "id": 2251,
-              "name": "Smart Dragon 3 liftoff (8 satellites)",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_20240925074606.jpg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_thumbnail_20240925074607.jpeg",
-              "credit": "CASC",
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": false,
-              "variants": []
-            },
-            "info_url": null,
-            "wiki_url": null,
-            "description": "Smart Dragon-3 is a solid fuel orbital rocket designed by a subsidiary of the state-owned CASC group built for the commercial market.",
-            "alias": "",
-            "min_stage": null,
-            "max_stage": null,
-            "length": 32.0,
-            "diameter": 2.64,
-            "maiden_flight": "2022-12-09",
-            "launch_cost": null,
-            "launch_mass": 140.0,
-            "leo_capacity": null,
-            "gto_capacity": null,
-            "geo_capacity": null,
-            "sso_capacity": 1500.0,
-            "to_thrust": null,
-            "apogee": null,
-            "total_launch_count": 7,
-            "consecutive_successful_launches": 7,
-            "successful_launches": 7,
-            "failed_launches": 0,
-            "pending_launches": 1,
-            "attempted_landings": 0,
-            "successful_landings": 0,
-            "failed_landings": 0,
-            "consecutive_successful_landings": 0,
-            "fastest_turnaround": "P31DT3H17M"
-          },
-          "launcher_stage": [],
-          "spacecraft_stage": [],
-          "payloads": []
-        },
-        "mission": {
-          "id": 6997,
-          "name": "Unknown Payload",
-          "type": "Unknown",
-          "description": "Details TBD.",
-          "image": null,
-          "orbit": {
-            "id": 25,
-            "name": "Unknown",
-            "abbrev": "N/A",
-            "celestial_body": {
-              "response_mode": "list",
-              "id": 1,
-              "name": "Earth"
-            }
-          },
-          "agencies": [],
-          "info_urls": [],
-          "vid_urls": []
-        },
-        "pad": {
-          "id": 221,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/221/?format=json",
-          "active": true,
-          "agencies": [
-            {
-              "response_mode": "normal",
-              "id": 88,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
-              "name": "China Aerospace Science and Technology Corporation",
-              "abbrev": "CASC",
-              "type": {
-                "id": 1,
-                "name": "Government"
-              },
-              "featured": true,
-              "country": [
-                {
-                  "id": 6,
-                  "name": "China",
-                  "alpha_2_code": "CN",
-                  "alpha_3_code": "CHN",
-                  "nationality_name": "Chinese",
-                  "nationality_name_composed": "Sino"
-                }
-              ],
-              "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
-              "administrator": "Chairman & President: Lei Fanpei",
-              "founding_year": 1999,
-              "launchers": "Long March",
-              "spacecraft": "",
-              "parent": null,
-              "image": {
-                "id": 8,
-                "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "logo": {
-                "id": 124,
-                "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 50,
-                "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              }
-            }
-          ],
-          "name": "Oriental Spaceport mobile launch ship",
-          "image": null,
-          "description": "",
-          "info_url": null,
-          "wiki_url": null,
-          "map_url": "https://www.google.com/maps?q=35.391667%2C119.598667",
-          "latitude": 35.391667,
-          "longitude": 119.598667,
-          "country": {
-            "id": 6,
-            "name": "China",
-            "alpha_2_code": "CN",
-            "alpha_3_code": "CHN",
-            "nationality_name": "Chinese",
-            "nationality_name_composed": "Sino"
-          },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_oriental_spaceport_mobile_launch_ship_20240529085416.jpg",
-          "total_launch_count": 5,
-          "orbital_launch_attempt_count": 5,
-          "fastest_turnaround": "P31DT3H17M",
-          "location": {
-            "response_mode": "normal",
-            "id": 3,
-            "url": "https://ll.thespacedevs.com/2.3.0/locations/3/?format=json",
-            "name": "Sea Launch",
-            "celestial_body": {
-              "response_mode": "normal",
-              "id": 1,
-              "name": "Earth",
-              "type": {
-                "id": 1,
-                "name": "Planet"
-              },
-              "diameter": 12742000.0,
-              "mass": 5.972168e+24,
-              "gravity": 9.80655,
-              "length_of_day": "1 00:00:00",
-              "atmosphere": true,
-              "image": {
-                "id": 2040,
-                "name": "Earth (Apollo 17)",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
-                "credit": "NASA",
-                "license": {
-                  "id": 4,
-                  "name": "NASA Image and Media Guidelines",
-                  "priority": 0,
-                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
-              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7278,
-              "successful_launches": 6731,
-              "failed_launches": 547,
-              "total_attempted_landings": 1187,
-              "successful_landings": 1142,
-              "failed_landings": 45
-            },
-            "active": true,
-            "country": {
-              "id": 17,
-              "name": "Unknown",
-              "alpha_2_code": "??",
-              "alpha_3_code": "???",
-              "nationality_name": "Earthling",
-              "nationality_name_composed": "Earthling"
-            },
-            "description": "",
-            "image": {
-              "id": 1418,
-              "name": "Ceres-1S liftoff from DeFu-15002 (4x Tianqi)",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/ceres-1s25202_image_20230905114300.jpeg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192712.jpeg",
-              "credit": "CASC",
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": false,
-              "variants": []
-            },
-            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_3_20200803142448.jpg",
-            "longitude": null,
-            "latitude": null,
-            "timezone_name": "",
-            "total_launch_count": 58,
-            "total_landing_count": 0
-          }
-        },
-        "webcast_live": false,
-        "program": [],
-        "orbital_launch_attempt_count": 7070,
-        "location_launch_attempt_count": 59,
-        "pad_launch_attempt_count": 6,
-        "agency_launch_attempt_count": 9,
-        "orbital_launch_attempt_count_year": 221,
-        "location_launch_attempt_count_year": 5,
-        "pad_launch_attempt_count_year": 4,
-        "agency_launch_attempt_count_year": 4,
-        "flightclub_url": null,
-        "updates": [
-          {
-            "id": 12329,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Delayed to September 24 per NOTAMs.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2719766#msg2719766",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-09-22T09:23:00Z"
-          },
-          {
-            "id": 12293,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Added launch per NOTAMs; Payload and launch vehicle identities uncertain; probably with Geely Constellation Group 06.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2718764#msg2718764",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-09-18T13:41:00Z"
-          }
-        ],
-        "info_urls": [],
-        "vid_urls": [],
-        "timeline": [],
-        "pad_turnaround": "P15DT12H7M",
+        "pad_turnaround": "P18DT22H58M5S",
         "mission_patches": []
       },
       {
