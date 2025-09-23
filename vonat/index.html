@@ -7,9 +7,10 @@
 </head>
 <body>
     <p>Nézd meg az URL-t!</p>
+    <p><button onclick="clickButton()">váltás</button></p>
 
   <script>
-    const train = "🚂🚃🚃🚃";
+    let train = "🚂🚃🚃🚃";
     const trackLength = 100;
 
     function generateTrack() {
@@ -21,13 +22,21 @@
     const track = generateTrack();
     let pos = trackLength - train.length; // indulás jobb szélről
 
-    function moveTrain() {
+    async function moveTrain() {
       let before = track.slice(0, pos);
       let after = track.slice(pos + train.length);
       location.hash = before + train + after;
 
       pos--;
       if (pos < 0) pos = trackLength - train.length; // újraindul jobbról
+    }
+
+    function clickButton() {
+      if (train === "🚂🚃🚃🚃") {
+        train = "🚌";
+      } else {
+        train = "🚂🚃🚃🚃";
+      }
     }
 
     setInterval(moveTrain, 100);
