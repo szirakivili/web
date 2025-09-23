@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Vonat</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <p>Nézd meg az URL-t!</p>
+
+  <script>
+    const train = "🚂🚃🚃🚃";
+    const trackLength = 100;
+
+    function generateTrack() {
+      // indulás: mindenhol aláhúzás
+      let track = Array(trackLength).fill("_");
+      return track.join("");
+    }
+
+    const track = generateTrack();
+    let pos = trackLength - train.length; // indulás jobb szélről
+
+    function moveTrain() {
+      let before = track.slice(0, pos);
+      let after = track.slice(pos + train.length);
+      location.hash = before + train + after;
+
+      pos--;
+      if (pos < 0) pos = trackLength - train.length; // újraindul jobbról
+    }
+
+    setInterval(moveTrain, 100);
+  </script>
+</body>
+</html>
