@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-09-24T09:26:48Z",
+  "fetched_at": "2025-09-24T10:26:21Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 324,
@@ -620,22 +620,22 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-09-23T14:40:22Z",
-        "net": "2025-09-24T11:30:35Z",
+        "last_updated": "2025-09-24T09:49:59Z",
+        "net": "2025-09-24T11:30:50Z",
         "net_precision": {
           "id": 0,
           "name": "Second",
           "abbrev": "SEC",
           "description": "The T-0 is accurate to the second."
         },
-        "window_end": "2025-09-24T11:30:35Z",
+        "window_end": "2025-09-24T11:30:50Z",
         "window_start": "2025-09-24T11:30:35Z",
         "image": {
-          "id": 1736,
-          "name": "[AUTO] Falcon 9 - image",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193628.jpeg",
-          "credit": null,
+          "id": 2483,
+          "name": "Falcon 9 on LC-39A (IMAP)",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_on_lc-_image_20250924094626.jpg",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_on_lc-_image_thumbnail_20250924094628.jpeg",
+          "credit": "SpaceX",
           "license": {
             "id": 1,
             "name": "Unknown",
@@ -1377,7 +1377,7 @@
                 "fastest_turnaround": null
               },
               "previous_flight_date": "2025-07-16T06:30:00Z",
-              "turn_around_time": "P70DT5H35S",
+              "turn_around_time": "P70DT5H50S",
               "landing": {
                 "id": 1697,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1697/?format=json",
@@ -1681,6 +1681,14 @@
         "agency_launch_attempt_count_year": 125,
         "flightclub_url": "https://flightclub.io/result?llId=689d7129-10fa-4df9-b81e-2b8fb926bbaf",
         "updates": [
+          {
+            "id": 12358,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/lucas2520stauder_profile_20230526163835.jpg",
+            "comment": "Now targeting Sep 24 at 11:30:50 UTC",
+            "info_url": "https://www.spacex.com/launches/imap",
+            "created_by": "hitura-nobad",
+            "created_on": "2025-09-24T09:49:00Z"
+          },
           {
             "id": 12347,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -2181,8 +2189,27 @@
             "relative_time": "PT1H36M46S"
           }
         ],
-        "pad_turnaround": "P18DT22H58M5S",
-        "mission_patches": []
+        "pad_turnaround": "P18DT22H58M20S",
+        "mission_patches": [
+          {
+            "id": 1186,
+            "name": "IMAP",
+            "priority": 10,
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/mission_patch_images/imap_mission_patch_20250924094727.png",
+            "agency": {
+              "response_mode": "list",
+              "id": 121,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/121/?format=json",
+              "name": "SpaceX",
+              "abbrev": "SpX",
+              "type": {
+                "id": 3,
+                "name": "Commercial"
+              }
+            },
+            "response_mode": "normal"
+          }
+        ]
       },
       {
         "id": "c717d2b5-e39c-45a3-9f89-ce73526852eb",
