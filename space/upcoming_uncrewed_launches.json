@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-09-24T16:32:29Z",
+  "fetched_at": "2025-09-24T17:22:26Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 324,
@@ -628,7 +628,7 @@
           "abbrev": "Success",
           "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2025-09-24T13:21:51Z",
+        "last_updated": "2025-09-24T17:02:54Z",
         "net": "2025-09-24T11:30:50Z",
         "net_precision": {
           "id": 0,
@@ -1935,7 +1935,7 @@
         ],
         "vid_urls": [
           {
-            "priority": 9,
+            "priority": 8,
             "source": "youtube.com",
             "publisher": "NASA",
             "title": "Three New Missions Launch to Track Space Weather",
@@ -1953,6 +1953,27 @@
             },
             "start_time": "2025-09-24T10:38:14Z",
             "end_time": "2025-09-24T13:18:08Z",
+            "live": false
+          },
+          {
+            "priority": 9,
+            "source": "youtube.com",
+            "publisher": "The Space Devs",
+            "title": "SpaceX IMAP & others",
+            "description": "On Wednesday September 24, 2025, SpaceX launched the IMAP & others mission with a Falcon 9 Block 5 from Launch Complex 39A at Kennedy Space Center, FL, USA.\n\nDescription generated from the Launch Libr...",
+            "feature_image": "https://i.ytimg.com/vi/Tg7501dQDUE/maxresdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=Tg7501dQDUE",
+            "type": {
+              "id": 4,
+              "name": "Unofficial Re-stream"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-09-24T14:33:07Z",
+            "end_time": "2025-09-24T17:13:01Z",
             "live": false
           },
           {
@@ -5649,49 +5670,49 @@
               "id": 804,
               "type": "Core",
               "reused": true,
-              "launcher_flight_number": 28,
+              "launcher_flight_number": 16,
               "launcher": {
                 "response_mode": "normal",
-                "id": 84,
-                "url": "https://ll.thespacedevs.com/2.3.0/launchers/84/?format=json",
+                "id": 125,
+                "url": "https://ll.thespacedevs.com/2.3.0/launchers/125/?format=json",
                 "flight_proven": true,
-                "serial_number": "B1063",
+                "serial_number": "B1082",
                 "is_placeholder": false,
                 "status": {
                   "id": 3,
                   "name": "active"
                 },
                 "image": {
-                  "id": 1626,
-                  "name": "B1063 landing on LZ-4 during Sentinel-6A Michael Freilich launch",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/84_image_20201122121517.jpeg",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193327.jpeg",
+                  "id": 1642,
+                  "name": "B1082",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/125_image_20231215042532.jpg",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193353.jpeg",
                   "credit": "SpaceX",
                   "license": {
-                    "id": 1,
-                    "name": "Unknown",
-                    "priority": 9,
-                    "link": null
+                    "id": 5,
+                    "name": "CC BY-NC 2.0",
+                    "priority": 1,
+                    "link": "https://creativecommons.org/licenses/by-nc/2.0/"
                   },
-                  "single_use": false,
+                  "single_use": true,
                   "variants": []
                 },
-                "details": "Notable launches include Sentinel-6 and Dart.",
-                "successful_landings": 27,
-                "attempted_landings": 27,
-                "flights": 27,
-                "last_launch_date": "2025-08-26T18:53:41Z",
-                "first_launch_date": "2020-11-21T17:17:08Z",
-                "fastest_turnaround": "P32DT22H30M50S"
+                "details": "Falcon 9 Block 5 booster.",
+                "successful_landings": 15,
+                "attempted_landings": 15,
+                "flights": 15,
+                "last_launch_date": "2025-08-30T04:59:14Z",
+                "first_launch_date": "2024-01-03T03:44:20Z",
+                "fastest_turnaround": "P25DT10M"
               },
-              "previous_flight_date": "2025-08-26T18:53:41Z",
-              "turn_around_time": "P30DT7H3M19S",
+              "previous_flight_date": "2025-08-30T04:59:14Z",
+              "turn_around_time": "P26DT20H57M46S",
               "landing": {
                 "id": 1700,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1700/?format=json",
                 "attempt": true,
                 "success": null,
-                "description": "The Falcon 9 first stage B1063 will attempt landing on ASDS OCISLY after its 28th flight.",
+                "description": "The Falcon 9 first stage B1082 will attempt landing on ASDS OCISLY after its 16th flight.",
                 "downrange_distance": 574.0,
                 "landing_location": {
                   "id": 1,
@@ -5760,9 +5781,9 @@
                 }
               },
               "previous_flight": {
-                "id": "cad4ded9-6f24-4b6c-b4ed-b5dca4613cdd",
-                "url": "https://ll.thespacedevs.com/2.3.0/launches/cad4ded9-6f24-4b6c-b4ed-b5dca4613cdd/?format=json",
-                "name": "Falcon 9 Block 5 | NAOS"
+                "id": "b7b6c516-70cc-443a-aec9-f97ae4333152",
+                "url": "https://ll.thespacedevs.com/2.3.0/launches/b7b6c516-70cc-443a-aec9-f97ae4333152/?format=json",
+                "name": "Falcon 9 Block 5 | Starlink Group 17-7"
               }
             }
           ],
@@ -10705,9 +10726,9 @@
       {
         "id": "d260a1bc-c448-4751-8ea6-bc20a3cab779",
         "url": "https://ll.thespacedevs.com/2.3.0/launches/d260a1bc-c448-4751-8ea6-bc20a3cab779/?format=json",
-        "name": "HASTE | JAKE 4",
+        "name": "HASTE | JUSTIN",
         "response_mode": "detailed",
-        "slug": "haste-jake-4",
+        "slug": "haste-justin",
         "launch_designator": null,
         "status": {
           "id": 1,
@@ -10715,8 +10736,8 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-09-17T15:13:24Z",
-        "net": "2025-09-29T23:45:00Z",
+        "last_updated": "2025-09-24T16:47:23Z",
+        "net": "2025-09-29T21:45:00Z",
         "net_precision": {
           "id": 2,
           "name": "Hour",
@@ -10724,7 +10745,7 @@
           "description": "The T-0 is accurate to the hour."
         },
         "window_end": "2025-09-30T05:00:00Z",
-        "window_start": "2025-09-29T23:45:00Z",
+        "window_start": "2025-09-29T21:45:00Z",
         "image": {
           "id": 1727,
           "name": "[AUTO] Electron - image",
@@ -10990,7 +11011,7 @@
         },
         "mission": {
           "id": 7252,
-          "name": "JAKE 4",
+          "name": "JUSTIN",
           "type": "Government/Top Secret",
           "description": "Sub-orbital launch under Rocket Lab’s Hypersonic Accelerator Suborbital Test Electron (HASTE) program, details TBD.",
           "image": null,
@@ -11209,6 +11230,14 @@
         "flightclub_url": null,
         "updates": [
           {
+            "id": 12368,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "New launch window.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=63237.msg2720562#msg2720562",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-09-24T16:47:00Z"
+          },
+          {
             "id": 12274,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "NET September 29 per marine navigation warnings.",
@@ -11284,7 +11313,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P6DT23H45M",
+        "pad_turnaround": "P6DT21H45M",
         "mission_patches": []
       },
       {
