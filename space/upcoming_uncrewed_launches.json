@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-09-24T15:26:44Z",
+  "fetched_at": "2025-09-24T16:32:29Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 324,
@@ -2298,13 +2298,13 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-09-24T13:22:23Z",
-        "net": "2025-09-25T08:36:00Z",
+        "last_updated": "2025-09-24T16:11:18Z",
+        "net": "2025-09-25T08:38:40Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2025-09-25T12:36:00Z",
         "window_start": "2025-09-25T08:36:00Z",
@@ -3055,7 +3055,7 @@
                 "fastest_turnaround": "P13DT12H34M20S"
               },
               "previous_flight_date": "2025-08-04T07:57:50Z",
-              "turn_around_time": "P52DT38M10S",
+              "turn_around_time": "P52DT40M50S",
               "landing": {
                 "id": 1701,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1701/?format=json",
@@ -3516,6 +3516,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=c717d2b5-e39c-45a3-9f89-ce73526852eb",
         "updates": [
           {
+            "id": 12367,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/arnaud2520muller_profile_20230607144351.jpg",
+            "comment": "Now targeting Sep 25 at 08:38 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-10-15",
+            "created_by": "Nosu",
+            "created_on": "2025-09-24T16:11:00Z"
+          },
+          {
             "id": 12365,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Updated launch weather, 95% GO.",
@@ -3776,7 +3784,7 @@
             "relative_time": "PT1H4M18S"
           }
         ],
-        "pad_turnaround": "P3DT21H43M",
+        "pad_turnaround": "P3DT21H45M40S",
         "mission_patches": [
           {
             "id": 7,
