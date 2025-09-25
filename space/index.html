@@ -613,6 +613,18 @@
             });
           }
 
+          let agencies = "";
+          if (launch.launch_service_provider?.logo?.image_url) {
+            agencies += `<img class="station-logo-patch" src="${launch.launch_service_provider?.logo?.image_url}" alt="${launch.launch_service_provider?.name || ""}" />`;
+          }
+          if (launch.mission?.agencies && launch.mission.agencies.length > 0) {
+            launch.mission.agencies.forEach(agency => {
+              if (!agencies.includes(agency.name)) {
+                agencies += `<img class="station-logo-patch" src="${agency.logo?.image_url}" alt="${agency.name || ""}" />`;
+              }
+            });
+          }
+
           // minden launch-hoz adunk egy egyedi ID-t a visszaszámlálóhoz
           const countdownId = `countdown-${isCrewed ? "C" : "UC"}${index}`;
 
@@ -635,6 +647,7 @@
               <h4>A küldetésről:</h4>
               <p>${launch.mission?.description || "-"}</p>
               <p class="object-id" style="margin-top: 15px; cursor: pointer; width: fit-content;" onclick="window.open('https://go4liftoff.com/launch/${launch.slug}')">További információk</p>
+              <div class="station-logos" style="margin-top: 10px;">${agencies ? agencies : ""}</div>
             </div>
           `;
           container.appendChild(div);
