@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Kétjátékos Snake</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+  /* Alap stílusok */
+  body {
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #121212;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  canvas {
+    background: #1e1e1e;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+  }
+
+  /* Indító képernyő */
+  #startScreen {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+  }
+
+  #startScreen.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 6px #00ffcc;
+  }
+
+  input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    margin: 5px;
+    outline: none;
+  }
+
+  button {
+    padding: 12px 30px;
+    font-size: 20px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(45deg,#00ffcc,#0088ff);
+    color: #121212;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  }
+
+  #winnerMessage {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #ffdd00;
+    text-shadow: 2px 2px 8px #000;
+    animation: glow 1s infinite alternate;
+  }
+
+  @keyframes glow {
+    0% { text-shadow: 2px 2px 8px #000, 0 0 10px #ffdd00; }
+    100% { text-shadow: 2px 2px 12px #000, 0 0 20px #ffdd00; }
+  }
+
+  #instructions {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #aaa;
+  }
+
+</style>
+</head>
+<body>
+
+<div id="startScreen">
+  <h1>Kétjátékos Snake</h1>
+  <div>
+    <label style="color:#00ff77;">Játékos 1 neve:</label>
+    <input id="player1Name" type="text" placeholder="Játékos 1">
+  </div>
+  <div>
+    <label style="color:#0088ff;">Játékos 2 neve:</label>
+    <input id="player2Name" type="text" placeholder="Játékos 2">
+  </div>
+  <p id="instructions">
+    Játékos 1: Zöld kígyó, irányítás W/A/S/D<br>
+    Játékos 2: Kék kígyó, irányítás Nyilak
+  </p>
+  <p id="winnerMessage"></p>
+  <button id="startBtn">Játék indítása</button>
+</div>
+
+<canvas id="gameCanvas" width="600" height="400"></canvas>
+
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const startScreen = document.getElementById('startScreen');
+const startBtn = document.getElementById('startBtn');
+const winnerMessage = document.getElementById('winnerMessage');
+const player1Input = document.getElementById('player1Name');
+const player2Input = document.getElementById('player2Name');
+
+const cellSize = 20;
+const cols = canvas.width / cellSize;
+const rows = canvas.height / cellSize;
+
+let gameOver = false;
+let snake1, snake2;
+let dir1, dir2;
+let food;
+let score1, score2;
+let player1Name = "Játékos 1";
+let player2Name = "Játékos 2";
+const keys = {};
+
+document.addEventListener('keydown', e => keys[e.key] = true);
+document.addEventListener('keyup', e => keys[e.key] = false);
+
+startBtn.addEventListener('click', () => {
+  player1Name = player1Input.value.trim() || "Játékos 1";
+  player2Name = player2Input.value.trim() || "Játékos 2";
+  startScreen.classList.add('hidden');
+  initGame();
+  update();
+});
+
+function initGame() {
+  gameOver = false;
+  snake1 = [{x: 5, y:5}];
+  dir1 = {x:1, y:0};
+  snake2 = [{x: cols-6, y:rows-6}];
+  dir2 = {x:-1, y:0};
+  score1 = 0;
+  score2 = 0;
+  food = spawnFood();
+  winnerMessage.textContent = '';
+}
+
+function spawnFood(){
+  let pos;
+  do {
+    pos = {x: Math.floor(Math.random()*cols), y: Math.floor(Math.random()*rows)};
+  } while (snake1.concat(snake2).some(s => s.x===pos.x && s.y===pos.y));
+  return pos;
+}
+
+function update(){
+  if(gameOver) return;
+
+  moveSnake(snake1, dir1);
+  moveSnake(snake2, dir2);
+
+  checkCollisions();
+  draw();
+
+  setTimeout(update, 100);
+}
+
+function moveSnake(snake, dir){
+  const newHead = {x: snake[0].x + dir.x, y: snake[0].y + dir.y};
+  snake.unshift(newHead);
+
+  if(newHead.x === food.x && newHead.y === food.y){
+    food = spawnFood();
+    if(snake === snake1) score1++;
+    else score2++;
+  } else {
+    snake.pop();
+  }
+}
+
+function checkCollisions(){
+  let s1Dead = false;
+  let s2Dead = false;
+
+  // Saját testbe ütközés
+  for(let i=1;i<snake1.length;i++) if(snake1[0].x===snake1[i].x && snake1[0].y===snake1[i].y) s1Dead=true;
+  for(let i=1;i<snake2.length;i++) if(snake2[0].x===snake2[i].x && snake2[0].y===snake2[i].y) s2Dead=true;
+
+  // Fal
+  if(snake1[0].x<0||snake1[0].x>=cols||snake1[0].y<0||snake1[0].y>=rows) s1Dead=true;
+  if(snake2[0].x<0||snake2[0].x>=cols||snake2[0].y<0||snake2[0].y>=rows) s2Dead=true;
+
+  // Másik kígyó testébe ütközés
+  for(let s1 of snake1) for(let s2 of snake2) if(s1.x===s2.x && s1.y===s2.y){s1Dead=true; s2Dead=true;}
+
+  // Pontszám felezése halál esetén
+  if(s1Dead) score1 = Math.floor(score1 / 2);
+  if(s2Dead) score2 = Math.floor(score2 / 2);
+
+  if(s1Dead || s2Dead){
+    gameOver = true;
+    let msg = '';
+    if(score1 > score2) msg = `${player1Name} nyert!`;
+    else if(score2 > score1) msg = `${player2Name} nyert!`;
+    else msg = 'Döntetlen!';
+    winnerMessage.textContent = msg;
+    startScreen.classList.remove('hidden');
+  }
+}
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  // Étel
+  ctx.fillStyle='orange';
+  ctx.fillRect(food.x*cellSize, food.y*cellSize, cellSize, cellSize);
+
+  // Kígyók
+  ctx.fillStyle='limegreen';
+  snake1.forEach(s=> ctx.fillRect(s.x*cellSize, s.y*cellSize, cellSize, cellSize));
+  ctx.fillStyle='deepskyblue';
+  snake2.forEach(s=> ctx.fillRect(s.x*cellSize, s.y*cellSize, cellSize, cellSize));
+
+  // Pontszám
+  ctx.fillStyle='#fff';
+  ctx.font='16px Arial';
+  ctx.fillText(`${player1Name}: ${score1}`, 10, 20);
+  ctx.fillText(`${player2Name}: ${score2}`, 500, 20);
+}
+
+// Irányok frissítése
+setInterval(() => {
+  if(keys['w'] && dir1.y===0) dir1={x:0,y:-1};
+  if(keys['s'] && dir1.y===0) dir1={x:0,y:1};
+  if(keys['a'] && dir1.x===0) dir1={x:-1,y:0};
+  if(keys['d'] && dir1.x===0) dir1={x:1,y:0};
+
+  if(keys['ArrowUp'] && dir2.y===0) dir2={x:0,y:-1};
+  if(keys['ArrowDown'] && dir2.y===0) dir2={x:0,y:1};
+  if(keys['ArrowLeft'] && dir2.x===0) dir2={x:-1,y:0};
+  if(keys['ArrowRight'] && dir2.x===0) dir2={x:1,y:0};
+}, 50);
+</script>
+
+</body>
+</html>
