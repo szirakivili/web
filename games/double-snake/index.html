@@ -202,8 +202,24 @@ let player1Name = "Játékos 1";
 let player2Name = "Játékos 2";
 const keys = {};
 
-document.addEventListener('keydown', e => keys[e.key] = true);
-document.addEventListener('keyup', e => keys[e.key] = false);
+document.addEventListener('keydown', e => {
+  // ha inputban vagy textarea-ban vagy, engedjük a space-t
+  if ((e.code === "Space") && 
+      (e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA")) {
+    e.preventDefault(); // ne görgessen
+    return;             // ne kerüljön be a keys-be
+  }
+  keys[e.key] = true;
+});
+
+document.addEventListener('keyup', e => {
+  if ((e.code === "Space") && 
+      (e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA")) {
+    e.preventDefault();
+    return;
+  }
+  keys[e.key] = false;
+});
 
 if(!isMobile){
   startBtn.addEventListener('click', () => {
