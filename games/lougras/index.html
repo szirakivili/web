@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lóugrás</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+  body {
+    display: flex; justify-content: center; align-items: center; height: 100vh;
+    background-color: #333; color: #eee; font-family: sans-serif; flex-direction: column;
+    overflow: hidden;
+  }
+  .board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    border: 2px solid #ccc;
+    color: black;
+  }
+  .square {
+    width: 60px; height: 60px;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 46px; cursor: pointer; position: relative; text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+  }
+  .white { background-color: #f0d9b5; }
+  .black { background-color: #b58863; }
+  .possible::after {
+    content: '';
+    width: 20px; height: 20px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    position: absolute;
+  }
+  #status { margin-top: 20px; font-size: 20px; }
+  .confetti {
+    position: fixed;
+    top: -10px;
+    width: 10px; height: 10px;
+    background-color: red;
+    animation: fall 3s linear forwards;
+    z-index: 999;
+  }
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+  /* Popup ablak */
+  .popup {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    background: #222;
+    color: #fff;
+    padding: 20px 40px;
+    border: 2px solid #aaa;
+    border-radius: 10px;
+    font-size: 22px;
+    display: none;
+    z-index: 1000;
+    text-align: center;
+  }
+  .popup button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background: #555;
+    color: #fff;
+  }
+  .popup button:hover { background: #777; }
+</style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+<div class="board"></div>
+<div id="status">Válassz kezdő mezőt!</div>
+<div id="popup" class="popup">
+  <div id="popup-text"></div>
+  <div id="popup-buttons"></div>
+</div>
+
+<script>
+const boardEl = document.querySelector('.board');
+const statusEl = document.getElementById('status');
+const popupEl = document.getElementById('popup');
+const popupTextEl = document.getElementById('popup-text');
+const popupButtonsEl = document.getElementById('popup-buttons');
+let board = [];
+let knightPos = null;
+let visited;
+let steps;
+const moves = [[2,1],[1,2],[-1,2],[-2,1],[-2,-1],[-1,-2],[1,-2],[2,-1]];
+
+function initBoard(){
+  boardEl.innerHTML = "";
+  board = [];
+  knightPos = null;
+  visited = Array.from({length:8}, ()=>Array(8).fill(false));
+  steps = 0;
+  statusEl.textContent = "Válassz kezdő mezőt!";
+  for(let r=0;r<8;r++){
+    const row=[];
+    for(let c=0;c<8;c++){
+      const square = document.createElement('div');
+      square.classList.add('square');
+      if((r+c)%2===0) square.classList.add('white');
+      else square.classList.add('black');
+      square.dataset.row = r;
+      square.dataset.col = c;
+      boardEl.appendChild(square);
+      row.push(square);
+    }
+    board.push(row);
+  }
+}
+
+function clearHighlights(){
+  for(let r=0;r<8;r++){
+    for(let c=0;c<8;c++){
+      board[r][c].classList.remove('possible');
+    }
+  }
+}
+
+function showPossibleMoves(){
+  clearHighlights();
+  let hasMove=false;
+  for(const [dr,dc] of moves){
+    const r = knightPos.row + dr;
+    const c = knightPos.col + dc;
+    if(r>=0 && r<8 && c>=0 && c<8 && !visited[r][c]){
+      board[r][c].classList.add('possible');
+      hasMove=true;
+    }
+  }
+  if(!hasMove){
+    if(steps === 64){
+      showPopup("🎉 Gratulálok! Minden mezőt bejártál!<br>Lépések száma: 64/64", false);
+      launchConfetti();
+    } else {
+      showPopup(`Game Over!<br>Elért pont: ${steps}/64`, true);
+    }
+  }
+}
+
+function launchConfetti(){
+  for(let i=0;i<200;i++){
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.backgroundColor = `hsl(${Math.random()*360},100%,50%)`;
+    confetti.style.left = `${Math.random()*100}vw`;
+    confetti.style.animationDuration = `${2+Math.random()*3}s`;
+    document.body.appendChild(confetti);
+    setTimeout(()=>confetti.remove(), 5000);
+  }
+}
+
+function isLegalMove(row,col){
+  const dr = Math.abs(row - knightPos.row);
+  const dc = Math.abs(col - knightPos.col);
+  return !visited[row][col] && ((dr===2 && dc===1)||(dr===1 && dc===2));
+}
+
+function showPopup(msg, restart=false){
+  popupTextEl.innerHTML = msg;
+  popupButtonsEl.innerHTML = "";
+  if(restart){
+    const btn = document.createElement("button");
+    btn.textContent = "Újra";
+    btn.onclick = () => { closePopup(); initBoard(); };
+    popupButtonsEl.appendChild(btn);
+  } else {
+    const btn = document.createElement("button");
+    btn.textContent = "Bezár";
+    btn.onclick = closePopup;
+    popupButtonsEl.appendChild(btn);
+  }
+  popupEl.style.display = 'block';
+}
+function closePopup(){
+  popupEl.style.display = 'none';
+}
+
+// Kattintás kezelése
+boardEl.addEventListener('click', e => {
+  const square = e.target.closest('.square');
+  if(!square) return;
+  const row = parseInt(square.dataset.row);
+  const col = parseInt(square.dataset.col);
+
+  // Első kattintás: kezdő pozíció
+  if(!knightPos){
+    knightPos = { row, col };
+    board[row][col].textContent = '♞';
+    visited[row][col] = true;
+    steps = 1;
+    statusEl.textContent = `Lépések száma: ${steps}/64`;
+    showPossibleMoves();
+    return;
+  }
+
+  // Normál lépés
+  if(isLegalMove(row,col)){
+    board[knightPos.row][knightPos.col].textContent = '×';
+    board[knightPos.row][knightPos.col].style.color = 'black';
+    knightPos = { row, col };
+    board[row][col].textContent = '♞';
+    visited[row][col] = true;
+    steps++;
+    statusEl.textContent = `Lépések száma: ${steps}/64`;
+    showPossibleMoves();
+  }
+});
+
+// Indító üzenet
+initBoard();
+showPopup("Járd be az összes mezőt a huszárral!");
+</script>
+</body>
+</html>
