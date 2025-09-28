@@ -7,32 +7,52 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <style>
   body {
-    display: flex; justify-content: center; align-items: center; height: 100vh;
-    background-color: #333; color: #eee; font-family: sans-serif; flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+    color: #eee;
+    font-family: sans-serif;
+    flex-direction: column;
     overflow: hidden;
   }
   .board {
     display: grid;
-    grid-template-columns: repeat(8, 60px);
-    grid-template-rows: repeat(8, 60px);
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 90vmin;   /* a kisebbik képernyőmérethez igazítva */
+    height: 90vmin;  /* így mindig négyzet marad */
     border: 2px solid #ccc;
     color: black;
   }
   .square {
-    width: 60px; height: 60px;
-    display: flex; justify-content: center; align-items: center;
-    font-size: 46px; cursor: pointer; position: relative; text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8vmin;   /* rugalmas betűméret */
+    cursor: pointer;
+    position: relative;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
   }
-  .white { background-color: #f0d9b5; }
-  .black { background-color: #b58863; }
+  .white {
+    background-color: #f0d9b5;
+  }
+  .black {
+    background-color: #b58863;
+  }
   .possible::after {
     content: '';
-    width: 20px; height: 20px;
+    width: 4vmin;
+    height: 4vmin;
     background-color: rgba(0,0,0,0.5);
     border-radius: 50%;
     position: absolute;
   }
-  #status { margin-top: 20px; font-size: 20px; }
+  #status {
+    margin-top: 20px;
+    font-size: 20px;
+  }
   .confetti {
     position: fixed;
     top: -10px;
@@ -42,8 +62,14 @@
     z-index: 999;
   }
   @keyframes fall {
-    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0;
+    }
   }
   /* Popup ablak */
   .popup {
@@ -70,7 +96,9 @@
     background: #555;
     color: #fff;
   }
-  .popup button:hover { background: #777; }
+  .popup button:hover {
+    background: #777;
+  }
 </style>
 </head>
 <!-- Google tag (gtag.js) -->
