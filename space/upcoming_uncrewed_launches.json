@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-09-29T18:36:12Z",
+  "fetched_at": "2025-09-29T19:20:16Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 324,
@@ -4396,7 +4396,7 @@
           "abbrev": "TBC",
           "description": "Awaiting official confirmation - current date is known with some certainty."
         },
-        "last_updated": "2025-09-26T14:53:37Z",
+        "last_updated": "2025-09-29T19:00:59Z",
         "net": "2025-10-04T03:43:00Z",
         "net_precision": {
           "id": 1,
@@ -5290,8 +5290,8 @@
           "vid_urls": []
         },
         "pad": {
-          "id": 80,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/80/?format=json",
+          "id": 87,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/87/?format=json",
           "active": true,
           "agencies": [
             {
@@ -5368,12 +5368,12 @@
               }
             }
           ],
-          "name": "Space Launch Complex 40",
+          "name": "Launch Complex 39A",
           "image": {
-            "id": 2113,
-            "name": "F9 liftoff from SLC-40 (SES-24)",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/f9_liftoff_from_image_20240621050513.jpeg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/f9_liftoff_from_image_thumbnail_20240621050514.jpeg",
+            "id": 2119,
+            "name": "FH liftoff from LC-39A (GOES-U)",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/fh_liftoff_from_image_20240626200232.jpeg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/fh_liftoff_from_image_thumbnail_20240626200233.jpeg",
             "credit": "SpaceX",
             "license": {
               "id": 5,
@@ -5381,15 +5381,15 @@
               "priority": 1,
               "link": "https://creativecommons.org/licenses/by-nc/2.0/"
             },
-            "single_use": false,
+            "single_use": true,
             "variants": []
           },
           "description": "",
           "info_url": null,
-          "wiki_url": "https://en.wikipedia.org/wiki/Cape_Canaveral_Air_Force_Station_Space_Launch_Complex_40",
-          "map_url": "https://www.google.com/maps?q=28.56194122,-80.57735736",
-          "latitude": 28.56194122,
-          "longitude": -80.57735736,
+          "wiki_url": "https://en.wikipedia.org/wiki/Kennedy_Space_Center_Launch_Complex_39#Launch_Pad_39A",
+          "map_url": "https://www.google.com/maps?q=28.60822681,-80.60428186",
+          "latitude": 28.60822681,
+          "longitude": -80.60428186,
           "country": {
             "id": 2,
             "name": "United States of America",
@@ -5398,15 +5398,15 @@
             "nationality_name": "American",
             "nationality_name_composed": "Americano"
           },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_80_20200803143323.jpg",
-          "total_launch_count": 337,
-          "orbital_launch_attempt_count": 337,
-          "fastest_turnaround": "P2DT8H31M10S",
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_87_20200803143537.jpg",
+          "total_launch_count": 215,
+          "orbital_launch_attempt_count": 214,
+          "fastest_turnaround": "P5DT6H20M30S",
           "location": {
             "response_mode": "normal",
-            "id": 12,
-            "url": "https://ll.thespacedevs.com/2.3.0/locations/12/?format=json",
-            "name": "Cape Canaveral SFS, FL, USA",
+            "id": 27,
+            "url": "https://ll.thespacedevs.com/2.3.0/locations/27/?format=json",
+            "name": "Kennedy Space Center, FL, USA",
             "celestial_body": {
               "response_mode": "normal",
               "id": 1,
@@ -5453,7 +5453,7 @@
               "nationality_name": "American",
               "nationality_name_composed": "Americano"
             },
-            "description": "Cape Canaveral Space Force Station (CCSFS) is an installation of the United States Space Force's Space Launch Delta 45, located on Cape Canaveral in Brevard County, Florida.",
+            "description": "The John F. Kennedy Space Center, located on Merritt Island, Florida, is one of NASA's ten field centers. Since 1968, KSC has been NASA's primary launch center of American spaceflight, research, and technology. Launch operations for the Apollo, Skylab and Space Shuttle programs were carried out from Kennedy Space Center Launch Complex 39 and managed by KSC. Located on the east coast of Florida, KSC is adjacent to Cape Canaveral Space Force Station (CCSFS).",
             "image": {
               "id": 2200,
               "name": "Cape Canaveral & KSC seen from orbit (STS-43)",
@@ -5469,12 +5469,12 @@
               "single_use": true,
               "variants": []
             },
-            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_12_20200803142519.jpg",
-            "longitude": -80.577778,
-            "latitude": 28.488889,
+            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_27_20200803142447.jpg",
+            "longitude": -80.650833,
+            "latitude": 28.524167,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1056,
-            "total_landing_count": 68
+            "total_launch_count": 273,
+            "total_landing_count": 0
           }
         },
         "webcast_live": false,
@@ -5525,15 +5525,23 @@
           }
         ],
         "orbital_launch_attempt_count": 7079,
-        "location_launch_attempt_count": 1057,
-        "pad_launch_attempt_count": 338,
+        "location_launch_attempt_count": 274,
+        "pad_launch_attempt_count": 216,
         "agency_launch_attempt_count": 579,
         "orbital_launch_attempt_count_year": 230,
-        "location_launch_attempt_count_year": 63,
-        "pad_launch_attempt_count_year": 58,
+        "location_launch_attempt_count_year": 22,
+        "pad_launch_attempt_count_year": 22,
         "agency_launch_attempt_count_year": 130,
         "flightclub_url": "https://flightclub.io/result?llId=88d03398-af55-4bca-967e-bfe868a3cbf5",
         "updates": [
+          {
+            "id": 12413,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Change in launch pad.",
+            "info_url": "https://www.fly.faa.gov/adv/adv_spt",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-09-29T19:00:00Z"
+          },
           {
             "id": 12391,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -5578,7 +5586,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P8DT19H4M",
+        "pad_turnaround": "P9DT16H12M10S",
         "mission_patches": []
       },
       {
@@ -6802,12 +6810,12 @@
           }
         ],
         "orbital_launch_attempt_count": 7080,
-        "location_launch_attempt_count": 1058,
-        "pad_launch_attempt_count": 339,
+        "location_launch_attempt_count": 1057,
+        "pad_launch_attempt_count": 338,
         "agency_launch_attempt_count": 580,
         "orbital_launch_attempt_count_year": 231,
-        "location_launch_attempt_count_year": 64,
-        "pad_launch_attempt_count_year": 59,
+        "location_launch_attempt_count_year": 63,
+        "pad_launch_attempt_count_year": 58,
         "agency_launch_attempt_count_year": 131,
         "flightclub_url": "https://flightclub.io/result?llId=a99bb1eb-514b-4a93-ac49-5e14f273f250",
         "updates": [
@@ -7066,7 +7074,7 @@
             "relative_time": "PT1H3M50S"
           }
         ],
-        "pad_turnaround": "PT1H34M",
+        "pad_turnaround": "P8DT20H38M",
         "mission_patches": [
           {
             "id": 7,
@@ -8291,12 +8299,12 @@
           }
         ],
         "orbital_launch_attempt_count": 7081,
-        "location_launch_attempt_count": 1059,
-        "pad_launch_attempt_count": 340,
+        "location_launch_attempt_count": 1058,
+        "pad_launch_attempt_count": 339,
         "agency_launch_attempt_count": 581,
         "orbital_launch_attempt_count_year": 232,
-        "location_launch_attempt_count_year": 65,
-        "pad_launch_attempt_count_year": 60,
+        "location_launch_attempt_count_year": 64,
+        "pad_launch_attempt_count_year": 59,
         "agency_launch_attempt_count_year": 132,
         "flightclub_url": null,
         "updates": [
@@ -8312,7 +8320,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P3DT6H18M",
+        "pad_turnaround": "P3DT4H44M",
         "mission_patches": [
           {
             "id": 7,
