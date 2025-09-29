@@ -203,17 +203,17 @@ let player2Name = "Játékos 2";
 const keys = {};
 
 document.addEventListener('keydown', e => {
-  // ha inputban vagy textarea-ban vagy, engedjük a space-t
-  if ((e.code === "Space") && 
+  // tiltás: Space és Enter, ha nem input/textarea az aktív elem
+  if ((e.code === "Space" || e.code === "Enter") && 
       (e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA")) {
-    e.preventDefault(); // ne görgessen
+    e.preventDefault(); // ne görgessen / ne aktiváljon gombot
     return;             // ne kerüljön be a keys-be
   }
   keys[e.key] = true;
 });
 
 document.addEventListener('keyup', e => {
-  if ((e.code === "Space") && 
+  if ((e.code === "Space" || e.code === "Enter") && 
       (e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA")) {
     e.preventDefault();
     return;
