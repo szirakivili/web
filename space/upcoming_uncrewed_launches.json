@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-09-30T04:29:41Z",
+  "fetched_at": "2025-09-30T05:24:49Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 322,
@@ -17849,6 +17849,591 @@
         "mission_patches": []
       },
       {
+        "id": "5c7280f6-b793-4899-a6fe-1d274ed46493",
+        "url": "https://ll.thespacedevs.com/2.3.0/launches/5c7280f6-b793-4899-a6fe-1d274ed46493/?format=json",
+        "name": "Nuri | CAS500-3",
+        "response_mode": "detailed",
+        "slug": "nuri-cas500-3",
+        "launch_designator": null,
+        "status": {
+          "id": 1,
+          "name": "Go for Launch",
+          "abbrev": "Go",
+          "description": "Current T-0 confirmed by official or reliable sources."
+        },
+        "last_updated": "2025-09-30T04:30:38Z",
+        "net": "2025-11-26T15:54:00Z",
+        "net_precision": {
+          "id": 1,
+          "name": "Minute",
+          "abbrev": "MIN",
+          "description": "The T-0 is accurate to the minute."
+        },
+        "window_end": "2025-11-26T16:14:00Z",
+        "window_start": "2025-11-26T15:54:00Z",
+        "image": {
+          "id": 1283,
+          "name": "Nuri liftoff from LC-2 (NEXTSat-2 & SNIPE)",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_liftoff_2_image_20240820080542.jpeg",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_liftoff_2_image_thumbnail_20240820080542.jpeg",
+          "credit": "KARI/VNA/CVN",
+          "license": {
+            "id": 1,
+            "name": "Unknown",
+            "priority": 9,
+            "link": null
+          },
+          "single_use": false,
+          "variants": []
+        },
+        "infographic": null,
+        "probability": null,
+        "weather_concerns": null,
+        "failreason": "",
+        "hashtag": null,
+        "launch_service_provider": {
+          "response_mode": "normal",
+          "id": 41,
+          "url": "https://ll.thespacedevs.com/2.3.0/agencies/41/?format=json",
+          "name": "Korea Aerospace Research Institute",
+          "abbrev": "KARI",
+          "type": {
+            "id": 1,
+            "name": "Government"
+          },
+          "featured": false,
+          "country": [
+            {
+              "id": 35,
+              "name": "South Korea",
+              "alpha_2_code": "KR",
+              "alpha_3_code": "KOR",
+              "nationality_name": "South Korean",
+              "nationality_name_composed": "South Korean"
+            }
+          ],
+          "description": "The Korea Aerospace Research Institute (KARI) established in 1989, is the aeronautics and space agency of Republic of Korea. Its main laboratories are located in Daejeon, in the Daedeok Science Town.",
+          "administrator": "Administrator: Lee Sang-Ryool",
+          "founding_year": 1989,
+          "launchers": "Nuri",
+          "spacecraft": "",
+          "parent": "Korea AeroSpace Administration",
+          "image": null,
+          "logo": {
+            "id": 154,
+            "name": "[AUTO] Korea Aerospace Research Institute - logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_logo_20200806032236.png",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185029.png",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "social_logo": {
+            "id": 72,
+            "name": "[AUTO] Korea Aerospace Research Institute - social_logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_nation_20230604194037.jpg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184817.jpeg",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "total_launch_count": 7,
+          "consecutive_successful_launches": 2,
+          "successful_launches": 4,
+          "failed_launches": 3,
+          "pending_launches": 1,
+          "consecutive_successful_landings": 0,
+          "successful_landings": 0,
+          "failed_landings": 0,
+          "attempted_landings": 0,
+          "successful_landings_spacecraft": 0,
+          "failed_landings_spacecraft": 0,
+          "attempted_landings_spacecraft": 0,
+          "successful_landings_payload": 0,
+          "failed_landings_payload": 0,
+          "attempted_landings_payload": 0,
+          "info_url": "https://www.kari.kr/",
+          "wiki_url": "https://en.wikipedia.org/wiki/Korea_Aerospace_Research_Institute",
+          "social_media_links": []
+        },
+        "rocket": {
+          "id": 8507,
+          "configuration": {
+            "response_mode": "detailed",
+            "id": 117,
+            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/117/?format=json",
+            "name": "Nuri",
+            "families": [
+              {
+                "response_mode": "detailed",
+                "id": 99,
+                "name": "KSLV",
+                "manufacturer": [
+                  {
+                    "response_mode": "normal",
+                    "id": 41,
+                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/41/?format=json",
+                    "name": "Korea Aerospace Research Institute",
+                    "abbrev": "KARI",
+                    "type": {
+                      "id": 1,
+                      "name": "Government"
+                    },
+                    "featured": false,
+                    "country": [
+                      {
+                        "id": 35,
+                        "name": "South Korea",
+                        "alpha_2_code": "KR",
+                        "alpha_3_code": "KOR",
+                        "nationality_name": "South Korean",
+                        "nationality_name_composed": "South Korean"
+                      }
+                    ],
+                    "description": "The Korea Aerospace Research Institute (KARI) established in 1989, is the aeronautics and space agency of Republic of Korea. Its main laboratories are located in Daejeon, in the Daedeok Science Town.",
+                    "administrator": "Administrator: Lee Sang-Ryool",
+                    "founding_year": 1989,
+                    "launchers": "Nuri",
+                    "spacecraft": "",
+                    "parent": "Korea AeroSpace Administration",
+                    "image": null,
+                    "logo": {
+                      "id": 154,
+                      "name": "[AUTO] Korea Aerospace Research Institute - logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_logo_20200806032236.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185029.png",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "social_logo": {
+                      "id": 72,
+                      "name": "[AUTO] Korea Aerospace Research Institute - social_logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_nation_20230604194037.jpg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184817.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "total_launch_count": 7,
+                    "consecutive_successful_launches": 2,
+                    "successful_launches": 4,
+                    "failed_launches": 3,
+                    "pending_launches": 1,
+                    "consecutive_successful_landings": 0,
+                    "successful_landings": 0,
+                    "failed_landings": 0,
+                    "attempted_landings": 0,
+                    "successful_landings_spacecraft": 0,
+                    "failed_landings_spacecraft": 0,
+                    "attempted_landings_spacecraft": 0,
+                    "successful_landings_payload": 0,
+                    "failed_landings_payload": 0,
+                    "attempted_landings_payload": 0,
+                    "info_url": "https://www.kari.kr/",
+                    "wiki_url": "https://en.wikipedia.org/wiki/Korea_Aerospace_Research_Institute",
+                    "social_media_links": []
+                  }
+                ],
+                "parent": null,
+                "description": "",
+                "active": true,
+                "maiden_flight": "2009-08-25",
+                "total_launch_count": 7,
+                "consecutive_successful_launches": 2,
+                "successful_launches": 4,
+                "failed_launches": 3,
+                "pending_launches": 1,
+                "attempted_landings": 0,
+                "successful_landings": 0,
+                "failed_landings": 0,
+                "consecutive_successful_landings": 0
+              }
+            ],
+            "full_name": "KSLV-2 Nuri",
+            "variant": "2",
+            "active": true,
+            "is_placeholder": false,
+            "manufacturer": {
+              "response_mode": "normal",
+              "id": 41,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/41/?format=json",
+              "name": "Korea Aerospace Research Institute",
+              "abbrev": "KARI",
+              "type": {
+                "id": 1,
+                "name": "Government"
+              },
+              "featured": false,
+              "country": [
+                {
+                  "id": 35,
+                  "name": "South Korea",
+                  "alpha_2_code": "KR",
+                  "alpha_3_code": "KOR",
+                  "nationality_name": "South Korean",
+                  "nationality_name_composed": "South Korean"
+                }
+              ],
+              "description": "The Korea Aerospace Research Institute (KARI) established in 1989, is the aeronautics and space agency of Republic of Korea. Its main laboratories are located in Daejeon, in the Daedeok Science Town.",
+              "administrator": "Administrator: Lee Sang-Ryool",
+              "founding_year": 1989,
+              "launchers": "Nuri",
+              "spacecraft": "",
+              "parent": "Korea AeroSpace Administration",
+              "image": null,
+              "logo": {
+                "id": 154,
+                "name": "[AUTO] Korea Aerospace Research Institute - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_logo_20200806032236.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185029.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 72,
+                "name": "[AUTO] Korea Aerospace Research Institute - social_logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_nation_20230604194037.jpg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184817.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 7,
+              "consecutive_successful_launches": 2,
+              "successful_launches": 4,
+              "failed_launches": 3,
+              "pending_launches": 1,
+              "consecutive_successful_landings": 0,
+              "successful_landings": 0,
+              "failed_landings": 0,
+              "attempted_landings": 0,
+              "successful_landings_spacecraft": 0,
+              "failed_landings_spacecraft": 0,
+              "attempted_landings_spacecraft": 0,
+              "successful_landings_payload": 0,
+              "failed_landings_payload": 0,
+              "attempted_landings_payload": 0,
+              "info_url": "https://www.kari.kr/",
+              "wiki_url": "https://en.wikipedia.org/wiki/Korea_Aerospace_Research_Institute",
+              "social_media_links": []
+            },
+            "program": [],
+            "reusable": false,
+            "image": {
+              "id": 1797,
+              "name": "Nuri on the launch pad",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_on_the_lau_image_20240307163812.jpeg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_on_the_lau_image_thumbnail_20240307163813.jpeg",
+              "credit": "Korea Aerospace Research Institute",
+              "license": {
+                "id": 15,
+                "name": "Korea Open Government License Type I: Attribution",
+                "priority": 6,
+                "link": "https://www.kogl.or.kr/edu/eduDataFileDown.do?dataIdx=97&dataFileIdx=1"
+              },
+              "single_use": true,
+              "variants": []
+            },
+            "info_url": "https://www.kari.re.kr/eng/sub03_03_01.do",
+            "wiki_url": "https://en.wikipedia.org/wiki/KSLV-2",
+            "description": "Nuri, also known as KSLV-II, is South Korea's second carrier rocket and the successor to KSLV-1.",
+            "alias": "",
+            "min_stage": 3,
+            "max_stage": 3,
+            "length": 47.2,
+            "diameter": 3.5,
+            "maiden_flight": "2021-10-21",
+            "launch_cost": null,
+            "launch_mass": 200.0,
+            "leo_capacity": 2600.0,
+            "gto_capacity": null,
+            "geo_capacity": null,
+            "sso_capacity": null,
+            "to_thrust": 2612.0,
+            "apogee": null,
+            "total_launch_count": 3,
+            "consecutive_successful_launches": 2,
+            "successful_launches": 2,
+            "failed_launches": 1,
+            "pending_launches": 1,
+            "attempted_landings": 0,
+            "successful_landings": 0,
+            "failed_landings": 0,
+            "consecutive_successful_landings": 0,
+            "fastest_turnaround": "P242DT23H"
+          },
+          "launcher_stage": [],
+          "spacecraft_stage": [],
+          "payloads": []
+        },
+        "mission": {
+          "id": 7096,
+          "name": "CAS500-3",
+          "type": "Earth Science",
+          "description": "CAS500-3 is a South Korean Earth observation satellites to be used by the Ministry of Science and ICT for space technology verification and space science research.",
+          "image": null,
+          "orbit": {
+            "id": 17,
+            "name": "Sun-Synchronous Orbit",
+            "abbrev": "SSO",
+            "celestial_body": {
+              "response_mode": "list",
+              "id": 1,
+              "name": "Earth"
+            }
+          },
+          "agencies": [],
+          "info_urls": [],
+          "vid_urls": []
+        },
+        "pad": {
+          "id": 192,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/192/?format=json",
+          "active": true,
+          "agencies": [
+            {
+              "response_mode": "normal",
+              "id": 41,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/41/?format=json",
+              "name": "Korea Aerospace Research Institute",
+              "abbrev": "KARI",
+              "type": {
+                "id": 1,
+                "name": "Government"
+              },
+              "featured": false,
+              "country": [
+                {
+                  "id": 35,
+                  "name": "South Korea",
+                  "alpha_2_code": "KR",
+                  "alpha_3_code": "KOR",
+                  "nationality_name": "South Korean",
+                  "nationality_name_composed": "South Korean"
+                }
+              ],
+              "description": "The Korea Aerospace Research Institute (KARI) established in 1989, is the aeronautics and space agency of Republic of Korea. Its main laboratories are located in Daejeon, in the Daedeok Science Town.",
+              "administrator": "Administrator: Lee Sang-Ryool",
+              "founding_year": 1989,
+              "launchers": "Nuri",
+              "spacecraft": "",
+              "parent": "Korea AeroSpace Administration",
+              "image": null,
+              "logo": {
+                "id": 154,
+                "name": "[AUTO] Korea Aerospace Research Institute - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_logo_20200806032236.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185029.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 72,
+                "name": "[AUTO] Korea Aerospace Research Institute - social_logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_nation_20230604194037.jpg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184817.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              }
+            }
+          ],
+          "name": "LC-2",
+          "image": {
+            "id": 1283,
+            "name": "Nuri liftoff from LC-2 (NEXTSat-2 & SNIPE)",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_liftoff_2_image_20240820080542.jpeg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_liftoff_2_image_thumbnail_20240820080542.jpeg",
+            "credit": "KARI/VNA/CVN",
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": false,
+            "variants": []
+          },
+          "description": "",
+          "info_url": null,
+          "wiki_url": "https://en.wikipedia.org/wiki/Naro_Space_Center",
+          "map_url": "https://www.google.com/maps?q=34.431867,127.535069",
+          "latitude": 34.431867,
+          "longitude": 127.535069,
+          "country": {
+            "id": 35,
+            "name": "South Korea",
+            "alpha_2_code": "KR",
+            "alpha_3_code": "KOR",
+            "nationality_name": "South Korean",
+            "nationality_name_composed": "South Korean"
+          },
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_lc-2_20210812070305.jpg",
+          "total_launch_count": 4,
+          "orbital_launch_attempt_count": 3,
+          "fastest_turnaround": "P242DT23H",
+          "location": {
+            "response_mode": "normal",
+            "id": 9,
+            "url": "https://ll.thespacedevs.com/2.3.0/locations/9/?format=json",
+            "name": "Naro Space Center, South Korea",
+            "celestial_body": {
+              "response_mode": "normal",
+              "id": 1,
+              "name": "Earth",
+              "type": {
+                "id": 1,
+                "name": "Planet"
+              },
+              "diameter": 12742000.0,
+              "mass": 5.972168e+24,
+              "gravity": 9.80655,
+              "length_of_day": "1 00:00:00",
+              "atmosphere": true,
+              "image": {
+                "id": 2040,
+                "name": "Earth (Apollo 17)",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
+                "credit": "NASA",
+                "license": {
+                  "id": 4,
+                  "name": "NASA Image and Media Guidelines",
+                  "priority": 0,
+                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
+              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
+              "total_attempted_launches": 7289,
+              "successful_launches": 6742,
+              "failed_launches": 547,
+              "total_attempted_landings": 1192,
+              "successful_landings": 1147,
+              "failed_landings": 45
+            },
+            "active": true,
+            "country": {
+              "id": 35,
+              "name": "South Korea",
+              "alpha_2_code": "KR",
+              "alpha_3_code": "KOR",
+              "nationality_name": "South Korean",
+              "nationality_name_composed": "South Korean"
+            },
+            "description": "The Naro Space Center is a South Korean spaceport in South Jeolla's Goheung County, operated by the state-run Korea Aerospace Research Institute.",
+            "image": {
+              "id": 1797,
+              "name": "Nuri on the launch pad",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_on_the_lau_image_20240307163812.jpeg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_on_the_lau_image_thumbnail_20240307163813.jpeg",
+              "credit": "Korea Aerospace Research Institute",
+              "license": {
+                "id": 15,
+                "name": "Korea Open Government License Type I: Attribution",
+                "priority": 6,
+                "link": "https://www.kogl.or.kr/edu/eduDataFileDown.do?dataIdx=97&dataFileIdx=1"
+              },
+              "single_use": true,
+              "variants": []
+            },
+            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_9_20200803142441.jpg",
+            "longitude": 127.535,
+            "latitude": 34.431944,
+            "timezone_name": "Asia/Seoul",
+            "total_launch_count": 7,
+            "total_landing_count": 0
+          }
+        },
+        "webcast_live": false,
+        "program": [],
+        "orbital_launch_attempt_count": 7091,
+        "location_launch_attempt_count": 8,
+        "pad_launch_attempt_count": 5,
+        "agency_launch_attempt_count": 8,
+        "orbital_launch_attempt_count_year": 242,
+        "location_launch_attempt_count_year": 1,
+        "pad_launch_attempt_count_year": 1,
+        "agency_launch_attempt_count_year": 1,
+        "flightclub_url": null,
+        "updates": [
+          {
+            "id": 12415,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "NET November 26 UTC.",
+            "info_url": "https://www.kasa.go.kr/bbs/BBSMSTR_000000000010/B000000002146Wf0gZ4.do?mno=sub01_01_01",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-09-30T04:30:00Z"
+          },
+          {
+            "id": 9927,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Added launch.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=45923.msg2636872#msg2636872",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-01-27T23:00:00Z"
+          }
+        ],
+        "info_urls": [],
+        "vid_urls": [],
+        "timeline": [],
+        "pad_turnaround": "P916DT6H30M",
+        "mission_patches": []
+      },
+      {
         "id": "7afcacb9-32aa-41ee-a000-0c7158f324c2",
         "url": "https://ll.thespacedevs.com/2.3.0/launches/7afcacb9-32aa-41ee-a000-0c7158f324c2/?format=json",
         "name": "Ariane 62 | Sentinel-1D",
@@ -21216,583 +21801,6 @@
             "response_mode": "normal"
           }
         ]
-      },
-      {
-        "id": "5c7280f6-b793-4899-a6fe-1d274ed46493",
-        "url": "https://ll.thespacedevs.com/2.3.0/launches/5c7280f6-b793-4899-a6fe-1d274ed46493/?format=json",
-        "name": "Nuri | CAS500-3",
-        "response_mode": "detailed",
-        "slug": "nuri-cas500-3",
-        "launch_designator": null,
-        "status": {
-          "id": 2,
-          "name": "To Be Determined",
-          "abbrev": "TBD",
-          "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
-        },
-        "last_updated": "2025-01-27T23:00:13Z",
-        "net": "2025-11-30T00:00:00Z",
-        "net_precision": {
-          "id": 7,
-          "name": "Month",
-          "abbrev": "M",
-          "description": "The T-0 is expected in the given month."
-        },
-        "window_end": "2025-11-30T00:00:00Z",
-        "window_start": "2025-11-30T00:00:00Z",
-        "image": {
-          "id": 1283,
-          "name": "Nuri liftoff from LC-2 (NEXTSat-2 & SNIPE)",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_liftoff_2_image_20240820080542.jpeg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_liftoff_2_image_thumbnail_20240820080542.jpeg",
-          "credit": "KARI/VNA/CVN",
-          "license": {
-            "id": 1,
-            "name": "Unknown",
-            "priority": 9,
-            "link": null
-          },
-          "single_use": false,
-          "variants": []
-        },
-        "infographic": null,
-        "probability": null,
-        "weather_concerns": null,
-        "failreason": "",
-        "hashtag": null,
-        "launch_service_provider": {
-          "response_mode": "normal",
-          "id": 41,
-          "url": "https://ll.thespacedevs.com/2.3.0/agencies/41/?format=json",
-          "name": "Korea Aerospace Research Institute",
-          "abbrev": "KARI",
-          "type": {
-            "id": 1,
-            "name": "Government"
-          },
-          "featured": false,
-          "country": [
-            {
-              "id": 35,
-              "name": "South Korea",
-              "alpha_2_code": "KR",
-              "alpha_3_code": "KOR",
-              "nationality_name": "South Korean",
-              "nationality_name_composed": "South Korean"
-            }
-          ],
-          "description": "The Korea Aerospace Research Institute (KARI) established in 1989, is the aeronautics and space agency of Republic of Korea. Its main laboratories are located in Daejeon, in the Daedeok Science Town.",
-          "administrator": "Administrator: Lee Sang-Ryool",
-          "founding_year": 1989,
-          "launchers": "Nuri",
-          "spacecraft": "",
-          "parent": "Korea AeroSpace Administration",
-          "image": null,
-          "logo": {
-            "id": 154,
-            "name": "[AUTO] Korea Aerospace Research Institute - logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_logo_20200806032236.png",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185029.png",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "social_logo": {
-            "id": 72,
-            "name": "[AUTO] Korea Aerospace Research Institute - social_logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_nation_20230604194037.jpg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184817.jpeg",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "total_launch_count": 7,
-          "consecutive_successful_launches": 2,
-          "successful_launches": 4,
-          "failed_launches": 3,
-          "pending_launches": 1,
-          "consecutive_successful_landings": 0,
-          "successful_landings": 0,
-          "failed_landings": 0,
-          "attempted_landings": 0,
-          "successful_landings_spacecraft": 0,
-          "failed_landings_spacecraft": 0,
-          "attempted_landings_spacecraft": 0,
-          "successful_landings_payload": 0,
-          "failed_landings_payload": 0,
-          "attempted_landings_payload": 0,
-          "info_url": "https://www.kari.kr/",
-          "wiki_url": "https://en.wikipedia.org/wiki/Korea_Aerospace_Research_Institute",
-          "social_media_links": []
-        },
-        "rocket": {
-          "id": 8507,
-          "configuration": {
-            "response_mode": "detailed",
-            "id": 117,
-            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/117/?format=json",
-            "name": "Nuri",
-            "families": [
-              {
-                "response_mode": "detailed",
-                "id": 99,
-                "name": "KSLV",
-                "manufacturer": [
-                  {
-                    "response_mode": "normal",
-                    "id": 41,
-                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/41/?format=json",
-                    "name": "Korea Aerospace Research Institute",
-                    "abbrev": "KARI",
-                    "type": {
-                      "id": 1,
-                      "name": "Government"
-                    },
-                    "featured": false,
-                    "country": [
-                      {
-                        "id": 35,
-                        "name": "South Korea",
-                        "alpha_2_code": "KR",
-                        "alpha_3_code": "KOR",
-                        "nationality_name": "South Korean",
-                        "nationality_name_composed": "South Korean"
-                      }
-                    ],
-                    "description": "The Korea Aerospace Research Institute (KARI) established in 1989, is the aeronautics and space agency of Republic of Korea. Its main laboratories are located in Daejeon, in the Daedeok Science Town.",
-                    "administrator": "Administrator: Lee Sang-Ryool",
-                    "founding_year": 1989,
-                    "launchers": "Nuri",
-                    "spacecraft": "",
-                    "parent": "Korea AeroSpace Administration",
-                    "image": null,
-                    "logo": {
-                      "id": 154,
-                      "name": "[AUTO] Korea Aerospace Research Institute - logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_logo_20200806032236.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185029.png",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "social_logo": {
-                      "id": 72,
-                      "name": "[AUTO] Korea Aerospace Research Institute - social_logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_nation_20230604194037.jpg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184817.jpeg",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "total_launch_count": 7,
-                    "consecutive_successful_launches": 2,
-                    "successful_launches": 4,
-                    "failed_launches": 3,
-                    "pending_launches": 1,
-                    "consecutive_successful_landings": 0,
-                    "successful_landings": 0,
-                    "failed_landings": 0,
-                    "attempted_landings": 0,
-                    "successful_landings_spacecraft": 0,
-                    "failed_landings_spacecraft": 0,
-                    "attempted_landings_spacecraft": 0,
-                    "successful_landings_payload": 0,
-                    "failed_landings_payload": 0,
-                    "attempted_landings_payload": 0,
-                    "info_url": "https://www.kari.kr/",
-                    "wiki_url": "https://en.wikipedia.org/wiki/Korea_Aerospace_Research_Institute",
-                    "social_media_links": []
-                  }
-                ],
-                "parent": null,
-                "description": "",
-                "active": true,
-                "maiden_flight": "2009-08-25",
-                "total_launch_count": 7,
-                "consecutive_successful_launches": 2,
-                "successful_launches": 4,
-                "failed_launches": 3,
-                "pending_launches": 1,
-                "attempted_landings": 0,
-                "successful_landings": 0,
-                "failed_landings": 0,
-                "consecutive_successful_landings": 0
-              }
-            ],
-            "full_name": "KSLV-2 Nuri",
-            "variant": "2",
-            "active": true,
-            "is_placeholder": false,
-            "manufacturer": {
-              "response_mode": "normal",
-              "id": 41,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/41/?format=json",
-              "name": "Korea Aerospace Research Institute",
-              "abbrev": "KARI",
-              "type": {
-                "id": 1,
-                "name": "Government"
-              },
-              "featured": false,
-              "country": [
-                {
-                  "id": 35,
-                  "name": "South Korea",
-                  "alpha_2_code": "KR",
-                  "alpha_3_code": "KOR",
-                  "nationality_name": "South Korean",
-                  "nationality_name_composed": "South Korean"
-                }
-              ],
-              "description": "The Korea Aerospace Research Institute (KARI) established in 1989, is the aeronautics and space agency of Republic of Korea. Its main laboratories are located in Daejeon, in the Daedeok Science Town.",
-              "administrator": "Administrator: Lee Sang-Ryool",
-              "founding_year": 1989,
-              "launchers": "Nuri",
-              "spacecraft": "",
-              "parent": "Korea AeroSpace Administration",
-              "image": null,
-              "logo": {
-                "id": 154,
-                "name": "[AUTO] Korea Aerospace Research Institute - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_logo_20200806032236.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185029.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 72,
-                "name": "[AUTO] Korea Aerospace Research Institute - social_logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_nation_20230604194037.jpg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184817.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "total_launch_count": 7,
-              "consecutive_successful_launches": 2,
-              "successful_launches": 4,
-              "failed_launches": 3,
-              "pending_launches": 1,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 0,
-              "failed_landings": 0,
-              "attempted_landings": 0,
-              "successful_landings_spacecraft": 0,
-              "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 0,
-              "successful_landings_payload": 0,
-              "failed_landings_payload": 0,
-              "attempted_landings_payload": 0,
-              "info_url": "https://www.kari.kr/",
-              "wiki_url": "https://en.wikipedia.org/wiki/Korea_Aerospace_Research_Institute",
-              "social_media_links": []
-            },
-            "program": [],
-            "reusable": false,
-            "image": {
-              "id": 1797,
-              "name": "Nuri on the launch pad",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_on_the_lau_image_20240307163812.jpeg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_on_the_lau_image_thumbnail_20240307163813.jpeg",
-              "credit": "Korea Aerospace Research Institute",
-              "license": {
-                "id": 15,
-                "name": "Korea Open Government License Type I: Attribution",
-                "priority": 6,
-                "link": "https://www.kogl.or.kr/edu/eduDataFileDown.do?dataIdx=97&dataFileIdx=1"
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "info_url": "https://www.kari.re.kr/eng/sub03_03_01.do",
-            "wiki_url": "https://en.wikipedia.org/wiki/KSLV-2",
-            "description": "Nuri, also known as KSLV-II, is South Korea's second carrier rocket and the successor to KSLV-1.",
-            "alias": "",
-            "min_stage": 3,
-            "max_stage": 3,
-            "length": 47.2,
-            "diameter": 3.5,
-            "maiden_flight": "2021-10-21",
-            "launch_cost": null,
-            "launch_mass": 200.0,
-            "leo_capacity": 2600.0,
-            "gto_capacity": null,
-            "geo_capacity": null,
-            "sso_capacity": null,
-            "to_thrust": 2612.0,
-            "apogee": null,
-            "total_launch_count": 3,
-            "consecutive_successful_launches": 2,
-            "successful_launches": 2,
-            "failed_launches": 1,
-            "pending_launches": 1,
-            "attempted_landings": 0,
-            "successful_landings": 0,
-            "failed_landings": 0,
-            "consecutive_successful_landings": 0,
-            "fastest_turnaround": "P242DT23H"
-          },
-          "launcher_stage": [],
-          "spacecraft_stage": [],
-          "payloads": []
-        },
-        "mission": {
-          "id": 7096,
-          "name": "CAS500-3",
-          "type": "Earth Science",
-          "description": "CAS500-3 is a South Korean Earth observation satellites to be used by the Ministry of Science and ICT for space technology verification and space science research.",
-          "image": null,
-          "orbit": {
-            "id": 17,
-            "name": "Sun-Synchronous Orbit",
-            "abbrev": "SSO",
-            "celestial_body": {
-              "response_mode": "list",
-              "id": 1,
-              "name": "Earth"
-            }
-          },
-          "agencies": [],
-          "info_urls": [],
-          "vid_urls": []
-        },
-        "pad": {
-          "id": 192,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/192/?format=json",
-          "active": true,
-          "agencies": [
-            {
-              "response_mode": "normal",
-              "id": 41,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/41/?format=json",
-              "name": "Korea Aerospace Research Institute",
-              "abbrev": "KARI",
-              "type": {
-                "id": 1,
-                "name": "Government"
-              },
-              "featured": false,
-              "country": [
-                {
-                  "id": 35,
-                  "name": "South Korea",
-                  "alpha_2_code": "KR",
-                  "alpha_3_code": "KOR",
-                  "nationality_name": "South Korean",
-                  "nationality_name_composed": "South Korean"
-                }
-              ],
-              "description": "The Korea Aerospace Research Institute (KARI) established in 1989, is the aeronautics and space agency of Republic of Korea. Its main laboratories are located in Daejeon, in the Daedeok Science Town.",
-              "administrator": "Administrator: Lee Sang-Ryool",
-              "founding_year": 1989,
-              "launchers": "Nuri",
-              "spacecraft": "",
-              "parent": "Korea AeroSpace Administration",
-              "image": null,
-              "logo": {
-                "id": 154,
-                "name": "[AUTO] Korea Aerospace Research Institute - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_logo_20200806032236.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185029.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 72,
-                "name": "[AUTO] Korea Aerospace Research Institute - social_logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/korea2520aerospace2520research2520institute_nation_20230604194037.jpg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184817.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              }
-            }
-          ],
-          "name": "LC-2",
-          "image": {
-            "id": 1283,
-            "name": "Nuri liftoff from LC-2 (NEXTSat-2 & SNIPE)",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_liftoff_2_image_20240820080542.jpeg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_liftoff_2_image_thumbnail_20240820080542.jpeg",
-            "credit": "KARI/VNA/CVN",
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": false,
-            "variants": []
-          },
-          "description": "",
-          "info_url": null,
-          "wiki_url": "https://en.wikipedia.org/wiki/Naro_Space_Center",
-          "map_url": "https://www.google.com/maps?q=34.431867,127.535069",
-          "latitude": 34.431867,
-          "longitude": 127.535069,
-          "country": {
-            "id": 35,
-            "name": "South Korea",
-            "alpha_2_code": "KR",
-            "alpha_3_code": "KOR",
-            "nationality_name": "South Korean",
-            "nationality_name_composed": "South Korean"
-          },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_lc-2_20210812070305.jpg",
-          "total_launch_count": 4,
-          "orbital_launch_attempt_count": 3,
-          "fastest_turnaround": "P242DT23H",
-          "location": {
-            "response_mode": "normal",
-            "id": 9,
-            "url": "https://ll.thespacedevs.com/2.3.0/locations/9/?format=json",
-            "name": "Naro Space Center, South Korea",
-            "celestial_body": {
-              "response_mode": "normal",
-              "id": 1,
-              "name": "Earth",
-              "type": {
-                "id": 1,
-                "name": "Planet"
-              },
-              "diameter": 12742000.0,
-              "mass": 5.972168e+24,
-              "gravity": 9.80655,
-              "length_of_day": "1 00:00:00",
-              "atmosphere": true,
-              "image": {
-                "id": 2040,
-                "name": "Earth (Apollo 17)",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
-                "credit": "NASA",
-                "license": {
-                  "id": 4,
-                  "name": "NASA Image and Media Guidelines",
-                  "priority": 0,
-                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
-              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7289,
-              "successful_launches": 6742,
-              "failed_launches": 547,
-              "total_attempted_landings": 1192,
-              "successful_landings": 1147,
-              "failed_landings": 45
-            },
-            "active": true,
-            "country": {
-              "id": 35,
-              "name": "South Korea",
-              "alpha_2_code": "KR",
-              "alpha_3_code": "KOR",
-              "nationality_name": "South Korean",
-              "nationality_name_composed": "South Korean"
-            },
-            "description": "The Naro Space Center is a South Korean spaceport in South Jeolla's Goheung County, operated by the state-run Korea Aerospace Research Institute.",
-            "image": {
-              "id": 1797,
-              "name": "Nuri on the launch pad",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_on_the_lau_image_20240307163812.jpeg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/nuri_on_the_lau_image_thumbnail_20240307163813.jpeg",
-              "credit": "Korea Aerospace Research Institute",
-              "license": {
-                "id": 15,
-                "name": "Korea Open Government License Type I: Attribution",
-                "priority": 6,
-                "link": "https://www.kogl.or.kr/edu/eduDataFileDown.do?dataIdx=97&dataFileIdx=1"
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_9_20200803142441.jpg",
-            "longitude": 127.535,
-            "latitude": 34.431944,
-            "timezone_name": "Asia/Seoul",
-            "total_launch_count": 7,
-            "total_landing_count": 0
-          }
-        },
-        "webcast_live": false,
-        "program": [],
-        "orbital_launch_attempt_count": 7097,
-        "location_launch_attempt_count": 8,
-        "pad_launch_attempt_count": 5,
-        "agency_launch_attempt_count": 8,
-        "orbital_launch_attempt_count_year": 248,
-        "location_launch_attempt_count_year": 1,
-        "pad_launch_attempt_count_year": 1,
-        "agency_launch_attempt_count_year": 1,
-        "flightclub_url": null,
-        "updates": [
-          {
-            "id": 9927,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Added launch.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=45923.msg2636872#msg2636872",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-01-27T23:00:00Z"
-          }
-        ],
-        "info_urls": [],
-        "vid_urls": [],
-        "timeline": [],
-        "pad_turnaround": "P919DT14H36M",
-        "mission_patches": []
       },
       {
         "id": "f2775d28-8dd8-4efc-87c6-b8d41372202b",
