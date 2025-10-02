@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-02T22:22:46Z",
+  "fetched_at": "2025-10-02T23:21:10Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 334,
@@ -19,13 +19,13 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-09-26T17:02:04Z",
-        "net": "2025-10-03T13:00:00Z",
+        "last_updated": "2025-10-02T23:08:40Z",
+        "net": "2025-10-03T13:21:50Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2025-10-03T17:00:00Z",
         "window_start": "2025-10-03T13:00:00Z",
@@ -776,7 +776,7 @@
                 "fastest_turnaround": null
               },
               "previous_flight_date": "2025-09-03T03:51:26Z",
-              "turn_around_time": "P30DT9H8M34S",
+              "turn_around_time": "P30DT9H30M24S",
               "landing": {
                 "id": 1707,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1707/?format=json",
@@ -1163,6 +1163,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=969a026c-709c-46da-ab80-bacd0126b209",
         "updates": [
           {
+            "id": 12448,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Now targeting Oct 03 at 13:21 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-11-39",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-02T23:08:00Z"
+          },
+          {
             "id": 12355,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Added launch.",
@@ -1191,6 +1199,48 @@
           }
         ],
         "vid_urls": [
+          {
+            "priority": 8,
+            "source": "youtube.com",
+            "publisher": "SPACE AFFAIRS",
+            "title": "GO! - SpaceX - Falcon 9 - Starlink 11-39 - SLC-4E - Vandenberg SFB, CA - Space Affairs Live",
+            "description": "Launch Date: October 3, 2025\nLaunch Time:  6:00 a.m PDT (1300 UTC, 15:00 CEST)\nLaunch Window:  Open until 10:00 a.m. PDT\nLaunch Site: SLC-4E - Vandenberg Space Force Base, California\nTargeted Orbit: L...",
+            "feature_image": "https://i.ytimg.com/vi/6pulR3j4JiA/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=6pulR3j4JiA",
+            "type": {
+              "id": 4,
+              "name": "Unofficial Re-stream"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-10-03T12:50:00Z",
+            "end_time": null,
+            "live": false
+          },
+          {
+            "priority": 9,
+            "source": "youtube.com",
+            "publisher": "Spaceflight Now",
+            "title": "Watch Live: SpaceX launches 28 Starlink satellites on West Coast Falcon 9 rocket",
+            "description": "Watch a live coverage as SpaceX launches a Falcon 9 rocket from California with 28 optimized Starlink v2 Mini internet satellites. Liftoff from Space Launch Complex 4E (SLC-4E) at Vandenberg Space For...",
+            "feature_image": "https://i.ytimg.com/vi/6fMD8RHAHxI/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=6fMD8RHAHxI",
+            "type": {
+              "id": 3,
+              "name": "Unofficial Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-10-03T12:51:00Z",
+            "end_time": null,
+            "live": false
+          },
           {
             "priority": 10,
             "source": "x.com",
@@ -1407,7 +1457,7 @@
             "relative_time": "PT1H2M26S"
           }
         ],
-        "pad_turnaround": "P4DT10H55M10S",
+        "pad_turnaround": "P4DT11H17M",
         "mission_patches": [
           {
             "id": 7,
@@ -18487,18 +18537,18 @@
             {
               "id": 557,
               "type": "Core",
-              "reused": null,
-              "launcher_flight_number": null,
+              "reused": false,
+              "launcher_flight_number": 1,
               "launcher": {
                 "response_mode": "normal",
-                "id": 152,
-                "url": "https://ll.thespacedevs.com/2.3.0/launchers/152/?format=json",
+                "id": 238,
+                "url": "https://ll.thespacedevs.com/2.3.0/launchers/238/?format=json",
                 "flight_proven": false,
-                "serial_number": "Unknown NG",
-                "is_placeholder": true,
+                "serial_number": "GS1-SN002",
+                "is_placeholder": false,
                 "status": {
-                  "id": 8,
-                  "name": "N/A"
+                  "id": 3,
+                  "name": "active"
                 },
                 "image": {
                   "id": 1794,
@@ -18515,10 +18565,10 @@
                   "single_use": true,
                   "variants": []
                 },
-                "details": "Booster serial number unknown.",
-                "successful_landings": null,
-                "attempted_landings": null,
-                "flights": null,
+                "details": "Second New Glenn first stage booster. Named \"Never Tell Me The Odds\". Planned to be used for the second New Glenn launch with EscaPADE and then reused for the third launch with Blue Moon Pathfinder.",
+                "successful_landings": 0,
+                "attempted_landings": 0,
+                "flights": 0,
                 "last_launch_date": null,
                 "first_launch_date": null,
                 "fastest_turnaround": null
@@ -18530,7 +18580,7 @@
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1415/?format=json",
                 "attempt": true,
                 "success": null,
-                "description": "New Glenn will attempt to land on Jacklyn after its first flight.",
+                "description": "New Glenn booster GS1-SN002 will attempt to land on Jacklyn after its first flight.",
                 "downrange_distance": null,
                 "landing_location": {
                   "id": 51,
@@ -19322,11 +19372,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7091,
+        "orbital_launch_attempt_count": 7092,
         "location_launch_attempt_count": 1062,
         "pad_launch_attempt_count": 70,
         "agency_launch_attempt_count": 38,
-        "orbital_launch_attempt_count_year": 242,
+        "orbital_launch_attempt_count_year": 243,
         "location_launch_attempt_count_year": 68,
         "pad_launch_attempt_count_year": 2,
         "agency_launch_attempt_count_year": 10,
