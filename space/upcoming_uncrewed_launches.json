@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-06T05:25:00Z",
+  "fetched_at": "2025-10-06T06:38:17Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 342,
@@ -19,13 +19,13 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-10-03T22:04:24Z",
-        "net": "2025-10-07T04:10:00Z",
+        "last_updated": "2025-10-06T06:19:08Z",
+        "net": "2025-10-07T04:13:40Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2025-10-07T08:10:00Z",
         "window_start": "2025-10-07T04:10:00Z",
@@ -776,7 +776,7 @@
                 "fastest_turnaround": "P22DT15H50M16S"
               },
               "previous_flight_date": "2025-08-24T06:45:36Z",
-              "turn_around_time": "P43DT21H24M24S",
+              "turn_around_time": "P43DT21H28M4S",
               "landing": {
                 "id": 1706,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1706/?format=json",
@@ -1237,6 +1237,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=a99bb1eb-514b-4a93-ac49-5e14f273f250",
         "updates": [
           {
+            "id": 12481,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/arnaud2520muller_profile_20230607144351.jpg",
+            "comment": "Now targeting Oct 07 at 04:13 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-10-59",
+            "created_by": "Nosu",
+            "created_on": "2025-10-06T06:19:00Z"
+          },
+          {
             "id": 12460,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Now targeting Oct 07 at 04:10 UTC",
@@ -1529,7 +1537,7 @@
             "relative_time": "PT1H3M50S"
           }
         ],
-        "pad_turnaround": "P11DT19H31M",
+        "pad_turnaround": "P11DT19H34M40S",
         "mission_patches": [
           {
             "id": 7,
