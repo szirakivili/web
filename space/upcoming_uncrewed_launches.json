@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-06T17:22:48Z",
+  "fetched_at": "2025-10-06T18:36:21Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 344,
@@ -1412,17 +1412,17 @@
           },
           {
             "type": {
-              "id": 2,
-              "abbrev": "Prop Load",
-              "description": "Start of propelland loading"
+              "id": 3,
+              "abbrev": "Stage 1 LOX Load",
+              "description": "Start of liquid oxygen loading in the first stage"
             },
             "relative_time": "-PT35M"
           },
           {
             "type": {
-              "id": 3,
-              "abbrev": "Stage 1 LOX Load",
-              "description": "Start of liquid oxygen loading in the first stage"
+              "id": 2,
+              "abbrev": "Prop Load",
+              "description": "Start of propelland loading"
             },
             "relative_time": "-PT35M"
           },
@@ -2896,17 +2896,17 @@
           },
           {
             "type": {
-              "id": 6,
-              "abbrev": "Startup",
-              "description": "The onboard computer takes control over the countdown and runs last checks"
+              "id": 7,
+              "abbrev": "Tank Press",
+              "description": "Fuel tanks are pressurized to flight levels"
             },
             "relative_time": "-PT1M"
           },
           {
             "type": {
-              "id": 7,
-              "abbrev": "Tank Press",
-              "description": "Fuel tanks are pressurized to flight levels"
+              "id": 6,
+              "abbrev": "Startup",
+              "description": "The onboard computer takes control over the countdown and runs last checks"
             },
             "relative_time": "-PT1M"
           },
@@ -7000,17 +7000,17 @@
           },
           {
             "type": {
-              "id": 2,
-              "abbrev": "Prop Load",
-              "description": "Start of propelland loading"
+              "id": 3,
+              "abbrev": "Stage 1 LOX Load",
+              "description": "Start of liquid oxygen loading in the first stage"
             },
             "relative_time": "-PT35M"
           },
           {
             "type": {
-              "id": 3,
-              "abbrev": "Stage 1 LOX Load",
-              "description": "Start of liquid oxygen loading in the first stage"
+              "id": 2,
+              "abbrev": "Prop Load",
+              "description": "Start of propelland loading"
             },
             "relative_time": "-PT35M"
           },
@@ -7032,17 +7032,17 @@
           },
           {
             "type": {
-              "id": 6,
-              "abbrev": "Startup",
-              "description": "The onboard computer takes control over the countdown and runs last checks"
+              "id": 7,
+              "abbrev": "Tank Press",
+              "description": "Fuel tanks are pressurized to flight levels"
             },
             "relative_time": "-PT1M"
           },
           {
             "type": {
-              "id": 7,
-              "abbrev": "Tank Press",
-              "description": "Fuel tanks are pressurized to flight levels"
+              "id": 6,
+              "abbrev": "Startup",
+              "description": "The onboard computer takes control over the countdown and runs last checks"
             },
             "relative_time": "-PT1M"
           },
@@ -9696,7 +9696,264 @@
             "live": false
           }
         ],
-        "timeline": [],
+        "timeline": [
+          {
+            "type": {
+              "id": 1,
+              "abbrev": "GO for Prop Load",
+              "description": "Launch director verifies go for propellant load"
+            },
+            "relative_time": "-PT1H15M"
+          },
+          {
+            "type": {
+              "id": 86,
+              "abbrev": "Stage 2 LNG Load",
+              "description": "Start of liquid methane loading in the second stage"
+            },
+            "relative_time": "-PT53M"
+          },
+          {
+            "type": {
+              "id": 4,
+              "abbrev": "Stage 2 LOX Load",
+              "description": "Start of liquid oxygen loading in the second stage"
+            },
+            "relative_time": "-PT46M10S"
+          },
+          {
+            "type": {
+              "id": 87,
+              "abbrev": "Stage 1 LNG Load",
+              "description": "Start of liquid methane loading in the first stage"
+            },
+            "relative_time": "-PT41M15S"
+          },
+          {
+            "type": {
+              "id": 3,
+              "abbrev": "Stage 1 LOX Load",
+              "description": "Start of liquid oxygen loading in the first stage"
+            },
+            "relative_time": "-PT35M52S"
+          },
+          {
+            "type": {
+              "id": 5,
+              "abbrev": "Engine Chill",
+              "description": "Start of engine chilling"
+            },
+            "relative_time": "-PT19M40S"
+          },
+          {
+            "type": {
+              "id": 89,
+              "abbrev": "Stage 2 Propellant Load Complete",
+              "description": "End of propellant loading in the second stage"
+            },
+            "relative_time": "-PT3M20S"
+          },
+          {
+            "type": {
+              "id": 88,
+              "abbrev": "Stage 1 Propellant Load Complete",
+              "description": "End of propellant loading in the first stage"
+            },
+            "relative_time": "-PT2M50S"
+          },
+          {
+            "type": {
+              "id": 8,
+              "abbrev": "GO for Launch",
+              "description": "Launch director verifies go for launch"
+            },
+            "relative_time": "-PT30S"
+          },
+          {
+            "type": {
+              "id": 90,
+              "abbrev": "Flame Deflector Activation",
+              "description": "Activation of the flame deflector ahead of engine ignition"
+            },
+            "relative_time": "-PT10S"
+          },
+          {
+            "type": {
+              "id": 9,
+              "abbrev": "Ignition",
+              "description": "Start of the engine ignition sequence"
+            },
+            "relative_time": "-PT3S"
+          },
+          {
+            "type": {
+              "id": 91,
+              "abbrev": "Excitement Guaranteed",
+              "description": "Excitement guaranteed"
+            },
+            "relative_time": "P0D"
+          },
+          {
+            "type": {
+              "id": 10,
+              "abbrev": "Liftoff",
+              "description": "First upwards movement of the rocket"
+            },
+            "relative_time": "PT2S"
+          },
+          {
+            "type": {
+              "id": 11,
+              "abbrev": "Max-Q",
+              "description": "Maximum dynamic pressure"
+            },
+            "relative_time": "PT1M2S"
+          },
+          {
+            "type": {
+              "id": 12,
+              "abbrev": "MECO",
+              "description": "Cut-off of the main engine"
+            },
+            "relative_time": "PT2M37S"
+          },
+          {
+            "type": {
+              "id": 13,
+              "abbrev": "Stage 2 Separation",
+              "description": "Separation of the second stage from the first"
+            },
+            "relative_time": "PT2M39S"
+          },
+          {
+            "type": {
+              "id": 39,
+              "abbrev": "Booster Boostback Burn Startup",
+              "description": "Start of the booster boostback burn"
+            },
+            "relative_time": "PT2M49S"
+          },
+          {
+            "type": {
+              "id": 40,
+              "abbrev": "Booster Boostback Burn Shutdown",
+              "description": "End of the booster boostback burn"
+            },
+            "relative_time": "PT3M38S"
+          },
+          {
+            "type": {
+              "id": 104,
+              "abbrev": "Booster Hot Stage Jettison",
+              "description": "Separation of the hot stage from the booster"
+            },
+            "relative_time": "PT3M40S"
+          },
+          {
+            "type": {
+              "id": 18,
+              "abbrev": "Stage 1 Landing Burn",
+              "description": "Start of the first stage landing burn"
+            },
+            "relative_time": "PT6M20S"
+          },
+          {
+            "type": {
+              "id": 19,
+              "abbrev": "Stage 1 Landing",
+              "description": "Landing of the first stage"
+            },
+            "relative_time": "PT6M36S"
+          },
+          {
+            "type": {
+              "id": 20,
+              "abbrev": "SECO-1",
+              "description": "First cut-off of the second engine"
+            },
+            "relative_time": "PT8M58S"
+          },
+          {
+            "type": {
+              "id": 78,
+              "abbrev": "Payload Deployment Sequence Start",
+              "description": "Start of the payload deployment sequence"
+            },
+            "relative_time": "PT18M28S"
+          },
+          {
+            "type": {
+              "id": 79,
+              "abbrev": "Payload Deployment Sequence End",
+              "description": "End of the payload deployment sequence."
+            },
+            "relative_time": "PT25M33S"
+          },
+          {
+            "type": {
+              "id": 85,
+              "abbrev": "SEB-2",
+              "description": "2nd burn of the second engine"
+            },
+            "relative_time": "PT37M49S"
+          },
+          {
+            "type": {
+              "id": 95,
+              "abbrev": "Atmospheric Entry",
+              "description": "Start of the atmospheric re-entry"
+            },
+            "relative_time": "PT47M43S"
+          },
+          {
+            "type": {
+              "id": 96,
+              "abbrev": "Starship Transonic",
+              "description": "Starship passing through the transonic regime"
+            },
+            "relative_time": "PT1H3M30S"
+          },
+          {
+            "type": {
+              "id": 97,
+              "abbrev": "Starship Subsonic",
+              "description": "Starship reaches a subsonic velocity"
+            },
+            "relative_time": "PT1H3M52S"
+          },
+          {
+            "type": {
+              "id": 106,
+              "abbrev": "Starship Landing Burn",
+              "description": "Start of the Starship orbital stage landing burn"
+            },
+            "relative_time": "PT1H5M58S"
+          },
+          {
+            "type": {
+              "id": 105,
+              "abbrev": "Landing Flip",
+              "description": "Flip maneuver to set the orientation for landing"
+            },
+            "relative_time": "PT1H6M"
+          },
+          {
+            "type": {
+              "id": 98,
+              "abbrev": "Starship Landing",
+              "description": "Landing of the Starship orbital stage"
+            },
+            "relative_time": "PT1H6M9S"
+          },
+          {
+            "type": {
+              "id": 98,
+              "abbrev": "Starship Landing",
+              "description": "Landing of the Starship orbital stage"
+            },
+            "relative_time": "PT1H6M25S"
+          }
+        ],
         "pad_turnaround": "P47DT23H45M",
         "mission_patches": [
           {
@@ -12207,17 +12464,17 @@
           },
           {
             "type": {
-              "id": 7,
-              "abbrev": "Tank Press",
-              "description": "Fuel tanks are pressurized to flight levels"
+              "id": 6,
+              "abbrev": "Startup",
+              "description": "The onboard computer takes control over the countdown and runs last checks"
             },
             "relative_time": "-PT1M"
           },
           {
             "type": {
-              "id": 6,
-              "abbrev": "Startup",
-              "description": "The onboard computer takes control over the countdown and runs last checks"
+              "id": 7,
+              "abbrev": "Tank Press",
+              "description": "Fuel tanks are pressurized to flight levels"
             },
             "relative_time": "-PT1M"
           },
@@ -13590,17 +13847,17 @@
           },
           {
             "type": {
-              "id": 2,
-              "abbrev": "Prop Load",
-              "description": "Start of propelland loading"
+              "id": 3,
+              "abbrev": "Stage 1 LOX Load",
+              "description": "Start of liquid oxygen loading in the first stage"
             },
             "relative_time": "-PT35M"
           },
           {
             "type": {
-              "id": 3,
-              "abbrev": "Stage 1 LOX Load",
-              "description": "Start of liquid oxygen loading in the first stage"
+              "id": 2,
+              "abbrev": "Prop Load",
+              "description": "Start of propelland loading"
             },
             "relative_time": "-PT35M"
           },
@@ -13622,17 +13879,17 @@
           },
           {
             "type": {
-              "id": 6,
-              "abbrev": "Startup",
-              "description": "The onboard computer takes control over the countdown and runs last checks"
+              "id": 7,
+              "abbrev": "Tank Press",
+              "description": "Fuel tanks are pressurized to flight levels"
             },
             "relative_time": "-PT1M"
           },
           {
             "type": {
-              "id": 7,
-              "abbrev": "Tank Press",
-              "description": "Fuel tanks are pressurized to flight levels"
+              "id": 6,
+              "abbrev": "Startup",
+              "description": "The onboard computer takes control over the countdown and runs last checks"
             },
             "relative_time": "-PT1M"
           },
@@ -28919,7 +29176,7 @@
           "abbrev": "TBC",
           "description": "Awaiting official confirmation - current date is known with some certainty."
         },
-        "last_updated": "2025-10-01T20:06:01Z",
+        "last_updated": "2025-10-06T17:55:38Z",
         "net": "2025-12-15T11:52:00Z",
         "net_precision": {
           "id": 1,
@@ -29325,18 +29582,18 @@
           "vid_urls": []
         },
         "pad": {
-          "id": 68,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/68/?format=json",
+          "id": 7,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/7/?format=json",
           "active": true,
           "agencies": [],
-          "name": "Unknown Pad",
+          "name": "81/24 (81P)",
           "image": null,
           "description": null,
           "info_url": null,
           "wiki_url": "",
-          "map_url": "https://www.google.com/maps?q=45.92,63.342",
-          "latitude": 45.92,
-          "longitude": 63.342,
+          "map_url": "https://www.google.com/maps?q=46.071001,62.984999",
+          "latitude": 46.071001,
+          "longitude": 62.984999,
           "country": {
             "id": 44,
             "name": "Kazakhstan",
@@ -29345,10 +29602,10 @@
             "nationality_name": "Kazakh",
             "nationality_name_composed": "Kazakhstani"
           },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_68_20200803143521.jpg",
-          "total_launch_count": 0,
-          "orbital_launch_attempt_count": 0,
-          "fastest_turnaround": null,
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_7_20200803143454.jpg",
+          "total_launch_count": 92,
+          "orbital_launch_attempt_count": 92,
+          "fastest_turnaround": "P6DT22M31S",
           "location": {
             "response_mode": "normal",
             "id": 15,
@@ -29426,16 +29683,24 @@
         },
         "webcast_live": false,
         "program": [],
-        "orbital_launch_attempt_count": 7102,
+        "orbital_launch_attempt_count": 7103,
         "location_launch_attempt_count": 1560,
-        "pad_launch_attempt_count": 1,
+        "pad_launch_attempt_count": 93,
         "agency_launch_attempt_count": 197,
-        "orbital_launch_attempt_count_year": 253,
+        "orbital_launch_attempt_count_year": 254,
         "location_launch_attempt_count_year": 7,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 2,
         "flightclub_url": null,
         "updates": [
+          {
+            "id": 12489,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Launch pad assigned.",
+            "info_url": "https://forum.novosti-kosmonavtiki.ru/index.php?msg=2763487",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-06T17:55:00Z"
+          },
           {
             "id": 12440,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -29480,7 +29745,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P0D",
+        "pad_turnaround": "P1044DT2H39M8S",
         "mission_patches": []
       },
       {
