@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-08T13:02:19Z",
+  "fetched_at": "2025-10-08T14:39:21Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=true&format=json&mode=detailed&limit=10",
   "payload": {
     "count": 5,
@@ -14,18 +14,18 @@
         "slug": "new-shepard-ns-36",
         "launch_designator": null,
         "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
+          "id": 3,
+          "name": "Launch Successful",
+          "abbrev": "Success",
+          "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2025-10-08T12:57:49Z",
-        "net": "2025-10-08T13:40:00Z",
+        "last_updated": "2025-10-08T14:14:47Z",
+        "net": "2025-10-08T13:40:27Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2025-10-08T20:30:00Z",
         "window_start": "2025-10-08T12:30:00Z",
@@ -121,18 +121,18 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 36,
-          "consecutive_successful_launches": 13,
-          "successful_launches": 35,
+          "total_launch_count": 37,
+          "consecutive_successful_launches": 14,
+          "successful_launches": 36,
           "failed_launches": 1,
-          "pending_launches": 6,
-          "consecutive_successful_landings": 7,
-          "successful_landings": 33,
+          "pending_launches": 5,
+          "consecutive_successful_landings": 8,
+          "successful_landings": 34,
           "failed_landings": 3,
-          "attempted_landings": 36,
-          "successful_landings_spacecraft": 35,
+          "attempted_landings": 37,
+          "successful_landings_spacecraft": 36,
           "failed_landings_spacecraft": 0,
-          "attempted_landings_spacecraft": 35,
+          "attempted_landings_spacecraft": 36,
           "successful_landings_payload": 0,
           "failed_landings_payload": 0,
           "attempted_landings_payload": 0,
@@ -224,18 +224,18 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 36,
-              "consecutive_successful_launches": 13,
-              "successful_launches": 35,
+              "total_launch_count": 37,
+              "consecutive_successful_launches": 14,
+              "successful_launches": 36,
               "failed_launches": 1,
-              "pending_launches": 6,
-              "consecutive_successful_landings": 7,
-              "successful_landings": 33,
+              "pending_launches": 5,
+              "consecutive_successful_landings": 8,
+              "successful_landings": 34,
               "failed_landings": 3,
-              "attempted_landings": 36,
-              "successful_landings_spacecraft": 35,
+              "attempted_landings": 37,
+              "successful_landings_spacecraft": 36,
               "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 35,
+              "attempted_landings_spacecraft": 36,
               "successful_landings_payload": 0,
               "failed_landings_payload": 0,
               "attempted_landings_payload": 0,
@@ -277,39 +277,39 @@
             "sso_capacity": null,
             "to_thrust": 490.0,
             "apogee": 100.0,
-            "total_launch_count": 35,
-            "consecutive_successful_launches": 12,
-            "successful_launches": 34,
+            "total_launch_count": 36,
+            "consecutive_successful_launches": 13,
+            "successful_launches": 35,
             "failed_launches": 1,
-            "pending_launches": 1,
-            "attempted_landings": 35,
-            "successful_landings": 33,
+            "pending_launches": 0,
+            "attempted_landings": 36,
+            "successful_landings": 34,
             "failed_landings": 2,
-            "consecutive_successful_landings": 12,
-            "fastest_turnaround": "P20DT23H49M11S"
+            "consecutive_successful_landings": 13,
+            "fastest_turnaround": "P20DT40M27S"
           },
           "launcher_stage": [
             {
               "id": 817,
               "type": "Core",
-              "reused": null,
-              "launcher_flight_number": null,
+              "reused": true,
+              "launcher_flight_number": 16,
               "launcher": {
                 "response_mode": "normal",
-                "id": 144,
-                "url": "https://ll.thespacedevs.com/2.3.0/launchers/144/?format=json",
-                "flight_proven": false,
-                "serial_number": "Unknown NS",
-                "is_placeholder": true,
+                "id": 90,
+                "url": "https://ll.thespacedevs.com/2.3.0/launchers/90/?format=json",
+                "flight_proven": true,
+                "serial_number": "NS-4",
+                "is_placeholder": false,
                 "status": {
-                  "id": 8,
-                  "name": "N/A"
+                  "id": 3,
+                  "name": "active"
                 },
                 "image": {
-                  "id": 1676,
-                  "name": "[AUTO] Unknown NS - image",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/none_image_20231212212416.png",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193446.png",
+                  "id": 1659,
+                  "name": "[AUTO] NS-4 - image",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/90_image_20210412202510.jpeg",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193420.jpeg",
                   "credit": null,
                   "license": {
                     "id": 1,
@@ -320,22 +320,22 @@
                   "single_use": true,
                   "variants": []
                 },
-                "details": "Booster serial number unknown.",
-                "successful_landings": null,
-                "attempted_landings": null,
-                "flights": null,
-                "last_launch_date": null,
-                "first_launch_date": null,
-                "fastest_turnaround": null
+                "details": "New Shepard vehicle #4 is the fourth flight vehicle of the New Shepard suborbital rocket. It was used for Blue Origin's first crewed launches.",
+                "successful_landings": 16,
+                "attempted_landings": 16,
+                "flights": 16,
+                "last_launch_date": "2025-10-08T13:40:27Z",
+                "first_launch_date": "2021-01-14T17:19:00Z",
+                "fastest_turnaround": "P59DT11M42S"
               },
-              "previous_flight_date": null,
-              "turn_around_time": null,
+              "previous_flight_date": "2025-08-03T12:42:16Z",
+              "turn_around_time": "P66DT58M11S",
               "landing": {
                 "id": 1708,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1708/?format=json",
                 "attempt": true,
-                "success": null,
-                "description": "The New Shepard booster will attempt to back on the landing pad.",
+                "success": true,
+                "description": "The New Shepard booster NS4 has landed back on the landing pad.",
                 "downrange_distance": 3.2,
                 "landing_location": {
                   "id": 11,
@@ -377,8 +377,8 @@
                     "longitude": -104.757152,
                     "latitude": 31.422927,
                     "timezone_name": "America/Chicago",
-                    "total_launch_count": 35,
-                    "total_landing_count": 35
+                    "total_launch_count": 36,
+                    "total_landing_count": 36
                   },
                   "longitude": -104.762793,
                   "latitude": 31.451665,
@@ -439,7 +439,11 @@
                   "description": "A return to launch site usually means that after stage separation the booster flips and does a burn back towards the launch site, landing near where it initially launched from."
                 }
               },
-              "previous_flight": null
+              "previous_flight": {
+                "id": "04459d6c-8ba5-4d38-99ba-23a8b3067116",
+                "url": "https://ll.thespacedevs.com/2.3.0/launches/04459d6c-8ba5-4d38-99ba-23a8b3067116/?format=json",
+                "name": "New Shepard | NS-34"
+              }
             }
           ],
           "spacecraft_stage": [
@@ -447,19 +451,19 @@
               "id": 897,
               "url": "https://ll.thespacedevs.com/2.3.0/spacecraft_flights/897/?format=json",
               "destination": "Suborbital",
-              "mission_end": null,
+              "mission_end": "2025-10-08T13:50:48Z",
               "spacecraft": {
                 "response_mode": "normal",
-                "id": 608,
-                "url": "https://ll.thespacedevs.com/2.3.0/spacecraft/608/?format=json",
-                "name": "Unknown RSS",
-                "serial_number": "TBD",
+                "id": 453,
+                "url": "https://ll.thespacedevs.com/2.3.0/spacecraft/453/?format=json",
+                "name": "RSS First Step",
+                "serial_number": "2.0-2",
                 "is_placeholder": false,
                 "image": {
-                  "id": 2152,
-                  "name": "New Shepard Crew Capsule Jules Verne under parachutes",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_cre_image_20240812144851.jpg",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_cre_image_thumbnail_20240812144851.jpeg",
+                  "id": 2153,
+                  "name": "NS-19 Capsule First Step landed",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/ns-19_capsule_f_image_20240812145125.jpg",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/ns-19_capsule_f_image_thumbnail_20240812145126.jpeg",
                   "credit": "Blue Origin",
                   "license": {
                     "id": 1,
@@ -471,15 +475,15 @@
                   "variants": []
                 },
                 "in_space": false,
-                "time_in_space": "P0D",
+                "time_in_space": "PT2H32M50S",
                 "time_docked": "P0D",
-                "flights_count": 0,
-                "mission_ends_count": 0,
+                "flights_count": 15,
+                "mission_ends_count": 15,
                 "status": {
                   "id": 1,
                   "name": "Active"
                 },
-                "description": "The specific spacecraft for this launch is currently unknown.",
+                "description": "First Blue Origin New Shepard Crew Capsule 2.0 to carry human passengers. This capsule is outfitted with improvements to environmental features such as acoustics and temperature regulation inside the capsule, crew display panels, and speakers with a microphone and push-to-talk button at each seat.",
                 "spacecraft_config": {
                   "response_mode": "detailed",
                   "id": 21,
@@ -690,14 +694,14 @@
                   "failed_landings": 0,
                   "fastest_turnaround": "P59DT1M42S"
                 },
-                "fastest_turnaround": null
+                "fastest_turnaround": "P59DT1M42S"
               },
               "landing": {
                 "id": 1709,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1709/?format=json",
                 "attempt": true,
-                "success": null,
-                "description": "The RSS capsule will land at Blue Origin's Corn Ranch facility.",
+                "success": true,
+                "description": "The RSS capsule RSS First Step has landed at Blue Origin's Corn Ranch facility.",
                 "downrange_distance": null,
                 "landing_location": {
                   "id": 28,
@@ -739,8 +743,8 @@
                     "longitude": -104.757152,
                     "latitude": 31.422927,
                     "timezone_name": "America/Chicago",
-                    "total_launch_count": 35,
-                    "total_landing_count": 35
+                    "total_launch_count": 36,
+                    "total_landing_count": 36
                   },
                   "longitude": null,
                   "latitude": null,
@@ -852,7 +856,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M21S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -869,8 +873,8 @@
                     ],
                     "bio": "Entrepreneur, explorer, and US Army veteran.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-10-08T13:40:27Z",
+                    "first_flight": "2025-10-08T13:40:27Z",
                     "social_media_links": []
                   }
                 },
@@ -921,7 +925,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M21S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -938,8 +942,8 @@
                     ],
                     "bio": "Entrepreneur in media, distribution, and events.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-10-08T13:40:27Z",
+                    "first_flight": "2025-10-08T13:40:27Z",
                     "social_media_links": [
                       {
                         "id": 319,
@@ -1039,7 +1043,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M21S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1056,8 +1060,8 @@
                     ],
                     "bio": "Executive in the franchise industry.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-10-08T13:40:27Z",
+                    "first_flight": "2025-10-08T13:40:27Z",
                     "social_media_links": [
                       {
                         "id": 318,
@@ -1133,7 +1137,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M21S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1150,8 +1154,8 @@
                     ],
                     "bio": "Businessman, hotel and real estate investor, systems analyst, web developer, and globetrotter.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-10-08T13:40:27Z",
+                    "first_flight": "2025-10-08T13:40:27Z",
                     "social_media_links": [
                       {
                         "id": 321,
@@ -1237,7 +1241,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "PT10M20S",
+                    "time_in_space": "PT20M41S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1254,7 +1258,7 @@
                     ],
                     "bio": "Clint managed research and technology programs focused primarily on computer science and robotics while in government and in industry. In 1984, he started the Autonomous Land Vehicle project while at the Defense Advanced Research Projects Agency (DARPA) contributing to the development of the technology used in driverless cars.",
                     "wiki": null,
-                    "last_flight": "2022-08-04T13:56:07Z",
+                    "last_flight": "2025-10-08T13:40:27Z",
                     "first_flight": "2022-08-04T13:56:07Z",
                     "social_media_links": []
                   }
@@ -1309,7 +1313,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M21S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1326,8 +1330,8 @@
                     ],
                     "bio": "Entrepreneur, explorer, and US Army veteran.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-10-08T13:40:27Z",
+                    "first_flight": "2025-10-08T13:40:27Z",
                     "social_media_links": []
                   }
                 },
@@ -1378,7 +1382,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M21S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1395,8 +1399,8 @@
                     ],
                     "bio": "Entrepreneur in media, distribution, and events.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-10-08T13:40:27Z",
+                    "first_flight": "2025-10-08T13:40:27Z",
                     "social_media_links": [
                       {
                         "id": 319,
@@ -1496,7 +1500,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M21S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1513,8 +1517,8 @@
                     ],
                     "bio": "Executive in the franchise industry.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-10-08T13:40:27Z",
+                    "first_flight": "2025-10-08T13:40:27Z",
                     "social_media_links": [
                       {
                         "id": 318,
@@ -1590,7 +1594,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M21S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1607,8 +1611,8 @@
                     ],
                     "bio": "Businessman, hotel and real estate investor, systems analyst, web developer, and globetrotter.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-10-08T13:40:27Z",
+                    "first_flight": "2025-10-08T13:40:27Z",
                     "social_media_links": [
                       {
                         "id": 321,
@@ -1694,7 +1698,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "PT10M20S",
+                    "time_in_space": "PT20M41S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1711,7 +1715,7 @@
                     ],
                     "bio": "Clint managed research and technology programs focused primarily on computer science and robotics while in government and in industry. In 1984, he started the Autonomous Land Vehicle project while at the Defense Advanced Research Projects Agency (DARPA) contributing to the development of the technology used in driverless cars.",
                     "wiki": null,
-                    "last_flight": "2022-08-04T13:56:07Z",
+                    "last_flight": "2025-10-08T13:40:27Z",
                     "first_flight": "2022-08-04T13:56:07Z",
                     "social_media_links": []
                   }
@@ -1811,18 +1815,18 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 36,
-              "consecutive_successful_launches": 13,
-              "successful_launches": 35,
+              "total_launch_count": 37,
+              "consecutive_successful_launches": 14,
+              "successful_launches": 36,
               "failed_launches": 1,
-              "pending_launches": 6,
-              "consecutive_successful_landings": 7,
-              "successful_landings": 33,
+              "pending_launches": 5,
+              "consecutive_successful_landings": 8,
+              "successful_landings": 34,
               "failed_landings": 3,
-              "attempted_landings": 36,
-              "successful_landings_spacecraft": 35,
+              "attempted_landings": 37,
+              "successful_landings_spacecraft": 36,
               "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 35,
+              "attempted_landings_spacecraft": 36,
               "successful_landings_payload": 0,
               "failed_landings_payload": 0,
               "attempted_landings_payload": 0,
@@ -1930,9 +1934,9 @@
             "nationality_name_composed": "Americano"
           },
           "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_90_20200803143233.jpg",
-          "total_launch_count": 35,
+          "total_launch_count": 36,
           "orbital_launch_attempt_count": 0,
-          "fastest_turnaround": "P20DT23H49M11S",
+          "fastest_turnaround": "P20DT40M27S",
           "location": {
             "response_mode": "normal",
             "id": 29,
@@ -2004,11 +2008,11 @@
             "longitude": -104.757152,
             "latitude": 31.422927,
             "timezone_name": "America/Chicago",
-            "total_launch_count": 35,
-            "total_landing_count": 35
+            "total_launch_count": 36,
+            "total_landing_count": 36
           }
         },
-        "webcast_live": true,
+        "webcast_live": false,
         "program": [],
         "orbital_launch_attempt_count": null,
         "location_launch_attempt_count": 36,
@@ -2020,6 +2024,22 @@
         "agency_launch_attempt_count_year": 9,
         "flightclub_url": null,
         "updates": [
+          {
+            "id": 12516,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Mission complete.",
+            "info_url": "https://www.youtube.com/watch?v=i4TG9F5-3uY",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-08T14:09:00Z"
+          },
+          {
+            "id": 12515,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Liftoff.",
+            "info_url": "https://www.youtube.com/watch?v=i4TG9F5-3uY",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-08T13:41:00Z"
+          },
           {
             "id": 12514,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -2059,9 +2079,9 @@
             "priority": 10,
             "source": "youtube.com",
             "publisher": "Blue Origin",
-            "title": "New Shepard Mission NS-36 Webcast",
-            "description": "Blue Origin’s 36th New Shepard flight and 15th crewed mission will liftoff from Launch Site One in West Texas on Wednesday, October 8. \n \nLearn more: https://www.blueorigin.com/news/new-shepard-ns-36-...",
-            "feature_image": "https://i.ytimg.com/vi/i4TG9F5-3uY/maxresdefault_live.jpg",
+            "title": "Replay: New Shepard Mission NS-36 Webcast",
+            "description": "On October 8, Blue Origin successfully completed its 36th New Shepard mission and 15th human flight from Launch Site One in West Texas. The crew included: Jeff Elgin, Danna Karagussova, Clint Kelly II...",
+            "feature_image": "https://i.ytimg.com/vi/i4TG9F5-3uY/maxresdefault.jpg",
             "url": "https://www.youtube.com/watch?v=i4TG9F5-3uY",
             "type": {
               "id": 1,
@@ -2073,12 +2093,12 @@
               "code": "en"
             },
             "start_time": "2025-10-08T12:55:42Z",
-            "end_time": null,
-            "live": true
+            "end_time": "2025-10-08T14:14:14Z",
+            "live": false
           }
         ],
         "timeline": [],
-        "pad_turnaround": "P20DT40M",
+        "pad_turnaround": "P20DT40M27S",
         "mission_patches": [
           {
             "id": 1189,
