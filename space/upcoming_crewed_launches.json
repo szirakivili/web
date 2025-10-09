@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-08T14:39:21Z",
+  "fetched_at": "2025-10-09T02:07:53Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=true&format=json&mode=detailed&limit=10",
   "payload": {
     "count": 5,
@@ -397,8 +397,8 @@
                     "single_use": true,
                     "variants": []
                   },
-                  "successful_landings": 30,
-                  "attempted_landings": 32,
+                  "successful_landings": 31,
+                  "attempted_landings": 33,
                   "failed_landings": 2,
                   "celestial_body": {
                     "response_mode": "normal",
@@ -648,11 +648,11 @@
                       "parent": null,
                       "maiden_flight": "2015-04-29",
                       "spacecraft_flown": 4,
-                      "total_launch_count": 35,
-                      "successful_launches": 34,
+                      "total_launch_count": 36,
+                      "successful_launches": 35,
                       "failed_launches": 1,
-                      "attempted_landings": 35,
-                      "successful_landings": 35,
+                      "attempted_landings": 36,
+                      "successful_landings": 36,
                       "failed_landings": 0
                     }
                   ],
@@ -686,11 +686,11 @@
                   "wiki_link": "",
                   "info_link": "",
                   "spacecraft_flown": 3,
-                  "total_launch_count": 29,
-                  "successful_launches": 28,
+                  "total_launch_count": 30,
+                  "successful_launches": 29,
                   "failed_launches": 1,
-                  "attempted_landings": 29,
-                  "successful_landings": 29,
+                  "attempted_landings": 30,
+                  "successful_landings": 30,
                   "failed_landings": 0,
                   "fastest_turnaround": "P59DT1M42S"
                 },
@@ -763,8 +763,8 @@
                     "single_use": true,
                     "variants": []
                   },
-                  "successful_landings": 38,
-                  "attempted_landings": 38,
+                  "successful_landings": 39,
+                  "attempted_landings": 39,
                   "failed_landings": 0,
                   "celestial_body": {
                     "response_mode": "normal",
@@ -805,8 +805,8 @@
                   "description": "Unpowered landing using parachute(s)."
                 }
               },
-              "duration": null,
-              "turn_around_time": null,
+              "duration": "PT10M21S",
+              "turn_around_time": "P66DT47M59S",
               "response_mode": "detailed",
               "launch_crew": [
                 {
@@ -1190,6 +1190,100 @@
                           "logo": null
                         },
                         "url": "http://www.ostrovskyi.org.ua/"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": 5159,
+                  "role": {
+                    "id": 28,
+                    "role": "Tourist",
+                    "priority": 7
+                  },
+                  "astronaut": {
+                    "id": 863,
+                    "url": "https://ll.thespacedevs.com/2.3.0/astronauts/863/?format=json",
+                    "name": "William H. Lewis",
+                    "status": {
+                      "id": 14,
+                      "name": "Occasional Spaceflight"
+                    },
+                    "agency": {
+                      "response_mode": "list",
+                      "id": 141,
+                      "url": "https://ll.thespacedevs.com/2.3.0/agencies/141/?format=json",
+                      "name": "Blue Origin",
+                      "abbrev": "BO",
+                      "type": {
+                        "id": 3,
+                        "name": "Commercial"
+                      }
+                    },
+                    "image": {
+                      "id": 2489,
+                      "name": "William H. Lewis in flight suit",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/william_h._lewi_image_20251008160150.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/william_h._lewi_image_thumbnail_20251008160151.jpeg",
+                      "credit": "Blue Origin",
+                      "license": {
+                        "id": 37,
+                        "name": "Blue Origin Terms of Use",
+                        "priority": 6,
+                        "link": "https://www.blueorigin.com/terms-of-use"
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "response_mode": "list",
+                    "type": {
+                      "id": 3,
+                      "name": "Private"
+                    },
+                    "in_space": false,
+                    "time_in_space": "PT10M21S",
+                    "eva_time": "P0D",
+                    "age": null,
+                    "date_of_birth": null,
+                    "date_of_death": null,
+                    "nationality": [
+                      {
+                        "id": 2,
+                        "name": "United States of America",
+                        "alpha_2_code": "US",
+                        "alpha_3_code": "USA",
+                        "nationality_name": "American",
+                        "nationality_name_composed": "Americano"
+                      }
+                    ],
+                    "bio": "Insmed CEO at the time of his flight on Blue Origin's NS-36 suborbital mission.",
+                    "wiki": null,
+                    "last_flight": "2025-10-08T13:40:27Z",
+                    "first_flight": "2025-10-08T13:40:27Z",
+                    "social_media_links": [
+                      {
+                        "id": 323,
+                        "social_media": {
+                          "id": 4,
+                          "name": "LinkedIn",
+                          "url": "https://www.linkedin.com/",
+                          "logo": {
+                            "id": 2321,
+                            "name": "LinkedIn logo",
+                            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_20250211191111.png",
+                            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_thumbnail_20250211191112.png",
+                            "credit": "LinkedIn",
+                            "license": {
+                              "id": 1,
+                              "name": "Unknown",
+                              "priority": 9,
+                              "link": null
+                            },
+                            "single_use": true,
+                            "variants": []
+                          }
+                        },
+                        "url": "https://www.linkedin.com/in/will-lewis-aa89161a8/"
                       }
                     ]
                   }
@@ -1652,6 +1746,100 @@
                   }
                 },
                 {
+                  "id": 5160,
+                  "role": {
+                    "id": 28,
+                    "role": "Tourist",
+                    "priority": 7
+                  },
+                  "astronaut": {
+                    "id": 863,
+                    "url": "https://ll.thespacedevs.com/2.3.0/astronauts/863/?format=json",
+                    "name": "William H. Lewis",
+                    "status": {
+                      "id": 14,
+                      "name": "Occasional Spaceflight"
+                    },
+                    "agency": {
+                      "response_mode": "list",
+                      "id": 141,
+                      "url": "https://ll.thespacedevs.com/2.3.0/agencies/141/?format=json",
+                      "name": "Blue Origin",
+                      "abbrev": "BO",
+                      "type": {
+                        "id": 3,
+                        "name": "Commercial"
+                      }
+                    },
+                    "image": {
+                      "id": 2489,
+                      "name": "William H. Lewis in flight suit",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/william_h._lewi_image_20251008160150.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/william_h._lewi_image_thumbnail_20251008160151.jpeg",
+                      "credit": "Blue Origin",
+                      "license": {
+                        "id": 37,
+                        "name": "Blue Origin Terms of Use",
+                        "priority": 6,
+                        "link": "https://www.blueorigin.com/terms-of-use"
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "response_mode": "list",
+                    "type": {
+                      "id": 3,
+                      "name": "Private"
+                    },
+                    "in_space": false,
+                    "time_in_space": "PT10M21S",
+                    "eva_time": "P0D",
+                    "age": null,
+                    "date_of_birth": null,
+                    "date_of_death": null,
+                    "nationality": [
+                      {
+                        "id": 2,
+                        "name": "United States of America",
+                        "alpha_2_code": "US",
+                        "alpha_3_code": "USA",
+                        "nationality_name": "American",
+                        "nationality_name_composed": "Americano"
+                      }
+                    ],
+                    "bio": "Insmed CEO at the time of his flight on Blue Origin's NS-36 suborbital mission.",
+                    "wiki": null,
+                    "last_flight": "2025-10-08T13:40:27Z",
+                    "first_flight": "2025-10-08T13:40:27Z",
+                    "social_media_links": [
+                      {
+                        "id": 323,
+                        "social_media": {
+                          "id": 4,
+                          "name": "LinkedIn",
+                          "url": "https://www.linkedin.com/",
+                          "logo": {
+                            "id": 2321,
+                            "name": "LinkedIn logo",
+                            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_20250211191111.png",
+                            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_thumbnail_20250211191112.png",
+                            "credit": "LinkedIn",
+                            "license": {
+                              "id": 1,
+                              "name": "Unknown",
+                              "priority": 9,
+                              "link": null
+                            },
+                            "single_use": true,
+                            "variants": []
+                          }
+                        },
+                        "url": "https://www.linkedin.com/in/will-lewis-aa89161a8/"
+                      }
+                    ]
+                  }
+                },
+                {
                   "id": 5156,
                   "role": {
                     "id": 28,
@@ -1972,11 +2160,11 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7292,
-              "successful_launches": 6745,
+              "total_attempted_launches": 7294,
+              "successful_launches": 6747,
               "failed_launches": 547,
-              "total_attempted_landings": 1194,
-              "successful_landings": 1149,
+              "total_attempted_landings": 1197,
+              "successful_landings": 1152,
               "failed_landings": 45
             },
             "active": true,
@@ -3510,11 +3698,11 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7292,
-              "successful_launches": 6745,
+              "total_attempted_launches": 7294,
+              "successful_launches": 6747,
               "failed_launches": 547,
-              "total_attempted_landings": 1194,
-              "successful_landings": 1149,
+              "total_attempted_landings": 1197,
+              "successful_landings": 1152,
               "failed_landings": 45
             },
             "active": true,
@@ -3696,11 +3884,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7099,
+        "orbital_launch_attempt_count": 7100,
         "location_launch_attempt_count": 1559,
         "pad_launch_attempt_count": 426,
         "agency_launch_attempt_count": 336,
-        "orbital_launch_attempt_count_year": 250,
+        "orbital_launch_attempt_count_year": 251,
         "location_launch_attempt_count_year": 6,
         "pad_launch_attempt_count_year": 6,
         "agency_launch_attempt_count_year": 7,
@@ -5378,11 +5566,11 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7292,
-              "successful_launches": 6745,
+              "total_attempted_launches": 7294,
+              "successful_launches": 6747,
               "failed_launches": 547,
-              "total_attempted_landings": 1194,
-              "successful_landings": 1149,
+              "total_attempted_landings": 1197,
+              "successful_landings": 1152,
               "failed_landings": 45
             },
             "active": true,
@@ -5465,7 +5653,7 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7175,
+        "orbital_launch_attempt_count": 7172,
         "location_launch_attempt_count": 275,
         "pad_launch_attempt_count": 59,
         "agency_launch_attempt_count": 142,
@@ -6689,7 +6877,7 @@
                       "name": "Government"
                     },
                     "in_space": true,
-                    "time_in_space": "P449DT1H13M31S",
+                    "time_in_space": "P450DT1H10M25S",
                     "eva_time": "P2DT36M",
                     "age": 58,
                     "date_of_birth": "1967-03-14",
@@ -7091,7 +7279,7 @@
                       "name": "Government"
                     },
                     "in_space": true,
-                    "time_in_space": "P449DT1H13M31S",
+                    "time_in_space": "P450DT1H10M25S",
                     "eva_time": "P2DT36M",
                     "age": 58,
                     "date_of_birth": "1967-03-14",
@@ -7425,11 +7613,11 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7292,
-              "successful_launches": 6745,
+              "total_attempted_launches": 7294,
+              "successful_launches": 6747,
               "failed_launches": 547,
-              "total_attempted_landings": 1194,
-              "successful_landings": 1149,
+              "total_attempted_landings": 1197,
+              "successful_landings": 1152,
               "failed_landings": 45
             },
             "active": true,
@@ -7622,7 +7810,7 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7190,
+        "orbital_launch_attempt_count": 7187,
         "location_launch_attempt_count": 1086,
         "pad_launch_attempt_count": 128,
         "agency_launch_attempt_count": 178,
@@ -9196,11 +9384,11 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7292,
-              "successful_launches": 6745,
+              "total_attempted_launches": 7294,
+              "successful_launches": 6747,
               "failed_launches": 547,
-              "total_attempted_landings": 1194,
-              "successful_landings": 1149,
+              "total_attempted_landings": 1197,
+              "successful_landings": 1152,
               "failed_landings": 45
             },
             "active": true,
@@ -9382,7 +9570,7 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7207,
+        "orbital_launch_attempt_count": 7204,
         "location_launch_attempt_count": 1563,
         "pad_launch_attempt_count": 428,
         "agency_launch_attempt_count": 340,
