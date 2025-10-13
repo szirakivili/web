@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-13T21:21:49Z",
+  "fetched_at": "2025-10-13T22:22:55Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 348,
@@ -764,12 +764,12 @@
         "slug": "starship-flight-11",
         "launch_designator": null,
         "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
+          "id": 5,
+          "name": "On Hold",
+          "abbrev": "Hold",
+          "description": "The countdown has been paused, but the launch can still happen within the launch window."
         },
-        "last_updated": "2025-10-13T20:23:56Z",
+        "last_updated": "2025-10-13T22:17:33Z",
         "net": "2025-10-13T23:15:00Z",
         "net_precision": {
           "id": 1,
@@ -1995,6 +1995,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=41068e09-4097-448f-ac7c-421c19b6aab9",
         "updates": [
           {
+            "id": 12551,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Holding at T-1 hour.",
+            "info_url": "https://www.spacex.com/launches/starship-flight-11",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-13T22:17:00Z"
+          },
+          {
             "id": 12546,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Updated launch weather, 80% GO.",
@@ -2101,9 +2109,9 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-10-13T21:15:00Z",
+            "start_time": "2025-10-13T21:16:59Z",
             "end_time": null,
-            "live": false
+            "live": true
           },
           {
             "priority": 9,
@@ -2462,7 +2470,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-10-12T18:06:51Z",
+        "last_updated": "2025-10-13T21:38:53Z",
         "net": "2025-10-14T00:08:00Z",
         "net_precision": {
           "id": 1,
@@ -3608,11 +3616,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7082,
+        "orbital_launch_attempt_count": 7083,
         "location_launch_attempt_count": 1058,
         "pad_launch_attempt_count": 339,
         "agency_launch_attempt_count": 582,
-        "orbital_launch_attempt_count_year": 233,
+        "orbital_launch_attempt_count_year": 234,
         "location_launch_attempt_count_year": 64,
         "pad_launch_attempt_count_year": 59,
         "agency_launch_attempt_count_year": 133,
@@ -3813,13 +3821,13 @@
             "live": false
           },
           {
-            "priority": 9,
-            "source": "youtube.com",
-            "publisher": "NASASpaceflight",
-            "title": "SpaceX Launches Project Kuiper (KF-03)",
-            "description": "SpaceX launch of a batch of Kuiper satellites for Amazon's high-speed low earth orbit internet satellite constellation.\n\nProject Kuiper is a mega constellation of satellites in Low Earth Orbit that wi...",
-            "feature_image": "https://i.ytimg.com/vi/6bKySs0EewI/maxresdefault_live.jpg",
-            "url": "https://www.youtube.com/watch?v=6bKySs0EewI",
+            "priority": 8,
+            "source": null,
+            "publisher": "Spaceflight Now",
+            "title": "Watch live: SpaceX Falcon 9 rocket launches 24 satellites for Amazon's Project Kuiper constellation",
+            "description": "Watch live coverage as SpaceX launches a Falcon 9 rocket with a batch of 24 satellites for Amazon's Project Kuiper broadband internet service, a rival to the Starlink network. Liftoff from Space Launc...",
+            "feature_image": "https://i.ytimg.com/vi/W59LJoet1sY/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=W59LJoet1sY",
             "type": {
               "id": 3,
               "name": "Unofficial Webcast"
@@ -3829,7 +3837,7 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-10-13T22:30:00Z",
+            "start_time": "2025-10-13T23:08:00Z",
             "end_time": null,
             "live": false
           },
