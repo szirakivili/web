@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-13T14:27:19Z",
+  "fetched_at": "2025-10-13T15:26:04Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 347,
@@ -41,7 +41,7 @@
             "priority": 9,
             "link": null
           },
-          "single_use": true,
+          "single_use": false,
           "variants": []
         },
         "infographic": null,
@@ -144,8 +144,8 @@
           "id": 8696,
           "configuration": {
             "response_mode": "detailed",
-            "id": 464,
-            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/464/?format=json",
+            "id": 527,
+            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/527/?format=json",
             "name": "Starship",
             "families": [
               {
@@ -260,8 +260,8 @@
                 "consecutive_successful_landings": 1
               }
             ],
-            "full_name": "Starship",
-            "variant": "",
+            "full_name": "Starship V2",
+            "variant": "V2",
             "active": true,
             "is_placeholder": false,
             "manufacturer": {
@@ -403,47 +403,47 @@
             ],
             "reusable": true,
             "image": {
-              "id": 1997,
-              "name": "Starship liftoff (IFT-3)",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_liftof_image_20240314160301.jpg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_liftof_image_thumbnail_20240314160301.jpeg",
-              "credit": "Elon Musk",
+              "id": 2301,
+              "name": "Starship on the launch pad during WDR (Flight 7)",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_on_the_image_20250111100520.jpg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_on_the_image_thumbnail_20250111100521.jpeg",
+              "credit": "SpaceX",
               "license": {
-                "id": 5,
-                "name": "CC BY-NC 2.0",
-                "priority": 1,
-                "link": "https://creativecommons.org/licenses/by-nc/2.0/"
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
               },
-              "single_use": true,
+              "single_use": false,
               "variants": []
             },
-            "info_url": "https://www.spacex.com/vehicles/starship/index.html",
+            "info_url": "https://www.spacex.com/vehicles/starship",
             "wiki_url": "https://en.wikipedia.org/wiki/SpaceX_Starship",
-            "description": "Fully reusable two-stage super heavy-lift launch vehicle.",
+            "description": "Second development version of the Starship reusable two-stage super heavy-lift launch vehicle.",
             "alias": "",
             "min_stage": 2,
             "max_stage": 2,
-            "length": 120.0,
+            "length": 123.3,
             "diameter": 9.0,
-            "maiden_flight": "2023-04-20",
+            "maiden_flight": "2025-01-16",
             "launch_cost": null,
             "launch_mass": 5000.0,
-            "leo_capacity": 100000.0,
-            "gto_capacity": 21000.0,
+            "leo_capacity": 35000.0,
+            "gto_capacity": null,
             "geo_capacity": null,
             "sso_capacity": null,
-            "to_thrust": 72000.0,
+            "to_thrust": 73550.0,
             "apogee": null,
-            "total_launch_count": 10,
+            "total_launch_count": 4,
             "consecutive_successful_launches": 1,
-            "successful_launches": 5,
-            "failed_launches": 5,
-            "pending_launches": 3,
-            "attempted_landings": 9,
-            "successful_landings": 5,
-            "failed_landings": 4,
+            "successful_launches": 1,
+            "failed_launches": 3,
+            "pending_launches": 1,
+            "attempted_landings": 4,
+            "successful_landings": 3,
+            "failed_landings": 1,
             "consecutive_successful_landings": 1,
-            "fastest_turnaround": "P37DT9H35M"
+            "fastest_turnaround": "P49DT53M"
           },
           "launcher_stage": [
             {
