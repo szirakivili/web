@@ -1,8 +1,8 @@
 {
-  "fetched_at": "2025-10-14T17:21:07Z",
+  "fetched_at": "2025-10-14T18:36:34Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
-    "count": 349,
+    "count": 351,
     "next": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?format=json&is_crewed=false&limit=30&mode=detailed&offset=30",
     "previous": null,
     "results": [
@@ -3382,12 +3382,12 @@
         "slug": "electron-owl-new-world-strix-launch-7",
         "launch_designator": null,
         "status": {
-          "id": 6,
-          "name": "Launch in Flight",
-          "abbrev": "In Flight",
-          "description": "The launch vehicle has lifted off from the launchpad."
+          "id": 9,
+          "name": "Payload Deployed",
+          "abbrev": "Deployed",
+          "description": "Deployment of the payload(s) has been confirmed."
         },
-        "last_updated": "2025-10-14T16:34:01Z",
+        "last_updated": "2025-10-14T17:26:35Z",
         "net": "2025-10-14T16:33:00Z",
         "net_precision": {
           "id": 1,
@@ -3963,7 +3963,7 @@
             "total_landing_count": 17
           }
         },
-        "webcast_live": true,
+        "webcast_live": false,
         "program": [],
         "orbital_launch_attempt_count": 7084,
         "location_launch_attempt_count": 65,
@@ -3975,6 +3975,14 @@
         "agency_launch_attempt_count_year": 15,
         "flightclub_url": null,
         "updates": [
+          {
+            "id": 12571,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Spacecraft separation.",
+            "info_url": "https://www.youtube.com/watch?v=gkvby1Prnjs",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-14T17:26:00Z"
+          },
           {
             "id": 12568,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -4042,7 +4050,7 @@
             "publisher": "Rocket Lab",
             "title": "Rocket Lab - 'Owl New World'",
             "description": "",
-            "feature_image": "https://i.ytimg.com/vi/gkvby1Prnjs/maxresdefault_live.jpg",
+            "feature_image": "https://i.ytimg.com/vi/gkvby1Prnjs/maxresdefault.jpg",
             "url": "https://www.youtube.com/watch?v=gkvby1Prnjs",
             "type": {
               "id": 1,
@@ -4054,8 +4062,8 @@
               "code": "en"
             },
             "start_time": "2025-10-14T16:10:36Z",
-            "end_time": null,
-            "live": true
+            "end_time": "2025-10-14T17:25:07Z",
+            "live": false
           }
         ],
         "timeline": [
@@ -5493,7 +5501,7 @@
           "consecutive_successful_launches": 88,
           "successful_launches": 532,
           "failed_launches": 14,
-          "pending_launches": 5,
+          "pending_launches": 6,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -5597,7 +5605,7 @@
                     "consecutive_successful_launches": 88,
                     "successful_launches": 532,
                     "failed_launches": 14,
-                    "pending_launches": 5,
+                    "pending_launches": 6,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -5708,7 +5716,7 @@
                     "consecutive_successful_launches": 88,
                     "successful_launches": 532,
                     "failed_launches": 14,
-                    "pending_launches": 5,
+                    "pending_launches": 6,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -5899,7 +5907,7 @@
               "consecutive_successful_launches": 88,
               "successful_launches": 532,
               "failed_launches": 14,
-              "pending_launches": 5,
+              "pending_launches": 6,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -7701,6 +7709,756 @@
         ]
       },
       {
+        "id": "de2af90a-ec7d-4933-ab19-ae982509e85a",
+        "url": "https://ll.thespacedevs.com/2.3.0/launches/de2af90a-ec7d-4933-ab19-ae982509e85a/?format=json",
+        "name": "Long March 6A | Unknown Payload",
+        "response_mode": "detailed",
+        "slug": "long-march-6a-unknown-payload",
+        "launch_designator": null,
+        "status": {
+          "id": 1,
+          "name": "Go for Launch",
+          "abbrev": "Go",
+          "description": "Current T-0 confirmed by official or reliable sources."
+        },
+        "last_updated": "2025-10-14T17:35:02Z",
+        "net": "2025-10-17T07:09:00Z",
+        "net_precision": {
+          "id": 2,
+          "name": "Hour",
+          "abbrev": "HR",
+          "description": "The T-0 is accurate to the hour."
+        },
+        "window_end": "2025-10-17T07:19:00Z",
+        "window_start": "2025-10-17T06:59:00Z",
+        "image": {
+          "id": 2450,
+          "name": "Long March 6A | SatNet LEO Group 05 launch",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/long_march_6a__image_20250906195620.jpg",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/long_march_6a__image_thumbnail_20250906195620.jpeg",
+          "credit": "CCTV",
+          "license": {
+            "id": 1,
+            "name": "Unknown",
+            "priority": 9,
+            "link": null
+          },
+          "single_use": false,
+          "variants": []
+        },
+        "infographic": null,
+        "probability": null,
+        "weather_concerns": null,
+        "failreason": "",
+        "hashtag": null,
+        "launch_service_provider": {
+          "response_mode": "normal",
+          "id": 88,
+          "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
+          "name": "China Aerospace Science and Technology Corporation",
+          "abbrev": "CASC",
+          "type": {
+            "id": 1,
+            "name": "Government"
+          },
+          "featured": true,
+          "country": [
+            {
+              "id": 6,
+              "name": "China",
+              "alpha_2_code": "CN",
+              "alpha_3_code": "CHN",
+              "nationality_name": "Chinese",
+              "nationality_name_composed": "Sino"
+            }
+          ],
+          "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
+          "administrator": "Chairman & President: Lei Fanpei",
+          "founding_year": 1999,
+          "launchers": "Long March",
+          "spacecraft": "",
+          "parent": null,
+          "image": {
+            "id": 8,
+            "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "logo": {
+            "id": 124,
+            "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "social_logo": {
+            "id": 50,
+            "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "total_launch_count": 546,
+          "consecutive_successful_launches": 88,
+          "successful_launches": 532,
+          "failed_launches": 14,
+          "pending_launches": 6,
+          "consecutive_successful_landings": 0,
+          "successful_landings": 0,
+          "failed_landings": 0,
+          "attempted_landings": 0,
+          "successful_landings_spacecraft": 3,
+          "failed_landings_spacecraft": 0,
+          "attempted_landings_spacecraft": 3,
+          "successful_landings_payload": 2,
+          "failed_landings_payload": 0,
+          "attempted_landings_payload": 2,
+          "info_url": "https://english.spacechina.com/",
+          "wiki_url": "https://en.wikipedia.org/wiki/China_Aerospace_Science_and_Technology_Corporation",
+          "social_media_links": []
+        },
+        "rocket": {
+          "id": 8769,
+          "configuration": {
+            "response_mode": "detailed",
+            "id": 478,
+            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/478/?format=json",
+            "name": "Long March 6A",
+            "families": [
+              {
+                "response_mode": "detailed",
+                "id": 106,
+                "name": "Long March",
+                "manufacturer": [
+                  {
+                    "response_mode": "normal",
+                    "id": 88,
+                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
+                    "name": "China Aerospace Science and Technology Corporation",
+                    "abbrev": "CASC",
+                    "type": {
+                      "id": 1,
+                      "name": "Government"
+                    },
+                    "featured": true,
+                    "country": [
+                      {
+                        "id": 6,
+                        "name": "China",
+                        "alpha_2_code": "CN",
+                        "alpha_3_code": "CHN",
+                        "nationality_name": "Chinese",
+                        "nationality_name_composed": "Sino"
+                      }
+                    ],
+                    "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
+                    "administrator": "Chairman & President: Lei Fanpei",
+                    "founding_year": 1999,
+                    "launchers": "Long March",
+                    "spacecraft": "",
+                    "parent": null,
+                    "image": {
+                      "id": 8,
+                      "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "logo": {
+                      "id": 124,
+                      "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "social_logo": {
+                      "id": 50,
+                      "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "total_launch_count": 546,
+                    "consecutive_successful_launches": 88,
+                    "successful_launches": 532,
+                    "failed_launches": 14,
+                    "pending_launches": 6,
+                    "consecutive_successful_landings": 0,
+                    "successful_landings": 0,
+                    "failed_landings": 0,
+                    "attempted_landings": 0,
+                    "successful_landings_spacecraft": 3,
+                    "failed_landings_spacecraft": 0,
+                    "attempted_landings_spacecraft": 3,
+                    "successful_landings_payload": 2,
+                    "failed_landings_payload": 0,
+                    "attempted_landings_payload": 2,
+                    "info_url": "https://english.spacechina.com/",
+                    "wiki_url": "https://en.wikipedia.org/wiki/China_Aerospace_Science_and_Technology_Corporation",
+                    "social_media_links": []
+                  }
+                ],
+                "parent": null,
+                "description": "",
+                "active": true,
+                "maiden_flight": "1970-04-24",
+                "total_launch_count": 599,
+                "consecutive_successful_launches": 88,
+                "successful_launches": 581,
+                "failed_launches": 18,
+                "pending_launches": 5,
+                "attempted_landings": 0,
+                "successful_landings": 0,
+                "failed_landings": 0,
+                "consecutive_successful_landings": 0
+              },
+              {
+                "response_mode": "detailed",
+                "id": 113,
+                "name": "Long March 6",
+                "manufacturer": [
+                  {
+                    "response_mode": "normal",
+                    "id": 88,
+                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
+                    "name": "China Aerospace Science and Technology Corporation",
+                    "abbrev": "CASC",
+                    "type": {
+                      "id": 1,
+                      "name": "Government"
+                    },
+                    "featured": true,
+                    "country": [
+                      {
+                        "id": 6,
+                        "name": "China",
+                        "alpha_2_code": "CN",
+                        "alpha_3_code": "CHN",
+                        "nationality_name": "Chinese",
+                        "nationality_name_composed": "Sino"
+                      }
+                    ],
+                    "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
+                    "administrator": "Chairman & President: Lei Fanpei",
+                    "founding_year": 1999,
+                    "launchers": "Long March",
+                    "spacecraft": "",
+                    "parent": null,
+                    "image": {
+                      "id": 8,
+                      "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "logo": {
+                      "id": 124,
+                      "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "social_logo": {
+                      "id": 50,
+                      "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "total_launch_count": 546,
+                    "consecutive_successful_launches": 88,
+                    "successful_launches": 532,
+                    "failed_launches": 14,
+                    "pending_launches": 6,
+                    "consecutive_successful_landings": 0,
+                    "successful_landings": 0,
+                    "failed_landings": 0,
+                    "attempted_landings": 0,
+                    "successful_landings_spacecraft": 3,
+                    "failed_landings_spacecraft": 0,
+                    "attempted_landings_spacecraft": 3,
+                    "successful_landings_payload": 2,
+                    "failed_landings_payload": 0,
+                    "attempted_landings_payload": 2,
+                    "info_url": "https://english.spacechina.com/",
+                    "wiki_url": "https://en.wikipedia.org/wiki/China_Aerospace_Science_and_Technology_Corporation",
+                    "social_media_links": []
+                  }
+                ],
+                "parent": {
+                  "response_mode": "normal",
+                  "id": 106,
+                  "name": "Long March",
+                  "manufacturer": [
+                    {
+                      "response_mode": "normal",
+                      "id": 88,
+                      "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
+                      "name": "China Aerospace Science and Technology Corporation",
+                      "abbrev": "CASC",
+                      "type": {
+                        "id": 1,
+                        "name": "Government"
+                      },
+                      "featured": true,
+                      "country": [
+                        {
+                          "id": 6,
+                          "name": "China",
+                          "alpha_2_code": "CN",
+                          "alpha_3_code": "CHN",
+                          "nationality_name": "Chinese",
+                          "nationality_name_composed": "Sino"
+                        }
+                      ],
+                      "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
+                      "administrator": "Chairman & President: Lei Fanpei",
+                      "founding_year": 1999,
+                      "launchers": "Long March",
+                      "spacecraft": "",
+                      "parent": null,
+                      "image": {
+                        "id": 8,
+                        "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
+                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
+                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
+                        "credit": null,
+                        "license": {
+                          "id": 1,
+                          "name": "Unknown",
+                          "priority": 9,
+                          "link": null
+                        },
+                        "single_use": true,
+                        "variants": []
+                      },
+                      "logo": {
+                        "id": 124,
+                        "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
+                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
+                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
+                        "credit": null,
+                        "license": {
+                          "id": 1,
+                          "name": "Unknown",
+                          "priority": 9,
+                          "link": null
+                        },
+                        "single_use": true,
+                        "variants": []
+                      },
+                      "social_logo": {
+                        "id": 50,
+                        "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
+                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
+                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
+                        "credit": null,
+                        "license": {
+                          "id": 1,
+                          "name": "Unknown",
+                          "priority": 9,
+                          "link": null
+                        },
+                        "single_use": true,
+                        "variants": []
+                      }
+                    }
+                  ],
+                  "parent": null
+                },
+                "description": "",
+                "active": true,
+                "maiden_flight": "2015-09-19",
+                "total_launch_count": 32,
+                "consecutive_successful_launches": 32,
+                "successful_launches": 32,
+                "failed_launches": 0,
+                "pending_launches": 0,
+                "attempted_landings": 0,
+                "successful_landings": 0,
+                "failed_landings": 0,
+                "consecutive_successful_landings": 0
+              }
+            ],
+            "full_name": "Long March 6A",
+            "variant": "",
+            "active": true,
+            "is_placeholder": false,
+            "manufacturer": {
+              "response_mode": "normal",
+              "id": 88,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
+              "name": "China Aerospace Science and Technology Corporation",
+              "abbrev": "CASC",
+              "type": {
+                "id": 1,
+                "name": "Government"
+              },
+              "featured": true,
+              "country": [
+                {
+                  "id": 6,
+                  "name": "China",
+                  "alpha_2_code": "CN",
+                  "alpha_3_code": "CHN",
+                  "nationality_name": "Chinese",
+                  "nationality_name_composed": "Sino"
+                }
+              ],
+              "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
+              "administrator": "Chairman & President: Lei Fanpei",
+              "founding_year": 1999,
+              "launchers": "Long March",
+              "spacecraft": "",
+              "parent": null,
+              "image": {
+                "id": 8,
+                "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "logo": {
+                "id": 124,
+                "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 50,
+                "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 546,
+              "consecutive_successful_launches": 88,
+              "successful_launches": 532,
+              "failed_launches": 14,
+              "pending_launches": 6,
+              "consecutive_successful_landings": 0,
+              "successful_landings": 0,
+              "failed_landings": 0,
+              "attempted_landings": 0,
+              "successful_landings_spacecraft": 3,
+              "failed_landings_spacecraft": 0,
+              "attempted_landings_spacecraft": 3,
+              "successful_landings_payload": 2,
+              "failed_landings_payload": 0,
+              "attempted_landings_payload": 2,
+              "info_url": "https://english.spacechina.com/",
+              "wiki_url": "https://en.wikipedia.org/wiki/China_Aerospace_Science_and_Technology_Corporation",
+              "social_media_links": []
+            },
+            "program": [],
+            "reusable": false,
+            "image": {
+              "id": 2450,
+              "name": "Long March 6A | SatNet LEO Group 05 launch",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/long_march_6a__image_20250906195620.jpg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/long_march_6a__image_thumbnail_20250906195620.jpeg",
+              "credit": "CCTV",
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": false,
+              "variants": []
+            },
+            "info_url": null,
+            "wiki_url": "https://en.wikipedia.org/wiki/Long_March_6",
+            "description": "The Long March 6A is a Chinese launch vehicle of the Long March family, which was developed by the China Aerospace Science and Technology Corporation (CASC) and the Shanghai Academy of Spaceflight Technology (SAST). The vehicle is a further development of the Long March 6, with 2 YF-100 engines on the first stage as opposed to 1 on the Long March 6, augmented by 4 solid rocket boosters. The Long March 6A is China's first rocket with solid rocket boosters. The maiden launch of the Long March 6A took place 29 March 2022, successfully reaching orbit. It was also the first launch from the newly built launch complex 9A in Taiyuan.",
+            "alias": "",
+            "min_stage": 1,
+            "max_stage": 2,
+            "length": 50.0,
+            "diameter": 3.35,
+            "maiden_flight": "2022-03-29",
+            "launch_cost": null,
+            "launch_mass": 530.0,
+            "leo_capacity": null,
+            "gto_capacity": null,
+            "geo_capacity": null,
+            "sso_capacity": 6400.0,
+            "to_thrust": 7230.0,
+            "apogee": null,
+            "total_launch_count": 17,
+            "consecutive_successful_launches": 17,
+            "successful_launches": 17,
+            "failed_launches": 0,
+            "pending_launches": 1,
+            "attempted_landings": 0,
+            "successful_landings": 0,
+            "failed_landings": 0,
+            "consecutive_successful_landings": 0,
+            "fastest_turnaround": "P20DT2H19M"
+          },
+          "launcher_stage": [],
+          "spacecraft_stage": [],
+          "payloads": []
+        },
+        "mission": {
+          "id": 7360,
+          "name": "Unknown Payload",
+          "type": "Unknown",
+          "description": "Details TBD.",
+          "image": null,
+          "orbit": {
+            "id": 25,
+            "name": "Unknown",
+            "abbrev": "N/A",
+            "celestial_body": {
+              "response_mode": "list",
+              "id": 1,
+              "name": "Earth"
+            }
+          },
+          "agencies": [],
+          "info_urls": [],
+          "vid_urls": []
+        },
+        "pad": {
+          "id": 200,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/200/?format=json",
+          "active": true,
+          "agencies": [],
+          "name": "Launch Complex 9A",
+          "image": {
+            "id": 2090,
+            "name": "CZ-6C liftoff from LC-9A (Maiden Flight)",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/cz-6c_liftoff__image_20240507065634.jpg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/cz-6c_liftoff__image_thumbnail_20240507065635.jpeg",
+            "credit": "中国之声",
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": false,
+            "variants": []
+          },
+          "description": "",
+          "info_url": null,
+          "wiki_url": null,
+          "map_url": "https://www.google.com/maps?q=38.8583,111.5802",
+          "latitude": 38.8583,
+          "longitude": 111.5802,
+          "country": {
+            "id": 6,
+            "name": "China",
+            "alpha_2_code": "CN",
+            "alpha_3_code": "CHN",
+            "nationality_name": "Chinese",
+            "nationality_name_composed": "Sino"
+          },
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_launch_complex_9a_20220330003717.jpg",
+          "total_launch_count": 18,
+          "orbital_launch_attempt_count": 18,
+          "fastest_turnaround": "P20DT2H19M",
+          "location": {
+            "response_mode": "normal",
+            "id": 19,
+            "url": "https://ll.thespacedevs.com/2.3.0/locations/19/?format=json",
+            "name": "Taiyuan Satellite Launch Center, People's Republic of China",
+            "celestial_body": {
+              "response_mode": "normal",
+              "id": 1,
+              "name": "Earth",
+              "type": {
+                "id": 1,
+                "name": "Planet"
+              },
+              "diameter": 12742000.0,
+              "mass": 5.972168e+24,
+              "gravity": 9.80655,
+              "length_of_day": "1 00:00:00",
+              "atmosphere": true,
+              "image": {
+                "id": 2040,
+                "name": "Earth (Apollo 17)",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
+                "credit": "NASA",
+                "license": {
+                  "id": 4,
+                  "name": "NASA Image and Media Guidelines",
+                  "priority": 0,
+                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
+              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
+              "total_attempted_launches": 7297,
+              "successful_launches": 6749,
+              "failed_launches": 548,
+              "total_attempted_landings": 1198,
+              "successful_landings": 1153,
+              "failed_landings": 45
+            },
+            "active": true,
+            "country": {
+              "id": 6,
+              "name": "China",
+              "alpha_2_code": "CN",
+              "alpha_3_code": "CHN",
+              "nationality_name": "Chinese",
+              "nationality_name_composed": "Sino"
+            },
+            "description": "The Taiyuan Satellite Launch Center is a People's Republic of China space and defense launch facility. It is situated in Kelan County, Xinzhou, Shanxi Province and is the second of four launch sites having been founded in March 1966 and coming into full operation in 1968.",
+            "image": {
+              "id": 1369,
+              "name": "[AUTO] Long March 2D | 6 x Jilin-1, Qilu-2/3 & others - image",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/long2520march_image_20230907134308.jpeg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192538.jpeg",
+              "credit": null,
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": true,
+              "variants": []
+            },
+            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_19_20200803142421.jpg",
+            "longitude": 111.608,
+            "latitude": 38.8491,
+            "timezone_name": "Asia/Shanghai",
+            "total_launch_count": 146,
+            "total_landing_count": 0
+          }
+        },
+        "webcast_live": false,
+        "program": [],
+        "orbital_launch_attempt_count": 7088,
+        "location_launch_attempt_count": 147,
+        "pad_launch_attempt_count": 19,
+        "agency_launch_attempt_count": 548,
+        "orbital_launch_attempt_count_year": 239,
+        "location_launch_attempt_count_year": 10,
+        "pad_launch_attempt_count_year": 9,
+        "agency_launch_attempt_count_year": 47,
+        "flightclub_url": null,
+        "updates": [
+          {
+            "id": 12572,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Adding launch per NOTAMs; Payload and launch vehicle identities uncertain.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2725256#msg2725256",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-14T17:35:00Z"
+          }
+        ],
+        "info_urls": [],
+        "vid_urls": [],
+        "timeline": [],
+        "pad_turnaround": "P19DT18H29M",
+        "mission_patches": []
+      },
+      {
         "id": "0d2920f2-87d9-4c5a-aebe-614d8baae2a2",
         "url": "https://ll.thespacedevs.com/2.3.0/launches/0d2920f2-87d9-4c5a-aebe-614d8baae2a2/?format=json",
         "name": "Falcon 9 Block 5 | Starlink Group 11-19",
@@ -9138,6 +9896,425 @@
             "response_mode": "normal"
           }
         ]
+      },
+      {
+        "id": "c3da74aa-9ebe-48b0-9f37-5134b683c3fe",
+        "url": "https://ll.thespacedevs.com/2.3.0/launches/c3da74aa-9ebe-48b0-9f37-5134b683c3fe/?format=json",
+        "name": "Kinetica 1 | Unknown Payload",
+        "response_mode": "detailed",
+        "slug": "kinetica-1-unknown-payload",
+        "launch_designator": null,
+        "status": {
+          "id": 1,
+          "name": "Go for Launch",
+          "abbrev": "Go",
+          "description": "Current T-0 confirmed by official or reliable sources."
+        },
+        "last_updated": "2025-10-14T17:35:09Z",
+        "net": "2025-10-19T03:30:00Z",
+        "net_precision": {
+          "id": 2,
+          "name": "Hour",
+          "abbrev": "HR",
+          "description": "The T-0 is accurate to the hour."
+        },
+        "window_end": "2025-10-19T03:50:00Z",
+        "window_start": "2025-10-19T03:24:00Z",
+        "image": {
+          "id": 1755,
+          "name": "[AUTO] Kinetica 1 - image",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/zhongke-1a_image_20220912002218.png",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193659.png",
+          "credit": null,
+          "license": {
+            "id": 1,
+            "name": "Unknown",
+            "priority": 9,
+            "link": null
+          },
+          "single_use": true,
+          "variants": []
+        },
+        "infographic": null,
+        "probability": null,
+        "weather_concerns": null,
+        "failreason": "",
+        "hashtag": null,
+        "launch_service_provider": {
+          "response_mode": "normal",
+          "id": 1040,
+          "url": "https://ll.thespacedevs.com/2.3.0/agencies/1040/?format=json",
+          "name": "CAS Space",
+          "abbrev": "CAS",
+          "type": {
+            "id": 3,
+            "name": "Commercial"
+          },
+          "featured": false,
+          "country": [
+            {
+              "id": 6,
+              "name": "China",
+              "alpha_2_code": "CN",
+              "alpha_3_code": "CHN",
+              "nationality_name": "Chinese",
+              "nationality_name_composed": "Sino"
+            }
+          ],
+          "description": "CAS Space is a spin-off company from the Chinese Academy of Sciences (CAS) that is operating and plans to operate various launch vehicles of the Zhongke series.",
+          "administrator": null,
+          "founding_year": 2018,
+          "launchers": "Zhongke",
+          "spacecraft": "",
+          "parent": null,
+          "image": null,
+          "logo": {
+            "id": 122,
+            "name": "[AUTO] CAS Space - logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/cas2520space_logo_20220727081352.png",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184930.png",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "social_logo": {
+            "id": 48,
+            "name": "[AUTO] CAS Space - social_logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/cas2520space_nation_20230604193435.png",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184743.png",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "total_launch_count": 8,
+          "consecutive_successful_launches": 2,
+          "successful_launches": 7,
+          "failed_launches": 1,
+          "pending_launches": 1,
+          "consecutive_successful_landings": 0,
+          "successful_landings": 0,
+          "failed_landings": 0,
+          "attempted_landings": 0,
+          "successful_landings_spacecraft": 0,
+          "failed_landings_spacecraft": 0,
+          "attempted_landings_spacecraft": 0,
+          "successful_landings_payload": 0,
+          "failed_landings_payload": 0,
+          "attempted_landings_payload": 0,
+          "info_url": "https://cas-space.com/",
+          "wiki_url": "https://en.wikipedia.org/wiki/CAS_Space",
+          "social_media_links": []
+        },
+        "rocket": {
+          "id": 8770,
+          "configuration": {
+            "response_mode": "detailed",
+            "id": 483,
+            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/483/?format=json",
+            "name": "Kinetica 1",
+            "families": [],
+            "full_name": "Kinetica 1",
+            "variant": "",
+            "active": true,
+            "is_placeholder": false,
+            "manufacturer": {
+              "response_mode": "normal",
+              "id": 1040,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/1040/?format=json",
+              "name": "CAS Space",
+              "abbrev": "CAS",
+              "type": {
+                "id": 3,
+                "name": "Commercial"
+              },
+              "featured": false,
+              "country": [
+                {
+                  "id": 6,
+                  "name": "China",
+                  "alpha_2_code": "CN",
+                  "alpha_3_code": "CHN",
+                  "nationality_name": "Chinese",
+                  "nationality_name_composed": "Sino"
+                }
+              ],
+              "description": "CAS Space is a spin-off company from the Chinese Academy of Sciences (CAS) that is operating and plans to operate various launch vehicles of the Zhongke series.",
+              "administrator": null,
+              "founding_year": 2018,
+              "launchers": "Zhongke",
+              "spacecraft": "",
+              "parent": null,
+              "image": null,
+              "logo": {
+                "id": 122,
+                "name": "[AUTO] CAS Space - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/cas2520space_logo_20220727081352.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184930.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 48,
+                "name": "[AUTO] CAS Space - social_logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/cas2520space_nation_20230604193435.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184743.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 8,
+              "consecutive_successful_launches": 2,
+              "successful_launches": 7,
+              "failed_launches": 1,
+              "pending_launches": 1,
+              "consecutive_successful_landings": 0,
+              "successful_landings": 0,
+              "failed_landings": 0,
+              "attempted_landings": 0,
+              "successful_landings_spacecraft": 0,
+              "failed_landings_spacecraft": 0,
+              "attempted_landings_spacecraft": 0,
+              "successful_landings_payload": 0,
+              "failed_landings_payload": 0,
+              "attempted_landings_payload": 0,
+              "info_url": "https://cas-space.com/",
+              "wiki_url": "https://en.wikipedia.org/wiki/CAS_Space",
+              "social_media_links": []
+            },
+            "program": [],
+            "reusable": false,
+            "image": {
+              "id": 1755,
+              "name": "[AUTO] Kinetica 1 - image",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/zhongke-1a_image_20220912002218.png",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193659.png",
+              "credit": null,
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": true,
+              "variants": []
+            },
+            "info_url": "https://en.cas-space.com/index/index/technology",
+            "wiki_url": null,
+            "description": "Kinetica 1 (also known as Lijian-1, Chinese: 力箭一号) is a Chinese solid-propellant light launch vehicle. It is capable of placing about 2 tons into low earth orbit and 1.5 tons into sun-synchronous orbit. It is developed by CAS Space, a subsidiary of the Chinese Academy of Sciences. Kinetica 1 is a light launcher whose first stage seems to be derived from the DF-31 long-range intercontinental ballistic missile. It is 30 m high and has a diameter of 2.65 m, with a liftoff mass of 135 t. It's the largest Chinese solid propellant launcher to date, with four stages with a thrust of 200, 100, 50 and 10 tons respectively. The fairing has a diameter of 3.35 meters.",
+            "alias": "",
+            "min_stage": 4,
+            "max_stage": 4,
+            "length": 30.0,
+            "diameter": 2.65,
+            "maiden_flight": "2022-07-27",
+            "launch_cost": null,
+            "launch_mass": 135.0,
+            "leo_capacity": 2000.0,
+            "gto_capacity": null,
+            "geo_capacity": null,
+            "sso_capacity": 1500.0,
+            "to_thrust": 1961.0,
+            "apogee": null,
+            "total_launch_count": 8,
+            "consecutive_successful_launches": 2,
+            "successful_launches": 7,
+            "failed_launches": 1,
+            "pending_launches": 1,
+            "attempted_landings": 0,
+            "successful_landings": 0,
+            "failed_landings": 0,
+            "consecutive_successful_landings": 0,
+            "fastest_turnaround": "P45DT21H31S"
+          },
+          "launcher_stage": [],
+          "spacecraft_stage": [],
+          "payloads": []
+        },
+        "mission": {
+          "id": 7361,
+          "name": "Unknown Payload",
+          "type": "Unknown",
+          "description": "Details TBD.",
+          "image": null,
+          "orbit": {
+            "id": 25,
+            "name": "Unknown",
+            "abbrev": "N/A",
+            "celestial_body": {
+              "response_mode": "list",
+              "id": 1,
+              "name": "Earth"
+            }
+          },
+          "agencies": [],
+          "info_urls": [],
+          "vid_urls": []
+        },
+        "pad": {
+          "id": 151,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/151/?format=json",
+          "active": true,
+          "agencies": [],
+          "name": "Launch Area 130",
+          "image": {
+            "id": 1460,
+            "name": "Kinetica 1 liftoff from LA-130 (Flight 2)",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/kinetica25201_image_20230727064618.jpg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192832.jpeg",
+            "credit": "CAS Space",
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": false,
+            "variants": []
+          },
+          "description": "",
+          "info_url": null,
+          "wiki_url": "https://en.wikipedia.org/wiki/Jiuquan_Satellite_Launch_Center",
+          "map_url": "https://www.google.com/maps?q=40.8182,100.22514",
+          "latitude": 40.8182,
+          "longitude": 100.22514,
+          "country": {
+            "id": 6,
+            "name": "China",
+            "alpha_2_code": "CN",
+            "alpha_3_code": "CHN",
+            "nationality_name": "Chinese",
+            "nationality_name_composed": "Sino"
+          },
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_151_20200803143425.jpg",
+          "total_launch_count": 8,
+          "orbital_launch_attempt_count": 8,
+          "fastest_turnaround": "P45DT21H31S",
+          "location": {
+            "response_mode": "normal",
+            "id": 17,
+            "url": "https://ll.thespacedevs.com/2.3.0/locations/17/?format=json",
+            "name": "Jiuquan Satellite Launch Center, People's Republic of China",
+            "celestial_body": {
+              "response_mode": "normal",
+              "id": 1,
+              "name": "Earth",
+              "type": {
+                "id": 1,
+                "name": "Planet"
+              },
+              "diameter": 12742000.0,
+              "mass": 5.972168e+24,
+              "gravity": 9.80655,
+              "length_of_day": "1 00:00:00",
+              "atmosphere": true,
+              "image": {
+                "id": 2040,
+                "name": "Earth (Apollo 17)",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
+                "credit": "NASA",
+                "license": {
+                  "id": 4,
+                  "name": "NASA Image and Media Guidelines",
+                  "priority": 0,
+                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
+              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
+              "total_attempted_launches": 7297,
+              "successful_launches": 6749,
+              "failed_launches": 548,
+              "total_attempted_landings": 1198,
+              "successful_landings": 1153,
+              "failed_landings": 45
+            },
+            "active": true,
+            "country": {
+              "id": 6,
+              "name": "China",
+              "alpha_2_code": "CN",
+              "alpha_3_code": "CHN",
+              "nationality_name": "Chinese",
+              "nationality_name_composed": "Sino"
+            },
+            "description": "Jiuquan Satellite Launch Center is a Chinese spaceport located between the Ejin, Alxa, Inner Mongolia and Hangtian Town, Jinta County, Jiuquan, Gansu Province. It is part of the Dongfeng Aerospace City (Base 10).",
+            "image": {
+              "id": 1374,
+              "name": "Long March 2F/G liftoff (Shenzhou 16)",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/long2520march_image_20240101085213.jpeg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192548.jpeg",
+              "credit": "CMS",
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": false,
+              "variants": []
+            },
+            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_17_20200803142429.jpg",
+            "longitude": 100.291111,
+            "latitude": 40.958056,
+            "timezone_name": "Asia/Shanghai",
+            "total_launch_count": 260,
+            "total_landing_count": 0
+          }
+        },
+        "webcast_live": false,
+        "program": [],
+        "orbital_launch_attempt_count": 7090,
+        "location_launch_attempt_count": 261,
+        "pad_launch_attempt_count": 9,
+        "agency_launch_attempt_count": 9,
+        "orbital_launch_attempt_count_year": 241,
+        "location_launch_attempt_count_year": 22,
+        "pad_launch_attempt_count_year": 3,
+        "agency_launch_attempt_count_year": 3,
+        "flightclub_url": null,
+        "updates": [
+          {
+            "id": 12573,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Adding launch per NOTAMs; Payload and launch vehicle identities uncertain.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2725268#msg2725268",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-14T17:35:00Z"
+          }
+        ],
+        "info_urls": [],
+        "vid_urls": [],
+        "timeline": [],
+        "pad_turnaround": "P60DT19H57M",
+        "mission_patches": []
       },
       {
         "id": "ed145de1-b768-43b5-8563-18ebc93b69b5",
@@ -32082,1529 +33259,6 @@
         "vid_urls": [],
         "timeline": [],
         "pad_turnaround": "P1044DT2H39M8S",
-        "mission_patches": []
-      },
-      {
-        "id": "cf34aee7-a118-433b-8337-05b2c6892815",
-        "url": "https://ll.thespacedevs.com/2.3.0/launches/cf34aee7-a118-433b-8337-05b2c6892815/?format=json",
-        "name": "Soyuz 2.1a | Progress MS-33 (94P)",
-        "response_mode": "detailed",
-        "slug": "soyuz-21a-progress-ms-33-94p",
-        "launch_designator": null,
-        "status": {
-          "id": 8,
-          "name": "To Be Confirmed",
-          "abbrev": "TBC",
-          "description": "Awaiting official confirmation - current date is known with some certainty."
-        },
-        "last_updated": "2025-09-11T14:40:15Z",
-        "net": "2025-12-19T00:54:00Z",
-        "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
-        },
-        "window_end": "2025-12-19T00:54:00Z",
-        "window_start": "2025-12-19T00:54:00Z",
-        "image": {
-          "id": 1828,
-          "name": "[AUTO] Soyuz 2.1a - image",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz_2.1a_image_20230805184309.jpg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193857.jpeg",
-          "credit": null,
-          "license": {
-            "id": 1,
-            "name": "Unknown",
-            "priority": 9,
-            "link": null
-          },
-          "single_use": true,
-          "variants": []
-        },
-        "infographic": null,
-        "probability": null,
-        "weather_concerns": null,
-        "failreason": "",
-        "hashtag": null,
-        "launch_service_provider": {
-          "response_mode": "normal",
-          "id": 63,
-          "url": "https://ll.thespacedevs.com/2.3.0/agencies/63/?format=json",
-          "name": "Russian Federal Space Agency (ROSCOSMOS)",
-          "abbrev": "RFSA",
-          "type": {
-            "id": 1,
-            "name": "Government"
-          },
-          "featured": true,
-          "country": [
-            {
-              "id": 5,
-              "name": "Russia",
-              "alpha_2_code": "RU",
-              "alpha_3_code": "RUS",
-              "nationality_name": "Russian",
-              "nationality_name_composed": "Russo"
-            }
-          ],
-          "description": "The Roscosmos State Corporation for Space Activities, commonly known as Roscosmos, is the governmental body responsible for the space science program of the Russian Federation and general aerospace research. Soyuz has many launch locations the Russian sites are Baikonur, Plesetsk and Vostochny however Ariane also purchases the vehicle and launches it from French Guiana.",
-          "administrator": "Administrator: Yuri Borisov",
-          "founding_year": 1992,
-          "launchers": "Soyuz",
-          "spacecraft": "Soyuz",
-          "parent": null,
-          "image": {
-            "id": 25,
-            "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - image",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_image_20190207032459.jpeg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184652.jpeg",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "logo": {
-            "id": 177,
-            "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_logo_20190207032459.png",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185118.png",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "social_logo": {
-            "id": 89,
-            "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - social_logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_nation_20230531052758.jpg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184841.jpeg",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "total_launch_count": 335,
-          "consecutive_successful_launches": 59,
-          "successful_launches": 324,
-          "failed_launches": 11,
-          "pending_launches": 5,
-          "consecutive_successful_landings": 0,
-          "successful_landings": 0,
-          "failed_landings": 0,
-          "attempted_landings": 0,
-          "successful_landings_spacecraft": 199,
-          "failed_landings_spacecraft": 7,
-          "attempted_landings_spacecraft": 206,
-          "successful_landings_payload": 0,
-          "failed_landings_payload": 1,
-          "attempted_landings_payload": 1,
-          "info_url": "https://en.roscosmos.ru/",
-          "wiki_url": "https://en.wikipedia.org/wiki/Russian_Federal_Space_Agency",
-          "social_media_links": []
-        },
-        "rocket": {
-          "id": 8431,
-          "configuration": {
-            "response_mode": "detailed",
-            "id": 24,
-            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/24/?format=json",
-            "name": "Soyuz 2.1a",
-            "families": [
-              {
-                "response_mode": "detailed",
-                "id": 147,
-                "name": "Soyuz",
-                "manufacturer": [
-                  {
-                    "response_mode": "normal",
-                    "id": 111,
-                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/111/?format=json",
-                    "name": "Progress Rocket Space Center",
-                    "abbrev": "PRSC",
-                    "type": {
-                      "id": 3,
-                      "name": "Commercial"
-                    },
-                    "featured": false,
-                    "country": [
-                      {
-                        "id": 5,
-                        "name": "Russia",
-                        "alpha_2_code": "RU",
-                        "alpha_3_code": "RUS",
-                        "nationality_name": "Russian",
-                        "nationality_name_composed": "Russo"
-                      }
-                    ],
-                    "description": "Progress Rocket Space Centre, formerly known as TsSKB-Progress, is a space science and aerospace research company which is known for manufacturing launch vehicles and satellites. Most notably, Progress Rocket Space Centre is the manufacturer of Soyuz launch vehicles.",
-                    "administrator": "CEO: Dmitry Baranov",
-                    "founding_year": 1996,
-                    "launchers": "",
-                    "spacecraft": "",
-                    "parent": null,
-                    "image": null,
-                    "logo": {
-                      "id": 171,
-                      "name": "[AUTO] Progress Rocket Space Center - logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/progress2520rocket2520space2520center_logo_20210313175054.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185104.png",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "social_logo": null,
-                    "total_launch_count": 45,
-                    "consecutive_successful_launches": 3,
-                    "successful_launches": 44,
-                    "failed_launches": 1,
-                    "pending_launches": 0,
-                    "consecutive_successful_landings": 0,
-                    "successful_landings": 0,
-                    "failed_landings": 0,
-                    "attempted_landings": 0,
-                    "successful_landings_spacecraft": 0,
-                    "failed_landings_spacecraft": 0,
-                    "attempted_landings_spacecraft": 0,
-                    "successful_landings_payload": 0,
-                    "failed_landings_payload": 0,
-                    "attempted_landings_payload": 0,
-                    "info_url": "https://en.samspace.ru/",
-                    "wiki_url": "https://en.wikipedia.org/wiki/Progress_Rocket_Space_Centre",
-                    "social_media_links": []
-                  }
-                ],
-                "parent": null,
-                "description": "",
-                "active": true,
-                "maiden_flight": "1965-12-27",
-                "total_launch_count": 1029,
-                "consecutive_successful_launches": 125,
-                "successful_launches": 998,
-                "failed_launches": 31,
-                "pending_launches": 6,
-                "attempted_landings": 0,
-                "successful_landings": 0,
-                "failed_landings": 0,
-                "consecutive_successful_landings": 0
-              },
-              {
-                "response_mode": "detailed",
-                "id": 190,
-                "name": "Soyuz 2",
-                "manufacturer": [
-                  {
-                    "response_mode": "normal",
-                    "id": 111,
-                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/111/?format=json",
-                    "name": "Progress Rocket Space Center",
-                    "abbrev": "PRSC",
-                    "type": {
-                      "id": 3,
-                      "name": "Commercial"
-                    },
-                    "featured": false,
-                    "country": [
-                      {
-                        "id": 5,
-                        "name": "Russia",
-                        "alpha_2_code": "RU",
-                        "alpha_3_code": "RUS",
-                        "nationality_name": "Russian",
-                        "nationality_name_composed": "Russo"
-                      }
-                    ],
-                    "description": "Progress Rocket Space Centre, formerly known as TsSKB-Progress, is a space science and aerospace research company which is known for manufacturing launch vehicles and satellites. Most notably, Progress Rocket Space Centre is the manufacturer of Soyuz launch vehicles.",
-                    "administrator": "CEO: Dmitry Baranov",
-                    "founding_year": 1996,
-                    "launchers": "",
-                    "spacecraft": "",
-                    "parent": null,
-                    "image": null,
-                    "logo": {
-                      "id": 171,
-                      "name": "[AUTO] Progress Rocket Space Center - logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/progress2520rocket2520space2520center_logo_20210313175054.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185104.png",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "social_logo": null,
-                    "total_launch_count": 45,
-                    "consecutive_successful_launches": 3,
-                    "successful_launches": 44,
-                    "failed_launches": 1,
-                    "pending_launches": 0,
-                    "consecutive_successful_landings": 0,
-                    "successful_landings": 0,
-                    "failed_landings": 0,
-                    "attempted_landings": 0,
-                    "successful_landings_spacecraft": 0,
-                    "failed_landings_spacecraft": 0,
-                    "attempted_landings_spacecraft": 0,
-                    "successful_landings_payload": 0,
-                    "failed_landings_payload": 0,
-                    "attempted_landings_payload": 0,
-                    "info_url": "https://en.samspace.ru/",
-                    "wiki_url": "https://en.wikipedia.org/wiki/Progress_Rocket_Space_Centre",
-                    "social_media_links": []
-                  }
-                ],
-                "parent": {
-                  "response_mode": "normal",
-                  "id": 147,
-                  "name": "Soyuz",
-                  "manufacturer": [
-                    {
-                      "response_mode": "normal",
-                      "id": 111,
-                      "url": "https://ll.thespacedevs.com/2.3.0/agencies/111/?format=json",
-                      "name": "Progress Rocket Space Center",
-                      "abbrev": "PRSC",
-                      "type": {
-                        "id": 3,
-                        "name": "Commercial"
-                      },
-                      "featured": false,
-                      "country": [
-                        {
-                          "id": 5,
-                          "name": "Russia",
-                          "alpha_2_code": "RU",
-                          "alpha_3_code": "RUS",
-                          "nationality_name": "Russian",
-                          "nationality_name_composed": "Russo"
-                        }
-                      ],
-                      "description": "Progress Rocket Space Centre, formerly known as TsSKB-Progress, is a space science and aerospace research company which is known for manufacturing launch vehicles and satellites. Most notably, Progress Rocket Space Centre is the manufacturer of Soyuz launch vehicles.",
-                      "administrator": "CEO: Dmitry Baranov",
-                      "founding_year": 1996,
-                      "launchers": "",
-                      "spacecraft": "",
-                      "parent": null,
-                      "image": null,
-                      "logo": {
-                        "id": 171,
-                        "name": "[AUTO] Progress Rocket Space Center - logo",
-                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/progress2520rocket2520space2520center_logo_20210313175054.png",
-                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185104.png",
-                        "credit": null,
-                        "license": {
-                          "id": 1,
-                          "name": "Unknown",
-                          "priority": 9,
-                          "link": null
-                        },
-                        "single_use": true,
-                        "variants": []
-                      },
-                      "social_logo": null
-                    }
-                  ],
-                  "parent": null
-                },
-                "description": "",
-                "active": true,
-                "maiden_flight": "2004-11-08",
-                "total_launch_count": 196,
-                "consecutive_successful_launches": 125,
-                "successful_launches": 189,
-                "failed_launches": 7,
-                "pending_launches": 6,
-                "attempted_landings": 0,
-                "successful_landings": 0,
-                "failed_landings": 0,
-                "consecutive_successful_landings": 0
-              }
-            ],
-            "full_name": "Soyuz 2.1a",
-            "variant": "",
-            "active": true,
-            "is_placeholder": false,
-            "manufacturer": {
-              "response_mode": "normal",
-              "id": 111,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/111/?format=json",
-              "name": "Progress Rocket Space Center",
-              "abbrev": "PRSC",
-              "type": {
-                "id": 3,
-                "name": "Commercial"
-              },
-              "featured": false,
-              "country": [
-                {
-                  "id": 5,
-                  "name": "Russia",
-                  "alpha_2_code": "RU",
-                  "alpha_3_code": "RUS",
-                  "nationality_name": "Russian",
-                  "nationality_name_composed": "Russo"
-                }
-              ],
-              "description": "Progress Rocket Space Centre, formerly known as TsSKB-Progress, is a space science and aerospace research company which is known for manufacturing launch vehicles and satellites. Most notably, Progress Rocket Space Centre is the manufacturer of Soyuz launch vehicles.",
-              "administrator": "CEO: Dmitry Baranov",
-              "founding_year": 1996,
-              "launchers": "",
-              "spacecraft": "",
-              "parent": null,
-              "image": null,
-              "logo": {
-                "id": 171,
-                "name": "[AUTO] Progress Rocket Space Center - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/progress2520rocket2520space2520center_logo_20210313175054.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185104.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": null,
-              "total_launch_count": 45,
-              "consecutive_successful_launches": 3,
-              "successful_launches": 44,
-              "failed_launches": 1,
-              "pending_launches": 0,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 0,
-              "failed_landings": 0,
-              "attempted_landings": 0,
-              "successful_landings_spacecraft": 0,
-              "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 0,
-              "successful_landings_payload": 0,
-              "failed_landings_payload": 0,
-              "attempted_landings_payload": 0,
-              "info_url": "https://en.samspace.ru/",
-              "wiki_url": "https://en.wikipedia.org/wiki/Progress_Rocket_Space_Centre",
-              "social_media_links": []
-            },
-            "program": [],
-            "reusable": false,
-            "image": {
-              "id": 1828,
-              "name": "[AUTO] Soyuz 2.1a - image",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz_2.1a_image_20230805184309.jpg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193857.jpeg",
-              "credit": null,
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "info_url": null,
-            "wiki_url": "https://en.wikipedia.org/wiki/Soyuz-2#Soyuz-2.1a",
-            "description": "The Soyuz 2.1A converted the flight control system from analog to digital, which allowed launch from fixed platforms. It also allowed big fairings and payloads.\r\nIt is currently used for crewed Soyuz and Progress flights to the ISS.",
-            "alias": "",
-            "min_stage": 2,
-            "max_stage": 3,
-            "length": 46.3,
-            "diameter": 2.95,
-            "maiden_flight": "2004-11-04",
-            "launch_cost": 80000000,
-            "launch_mass": 312.0,
-            "leo_capacity": 7020.0,
-            "gto_capacity": 2810.0,
-            "geo_capacity": null,
-            "sso_capacity": 4230.0,
-            "to_thrust": 4149.0,
-            "apogee": null,
-            "total_launch_count": 53,
-            "consecutive_successful_launches": 46,
-            "successful_launches": 52,
-            "failed_launches": 1,
-            "pending_launches": 2,
-            "attempted_landings": 0,
-            "successful_landings": 0,
-            "failed_landings": 0,
-            "consecutive_successful_landings": 0,
-            "fastest_turnaround": "P7DT6H41M58S"
-          },
-          "launcher_stage": [],
-          "spacecraft_stage": [],
-          "payloads": []
-        },
-        "mission": {
-          "id": 7020,
-          "name": "Progress MS-33 (94P)",
-          "type": "Resupply",
-          "description": "Progress resupply mission to the International Space Station.",
-          "image": null,
-          "orbit": {
-            "id": 8,
-            "name": "Low Earth Orbit",
-            "abbrev": "LEO",
-            "celestial_body": {
-              "response_mode": "list",
-              "id": 1,
-              "name": "Earth"
-            }
-          },
-          "agencies": [
-            {
-              "response_mode": "normal",
-              "id": 63,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/63/?format=json",
-              "name": "Russian Federal Space Agency (ROSCOSMOS)",
-              "abbrev": "RFSA",
-              "type": {
-                "id": 1,
-                "name": "Government"
-              },
-              "featured": true,
-              "country": [
-                {
-                  "id": 5,
-                  "name": "Russia",
-                  "alpha_2_code": "RU",
-                  "alpha_3_code": "RUS",
-                  "nationality_name": "Russian",
-                  "nationality_name_composed": "Russo"
-                }
-              ],
-              "description": "The Roscosmos State Corporation for Space Activities, commonly known as Roscosmos, is the governmental body responsible for the space science program of the Russian Federation and general aerospace research. Soyuz has many launch locations the Russian sites are Baikonur, Plesetsk and Vostochny however Ariane also purchases the vehicle and launches it from French Guiana.",
-              "administrator": "Administrator: Yuri Borisov",
-              "founding_year": 1992,
-              "launchers": "Soyuz",
-              "spacecraft": "Soyuz",
-              "parent": null,
-              "image": {
-                "id": 25,
-                "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - image",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_image_20190207032459.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184652.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "logo": {
-                "id": 177,
-                "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_logo_20190207032459.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185118.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 89,
-                "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - social_logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_nation_20230531052758.jpg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184841.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "total_launch_count": 335,
-              "consecutive_successful_launches": 59,
-              "successful_launches": 324,
-              "failed_launches": 11,
-              "pending_launches": 5,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 0,
-              "failed_landings": 0,
-              "attempted_landings": 0,
-              "successful_landings_spacecraft": 199,
-              "failed_landings_spacecraft": 7,
-              "attempted_landings_spacecraft": 206,
-              "successful_landings_payload": 0,
-              "failed_landings_payload": 1,
-              "attempted_landings_payload": 1,
-              "info_url": "https://en.roscosmos.ru/",
-              "wiki_url": "https://en.wikipedia.org/wiki/Russian_Federal_Space_Agency",
-              "social_media_links": []
-            }
-          ],
-          "info_urls": [],
-          "vid_urls": []
-        },
-        "pad": {
-          "id": 20,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/20/?format=json",
-          "active": true,
-          "agencies": [],
-          "name": "31/6",
-          "image": {
-            "id": 1467,
-            "name": "Soyuz 2.1a liftoff from pad 31/6 (Progress MS-25)",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz25202.1a_image_20231231162517.jpg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192846.jpeg",
-            "credit": "Roscosmos",
-            "license": {
-              "id": 14,
-              "name": "Roscosmos Image Use Policy",
-              "priority": 3,
-              "link": "https://www.roscosmos.ru/22650/"
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "description": "",
-          "info_url": null,
-          "wiki_url": "https://en.wikipedia.org/wiki/Baikonur_Cosmodrome_Site_31",
-          "map_url": "https://www.google.com/maps?q=45.996034,63.564003",
-          "latitude": 45.996034,
-          "longitude": 63.564003,
-          "country": {
-            "id": 44,
-            "name": "Kazakhstan",
-            "alpha_2_code": "KZ",
-            "alpha_3_code": "KAZ",
-            "nationality_name": "Kazakh",
-            "nationality_name_composed": "Kazakhstani"
-          },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_20_20200803143516.jpg",
-          "total_launch_count": 425,
-          "orbital_launch_attempt_count": 425,
-          "fastest_turnaround": "P1DT23H9M9S",
-          "location": {
-            "response_mode": "normal",
-            "id": 15,
-            "url": "https://ll.thespacedevs.com/2.3.0/locations/15/?format=json",
-            "name": "Baikonur Cosmodrome, Republic of Kazakhstan",
-            "celestial_body": {
-              "response_mode": "normal",
-              "id": 1,
-              "name": "Earth",
-              "type": {
-                "id": 1,
-                "name": "Planet"
-              },
-              "diameter": 12742000.0,
-              "mass": 5.972168e+24,
-              "gravity": 9.80655,
-              "length_of_day": "1 00:00:00",
-              "atmosphere": true,
-              "image": {
-                "id": 2040,
-                "name": "Earth (Apollo 17)",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
-                "credit": "NASA",
-                "license": {
-                  "id": 4,
-                  "name": "NASA Image and Media Guidelines",
-                  "priority": 0,
-                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
-              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7297,
-              "successful_launches": 6749,
-              "failed_launches": 548,
-              "total_attempted_landings": 1198,
-              "successful_landings": 1153,
-              "failed_landings": 45
-            },
-            "active": true,
-            "country": {
-              "id": 44,
-              "name": "Kazakhstan",
-              "alpha_2_code": "KZ",
-              "alpha_3_code": "KAZ",
-              "nationality_name": "Kazakh",
-              "nationality_name_composed": "Kazakhstani"
-            },
-            "description": "The Baikonur Cosmodrome is a spaceport operated by Russia within Kazakhstan. Located in the Kazakh city of Baikonur, it is the largest operational space launch facility in terms of area. All Russian crewed spaceflights are launched from Baikonur.",
-            "image": {
-              "id": 2198,
-              "name": "Soyuz launch pad at the Baikonur Cosmodrome",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz_launch_pa_image_20240918150530.jpg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz_launch_pa_image_thumbnail_20240918150530.jpeg",
-              "credit": "NASA/Bill Ingalls",
-              "license": {
-                "id": 4,
-                "name": "NASA Image and Media Guidelines",
-                "priority": 0,
-                "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_15_20200803142517.jpg",
-            "longitude": 63.305,
-            "latitude": 45.965,
-            "timezone_name": "Asia/Qyzylorda",
-            "total_launch_count": 1558,
-            "total_landing_count": 0
-          }
-        },
-        "webcast_live": false,
-        "program": [
-          {
-            "response_mode": "normal",
-            "id": 17,
-            "url": "https://ll.thespacedevs.com/2.3.0/programs/17/?format=json",
-            "name": "International Space Station",
-            "image": {
-              "id": 1874,
-              "name": "[AUTO] International Space Station - image",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/international2_program_20201129184745.png",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305194014.png",
-              "credit": null,
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "info_url": "https://www.nasa.gov/mission_pages/station/main/index.html",
-            "wiki_url": "https://en.wikipedia.org/wiki/International_Space_Station_programme",
-            "description": "The International Space Station programme is tied together by a complex set of legal, political and financial agreements between the sixteen nations involved in the project, governing ownership of the various components, rights to crewing and utilization, and responsibilities for crew rotation and resupply of the International Space Station. It was conceived in 1984 by President Ronald Reagan, during the Space Station Freedom project as it was originally called.",
-            "agencies": [
-              {
-                "response_mode": "list",
-                "id": 16,
-                "url": "https://ll.thespacedevs.com/2.3.0/agencies/16/?format=json",
-                "name": "Canadian Space Agency",
-                "abbrev": "CSA",
-                "type": {
-                  "id": 1,
-                  "name": "Government"
-                }
-              },
-              {
-                "response_mode": "list",
-                "id": 27,
-                "url": "https://ll.thespacedevs.com/2.3.0/agencies/27/?format=json",
-                "name": "European Space Agency",
-                "abbrev": "ESA",
-                "type": {
-                  "id": 2,
-                  "name": "Multinational"
-                }
-              },
-              {
-                "response_mode": "list",
-                "id": 37,
-                "url": "https://ll.thespacedevs.com/2.3.0/agencies/37/?format=json",
-                "name": "Japan Aerospace Exploration Agency",
-                "abbrev": "JAXA",
-                "type": {
-                  "id": 1,
-                  "name": "Government"
-                }
-              },
-              {
-                "response_mode": "list",
-                "id": 44,
-                "url": "https://ll.thespacedevs.com/2.3.0/agencies/44/?format=json",
-                "name": "National Aeronautics and Space Administration",
-                "abbrev": "NASA",
-                "type": {
-                  "id": 1,
-                  "name": "Government"
-                }
-              },
-              {
-                "response_mode": "list",
-                "id": 63,
-                "url": "https://ll.thespacedevs.com/2.3.0/agencies/63/?format=json",
-                "name": "Russian Federal Space Agency (ROSCOSMOS)",
-                "abbrev": "RFSA",
-                "type": {
-                  "id": 1,
-                  "name": "Government"
-                }
-              }
-            ],
-            "start_date": "1998-11-20T06:40:00Z",
-            "end_date": null,
-            "mission_patches": [],
-            "type": {
-              "id": 2,
-              "name": "Human Spaceflight"
-            }
-          }
-        ],
-        "orbital_launch_attempt_count": 7110,
-        "location_launch_attempt_count": 1561,
-        "pad_launch_attempt_count": 427,
-        "agency_launch_attempt_count": 337,
-        "orbital_launch_attempt_count_year": 261,
-        "location_launch_attempt_count_year": 8,
-        "pad_launch_attempt_count_year": 7,
-        "agency_launch_attempt_count_year": 8,
-        "flightclub_url": null,
-        "updates": [
-          {
-            "id": 12194,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Tweaked T-0.",
-            "info_url": "https://t.me/rt_space/1344",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-09-11T14:40:00Z"
-          },
-          {
-            "id": 12185,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Updated launch time.",
-            "info_url": "https://drive.google.com/file/d/1y69KIvWvSW4r80XJrxUGyVZFgXMZomyM/view",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-09-10T15:59:00Z"
-          },
-          {
-            "id": 10987,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Added launch time.",
-            "info_url": "https://drive.google.com/file/d/11glB8zDlkXoC02_U3Zhwb5xURWyvE3SF/view",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-05-14T17:10:00Z"
-          },
-          {
-            "id": 9541,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "NET December 19, 2025.",
-            "info_url": "https://kosmodrom.space/raspisanie-zapuskov",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2024-12-16T18:33:00Z"
-          },
-          {
-            "id": 9334,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Added launch.",
-            "info_url": "https://baikonurtour.ru/launches.html",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2024-11-26T10:11:00Z"
-          }
-        ],
-        "info_urls": [],
-        "vid_urls": [],
-        "timeline": [],
-        "pad_turnaround": "P21DT17H28M",
-        "mission_patches": []
-      },
-      {
-        "id": "74b3aa8f-dc54-43dd-b8dd-1dc62ccccfc4",
-        "url": "https://ll.thespacedevs.com/2.3.0/launches/74b3aa8f-dc54-43dd-b8dd-1dc62ccccfc4/?format=json",
-        "name": "Soyuz-5 | Demo Flight",
-        "response_mode": "detailed",
-        "slug": "soyuz-5-demo-flight",
-        "launch_designator": null,
-        "status": {
-          "id": 2,
-          "name": "To Be Determined",
-          "abbrev": "TBD",
-          "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
-        },
-        "last_updated": "2025-09-05T12:25:59Z",
-        "net": "2025-12-20T00:00:00Z",
-        "net_precision": {
-          "id": 5,
-          "name": "Day",
-          "abbrev": "DAY",
-          "description": "The T-0 is expected on the given day."
-        },
-        "window_end": "2025-12-20T00:00:00Z",
-        "window_start": "2025-12-20T00:00:00Z",
-        "image": {
-          "id": 2448,
-          "name": "Soyuz-5 launch vehicle model on MAKS-2021 (cropped)",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz-5_launch__image_20250905122547.jpg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz-5_launch__image_thumbnail_20250905122548.jpeg",
-          "credit": "Kirill Borisenko",
-          "license": {
-            "id": 20,
-            "name": "CC BY-SA 4.0",
-            "priority": 6,
-            "link": "https://creativecommons.org/licenses/by-sa/4.0/"
-          },
-          "single_use": false,
-          "variants": []
-        },
-        "infographic": null,
-        "probability": null,
-        "weather_concerns": null,
-        "failreason": "",
-        "hashtag": null,
-        "launch_service_provider": {
-          "response_mode": "normal",
-          "id": 103,
-          "url": "https://ll.thespacedevs.com/2.3.0/agencies/103/?format=json",
-          "name": "RKK Energiya",
-          "abbrev": "RSC",
-          "type": {
-            "id": 3,
-            "name": "Commercial"
-          },
-          "featured": false,
-          "country": [
-            {
-              "id": 5,
-              "name": "Russia",
-              "alpha_2_code": "RU",
-              "alpha_3_code": "RUS",
-              "nationality_name": "Russian",
-              "nationality_name_composed": "Russo"
-            }
-          ],
-          "description": "",
-          "administrator": null,
-          "founding_year": null,
-          "launchers": "",
-          "spacecraft": "",
-          "parent": null,
-          "image": null,
-          "logo": {
-            "id": 2481,
-            "name": "RKK Energiya logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_lo_image_20250921093034.png",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_lo_image_thumbnail_20250921093034.png",
-            "credit": "RKK Energiya",
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "social_logo": {
-            "id": 2482,
-            "name": "RKK Energiya social logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_so_image_20250921093044.png",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_so_image_thumbnail_20250921093044.png",
-            "credit": "RKK Energiya",
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "total_launch_count": 0,
-          "consecutive_successful_launches": 0,
-          "successful_launches": 0,
-          "failed_launches": 0,
-          "pending_launches": 1,
-          "consecutive_successful_landings": 0,
-          "successful_landings": 0,
-          "failed_landings": 0,
-          "attempted_landings": 0,
-          "successful_landings_spacecraft": 0,
-          "failed_landings_spacecraft": 0,
-          "attempted_landings_spacecraft": 0,
-          "successful_landings_payload": 0,
-          "failed_landings_payload": 0,
-          "attempted_landings_payload": 0,
-          "info_url": "https://www.energia.ru/english/",
-          "wiki_url": "https://en.wikipedia.org/wiki/S.P._Korolev_Rocket_and_Space_Corporation_Energia",
-          "social_media_links": []
-        },
-        "rocket": {
-          "id": 8701,
-          "configuration": {
-            "response_mode": "detailed",
-            "id": 521,
-            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/521/?format=json",
-            "name": "Soyuz-5",
-            "families": [
-              {
-                "response_mode": "detailed",
-                "id": 207,
-                "name": "Soyuz-5",
-                "manufacturer": [
-                  {
-                    "response_mode": "normal",
-                    "id": 103,
-                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/103/?format=json",
-                    "name": "RKK Energiya",
-                    "abbrev": "RSC",
-                    "type": {
-                      "id": 3,
-                      "name": "Commercial"
-                    },
-                    "featured": false,
-                    "country": [
-                      {
-                        "id": 5,
-                        "name": "Russia",
-                        "alpha_2_code": "RU",
-                        "alpha_3_code": "RUS",
-                        "nationality_name": "Russian",
-                        "nationality_name_composed": "Russo"
-                      }
-                    ],
-                    "description": "",
-                    "administrator": null,
-                    "founding_year": null,
-                    "launchers": "",
-                    "spacecraft": "",
-                    "parent": null,
-                    "image": null,
-                    "logo": {
-                      "id": 2481,
-                      "name": "RKK Energiya logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_lo_image_20250921093034.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_lo_image_thumbnail_20250921093034.png",
-                      "credit": "RKK Energiya",
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "social_logo": {
-                      "id": 2482,
-                      "name": "RKK Energiya social logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_so_image_20250921093044.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_so_image_thumbnail_20250921093044.png",
-                      "credit": "RKK Energiya",
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "total_launch_count": 0,
-                    "consecutive_successful_launches": 0,
-                    "successful_launches": 0,
-                    "failed_launches": 0,
-                    "pending_launches": 1,
-                    "consecutive_successful_landings": 0,
-                    "successful_landings": 0,
-                    "failed_landings": 0,
-                    "attempted_landings": 0,
-                    "successful_landings_spacecraft": 0,
-                    "failed_landings_spacecraft": 0,
-                    "attempted_landings_spacecraft": 0,
-                    "successful_landings_payload": 0,
-                    "failed_landings_payload": 0,
-                    "attempted_landings_payload": 0,
-                    "info_url": "https://www.energia.ru/english/",
-                    "wiki_url": "https://en.wikipedia.org/wiki/S.P._Korolev_Rocket_and_Space_Corporation_Energia",
-                    "social_media_links": []
-                  }
-                ],
-                "parent": null,
-                "description": "",
-                "active": true,
-                "maiden_flight": null,
-                "total_launch_count": 0,
-                "consecutive_successful_launches": 0,
-                "successful_launches": 0,
-                "failed_launches": 0,
-                "pending_launches": 1,
-                "attempted_landings": 0,
-                "successful_landings": 0,
-                "failed_landings": 0,
-                "consecutive_successful_landings": 0
-              }
-            ],
-            "full_name": "Soyuz-5",
-            "variant": "",
-            "active": true,
-            "is_placeholder": false,
-            "manufacturer": {
-              "response_mode": "normal",
-              "id": 103,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/103/?format=json",
-              "name": "RKK Energiya",
-              "abbrev": "RSC",
-              "type": {
-                "id": 3,
-                "name": "Commercial"
-              },
-              "featured": false,
-              "country": [
-                {
-                  "id": 5,
-                  "name": "Russia",
-                  "alpha_2_code": "RU",
-                  "alpha_3_code": "RUS",
-                  "nationality_name": "Russian",
-                  "nationality_name_composed": "Russo"
-                }
-              ],
-              "description": "",
-              "administrator": null,
-              "founding_year": null,
-              "launchers": "",
-              "spacecraft": "",
-              "parent": null,
-              "image": null,
-              "logo": {
-                "id": 2481,
-                "name": "RKK Energiya logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_lo_image_20250921093034.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_lo_image_thumbnail_20250921093034.png",
-                "credit": "RKK Energiya",
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 2482,
-                "name": "RKK Energiya social logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_so_image_20250921093044.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_so_image_thumbnail_20250921093044.png",
-                "credit": "RKK Energiya",
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "total_launch_count": 0,
-              "consecutive_successful_launches": 0,
-              "successful_launches": 0,
-              "failed_launches": 0,
-              "pending_launches": 1,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 0,
-              "failed_landings": 0,
-              "attempted_landings": 0,
-              "successful_landings_spacecraft": 0,
-              "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 0,
-              "successful_landings_payload": 0,
-              "failed_landings_payload": 0,
-              "attempted_landings_payload": 0,
-              "info_url": "https://www.energia.ru/english/",
-              "wiki_url": "https://en.wikipedia.org/wiki/S.P._Korolev_Rocket_and_Space_Corporation_Energia",
-              "social_media_links": []
-            },
-            "program": [],
-            "reusable": false,
-            "image": {
-              "id": 2448,
-              "name": "Soyuz-5 launch vehicle model on MAKS-2021 (cropped)",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz-5_launch__image_20250905122547.jpg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz-5_launch__image_thumbnail_20250905122548.jpeg",
-              "credit": "Kirill Borisenko",
-              "license": {
-                "id": 20,
-                "name": "CC BY-SA 4.0",
-                "priority": 6,
-                "link": "https://creativecommons.org/licenses/by-sa/4.0/"
-              },
-              "single_use": false,
-              "variants": []
-            },
-            "info_url": "https://russianspaceweb.com/soyuz5-lv.html",
-            "wiki_url": "https://en.wikipedia.org/wiki/Irtysh_(rocket)",
-            "description": "Soyuz-5, also named Irtysh is a planned Russian rocket that is being developed by JSC SRC Progress, formerly within \"Project Feniks.\" It will replace the capability of Zenit-2 and Proton Medium. It will initially be a two-stage rocket, but Soyuz 5 can be enhanced with an optional Blok DM-03 upper stage for geostationary missions.\r\n\r\nThe rocket is loosely based on the Zenit launch vehicle with a RD-171MV engine on the 1st stage, enlarged to 4.1 m in diameter, while the 2nd stage is powered by 2 RD-0124MS engines derived from engines used on the 3rd stage of the Soyuz-2.1b. The Soyuz-5 can lift 17 tonnes to a Low Earth orbit.",
-            "alias": "Irtysh",
-            "min_stage": 2,
-            "max_stage": 3,
-            "length": 65.258,
-            "diameter": 4.1,
-            "maiden_flight": null,
-            "launch_cost": null,
-            "launch_mass": 525.0,
-            "leo_capacity": 17000.0,
-            "gto_capacity": 5000.0,
-            "geo_capacity": null,
-            "sso_capacity": null,
-            "to_thrust": 7257.0,
-            "apogee": null,
-            "total_launch_count": 0,
-            "consecutive_successful_launches": 0,
-            "successful_launches": 0,
-            "failed_launches": 0,
-            "pending_launches": 1,
-            "attempted_landings": 0,
-            "successful_landings": 0,
-            "failed_landings": 0,
-            "consecutive_successful_landings": 0,
-            "fastest_turnaround": null
-          },
-          "launcher_stage": [],
-          "spacecraft_stage": [],
-          "payloads": []
-        },
-        "mission": {
-          "id": 7294,
-          "name": "Demo Flight",
-          "type": "Test Flight",
-          "description": "Demonstration Flight for Russia's new Soyuz-5 launch vehicle. Details TBD.",
-          "image": null,
-          "orbit": {
-            "id": 25,
-            "name": "Unknown",
-            "abbrev": "N/A",
-            "celestial_body": {
-              "response_mode": "list",
-              "id": 1,
-              "name": "Earth"
-            }
-          },
-          "agencies": [
-            {
-              "response_mode": "normal",
-              "id": 103,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/103/?format=json",
-              "name": "RKK Energiya",
-              "abbrev": "RSC",
-              "type": {
-                "id": 3,
-                "name": "Commercial"
-              },
-              "featured": false,
-              "country": [
-                {
-                  "id": 5,
-                  "name": "Russia",
-                  "alpha_2_code": "RU",
-                  "alpha_3_code": "RUS",
-                  "nationality_name": "Russian",
-                  "nationality_name_composed": "Russo"
-                }
-              ],
-              "description": "",
-              "administrator": null,
-              "founding_year": null,
-              "launchers": "",
-              "spacecraft": "",
-              "parent": null,
-              "image": null,
-              "logo": {
-                "id": 2481,
-                "name": "RKK Energiya logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_lo_image_20250921093034.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_lo_image_thumbnail_20250921093034.png",
-                "credit": "RKK Energiya",
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 2482,
-                "name": "RKK Energiya social logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_so_image_20250921093044.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/rkk_energiya_so_image_thumbnail_20250921093044.png",
-                "credit": "RKK Energiya",
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "total_launch_count": 0,
-              "consecutive_successful_launches": 0,
-              "successful_launches": 0,
-              "failed_launches": 0,
-              "pending_launches": 1,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 0,
-              "failed_landings": 0,
-              "attempted_landings": 0,
-              "successful_landings_spacecraft": 0,
-              "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 0,
-              "successful_landings_payload": 0,
-              "failed_landings_payload": 0,
-              "attempted_landings_payload": 0,
-              "info_url": "https://www.energia.ru/english/",
-              "wiki_url": "https://en.wikipedia.org/wiki/S.P._Korolev_Rocket_and_Space_Corporation_Energia",
-              "social_media_links": []
-            },
-            {
-              "response_mode": "normal",
-              "id": 63,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/63/?format=json",
-              "name": "Russian Federal Space Agency (ROSCOSMOS)",
-              "abbrev": "RFSA",
-              "type": {
-                "id": 1,
-                "name": "Government"
-              },
-              "featured": true,
-              "country": [
-                {
-                  "id": 5,
-                  "name": "Russia",
-                  "alpha_2_code": "RU",
-                  "alpha_3_code": "RUS",
-                  "nationality_name": "Russian",
-                  "nationality_name_composed": "Russo"
-                }
-              ],
-              "description": "The Roscosmos State Corporation for Space Activities, commonly known as Roscosmos, is the governmental body responsible for the space science program of the Russian Federation and general aerospace research. Soyuz has many launch locations the Russian sites are Baikonur, Plesetsk and Vostochny however Ariane also purchases the vehicle and launches it from French Guiana.",
-              "administrator": "Administrator: Yuri Borisov",
-              "founding_year": 1992,
-              "launchers": "Soyuz",
-              "spacecraft": "Soyuz",
-              "parent": null,
-              "image": {
-                "id": 25,
-                "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - image",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_image_20190207032459.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184652.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "logo": {
-                "id": 177,
-                "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_logo_20190207032459.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185118.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 89,
-                "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - social_logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_nation_20230531052758.jpg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184841.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "total_launch_count": 335,
-              "consecutive_successful_launches": 59,
-              "successful_launches": 324,
-              "failed_launches": 11,
-              "pending_launches": 5,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 0,
-              "failed_landings": 0,
-              "attempted_landings": 0,
-              "successful_landings_spacecraft": 199,
-              "failed_landings_spacecraft": 7,
-              "attempted_landings_spacecraft": 206,
-              "successful_landings_payload": 0,
-              "failed_landings_payload": 1,
-              "attempted_landings_payload": 1,
-              "info_url": "https://en.roscosmos.ru/",
-              "wiki_url": "https://en.wikipedia.org/wiki/Russian_Federal_Space_Agency",
-              "social_media_links": []
-            }
-          ],
-          "info_urls": [],
-          "vid_urls": []
-        },
-        "pad": {
-          "id": 2,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/2/?format=json",
-          "active": true,
-          "agencies": [],
-          "name": "45/1",
-          "image": null,
-          "description": null,
-          "info_url": null,
-          "wiki_url": "",
-          "map_url": "https://www.google.com/maps?q=45.943492,63.653014",
-          "latitude": 45.943492,
-          "longitude": 63.653014,
-          "country": {
-            "id": 44,
-            "name": "Kazakhstan",
-            "alpha_2_code": "KZ",
-            "alpha_3_code": "KAZ",
-            "nationality_name": "Kazakh",
-            "nationality_name_composed": "Kazakhstani"
-          },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_2_20200803143256.jpg",
-          "total_launch_count": 46,
-          "orbital_launch_attempt_count": 46,
-          "fastest_turnaround": "P18DT2H45M",
-          "location": {
-            "response_mode": "normal",
-            "id": 15,
-            "url": "https://ll.thespacedevs.com/2.3.0/locations/15/?format=json",
-            "name": "Baikonur Cosmodrome, Republic of Kazakhstan",
-            "celestial_body": {
-              "response_mode": "normal",
-              "id": 1,
-              "name": "Earth",
-              "type": {
-                "id": 1,
-                "name": "Planet"
-              },
-              "diameter": 12742000.0,
-              "mass": 5.972168e+24,
-              "gravity": 9.80655,
-              "length_of_day": "1 00:00:00",
-              "atmosphere": true,
-              "image": {
-                "id": 2040,
-                "name": "Earth (Apollo 17)",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
-                "credit": "NASA",
-                "license": {
-                  "id": 4,
-                  "name": "NASA Image and Media Guidelines",
-                  "priority": 0,
-                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
-              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7297,
-              "successful_launches": 6749,
-              "failed_launches": 548,
-              "total_attempted_landings": 1198,
-              "successful_landings": 1153,
-              "failed_landings": 45
-            },
-            "active": true,
-            "country": {
-              "id": 44,
-              "name": "Kazakhstan",
-              "alpha_2_code": "KZ",
-              "alpha_3_code": "KAZ",
-              "nationality_name": "Kazakh",
-              "nationality_name_composed": "Kazakhstani"
-            },
-            "description": "The Baikonur Cosmodrome is a spaceport operated by Russia within Kazakhstan. Located in the Kazakh city of Baikonur, it is the largest operational space launch facility in terms of area. All Russian crewed spaceflights are launched from Baikonur.",
-            "image": {
-              "id": 2198,
-              "name": "Soyuz launch pad at the Baikonur Cosmodrome",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz_launch_pa_image_20240918150530.jpg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz_launch_pa_image_thumbnail_20240918150530.jpeg",
-              "credit": "NASA/Bill Ingalls",
-              "license": {
-                "id": 4,
-                "name": "NASA Image and Media Guidelines",
-                "priority": 0,
-                "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_15_20200803142517.jpg",
-            "longitude": 63.305,
-            "latitude": 45.965,
-            "timezone_name": "Asia/Qyzylorda",
-            "total_launch_count": 1558,
-            "total_landing_count": 0
-          }
-        },
-        "webcast_live": false,
-        "program": [],
-        "orbital_launch_attempt_count": 7111,
-        "location_launch_attempt_count": 1562,
-        "pad_launch_attempt_count": 47,
-        "agency_launch_attempt_count": 1,
-        "orbital_launch_attempt_count_year": 262,
-        "location_launch_attempt_count_year": 9,
-        "pad_launch_attempt_count_year": 1,
-        "agency_launch_attempt_count_year": 1,
-        "flightclub_url": null,
-        "updates": [
-          {
-            "id": 12085,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Added launch.",
-            "info_url": "https://tass.ru/kosmos/24957441",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-09-05T12:25:00Z"
-          }
-        ],
-        "info_urls": [],
-        "vid_urls": [],
-        "timeline": [],
-        "pad_turnaround": "P2915DT4H59M57S",
         "mission_patches": []
       }
     ]
