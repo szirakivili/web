@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-15T15:25:12Z",
+  "fetched_at": "2025-10-15T16:28:54Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 350,
@@ -10879,12 +10879,12 @@
         "slug": "falcon-9-block-5-spainsat-ng-ii",
         "launch_designator": null,
         "status": {
-          "id": 8,
-          "name": "To Be Confirmed",
-          "abbrev": "TBC",
-          "description": "Awaiting official confirmation - current date is known with some certainty."
+          "id": 1,
+          "name": "Go for Launch",
+          "abbrev": "Go",
+          "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-10-15T13:45:33Z",
+        "last_updated": "2025-10-15T16:28:40Z",
         "net": "2025-10-23T01:30:00Z",
         "net_precision": {
           "id": 1,
@@ -10892,7 +10892,7 @@
           "abbrev": "MIN",
           "description": "The T-0 is accurate to the minute."
         },
-        "window_end": "2025-10-23T06:02:00Z",
+        "window_end": "2025-10-23T05:30:00Z",
         "window_start": "2025-10-23T01:30:00Z",
         "image": {
           "id": 1736,
@@ -11604,50 +11604,50 @@
             {
               "id": 797,
               "type": "Core",
-              "reused": null,
-              "launcher_flight_number": null,
+              "reused": true,
+              "launcher_flight_number": 22,
               "launcher": {
                 "response_mode": "normal",
-                "id": 106,
-                "url": "https://ll.thespacedevs.com/2.3.0/launchers/106/?format=json",
-                "flight_proven": false,
-                "serial_number": "Unknown F9",
-                "is_placeholder": true,
+                "id": 118,
+                "url": "https://ll.thespacedevs.com/2.3.0/launchers/118/?format=json",
+                "flight_proven": true,
+                "serial_number": "B1076",
+                "is_placeholder": false,
                 "status": {
-                  "id": 8,
-                  "name": "N/A"
+                  "id": 3,
+                  "name": "active"
                 },
                 "image": {
-                  "id": 1674,
-                  "name": "[AUTO] Unknown F9 - image",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/106_image_20230708172214.png",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193443.png",
-                  "credit": null,
+                  "id": 2459,
+                  "name": "B1076 landing on LZ-1 during Worldview Legion 3-4 launch",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/b1076_landing_o_image_20250912152159.jpeg",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/b1076_landing_o_image_thumbnail_20250912152200.jpeg",
+                  "credit": "SpaceX",
                   "license": {
                     "id": 1,
                     "name": "Unknown",
                     "priority": 9,
                     "link": null
                   },
-                  "single_use": true,
+                  "single_use": false,
                   "variants": []
                 },
-                "details": "Booster serial number unknown.",
-                "successful_landings": null,
-                "attempted_landings": null,
-                "flights": null,
-                "last_launch_date": null,
-                "first_launch_date": null,
-                "fastest_turnaround": null
+                "details": "Booster first launched the CRS-26 mission.",
+                "successful_landings": 21,
+                "attempted_landings": 21,
+                "flights": 21,
+                "last_launch_date": "2025-02-21T15:19:00Z",
+                "first_launch_date": "2022-11-26T19:20:43Z",
+                "fastest_turnaround": "P21DT2H49M"
               },
-              "previous_flight_date": null,
-              "turn_around_time": null,
+              "previous_flight_date": "2025-02-21T15:19:00Z",
+              "turn_around_time": "P243DT10H11M",
               "landing": {
                 "id": 1722,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1722/?format=json",
                 "attempt": false,
                 "success": null,
-                "description": "The Falcon 9 booster will be expended during this mission.",
+                "description": "The Falcon 9 booster B1076 will be expended during its 22nd mission.",
                 "downrange_distance": null,
                 "landing_location": {
                   "id": 6,
@@ -11715,7 +11715,11 @@
                   "description": "Vehicle did not perform any landing operations after launch"
                 }
               },
-              "previous_flight": null
+              "previous_flight": {
+                "id": "e97293bd-0594-428c-949d-367b5638da1b",
+                "url": "https://ll.thespacedevs.com/2.3.0/launches/e97293bd-0594-428c-949d-367b5638da1b/?format=json",
+                "name": "Falcon 9 Block 5 | Starlink Group 12-14"
+              }
             }
           ],
           "spacecraft_stage": [],
@@ -11942,6 +11946,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=6ecd1d24-db6d-4144-8e1b-f6ba5ceae8be",
         "updates": [
           {
+            "id": 12585,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "GO for launch.",
+            "info_url": "https://www.spacex.com/launches/spainsatngii",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-15T16:28:00Z"
+          },
+          {
             "id": 12582,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Updated launch window.",
@@ -12006,7 +12018,25 @@
             "created_on": "2023-06-05T14:51:48Z"
           }
         ],
-        "info_urls": [],
+        "info_urls": [
+          {
+            "priority": 10,
+            "source": "spacex.com",
+            "title": "SpaceX",
+            "description": "SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.",
+            "feature_image": null,
+            "url": "https://www.spacex.com/launches/spainsatngii",
+            "type": {
+              "id": 1,
+              "name": "Official Page"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            }
+          }
+        ],
         "vid_urls": [],
         "timeline": [],
         "pad_turnaround": "P3DT10H38M",
