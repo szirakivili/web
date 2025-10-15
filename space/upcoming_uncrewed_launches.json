@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-15T11:21:29Z",
+  "fetched_at": "2025-10-15T12:55:28Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 350,
@@ -863,7 +863,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-10-15T04:46:24Z",
+        "last_updated": "2025-10-15T12:01:05Z",
         "net": "2025-10-15T23:04:37Z",
         "net_precision": {
           "id": 0,
@@ -2024,7 +2024,7 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-10-15T22:45:00Z",
+            "start_time": "2025-10-15T22:49:00Z",
             "end_time": null,
             "live": false
           },
@@ -2073,7 +2073,26 @@
         ],
         "timeline": [],
         "pad_turnaround": "P7DT19H10M37S",
-        "mission_patches": []
+        "mission_patches": [
+          {
+            "id": 1192,
+            "name": "Trance 1 C",
+            "priority": 10,
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/mission_patch_images/trance2520125_mission_patch_20251015120055.png",
+            "agency": {
+              "response_mode": "list",
+              "id": 121,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/121/?format=json",
+              "name": "SpaceX",
+              "abbrev": "SpX",
+              "type": {
+                "id": 3,
+                "name": "Commercial"
+              }
+            },
+            "response_mode": "normal"
+          }
+        ]
       },
       {
         "id": "21f2d630-748b-4cd6-9f10-7ed96cc21fb5",
