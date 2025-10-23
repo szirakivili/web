@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEO-DODGE: Futurisztikus Matek Kihívás</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* FUTURISZTIKUS ALAP STÍLUSOK */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0d1a26; /* Sötét éjfélkék háttér */
+            font-family: 'Orbitron', sans-serif; /* Futurisztikus betűtípus */
+            color: #00ffff; /* Ciánkék kiemelő szín */
+            user-select: none;
+        }
+
+        #game-container {
+            width: 400px;
+            height: 600px;
+            background-color: #1a3a50; /* Sötétebb kék játéktér */
+            border: 3px solid #00ffff; /* Ciánkék keret */
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5); /* Világító él */
+            border-radius: 5px; /* Élesebb sarkok */
+        }
+
+        #player {
+            width: 35px; /* Kicsit kisebb figura */
+            height: 35px;
+            background-color: #ff0077; /* Neon magenta figura */
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 0 10px #ff0077;
+        }
+
+        .falling-object {
+            width: 20px;
+            height: 20px;
+            background-color: #ffcc00; /* Neon sárga/arany tárgyak */
+            position: absolute;
+            top: -30px;
+            border-radius: 3px;
+            box-shadow: 0 0 5px #ffcc00;
+        }
+
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #00ff00; /* Neon zöld a statisztikáknak */
+            font-size: 1.2em;
+            font-weight: bold;
+            z-index: 50; 
+        }
+
+        /* MATEK KIHÍVÁS - KÖZÉPEN, ÁTTETSZŐ */
+        #math-challenge {
+            position: absolute;
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            width: 80%;
+            padding: 20px 10px;
+            
+            background-color: rgba(26, 58, 80, 0.6); /* Sötét áttetsző háttér */
+            color: #00ffff; /* Ciánkék szöveg */
+            
+            border: 1px solid #00ffff;
+            border-radius: 0; /* Éles sarkok */
+            text-align: center;
+            font-size: 2em; 
+            font-weight: bold;
+            z-index: 60;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+            pointer-events: none; 
+        }
+        
+        #question {
+            margin-bottom: 5px;
+        }
+
+        #answer {
+            color: #00ff00; /* Neon zöld a beírt válasz */
+            min-height: 1.5em; 
+            font-size: 1.8em; 
+            letter-spacing: 2px; /* Szét húzott betűk */
+        }
+
+        #error-symbol {
+            color: red;
+            font-size: 3em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.1s;
+        }
+
+        #timer {
+            margin-top: 10px;
+            color: #ff0077; /* Neon magenta időzítő */
+            font-size: 0.8em; 
+        }
+
+        /* JÁTÉK VÉGE KÉPERNYŐ */
+        #game-over {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #00ffff;
+            display: none; 
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.2em;
+            text-align: center;
+            z-index: 100;
+        }
+
+        #game-over button {
+            padding: 12px 25px;
+            margin-top: 30px;
+            font-size: 0.6em;
+            cursor: pointer;
+            border: 2px solid #ff0077;
+            background-color: transparent;
+            color: #ff0077;
+            border-radius: 0;
+            box-shadow: 0 0 15px #ff0077;
+            transition: all 0.2s;
+        }
+        #game-over button:hover {
+            background-color: #ff0077;
+            color: #0d1a26;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="score">SCORE: 0</div>
+        
+        <div id="math-challenge">
+            <div id="question">INIT...</div>
+            <div id="answer"></div>
+            <div id="error-symbol">×</div>
+            <div id="timer">TIME: 15</div>
+        </div>
+        
+        <div id="player"></div>
+        <div id="game-over">
+            SYSTEM FAILURE!
+            <br>
+            <span id="final-score">SCORE: 0</span>
+            <span id="game-over-reason"></span>
+            <button onclick="startGame()">RESTART_PROGRAM</button>
+        </div>
+    </div>
+
+    <script>
+        // DOM elemek
+        const gameContainer = document.getElementById('game-container');
+        const player = document.getElementById('player');
+        const scoreDisplay = document.getElementById('score');
+        const gameOverScreen = document.getElementById('game-over');
+        const finalScoreDisplay = document.getElementById('final-score');
+        const gameOverReasonDisplay = document.getElementById('game-over-reason');
+        const questionDisplay = document.getElementById('question');
+        const answerDisplay = document.getElementById('answer');
+        const errorSymbol = document.getElementById('error-symbol'); // Új elem
+        const timerDisplay = document.getElementById('timer');
+        
+        // Játék beállítások
+        const playerSize = 35; // Kicsit kisebb
+        const containerWidth = 400;
+        const containerHeight = 600;
+        let playerX = containerWidth / 2 - playerSize / 2;
+        let score = 0;
+        let isGameOver = false;
+        
+        // Intervallumok
+        let gameLoopInterval;
+        let objectCreationInterval;
+        let mathTimerInterval;
+
+        // Játékos mozgása
+        let moveDirection = 0; 
+        const playerSpeed = 5; 
+        
+        // Nehézségi konstansok
+        const initialObjectInterval = 1000; 
+        const minObjectInterval = 300;      
+        const difficultyScoreStep = 10;     
+        const intervalDecreasePerStep = 50; 
+
+        // Matek beállítások
+        const mathTimeLimit = 15; // Másodperc
+        let currentAnswer = 0;
+        let currentInput = "";
+        let timeLeft = mathTimeLimit;
+
+
+        /* ------------------------- JÁTÉKVEZÉRLÉS ------------------------- */
+
+        function startGame() {
+            // Tiszta lap
+            isGameOver = false;
+            score = 0;
+            scoreDisplay.textContent = 'SCORE: 0';
+            gameOverScreen.style.display = 'none';
+            
+            // Mozgás inicializálása
+            playerX = containerWidth / 2 - playerSize / 2;
+            player.style.left = playerX + 'px';
+            player.style.transform = 'none'; 
+            
+            document.querySelectorAll('.falling-object').forEach(obj => obj.remove());
+
+            // Intervallumok törlése
+            clearInterval(gameLoopInterval);
+            clearInterval(objectCreationInterval);
+            clearInterval(mathTimerInterval);
+
+            // Játék indítása
+            gameLoopInterval = setInterval(gameLoop, 20); 
+            objectCreationInterval = setInterval(createFallingObject, initialObjectInterval); 
+            
+            // Matek indítása
+            startNewMathChallenge();
+            
+            // Billentyűzet kezelők
+            document.removeEventListener('keydown', handleKeyDown);
+            document.removeEventListener('keyup', handleKeyUp);
+            document.addEventListener('keydown', handleKeyDown);
+            document.addEventListener('keyup', handleKeyUp);
+        }
+
+        function endGame(reason) {
+            isGameOver = true;
+            clearInterval(gameLoopInterval);
+            clearInterval(objectCreationInterval);
+            clearInterval(mathTimerInterval); 
+            
+            finalScoreDisplay.textContent = 'FINAL SCORE: ' + score;
+            gameOverReasonDisplay.textContent = reason; 
+            gameOverScreen.style.display = 'flex';
+            
+            document.removeEventListener('keydown', handleKeyDown); 
+            document.removeEventListener('keyup', handleKeyUp); 
+        }
+
+
+        /* ------------------------- GRAFIKA ÉS LOGIKA CIKLUSOK ------------------------- */
+
+        function gameLoop() {
+            if (isGameOver) return;
+            
+            // Játékos mozgatása és korlátozása
+            playerX += moveDirection * playerSpeed;
+            playerX = Math.max(0, playerX); 
+            playerX = Math.min(containerWidth - playerSize, playerX); 
+            player.style.left = playerX + 'px';
+
+            // Hulló tárgyak mozgatása, ütközés, pontozás
+            const objects = document.querySelectorAll('.falling-object');
+            objects.forEach(object => {
+                const currentTop = parseFloat(object.style.top.replace('px', '') || -30);
+                const speed = parseFloat(object.dataset.speed);
+                const newTop = currentTop + speed;
+                
+                object.style.top = newTop + 'px';
+
+                if (checkCollision(player, object)) {
+                    endGame("[COLLISION DETECTED]");
+                    return;
+                }
+
+                if (newTop > containerHeight) {
+                    object.remove();
+                    score++;
+                    scoreDisplay.textContent = 'SCORE: ' + score;
+                    
+                    // Nehézség növelése
+                    if (score > 0 && score % difficultyScoreStep === 0) { 
+                         clearInterval(objectCreationInterval);
+                         const difficultySteps = Math.floor(score / difficultyScoreStep);
+                         const newInterval = Math.max(minObjectInterval, initialObjectInterval - difficultySteps * intervalDecreasePerStep); 
+                         objectCreationInterval = setInterval(createFallingObject, newInterval);
+                    }
+                }
+            });
+        }
+
+        function createFallingObject() {
+            if (isGameOver) return;
+            const object = document.createElement('div');
+            object.classList.add('falling-object');
+            const objectSize = 25;
+            const objectX = Math.random() * (containerWidth - objectSize); 
+            object.style.left = objectX + 'px';
+            object.dataset.speed = Math.random() * 4 + 3;
+            gameContainer.appendChild(object);
+        }
+
+        function checkCollision(element1, element2) {
+            const rect1 = element1.getBoundingClientRect();
+            const rect2 = element2.getBoundingClientRect();
+            
+            return rect1.left < rect2.right &&
+                   rect1.right > rect2.left &&
+                   rect1.top < rect2.bottom &&
+                   rect1.bottom > rect2.top;
+        }
+
+
+        /* ------------------------- MATEK KIHÍVÁS LOGIKÁJA ------------------------- */
+
+        function generateMathProblem() {
+            let num1, num2, operator, result, question;
+            const type = Math.floor(Math.random() * 3);
+
+            if (type === 0) { // Összeadás: Két 2 jegyű szám
+                num1 = Math.floor(Math.random() * 90) + 10;
+                num2 = Math.floor(Math.random() * 90) + 10;
+                operator = '+';
+                result = num1 + num2;
+            } else if (type === 1) { // Kivonás: Két 2 jegyű szám (az eredmény pozitív)
+                num1 = Math.floor(Math.random() * 90) + 10;
+                num2 = Math.floor(Math.random() * (num1 - 9)) + 10; 
+                operator = '-';
+                result = num1 - num2;
+            } else { // Szorzás: Két 1 jegyű szám (max 9x9)
+                num1 = Math.floor(Math.random() * 8) + 2; 
+                num2 = Math.floor(Math.random() * 8) + 2; 
+                operator = '×';
+                result = num1 * num2;
+            }
+            
+            question = `${num1} ${operator} ${num2} =`; 
+            return { question, result };
+        }
+
+        function startNewMathChallenge() {
+            clearInterval(mathTimerInterval);
+            
+            const problem = generateMathProblem();
+            currentAnswer = problem.result;
+            currentInput = "";
+            timeLeft = mathTimeLimit;
+
+            questionDisplay.textContent = problem.question;
+            answerDisplay.textContent = ""; // Válasz mező ÜRES
+            timerDisplay.textContent = `${timeLeft}`;
+            timerDisplay.style.color = '#ff0077';
+            
+            mathTimerInterval = setInterval(updateMathTimer, 1000);
+        }
+
+        function updateMathTimer() {
+            timeLeft--;
+            timerDisplay.textContent = `${timeLeft}`;
+
+            if (timeLeft <= 5) {
+                timerDisplay.style.color = 'red'; /* Időzítő pirosra vált 5 másodpercnél */
+            }
+
+            if (timeLeft <= 0) {
+                clearInterval(mathTimerInterval);
+                endGame("[TIMEOUT] Math problem not solved.");
+            }
+        }
+
+        function showMathError() {
+            errorSymbol.style.opacity = 1;
+            setTimeout(() => {
+                errorSymbol.style.opacity = 0;
+            }, 300); // 300ms után eltűnik
+        }
+
+        function checkMathAnswer() {
+            const correctAnswerStr = String(currentAnswer);
+            
+            if (currentInput === correctAnswerStr) {
+                // Helyes válasz
+                startNewMathChallenge(); 
+            } else if (currentInput.length >= correctAnswerStr.length) {
+                // Túl hosszú vagy hibás válasz
+                showMathError(); // Piros X
+                currentInput = "";
+                answerDisplay.textContent = "";
+            }
+        }
+
+
+        /* ------------------------- BILLENTYŰZET KEZELŐK ------------------------- */
+
+        function handleKeyDown(event) {
+            if (isGameOver) return;
+            
+            const key = event.key.toLowerCase();
+            
+            // 1. Mozgás kezelése
+            if (key === 'arrowleft' || key === 'a') {
+                moveDirection = -1; 
+            } else if (key === 'arrowright' || key === 'd') {
+                moveDirection = 1; 
+            } 
+            
+            // 2. Matek válasz kezelése
+            else if (key >= '0' && key <= '9') {
+                // Megakadályozza, hogy túl sok számot írjon be, ami még hibás
+                if (currentInput.length < String(currentAnswer).length + 1) { 
+                    currentInput += key;
+                    answerDisplay.textContent = currentInput;
+                    checkMathAnswer();
+                } else {
+                    showMathError(); // Túl sok szám, piros X
+                }
+            } else if (key === 'backspace') {
+                currentInput = currentInput.slice(0, -1);
+                answerDisplay.textContent = currentInput;
+            }
+        }
+
+        function handleKeyUp(event) {
+            if (isGameOver) return;
+
+            const key = event.key.toLowerCase();
+            
+            // Mozgás leállítása
+            if ((key === 'arrowleft' || key === 'a') && moveDirection === -1) {
+                moveDirection = 0;
+            } else if ((key === 'arrowright' || key === 'd') && moveDirection === 1) {
+                moveDirection = 0;
+            }
+        }
+
+        // Játék indítása a betöltéskor
+        window.onload = startGame;
+    </script>
+</body>
+</html>
