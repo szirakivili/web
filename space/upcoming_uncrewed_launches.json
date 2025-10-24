@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-24T05:24:35Z",
+  "fetched_at": "2025-10-24T06:37:08Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 347,
@@ -807,7 +807,7 @@
           "abbrev": "Deployed",
           "description": "Deployment of the payload(s) has been confirmed."
         },
-        "last_updated": "2025-10-24T02:14:33Z",
+        "last_updated": "2025-10-24T06:02:26Z",
         "net": "2025-10-24T01:30:00Z",
         "net_precision": {
           "id": 0,
@@ -2019,12 +2019,12 @@
         "vid_urls": [
           {
             "priority": 7,
-            "source": "youtube.com",
-            "publisher": "SPACE AFFAIRS",
-            "title": "SpaceX - Falcon 9 - SPAINSAT NG II - SLC-40 - Cape Canaveral SFS - October 23, 2025",
-            "description": "Launch Date:  October 23, 2025 (EDT)\nLaunch Time: 9:30 p.m. EDT (October 24, 0130 UTC, 03:30 CEST)\nLaunch Window:  Open until 1:30 a.m. EDT, October 24\nLaunch Site: SLC-40 - Cape Canaveral Space Force...",
-            "feature_image": "https://i.ytimg.com/vi/_yc38EAnxco/maxresdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=_yc38EAnxco",
+            "source": null,
+            "publisher": "The Space Devs",
+            "title": "SpaceX SpainSat NG II",
+            "description": "On Friday October 24, 2025, SpaceX launched the SpainSat NG II mission with a Falcon 9 Block 5 from Space Launch Complex 40 at Cape Canaveral SFS, FL, USA.\n\nDescription generated from the Launch Libra...",
+            "feature_image": "https://i.ytimg.com/vi/wTk_BkDJ4FI/maxresdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=wTk_BkDJ4FI",
             "type": {
               "id": 4,
               "name": "Unofficial Re-stream"
@@ -2034,8 +2034,8 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-10-24T01:10:23Z",
-            "end_time": "2025-10-24T02:09:28Z",
+            "start_time": null,
+            "end_time": null,
             "live": false
           },
           {
@@ -3623,16 +3623,16 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-10-23T05:21:43Z",
-        "net": "2025-10-26T00:00:00Z",
+        "last_updated": "2025-10-24T05:42:50Z",
+        "net": "2025-10-26T00:00:15Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
-        "window_end": "2025-10-26T00:00:00Z",
-        "window_start": "2025-10-26T00:00:00Z",
+        "window_end": "2025-10-26T00:00:15Z",
+        "window_start": "2025-10-26T00:00:15Z",
         "image": {
           "id": 1746,
           "name": "H3 render",
@@ -4410,6 +4410,14 @@
         "flightclub_url": null,
         "updates": [
           {
+            "id": 12655,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Tweaked T-0.",
+            "info_url": "https://www.jaxa.jp/press/2025/10/20251024-1_j.html",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-24T05:42:00Z"
+          },
+          {
             "id": 12645,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Rescheduled for October 26.",
@@ -4493,7 +4501,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P265DT15H30M",
+        "pad_turnaround": "P265DT15H30M15S",
         "mission_patches": []
       },
       {
@@ -16299,6 +16307,14 @@
                   "nationality_name_composed": "Swedo"
                 },
                 {
+                  "id": 20,
+                  "name": "Belgium",
+                  "alpha_2_code": "BE",
+                  "alpha_3_code": "BEL",
+                  "nationality_name": "Belgian",
+                  "nationality_name_composed": "Belgo"
+                },
+                {
                   "id": 23,
                   "name": "Portugal",
                   "alpha_2_code": "PT",
@@ -16401,14 +16417,6 @@
                   "alpha_3_code": "LUX",
                   "nationality_name": "Luxembourger",
                   "nationality_name_composed": "Luxembourgish"
-                },
-                {
-                  "id": 20,
-                  "name": "Belgium",
-                  "alpha_2_code": "BE",
-                  "alpha_3_code": "BEL",
-                  "nationality_name": "Belgian",
-                  "nationality_name_composed": "Belgo"
                 },
                 {
                   "id": 86,
@@ -20847,76 +20855,20 @@
               "featured": false,
               "country": [
                 {
-                  "id": 11,
-                  "name": "Austria",
-                  "alpha_2_code": "AT",
-                  "alpha_3_code": "AUT",
-                  "nationality_name": "Austrian",
-                  "nationality_name_composed": "Austro"
-                },
-                {
-                  "id": 20,
-                  "name": "Belgium",
-                  "alpha_2_code": "BE",
-                  "alpha_3_code": "BEL",
-                  "nationality_name": "Belgian",
-                  "nationality_name_composed": "Belgo"
-                },
-                {
-                  "id": 40,
-                  "name": "Bulgaria",
-                  "alpha_2_code": "BG",
-                  "alpha_3_code": "BGR",
-                  "nationality_name": "Bulgarian",
-                  "nationality_name_composed": "Bulgaro"
-                },
-                {
-                  "id": 54,
-                  "name": "Croatia",
-                  "alpha_2_code": "HR",
-                  "alpha_3_code": "HRV",
-                  "nationality_name": "Croatian",
-                  "nationality_name_composed": "Croatian"
-                },
-                {
-                  "id": 46,
-                  "name": "Czechia",
-                  "alpha_2_code": "CZ",
-                  "alpha_3_code": "CZE",
-                  "nationality_name": "Czech",
-                  "nationality_name_composed": "Czech"
-                },
-                {
-                  "id": 45,
-                  "name": "Denmark",
-                  "alpha_2_code": "DK",
-                  "alpha_3_code": "DNK",
-                  "nationality_name": "Danish",
-                  "nationality_name_composed": "Dano"
-                },
-                {
-                  "id": 80,
-                  "name": "Estonia",
-                  "alpha_2_code": "EE",
-                  "alpha_3_code": "EST",
-                  "nationality_name": "Estonian",
-                  "nationality_name_composed": "Estonian"
-                },
-                {
-                  "id": 77,
-                  "name": "Finland",
-                  "alpha_2_code": "FI",
-                  "alpha_3_code": "FIN",
-                  "nationality_name": "Finnish",
-                  "nationality_name_composed": "Finno"
-                },
-                {
                   "id": 1,
                   "name": "France",
                   "alpha_2_code": "FR",
                   "alpha_3_code": "FRA",
                   "nationality_name": "French",
                   "nationality_name_composed": "Franco"
+                },
+                {
+                  "id": 3,
+                  "name": "Italy",
+                  "alpha_2_code": "IT",
+                  "alpha_3_code": "ITA",
+                  "nationality_name": "Italian",
+                  "nationality_name_composed": "Italo"
                 },
                 {
                   "id": 4,
@@ -20927,12 +20879,76 @@
                   "nationality_name_composed": "Germano"
                 },
                 {
-                  "id": 78,
-                  "name": "Greece",
-                  "alpha_2_code": "GR",
-                  "alpha_3_code": "GRC",
-                  "nationality_name": "Greek",
-                  "nationality_name_composed": "Greco"
+                  "id": 7,
+                  "name": "Spain",
+                  "alpha_2_code": "ES",
+                  "alpha_3_code": "ESP",
+                  "nationality_name": "Spanish",
+                  "nationality_name_composed": "Hispano"
+                },
+                {
+                  "id": 8,
+                  "name": "Switzerland",
+                  "alpha_2_code": "CH",
+                  "alpha_3_code": "CHE",
+                  "nationality_name": "Swiss",
+                  "nationality_name_composed": "Swiss"
+                },
+                {
+                  "id": 10,
+                  "name": "United Kingdom",
+                  "alpha_2_code": "GB",
+                  "alpha_3_code": "GBR",
+                  "nationality_name": "British",
+                  "nationality_name_composed": "Brito"
+                },
+                {
+                  "id": 11,
+                  "name": "Austria",
+                  "alpha_2_code": "AT",
+                  "alpha_3_code": "AUT",
+                  "nationality_name": "Austrian",
+                  "nationality_name_composed": "Austro"
+                },
+                {
+                  "id": 15,
+                  "name": "Sweden",
+                  "alpha_2_code": "SE",
+                  "alpha_3_code": "SWE",
+                  "nationality_name": "Swedish",
+                  "nationality_name_composed": "Swedo"
+                },
+                {
+                  "id": 18,
+                  "name": "Turkey",
+                  "alpha_2_code": "TR",
+                  "alpha_3_code": "TUR",
+                  "nationality_name": "Turkish",
+                  "nationality_name_composed": "Turco"
+                },
+                {
+                  "id": 20,
+                  "name": "Belgium",
+                  "alpha_2_code": "BE",
+                  "alpha_3_code": "BEL",
+                  "nationality_name": "Belgian",
+                  "nationality_name_composed": "Belgo"
+                },
+                {
+                  "id": 23,
+                  "name": "Portugal",
+                  "alpha_2_code": "PT",
+                  "alpha_3_code": "PRT",
+                  "nationality_name": "Portuguese",
+                  "nationality_name_composed": "Luso"
+                },
+                {
+                  "id": 27,
+                  "name": "Netherlands",
+                  "alpha_2_code": "NL",
+                  "alpha_3_code": "NLD",
+                  "nationality_name": "Dutch",
+                  "nationality_name_composed": "Dutch"
                 },
                 {
                   "id": 31,
@@ -20941,6 +20957,94 @@
                   "alpha_3_code": "HUN",
                   "nationality_name": "Hungarian",
                   "nationality_name_composed": "Hungarian"
+                },
+                {
+                  "id": 39,
+                  "name": "Poland",
+                  "alpha_2_code": "PL",
+                  "alpha_3_code": "POL",
+                  "nationality_name": "Polish",
+                  "nationality_name_composed": "Polono"
+                },
+                {
+                  "id": 40,
+                  "name": "Bulgaria",
+                  "alpha_2_code": "BG",
+                  "alpha_3_code": "BGR",
+                  "nationality_name": "Bulgarian",
+                  "nationality_name_composed": "Bulgaro"
+                },
+                {
+                  "id": 43,
+                  "name": "Slovakia",
+                  "alpha_2_code": "SK",
+                  "alpha_3_code": "SVK",
+                  "nationality_name": "Slovak",
+                  "nationality_name_composed": "Slovak"
+                },
+                {
+                  "id": 45,
+                  "name": "Denmark",
+                  "alpha_2_code": "DK",
+                  "alpha_3_code": "DNK",
+                  "nationality_name": "Danish",
+                  "nationality_name_composed": "Dano"
+                },
+                {
+                  "id": 46,
+                  "name": "Czechia",
+                  "alpha_2_code": "CZ",
+                  "alpha_3_code": "CZE",
+                  "nationality_name": "Czech",
+                  "nationality_name_composed": "Czech"
+                },
+                {
+                  "id": 47,
+                  "name": "Romania",
+                  "alpha_2_code": "RO",
+                  "alpha_3_code": "ROU",
+                  "nationality_name": "Romanian",
+                  "nationality_name_composed": "Romanian"
+                },
+                {
+                  "id": 49,
+                  "name": "Norway",
+                  "alpha_2_code": "NO",
+                  "alpha_3_code": "NOR",
+                  "nationality_name": "Norwegian",
+                  "nationality_name_composed": "Norwegian"
+                },
+                {
+                  "id": 54,
+                  "name": "Croatia",
+                  "alpha_2_code": "HR",
+                  "alpha_3_code": "HRV",
+                  "nationality_name": "Croatian",
+                  "nationality_name_composed": "Croatian"
+                },
+                {
+                  "id": 77,
+                  "name": "Finland",
+                  "alpha_2_code": "FI",
+                  "alpha_3_code": "FIN",
+                  "nationality_name": "Finnish",
+                  "nationality_name_composed": "Finno"
+                },
+                {
+                  "id": 78,
+                  "name": "Greece",
+                  "alpha_2_code": "GR",
+                  "alpha_3_code": "GRC",
+                  "nationality_name": "Greek",
+                  "nationality_name_composed": "Greco"
+                },
+                {
+                  "id": 80,
+                  "name": "Estonia",
+                  "alpha_2_code": "EE",
+                  "alpha_3_code": "EST",
+                  "nationality_name": "Estonian",
+                  "nationality_name_composed": "Estonian"
                 },
                 {
                   "id": 81,
@@ -20957,14 +21061,6 @@
                   "alpha_3_code": "ISL",
                   "nationality_name": "Icelander",
                   "nationality_name_composed": "Icelandic"
-                },
-                {
-                  "id": 3,
-                  "name": "Italy",
-                  "alpha_2_code": "IT",
-                  "alpha_3_code": "ITA",
-                  "nationality_name": "Italian",
-                  "nationality_name_composed": "Italo"
                 },
                 {
                   "id": 83,
@@ -20991,100 +21087,12 @@
                   "nationality_name_composed": "Luxembourgish"
                 },
                 {
-                  "id": 27,
-                  "name": "Netherlands",
-                  "alpha_2_code": "NL",
-                  "alpha_3_code": "NLD",
-                  "nationality_name": "Dutch",
-                  "nationality_name_composed": "Dutch"
-                },
-                {
-                  "id": 49,
-                  "name": "Norway",
-                  "alpha_2_code": "NO",
-                  "alpha_3_code": "NOR",
-                  "nationality_name": "Norwegian",
-                  "nationality_name_composed": "Norwegian"
-                },
-                {
-                  "id": 39,
-                  "name": "Poland",
-                  "alpha_2_code": "PL",
-                  "alpha_3_code": "POL",
-                  "nationality_name": "Polish",
-                  "nationality_name_composed": "Polono"
-                },
-                {
-                  "id": 23,
-                  "name": "Portugal",
-                  "alpha_2_code": "PT",
-                  "alpha_3_code": "PRT",
-                  "nationality_name": "Portuguese",
-                  "nationality_name_composed": "Luso"
-                },
-                {
-                  "id": 47,
-                  "name": "Romania",
-                  "alpha_2_code": "RO",
-                  "alpha_3_code": "ROU",
-                  "nationality_name": "Romanian",
-                  "nationality_name_composed": "Romanian"
-                },
-                {
-                  "id": 43,
-                  "name": "Slovakia",
-                  "alpha_2_code": "SK",
-                  "alpha_3_code": "SVK",
-                  "nationality_name": "Slovak",
-                  "nationality_name_composed": "Slovak"
-                },
-                {
                   "id": 86,
                   "name": "Slovenia",
                   "alpha_2_code": "SI",
                   "alpha_3_code": "SVN",
                   "nationality_name": "Slovenian",
                   "nationality_name_composed": "Slovenian"
-                },
-                {
-                  "id": 7,
-                  "name": "Spain",
-                  "alpha_2_code": "ES",
-                  "alpha_3_code": "ESP",
-                  "nationality_name": "Spanish",
-                  "nationality_name_composed": "Hispano"
-                },
-                {
-                  "id": 15,
-                  "name": "Sweden",
-                  "alpha_2_code": "SE",
-                  "alpha_3_code": "SWE",
-                  "nationality_name": "Swedish",
-                  "nationality_name_composed": "Swedo"
-                },
-                {
-                  "id": 8,
-                  "name": "Switzerland",
-                  "alpha_2_code": "CH",
-                  "alpha_3_code": "CHE",
-                  "nationality_name": "Swiss",
-                  "nationality_name_composed": "Swiss"
-                },
-                {
-                  "id": 18,
-                  "name": "Turkey",
-                  "alpha_2_code": "TR",
-                  "alpha_3_code": "TUR",
-                  "nationality_name": "Turkish",
-                  "nationality_name_composed": "Turco"
-                },
-                {
-                  "id": 10,
-                  "name": "United Kingdom",
-                  "alpha_2_code": "GB",
-                  "alpha_3_code": "GBR",
-                  "nationality_name": "British",
-                  "nationality_name_composed": "Brito"
                 }
               ],
               "description": "The European Organisation for the Exploitation of Meteorological Satellites (EUMETSAT) is an intergovernmental organisation created through an international convention agreed by a current total of 30 European Member States.\r\n\r\nEUMETSAT's primary objective is to establish, maintain and exploit European systems of operational meteorological satellites. EUMETSAT is responsible for the launch and operation of the satellites and for delivering satellite data to end-users as well as contributing to the operational monitoring of climate and the detection of global climate changes.",
@@ -21341,6 +21349,14 @@
                   "nationality_name_composed": "Swedo"
                 },
                 {
+                  "id": 20,
+                  "name": "Belgium",
+                  "alpha_2_code": "BE",
+                  "alpha_3_code": "BEL",
+                  "nationality_name": "Belgian",
+                  "nationality_name_composed": "Belgo"
+                },
+                {
                   "id": 23,
                   "name": "Portugal",
                   "alpha_2_code": "PT",
@@ -21443,14 +21459,6 @@
                   "alpha_3_code": "LUX",
                   "nationality_name": "Luxembourger",
                   "nationality_name_composed": "Luxembourgish"
-                },
-                {
-                  "id": 20,
-                  "name": "Belgium",
-                  "alpha_2_code": "BE",
-                  "alpha_3_code": "BEL",
-                  "nationality_name": "Belgian",
-                  "nationality_name_composed": "Belgo"
                 },
                 {
                   "id": 86,
