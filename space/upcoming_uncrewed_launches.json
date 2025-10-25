@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-25T22:22:07Z",
+  "fetched_at": "2025-10-25T23:21:28Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 345,
@@ -2040,8 +2040,8 @@
                   "diameter": 4.4,
                   "human_rated": false,
                   "crew_capacity": 0,
-                  "payload_capacity": 5820,
-                  "payload_return_capacity": null,
+                  "payload_capacity": 5850,
+                  "payload_return_capacity": 0,
                   "flight_life": "6 Months docked, 18 months post-mission free flight",
                   "wiki_link": "https://en.wikipedia.org/wiki/HTV-X",
                   "info_link": "https://humans-in-space.jaxa.jp/en/htv-x/",
@@ -2056,7 +2056,21 @@
                 },
                 "fastest_turnaround": null
               },
-              "landing": null,
+              "landing": {
+                "id": 1726,
+                "url": "https://ll.thespacedevs.com/2.3.0/landings/1726/?format=json",
+                "attempt": false,
+                "success": null,
+                "description": "The HTV-X spacecraft will burn up upon entering Earth's atmosphere.",
+                "downrange_distance": null,
+                "landing_location": null,
+                "type": {
+                  "id": 7,
+                  "name": "Destructive Reentry",
+                  "abbrev": "ATM",
+                  "description": "Spacecraft burned up in the atmosphere"
+                }
+              },
               "duration": null,
               "turn_around_time": null,
               "response_mode": "detailed",
