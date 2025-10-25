@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-25T16:29:21Z",
+  "fetched_at": "2025-10-25T17:20:09Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 345,
@@ -1452,7 +1452,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-10-25T14:35:01Z",
+        "last_updated": "2025-10-25T16:52:23Z",
         "net": "2025-10-26T00:00:15Z",
         "net_precision": {
           "id": 0,
@@ -1834,7 +1834,238 @@
             "fastest_turnaround": null
           },
           "launcher_stage": [],
-          "spacecraft_stage": [],
+          "spacecraft_stage": [
+            {
+              "id": 899,
+              "url": "https://ll.thespacedevs.com/2.3.0/spacecraft_flights/899/?format=json",
+              "destination": "ISS",
+              "mission_end": null,
+              "spacecraft": {
+                "response_mode": "normal",
+                "id": 623,
+                "url": "https://ll.thespacedevs.com/2.3.0/spacecraft/623/?format=json",
+                "name": "HTV-X1",
+                "serial_number": "HTV-X1",
+                "is_placeholder": false,
+                "image": null,
+                "in_space": false,
+                "time_in_space": "P0D",
+                "time_docked": "P0D",
+                "flights_count": 0,
+                "mission_ends_count": 0,
+                "status": {
+                  "id": 1,
+                  "name": "Active"
+                },
+                "description": "Spacecraft used for the maiden flight of the HTV-X Cargo Resupply Vehicle.",
+                "spacecraft_config": {
+                  "response_mode": "detailed",
+                  "id": 47,
+                  "url": "https://ll.thespacedevs.com/2.3.0/spacecraft_configurations/47/?format=json",
+                  "name": "HTV-X",
+                  "type": {
+                    "id": 4,
+                    "name": "Cargo Resupply"
+                  },
+                  "agency": {
+                    "response_mode": "normal",
+                    "id": 37,
+                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/37/?format=json",
+                    "name": "Japan Aerospace Exploration Agency",
+                    "abbrev": "JAXA",
+                    "type": {
+                      "id": 1,
+                      "name": "Government"
+                    },
+                    "featured": true,
+                    "country": [
+                      {
+                        "id": 28,
+                        "name": "Japan",
+                        "alpha_2_code": "JP",
+                        "alpha_3_code": "JPN",
+                        "nationality_name": "Japanese",
+                        "nationality_name_composed": "Nippo"
+                      }
+                    ],
+                    "description": "The Japan Aerospace Exploration Agency (JAXA) is Japan's national aero-space agency. Through the merger of three previously independent organizations, JAXA was formed on 1 October 2003. JAXA is responsible for research, technology development and the launch of satellites into orbit, and is involved in many more advanced missions, such as asteroid exploration and possible manned exploration of the Moon. JAXA launch their Epsilon vehicle from the Uchinoura Space Center and their H-II vehicles from the Tanegashima Space Center.",
+                    "administrator": "Administrator: Hiroshi Yamakawa",
+                    "founding_year": 2003,
+                    "launchers": "H-II",
+                    "spacecraft": "",
+                    "parent": null,
+                    "image": {
+                      "id": 16,
+                      "name": "[AUTO] Japan Aerospace Exploration Agency - image",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/japan2520aerospace2520exploration2520agency_image_20190207032440.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184621.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "logo": {
+                      "id": 151,
+                      "name": "[AUTO] Japan Aerospace Exploration Agency - logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/japan2520aerospace2520exploration2520agency_logo_20190207032440.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185023.png",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "social_logo": {
+                      "id": 69,
+                      "name": "[AUTO] Japan Aerospace Exploration Agency - social_logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/japan2520aerospace2520exploration2520agency_nation_20230531052930.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184813.png",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    }
+                  },
+                  "family": [
+                    {
+                      "response_mode": "normal",
+                      "id": 4,
+                      "name": "HTV",
+                      "description": "The H-II Transfer Vehicle (HTV), also called Kounotori, is an expendable, automated cargo spacecraft used to resupply the International Space Station",
+                      "manufacturer": {
+                        "response_mode": "normal",
+                        "id": 37,
+                        "url": "https://ll.thespacedevs.com/2.3.0/agencies/37/?format=json",
+                        "name": "Japan Aerospace Exploration Agency",
+                        "abbrev": "JAXA",
+                        "type": {
+                          "id": 1,
+                          "name": "Government"
+                        },
+                        "featured": true,
+                        "country": [
+                          {
+                            "id": 28,
+                            "name": "Japan",
+                            "alpha_2_code": "JP",
+                            "alpha_3_code": "JPN",
+                            "nationality_name": "Japanese",
+                            "nationality_name_composed": "Nippo"
+                          }
+                        ],
+                        "description": "The Japan Aerospace Exploration Agency (JAXA) is Japan's national aero-space agency. Through the merger of three previously independent organizations, JAXA was formed on 1 October 2003. JAXA is responsible for research, technology development and the launch of satellites into orbit, and is involved in many more advanced missions, such as asteroid exploration and possible manned exploration of the Moon. JAXA launch their Epsilon vehicle from the Uchinoura Space Center and their H-II vehicles from the Tanegashima Space Center.",
+                        "administrator": "Administrator: Hiroshi Yamakawa",
+                        "founding_year": 2003,
+                        "launchers": "H-II",
+                        "spacecraft": "",
+                        "parent": null,
+                        "image": {
+                          "id": 16,
+                          "name": "[AUTO] Japan Aerospace Exploration Agency - image",
+                          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/japan2520aerospace2520exploration2520agency_image_20190207032440.jpeg",
+                          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184621.jpeg",
+                          "credit": null,
+                          "license": {
+                            "id": 1,
+                            "name": "Unknown",
+                            "priority": 9,
+                            "link": null
+                          },
+                          "single_use": true,
+                          "variants": []
+                        },
+                        "logo": {
+                          "id": 151,
+                          "name": "[AUTO] Japan Aerospace Exploration Agency - logo",
+                          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/japan2520aerospace2520exploration2520agency_logo_20190207032440.png",
+                          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185023.png",
+                          "credit": null,
+                          "license": {
+                            "id": 1,
+                            "name": "Unknown",
+                            "priority": 9,
+                            "link": null
+                          },
+                          "single_use": true,
+                          "variants": []
+                        },
+                        "social_logo": {
+                          "id": 69,
+                          "name": "[AUTO] Japan Aerospace Exploration Agency - social_logo",
+                          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/japan2520aerospace2520exploration2520agency_nation_20230531052930.png",
+                          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184813.png",
+                          "credit": null,
+                          "license": {
+                            "id": 1,
+                            "name": "Unknown",
+                            "priority": 9,
+                            "link": null
+                          },
+                          "single_use": true,
+                          "variants": []
+                        }
+                      },
+                      "parent": null,
+                      "maiden_flight": "2009-09-10",
+                      "spacecraft_flown": 9,
+                      "total_launch_count": 9,
+                      "successful_launches": 9,
+                      "failed_launches": 0,
+                      "attempted_landings": 0,
+                      "successful_landings": 0,
+                      "failed_landings": 0
+                    }
+                  ],
+                  "in_use": true,
+                  "image": null,
+                  "capability": "ISS Resupply",
+                  "history": "The maiden flight is scheduled for 2025.",
+                  "details": "The HTV-X is Japan’s next-generation cargo spacecraft designed to deliver supplies, experiments, and equipment to the International Space Station. Building on the legacy of the original HTV, it features upgraded automation and reduced weight. Its reliable performance supports Japan’s role in international space exploration and the Artemis program.",
+                  "maiden_flight": null,
+                  "height": 8.0,
+                  "diameter": 4.4,
+                  "human_rated": false,
+                  "crew_capacity": 0,
+                  "payload_capacity": 5820,
+                  "payload_return_capacity": null,
+                  "flight_life": "6 Months docked, 18 months post-mission free flight",
+                  "wiki_link": "https://en.wikipedia.org/wiki/HTV-X",
+                  "info_link": "https://humans-in-space.jaxa.jp/en/htv-x/",
+                  "spacecraft_flown": 0,
+                  "total_launch_count": 0,
+                  "successful_launches": 0,
+                  "failed_launches": 0,
+                  "attempted_landings": 0,
+                  "successful_landings": 0,
+                  "failed_landings": 0,
+                  "fastest_turnaround": null
+                },
+                "fastest_turnaround": null
+              },
+              "landing": null,
+              "duration": null,
+              "turn_around_time": null,
+              "response_mode": "detailed",
+              "launch_crew": [],
+              "onboard_crew": [],
+              "landing_crew": [],
+              "docking_events": []
+            }
+          ],
           "payloads": []
         },
         "mission": {
