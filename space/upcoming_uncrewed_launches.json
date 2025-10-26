@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-26T04:28:36Z",
+  "fetched_at": "2025-10-26T05:24:20Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 344,
@@ -2790,23 +2790,23 @@
       {
         "id": "91e9e440-f4c0-48c5-9739-4813ffaef1f1",
         "url": "https://ll.thespacedevs.com/2.3.0/launches/91e9e440-f4c0-48c5-9739-4813ffaef1f1/?format=json",
-        "name": "Long March 3B/E | Unknown Payload",
+        "name": "Long March 3B/E | Gaofen-14 02",
         "response_mode": "detailed",
-        "slug": "long-march-3be-unknown-payload",
+        "slug": "long-march-3be-gaofen-14-02",
         "launch_designator": null,
         "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
+          "id": 3,
+          "name": "Launch Successful",
+          "abbrev": "Success",
+          "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2025-10-23T07:02:02Z",
-        "net": "2025-10-26T03:50:00Z",
+        "last_updated": "2025-10-26T04:30:37Z",
+        "net": "2025-10-26T03:55:00Z",
         "net_precision": {
-          "id": 2,
-          "name": "Hour",
-          "abbrev": "HR",
-          "description": "The T-0 is accurate to the hour."
+          "id": 1,
+          "name": "Minute",
+          "abbrev": "MIN",
+          "description": "The T-0 is accurate to the minute."
         },
         "window_end": "2025-10-26T04:13:00Z",
         "window_start": "2025-10-26T03:43:00Z",
@@ -2902,11 +2902,11 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 549,
-          "consecutive_successful_launches": 91,
-          "successful_launches": 535,
+          "total_launch_count": 550,
+          "consecutive_successful_launches": 92,
+          "successful_launches": 536,
           "failed_launches": 14,
-          "pending_launches": 5,
+          "pending_launches": 4,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -3006,11 +3006,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 549,
-                    "consecutive_successful_launches": 91,
-                    "successful_launches": 535,
+                    "total_launch_count": 550,
+                    "consecutive_successful_launches": 92,
+                    "successful_launches": 536,
                     "failed_launches": 14,
-                    "pending_launches": 5,
+                    "pending_launches": 4,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -3117,11 +3117,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 549,
-                    "consecutive_successful_launches": 91,
-                    "successful_launches": 535,
+                    "total_launch_count": 550,
+                    "consecutive_successful_launches": 92,
+                    "successful_launches": 536,
                     "failed_launches": 14,
-                    "pending_launches": 5,
+                    "pending_launches": 4,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -3308,11 +3308,11 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 549,
-              "consecutive_successful_launches": 91,
-              "successful_launches": 535,
+              "total_launch_count": 550,
+              "consecutive_successful_launches": 92,
+              "successful_launches": 536,
               "failed_launches": 14,
-              "pending_launches": 5,
+              "pending_launches": 4,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -3361,11 +3361,11 @@
             "sso_capacity": null,
             "to_thrust": 5924.0,
             "apogee": null,
-            "total_launch_count": 71,
-            "consecutive_successful_launches": 48,
-            "successful_launches": 70,
+            "total_launch_count": 72,
+            "consecutive_successful_launches": 49,
+            "successful_launches": 71,
             "failed_launches": 1,
-            "pending_launches": 2,
+            "pending_launches": 1,
             "attempted_landings": 0,
             "successful_landings": 0,
             "failed_landings": 0,
@@ -3378,14 +3378,14 @@
         },
         "mission": {
           "id": 7369,
-          "name": "Unknown Payload",
-          "type": "Unknown",
-          "description": "Details TBD.",
+          "name": "Gaofen-14 02",
+          "type": "Earth Science",
+          "description": "Gaofen is a series of civilian Earth observation satellites developed and launched for the China High-definition Earth Observation System (CHEOS), a state-sponsored programme aimed to develop a near-real time, all-weather, global surveillance network consisting of satellite, near-space (stratosphere) airships, and aerial observation platforms.",
           "image": null,
           "orbit": {
-            "id": 25,
-            "name": "Unknown",
-            "abbrev": "N/A",
+            "id": 17,
+            "name": "Sun-Synchronous Orbit",
+            "abbrev": "SSO",
             "celestial_body": {
               "response_mode": "list",
               "id": 1,
@@ -3397,17 +3397,91 @@
           "vid_urls": []
         },
         "pad": {
-          "id": 45,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/45/?format=json",
+          "id": 66,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/66/?format=json",
           "active": true,
-          "agencies": [],
-          "name": "Launch Complex 2 (LC-2)",
+          "agencies": [
+            {
+              "response_mode": "normal",
+              "id": 17,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/17/?format=json",
+              "name": "China National Space Administration",
+              "abbrev": "CNSA",
+              "type": {
+                "id": 1,
+                "name": "Government"
+              },
+              "featured": true,
+              "country": [
+                {
+                  "id": 6,
+                  "name": "China",
+                  "alpha_2_code": "CN",
+                  "alpha_3_code": "CHN",
+                  "nationality_name": "Chinese",
+                  "nationality_name_composed": "Sino"
+                }
+              ],
+              "description": "The China National Space Administration (CNSA) is the national space agency of the People's Republic of China. It is responsible for the national space program and for planning and development of space activities. CNSA and China Aerospace Corporation (CASC) assumed the authority over space development efforts previously held by the Ministry of Aerospace Industry. The CNSA has many launch sites around China with their orbital sites located in Jiuquan, Xichang, Taiyuan and Wenchang.",
+              "administrator": "Administrator: Tang Dengjie",
+              "founding_year": 1993,
+              "launchers": "",
+              "spacecraft": "Shenzhou",
+              "parent": null,
+              "image": {
+                "id": 9,
+                "name": "[AUTO] China National Space Administration - image",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520national2520space2520administration_image_20190207032431.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184601.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "logo": {
+                "id": 125,
+                "name": "[AUTO] China National Space Administration - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520national2520space2520administration_logo_20190207032431.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184936.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 51,
+                "name": "[AUTO] China National Space Administration - social_logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520national2520space2520administration_nation_20190602114400.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184747.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              }
+            }
+          ],
+          "name": "Launch Complex 3 (LC-3/LA-1)",
           "image": {
-            "id": 1421,
-            "name": "Long March 3B/E liftoff from LC-2 (Beidou-3 G4)",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/long2520march_image_20230728061656.jpeg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192718.jpeg",
-            "credit": "China Pictorial/Wanquan",
+            "id": 2083,
+            "name": "CZ-2D liftoff from LC-3 (Yaogan 42-02)",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/cz-2d_liftoff__image_20240428050501.jpg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/cz-2d_liftoff__image_thumbnail_20240428050502.jpeg",
+            "credit": "央视新闻",
             "license": {
               "id": 1,
               "name": "Unknown",
@@ -3420,9 +3494,9 @@
           "description": "",
           "info_url": null,
           "wiki_url": "https://en.wikipedia.org/wiki/Xichang_Satellite_Launch_Center",
-          "map_url": "https://www.google.com/maps?q=28.245564,102.026751",
-          "latitude": 28.245564,
-          "longitude": 102.026751,
+          "map_url": "https://www.google.com/maps?q=28.247209,102.02917",
+          "latitude": 28.247209,
+          "longitude": 102.02917,
           "country": {
             "id": 6,
             "name": "China",
@@ -3431,10 +3505,10 @@
             "nationality_name": "Chinese",
             "nationality_name_composed": "Sino"
           },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_45_20200803143520.jpg",
-          "total_launch_count": 121,
-          "orbital_launch_attempt_count": 121,
-          "fastest_turnaround": "P16DT14H32M",
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_66_20200803143611.jpg",
+          "total_launch_count": 104,
+          "orbital_launch_attempt_count": 104,
+          "fastest_turnaround": "P13DT6H21M",
           "location": {
             "response_mode": "normal",
             "id": 16,
@@ -3506,7 +3580,7 @@
             "longitude": 102.026556,
             "latitude": 28.246017,
             "timezone_name": "Asia/Shanghai",
-            "total_launch_count": 232,
+            "total_launch_count": 233,
             "total_landing_count": 0
           }
         },
@@ -3514,7 +3588,7 @@
         "program": [],
         "orbital_launch_attempt_count": 7097,
         "location_launch_attempt_count": 233,
-        "pad_launch_attempt_count": 122,
+        "pad_launch_attempt_count": 104,
         "agency_launch_attempt_count": 550,
         "orbital_launch_attempt_count_year": 248,
         "location_launch_attempt_count_year": 16,
@@ -3522,6 +3596,14 @@
         "agency_launch_attempt_count_year": 49,
         "flightclub_url": null,
         "updates": [
+          {
+            "id": 12676,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Launch success.",
+            "info_url": "https://m.weibo.cn/detail/5225972127499758",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-26T04:30:00Z"
+          },
           {
             "id": 12646,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -3534,7 +3616,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P51DT1H16M",
+        "pad_turnaround": "P27DT55M",
         "mission_patches": []
       },
       {
@@ -4909,17 +4991,17 @@
           },
           {
             "type": {
-              "id": 3,
-              "abbrev": "Stage 1 LOX Load",
-              "description": "Start of liquid oxygen loading in the first stage"
+              "id": 2,
+              "abbrev": "Prop Load",
+              "description": "Start of propelland loading"
             },
             "relative_time": "-PT35M"
           },
           {
             "type": {
-              "id": 2,
-              "abbrev": "Prop Load",
-              "description": "Start of propelland loading"
+              "id": 3,
+              "abbrev": "Stage 1 LOX Load",
+              "description": "Start of liquid oxygen loading in the first stage"
             },
             "relative_time": "-PT35M"
           },
@@ -8948,17 +9030,17 @@
           },
           {
             "type": {
-              "id": 3,
-              "abbrev": "Stage 1 LOX Load",
-              "description": "Start of liquid oxygen loading in the first stage"
+              "id": 2,
+              "abbrev": "Prop Load",
+              "description": "Start of propelland loading"
             },
             "relative_time": "-PT35M"
           },
           {
             "type": {
-              "id": 2,
-              "abbrev": "Prop Load",
-              "description": "Start of propelland loading"
+              "id": 3,
+              "abbrev": "Stage 1 LOX Load",
+              "description": "Start of liquid oxygen loading in the first stage"
             },
             "relative_time": "-PT35M"
           },
@@ -10595,11 +10677,11 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 549,
-          "consecutive_successful_launches": 91,
-          "successful_launches": 535,
+          "total_launch_count": 550,
+          "consecutive_successful_launches": 92,
+          "successful_launches": 536,
           "failed_launches": 14,
-          "pending_launches": 5,
+          "pending_launches": 4,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -10699,11 +10781,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 549,
-                    "consecutive_successful_launches": 91,
-                    "successful_launches": 535,
+                    "total_launch_count": 550,
+                    "consecutive_successful_launches": 92,
+                    "successful_launches": 536,
                     "failed_launches": 14,
-                    "pending_launches": 5,
+                    "pending_launches": 4,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -10810,11 +10892,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 549,
-                    "consecutive_successful_launches": 91,
-                    "successful_launches": 535,
+                    "total_launch_count": 550,
+                    "consecutive_successful_launches": 92,
+                    "successful_launches": 536,
                     "failed_launches": 14,
-                    "pending_launches": 5,
+                    "pending_launches": 4,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -11001,11 +11083,11 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 549,
-              "consecutive_successful_launches": 91,
-              "successful_launches": 535,
+              "total_launch_count": 550,
+              "consecutive_successful_launches": 92,
+              "successful_launches": 536,
               "failed_launches": 14,
-              "pending_launches": 5,
+              "pending_launches": 4,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
