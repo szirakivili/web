@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-29T15:30:30Z",
+  "fetched_at": "2025-10-29T16:35:40Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 341,
@@ -19,8 +19,8 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-10-29T15:22:58Z",
-        "net": "2025-10-29T16:16:50Z",
+        "last_updated": "2025-10-29T16:23:12Z",
+        "net": "2025-10-29T16:35:20Z",
         "net_precision": {
           "id": 0,
           "name": "Second",
@@ -776,7 +776,7 @@
                 "fastest_turnaround": "P23DT24M50S"
               },
               "previous_flight_date": "2025-09-03T11:56:10Z",
-              "turn_around_time": "P56DT4H20M40S",
+              "turn_around_time": "P56DT4H39M10S",
               "landing": {
                 "id": 1724,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1724/?format=json",
@@ -1237,6 +1237,22 @@
         "flightclub_url": "https://flightclub.io/result?llId=94ec1605-bd9c-47fa-9f36-69148ee4e370",
         "updates": [
           {
+            "id": 12705,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/ll2_profile_20230311134739.png",
+            "comment": "Unofficial Re-stream by SPACE AFFAIRS has started",
+            "info_url": "https://www.youtube.com/watch?v=I-Og4KtN1s0",
+            "created_by": "LL2",
+            "created_on": "2025-10-29T16:25:00Z"
+          },
+          {
+            "id": 12704,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Now targeting Oct 29 at 16:35 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-10-37",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-29T15:36:00Z"
+          },
+          {
             "id": 12700,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/arnaud2520muller_profile_20230607144351.jpg",
             "comment": "Now targeting Oct 29 at 16:16 UTC",
@@ -1294,7 +1310,7 @@
             "source": "youtube.com",
             "publisher": "SPACE AFFAIRS",
             "title": "GO! - SpaceX - Falcon 9 - Starlink 10-37 - SLC-40 - Cape Canaveral SFS - Space Affairs Live",
-            "description": "Launch Date:  October 29, 2025\nLaunch Time: 12:16 p.m. EDT (1616 UTC, 1716 CET)\nLaunch Window:  Open until 12:52 p.m. EDT\nLaunch Site: SLC-40 - Cape Canaveral Space Force Station, Florida, USA\nTargete...",
+            "description": "Launch Date:  October 29, 2025\nLaunch Time: 12:35 p.m. EDT (1635 UTC, 1735 CET)\nLaunch Window:  Open until 12:52 p.m. EDT\nLaunch Site: SLC-40 - Cape Canaveral Space Force Station, Florida, USA\nTargete...",
             "feature_image": "https://i.ytimg.com/vi/I-Og4KtN1s0/maxresdefault_live.jpg",
             "url": "https://www.youtube.com/watch?v=I-Og4KtN1s0",
             "type": {
@@ -1306,9 +1322,30 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-10-29T16:06:00Z",
+            "start_time": "2025-10-29T16:25:23Z",
             "end_time": null,
-            "live": false
+            "live": true
+          },
+          {
+            "priority": 8,
+            "source": "youtube.com",
+            "publisher": "Spaceflight Now",
+            "title": "Watch Live: SpaceX launches 29 Starlink satellites on Falcon 9 rocket from Cape Canaveral",
+            "description": "Watch live coverage from Cape Canaveral as SpaceX launches a Falcon 9 rocket with 29 satellites for the company's Starlink internet service. Liftoff from Space Launch Complex 40 is scheduled for 12:35...",
+            "feature_image": "https://i.ytimg.com/vi/_osJhDc2BcE/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=_osJhDc2BcE",
+            "type": {
+              "id": 3,
+              "name": "Unofficial Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-10-29T15:16:59Z",
+            "end_time": null,
+            "live": true
           },
           {
             "priority": 9,
@@ -1348,9 +1385,9 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-10-29T16:09:00Z",
+            "start_time": "2025-10-29T16:27:55Z",
             "end_time": "2025-10-29T18:10:00Z",
-            "live": false
+            "live": true
           }
         ],
         "timeline": [
@@ -1539,7 +1576,7 @@
             "relative_time": "PT1H4M3S"
           }
         ],
-        "pad_turnaround": "P3DT1H16M10S",
+        "pad_turnaround": "P3DT1H34M40S",
         "mission_patches": [
           {
             "id": 7,
@@ -7419,14 +7456,6 @@
                       "nationality_name_composed": "Swedo"
                     },
                     {
-                      "id": 20,
-                      "name": "Belgium",
-                      "alpha_2_code": "BE",
-                      "alpha_3_code": "BEL",
-                      "nationality_name": "Belgian",
-                      "nationality_name_composed": "Belgo"
-                    },
-                    {
                       "id": 23,
                       "name": "Portugal",
                       "alpha_2_code": "PT",
@@ -7529,6 +7558,14 @@
                       "alpha_3_code": "LUX",
                       "nationality_name": "Luxembourger",
                       "nationality_name_composed": "Luxembourgish"
+                    },
+                    {
+                      "id": 20,
+                      "name": "Belgium",
+                      "alpha_2_code": "BE",
+                      "alpha_3_code": "BEL",
+                      "nationality_name": "Belgian",
+                      "nationality_name_composed": "Belgo"
                     },
                     {
                       "id": 86,
