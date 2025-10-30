@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-30T03:45:51Z",
+  "fetched_at": "2025-10-30T04:30:19Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 341,
@@ -1627,13 +1627,13 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-10-27T19:39:06Z",
-        "net": "2025-10-30T20:06:00Z",
+        "last_updated": "2025-10-30T03:48:08Z",
+        "net": "2025-10-30T20:18:10Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2025-10-31T00:06:00Z",
         "window_start": "2025-10-30T20:06:00Z",
@@ -2384,7 +2384,7 @@
                 "fastest_turnaround": "P32DT22H30M50S"
               },
               "previous_flight_date": "2025-09-29T02:04:50Z",
-              "turn_around_time": "P31DT18H1M10S",
+              "turn_around_time": "P31DT18H13M20S",
               "landing": {
                 "id": 1725,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1725/?format=json",
@@ -2771,6 +2771,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=e92f090c-cb6a-4e1a-8e07-5a97dbf1c450",
         "updates": [
           {
+            "id": 12709,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Now targeting Oct 30 at 20:18 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-11-23",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-30T03:48:00Z"
+          },
+          {
             "id": 12628,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Added launch.",
@@ -2948,7 +2956,7 @@
             "relative_time": "PT1H21S"
           }
         ],
-        "pad_turnaround": "P2DT19H22M11S",
+        "pad_turnaround": "P2DT19H34M21S",
         "mission_patches": [
           {
             "id": 7,
@@ -7472,6 +7480,14 @@
                       "nationality_name_composed": "Swedo"
                     },
                     {
+                      "id": 20,
+                      "name": "Belgium",
+                      "alpha_2_code": "BE",
+                      "alpha_3_code": "BEL",
+                      "nationality_name": "Belgian",
+                      "nationality_name_composed": "Belgo"
+                    },
+                    {
                       "id": 23,
                       "name": "Portugal",
                       "alpha_2_code": "PT",
@@ -7574,14 +7590,6 @@
                       "alpha_3_code": "LUX",
                       "nationality_name": "Luxembourger",
                       "nationality_name_composed": "Luxembourgish"
-                    },
-                    {
-                      "id": 20,
-                      "name": "Belgium",
-                      "alpha_2_code": "BE",
-                      "alpha_3_code": "BEL",
-                      "nationality_name": "Belgian",
-                      "nationality_name_composed": "Belgo"
                     },
                     {
                       "id": 86,
