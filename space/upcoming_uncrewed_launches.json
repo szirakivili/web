@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-10-30T22:25:10Z",
+  "fetched_at": "2025-10-30T23:23:01Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 346,
@@ -125,7 +125,7 @@
           "consecutive_successful_launches": 77,
           "successful_launches": 577,
           "failed_launches": 15,
-          "pending_launches": 122,
+          "pending_launches": 123,
           "consecutive_successful_landings": 76,
           "successful_landings": 537,
           "failed_landings": 27,
@@ -229,7 +229,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -340,7 +340,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -531,7 +531,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -728,7 +728,7 @@
             "consecutive_successful_launches": 201,
             "successful_launches": 498,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 490,
             "successful_landings": 485,
             "failed_landings": 5,
@@ -953,7 +953,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -1428,12 +1428,12 @@
         "slug": "falcon-9-block-5-bandwagon-4-dedicated-mid-inclina",
         "launch_designator": null,
         "status": {
-          "id": 8,
-          "name": "To Be Confirmed",
-          "abbrev": "TBC",
-          "description": "Awaiting official confirmation - current date is known with some certainty."
+          "id": 1,
+          "name": "Go for Launch",
+          "abbrev": "Go",
+          "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-10-27T19:39:32Z",
+        "last_updated": "2025-10-30T22:38:24Z",
         "net": "2025-11-02T05:09:00Z",
         "net_precision": {
           "id": 1,
@@ -1539,7 +1539,7 @@
           "consecutive_successful_launches": 77,
           "successful_launches": 577,
           "failed_launches": 15,
-          "pending_launches": 122,
+          "pending_launches": 123,
           "consecutive_successful_landings": 76,
           "successful_landings": 537,
           "failed_landings": 27,
@@ -1643,7 +1643,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -1754,7 +1754,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -1945,7 +1945,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -2142,7 +2142,7 @@
             "consecutive_successful_launches": 201,
             "successful_launches": 498,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 490,
             "successful_landings": 485,
             "failed_landings": 5,
@@ -2153,25 +2153,25 @@
             {
               "id": 711,
               "type": "Core",
-              "reused": null,
-              "launcher_flight_number": null,
+              "reused": true,
+              "launcher_flight_number": 3,
               "launcher": {
                 "response_mode": "normal",
-                "id": 106,
-                "url": "https://ll.thespacedevs.com/2.3.0/launchers/106/?format=json",
-                "flight_proven": false,
-                "serial_number": "Unknown F9",
-                "is_placeholder": true,
+                "id": 195,
+                "url": "https://ll.thespacedevs.com/2.3.0/launchers/195/?format=json",
+                "flight_proven": true,
+                "serial_number": "B1091",
+                "is_placeholder": false,
                 "status": {
-                  "id": 8,
-                  "name": "N/A"
+                  "id": 3,
+                  "name": "active"
                 },
                 "image": {
-                  "id": 1674,
-                  "name": "[AUTO] Unknown F9 - image",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/106_image_20230708172214.png",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193443.png",
-                  "credit": null,
+                  "id": 2435,
+                  "name": "B1091 on SLC-40 (KF-02)",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/b1091_on_slc-40_image_20250807141845.jpeg",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/b1091_on_slc-40_image_thumbnail_20250807141845.jpeg",
+                  "credit": "SpaceX",
                   "license": {
                     "id": 1,
                     "name": "Unknown",
@@ -2181,22 +2181,22 @@
                   "single_use": true,
                   "variants": []
                 },
-                "details": "Booster serial number unknown.",
-                "successful_landings": null,
-                "attempted_landings": null,
-                "flights": null,
-                "last_launch_date": null,
-                "first_launch_date": null,
-                "fastest_turnaround": null
+                "details": "Planned Falcon Heavy center core stage that will first be used as a Falcon 9 first stage booster for several launches.",
+                "successful_landings": 2,
+                "attempted_landings": 2,
+                "flights": 2,
+                "last_launch_date": "2025-10-14T01:58:00Z",
+                "first_launch_date": "2025-08-11T12:35:00Z",
+                "fastest_turnaround": "P63DT13H23M"
               },
-              "previous_flight_date": null,
-              "turn_around_time": null,
+              "previous_flight_date": "2025-10-14T01:58:00Z",
+              "turn_around_time": "P19DT3H11M",
               "landing": {
                 "id": 1716,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1716/?format=json",
                 "attempt": true,
                 "success": null,
-                "description": "The Falcon 9 first stage will attempt to land back at the launch site at Landing Zone 2 (LZ-2) after its flight.",
+                "description": "The Falcon 9 first stage B1091 will attempt to land back at the launch site at Landing Zone 2 (LZ-2) after its 3rd flight.",
                 "downrange_distance": 14.6,
                 "landing_location": {
                   "id": 5,
@@ -2300,7 +2300,11 @@
                   "description": "A return to launch site usually means that after stage separation the booster flips and does a burn back towards the launch site, landing near where it initially launched from."
                 }
               },
-              "previous_flight": null
+              "previous_flight": {
+                "id": "88d03398-af55-4bca-967e-bfe868a3cbf5",
+                "url": "https://ll.thespacedevs.com/2.3.0/launches/88d03398-af55-4bca-967e-bfe868a3cbf5/?format=json",
+                "name": "Falcon 9 Block 5 | Project Kuiper (KF-03)"
+              }
             }
           ],
           "spacecraft_stage": [],
@@ -2399,7 +2403,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -2619,6 +2623,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=41d2ac1b-a506-47ae-8e44-8b65f5d6f239",
         "updates": [
           {
+            "id": 12723,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "GO for launch.",
+            "info_url": "https://www.spacex.com/launches/bandwagon-4",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-10-30T22:36:00Z"
+          },
+          {
             "id": 12687,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Updated T-0.",
@@ -2707,7 +2719,25 @@
             "created_on": "2023-08-16T07:18:29Z"
           }
         ],
-        "info_urls": [],
+        "info_urls": [
+          {
+            "priority": 10,
+            "source": "spacex.com",
+            "title": "SpaceX",
+            "description": "SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.",
+            "feature_image": null,
+            "url": "https://www.spacex.com/launches/bandwagon-4",
+            "type": {
+              "id": 1,
+              "name": "Official Page"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            }
+          }
+        ],
         "vid_urls": [
           {
             "priority": 7,
@@ -2750,9 +2780,367 @@
             "start_time": "2025-11-02T05:00:00Z",
             "end_time": null,
             "live": false
+          },
+          {
+            "priority": 10,
+            "source": "x.com",
+            "publisher": "SpaceX",
+            "title": "Bandwagon-4 Mission",
+            "description": "Livestream on X",
+            "feature_image": "https://pbs.twimg.com/media/G4imULsWAAA5qT_.jpg",
+            "url": "https://x.com/i/broadcasts/1ZkKzZnVXjDKv",
+            "type": {
+              "id": 1,
+              "name": "Official Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-11-02T04:52:00Z",
+            "end_time": "2025-11-02T08:52:00Z",
+            "live": false
           }
         ],
-        "timeline": [],
+        "timeline": [
+          {
+            "type": {
+              "id": 1,
+              "abbrev": "GO for Prop Load",
+              "description": "Launch director verifies go for propellant load"
+            },
+            "relative_time": "-PT38M"
+          },
+          {
+            "type": {
+              "id": 3,
+              "abbrev": "Stage 1 LOX Load",
+              "description": "Start of liquid oxygen loading in the first stage"
+            },
+            "relative_time": "-PT35M"
+          },
+          {
+            "type": {
+              "id": 2,
+              "abbrev": "Prop Load",
+              "description": "Start of propelland loading"
+            },
+            "relative_time": "-PT35M"
+          },
+          {
+            "type": {
+              "id": 4,
+              "abbrev": "Stage 2 LOX Load",
+              "description": "Start of liquid oxygen loading in the second stage"
+            },
+            "relative_time": "-PT16M"
+          },
+          {
+            "type": {
+              "id": 5,
+              "abbrev": "Engine Chill",
+              "description": "Start of engine chilling"
+            },
+            "relative_time": "-PT7M"
+          },
+          {
+            "type": {
+              "id": 6,
+              "abbrev": "Startup",
+              "description": "The onboard computer takes control over the countdown and runs last checks"
+            },
+            "relative_time": "-PT1M"
+          },
+          {
+            "type": {
+              "id": 7,
+              "abbrev": "Tank Press",
+              "description": "Fuel tanks are pressurized to flight levels"
+            },
+            "relative_time": "-PT1M"
+          },
+          {
+            "type": {
+              "id": 8,
+              "abbrev": "GO for Launch",
+              "description": "Launch director verifies go for launch"
+            },
+            "relative_time": "-PT45S"
+          },
+          {
+            "type": {
+              "id": 9,
+              "abbrev": "Ignition",
+              "description": "Start of the engine ignition sequence"
+            },
+            "relative_time": "-PT3S"
+          },
+          {
+            "type": {
+              "id": 10,
+              "abbrev": "Liftoff",
+              "description": "First upwards movement of the rocket"
+            },
+            "relative_time": "P0D"
+          },
+          {
+            "type": {
+              "id": 11,
+              "abbrev": "Max-Q",
+              "description": "Maximum dynamic pressure"
+            },
+            "relative_time": "PT1M12S"
+          },
+          {
+            "type": {
+              "id": 12,
+              "abbrev": "MECO",
+              "description": "Cut-off of the main engine"
+            },
+            "relative_time": "PT2M14S"
+          },
+          {
+            "type": {
+              "id": 13,
+              "abbrev": "Stage 2 Separation",
+              "description": "Separation of the second stage from the first"
+            },
+            "relative_time": "PT2M18S"
+          },
+          {
+            "type": {
+              "id": 107,
+              "abbrev": "Stage 1 Flip",
+              "description": "Flip maneuver of the first stage"
+            },
+            "relative_time": "PT2M22S"
+          },
+          {
+            "type": {
+              "id": 14,
+              "abbrev": "SES-1",
+              "description": "First start of the second engine"
+            },
+            "relative_time": "PT2M26S"
+          },
+          {
+            "type": {
+              "id": 39,
+              "abbrev": "Booster Boostback Burn Startup",
+              "description": "Start of the booster boostback burn"
+            },
+            "relative_time": "PT2M31S"
+          },
+          {
+            "type": {
+              "id": 15,
+              "abbrev": "Fairing Separation",
+              "description": "Separation of the payload fairing"
+            },
+            "relative_time": "PT2M41S"
+          },
+          {
+            "type": {
+              "id": 40,
+              "abbrev": "Booster Boostback Burn Shutdown",
+              "description": "End of the booster boostback burn"
+            },
+            "relative_time": "PT3M13S"
+          },
+          {
+            "type": {
+              "id": 16,
+              "abbrev": "Entry Burn Startup",
+              "description": "Start of the atmospheric entry burn"
+            },
+            "relative_time": "PT6M9S"
+          },
+          {
+            "type": {
+              "id": 17,
+              "abbrev": "Entry Burn Shutdown",
+              "description": "End of the atmospheric entry burn"
+            },
+            "relative_time": "PT6M31S"
+          },
+          {
+            "type": {
+              "id": 18,
+              "abbrev": "Stage 1 Landing Burn",
+              "description": "Start of the first stage landing burn"
+            },
+            "relative_time": "PT7M23S"
+          },
+          {
+            "type": {
+              "id": 19,
+              "abbrev": "Stage 1 Landing",
+              "description": "Landing of the first stage"
+            },
+            "relative_time": "PT7M46S"
+          },
+          {
+            "type": {
+              "id": 20,
+              "abbrev": "SECO-1",
+              "description": "First cut-off of the second engine"
+            },
+            "relative_time": "PT9M38S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT12M14S"
+          },
+          {
+            "type": {
+              "id": 21,
+              "abbrev": "SES-2",
+              "description": "Second start of the second engine"
+            },
+            "relative_time": "PT37M51S"
+          },
+          {
+            "type": {
+              "id": 22,
+              "abbrev": "SECO-2",
+              "description": "Second cut-off of the second engine"
+            },
+            "relative_time": "PT37M52S"
+          },
+          {
+            "type": {
+              "id": 80,
+              "abbrev": "SES-3",
+              "description": "Third start of the second engine"
+            },
+            "relative_time": "PT59M30S"
+          },
+          {
+            "type": {
+              "id": 81,
+              "abbrev": "SECO-3",
+              "description": "Third cut-off of the second engine"
+            },
+            "relative_time": "PT59M31S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H9M2S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H9M15S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H9M27S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H9M30S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H10M13S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H10M16S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H10M40S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H10M59S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H11M15S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H11M37S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H12M20S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H12M33S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H13M38S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H13M43S"
+          }
+        ],
         "pad_turnaround": "P3DT12H33M40S",
         "mission_patches": []
       },
@@ -7622,7 +8010,7 @@
           "consecutive_successful_launches": 77,
           "successful_launches": 577,
           "failed_launches": 15,
-          "pending_launches": 122,
+          "pending_launches": 123,
           "consecutive_successful_landings": 76,
           "successful_landings": 537,
           "failed_landings": 27,
@@ -7726,7 +8114,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -7837,7 +8225,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -8028,7 +8416,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -8225,7 +8613,7 @@
             "consecutive_successful_launches": 201,
             "successful_launches": 498,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 490,
             "successful_landings": 485,
             "failed_landings": 5,
@@ -8450,7 +8838,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -10123,7 +10511,7 @@
           "consecutive_successful_launches": 77,
           "successful_launches": 577,
           "failed_launches": 15,
-          "pending_launches": 122,
+          "pending_launches": 123,
           "consecutive_successful_landings": 76,
           "successful_landings": 537,
           "failed_landings": 27,
@@ -10227,7 +10615,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -10338,7 +10726,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -10529,7 +10917,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -10726,7 +11114,7 @@
             "consecutive_successful_launches": 201,
             "successful_launches": 498,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 490,
             "successful_landings": 485,
             "failed_landings": 5,
@@ -10951,7 +11339,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -11499,7 +11887,7 @@
           "consecutive_successful_launches": 77,
           "successful_launches": 577,
           "failed_launches": 15,
-          "pending_launches": 122,
+          "pending_launches": 123,
           "consecutive_successful_landings": 76,
           "successful_landings": 537,
           "failed_landings": 27,
@@ -11603,7 +11991,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -11714,7 +12102,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -11905,7 +12293,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -12102,7 +12490,7 @@
             "consecutive_successful_launches": 201,
             "successful_launches": 498,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 490,
             "successful_landings": 485,
             "failed_landings": 5,
@@ -12327,7 +12715,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -14142,7 +14530,7 @@
           "consecutive_successful_launches": 77,
           "successful_launches": 577,
           "failed_launches": 15,
-          "pending_launches": 122,
+          "pending_launches": 123,
           "consecutive_successful_landings": 76,
           "successful_landings": 537,
           "failed_landings": 27,
@@ -14246,7 +14634,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -14357,7 +14745,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -14548,7 +14936,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -14745,7 +15133,7 @@
             "consecutive_successful_launches": 201,
             "successful_launches": 498,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 490,
             "successful_landings": 485,
             "failed_landings": 5,
@@ -14894,7 +15282,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -15208,7 +15596,7 @@
           "consecutive_successful_launches": 77,
           "successful_launches": 577,
           "failed_launches": 15,
-          "pending_launches": 122,
+          "pending_launches": 123,
           "consecutive_successful_landings": 76,
           "successful_landings": 537,
           "failed_landings": 27,
@@ -15312,7 +15700,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -15423,7 +15811,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -15614,7 +16002,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -15811,7 +16199,7 @@
             "consecutive_successful_launches": 201,
             "successful_launches": 498,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 490,
             "successful_landings": 485,
             "failed_landings": 5,
@@ -16036,7 +16424,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -16617,7 +17005,7 @@
           "consecutive_successful_launches": 77,
           "successful_launches": 577,
           "failed_launches": 15,
-          "pending_launches": 122,
+          "pending_launches": 123,
           "consecutive_successful_landings": 76,
           "successful_landings": 537,
           "failed_landings": 27,
@@ -16721,7 +17109,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -16832,7 +17220,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -17023,7 +17411,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -17220,7 +17608,7 @@
             "consecutive_successful_launches": 201,
             "successful_launches": 498,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 490,
             "successful_landings": 485,
             "failed_landings": 5,
@@ -17356,7 +17744,7 @@
           "id": 7377,
           "name": "Starlink Group 6-89",
           "type": "Communications",
-          "description": "A batch of 28 satellites for the Starlink mega-constellation - SpaceX's project for space-based Internet communication system.",
+          "description": "A batch of 29 satellites for the Starlink mega-constellation - SpaceX's project for space-based Internet communication system.",
           "image": null,
           "orbit": {
             "id": 8,
@@ -17445,7 +17833,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -18026,7 +18414,7 @@
           "consecutive_successful_launches": 77,
           "successful_launches": 577,
           "failed_launches": 15,
-          "pending_launches": 122,
+          "pending_launches": 123,
           "consecutive_successful_landings": 76,
           "successful_landings": 537,
           "failed_landings": 27,
@@ -18130,7 +18518,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -18241,7 +18629,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -18432,7 +18820,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -18629,7 +19017,7 @@
             "consecutive_successful_launches": 201,
             "successful_launches": 498,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 490,
             "successful_landings": 485,
             "failed_landings": 5,
@@ -18854,7 +19242,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -19435,7 +19823,7 @@
           "consecutive_successful_launches": 77,
           "successful_launches": 577,
           "failed_launches": 15,
-          "pending_launches": 122,
+          "pending_launches": 123,
           "consecutive_successful_landings": 76,
           "successful_landings": 537,
           "failed_landings": 27,
@@ -19539,7 +19927,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -19650,7 +20038,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -19841,7 +20229,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -20038,7 +20426,7 @@
             "consecutive_successful_launches": 201,
             "successful_launches": 498,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 490,
             "successful_landings": 485,
             "failed_landings": 5,
@@ -21570,7 +21958,7 @@
           "consecutive_successful_launches": 77,
           "successful_launches": 577,
           "failed_launches": 15,
-          "pending_launches": 122,
+          "pending_launches": 123,
           "consecutive_successful_landings": 76,
           "successful_landings": 537,
           "failed_landings": 27,
@@ -21674,7 +22062,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -21785,7 +22173,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -21976,7 +22364,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -22173,7 +22561,7 @@
             "consecutive_successful_launches": 201,
             "successful_launches": 498,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 490,
             "successful_landings": 485,
             "failed_landings": 5,
@@ -22398,7 +22786,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -22874,7 +23262,7 @@
           "consecutive_successful_launches": 77,
           "successful_launches": 577,
           "failed_launches": 15,
-          "pending_launches": 122,
+          "pending_launches": 123,
           "consecutive_successful_landings": 76,
           "successful_landings": 537,
           "failed_landings": 27,
@@ -22978,7 +23366,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -23089,7 +23477,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -23280,7 +23668,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -23477,7 +23865,7 @@
             "consecutive_successful_launches": 201,
             "successful_launches": 498,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 490,
             "successful_landings": 485,
             "failed_landings": 5,
@@ -23702,7 +24090,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -24794,7 +25182,7 @@
           "consecutive_successful_launches": 77,
           "successful_launches": 577,
           "failed_launches": 15,
-          "pending_launches": 122,
+          "pending_launches": 123,
           "consecutive_successful_landings": 76,
           "successful_landings": 537,
           "failed_landings": 27,
@@ -24898,7 +25286,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -25009,7 +25397,7 @@
                     "consecutive_successful_launches": 77,
                     "successful_launches": 577,
                     "failed_launches": 15,
-                    "pending_launches": 122,
+                    "pending_launches": 123,
                     "consecutive_successful_landings": 76,
                     "successful_landings": 537,
                     "failed_landings": 27,
@@ -25200,7 +25588,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
@@ -25397,7 +25785,7 @@
             "consecutive_successful_launches": 201,
             "successful_launches": 498,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 490,
             "successful_landings": 485,
             "failed_landings": 5,
@@ -25618,7 +26006,7 @@
               "consecutive_successful_launches": 77,
               "successful_launches": 577,
               "failed_launches": 15,
-              "pending_launches": 122,
+              "pending_launches": 123,
               "consecutive_successful_landings": 76,
               "successful_landings": 537,
               "failed_landings": 27,
