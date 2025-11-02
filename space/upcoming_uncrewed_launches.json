@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-02T08:29:18Z",
+  "fetched_at": "2025-11-02T09:23:00Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 345,
@@ -19,7 +19,7 @@
           "abbrev": "Success",
           "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2025-11-02T07:01:25Z",
+        "last_updated": "2025-11-02T08:29:26Z",
         "net": "2025-11-02T05:09:59Z",
         "net_precision": {
           "id": 0,
@@ -30,11 +30,11 @@
         "window_end": "2025-11-02T06:03:00Z",
         "window_start": "2025-11-02T05:00:00Z",
         "image": {
-          "id": 1736,
-          "name": "[AUTO] Falcon 9 - image",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193628.jpeg",
-          "credit": null,
+          "id": 2511,
+          "name": "Falcon 9 liftoff from SLC-40 (Bandwagon-4)",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20251102082912.jpg",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_thumbnail_20251102082912.jpeg",
+          "credit": "SpaceX",
           "license": {
             "id": 1,
             "name": "Unknown",
@@ -1789,7 +1789,26 @@
           }
         ],
         "pad_turnaround": "P3DT12H34M39S",
-        "mission_patches": []
+        "mission_patches": [
+          {
+            "id": 1123,
+            "name": "Bandwagon-3 Patch",
+            "priority": 10,
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/mission_patch_images/bandwagon-3252_mission_patch_20250419034446.png",
+            "agency": {
+              "response_mode": "list",
+              "id": 121,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/121/?format=json",
+              "name": "SpaceX",
+              "abbrev": "SpX",
+              "type": {
+                "id": 3,
+                "name": "Commercial"
+              }
+            },
+            "response_mode": "normal"
+          }
+        ]
       },
       {
         "id": "05c00251-c8db-4922-9244-d1e407427962",
