@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-03T02:07:23Z",
+  "fetched_at": "2025-11-03T03:53:30Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 345,
@@ -2744,18 +2744,18 @@
         "slug": "long-march-7a-unknown-payload",
         "launch_designator": null,
         "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
+          "id": 6,
+          "name": "Launch in Flight",
+          "abbrev": "In Flight",
+          "description": "The launch vehicle has lifted off from the launchpad."
         },
-        "last_updated": "2025-10-30T14:29:12Z",
-        "net": "2025-11-03T03:45:00Z",
+        "last_updated": "2025-11-03T03:48:47Z",
+        "net": "2025-11-03T03:47:00Z",
         "net_precision": {
-          "id": 2,
-          "name": "Hour",
-          "abbrev": "HR",
-          "description": "The T-0 is accurate to the hour."
+          "id": 1,
+          "name": "Minute",
+          "abbrev": "MIN",
+          "description": "The T-0 is accurate to the minute."
         },
         "window_end": "2025-11-03T04:02:00Z",
         "window_start": "2025-11-03T03:39:00Z",
@@ -2851,11 +2851,11 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 551,
+          "total_launch_count": 552,
           "consecutive_successful_launches": 93,
           "successful_launches": 537,
           "failed_launches": 14,
-          "pending_launches": 4,
+          "pending_launches": 3,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -2955,11 +2955,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 551,
+                    "total_launch_count": 552,
                     "consecutive_successful_launches": 93,
                     "successful_launches": 537,
                     "failed_launches": 14,
-                    "pending_launches": 4,
+                    "pending_launches": 3,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -3066,11 +3066,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 551,
+                    "total_launch_count": 552,
                     "consecutive_successful_launches": 93,
                     "successful_launches": 537,
                     "failed_launches": 14,
-                    "pending_launches": 4,
+                    "pending_launches": 3,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -3257,11 +3257,11 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 551,
+              "total_launch_count": 552,
               "consecutive_successful_launches": 93,
               "successful_launches": 537,
               "failed_launches": 14,
-              "pending_launches": 4,
+              "pending_launches": 3,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -3310,11 +3310,11 @@
             "sso_capacity": null,
             "to_thrust": null,
             "apogee": null,
-            "total_launch_count": 11,
+            "total_launch_count": 12,
             "consecutive_successful_launches": 10,
             "successful_launches": 10,
             "failed_launches": 1,
-            "pending_launches": 1,
+            "pending_launches": 0,
             "attempted_landings": 0,
             "successful_landings": 0,
             "failed_landings": 0,
@@ -3381,8 +3381,8 @@
             "nationality_name_composed": "Sino"
           },
           "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_176_20200803143412.jpg",
-          "total_launch_count": 25,
-          "orbital_launch_attempt_count": 25,
+          "total_launch_count": 26,
+          "orbital_launch_attempt_count": 26,
           "fastest_turnaround": "P46DT6H35M",
           "location": {
             "response_mode": "normal",
@@ -3455,11 +3455,11 @@
             "longitude": 110.951133,
             "latitude": 19.614492,
             "timezone_name": "Asia/Shanghai",
-            "total_launch_count": 47,
+            "total_launch_count": 48,
             "total_landing_count": 0
           }
         },
-        "webcast_live": false,
+        "webcast_live": true,
         "program": [],
         "orbital_launch_attempt_count": 7105,
         "location_launch_attempt_count": 48,
@@ -3472,6 +3472,14 @@
         "flightclub_url": null,
         "updates": [
           {
+            "id": 12744,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Liftoff.",
+            "info_url": "https://www.youtube.com/live/iNB7Cq4vrkk",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-03T03:48:00Z"
+          },
+          {
             "id": 12711,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Added launch per NOTAMs; Payload identity highly uncertain.",
@@ -3481,9 +3489,31 @@
           }
         ],
         "info_urls": [],
-        "vid_urls": [],
+        "vid_urls": [
+          {
+            "priority": 10,
+            "source": "youtube.com",
+            "publisher": "International Rocket Launches",
+            "title": "Live: Long March 7A Flight 12 Launch (No Commentary)",
+            "description": "Footage courtesy of 追箭部落\n\nInternational Rocket Launches provides commentary-free coverage of select global rocket launches.\n\nFollow @IntRocketLaunch on Twitter: https://twitter.com/IntRocketLaunch \n\nR...",
+            "feature_image": "https://i.ytimg.com/vi/iNB7Cq4vrkk/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=iNB7Cq4vrkk",
+            "type": {
+              "id": 3,
+              "name": "Unofficial Webcast"
+            },
+            "language": {
+              "id": 2,
+              "name": "Chinese",
+              "code": "zn"
+            },
+            "start_time": "2025-11-03T02:45:12Z",
+            "end_time": null,
+            "live": true
+          }
+        ],
         "timeline": [],
-        "pad_turnaround": "P55DT1H45M",
+        "pad_turnaround": "P55DT1H47M",
         "mission_patches": []
       },
       {
@@ -4663,14 +4693,6 @@
                       "nationality_name_composed": "Swedo"
                     },
                     {
-                      "id": 20,
-                      "name": "Belgium",
-                      "alpha_2_code": "BE",
-                      "alpha_3_code": "BEL",
-                      "nationality_name": "Belgian",
-                      "nationality_name_composed": "Belgo"
-                    },
-                    {
                       "id": 23,
                       "name": "Portugal",
                       "alpha_2_code": "PT",
@@ -4773,6 +4795,14 @@
                       "alpha_3_code": "LUX",
                       "nationality_name": "Luxembourger",
                       "nationality_name_composed": "Luxembourgish"
+                    },
+                    {
+                      "id": 20,
+                      "name": "Belgium",
+                      "alpha_2_code": "BE",
+                      "alpha_3_code": "BEL",
+                      "nationality_name": "Belgian",
+                      "nationality_name_composed": "Belgo"
                     },
                     {
                       "id": 86,
