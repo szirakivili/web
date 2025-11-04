@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-04T19:21:17Z",
+  "fetched_at": "2025-11-04T21:24:10Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 344,
@@ -14,21 +14,21 @@
         "slug": "ariane-62-sentinel-1d",
         "launch_designator": null,
         "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
+          "id": 6,
+          "name": "Launch in Flight",
+          "abbrev": "In Flight",
+          "description": "The launch vehicle has lifted off from the launchpad."
         },
-        "last_updated": "2025-11-04T17:13:09Z",
-        "net": "2025-11-04T21:02:00Z",
+        "last_updated": "2025-11-04T21:03:02Z",
+        "net": "2025-11-04T21:02:17Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
-        "window_end": "2025-11-04T21:02:00Z",
-        "window_start": "2025-11-04T21:02:00Z",
+        "window_end": "2025-11-04T21:02:17Z",
+        "window_start": "2025-11-04T21:02:17Z",
         "image": {
           "id": 2123,
           "name": "Ariane 62 liftoff (Maiden Flight)",
@@ -138,11 +138,11 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 321,
+          "total_launch_count": 322,
           "consecutive_successful_launches": 9,
           "successful_launches": 306,
           "failed_launches": 15,
-          "pending_launches": 40,
+          "pending_launches": 39,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -342,11 +342,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 321,
+                    "total_launch_count": 322,
                     "consecutive_successful_launches": 9,
                     "successful_launches": 306,
                     "failed_launches": 15,
-                    "pending_launches": 40,
+                    "pending_launches": 39,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -553,11 +553,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 321,
+                    "total_launch_count": 322,
                     "consecutive_successful_launches": 9,
                     "successful_launches": 306,
                     "failed_launches": 15,
-                    "pending_launches": 40,
+                    "pending_launches": 39,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -1021,16 +1021,16 @@
             "sso_capacity": 6450.0,
             "to_thrust": 10370.0,
             "apogee": null,
-            "total_launch_count": 3,
+            "total_launch_count": 4,
             "consecutive_successful_launches": 3,
             "successful_launches": 3,
             "failed_launches": 0,
-            "pending_launches": 11,
+            "pending_launches": 10,
             "attempted_landings": 0,
             "successful_landings": 0,
             "failed_landings": 0,
             "consecutive_successful_landings": 0,
-            "fastest_turnaround": "P159DT8H13M24S"
+            "fastest_turnaround": "P83DT20H24M27S"
           },
           "launcher_stage": [],
           "spacecraft_stage": [],
@@ -2085,9 +2085,9 @@
             "nationality_name_composed": "Franco-Guiano"
           },
           "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_67_20200803143559.jpg",
-          "total_launch_count": 3,
-          "orbital_launch_attempt_count": 3,
-          "fastest_turnaround": "P159DT8H13M24S",
+          "total_launch_count": 4,
+          "orbital_launch_attempt_count": 4,
+          "fastest_turnaround": "P83DT20H24M27S",
           "location": {
             "response_mode": "normal",
             "id": 13,
@@ -2159,7 +2159,7 @@
             "longitude": -52.6903,
             "latitude": 5.169,
             "timezone_name": "America/Cayenne",
-            "total_launch_count": 327,
+            "total_launch_count": 328,
             "total_landing_count": 0
           }
         },
@@ -2231,6 +2231,22 @@
         "agency_launch_attempt_count_year": 5,
         "flightclub_url": null,
         "updates": [
+          {
+            "id": 12756,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Liftoff.",
+            "info_url": "https://www.youtube.com/watch?v=6daC_wTrjS0",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-04T21:03:00Z"
+          },
+          {
+            "id": 12755,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Tweaked T-0.",
+            "info_url": "https://www.youtube.com/watch?v=6daC_wTrjS0",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-04T20:38:00Z"
+          },
           {
             "id": 12754,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -2384,7 +2400,7 @@
             "source": "watch.esa.int",
             "publisher": "Watch",
             "title": "Two – ESA Web TV",
-            "description": "The Sentinel-1D satellite is in position on the launch pad of Europe’s spaceport in French Guiana – ready for liftoff on board the Ariane 6 launcher. The satellite will join the Sentinel-1 mission, to provide radar vision for the Copernicus Earth observation programme, shedding light on our changing...",
+            "description": "After the launch of Sentinel-1D on board Ariane 6, this press conference will offer exclusive insights into the mission, its objectives and the collaborative efforts behind Europe’s Copernicus Earth observation programme. There will be speeches and commentary from representatives of ESA, the Europea...",
             "feature_image": null,
             "url": "https://watch.esa.int/two/",
             "type": {
@@ -2457,6 +2473,14 @@
           },
           {
             "type": {
+              "id": 12,
+              "abbrev": "MECO",
+              "description": "Cut-off of the main engine"
+            },
+            "relative_time": "PT7M37S"
+          },
+          {
+            "type": {
               "id": 13,
               "abbrev": "Stage 2 Separation",
               "description": "Separation of the second stage from the first"
@@ -2465,11 +2489,19 @@
           },
           {
             "type": {
-              "id": 21,
-              "abbrev": "SES-2",
-              "description": "Second start of the second engine"
+              "id": 14,
+              "abbrev": "SES-1",
+              "description": "First start of the second engine"
             },
             "relative_time": "PT7M51S"
+          },
+          {
+            "type": {
+              "id": 20,
+              "abbrev": "SECO-1",
+              "description": "First cut-off of the second engine"
+            },
+            "relative_time": "PT19M45S"
           },
           {
             "type": {
@@ -2485,10 +2517,18 @@
               "abbrev": "SES-2",
               "description": "Second start of the second engine"
             },
-            "relative_time": "PT2H2M"
+            "relative_time": "PT2H1M32S"
+          },
+          {
+            "type": {
+              "id": 22,
+              "abbrev": "SECO-2",
+              "description": "Second cut-off of the second engine"
+            },
+            "relative_time": "PT2H2M19S"
           }
         ],
-        "pad_turnaround": "P83DT20H24M10S",
+        "pad_turnaround": "P83DT20H24M27S",
         "mission_patches": [
           {
             "id": 1195,
@@ -2541,7 +2581,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-10-21T06:38:24Z",
+        "last_updated": "2025-11-04T21:14:55Z",
         "net": "2025-11-05T19:45:00Z",
         "net_precision": {
           "id": 1,
@@ -3078,7 +3118,29 @@
             }
           }
         ],
-        "vid_urls": [],
+        "vid_urls": [
+          {
+            "priority": 10,
+            "source": "youtube.com",
+            "publisher": "Rocket Lab",
+            "title": "Rocket Lab - 'The Nation God Navigates' Launch",
+            "description": "",
+            "feature_image": "https://i.ytimg.com/vi/BM8OCzwJtMg/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=BM8OCzwJtMg",
+            "type": {
+              "id": 1,
+              "name": "Official Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-11-05T19:30:00Z",
+            "end_time": null,
+            "live": false
+          }
+        ],
         "timeline": [
           {
             "type": {
@@ -9451,7 +9513,7 @@
                 "attempt": true,
                 "success": null,
                 "description": "New Glenn booster GS1-SN002 will attempt to land on Jacklyn after its first flight.",
-                "downrange_distance": null,
+                "downrange_distance": 560.0,
                 "landing_location": {
                   "id": 51,
                   "name": "Jacklyn",
@@ -11878,7 +11940,115 @@
               },
               "previous_flight_date": null,
               "turn_around_time": null,
-              "landing": null,
+              "landing": {
+                "id": 1735,
+                "url": "https://ll.thespacedevs.com/2.3.0/landings/1735/?format=json",
+                "attempt": true,
+                "success": null,
+                "description": "The Falcon 9 booster will attempt to land back at the launch site at LZ-4 after its flight.",
+                "downrange_distance": 0.4,
+                "landing_location": {
+                  "id": 7,
+                  "name": "Landing Zone 4",
+                  "active": true,
+                  "abbrev": "LZ-4",
+                  "description": "LZ at Vandenberg",
+                  "location": {
+                    "response_mode": "normal",
+                    "id": 11,
+                    "url": "https://ll.thespacedevs.com/2.3.0/locations/11/?format=json",
+                    "name": "Vandenberg SFB, CA, USA",
+                    "active": true,
+                    "country": {
+                      "id": 2,
+                      "name": "United States of America",
+                      "alpha_2_code": "US",
+                      "alpha_3_code": "USA",
+                      "nationality_name": "American",
+                      "nationality_name_composed": "Americano"
+                    },
+                    "description": "Vandenberg Space Force Base is a United States Space Force Base in Santa Barbara County, California. Established in 1941, Vandenberg Space Force Base is a space launch base, launching spacecraft from the Western Range, and also performs missile testing. The United States Space Force's Space Launch Delta 30 serves as the host delta for the base, equivalent to an Air Force air base wing. In addition to its military space launch mission, Vandenberg Space Force Base also hosts space launches for civil and commercial space entities, such as NASA and SpaceX.",
+                    "image": {
+                      "id": 2226,
+                      "name": "Vandenberg SFB imaged by Sentinel-2",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/vandenberg_sfb__image_20240920082910.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/vandenberg_sfb__image_thumbnail_20240920082910.jpeg",
+                      "credit": "Contains modified Copernicus Sentinel data 2020",
+                      "license": {
+                        "id": 33,
+                        "name": "Copernicus Image Use Policy",
+                        "priority": 0,
+                        "link": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013R1159"
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_11_20200803142416.jpg",
+                    "longitude": -120.52023,
+                    "latitude": 34.75133,
+                    "timezone_name": "America/Los_Angeles",
+                    "total_launch_count": 842,
+                    "total_landing_count": 29
+                  },
+                  "longitude": -120.615193,
+                  "latitude": 34.632994,
+                  "image": {
+                    "id": 1967,
+                    "name": "LZ-4 at SLC-4E empty",
+                    "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/lz-4_at_slc-4e__image_20240310162737.jpeg",
+                    "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/lz-4_at_slc-4e__image_thumbnail_20240310162738.jpeg",
+                    "credit": "SpaceX",
+                    "license": {
+                      "id": 5,
+                      "name": "CC BY-NC 2.0",
+                      "priority": 1,
+                      "link": "https://creativecommons.org/licenses/by-nc/2.0/"
+                    },
+                    "single_use": true,
+                    "variants": []
+                  },
+                  "successful_landings": 29,
+                  "attempted_landings": 29,
+                  "failed_landings": 0,
+                  "celestial_body": {
+                    "response_mode": "normal",
+                    "id": 1,
+                    "name": "Earth",
+                    "type": {
+                      "id": 1,
+                      "name": "Planet"
+                    },
+                    "diameter": 12742000.0,
+                    "mass": 5.972168e+24,
+                    "gravity": 9.80655,
+                    "length_of_day": "1 00:00:00",
+                    "atmosphere": true,
+                    "image": {
+                      "id": 2040,
+                      "name": "Earth (Apollo 17)",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
+                      "credit": "NASA",
+                      "license": {
+                        "id": 4,
+                        "name": "NASA Image and Media Guidelines",
+                        "priority": 0,
+                        "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
+                    "wiki_url": "https://en.wikipedia.org/wiki/Earth"
+                  }
+                },
+                "type": {
+                  "id": 2,
+                  "name": "Return to Launch Site",
+                  "abbrev": "RTLS",
+                  "description": "A return to launch site usually means that after stage separation the booster flips and does a burn back towards the launch site, landing near where it initially launched from."
+                }
+              },
               "previous_flight": null
             }
           ],
@@ -25625,11 +25795,11 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 321,
+          "total_launch_count": 322,
           "consecutive_successful_launches": 9,
           "successful_launches": 306,
           "failed_launches": 15,
-          "pending_launches": 40,
+          "pending_launches": 39,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -26378,7 +26548,7 @@
             "longitude": -52.6903,
             "latitude": 5.169,
             "timezone_name": "America/Cayenne",
-            "total_launch_count": 327,
+            "total_launch_count": 328,
             "total_landing_count": 0
           }
         },
@@ -30714,11 +30884,11 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 321,
+          "total_launch_count": 322,
           "consecutive_successful_launches": 9,
           "successful_launches": 306,
           "failed_launches": 15,
-          "pending_launches": 40,
+          "pending_launches": 39,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -30918,11 +31088,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 321,
+                    "total_launch_count": 322,
                     "consecutive_successful_launches": 9,
                     "successful_launches": 306,
                     "failed_launches": 15,
-                    "pending_launches": 40,
+                    "pending_launches": 39,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -31129,11 +31299,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 321,
+                    "total_launch_count": 322,
                     "consecutive_successful_launches": 9,
                     "successful_launches": 306,
                     "failed_launches": 15,
-                    "pending_launches": 40,
+                    "pending_launches": 39,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -31597,16 +31767,16 @@
             "sso_capacity": 6450.0,
             "to_thrust": 10370.0,
             "apogee": null,
-            "total_launch_count": 3,
+            "total_launch_count": 4,
             "consecutive_successful_launches": 3,
             "successful_launches": 3,
             "failed_launches": 0,
-            "pending_launches": 11,
+            "pending_launches": 10,
             "attempted_landings": 0,
             "successful_landings": 0,
             "failed_landings": 0,
             "consecutive_successful_landings": 0,
-            "fastest_turnaround": "P159DT8H13M24S"
+            "fastest_turnaround": "P83DT20H24M27S"
           },
           "launcher_stage": [],
           "spacecraft_stage": [],
@@ -31759,9 +31929,9 @@
             "nationality_name_composed": "Franco-Guiano"
           },
           "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_67_20200803143559.jpg",
-          "total_launch_count": 3,
-          "orbital_launch_attempt_count": 3,
-          "fastest_turnaround": "P159DT8H13M24S",
+          "total_launch_count": 4,
+          "orbital_launch_attempt_count": 4,
+          "fastest_turnaround": "P83DT20H24M27S",
           "location": {
             "response_mode": "normal",
             "id": 13,
@@ -31833,7 +32003,7 @@
             "longitude": -52.6903,
             "latitude": 5.169,
             "timezone_name": "America/Cayenne",
-            "total_launch_count": 327,
+            "total_launch_count": 328,
             "total_landing_count": 0
           }
         },
