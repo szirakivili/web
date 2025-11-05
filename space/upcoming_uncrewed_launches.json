@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-05T11:23:19Z",
+  "fetched_at": "2025-11-05T12:55:44Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 344,
@@ -1183,6 +1183,14 @@
                       "nationality_name_composed": "Swedo"
                     },
                     {
+                      "id": 20,
+                      "name": "Belgium",
+                      "alpha_2_code": "BE",
+                      "alpha_3_code": "BEL",
+                      "nationality_name": "Belgian",
+                      "nationality_name_composed": "Belgo"
+                    },
+                    {
                       "id": 23,
                       "name": "Portugal",
                       "alpha_2_code": "PT",
@@ -1285,14 +1293,6 @@
                       "alpha_3_code": "LUX",
                       "nationality_name": "Luxembourger",
                       "nationality_name_composed": "Luxembourgish"
-                    },
-                    {
-                      "id": 20,
-                      "name": "Belgium",
-                      "alpha_2_code": "BE",
-                      "alpha_3_code": "BEL",
-                      "nationality_name": "Belgian",
-                      "nationality_name_composed": "Belgo"
                     },
                     {
                       "id": 86,
@@ -3314,13 +3314,13 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-11-03T14:25:44Z",
-        "net": "2025-11-05T23:08:00Z",
+        "last_updated": "2025-11-05T11:43:12Z",
+        "net": "2025-11-05T23:48:10Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2025-11-06T03:08:00Z",
         "window_start": "2025-11-05T23:08:00Z",
@@ -4071,7 +4071,7 @@
                 "fastest_turnaround": "P37DT9H11M50S"
               },
               "previous_flight_date": "2025-09-14T22:11:48Z",
-              "turn_around_time": "P52DT56M12S",
+              "turn_around_time": "P52DT1H36M22S",
               "landing": {
                 "id": 1728,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1728/?format=json",
@@ -4532,6 +4532,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=9dd2d2b7-302b-4e9e-804c-aa176f606b6f",
         "updates": [
           {
+            "id": 12761,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/arnaud2520muller_profile_20230607144351.jpg",
+            "comment": "Now targeting Nov 05 at 23:48 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-6-81",
+            "created_by": "Nosu",
+            "created_on": "2025-11-05T11:43:00Z"
+          },
+          {
             "id": 12749,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Updated launch weather, >95% GO.",
@@ -4648,7 +4656,7 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-11-05T22:08:00Z",
+            "start_time": "2025-11-05T22:48:00Z",
             "end_time": null,
             "live": false
           },
@@ -4780,7 +4788,7 @@
             "relative_time": "PT1H5M"
           }
         ],
-        "pad_turnaround": "P3DT17H58M1S",
+        "pad_turnaround": "P3DT18H38M11S",
         "mission_patches": [
           {
             "id": 7,
@@ -5889,7 +5897,7 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-11-06T03:24:00Z",
+            "start_time": "2025-11-06T02:24:00Z",
             "end_time": null,
             "live": false
           }
