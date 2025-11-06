@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-06T04:33:04Z",
+  "fetched_at": "2025-11-06T05:26:45Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 345,
@@ -3744,7 +3744,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-11-06T03:52:48Z",
+        "last_updated": "2025-11-06T04:34:23Z",
         "net": "2025-11-07T03:16:00Z",
         "net_precision": {
           "id": 1,
@@ -3770,8 +3770,8 @@
           "variants": []
         },
         "infographic": null,
-        "probability": 90,
-        "weather_concerns": "Cumulus Cloud Rule",
+        "probability": 80,
+        "weather_concerns": "Cumulus Cloud Rule, Thick Cloud Layers Rule",
         "failreason": "",
         "hashtag": null,
         "launch_service_provider": {
@@ -4674,6 +4674,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=47deaaf0-40d9-4400-bd92-4cabf1da5791",
         "updates": [
           {
+            "id": 12777,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Weather is 80% favorable for launch.",
+            "info_url": "https://45thweathersquadron.nebula.spaceforce.mil/assets/LaunchForecasts/Atlas%20V%20ViaSat-3%20L-1%20Forecast%20-%206%20Nov%20Launch.pdf",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-06T04:34:00Z"
+          },
+          {
             "id": 12776,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Scrubbed for the day due to valve issue; 24 hours recycle.",
@@ -4798,36 +4806,15 @@
         "vid_urls": [
           {
             "priority": 10,
-            "source": "youtube.com",
-            "publisher": "United Launch Alliance",
-            "title": "Rocket Launch: Atlas ViaSat-3 Flight 2",
-            "description": "ULA's Atlas V is launching the ViaSat-3 Flight 2 ultra-high-capacity broadband spacecraft for Viasat, a global technology company helping businesses, governments and communities transform their world ...",
-            "feature_image": "https://i.ytimg.com/vi/ZOZ_dyoLDms/maxresdefault_live.jpg",
-            "url": "https://www.youtube.com/watch?v=ZOZ_dyoLDms",
-            "type": {
-              "id": 1,
-              "name": "Official Webcast"
-            },
-            "language": {
-              "id": 1,
-              "name": "English",
-              "code": "en"
-            },
-            "start_time": "2025-11-06T03:03:00Z",
-            "end_time": null,
-            "live": false
-          },
-          {
-            "priority": 11,
             "source": null,
             "publisher": "",
             "title": null,
             "description": null,
             "feature_image": null,
-            "url": "https://www.youtube.com/watch?v=IdsUu86_gdc",
+            "url": "https://www.youtube.com/watch?v=DWgoYkFr-HE",
             "type": {
-              "id": 3,
-              "name": "Unofficial Webcast"
+              "id": 1,
+              "name": "Official Webcast"
             },
             "language": {
               "id": 1,
@@ -4842,10 +4829,10 @@
             "priority": 12,
             "source": "youtube.com",
             "publisher": "NASASpaceflight",
-            "title": "ULA Atlas V 551 launches Viasat-3 F2",
-            "description": "Project Kuiper is a mega constellation of satellites in Low Earth Orbit that will offer broadband internet access managed by Kuiper Systems LLC, a subsidiary of Amazon. This constellation is planned t...",
-            "feature_image": "https://i.ytimg.com/vi/XmHDlhL4yro/maxresdefault_live.jpg",
-            "url": "https://www.youtube.com/watch?v=XmHDlhL4yro",
+            "title": "ULA Launches Atlas V 551 Viasat-3 F2",
+            "description": "ULA Atlas V launch of the Viasat-3 mission from SLC-41.\n\nLaunch window: November 6th from 10:16PM to 11PM EST (03:16-04:00 UTC on the 7th)\nCurrent T0: November 6th at 10:16PM EST (03:16 UTC on the 7th...",
+            "feature_image": "https://i.ytimg.com/vi/L5DyzO4aTec/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=L5DyzO4aTec",
             "type": {
               "id": 3,
               "name": "Unofficial Webcast"
@@ -4855,7 +4842,7 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-11-06T02:24:00Z",
+            "start_time": "2025-11-07T02:16:00Z",
             "end_time": null,
             "live": false
           }
