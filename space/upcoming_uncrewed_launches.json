@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-07T11:22:19Z",
+  "fetched_at": "2025-11-07T12:53:57Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 345,
@@ -19502,7 +19502,7 @@
           "abbrev": "TBD",
           "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
         },
-        "last_updated": "2025-11-07T02:08:46Z",
+        "last_updated": "2025-11-07T12:21:30Z",
         "net": "2025-11-30T00:00:00Z",
         "net_precision": {
           "id": 7,
@@ -20660,7 +20660,120 @@
             "live": false
           }
         ],
-        "timeline": [],
+        "timeline": [
+          {
+            "type": {
+              "id": 9,
+              "abbrev": "Ignition",
+              "description": "Start of the engine ignition sequence"
+            },
+            "relative_time": "-PT2S"
+          },
+          {
+            "type": {
+              "id": 10,
+              "abbrev": "Liftoff",
+              "description": "First upwards movement of the rocket"
+            },
+            "relative_time": "PT1S"
+          },
+          {
+            "type": {
+              "id": 11,
+              "abbrev": "Max-Q",
+              "description": "Maximum dynamic pressure"
+            },
+            "relative_time": "PT54S"
+          },
+          {
+            "type": {
+              "id": 77,
+              "abbrev": "SRB Separation",
+              "description": "The solid rocket boosters are separated from the launcher."
+            },
+            "relative_time": "PT1M46S"
+          },
+          {
+            "type": {
+              "id": 15,
+              "abbrev": "Fairing Separation",
+              "description": "Separation of the payload fairing"
+            },
+            "relative_time": "PT3M14S"
+          },
+          {
+            "type": {
+              "id": 12,
+              "abbrev": "MECO",
+              "description": "Cut-off of the main engine"
+            },
+            "relative_time": "PT4M23S"
+          },
+          {
+            "type": {
+              "id": 13,
+              "abbrev": "Stage 2 Separation",
+              "description": "Separation of the second stage from the first"
+            },
+            "relative_time": "PT4M29S"
+          },
+          {
+            "type": {
+              "id": 14,
+              "abbrev": "SES-1",
+              "description": "First start of the second engine"
+            },
+            "relative_time": "PT4M39S"
+          },
+          {
+            "type": {
+              "id": 20,
+              "abbrev": "SECO-1",
+              "description": "First cut-off of the second engine"
+            },
+            "relative_time": "PT11M35S"
+          },
+          {
+            "type": {
+              "id": 21,
+              "abbrev": "SES-2",
+              "description": "Second start of the second engine"
+            },
+            "relative_time": "PT21M34S"
+          },
+          {
+            "type": {
+              "id": 22,
+              "abbrev": "SECO-2",
+              "description": "Second cut-off of the second engine"
+            },
+            "relative_time": "PT26M55S"
+          },
+          {
+            "type": {
+              "id": 80,
+              "abbrev": "SES-3",
+              "description": "Third start of the second engine"
+            },
+            "relative_time": "PT3H26M"
+          },
+          {
+            "type": {
+              "id": 81,
+              "abbrev": "SECO-3",
+              "description": "Third cut-off of the second engine"
+            },
+            "relative_time": "PT3H29M8S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT3H32M23S"
+          }
+        ],
         "pad_turnaround": "P65DT11H50M30S",
         "mission_patches": []
       },
