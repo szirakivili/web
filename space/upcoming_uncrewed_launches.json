@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-07T19:21:12Z",
+  "fetched_at": "2025-11-07T20:29:10Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 345,
@@ -1486,13 +1486,13 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-11-02T16:56:03Z",
-        "net": "2025-11-08T08:30:00Z",
+        "last_updated": "2025-11-07T20:15:49Z",
+        "net": "2025-11-08T08:42:50Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2025-11-08T12:30:00Z",
         "window_start": "2025-11-08T08:30:00Z",
@@ -2243,7 +2243,7 @@
                 "fastest_turnaround": "P25DT18H20M50S"
               },
               "previous_flight_date": "2025-09-05T12:32:30Z",
-              "turn_around_time": "P63DT19H57M30S",
+              "turn_around_time": "P63DT20H10M20S",
               "landing": {
                 "id": 1730,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1730/?format=json",
@@ -2693,16 +2693,24 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7111,
+        "orbital_launch_attempt_count": 7110,
         "location_launch_attempt_count": 274,
         "pad_launch_attempt_count": 216,
         "agency_launch_attempt_count": 597,
-        "orbital_launch_attempt_count_year": 262,
+        "orbital_launch_attempt_count_year": 261,
         "location_launch_attempt_count_year": 22,
         "pad_launch_attempt_count_year": 22,
         "agency_launch_attempt_count_year": 148,
         "flightclub_url": "https://flightclub.io/result?llId=29e88f09-8897-4014-afa0-087ca70de9bd",
         "updates": [
+          {
+            "id": 12804,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Now targeting Nov 08 at 08:42 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-10-51",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-07T20:15:00Z"
+          },
           {
             "id": 12718,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -2919,7 +2927,7 @@
             "relative_time": "PT1H4M3S"
           }
         ],
-        "pad_turnaround": "P44DT20H59M10S",
+        "pad_turnaround": "P44DT21H12M",
         "mission_patches": [
           {
             "id": 7,
@@ -4199,7 +4207,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-11-06T14:16:47Z",
+        "last_updated": "2025-11-07T19:24:44Z",
         "net": "2025-11-09T19:45:00Z",
         "net_precision": {
           "id": 1,
@@ -5308,11 +5316,11 @@
           }
         ],
         "orbital_launch_attempt_count": 7113,
-        "location_launch_attempt_count": 1067,
+        "location_launch_attempt_count": 1066,
         "pad_launch_attempt_count": 70,
         "agency_launch_attempt_count": 38,
         "orbital_launch_attempt_count_year": 264,
-        "location_launch_attempt_count_year": 73,
+        "location_launch_attempt_count_year": 72,
         "pad_launch_attempt_count_year": 2,
         "agency_launch_attempt_count_year": 10,
         "flightclub_url": null,
@@ -5446,7 +5454,25 @@
             "created_on": "2023-02-09T23:25:02Z"
           }
         ],
-        "info_urls": [],
+        "info_urls": [
+          {
+            "priority": 10,
+            "source": null,
+            "title": null,
+            "description": null,
+            "feature_image": null,
+            "url": "https://www.blueorigin.com/missions/ng-2",
+            "type": {
+              "id": 1,
+              "name": "Official Page"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            }
+          }
+        ],
         "vid_urls": [],
         "timeline": [],
         "pad_turnaround": "P297DT12H42M",
@@ -12797,7 +12823,7 @@
           "abbrev": "TBC",
           "description": "Awaiting official confirmation - current date is known with some certainty."
         },
-        "last_updated": "2025-11-06T18:16:57Z",
+        "last_updated": "2025-11-07T20:26:08Z",
         "net": "2025-11-17T05:12:00Z",
         "net_precision": {
           "id": 1,
@@ -15445,11 +15471,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7121,
+        "orbital_launch_attempt_count": 7120,
         "location_launch_attempt_count": 845,
         "pad_launch_attempt_count": 231,
         "agency_launch_attempt_count": 602,
-        "orbital_launch_attempt_count_year": 272,
+        "orbital_launch_attempt_count_year": 271,
         "location_launch_attempt_count_year": 59,
         "pad_launch_attempt_count_year": 57,
         "agency_launch_attempt_count_year": 153,
@@ -15532,9 +15558,31 @@
             "language": null
           }
         ],
-        "vid_urls": [],
+        "vid_urls": [
+          {
+            "priority": 10,
+            "source": "x.com",
+            "publisher": "X",
+            "title": "Livestream on X",
+            "description": "Livestream on X",
+            "feature_image": null,
+            "url": "https://x.com/i/broadcasts/1dRJZaPjlwDGB",
+            "type": {
+              "id": 1,
+              "name": "Official Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": null,
+            "end_time": null,
+            "live": false
+          }
+        ],
         "timeline": [],
-        "pad_turnaround": "P6DT10H54M",
+        "pad_turnaround": "P5DT10H54M",
         "mission_patches": []
       },
       {
