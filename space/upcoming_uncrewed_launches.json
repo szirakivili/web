@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-09T05:24:35Z",
+  "fetched_at": "2025-11-09T06:35:27Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 344,
@@ -9,23 +9,23 @@
       {
         "id": "6232fdd6-872e-4146-aae9-4f3cca740512",
         "url": "https://ll.thespacedevs.com/2.3.0/launches/6232fdd6-872e-4146-aae9-4f3cca740512/?format=json",
-        "name": "Long March 11 | Unknown Payload",
+        "name": "Long March 11 | Shiyan 32 01-03",
         "response_mode": "detailed",
-        "slug": "long-march-11-unknown-payload",
-        "launch_designator": null,
+        "slug": "long-march-11-shiyan-32-01-03",
+        "launch_designator": "2025-255",
         "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
+          "id": 3,
+          "name": "Launch Successful",
+          "abbrev": "Success",
+          "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2025-11-05T14:37:34Z",
-        "net": "2025-11-08T21:00:00Z",
+        "last_updated": "2025-11-09T06:17:10Z",
+        "net": "2025-11-08T21:01:00Z",
         "net_precision": {
-          "id": 2,
-          "name": "Hour",
-          "abbrev": "HR",
-          "description": "The T-0 is accurate to the hour."
+          "id": 1,
+          "name": "Minute",
+          "abbrev": "MIN",
+          "description": "The T-0 is accurate to the minute."
         },
         "window_end": "2025-11-08T21:12:00Z",
         "window_start": "2025-11-08T20:51:00Z",
@@ -122,10 +122,10 @@
             "variants": []
           },
           "total_launch_count": 553,
-          "consecutive_successful_launches": 94,
-          "successful_launches": 538,
+          "consecutive_successful_launches": 95,
+          "successful_launches": 539,
           "failed_launches": 14,
-          "pending_launches": 5,
+          "pending_launches": 4,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -226,10 +226,10 @@
                       "variants": []
                     },
                     "total_launch_count": 553,
-                    "consecutive_successful_launches": 94,
-                    "successful_launches": 538,
+                    "consecutive_successful_launches": 95,
+                    "successful_launches": 539,
                     "failed_launches": 14,
-                    "pending_launches": 5,
+                    "pending_launches": 4,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -337,10 +337,10 @@
                       "variants": []
                     },
                     "total_launch_count": 553,
-                    "consecutive_successful_launches": 94,
-                    "successful_launches": 538,
+                    "consecutive_successful_launches": 95,
+                    "successful_launches": 539,
                     "failed_launches": 14,
-                    "pending_launches": 5,
+                    "pending_launches": 4,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -528,10 +528,10 @@
                 "variants": []
               },
               "total_launch_count": 553,
-              "consecutive_successful_launches": 94,
-              "successful_launches": 538,
+              "consecutive_successful_launches": 95,
+              "successful_launches": 539,
               "failed_launches": 14,
-              "pending_launches": 5,
+              "pending_launches": 4,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -581,10 +581,10 @@
             "to_thrust": 1177.0,
             "apogee": 200.0,
             "total_launch_count": 18,
-            "consecutive_successful_launches": 17,
-            "successful_launches": 17,
+            "consecutive_successful_launches": 18,
+            "successful_launches": 18,
             "failed_launches": 0,
-            "pending_launches": 1,
+            "pending_launches": 0,
             "attempted_landings": 0,
             "successful_landings": 0,
             "failed_landings": 0,
@@ -597,14 +597,14 @@
         },
         "mission": {
           "id": 7381,
-          "name": "Unknown Payload",
-          "type": "Unknown",
-          "description": "Details TBD.",
+          "name": "Shiyan 32 01-03",
+          "type": "Government/Top Secret",
+          "description": "3 Chinese satellites reported to be for \"orbital technological testing\" purposes. Actual usage not known.",
           "image": null,
           "orbit": {
-            "id": 25,
-            "name": "Unknown",
-            "abbrev": "N/A",
+            "id": 8,
+            "name": "Low Earth Orbit",
+            "abbrev": "LEO",
             "celestial_body": {
               "response_mode": "list",
               "id": 1,
@@ -802,6 +802,14 @@
         "flightclub_url": null,
         "updates": [
           {
+            "id": 12821,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Launch success.",
+            "info_url": "https://m.weibo.cn/detail/5231063578444685",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-09T06:17:00Z"
+          },
+          {
             "id": 12763,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Added launch per NOTAMs; Payload identity highly uncertain.",
@@ -813,7 +821,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P45DT13H4M",
+        "pad_turnaround": "P45DT13H5M",
         "mission_patches": []
       },
       {
@@ -1272,8 +1280,8 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-11-08T19:56:13Z",
-        "net": "2025-11-09T08:10:00Z",
+        "last_updated": "2025-11-09T06:33:33Z",
+        "net": "2025-11-09T08:10:10Z",
         "net_precision": {
           "id": 0,
           "name": "Second",
@@ -2029,7 +2037,7 @@
                 "fastest_turnaround": "P25DT18H20M50S"
               },
               "previous_flight_date": "2025-09-05T12:32:30Z",
-              "turn_around_time": "P64DT19H37M30S",
+              "turn_around_time": "P64DT19H37M40S",
               "landing": {
                 "id": 1730,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1730/?format=json",
@@ -2490,6 +2498,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=29e88f09-8897-4014-afa0-087ca70de9bd",
         "updates": [
           {
+            "id": 12823,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Tweaked T-0.",
+            "info_url": "https://www.spacex.com/launches/sl-10-51",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-09T06:33:00Z"
+          },
+          {
             "id": 12817,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Launch time is to the second.",
@@ -2781,7 +2797,7 @@
             "relative_time": "PT1H4M3S"
           }
         ],
-        "pad_turnaround": "P45DT20H39M10S",
+        "pad_turnaround": "P45DT20H39M20S",
         "mission_patches": [
           {
             "id": 7,
@@ -4254,10 +4270,10 @@
             "variants": []
           },
           "total_launch_count": 553,
-          "consecutive_successful_launches": 94,
-          "successful_launches": 538,
+          "consecutive_successful_launches": 95,
+          "successful_launches": 539,
           "failed_launches": 14,
-          "pending_launches": 5,
+          "pending_launches": 4,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -4358,10 +4374,10 @@
                       "variants": []
                     },
                     "total_launch_count": 553,
-                    "consecutive_successful_launches": 94,
-                    "successful_launches": 538,
+                    "consecutive_successful_launches": 95,
+                    "successful_launches": 539,
                     "failed_launches": 14,
-                    "pending_launches": 5,
+                    "pending_launches": 4,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -4469,10 +4485,10 @@
                       "variants": []
                     },
                     "total_launch_count": 553,
-                    "consecutive_successful_launches": 94,
-                    "successful_launches": 538,
+                    "consecutive_successful_launches": 95,
+                    "successful_launches": 539,
                     "failed_launches": 14,
-                    "pending_launches": 5,
+                    "pending_launches": 4,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -4660,10 +4676,10 @@
                 "variants": []
               },
               "total_launch_count": 553,
-              "consecutive_successful_launches": 94,
-              "successful_launches": 538,
+              "consecutive_successful_launches": 95,
+              "successful_launches": 539,
               "failed_launches": 14,
-              "pending_launches": 5,
+              "pending_launches": 4,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -12788,14 +12804,6 @@
                       "nationality_name_composed": "Swedo"
                     },
                     {
-                      "id": 20,
-                      "name": "Belgium",
-                      "alpha_2_code": "BE",
-                      "alpha_3_code": "BEL",
-                      "nationality_name": "Belgian",
-                      "nationality_name_composed": "Belgo"
-                    },
-                    {
                       "id": 23,
                       "name": "Portugal",
                       "alpha_2_code": "PT",
@@ -12898,6 +12906,14 @@
                       "alpha_3_code": "LUX",
                       "nationality_name": "Luxembourger",
                       "nationality_name_composed": "Luxembourgish"
+                    },
+                    {
+                      "id": 20,
+                      "name": "Belgium",
+                      "alpha_2_code": "BE",
+                      "alpha_3_code": "BEL",
+                      "nationality_name": "Belgian",
+                      "nationality_name_composed": "Belgo"
                     },
                     {
                       "id": 86,
@@ -14678,16 +14694,16 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-10-30T21:31:47Z",
-        "net": "2025-11-18T11:00:00Z",
+        "last_updated": "2025-11-09T06:30:34Z",
+        "net": "2025-11-18T23:29:00Z",
         "net_precision": {
           "id": 1,
           "name": "Minute",
           "abbrev": "MIN",
           "description": "The T-0 is accurate to the minute."
         },
-        "window_end": "2025-11-18T15:00:00Z",
-        "window_start": "2025-11-18T11:00:00Z",
+        "window_end": "2025-11-19T03:29:00Z",
+        "window_start": "2025-11-18T23:29:00Z",
         "image": {
           "id": 1296,
           "name": "Starlink night fairing",
@@ -15435,7 +15451,7 @@
                 "fastest_turnaround": "P24DT16H10M"
               },
               "previous_flight_date": "2025-09-21T10:53:00Z",
-              "turn_around_time": "P58DT7M",
+              "turn_around_time": "P58DT12H36M",
               "landing": {
                 "id": 1734,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1734/?format=json",
@@ -15896,6 +15912,14 @@
         "flightclub_url": null,
         "updates": [
           {
+            "id": 12822,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Now targeting Nov 18 at 23:29 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-6-94",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-09T06:30:00Z"
+          },
+          {
             "id": 12722,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Added launch.",
@@ -16069,7 +16093,7 @@
             "relative_time": "PT1H5M5S"
           }
         ],
-        "pad_turnaround": "P3DT7H59M",
+        "pad_turnaround": "P3DT20H28M",
         "mission_patches": [
           {
             "id": 7,
