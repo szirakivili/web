@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-10T04:33:34Z",
+  "fetched_at": "2025-11-10T05:27:32Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 342,
@@ -2928,13 +2928,13 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-11-09T19:27:20Z",
-        "net": "2025-11-11T03:01:00Z",
+        "last_updated": "2025-11-10T05:02:59Z",
+        "net": "2025-11-11T03:21:30Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2025-11-11T06:59:00Z",
         "window_start": "2025-11-11T03:01:00Z",
@@ -3685,7 +3685,7 @@
                 "fastest_turnaround": "P70DT5H50S"
               },
               "previous_flight_date": "2025-09-24T11:30:50Z",
-              "turn_around_time": "P47DT15H30M10S",
+              "turn_around_time": "P47DT15H50M40S",
               "landing": {
                 "id": 1732,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1732/?format=json",
@@ -4146,6 +4146,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=a63253be-6084-4151-81db-57fe4d13b164",
         "updates": [
           {
+            "id": 12844,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Now targeting Nov 11 at 03:21 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-6-87",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-10T05:02:00Z"
+          },
+          {
             "id": 12832,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Now targeting Nov 11 at 03:01 UTC",
@@ -4401,7 +4409,7 @@
             "relative_time": "PT1H4M59S"
           }
         ],
-        "pad_turnaround": "P5DT1H29M50S",
+        "pad_turnaround": "P5DT1H50M20S",
         "mission_patches": [
           {
             "id": 7,
