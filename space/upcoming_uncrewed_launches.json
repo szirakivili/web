@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-10T03:53:18Z",
+  "fetched_at": "2025-11-10T04:33:34Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 342,
@@ -1585,18 +1585,18 @@
       {
         "id": "537bd9b3-5f1d-4dda-aeb5-78e5b17cf2ba",
         "url": "https://ll.thespacedevs.com/2.3.0/launches/537bd9b3-5f1d-4dda-aeb5-78e5b17cf2ba/?format=json",
-        "name": "Long March 12 | Unknown Payload",
+        "name": "Long March 12 | SatNet LEO Group 13",
         "response_mode": "detailed",
-        "slug": "long-march-12-unknown-payload",
+        "slug": "long-march-12-satnet-leo-group-13",
         "launch_designator": null,
         "status": {
-          "id": 6,
-          "name": "Launch in Flight",
-          "abbrev": "In Flight",
-          "description": "The launch vehicle has lifted off from the launchpad."
+          "id": 3,
+          "name": "Launch Successful",
+          "abbrev": "Success",
+          "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2025-11-10T02:44:15Z",
-        "net": "2025-11-10T02:42:00Z",
+        "last_updated": "2025-11-10T04:26:08Z",
+        "net": "2025-11-10T02:41:00Z",
         "net_precision": {
           "id": 1,
           "name": "Minute",
@@ -1698,8 +1698,8 @@
             "variants": []
           },
           "total_launch_count": 554,
-          "consecutive_successful_launches": 95,
-          "successful_launches": 539,
+          "consecutive_successful_launches": 96,
+          "successful_launches": 540,
           "failed_launches": 14,
           "pending_launches": 3,
           "consecutive_successful_landings": 0,
@@ -1802,8 +1802,8 @@
                       "variants": []
                     },
                     "total_launch_count": 554,
-                    "consecutive_successful_launches": 95,
-                    "successful_launches": 539,
+                    "consecutive_successful_launches": 96,
+                    "successful_launches": 540,
                     "failed_launches": 14,
                     "pending_launches": 3,
                     "consecutive_successful_landings": 0,
@@ -1913,8 +1913,8 @@
                       "variants": []
                     },
                     "total_launch_count": 554,
-                    "consecutive_successful_launches": 95,
-                    "successful_launches": 539,
+                    "consecutive_successful_launches": 96,
+                    "successful_launches": 540,
                     "failed_launches": 14,
                     "pending_launches": 3,
                     "consecutive_successful_landings": 0,
@@ -2104,8 +2104,8 @@
                 "variants": []
               },
               "total_launch_count": 554,
-              "consecutive_successful_launches": 95,
-              "successful_launches": 539,
+              "consecutive_successful_launches": 96,
+              "successful_launches": 540,
               "failed_launches": 14,
               "pending_launches": 3,
               "consecutive_successful_landings": 0,
@@ -2157,15 +2157,15 @@
             "to_thrust": 5000.0,
             "apogee": null,
             "total_launch_count": 3,
-            "consecutive_successful_launches": 2,
-            "successful_launches": 2,
+            "consecutive_successful_launches": 3,
+            "successful_launches": 3,
             "failed_launches": 0,
             "pending_launches": 0,
             "attempted_landings": 0,
             "successful_landings": 0,
             "failed_landings": 0,
             "consecutive_successful_landings": 0,
-            "fastest_turnaround": "P97DT16H21M"
+            "fastest_turnaround": "P97DT16H20M"
           },
           "launcher_stage": [],
           "spacecraft_stage": [],
@@ -2173,14 +2173,14 @@
         },
         "mission": {
           "id": 7380,
-          "name": "Unknown Payload",
-          "type": "Unknown",
-          "description": "Details TBD.",
+          "name": "SatNet LEO Group 13",
+          "type": "Communications",
+          "description": "A batch of Low Earth Orbit communication satellites for the Chinese state owned SatNet constellation operated by the China Satellite Network Group.\r\n\r\nThe constellation will eventually consists of 13000 satellites.",
           "image": null,
           "orbit": {
-            "id": 25,
-            "name": "Unknown",
-            "abbrev": "N/A",
+            "id": 8,
+            "name": "Low Earth Orbit",
+            "abbrev": "LEO",
             "celestial_body": {
               "response_mode": "list",
               "id": 1,
@@ -2304,6 +2304,14 @@
         "flightclub_url": null,
         "updates": [
           {
+            "id": 12843,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Launch success.",
+            "info_url": "https://m.weibo.cn/detail/5231408356266000",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-10T04:26:00Z"
+          },
+          {
             "id": 12842,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Liftoff.",
@@ -2325,10 +2333,10 @@
           {
             "priority": 10,
             "source": null,
-            "publisher": "",
-            "title": null,
-            "description": null,
-            "feature_image": null,
+            "publisher": "International Rocket Launches",
+            "title": "Live: Long March 12 SatNet LEO Group 13 Launch (No Commentary)",
+            "description": "Footage courtesy of SpaceLens/中交文昌美庐/领航员列奥/文昌鲁能希尔顿酒店/宇航梦工坊·火箭之眼官方号\n\nInternational Rocket Launches provides commentary-free coverage of select global rocket launches.\n\nFollow @IntRocketLaunch on Twitte...",
+            "feature_image": "https://i.ytimg.com/vi/RK1MBVeib5s/maxresdefault_live.jpg",
             "url": "https://www.youtube.com/watch?v=RK1MBVeib5s",
             "type": {
               "id": 3,
@@ -2339,13 +2347,13 @@
               "name": "Chinese",
               "code": "zn"
             },
-            "start_time": null,
-            "end_time": null,
+            "start_time": "2025-11-10T01:42:06Z",
+            "end_time": "2025-11-10T02:45:48Z",
             "live": false
           }
         ],
         "timeline": [],
-        "pad_turnaround": "P97DT16H21M",
+        "pad_turnaround": "P97DT16H20M",
         "mission_patches": []
       },
       {
