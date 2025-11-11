@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-11T09:29:14Z",
+  "fetched_at": "2025-11-11T10:30:29Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 339,
@@ -8023,7 +8023,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-11-07T22:03:14Z",
+        "last_updated": "2025-11-11T10:13:31Z",
         "net": "2025-11-17T05:21:00Z",
         "net_precision": {
           "id": 1,
@@ -11005,7 +11005,26 @@
           }
         ],
         "pad_turnaround": "P10DT8H7M10S",
-        "mission_patches": []
+        "mission_patches": [
+          {
+            "id": 1209,
+            "name": "Sentinel 6B",
+            "priority": 10,
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/mission_patch_images/sentinel25206b_mission_patch_20251111101450.png",
+            "agency": {
+              "response_mode": "list",
+              "id": 121,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/121/?format=json",
+              "name": "SpaceX",
+              "abbrev": "SpX",
+              "type": {
+                "id": 3,
+                "name": "Commercial"
+              }
+            },
+            "response_mode": "normal"
+          }
+        ]
       },
       {
         "id": "d124e85e-ee0f-4ab2-9be6-fd31516ddee9",
