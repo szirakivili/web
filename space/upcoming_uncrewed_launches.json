@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-13T16:32:50Z",
+  "fetched_at": "2025-11-13T17:25:35Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 340,
@@ -19,7 +19,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-11-13T02:31:52Z",
+        "last_updated": "2025-11-13T17:18:28Z",
         "net": "2025-11-13T19:57:00Z",
         "net_precision": {
           "id": 1,
@@ -30,16 +30,16 @@
         "window_end": "2025-11-13T21:25:00Z",
         "window_start": "2025-11-13T19:57:00Z",
         "image": {
-          "id": 1794,
-          "name": "New Glenn on LC-36",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_glenn_on_lc_image_20240313170026.jpeg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_glenn_on_lc_image_thumbnail_20240313170027.jpeg",
+          "id": 2535,
+          "name": "New Glenn on the launch pad (Escapade)",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_glenn_on_th_image_20251113164507.jpg",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_glenn_on_th_image_thumbnail_20251113164509.jpeg",
           "credit": "Blue Origin",
           "license": {
-            "id": 1,
-            "name": "Unknown",
-            "priority": 9,
-            "link": null
+            "id": 37,
+            "name": "Blue Origin Terms of Use",
+            "priority": 6,
+            "link": "https://www.blueorigin.com/terms-of-use"
           },
           "single_use": true,
           "variants": []
@@ -1094,7 +1094,7 @@
             "total_landing_count": 69
           }
         },
-        "webcast_live": false,
+        "webcast_live": true,
         "program": [
           {
             "response_mode": "normal",
@@ -1137,6 +1137,14 @@
         "agency_launch_attempt_count_year": 10,
         "flightclub_url": "https://flightclub.io/result?llId=9c950919-5d11-4a79-a4f1-be7387678c0a",
         "updates": [
+          {
+            "id": 12869,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/ll2_profile_20230311134739.png",
+            "comment": "Unofficial Webcast by Spaceflight Now has started",
+            "info_url": "https://www.youtube.com/watch?v=iheyXgtG7EI",
+            "created_by": "LL2",
+            "created_on": "2025-11-13T17:18:00Z"
+          },
           {
             "id": 12866,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -1399,9 +1407,9 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-11-13T16:57:00Z",
+            "start_time": "2025-11-13T16:57:43Z",
             "end_time": null,
-            "live": false
+            "live": true
           },
           {
             "priority": 12,
@@ -1420,9 +1428,9 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-11-13T16:57:00Z",
+            "start_time": "2025-11-13T16:57:02Z",
             "end_time": null,
-            "live": false
+            "live": true
           }
         ],
         "timeline": [
@@ -7634,14 +7642,6 @@
                       "nationality_name_composed": "Swedo"
                     },
                     {
-                      "id": 20,
-                      "name": "Belgium",
-                      "alpha_2_code": "BE",
-                      "alpha_3_code": "BEL",
-                      "nationality_name": "Belgian",
-                      "nationality_name_composed": "Belgo"
-                    },
-                    {
                       "id": 23,
                       "name": "Portugal",
                       "alpha_2_code": "PT",
@@ -7744,6 +7744,14 @@
                       "alpha_3_code": "LUX",
                       "nationality_name": "Luxembourger",
                       "nationality_name_composed": "Luxembourgish"
+                    },
+                    {
+                      "id": 20,
+                      "name": "Belgium",
+                      "alpha_2_code": "BE",
+                      "alpha_3_code": "BEL",
+                      "nationality_name": "Belgian",
+                      "nationality_name_composed": "Belgo"
                     },
                     {
                       "id": 86,
