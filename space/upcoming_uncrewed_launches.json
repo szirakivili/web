@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-13T21:23:58Z",
+  "fetched_at": "2025-11-13T22:26:23Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 342,
@@ -14,12 +14,12 @@
         "slug": "new-glenn-escapade",
         "launch_designator": null,
         "status": {
-          "id": 6,
-          "name": "Launch in Flight",
-          "abbrev": "In Flight",
-          "description": "The launch vehicle has lifted off from the launchpad."
+          "id": 9,
+          "name": "Payload Deployed",
+          "abbrev": "Deployed",
+          "description": "Deployment of the payload(s) has been confirmed."
         },
-        "last_updated": "2025-11-13T20:55:16Z",
+        "last_updated": "2025-11-13T21:32:18Z",
         "net": "2025-11-13T20:55:00Z",
         "net_precision": {
           "id": 1,
@@ -126,8 +126,8 @@
           "successful_launches": 36,
           "failed_launches": 1,
           "pending_launches": 5,
-          "consecutive_successful_landings": 0,
-          "successful_landings": 34,
+          "consecutive_successful_landings": 9,
+          "successful_landings": 35,
           "failed_landings": 3,
           "attempted_landings": 38,
           "successful_landings_spacecraft": 36,
@@ -229,8 +229,8 @@
               "successful_launches": 36,
               "failed_launches": 1,
               "pending_launches": 5,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 34,
+              "consecutive_successful_landings": 9,
+              "successful_landings": 35,
               "failed_landings": 3,
               "attempted_landings": 38,
               "successful_landings_spacecraft": 36,
@@ -1137,6 +1137,14 @@
         "agency_launch_attempt_count_year": 10,
         "flightclub_url": "https://flightclub.io/result?llId=9c950919-5d11-4a79-a4f1-be7387678c0a",
         "updates": [
+          {
+            "id": 12877,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Spacecraft separation confirmed.",
+            "info_url": "https://x.com/blueorigin/status/1989083154200826338",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-13T21:32:00Z"
+          },
           {
             "id": 12876,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -6596,7 +6604,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-11-11T10:13:31Z",
+        "last_updated": "2025-11-13T22:05:10Z",
         "net": "2025-11-17T05:21:00Z",
         "net_precision": {
           "id": 1,
@@ -9248,11 +9256,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7119,
+        "orbital_launch_attempt_count": 7120,
         "location_launch_attempt_count": 844,
         "pad_launch_attempt_count": 230,
         "agency_launch_attempt_count": 601,
-        "orbital_launch_attempt_count_year": 270,
+        "orbital_launch_attempt_count_year": 271,
         "location_launch_attempt_count_year": 58,
         "pad_launch_attempt_count_year": 56,
         "agency_launch_attempt_count_year": 152,
@@ -9380,6 +9388,27 @@
             },
             "start_time": null,
             "end_time": null,
+            "live": false
+          },
+          {
+            "priority": 11,
+            "source": "plus.nasa.gov",
+            "publisher": "NASA",
+            "title": "Sentinel-6B Launch",
+            "description": "An accurate picture of global and local sea levels is crucial to weather and storm forecasting, securing coastal property and infrastructure, and helping to optimize commercial activities such as shipping and undersea pipeline operations. A series of satellites started collecting sea level measurements in the early 1990s, led by NASA and domestic and international partners. The Sentinel-6B spacecraft follows the launch of its twin, the Sentinel-6 Michael Freilich satellite, which preceded it into space in November 2020. The pair make up the international Sentinel-6/Jason-CS (Continuity of Service) mission, which is designed to measure sea levels down to roughly an inch for about 90% of the world’s oceans.",
+            "feature_image": "https://plus.nasa.gov/wp-content/uploads/2025/11/sentinel-6b-launch-key-art-r1-horizontal-program-tile-16-9-without-title.jpg",
+            "url": "https://plus.nasa.gov/scheduled-video/sentinel-6b-launch/",
+            "type": {
+              "id": 1,
+              "name": "Official Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-11-17T04:30:00Z",
+            "end_time": "2025-11-17T07:00:00Z",
             "live": false
           }
         ],
@@ -21518,8 +21547,8 @@
           "successful_launches": 36,
           "failed_launches": 1,
           "pending_launches": 5,
-          "consecutive_successful_landings": 0,
-          "successful_landings": 34,
+          "consecutive_successful_landings": 9,
+          "successful_landings": 35,
           "failed_landings": 3,
           "attempted_landings": 38,
           "successful_landings_spacecraft": 36,
@@ -21621,8 +21650,8 @@
               "successful_launches": 36,
               "failed_launches": 1,
               "pending_launches": 5,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 34,
+              "consecutive_successful_landings": 9,
+              "successful_landings": 35,
               "failed_landings": 3,
               "attempted_landings": 38,
               "successful_landings_spacecraft": 36,
@@ -22298,8 +22327,8 @@
               "successful_launches": 36,
               "failed_launches": 1,
               "pending_launches": 5,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 34,
+              "consecutive_successful_landings": 9,
+              "successful_landings": 35,
               "failed_landings": 3,
               "attempted_landings": 38,
               "successful_landings_spacecraft": 36,
