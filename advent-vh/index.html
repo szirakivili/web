@@ -3,33 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventi ablakok</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <title>2024-es adventi ablakok</title>
-    <style>
-        body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            overflow: hidden;
-        }
-        img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        #snow-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none; /* Fontos, hogy a háttérben lévő elemekre is lehessen kattintani! */
-            z-index: 999;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
@@ -42,79 +18,45 @@
 </script>
 <body>
     <canvas id="snow-canvas"></canvas>
-    <img src="2024_osszes.jpg" alt="2024-es adventi ablakok">
+    <h1>Váchartyán adventi ablakai 2025 🎄</h1>
+    <p>Ha megtaláltad, tölts fel egy fotót a FB poszthoz kommentben!</p>
+    <div class="calendar" id="calendar">
+        <div class="day-card locked" data-day="1">1</div>
+        <div class="day-card locked" data-day="2">2</div>
+        <div class="day-card locked" data-day="3">3</div>
+        <div class="day-card locked" data-day="4">4</div>
+        <div class="day-card locked" data-day="5">5</div>
+        <div class="day-card locked" data-day="6">6</div>
+        <div class="day-card locked" data-day="7">7</div>
+        <div class="day-card locked" data-day="8">8</div>
+        <div class="day-card locked" data-day="9">9</div>
+        <div class="day-card locked" data-day="10">10</div>
+        <div class="day-card locked" data-day="11">11</div>
+        <div class="day-card locked" data-day="12">12</div>
+        <div class="day-card locked" data-day="13">13</div>
+        <div class="day-card locked" data-day="14">14</div>
+        <div class="day-card locked" data-day="15">15</div>
+        <div class="day-card locked" data-day="16">16</div>
+        <div class="day-card locked" data-day="17">17</div>
+        <div class="day-card locked" data-day="18">18</div>
+        <div class="day-card locked" data-day="19">19</div>
+        <div class="day-card locked" data-day="20">20</div>
+        <div class="day-card locked" data-day="21">21</div>
+        <div class="day-card locked" data-day="22">22</div>
+        <div class="day-card locked" data-day="23">23</div>
+        <div class="day-card locked" data-day="24">24</div>
+    </div>
+    <p class="messenger-link">Hiba vagy javaslat esetén írj üzenetet <a href="https://m.me/szirakivili">itt</a>!</p>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="close-button" id="closeButton">&times;</button>
+            <img id="modalImage" src="" alt="Adventi napi kép">
+            <p id="modalText"></p>
+            <a id="fbButton" class="fb-button" href="#" target="_blank">FB poszt</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const canvas = document.getElementById('snow-canvas');
-        const ctx = canvas.getContext('2d');
-
-        // A canvas méretének beállítása
-        function setCanvasSize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        setCanvasSize();
-        window.addEventListener('resize', setCanvasSize);
-
-        const snowflakes = [];
-        const numberOfSnowflakes = 100; // Hópelyhek száma
-
-        // Hópehely osztály
-        class Snowflake {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1; // 1 és 4 közötti méret
-                this.speedX = Math.random() * 0.5 - 0.25; // Enyhe vízszintes mozgás
-                this.speedY = Math.random() * 1.5 + 0.5; // 0.5 és 2 közötti sebesség
-            }
-
-            // Hópehely frissítése (mozgatása)
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                // Ha a hópehely leért, dobjuk vissza a tetejére
-                if (this.y > canvas.height) {
-                    this.y = 0;
-                    this.x = Math.random() * canvas.width;
-                }
-            }
-
-            // Hópehely rajzolása
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)'; // Átlátszó fehér
-                ctx.fill();
-            }
-        }
-
-        // Hópelyhek inicializálása
-        function init() {
-            for (let i = 0; i < numberOfSnowflakes; i++) {
-                snowflakes.push(new Snowflake());
-            }
-        }
-
-        // Animációs ciklus
-        function animate() {
-            // A canvas törlése minden képkockán
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            snowflakes.forEach(snowflake => {
-                snowflake.update();
-                snowflake.draw();
-            });
-
-            requestAnimationFrame(animate);
-        }
-
-        // Indítás
-        init();
-        animate();
-    });
-</script>
 </html>
