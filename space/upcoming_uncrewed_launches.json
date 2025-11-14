@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-14T11:22:36Z",
+  "fetched_at": "2025-11-14T12:54:34Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 342,
@@ -19,13 +19,13 @@
           "abbrev": "Success",
           "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2025-11-14T08:05:08Z",
-        "net": "2025-11-13T20:55:00Z",
+        "last_updated": "2025-11-14T11:40:56Z",
+        "net": "2025-11-13T20:55:01Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2025-11-13T21:25:00Z",
         "window_start": "2025-11-13T19:57:00Z",
@@ -286,7 +286,7 @@
             "successful_landings": 1,
             "failed_landings": 1,
             "consecutive_successful_landings": 1,
-            "fastest_turnaround": "P301DT13H52M"
+            "fastest_turnaround": "P301DT13H52M1S"
           },
           "launcher_stage": [
             {
@@ -324,8 +324,8 @@
                 "successful_landings": 1,
                 "attempted_landings": 1,
                 "flights": 1,
-                "last_launch_date": "2025-11-13T20:55:00Z",
-                "first_launch_date": "2025-11-13T20:55:00Z",
+                "last_launch_date": "2025-11-13T20:55:01Z",
+                "first_launch_date": "2025-11-13T20:55:01Z",
                 "fastest_turnaround": null
               },
               "previous_flight_date": null,
@@ -1744,7 +1744,7 @@
             "relative_time": "PT1H41M54S"
           }
         ],
-        "pad_turnaround": "P301DT13H52M",
+        "pad_turnaround": "P301DT13H52M1S",
         "mission_patches": [
           {
             "id": 1208,
