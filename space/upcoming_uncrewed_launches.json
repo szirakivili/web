@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-14T02:04:09Z",
+  "fetched_at": "2025-11-14T03:48:19Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 342,
@@ -14,12 +14,12 @@
         "slug": "new-glenn-escapade",
         "launch_designator": null,
         "status": {
-          "id": 9,
-          "name": "Payload Deployed",
-          "abbrev": "Deployed",
-          "description": "Deployment of the payload(s) has been confirmed."
+          "id": 3,
+          "name": "Launch Successful",
+          "abbrev": "Success",
+          "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2025-11-13T21:32:18Z",
+        "last_updated": "2025-11-14T03:37:20Z",
         "net": "2025-11-13T20:55:00Z",
         "net_precision": {
           "id": 1,
@@ -122,8 +122,8 @@
             "variants": []
           },
           "total_launch_count": 38,
-          "consecutive_successful_launches": 14,
-          "successful_launches": 36,
+          "consecutive_successful_launches": 15,
+          "successful_launches": 37,
           "failed_launches": 1,
           "pending_launches": 5,
           "consecutive_successful_landings": 9,
@@ -225,8 +225,8 @@
                 "variants": []
               },
               "total_launch_count": 38,
-              "consecutive_successful_launches": 14,
-              "successful_launches": 36,
+              "consecutive_successful_launches": 15,
+              "successful_launches": 37,
               "failed_launches": 1,
               "pending_launches": 5,
               "consecutive_successful_landings": 9,
@@ -278,8 +278,8 @@
             "to_thrust": 17100.0,
             "apogee": null,
             "total_launch_count": 2,
-            "consecutive_successful_launches": 1,
-            "successful_launches": 1,
+            "consecutive_successful_launches": 2,
+            "successful_launches": 2,
             "failed_launches": 0,
             "pending_launches": 4,
             "attempted_landings": 2,
@@ -298,7 +298,7 @@
                 "response_mode": "normal",
                 "id": 238,
                 "url": "https://ll.thespacedevs.com/2.3.0/launchers/238/?format=json",
-                "flight_proven": false,
+                "flight_proven": true,
                 "serial_number": "GS1-SN002",
                 "is_placeholder": false,
                 "status": {
@@ -323,7 +323,7 @@
                 "details": "Second New Glenn first stage booster. Named \"Never Tell Me The Odds\". Planned to be used for the second New Glenn launch with EscaPADE and then reused for the third launch with Blue Moon Pathfinder.",
                 "successful_landings": 1,
                 "attempted_landings": 1,
-                "flights": 0,
+                "flights": 1,
                 "last_launch_date": "2025-11-13T20:55:00Z",
                 "first_launch_date": "2025-11-13T20:55:00Z",
                 "fastest_turnaround": null
@@ -1090,7 +1090,7 @@
             "longitude": -80.577778,
             "latitude": 28.488889,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1067,
+            "total_launch_count": 1068,
             "total_landing_count": 69
           }
         },
@@ -1137,6 +1137,14 @@
         "agency_launch_attempt_count_year": 10,
         "flightclub_url": "https://flightclub.io/result?llId=9c950919-5d11-4a79-a4f1-be7387678c0a",
         "updates": [
+          {
+            "id": 12880,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "All payloads in operation.",
+            "info_url": "https://x.com/rocketlab/status/1989174782550782059",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-14T03:37:00Z"
+          },
           {
             "id": 12877,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -1766,12 +1774,12 @@
         "slug": "atlas-v-551-viasat-3-f2-viasat-3-emea",
         "launch_designator": null,
         "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
+          "id": 6,
+          "name": "Launch in Flight",
+          "abbrev": "In Flight",
+          "description": "The launch vehicle has lifted off from the launchpad."
         },
-        "last_updated": "2025-11-12T18:03:19Z",
+        "last_updated": "2025-11-14T03:04:19Z",
         "net": "2025-11-14T03:04:00Z",
         "net_precision": {
           "id": 1,
@@ -1873,11 +1881,11 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 168,
+          "total_launch_count": 169,
           "consecutive_successful_launches": 168,
           "successful_launches": 168,
           "failed_launches": 0,
-          "pending_launches": 43,
+          "pending_launches": 42,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -2026,11 +2034,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 168,
+                    "total_launch_count": 169,
                     "consecutive_successful_launches": 168,
                     "successful_launches": 168,
                     "failed_launches": 0,
-                    "pending_launches": 43,
+                    "pending_launches": 42,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -2186,11 +2194,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 168,
+                    "total_launch_count": 169,
                     "consecutive_successful_launches": 168,
                     "successful_launches": 168,
                     "failed_launches": 0,
-                    "pending_launches": 43,
+                    "pending_launches": 42,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -2408,11 +2416,11 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 168,
+              "total_launch_count": 169,
               "consecutive_successful_launches": 168,
               "successful_launches": 168,
               "failed_launches": 0,
-              "pending_launches": 43,
+              "pending_launches": 42,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -2461,16 +2469,16 @@
             "sso_capacity": null,
             "to_thrust": 12269.0,
             "apogee": 40000.0,
-            "total_launch_count": 17,
+            "total_launch_count": 18,
             "consecutive_successful_launches": 17,
             "successful_launches": 17,
             "failed_launches": 0,
-            "pending_launches": 6,
+            "pending_launches": 5,
             "attempted_landings": 0,
             "successful_landings": 0,
             "failed_landings": 0,
             "consecutive_successful_landings": 0,
-            "fastest_turnaround": "P55DT11H53M30S"
+            "fastest_turnaround": "P49DT14H54M30S"
           },
           "launcher_stage": [],
           "spacecraft_stage": [],
@@ -2610,8 +2618,8 @@
             "nationality_name_composed": "Americano"
           },
           "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_29_20200803143528.jpg",
-          "total_launch_count": 118,
-          "orbital_launch_attempt_count": 118,
+          "total_launch_count": 119,
+          "orbital_launch_attempt_count": 119,
           "fastest_turnaround": "P15DT22H26M17S",
           "location": {
             "response_mode": "normal",
@@ -2684,7 +2692,7 @@
             "longitude": -80.577778,
             "latitude": 28.488889,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1067,
+            "total_launch_count": 1068,
             "total_landing_count": 69
           }
         },
@@ -2700,6 +2708,14 @@
         "agency_launch_attempt_count_year": 5,
         "flightclub_url": "https://flightclub.io/result?llId=47deaaf0-40d9-4400-bd92-4cabf1da5791",
         "updates": [
+          {
+            "id": 12879,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Liftoff.",
+            "info_url": "https://www.youtube.com/watch?v=01trpl8BxBc",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-14T03:04:00Z"
+          },
           {
             "id": 12860,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -4228,7 +4244,7 @@
             "longitude": -80.577778,
             "latitude": 28.488889,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1067,
+            "total_launch_count": 1068,
             "total_landing_count": 69
           }
         },
@@ -7711,6 +7727,14 @@
                       "nationality_name_composed": "Swedo"
                     },
                     {
+                      "id": 20,
+                      "name": "Belgium",
+                      "alpha_2_code": "BE",
+                      "alpha_3_code": "BEL",
+                      "nationality_name": "Belgian",
+                      "nationality_name_composed": "Belgo"
+                    },
+                    {
                       "id": 23,
                       "name": "Portugal",
                       "alpha_2_code": "PT",
@@ -7813,14 +7837,6 @@
                       "alpha_3_code": "LUX",
                       "nationality_name": "Luxembourger",
                       "nationality_name_composed": "Luxembourgish"
-                    },
-                    {
-                      "id": 20,
-                      "name": "Belgium",
-                      "alpha_2_code": "BE",
-                      "alpha_3_code": "BEL",
-                      "nationality_name": "Belgian",
-                      "nationality_name_composed": "Belgo"
                     },
                     {
                       "id": 86,
@@ -10778,7 +10794,7 @@
             "longitude": -80.577778,
             "latitude": 28.488889,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1067,
+            "total_launch_count": 1068,
             "total_landing_count": 69
           }
         },
@@ -18005,7 +18021,7 @@
             "longitude": -80.577778,
             "latitude": 28.488889,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1067,
+            "total_launch_count": 1068,
             "total_landing_count": 69
           }
         },
@@ -21543,8 +21559,8 @@
             "variants": []
           },
           "total_launch_count": 38,
-          "consecutive_successful_launches": 14,
-          "successful_launches": 36,
+          "consecutive_successful_launches": 15,
+          "successful_launches": 37,
           "failed_launches": 1,
           "pending_launches": 5,
           "consecutive_successful_landings": 9,
@@ -21646,8 +21662,8 @@
                 "variants": []
               },
               "total_launch_count": 38,
-              "consecutive_successful_launches": 14,
-              "successful_launches": 36,
+              "consecutive_successful_launches": 15,
+              "successful_launches": 37,
               "failed_launches": 1,
               "pending_launches": 5,
               "consecutive_successful_landings": 9,
@@ -22323,8 +22339,8 @@
                 "variants": []
               },
               "total_launch_count": 38,
-              "consecutive_successful_launches": 14,
-              "successful_launches": 36,
+              "consecutive_successful_launches": 15,
+              "successful_launches": 37,
               "failed_launches": 1,
               "pending_launches": 5,
               "consecutive_successful_landings": 9,
@@ -22661,11 +22677,11 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 168,
+          "total_launch_count": 169,
           "consecutive_successful_launches": 168,
           "successful_launches": 168,
           "failed_launches": 0,
-          "pending_launches": 43,
+          "pending_launches": 42,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -22765,11 +22781,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 168,
+                    "total_launch_count": 169,
                     "consecutive_successful_launches": 168,
                     "successful_launches": 168,
                     "failed_launches": 0,
-                    "pending_launches": 43,
+                    "pending_launches": 42,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -22876,11 +22892,11 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 168,
+              "total_launch_count": 169,
               "consecutive_successful_launches": 168,
               "successful_launches": 168,
               "failed_launches": 0,
-              "pending_launches": 43,
+              "pending_launches": 42,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -23078,8 +23094,8 @@
             "nationality_name_composed": "Americano"
           },
           "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_29_20200803143528.jpg",
-          "total_launch_count": 118,
-          "orbital_launch_attempt_count": 118,
+          "total_launch_count": 119,
+          "orbital_launch_attempt_count": 119,
           "fastest_turnaround": "P15DT22H26M17S",
           "location": {
             "response_mode": "normal",
@@ -23152,7 +23168,7 @@
             "longitude": -80.577778,
             "latitude": 28.488889,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1067,
+            "total_launch_count": 1068,
             "total_landing_count": 69
           }
         },
