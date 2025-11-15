@@ -1,8 +1,8 @@
 {
-  "fetched_at": "2025-11-15T20:25:57Z",
+  "fetched_at": "2025-11-15T21:21:11Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
-    "count": 342,
+    "count": 344,
     "next": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?format=json&is_crewed=false&limit=30&mode=detailed&offset=30",
     "previous": null,
     "results": [
@@ -3091,13 +3091,13 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-11-14T19:46:16Z",
-        "net": "2025-11-17T05:21:00Z",
+        "last_updated": "2025-11-15T21:13:23Z",
+        "net": "2025-11-17T05:21:32Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2025-11-17T05:32:00Z",
         "window_start": "2025-11-17T05:12:00Z",
@@ -3848,7 +3848,7 @@
                 "fastest_turnaround": "P30DT10H15M24S"
               },
               "previous_flight_date": "2025-10-03T14:06:50Z",
-              "turn_around_time": "P44DT15H14M10S",
+              "turn_around_time": "P44DT15H14M42S",
               "landing": {
                 "id": 333,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/333/?format=json",
@@ -5754,6 +5754,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=a5e8c7ff-f30d-488d-8ef3-b445cbd75fd3",
         "updates": [
           {
+            "id": 12906,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Tweaked T-0.",
+            "info_url": "https://www.youtube.com/watch?v=1n4SjH6URAo",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-15T21:13:00Z"
+          },
+          {
             "id": 12806,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "GO for launch.",
@@ -6114,7 +6122,7 @@
             "relative_time": "PT57M9S"
           }
         ],
-        "pad_turnaround": "P10DT8H7M10S",
+        "pad_turnaround": "P10DT8H7M42S",
         "mission_patches": [
           {
             "id": 1209,
@@ -15173,6 +15181,774 @@
         ]
       },
       {
+        "id": "547f1a96-0539-4fd3-b13c-2a781f02cfd5",
+        "url": "https://ll.thespacedevs.com/2.3.0/launches/547f1a96-0539-4fd3-b13c-2a781f02cfd5/?format=json",
+        "name": "Angara 1.2 | Kosmos (Unknown Payload)",
+        "response_mode": "detailed",
+        "slug": "angara-12-kosmos-unknown-payload",
+        "launch_designator": null,
+        "status": {
+          "id": 1,
+          "name": "Go for Launch",
+          "abbrev": "Go",
+          "description": "Current T-0 confirmed by official or reliable sources."
+        },
+        "last_updated": "2025-11-15T21:02:37Z",
+        "net": "2025-11-25T13:00:00Z",
+        "net_precision": {
+          "id": 2,
+          "name": "Hour",
+          "abbrev": "HR",
+          "description": "The T-0 is accurate to the hour."
+        },
+        "window_end": "2025-11-25T16:00:00Z",
+        "window_start": "2025-11-25T13:00:00Z",
+        "image": {
+          "id": 1677,
+          "name": "[AUTO] Angara 1.2 - image",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/angara25201.2_image_20190224012254.jpeg",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193449.jpeg",
+          "credit": null,
+          "license": {
+            "id": 1,
+            "name": "Unknown",
+            "priority": 9,
+            "link": null
+          },
+          "single_use": true,
+          "variants": []
+        },
+        "infographic": null,
+        "probability": null,
+        "weather_concerns": null,
+        "failreason": "",
+        "hashtag": null,
+        "launch_service_provider": {
+          "response_mode": "normal",
+          "id": 96,
+          "url": "https://ll.thespacedevs.com/2.3.0/agencies/96/?format=json",
+          "name": "Khrunichev State Research and Production Space Center",
+          "abbrev": "KhSC",
+          "type": {
+            "id": 1,
+            "name": "Government"
+          },
+          "featured": true,
+          "country": [
+            {
+              "id": 5,
+              "name": "Russia",
+              "alpha_2_code": "RU",
+              "alpha_3_code": "RUS",
+              "nationality_name": "Russian",
+              "nationality_name_composed": "Russo"
+            }
+          ],
+          "description": "Khrunichev State Research and Production Space Center is a Moscow-based producer of spacecraft and space-launch systems, including the Proton and Rokot rockets and is currently developing the Angara rocket family. The Proton launch vehicle launches from Baikonur and Rokot launches from Baikonur and Plesetsk. Angara will launch from Plesetsk and Vostochny.",
+          "administrator": "Director: Andrey Vladimirovich Kalinovskiy",
+          "founding_year": 1916,
+          "launchers": "Proton | Rokot",
+          "spacecraft": "",
+          "parent": null,
+          "image": {
+            "id": 17,
+            "name": "[AUTO] Khrunichev State Research and Production Space Center - image",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev2520state2520research2520and2520production2520space2520center_image_20190207032444.jpeg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184624.jpeg",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "logo": {
+            "id": 152,
+            "name": "[AUTO] Khrunichev State Research and Production Space Center - logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev2520state2520research2520and2520production2520space2520center_logo_20190207032444.png",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185025.png",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "social_logo": {
+            "id": 2047,
+            "name": "Khrunichev State Research and Production Space Center - social logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev_stat_image_20240409071747.jpg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev_stat_image_thumbnail_20240409071747.jpeg",
+            "credit": "Khrunichev State Research and Production Space Center",
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "total_launch_count": 196,
+          "consecutive_successful_launches": 7,
+          "successful_launches": 181,
+          "failed_launches": 15,
+          "pending_launches": 1,
+          "consecutive_successful_landings": 0,
+          "successful_landings": 0,
+          "failed_landings": 0,
+          "attempted_landings": 0,
+          "successful_landings_spacecraft": 0,
+          "failed_landings_spacecraft": 0,
+          "attempted_landings_spacecraft": 0,
+          "successful_landings_payload": 0,
+          "failed_landings_payload": 0,
+          "attempted_landings_payload": 0,
+          "info_url": "https://www.khrunichev.ru/main.php?lang=en",
+          "wiki_url": "https://en.wikipedia.org/wiki/Khrunichev_State_Research_and_Production_Space_Center",
+          "social_media_links": []
+        },
+        "rocket": {
+          "id": 8801,
+          "configuration": {
+            "response_mode": "detailed",
+            "id": 136,
+            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/136/?format=json",
+            "name": "Angara 1.2",
+            "families": [
+              {
+                "response_mode": "detailed",
+                "id": 56,
+                "name": "Angara",
+                "manufacturer": [
+                  {
+                    "response_mode": "normal",
+                    "id": 96,
+                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/96/?format=json",
+                    "name": "Khrunichev State Research and Production Space Center",
+                    "abbrev": "KhSC",
+                    "type": {
+                      "id": 1,
+                      "name": "Government"
+                    },
+                    "featured": true,
+                    "country": [
+                      {
+                        "id": 5,
+                        "name": "Russia",
+                        "alpha_2_code": "RU",
+                        "alpha_3_code": "RUS",
+                        "nationality_name": "Russian",
+                        "nationality_name_composed": "Russo"
+                      }
+                    ],
+                    "description": "Khrunichev State Research and Production Space Center is a Moscow-based producer of spacecraft and space-launch systems, including the Proton and Rokot rockets and is currently developing the Angara rocket family. The Proton launch vehicle launches from Baikonur and Rokot launches from Baikonur and Plesetsk. Angara will launch from Plesetsk and Vostochny.",
+                    "administrator": "Director: Andrey Vladimirovich Kalinovskiy",
+                    "founding_year": 1916,
+                    "launchers": "Proton | Rokot",
+                    "spacecraft": "",
+                    "parent": null,
+                    "image": {
+                      "id": 17,
+                      "name": "[AUTO] Khrunichev State Research and Production Space Center - image",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev2520state2520research2520and2520production2520space2520center_image_20190207032444.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184624.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "logo": {
+                      "id": 152,
+                      "name": "[AUTO] Khrunichev State Research and Production Space Center - logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev2520state2520research2520and2520production2520space2520center_logo_20190207032444.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185025.png",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "social_logo": {
+                      "id": 2047,
+                      "name": "Khrunichev State Research and Production Space Center - social logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev_stat_image_20240409071747.jpg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev_stat_image_thumbnail_20240409071747.jpeg",
+                      "credit": "Khrunichev State Research and Production Space Center",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "total_launch_count": 196,
+                    "consecutive_successful_launches": 7,
+                    "successful_launches": 181,
+                    "failed_launches": 15,
+                    "pending_launches": 1,
+                    "consecutive_successful_landings": 0,
+                    "successful_landings": 0,
+                    "failed_landings": 0,
+                    "attempted_landings": 0,
+                    "successful_landings_spacecraft": 0,
+                    "failed_landings_spacecraft": 0,
+                    "attempted_landings_spacecraft": 0,
+                    "successful_landings_payload": 0,
+                    "failed_landings_payload": 0,
+                    "attempted_landings_payload": 0,
+                    "info_url": "https://www.khrunichev.ru/main.php?lang=en",
+                    "wiki_url": "https://en.wikipedia.org/wiki/Khrunichev_State_Research_and_Production_Space_Center",
+                    "social_media_links": []
+                  }
+                ],
+                "parent": null,
+                "description": "",
+                "active": true,
+                "maiden_flight": "2014-07-09",
+                "total_launch_count": 11,
+                "consecutive_successful_launches": 7,
+                "successful_launches": 10,
+                "failed_launches": 1,
+                "pending_launches": 0,
+                "attempted_landings": 0,
+                "successful_landings": 0,
+                "failed_landings": 0,
+                "consecutive_successful_landings": 0
+              },
+              {
+                "response_mode": "detailed",
+                "id": 180,
+                "name": "Angara 1.2",
+                "manufacturer": [
+                  {
+                    "response_mode": "normal",
+                    "id": 96,
+                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/96/?format=json",
+                    "name": "Khrunichev State Research and Production Space Center",
+                    "abbrev": "KhSC",
+                    "type": {
+                      "id": 1,
+                      "name": "Government"
+                    },
+                    "featured": true,
+                    "country": [
+                      {
+                        "id": 5,
+                        "name": "Russia",
+                        "alpha_2_code": "RU",
+                        "alpha_3_code": "RUS",
+                        "nationality_name": "Russian",
+                        "nationality_name_composed": "Russo"
+                      }
+                    ],
+                    "description": "Khrunichev State Research and Production Space Center is a Moscow-based producer of spacecraft and space-launch systems, including the Proton and Rokot rockets and is currently developing the Angara rocket family. The Proton launch vehicle launches from Baikonur and Rokot launches from Baikonur and Plesetsk. Angara will launch from Plesetsk and Vostochny.",
+                    "administrator": "Director: Andrey Vladimirovich Kalinovskiy",
+                    "founding_year": 1916,
+                    "launchers": "Proton | Rokot",
+                    "spacecraft": "",
+                    "parent": null,
+                    "image": {
+                      "id": 17,
+                      "name": "[AUTO] Khrunichev State Research and Production Space Center - image",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev2520state2520research2520and2520production2520space2520center_image_20190207032444.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184624.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "logo": {
+                      "id": 152,
+                      "name": "[AUTO] Khrunichev State Research and Production Space Center - logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev2520state2520research2520and2520production2520space2520center_logo_20190207032444.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185025.png",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "social_logo": {
+                      "id": 2047,
+                      "name": "Khrunichev State Research and Production Space Center - social logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev_stat_image_20240409071747.jpg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev_stat_image_thumbnail_20240409071747.jpeg",
+                      "credit": "Khrunichev State Research and Production Space Center",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "total_launch_count": 196,
+                    "consecutive_successful_launches": 7,
+                    "successful_launches": 181,
+                    "failed_launches": 15,
+                    "pending_launches": 1,
+                    "consecutive_successful_landings": 0,
+                    "successful_landings": 0,
+                    "failed_landings": 0,
+                    "attempted_landings": 0,
+                    "successful_landings_spacecraft": 0,
+                    "failed_landings_spacecraft": 0,
+                    "attempted_landings_spacecraft": 0,
+                    "successful_landings_payload": 0,
+                    "failed_landings_payload": 0,
+                    "attempted_landings_payload": 0,
+                    "info_url": "https://www.khrunichev.ru/main.php?lang=en",
+                    "wiki_url": "https://en.wikipedia.org/wiki/Khrunichev_State_Research_and_Production_Space_Center",
+                    "social_media_links": []
+                  }
+                ],
+                "parent": {
+                  "response_mode": "normal",
+                  "id": 56,
+                  "name": "Angara",
+                  "manufacturer": [
+                    {
+                      "response_mode": "normal",
+                      "id": 96,
+                      "url": "https://ll.thespacedevs.com/2.3.0/agencies/96/?format=json",
+                      "name": "Khrunichev State Research and Production Space Center",
+                      "abbrev": "KhSC",
+                      "type": {
+                        "id": 1,
+                        "name": "Government"
+                      },
+                      "featured": true,
+                      "country": [
+                        {
+                          "id": 5,
+                          "name": "Russia",
+                          "alpha_2_code": "RU",
+                          "alpha_3_code": "RUS",
+                          "nationality_name": "Russian",
+                          "nationality_name_composed": "Russo"
+                        }
+                      ],
+                      "description": "Khrunichev State Research and Production Space Center is a Moscow-based producer of spacecraft and space-launch systems, including the Proton and Rokot rockets and is currently developing the Angara rocket family. The Proton launch vehicle launches from Baikonur and Rokot launches from Baikonur and Plesetsk. Angara will launch from Plesetsk and Vostochny.",
+                      "administrator": "Director: Andrey Vladimirovich Kalinovskiy",
+                      "founding_year": 1916,
+                      "launchers": "Proton | Rokot",
+                      "spacecraft": "",
+                      "parent": null,
+                      "image": {
+                        "id": 17,
+                        "name": "[AUTO] Khrunichev State Research and Production Space Center - image",
+                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev2520state2520research2520and2520production2520space2520center_image_20190207032444.jpeg",
+                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184624.jpeg",
+                        "credit": null,
+                        "license": {
+                          "id": 1,
+                          "name": "Unknown",
+                          "priority": 9,
+                          "link": null
+                        },
+                        "single_use": true,
+                        "variants": []
+                      },
+                      "logo": {
+                        "id": 152,
+                        "name": "[AUTO] Khrunichev State Research and Production Space Center - logo",
+                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev2520state2520research2520and2520production2520space2520center_logo_20190207032444.png",
+                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185025.png",
+                        "credit": null,
+                        "license": {
+                          "id": 1,
+                          "name": "Unknown",
+                          "priority": 9,
+                          "link": null
+                        },
+                        "single_use": true,
+                        "variants": []
+                      },
+                      "social_logo": {
+                        "id": 2047,
+                        "name": "Khrunichev State Research and Production Space Center - social logo",
+                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev_stat_image_20240409071747.jpg",
+                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev_stat_image_thumbnail_20240409071747.jpeg",
+                        "credit": "Khrunichev State Research and Production Space Center",
+                        "license": {
+                          "id": 1,
+                          "name": "Unknown",
+                          "priority": 9,
+                          "link": null
+                        },
+                        "single_use": true,
+                        "variants": []
+                      }
+                    }
+                  ],
+                  "parent": null
+                },
+                "description": "",
+                "active": true,
+                "maiden_flight": "2014-07-09",
+                "total_launch_count": 6,
+                "consecutive_successful_launches": 6,
+                "successful_launches": 6,
+                "failed_launches": 0,
+                "pending_launches": 0,
+                "attempted_landings": 0,
+                "successful_landings": 0,
+                "failed_landings": 0,
+                "consecutive_successful_landings": 0
+              }
+            ],
+            "full_name": "Angara 1.2",
+            "variant": "1.2",
+            "active": true,
+            "is_placeholder": false,
+            "manufacturer": {
+              "response_mode": "normal",
+              "id": 96,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/96/?format=json",
+              "name": "Khrunichev State Research and Production Space Center",
+              "abbrev": "KhSC",
+              "type": {
+                "id": 1,
+                "name": "Government"
+              },
+              "featured": true,
+              "country": [
+                {
+                  "id": 5,
+                  "name": "Russia",
+                  "alpha_2_code": "RU",
+                  "alpha_3_code": "RUS",
+                  "nationality_name": "Russian",
+                  "nationality_name_composed": "Russo"
+                }
+              ],
+              "description": "Khrunichev State Research and Production Space Center is a Moscow-based producer of spacecraft and space-launch systems, including the Proton and Rokot rockets and is currently developing the Angara rocket family. The Proton launch vehicle launches from Baikonur and Rokot launches from Baikonur and Plesetsk. Angara will launch from Plesetsk and Vostochny.",
+              "administrator": "Director: Andrey Vladimirovich Kalinovskiy",
+              "founding_year": 1916,
+              "launchers": "Proton | Rokot",
+              "spacecraft": "",
+              "parent": null,
+              "image": {
+                "id": 17,
+                "name": "[AUTO] Khrunichev State Research and Production Space Center - image",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev2520state2520research2520and2520production2520space2520center_image_20190207032444.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184624.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "logo": {
+                "id": 152,
+                "name": "[AUTO] Khrunichev State Research and Production Space Center - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev2520state2520research2520and2520production2520space2520center_logo_20190207032444.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185025.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 2047,
+                "name": "Khrunichev State Research and Production Space Center - social logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev_stat_image_20240409071747.jpg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev_stat_image_thumbnail_20240409071747.jpeg",
+                "credit": "Khrunichev State Research and Production Space Center",
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 196,
+              "consecutive_successful_launches": 7,
+              "successful_launches": 181,
+              "failed_launches": 15,
+              "pending_launches": 1,
+              "consecutive_successful_landings": 0,
+              "successful_landings": 0,
+              "failed_landings": 0,
+              "attempted_landings": 0,
+              "successful_landings_spacecraft": 0,
+              "failed_landings_spacecraft": 0,
+              "attempted_landings_spacecraft": 0,
+              "successful_landings_payload": 0,
+              "failed_landings_payload": 0,
+              "attempted_landings_payload": 0,
+              "info_url": "https://www.khrunichev.ru/main.php?lang=en",
+              "wiki_url": "https://en.wikipedia.org/wiki/Khrunichev_State_Research_and_Production_Space_Center",
+              "social_media_links": []
+            },
+            "program": [],
+            "reusable": false,
+            "image": {
+              "id": 1677,
+              "name": "[AUTO] Angara 1.2 - image",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/angara25201.2_image_20190224012254.jpeg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193449.jpeg",
+              "credit": null,
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": true,
+              "variants": []
+            },
+            "info_url": "http://www.ilslaunch.com/node/4680",
+            "wiki_url": "https://en.wikipedia.org/wiki/Angara_(rocket_family)#Angara_1.2",
+            "description": "The Angara 1.2 is the base launcher for the Angara launch family that uses a modular approach to create multiple launch vehicle configurations for various mission requirements. The Angara 1.2 consists of a standard Universal Rocket Module for the core stage and either a modified Block I Upper Stage or a Briz-KM upper stage.",
+            "alias": "",
+            "min_stage": 2,
+            "max_stage": 2,
+            "length": 41.5,
+            "diameter": 2.9,
+            "maiden_flight": "2014-07-09",
+            "launch_cost": 31000000,
+            "launch_mass": 171.0,
+            "leo_capacity": 3700.0,
+            "gto_capacity": null,
+            "geo_capacity": null,
+            "sso_capacity": 2400.0,
+            "to_thrust": 1920.0,
+            "apogee": null,
+            "total_launch_count": 5,
+            "consecutive_successful_launches": 5,
+            "successful_launches": 5,
+            "failed_launches": 0,
+            "pending_launches": 1,
+            "attempted_landings": 0,
+            "successful_landings": 0,
+            "failed_landings": 0,
+            "consecutive_successful_landings": 0,
+            "fastest_turnaround": "P157DT22H42M34S"
+          },
+          "launcher_stage": [],
+          "spacecraft_stage": [],
+          "payloads": []
+        },
+        "mission": {
+          "id": 7392,
+          "name": "Kosmos (Unknown Payload)",
+          "type": "Government/Top Secret",
+          "description": "Note: Payload identity and Cosmos series numbering not confirmed.\r\n\r\nUnknown Payload(s) for the Russian military.",
+          "image": null,
+          "orbit": {
+            "id": 8,
+            "name": "Low Earth Orbit",
+            "abbrev": "LEO",
+            "celestial_body": {
+              "response_mode": "list",
+              "id": 1,
+              "name": "Earth"
+            }
+          },
+          "agencies": [],
+          "info_urls": [],
+          "vid_urls": []
+        },
+        "pad": {
+          "id": 42,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/42/?format=json",
+          "active": true,
+          "agencies": [
+            {
+              "response_mode": "normal",
+              "id": 163,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/163/?format=json",
+              "name": "Russian Aerospace Defence Forces",
+              "abbrev": "VKO",
+              "type": {
+                "id": 1,
+                "name": "Government"
+              },
+              "featured": false,
+              "country": [
+                {
+                  "id": 5,
+                  "name": "Russia",
+                  "alpha_2_code": "RU",
+                  "alpha_3_code": "RUS",
+                  "nationality_name": "Russian",
+                  "nationality_name_composed": "Russo"
+                }
+              ],
+              "description": null,
+              "administrator": null,
+              "founding_year": null,
+              "launchers": "",
+              "spacecraft": "",
+              "parent": "Russian Federal Space Agency (ROSCOSMOS)",
+              "image": null,
+              "logo": null,
+              "social_logo": null
+            }
+          ],
+          "name": "35/1",
+          "image": null,
+          "description": null,
+          "info_url": null,
+          "wiki_url": "https://en.wikipedia.org/wiki/Plesetsk_Cosmodrome_Site_35",
+          "map_url": "https://www.google.com/maps?q=62.927319,40.574897",
+          "latitude": 62.927319,
+          "longitude": 40.574897,
+          "country": {
+            "id": 5,
+            "name": "Russia",
+            "alpha_2_code": "RU",
+            "alpha_3_code": "RUS",
+            "nationality_name": "Russian",
+            "nationality_name_composed": "Russo"
+          },
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_42_20200803143543.jpg",
+          "total_launch_count": 10,
+          "orbital_launch_attempt_count": 10,
+          "fastest_turnaround": "P63DT6H30M40S",
+          "location": {
+            "response_mode": "normal",
+            "id": 6,
+            "url": "https://ll.thespacedevs.com/2.3.0/locations/6/?format=json",
+            "name": "Plesetsk Cosmodrome, Russian Federation",
+            "celestial_body": {
+              "response_mode": "normal",
+              "id": 1,
+              "name": "Earth",
+              "type": {
+                "id": 1,
+                "name": "Planet"
+              },
+              "diameter": 12742000.0,
+              "mass": 5.972168e+24,
+              "gravity": 9.80655,
+              "length_of_day": "1 00:00:00",
+              "atmosphere": true,
+              "image": {
+                "id": 2040,
+                "name": "Earth (Apollo 17)",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
+                "credit": "NASA",
+                "license": {
+                  "id": 4,
+                  "name": "NASA Image and Media Guidelines",
+                  "priority": 0,
+                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
+              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
+              "total_attempted_launches": 7333,
+              "successful_launches": 6785,
+              "failed_launches": 548,
+              "total_attempted_landings": 1217,
+              "successful_landings": 1172,
+              "failed_landings": 45
+            },
+            "active": true,
+            "country": {
+              "id": 5,
+              "name": "Russia",
+              "alpha_2_code": "RU",
+              "alpha_3_code": "RUS",
+              "nationality_name": "Russian",
+              "nationality_name_composed": "Russo"
+            },
+            "description": "Plesetsk Cosmodrome is a Russian spaceport located in Mirny, Arkhangelsk Oblast, about 800 km north of Moscow and approximately 200 km south of Arkhangelsk. Originally developed as an ICBM site for the R-7 missile, it also served for numerous satellite launches using the R-7 and other rockets. Its high latitude makes it useful only for certain types of launches, especially the Molniya orbits, so for much of the site's history it functioned as a secondary location, with most orbital launches taking place from Baikonur, in the Kazakh SSR. With the end of the Soviet Union, Baikonur became a foreign territory, and Kazakhstan charged $115 million usage fees annually. Consequently, Plesetsk has seen considerably more activity since the 2000s.",
+            "image": {
+              "id": 1461,
+              "name": "Soyuz 2.1b/Fregat-M liftoff from pad 43/3 (Glonass-K2 No. 13, Kosmos 2569)",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz25202.1b_image_20230807181912.jpg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192834.jpeg",
+              "credit": "Mil.ru",
+              "license": {
+                "id": 30,
+                "name": "CC BY 4.0",
+                "priority": 4,
+                "link": "https://creativecommons.org/licenses/by/4.0/"
+              },
+              "single_use": false,
+              "variants": []
+            },
+            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_6_20200803142434.jpg",
+            "longitude": 40.577778,
+            "latitude": 62.925556,
+            "timezone_name": "Europe/Moscow",
+            "total_launch_count": 1678,
+            "total_landing_count": 0
+          }
+        },
+        "webcast_live": false,
+        "program": [],
+        "orbital_launch_attempt_count": 7128,
+        "location_launch_attempt_count": 1679,
+        "pad_launch_attempt_count": 11,
+        "agency_launch_attempt_count": 197,
+        "orbital_launch_attempt_count_year": 279,
+        "location_launch_attempt_count_year": 8,
+        "pad_launch_attempt_count_year": 4,
+        "agency_launch_attempt_count_year": 2,
+        "flightclub_url": null,
+        "updates": [
+          {
+            "id": 12905,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Added launch per NOTAMs; Payload identities uncertain.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=63857.msg2733577#msg2733577",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-15T21:02:00Z"
+          }
+        ],
+        "info_urls": [],
+        "vid_urls": [],
+        "timeline": [],
+        "pad_turnaround": "P96DT3H28M",
+        "mission_patches": []
+      },
+      {
         "id": "5c7280f6-b793-4899-a6fe-1d274ed46493",
         "url": "https://ll.thespacedevs.com/2.3.0/launches/5c7280f6-b793-4899-a6fe-1d274ed46493/?format=json",
         "name": "Nuri | CAS500-3",
@@ -21775,7 +22551,7 @@
           "consecutive_successful_launches": 7,
           "successful_launches": 181,
           "failed_launches": 15,
-          "pending_launches": 0,
+          "pending_launches": 1,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -21879,7 +22655,7 @@
                     "consecutive_successful_launches": 7,
                     "successful_launches": 181,
                     "failed_launches": 15,
-                    "pending_launches": 0,
+                    "pending_launches": 1,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -21990,7 +22766,7 @@
               "consecutive_successful_launches": 7,
               "successful_launches": 181,
               "failed_launches": 15,
-              "pending_launches": 0,
+              "pending_launches": 1,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -27599,7 +28375,7 @@
         },
         "mission": {
           "id": 7104,
-          "name": "Oceansat-3A",
+          "name": "EOS-10 (Oceansat-3A)",
           "type": "Earth Science",
           "description": "Oceansat-3A is a part of ISRO's Oceansat program. Its main purpose is ocean observation, which includes gathering ocean color data, sea surface temperature measurements and wind vector data.",
           "image": null,
@@ -28922,702 +29698,6 @@
         "vid_urls": [],
         "timeline": [],
         "pad_turnaround": "P23DT21H30M",
-        "mission_patches": []
-      },
-      {
-        "id": "7b60de1e-7d8a-4213-a2f5-44a01ae21e28",
-        "url": "https://ll.thespacedevs.com/2.3.0/launches/7b60de1e-7d8a-4213-a2f5-44a01ae21e28/?format=json",
-        "name": "Soyuz 2.1a | Obzor-R No.1",
-        "response_mode": "detailed",
-        "slug": "soyuz-21a-obzor-r-no1",
-        "launch_designator": null,
-        "status": {
-          "id": 2,
-          "name": "To Be Determined",
-          "abbrev": "TBD",
-          "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
-        },
-        "last_updated": "2025-09-08T14:27:00Z",
-        "net": "2025-12-31T00:00:00Z",
-        "net_precision": {
-          "id": 11,
-          "name": "Quarter 4",
-          "abbrev": "Q4",
-          "description": "The T-0 is expected in the fourth quarter of the given year."
-        },
-        "window_end": "2025-12-31T00:00:00Z",
-        "window_start": "2025-12-31T00:00:00Z",
-        "image": {
-          "id": 1828,
-          "name": "[AUTO] Soyuz 2.1a - image",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz_2.1a_image_20230805184309.jpg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193857.jpeg",
-          "credit": null,
-          "license": {
-            "id": 1,
-            "name": "Unknown",
-            "priority": 9,
-            "link": null
-          },
-          "single_use": true,
-          "variants": []
-        },
-        "infographic": null,
-        "probability": null,
-        "weather_concerns": null,
-        "failreason": "",
-        "hashtag": null,
-        "launch_service_provider": {
-          "response_mode": "normal",
-          "id": 63,
-          "url": "https://ll.thespacedevs.com/2.3.0/agencies/63/?format=json",
-          "name": "Russian Federal Space Agency (ROSCOSMOS)",
-          "abbrev": "RFSA",
-          "type": {
-            "id": 1,
-            "name": "Government"
-          },
-          "featured": true,
-          "country": [
-            {
-              "id": 5,
-              "name": "Russia",
-              "alpha_2_code": "RU",
-              "alpha_3_code": "RUS",
-              "nationality_name": "Russian",
-              "nationality_name_composed": "Russo"
-            }
-          ],
-          "description": "The Roscosmos State Corporation for Space Activities, commonly known as Roscosmos, is the governmental body responsible for the space science program of the Russian Federation and general aerospace research. Soyuz has many launch locations the Russian sites are Baikonur, Plesetsk and Vostochny however Ariane also purchases the vehicle and launches it from French Guiana.",
-          "administrator": "Administrator: Yuri Borisov",
-          "founding_year": 1992,
-          "launchers": "Soyuz",
-          "spacecraft": "Soyuz",
-          "parent": null,
-          "image": {
-            "id": 25,
-            "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - image",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_image_20190207032459.jpeg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184652.jpeg",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "logo": {
-            "id": 177,
-            "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_logo_20190207032459.png",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185118.png",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "social_logo": {
-            "id": 89,
-            "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - social_logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_nation_20230531052758.jpg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184841.jpeg",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "total_launch_count": 335,
-          "consecutive_successful_launches": 59,
-          "successful_launches": 324,
-          "failed_launches": 11,
-          "pending_launches": 6,
-          "consecutive_successful_landings": 0,
-          "successful_landings": 0,
-          "failed_landings": 0,
-          "attempted_landings": 0,
-          "successful_landings_spacecraft": 199,
-          "failed_landings_spacecraft": 7,
-          "attempted_landings_spacecraft": 206,
-          "successful_landings_payload": 0,
-          "failed_landings_payload": 1,
-          "attempted_landings_payload": 1,
-          "info_url": "https://en.roscosmos.ru/",
-          "wiki_url": "https://en.wikipedia.org/wiki/Russian_Federal_Space_Agency",
-          "social_media_links": []
-        },
-        "rocket": {
-          "id": 2509,
-          "configuration": {
-            "response_mode": "detailed",
-            "id": 24,
-            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/24/?format=json",
-            "name": "Soyuz 2.1a",
-            "families": [
-              {
-                "response_mode": "detailed",
-                "id": 147,
-                "name": "Soyuz",
-                "manufacturer": [
-                  {
-                    "response_mode": "normal",
-                    "id": 111,
-                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/111/?format=json",
-                    "name": "Progress Rocket Space Center",
-                    "abbrev": "PRSC",
-                    "type": {
-                      "id": 3,
-                      "name": "Commercial"
-                    },
-                    "featured": false,
-                    "country": [
-                      {
-                        "id": 5,
-                        "name": "Russia",
-                        "alpha_2_code": "RU",
-                        "alpha_3_code": "RUS",
-                        "nationality_name": "Russian",
-                        "nationality_name_composed": "Russo"
-                      }
-                    ],
-                    "description": "Progress Rocket Space Centre, formerly known as TsSKB-Progress, is a space science and aerospace research company which is known for manufacturing launch vehicles and satellites. Most notably, Progress Rocket Space Centre is the manufacturer of Soyuz launch vehicles.",
-                    "administrator": "CEO: Dmitry Baranov",
-                    "founding_year": 1996,
-                    "launchers": "",
-                    "spacecraft": "",
-                    "parent": null,
-                    "image": null,
-                    "logo": {
-                      "id": 171,
-                      "name": "[AUTO] Progress Rocket Space Center - logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/progress2520rocket2520space2520center_logo_20210313175054.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185104.png",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "social_logo": null,
-                    "total_launch_count": 45,
-                    "consecutive_successful_launches": 3,
-                    "successful_launches": 44,
-                    "failed_launches": 1,
-                    "pending_launches": 0,
-                    "consecutive_successful_landings": 0,
-                    "successful_landings": 0,
-                    "failed_landings": 0,
-                    "attempted_landings": 0,
-                    "successful_landings_spacecraft": 0,
-                    "failed_landings_spacecraft": 0,
-                    "attempted_landings_spacecraft": 0,
-                    "successful_landings_payload": 0,
-                    "failed_landings_payload": 0,
-                    "attempted_landings_payload": 0,
-                    "info_url": "https://en.samspace.ru/",
-                    "wiki_url": "https://en.wikipedia.org/wiki/Progress_Rocket_Space_Centre",
-                    "social_media_links": []
-                  }
-                ],
-                "parent": null,
-                "description": "",
-                "active": true,
-                "maiden_flight": "1965-12-27",
-                "total_launch_count": 1029,
-                "consecutive_successful_launches": 125,
-                "successful_launches": 998,
-                "failed_launches": 31,
-                "pending_launches": 7,
-                "attempted_landings": 0,
-                "successful_landings": 0,
-                "failed_landings": 0,
-                "consecutive_successful_landings": 0
-              },
-              {
-                "response_mode": "detailed",
-                "id": 190,
-                "name": "Soyuz 2",
-                "manufacturer": [
-                  {
-                    "response_mode": "normal",
-                    "id": 111,
-                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/111/?format=json",
-                    "name": "Progress Rocket Space Center",
-                    "abbrev": "PRSC",
-                    "type": {
-                      "id": 3,
-                      "name": "Commercial"
-                    },
-                    "featured": false,
-                    "country": [
-                      {
-                        "id": 5,
-                        "name": "Russia",
-                        "alpha_2_code": "RU",
-                        "alpha_3_code": "RUS",
-                        "nationality_name": "Russian",
-                        "nationality_name_composed": "Russo"
-                      }
-                    ],
-                    "description": "Progress Rocket Space Centre, formerly known as TsSKB-Progress, is a space science and aerospace research company which is known for manufacturing launch vehicles and satellites. Most notably, Progress Rocket Space Centre is the manufacturer of Soyuz launch vehicles.",
-                    "administrator": "CEO: Dmitry Baranov",
-                    "founding_year": 1996,
-                    "launchers": "",
-                    "spacecraft": "",
-                    "parent": null,
-                    "image": null,
-                    "logo": {
-                      "id": 171,
-                      "name": "[AUTO] Progress Rocket Space Center - logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/progress2520rocket2520space2520center_logo_20210313175054.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185104.png",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "social_logo": null,
-                    "total_launch_count": 45,
-                    "consecutive_successful_launches": 3,
-                    "successful_launches": 44,
-                    "failed_launches": 1,
-                    "pending_launches": 0,
-                    "consecutive_successful_landings": 0,
-                    "successful_landings": 0,
-                    "failed_landings": 0,
-                    "attempted_landings": 0,
-                    "successful_landings_spacecraft": 0,
-                    "failed_landings_spacecraft": 0,
-                    "attempted_landings_spacecraft": 0,
-                    "successful_landings_payload": 0,
-                    "failed_landings_payload": 0,
-                    "attempted_landings_payload": 0,
-                    "info_url": "https://en.samspace.ru/",
-                    "wiki_url": "https://en.wikipedia.org/wiki/Progress_Rocket_Space_Centre",
-                    "social_media_links": []
-                  }
-                ],
-                "parent": {
-                  "response_mode": "normal",
-                  "id": 147,
-                  "name": "Soyuz",
-                  "manufacturer": [
-                    {
-                      "response_mode": "normal",
-                      "id": 111,
-                      "url": "https://ll.thespacedevs.com/2.3.0/agencies/111/?format=json",
-                      "name": "Progress Rocket Space Center",
-                      "abbrev": "PRSC",
-                      "type": {
-                        "id": 3,
-                        "name": "Commercial"
-                      },
-                      "featured": false,
-                      "country": [
-                        {
-                          "id": 5,
-                          "name": "Russia",
-                          "alpha_2_code": "RU",
-                          "alpha_3_code": "RUS",
-                          "nationality_name": "Russian",
-                          "nationality_name_composed": "Russo"
-                        }
-                      ],
-                      "description": "Progress Rocket Space Centre, formerly known as TsSKB-Progress, is a space science and aerospace research company which is known for manufacturing launch vehicles and satellites. Most notably, Progress Rocket Space Centre is the manufacturer of Soyuz launch vehicles.",
-                      "administrator": "CEO: Dmitry Baranov",
-                      "founding_year": 1996,
-                      "launchers": "",
-                      "spacecraft": "",
-                      "parent": null,
-                      "image": null,
-                      "logo": {
-                        "id": 171,
-                        "name": "[AUTO] Progress Rocket Space Center - logo",
-                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/progress2520rocket2520space2520center_logo_20210313175054.png",
-                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185104.png",
-                        "credit": null,
-                        "license": {
-                          "id": 1,
-                          "name": "Unknown",
-                          "priority": 9,
-                          "link": null
-                        },
-                        "single_use": true,
-                        "variants": []
-                      },
-                      "social_logo": null
-                    }
-                  ],
-                  "parent": null
-                },
-                "description": "",
-                "active": true,
-                "maiden_flight": "2004-11-08",
-                "total_launch_count": 196,
-                "consecutive_successful_launches": 125,
-                "successful_launches": 189,
-                "failed_launches": 7,
-                "pending_launches": 7,
-                "attempted_landings": 0,
-                "successful_landings": 0,
-                "failed_landings": 0,
-                "consecutive_successful_landings": 0
-              }
-            ],
-            "full_name": "Soyuz 2.1a",
-            "variant": "",
-            "active": true,
-            "is_placeholder": false,
-            "manufacturer": {
-              "response_mode": "normal",
-              "id": 111,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/111/?format=json",
-              "name": "Progress Rocket Space Center",
-              "abbrev": "PRSC",
-              "type": {
-                "id": 3,
-                "name": "Commercial"
-              },
-              "featured": false,
-              "country": [
-                {
-                  "id": 5,
-                  "name": "Russia",
-                  "alpha_2_code": "RU",
-                  "alpha_3_code": "RUS",
-                  "nationality_name": "Russian",
-                  "nationality_name_composed": "Russo"
-                }
-              ],
-              "description": "Progress Rocket Space Centre, formerly known as TsSKB-Progress, is a space science and aerospace research company which is known for manufacturing launch vehicles and satellites. Most notably, Progress Rocket Space Centre is the manufacturer of Soyuz launch vehicles.",
-              "administrator": "CEO: Dmitry Baranov",
-              "founding_year": 1996,
-              "launchers": "",
-              "spacecraft": "",
-              "parent": null,
-              "image": null,
-              "logo": {
-                "id": 171,
-                "name": "[AUTO] Progress Rocket Space Center - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/progress2520rocket2520space2520center_logo_20210313175054.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185104.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": null,
-              "total_launch_count": 45,
-              "consecutive_successful_launches": 3,
-              "successful_launches": 44,
-              "failed_launches": 1,
-              "pending_launches": 0,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 0,
-              "failed_landings": 0,
-              "attempted_landings": 0,
-              "successful_landings_spacecraft": 0,
-              "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 0,
-              "successful_landings_payload": 0,
-              "failed_landings_payload": 0,
-              "attempted_landings_payload": 0,
-              "info_url": "https://en.samspace.ru/",
-              "wiki_url": "https://en.wikipedia.org/wiki/Progress_Rocket_Space_Centre",
-              "social_media_links": []
-            },
-            "program": [],
-            "reusable": false,
-            "image": {
-              "id": 1828,
-              "name": "[AUTO] Soyuz 2.1a - image",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz_2.1a_image_20230805184309.jpg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193857.jpeg",
-              "credit": null,
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "info_url": null,
-            "wiki_url": "https://en.wikipedia.org/wiki/Soyuz-2#Soyuz-2.1a",
-            "description": "The Soyuz 2.1A converted the flight control system from analog to digital, which allowed launch from fixed platforms. It also allowed big fairings and payloads.\r\nIt is currently used for crewed Soyuz and Progress flights to the ISS.",
-            "alias": "",
-            "min_stage": 2,
-            "max_stage": 3,
-            "length": 46.3,
-            "diameter": 2.95,
-            "maiden_flight": "2004-11-04",
-            "launch_cost": 80000000,
-            "launch_mass": 312.0,
-            "leo_capacity": 7020.0,
-            "gto_capacity": 2810.0,
-            "geo_capacity": null,
-            "sso_capacity": 4230.0,
-            "to_thrust": 4149.0,
-            "apogee": null,
-            "total_launch_count": 53,
-            "consecutive_successful_launches": 46,
-            "successful_launches": 52,
-            "failed_launches": 1,
-            "pending_launches": 3,
-            "attempted_landings": 0,
-            "successful_landings": 0,
-            "failed_landings": 0,
-            "consecutive_successful_landings": 0,
-            "fastest_turnaround": "P7DT6H41M58S"
-          },
-          "launcher_stage": [],
-          "spacecraft_stage": [],
-          "payloads": []
-        },
-        "mission": {
-          "id": 6636,
-          "name": "Obzor-R No.1",
-          "type": "Earth Science",
-          "description": "The Russian Obzor-R satellite is a planned X-band radar earth observation satellite designed by TsSKB-Progress.\r\n\r\nIn 2012, the development of the Arkon-2M radar satellite was stopped and instead the development of the Obzor-R was initiated.\r\n\r\nThe satellite features the BRLK X-band Synthetic Aperture Radar as the imaging instrument with a ground resolution of 500 m.",
-          "image": null,
-          "orbit": {
-            "id": 17,
-            "name": "Sun-Synchronous Orbit",
-            "abbrev": "SSO",
-            "celestial_body": {
-              "response_mode": "list",
-              "id": 1,
-              "name": "Earth"
-            }
-          },
-          "agencies": [],
-          "info_urls": [],
-          "vid_urls": []
-        },
-        "pad": {
-          "id": 48,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/48/?format=json",
-          "active": true,
-          "agencies": [
-            {
-              "response_mode": "normal",
-              "id": 163,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/163/?format=json",
-              "name": "Russian Aerospace Defence Forces",
-              "abbrev": "VKO",
-              "type": {
-                "id": 1,
-                "name": "Government"
-              },
-              "featured": false,
-              "country": [
-                {
-                  "id": 5,
-                  "name": "Russia",
-                  "alpha_2_code": "RU",
-                  "alpha_3_code": "RUS",
-                  "nationality_name": "Russian",
-                  "nationality_name_composed": "Russo"
-                }
-              ],
-              "description": null,
-              "administrator": null,
-              "founding_year": null,
-              "launchers": "",
-              "spacecraft": "",
-              "parent": "Russian Federal Space Agency (ROSCOSMOS)",
-              "image": null,
-              "logo": null,
-              "social_logo": null
-            }
-          ],
-          "name": "Unknown Pad",
-          "image": null,
-          "description": null,
-          "info_url": null,
-          "wiki_url": "https://en.wikipedia.org/wiki/Plesetsk_Cosmodrome",
-          "map_url": "https://www.google.com/maps?q=62.925556,40.577778",
-          "latitude": 62.925556,
-          "longitude": 40.577778,
-          "country": {
-            "id": 5,
-            "name": "Russia",
-            "alpha_2_code": "RU",
-            "alpha_3_code": "RUS",
-            "nationality_name": "Russian",
-            "nationality_name_composed": "Russo"
-          },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_48_20200803143459.jpg",
-          "total_launch_count": 0,
-          "orbital_launch_attempt_count": 0,
-          "fastest_turnaround": null,
-          "location": {
-            "response_mode": "normal",
-            "id": 6,
-            "url": "https://ll.thespacedevs.com/2.3.0/locations/6/?format=json",
-            "name": "Plesetsk Cosmodrome, Russian Federation",
-            "celestial_body": {
-              "response_mode": "normal",
-              "id": 1,
-              "name": "Earth",
-              "type": {
-                "id": 1,
-                "name": "Planet"
-              },
-              "diameter": 12742000.0,
-              "mass": 5.972168e+24,
-              "gravity": 9.80655,
-              "length_of_day": "1 00:00:00",
-              "atmosphere": true,
-              "image": {
-                "id": 2040,
-                "name": "Earth (Apollo 17)",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
-                "credit": "NASA",
-                "license": {
-                  "id": 4,
-                  "name": "NASA Image and Media Guidelines",
-                  "priority": 0,
-                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
-              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7333,
-              "successful_launches": 6785,
-              "failed_launches": 548,
-              "total_attempted_landings": 1217,
-              "successful_landings": 1172,
-              "failed_landings": 45
-            },
-            "active": true,
-            "country": {
-              "id": 5,
-              "name": "Russia",
-              "alpha_2_code": "RU",
-              "alpha_3_code": "RUS",
-              "nationality_name": "Russian",
-              "nationality_name_composed": "Russo"
-            },
-            "description": "Plesetsk Cosmodrome is a Russian spaceport located in Mirny, Arkhangelsk Oblast, about 800 km north of Moscow and approximately 200 km south of Arkhangelsk. Originally developed as an ICBM site for the R-7 missile, it also served for numerous satellite launches using the R-7 and other rockets. Its high latitude makes it useful only for certain types of launches, especially the Molniya orbits, so for much of the site's history it functioned as a secondary location, with most orbital launches taking place from Baikonur, in the Kazakh SSR. With the end of the Soviet Union, Baikonur became a foreign territory, and Kazakhstan charged $115 million usage fees annually. Consequently, Plesetsk has seen considerably more activity since the 2000s.",
-            "image": {
-              "id": 1461,
-              "name": "Soyuz 2.1b/Fregat-M liftoff from pad 43/3 (Glonass-K2 No. 13, Kosmos 2569)",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/soyuz25202.1b_image_20230807181912.jpg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192834.jpeg",
-              "credit": "Mil.ru",
-              "license": {
-                "id": 30,
-                "name": "CC BY 4.0",
-                "priority": 4,
-                "link": "https://creativecommons.org/licenses/by/4.0/"
-              },
-              "single_use": false,
-              "variants": []
-            },
-            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_6_20200803142434.jpg",
-            "longitude": 40.577778,
-            "latitude": 62.925556,
-            "timezone_name": "Europe/Moscow",
-            "total_launch_count": 1678,
-            "total_landing_count": 0
-          }
-        },
-        "webcast_live": false,
-        "program": [],
-        "orbital_launch_attempt_count": 7170,
-        "location_launch_attempt_count": 1680,
-        "pad_launch_attempt_count": 2,
-        "agency_launch_attempt_count": 338,
-        "orbital_launch_attempt_count_year": 321,
-        "location_launch_attempt_count_year": 9,
-        "pad_launch_attempt_count_year": 2,
-        "agency_launch_attempt_count_year": 9,
-        "flightclub_url": null,
-        "updates": [
-          {
-            "id": 10300,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "NET summer-fall 2025.",
-            "info_url": "https://forum.novosti-kosmonavtiki.ru/index.php?msg=2703187",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-03-06T06:50:00Z"
-          },
-          {
-            "id": 8983,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "NET Q1 2025.",
-            "info_url": "https://tass.ru/kosmos/22210273",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2024-10-24T12:21:00Z"
-          },
-          {
-            "id": 8384,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "NET Q4 2024.",
-            "info_url": "https://prokosmos.ru/2024/08/21/gendirektor-rkts-progress-eksperimenti-na-bione-m-pomogut-v-poletakh-lyudei-na-lunu-i-mars",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2024-08-24T12:35:34Z"
-          },
-          {
-            "id": 6455,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "NET Q2 2024.",
-            "info_url": "https://www.roscosmos.ru/40124/",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2024-01-23T23:42:42Z"
-          },
-          {
-            "id": 5637,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "NET Q1 2024.",
-            "info_url": "https://www.vedomosti.ru/technology/articles/2023/10/10/999695-roskosmos-hochet-prodavat-sputnikovie-snimki",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2023-11-08T16:30:55Z"
-          },
-          {
-            "id": 3674,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "NET Late 2023.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=26990.msg2469692#msg2469692",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2023-03-26T07:53:46Z"
-          }
-        ],
-        "info_urls": [],
-        "vid_urls": [],
-        "timeline": [],
-        "pad_turnaround": "P0D",
         "mission_patches": []
       }
     ]
