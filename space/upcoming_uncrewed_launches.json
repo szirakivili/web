@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-17T18:37:39Z",
+  "fetched_at": "2025-11-17T19:21:30Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 347,
@@ -19,7 +19,7 @@
           "abbrev": "Success",
           "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2025-11-17T11:26:31Z",
+        "last_updated": "2025-11-17T19:12:26Z",
         "net": "2025-11-17T05:21:42Z",
         "net_precision": {
           "id": 0,
@@ -2876,7 +2876,7 @@
             "title": "Livestream on X",
             "description": "Livestream on X",
             "feature_image": null,
-            "url": "https://x.com/i/broadcasts/1dRJZaPjlwDGB",
+            "url": "https://x.com/i/broadcasts/1nAKEEBzVRvKL",
             "type": {
               "id": 1,
               "name": "Official Webcast"
@@ -3745,7 +3745,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-11-15T13:01:49Z",
+        "last_updated": "2025-11-17T19:15:16Z",
         "net": "2025-11-18T23:29:00Z",
         "net_precision": {
           "id": 1,
@@ -3771,8 +3771,8 @@
           "variants": []
         },
         "infographic": null,
-        "probability": null,
-        "weather_concerns": null,
+        "probability": 95,
+        "weather_concerns": "Cumulus Cloud Rule",
         "failreason": "",
         "hashtag": null,
         "launch_service_provider": {
@@ -4963,6 +4963,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=d124e85e-ee0f-4ab2-9be6-fd31516ddee9",
         "updates": [
           {
+            "id": 12926,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Updated launch weather, 95% GO.",
+            "info_url": "https://45thweathersquadron.nebula.spaceforce.mil/assets/LaunchForecasts/Falcon%20Starlink%206-94%20L-1%20Forecast%20-%2018%20Nov%20Launch.pdf",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-17T19:15:00Z"
+          },
+          {
             "id": 12822,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Now targeting Nov 18 at 23:29 UTC",
@@ -5016,6 +5024,48 @@
           }
         ],
         "vid_urls": [
+          {
+            "priority": 7,
+            "source": "youtube.com",
+            "publisher": "SPACE AFFAIRS",
+            "title": "GO! - SpaceX - Falcon 9 - Starlink 6-94 - SLC-40 - Cape Canaveral SFS - Space Affairs Live",
+            "description": "Launch Date:  November 18, 2025 (EST)\nLaunch Time:  6:29 p.m. EST, 2329 UTC (November 19, 00:29 CET )\nLaunch Window:  Open until 10:29 p.m. EST.\nLaunch Site: SLC-40 - Cape Canaveral Space Force Statio...",
+            "feature_image": "https://i.ytimg.com/vi/AqHZbkjXorQ/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=AqHZbkjXorQ",
+            "type": {
+              "id": 4,
+              "name": "Unofficial Re-stream"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-11-18T23:19:00Z",
+            "end_time": null,
+            "live": false
+          },
+          {
+            "priority": 9,
+            "source": "youtube.com",
+            "publisher": "NASASpaceflight",
+            "title": "SpaceX Falcon 9 launches Starlink 6-94",
+            "description": "SpaceX launch of a batch of 29 Starlink v2-mini satellites for their second-generation high-speed low earth orbit internet satellite constellation.\n\nLaunch window: November 18th from 6:29PM EST to 10:...",
+            "feature_image": "https://i.ytimg.com/vi/GmsZ8UaGl7Y/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=GmsZ8UaGl7Y",
+            "type": {
+              "id": 3,
+              "name": "Unofficial Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-11-18T22:30:00Z",
+            "end_time": null,
+            "live": false
+          },
           {
             "priority": 10,
             "source": "x.com",
