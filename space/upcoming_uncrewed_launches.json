@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-17T03:52:00Z",
+  "fetched_at": "2025-11-17T04:33:11Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 344,
@@ -19,7 +19,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-11-16T23:00:12Z",
+        "last_updated": "2025-11-17T04:31:45Z",
         "net": "2025-11-17T05:21:42Z",
         "net_precision": {
           "id": 0,
@@ -45,7 +45,7 @@
           "variants": []
         },
         "infographic": null,
-        "probability": 40,
+        "probability": 90,
         "weather_concerns": null,
         "failreason": "",
         "hashtag": null,
@@ -2613,7 +2613,7 @@
             "total_landing_count": 29
           }
         },
-        "webcast_live": false,
+        "webcast_live": true,
         "program": [
           {
             "response_mode": "normal",
@@ -2681,6 +2681,22 @@
         "agency_launch_attempt_count_year": 152,
         "flightclub_url": "https://flightclub.io/result?llId=a5e8c7ff-f30d-488d-8ef3-b445cbd75fd3",
         "updates": [
+          {
+            "id": 12915,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Updated launch weather, 90% GO.",
+            "info_url": "https://x.com/NASAKennedy/status/1990274499569443047",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-17T04:31:00Z"
+          },
+          {
+            "id": 12914,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/ll2_profile_20230311134739.png",
+            "comment": "Official Webcast by NASA has started",
+            "info_url": "https://www.youtube.com/watch?v=6tyr0ld2ZB4",
+            "created_by": "LL2",
+            "created_on": "2025-11-17T04:28:00Z"
+          },
           {
             "id": 12913,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -2825,9 +2841,9 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-11-17T04:30:00Z",
+            "start_time": "2025-11-17T04:28:18Z",
             "end_time": null,
-            "live": false
+            "live": true
           },
           {
             "priority": 10,
@@ -2869,7 +2885,28 @@
             },
             "start_time": "2025-11-17T04:30:00Z",
             "end_time": "2025-11-17T07:00:00Z",
-            "live": false
+            "live": true
+          },
+          {
+            "priority": 12,
+            "source": "youtube.com",
+            "publisher": "Spaceflight Now",
+            "title": "Watch live: SpaceX Falcon 9 rocket launches ocean monitoring satellite for NASA and Europe",
+            "description": "Watch live coverage as SpaceX launches a Falcon 9 rocket from California carrying the Sentinel-6B satellite for NASA, NOAA, and European space and weather organizations. Liftoff from Space Launch Comp...",
+            "feature_image": "https://i.ytimg.com/vi/kR4l3-TBk-0/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=kR4l3-TBk-0",
+            "type": {
+              "id": 3,
+              "name": "Unofficial Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-11-17T04:22:23Z",
+            "end_time": null,
+            "live": true
           }
         ],
         "timeline": [
