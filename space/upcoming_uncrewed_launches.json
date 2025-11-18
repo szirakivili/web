@@ -1,17 +1,17 @@
 {
-  "fetched_at": "2025-11-18T18:39:09Z",
+  "fetched_at": "2025-11-18T19:21:24Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
-    "count": 348,
+    "count": 349,
     "next": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?format=json&is_crewed=false&limit=30&mode=detailed&offset=30",
     "previous": null,
     "results": [
       {
         "id": "089a182d-7e8a-48d8-815c-eefbade8110c",
         "url": "https://ll.thespacedevs.com/2.3.0/launches/089a182d-7e8a-48d8-815c-eefbade8110c/?format=json",
-        "name": "HASTE | VAN",
+        "name": "HASTE | Prometheus Run (VAN)",
         "response_mode": "detailed",
-        "slug": "haste-van",
+        "slug": "haste-prometheus-run-van",
         "launch_designator": null,
         "status": {
           "id": 3,
@@ -19,7 +19,7 @@
           "abbrev": "Success",
           "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2025-11-18T18:15:45Z",
+        "last_updated": "2025-11-18T18:43:27Z",
         "net": "2025-11-18T13:00:00Z",
         "net_precision": {
           "id": 1,
@@ -294,7 +294,7 @@
         },
         "mission": {
           "id": 7382,
-          "name": "VAN",
+          "name": "Prometheus Run (VAN)",
           "type": "Government/Top Secret",
           "description": "Sub-orbital launch under Rocket Lab’s Hypersonic Accelerator Suborbital Test Electron (HASTE) program.\r\n\r\nThis mission was lead by MDA and deployed a government-provided primary payload developed by the John Hopkins University Applied Physics Laboratory (JHUAPL), and multiple secondary payloads by federal and industry partners, which tested key technologies for missile defense applications.\r\n\r\nThe mission was contracted to Rocket Lab through the DIU’s Hypersonic and High-Cadence Airborne Testing Capabilities (HyCAT) program, an initiative supporting test and evaluation of new and emerging hypersonic technologies through low cost, responsive and long endurance flight testing.",
           "image": null,
@@ -309,7 +309,25 @@
             }
           },
           "agencies": [],
-          "info_urls": [],
+          "info_urls": [
+            {
+              "priority": 10,
+              "source": "rocketlabcorp.com",
+              "title": "Prometheus Run",
+              "description": "\"Prometheus Run\" was Rocket Lab's latest launch on HASTE - our commercial launch vehicle for regular and reliable hypersonic test flights - which took place from Rocket Lab Launch Complex 2 on Wallops Island, Virginia at TIME on DATE\n\nLed by Missile Defense Agency (MDA) through the Defense Innovatio...",
+              "feature_image": null,
+              "url": "https://rocketlabcorp.com/missions/missions-launched/prometheus-run/",
+              "type": {
+                "id": 1,
+                "name": "Official Page"
+              },
+              "language": {
+                "id": 1,
+                "name": "English",
+                "code": "en"
+              }
+            }
+          ],
           "vid_urls": []
         },
         "pad": {
@@ -611,7 +629,26 @@
         ],
         "timeline": [],
         "pad_turnaround": "P48DT12H32M",
-        "mission_patches": []
+        "mission_patches": [
+          {
+            "id": 1224,
+            "name": "F75-PrometheusRun-Patch",
+            "priority": 10,
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/mission_patch_images/f75-prometheusr_mission_patch_20251118184324.png",
+            "agency": {
+              "response_mode": "list",
+              "id": 147,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/147/?format=json",
+              "name": "Rocket Lab",
+              "abbrev": "RL",
+              "type": {
+                "id": 3,
+                "name": "Commercial"
+              }
+            },
+            "response_mode": "normal"
+          }
+        ]
       },
       {
         "id": "d124e85e-ee0f-4ab2-9be6-fd31516ddee9",
