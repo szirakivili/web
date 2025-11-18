@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-18T02:03:28Z",
+  "fetched_at": "2025-11-18T03:48:02Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 348,
@@ -3745,13 +3745,13 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-11-17T19:15:16Z",
-        "net": "2025-11-18T23:29:00Z",
+        "last_updated": "2025-11-18T03:08:26Z",
+        "net": "2025-11-19T00:12:20Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2025-11-19T03:29:00Z",
         "window_start": "2025-11-18T23:29:00Z",
@@ -4502,7 +4502,7 @@
                 "fastest_turnaround": "P24DT16H10M"
               },
               "previous_flight_date": "2025-09-21T10:53:00Z",
-              "turn_around_time": "P58DT12H36M",
+              "turn_around_time": "P58DT13H19M20S",
               "landing": {
                 "id": 1734,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1734/?format=json",
@@ -4963,6 +4963,14 @@
         "flightclub_url": "https://flightclub.io/result?llId=d124e85e-ee0f-4ab2-9be6-fd31516ddee9",
         "updates": [
           {
+            "id": 12931,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Now targeting Nov 19 at 00:12 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-6-94",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-18T03:08:00Z"
+          },
+          {
             "id": 12926,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Updated launch weather, 95% GO.",
@@ -5062,7 +5070,7 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-11-18T22:30:00Z",
+            "start_time": "2025-11-18T23:15:00Z",
             "end_time": null,
             "live": false
           },
@@ -5194,7 +5202,7 @@
             "relative_time": "PT1H5M5S"
           }
         ],
-        "pad_turnaround": "P3DT16H44M40S",
+        "pad_turnaround": "P3DT17H28M",
         "mission_patches": [
           {
             "id": 7,
@@ -8497,7 +8505,7 @@
             "source": "youtube.com",
             "publisher": "NASASpaceflight",
             "title": "SpaceX Falcon 9 launches Starlink 6-78",
-            "description": "SpaceX launch of a batch of 29 Starlink v2-mini satellites for their second-generation high-speed low earth orbit internet satellite constellation.\n\nLaunch window: November 20th from 2:05PM EST to 6:0...",
+            "description": "SpaceX launch of a batch of 29 Starlink v2-mini satellites for their second-generation high-speed low earth orbit internet satellite constellation.\n\nLaunch window: November 20th from 10:01PM EST to 2:...",
             "feature_image": "https://i.ytimg.com/vi/LUQawcJFOzE/maxresdefault_live.jpg",
             "url": "https://www.youtube.com/watch?v=LUQawcJFOzE",
             "type": {
@@ -8509,7 +8517,7 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-11-20T17:05:00Z",
+            "start_time": "2025-11-21T02:00:00Z",
             "end_time": null,
             "live": false
           },
