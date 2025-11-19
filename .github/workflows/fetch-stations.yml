@@ -73,7 +73,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
             git add space/stations_and_expeditions.json
-            git commit -m "Daily update: stations and expeditions $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git commit -m "Regular update: stations and expeditions $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           else
             echo "No changes to commit"
