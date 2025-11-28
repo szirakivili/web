@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-11-27T03:51:36Z",
+  "fetched_at": "2025-11-28T03:51:34Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=true&format=json&mode=detailed&limit=10",
   "payload": {
     "count": 3,
@@ -14,12 +14,12 @@
         "slug": "soyuz-21a-soyuz-ms-28",
         "launch_designator": null,
         "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
+          "id": 3,
+          "name": "Launch Successful",
+          "abbrev": "Success",
+          "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2025-11-20T20:01:35Z",
+        "last_updated": "2025-11-27T09:47:33Z",
         "net": "2025-11-27T09:27:57Z",
         "net_precision": {
           "id": 0,
@@ -121,11 +121,11 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 335,
-          "consecutive_successful_launches": 59,
-          "successful_launches": 324,
+          "total_launch_count": 336,
+          "consecutive_successful_launches": 60,
+          "successful_launches": 325,
           "failed_launches": 11,
-          "pending_launches": 6,
+          "pending_launches": 5,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -221,11 +221,11 @@
                 "description": "",
                 "active": true,
                 "maiden_flight": "1965-12-27",
-                "total_launch_count": 1029,
-                "consecutive_successful_launches": 125,
-                "successful_launches": 998,
+                "total_launch_count": 1030,
+                "consecutive_successful_launches": 126,
+                "successful_launches": 999,
                 "failed_launches": 31,
-                "pending_launches": 7,
+                "pending_launches": 6,
                 "attempted_landings": 0,
                 "successful_landings": 0,
                 "failed_landings": 0,
@@ -356,11 +356,11 @@
                 "description": "",
                 "active": true,
                 "maiden_flight": "2004-11-08",
-                "total_launch_count": 196,
-                "consecutive_successful_launches": 125,
-                "successful_launches": 189,
+                "total_launch_count": 197,
+                "consecutive_successful_launches": 126,
+                "successful_launches": 190,
                 "failed_launches": 7,
-                "pending_launches": 7,
+                "pending_launches": 6,
                 "attempted_landings": 0,
                 "successful_landings": 0,
                 "failed_landings": 0,
@@ -468,11 +468,11 @@
             "sso_capacity": 4230.0,
             "to_thrust": 4149.0,
             "apogee": null,
-            "total_launch_count": 53,
-            "consecutive_successful_launches": 46,
-            "successful_launches": 52,
+            "total_launch_count": 54,
+            "consecutive_successful_launches": 47,
+            "successful_launches": 53,
             "failed_launches": 1,
-            "pending_launches": 3,
+            "pending_launches": 2,
             "attempted_landings": 0,
             "successful_landings": 0,
             "failed_landings": 0,
@@ -508,10 +508,10 @@
                   "single_use": false,
                   "variants": []
                 },
-                "in_space": false,
-                "time_in_space": "P0D",
-                "time_docked": "P0D",
-                "flights_count": 0,
+                "in_space": true,
+                "time_in_space": "PT16H26M35S",
+                "time_docked": "PT13H20M32S",
+                "flights_count": 1,
                 "mission_ends_count": 0,
                 "status": {
                   "id": 1,
@@ -639,9 +639,9 @@
                       },
                       "parent": null,
                       "maiden_flight": "1966-11-28",
-                      "spacecraft_flown": 197,
-                      "total_launch_count": 197,
-                      "successful_launches": 182,
+                      "spacecraft_flown": 198,
+                      "total_launch_count": 198,
+                      "successful_launches": 183,
                       "failed_launches": 15,
                       "attempted_landings": 190,
                       "successful_landings": 184,
@@ -677,9 +677,9 @@
                   "flight_life": "210 days while docked",
                   "wiki_link": "https://en.wikipedia.org/wiki/Soyuz_MS",
                   "info_link": "",
-                  "spacecraft_flown": 27,
-                  "total_launch_count": 27,
-                  "successful_launches": 26,
+                  "spacecraft_flown": 28,
+                  "total_launch_count": 28,
+                  "successful_launches": 27,
                   "failed_launches": 1,
                   "attempted_landings": 26,
                   "successful_landings": 26,
@@ -761,7 +761,7 @@
                   "description": "Unpowered landing using parachute(s)."
                 }
               },
-              "duration": null,
+              "duration": "PT16H29M55.855319S",
               "turn_around_time": null,
               "response_mode": "detailed",
               "launch_crew": [
@@ -811,8 +811,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P184DT23H9M56S",
+                    "in_space": true,
+                    "time_in_space": "P185DT15H30M26S",
                     "eva_time": "PT6H47M",
                     "age": 42,
                     "date_of_birth": "1983-08-23",
@@ -829,7 +829,7 @@
                     ],
                     "bio": "Sergey Vladimirvich Kud-Sverchkov Is a Kazakh-Russian engineer and cosmonaut selected in 2010.",
                     "wiki": "https://en.wikipedia.org/wiki/Sergey_Kud-Sverchkov",
-                    "last_flight": "2020-10-14T05:45:04Z",
+                    "last_flight": "2025-11-27T09:27:57Z",
                     "first_flight": "2020-10-14T05:45:04Z",
                     "social_media_links": [
                       {
@@ -905,8 +905,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P0D",
+                    "in_space": true,
+                    "time_in_space": "PT16H21M24S",
                     "eva_time": "P0D",
                     "age": 42,
                     "date_of_birth": "1983-01-01",
@@ -923,8 +923,8 @@
                     ],
                     "bio": "Christopher Williams grw up in Potomac, Maryland and graduated from Stanford University in 2005 with a bachelor’s degree in physics and a doctorate in physics from MIT in 2012, where his research was in astrophysics. Williams is a board-certified medical physicist, completing his residency training at Harvard Medical School before joining the faculty as a clinical physicist and researcher. He most recently worked as a medical physicist in the Radiation Oncology Department at the Brigham and Women's Hospital and Dana-Farber Cancer Institute in Boston. He was the lead physicist for the Institute’s MRI-guided adaptive radiation therapy program. His research focused on developing image guidance techniques for cancer treatments.\r\n\r\nExact date of birth unknown.",
                     "wiki": "https://en.wikipedia.org/wiki/Christopher_Williams_(astronaut)",
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-11-27T09:27:57Z",
+                    "first_flight": "2025-11-27T09:27:57Z",
                     "social_media_links": []
                   }
                 },
@@ -960,8 +960,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P0D",
+                    "in_space": true,
+                    "time_in_space": "PT16H22M41S",
                     "eva_time": "P0D",
                     "age": 40,
                     "date_of_birth": "1985-03-15",
@@ -978,8 +978,8 @@
                     ],
                     "bio": "Sergey Mikayev is a Russian cosmonaut affiliated with Roscosmos",
                     "wiki": "https://en.wikipedia.org/wiki/Sergey_Mikayev",
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-11-27T09:27:57Z",
+                    "first_flight": "2025-11-27T09:27:57Z",
                     "social_media_links": []
                   }
                 }
@@ -1032,8 +1032,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P184DT23H9M56S",
+                    "in_space": true,
+                    "time_in_space": "P185DT15H30M26S",
                     "eva_time": "PT6H47M",
                     "age": 42,
                     "date_of_birth": "1983-08-23",
@@ -1050,7 +1050,7 @@
                     ],
                     "bio": "Sergey Vladimirvich Kud-Sverchkov Is a Kazakh-Russian engineer and cosmonaut selected in 2010.",
                     "wiki": "https://en.wikipedia.org/wiki/Sergey_Kud-Sverchkov",
-                    "last_flight": "2020-10-14T05:45:04Z",
+                    "last_flight": "2025-11-27T09:27:57Z",
                     "first_flight": "2020-10-14T05:45:04Z",
                     "social_media_links": [
                       {
@@ -1126,8 +1126,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P0D",
+                    "in_space": true,
+                    "time_in_space": "PT16H21M24S",
                     "eva_time": "P0D",
                     "age": 42,
                     "date_of_birth": "1983-01-01",
@@ -1144,8 +1144,8 @@
                     ],
                     "bio": "Christopher Williams grw up in Potomac, Maryland and graduated from Stanford University in 2005 with a bachelor’s degree in physics and a doctorate in physics from MIT in 2012, where his research was in astrophysics. Williams is a board-certified medical physicist, completing his residency training at Harvard Medical School before joining the faculty as a clinical physicist and researcher. He most recently worked as a medical physicist in the Radiation Oncology Department at the Brigham and Women's Hospital and Dana-Farber Cancer Institute in Boston. He was the lead physicist for the Institute’s MRI-guided adaptive radiation therapy program. His research focused on developing image guidance techniques for cancer treatments.\r\n\r\nExact date of birth unknown.",
                     "wiki": "https://en.wikipedia.org/wiki/Christopher_Williams_(astronaut)",
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-11-27T09:27:57Z",
+                    "first_flight": "2025-11-27T09:27:57Z",
                     "social_media_links": []
                   }
                 },
@@ -1181,8 +1181,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P0D",
+                    "in_space": true,
+                    "time_in_space": "PT16H22M41S",
                     "eva_time": "P0D",
                     "age": 40,
                     "date_of_birth": "1985-03-15",
@@ -1199,13 +1199,80 @@
                     ],
                     "bio": "Sergey Mikayev is a Russian cosmonaut affiliated with Roscosmos",
                     "wiki": "https://en.wikipedia.org/wiki/Sergey_Mikayev",
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-11-27T09:27:57Z",
+                    "first_flight": "2025-11-27T09:27:57Z",
                     "social_media_links": []
                   }
                 }
               ],
-              "docking_events": []
+              "docking_events": [
+                {
+                  "id": 634,
+                  "url": "https://ll.thespacedevs.com/2.3.0/docking_events/634/?format=json",
+                  "docking": "2025-11-27T12:34:00Z",
+                  "departure": null,
+                  "docking_location": {
+                    "id": 13,
+                    "name": "Rassvet nadir",
+                    "spacestation": {
+                      "id": 4,
+                      "url": "https://ll.thespacedevs.com/2.3.0/space_stations/4/?format=json",
+                      "name": "International Space Station",
+                      "image": {
+                        "id": 1952,
+                        "name": "ISS as seen from Shuttle Atlantis (STS-132)",
+                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/international2520space2520station_image_20190220215716.jpeg",
+                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305194230.jpeg",
+                        "credit": "NASA",
+                        "license": {
+                          "id": 4,
+                          "name": "NASA Image and Media Guidelines",
+                          "priority": 0,
+                          "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+                        },
+                        "single_use": false,
+                        "variants": []
+                      }
+                    },
+                    "spacecraft": null,
+                    "payload": null
+                  },
+                  "space_station_target": {
+                    "id": 4,
+                    "url": "https://ll.thespacedevs.com/2.3.0/space_stations/4/?format=json",
+                    "name": "International Space Station",
+                    "image": {
+                      "id": 1952,
+                      "name": "ISS as seen from Shuttle Atlantis (STS-132)",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/international2520space2520station_image_20190220215716.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305194230.jpeg",
+                      "credit": "NASA",
+                      "license": {
+                        "id": 4,
+                        "name": "NASA Image and Media Guidelines",
+                        "priority": 0,
+                        "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+                      },
+                      "single_use": false,
+                      "variants": []
+                    },
+                    "status": {
+                      "id": 1,
+                      "name": "Active"
+                    },
+                    "founded": "1998-11-20",
+                    "deorbited": null,
+                    "description": "The International Space Station (ISS) is a space station, or a habitable artificial satellite, in low Earth orbit. Its first component was launched into orbit in 1998, with the first long-term residents arriving in November 2000. It has been inhabited continuously since that date. The last pressurised module was fitted in 2011, and an experimental inflatable space habitat was added in 2016. The station is expected to operate until 2030. Development and assembly of the station continues, with several new elements scheduled for launch in 2019. The ISS is the largest human-made body in low Earth orbit and can often be seen with the naked eye from Earth. The ISS consists of pressurised habitation modules, structural trusses, solar arrays, radiators, docking ports, experiment bays and robotic arms. ISS components have been launched by Russian Proton and Soyuz rockets, and American Space Shuttles.",
+                    "orbit": "Low Earth Orbit",
+                    "type": {
+                      "id": 2,
+                      "name": "Government"
+                    }
+                  },
+                  "flight_vehicle_target": null,
+                  "payload_flight_target": null
+                }
+              ]
             }
           ],
           "payloads": []
@@ -1299,11 +1366,11 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 335,
-              "consecutive_successful_launches": 59,
-              "successful_launches": 324,
+              "total_launch_count": 336,
+              "consecutive_successful_launches": 60,
+              "successful_launches": 325,
               "failed_launches": 11,
-              "pending_launches": 6,
+              "pending_launches": 5,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -1358,8 +1425,8 @@
             "nationality_name_composed": "Kazakhstani"
           },
           "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_20_20200803143516.jpg",
-          "total_launch_count": 425,
-          "orbital_launch_attempt_count": 425,
+          "total_launch_count": 426,
+          "orbital_launch_attempt_count": 426,
           "fastest_turnaround": "P1DT23H9M9S",
           "location": {
             "response_mode": "normal",
@@ -1396,8 +1463,8 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7347,
-              "successful_launches": 6799,
+              "total_attempted_launches": 7348,
+              "successful_launches": 6800,
               "failed_launches": 548,
               "total_attempted_landings": 1224,
               "successful_landings": 1179,
@@ -1432,7 +1499,7 @@
             "longitude": 63.305,
             "latitude": 45.965,
             "timezone_name": "Asia/Qyzylorda",
-            "total_launch_count": 1558,
+            "total_launch_count": 1559,
             "total_landing_count": 0
           }
         },
@@ -1593,6 +1660,30 @@
         "flightclub_url": null,
         "updates": [
           {
+            "id": 13064,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Launch success.",
+            "info_url": "https://www.youtube.com/watch?v=gWhAbWnm_oM",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-27T09:40:00Z"
+          },
+          {
+            "id": 13063,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Liftoff.",
+            "info_url": "https://www.youtube.com/watch?v=gWhAbWnm_oM",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-27T09:28:00Z"
+          },
+          {
+            "id": 13062,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/ll2_profile_20230311134739.png",
+            "comment": "Official Webcast by NASA has started",
+            "info_url": "https://www.youtube.com/watch?v=gWhAbWnm_oM",
+            "created_by": "LL2",
+            "created_on": "2025-11-27T08:27:00Z"
+          },
+          {
             "id": 12945,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "Tweaked T-0.",
@@ -1641,7 +1732,7 @@
             "publisher": "NASA",
             "title": "NASA Astronaut Chris Williams Soyuz MS-28 Launch",
             "description": "NASA astronaut Chris Williams is launching to the International Space Station from the Baikonur Cosmodrome in Kazakhstan. A Roscosmos Soyuz MS-28 spacecraft will carry Williams on his first flight, as well as Sergey Kud-Sverchkov and Sergey Mikaev of Roscosmos.\n\nLiftoff is scheduled for 4:27 a.m. EST (0927 UTC), and the spacecraft and crew are scheduled to dock at the station at about 7:38 a.m. EST (1238 UTC) on the same day.\n\nThe crew will spend approximately eight months aboard the orbital laboratory as part of Expedition 73/74. During his time in orbit, Williams will conduct scientific investigations and technology demonstrations to help prepare the crew for future space missions and provide benefits to people on Earth.\n\nLearn more about the International Space Station: https://www...",
-            "feature_image": "https://i.ytimg.com/vi/gWhAbWnm_oM/maxresdefault_live.jpg",
+            "feature_image": "https://i.ytimg.com/vi/gWhAbWnm_oM/maxresdefault.jpg",
             "url": "https://www.youtube.com/watch?v=gWhAbWnm_oM",
             "type": {
               "id": 1,
@@ -1652,7 +1743,28 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2025-11-27T08:30:00Z",
+            "start_time": "2025-11-27T08:26:49Z",
+            "end_time": "2025-11-27T09:43:56Z",
+            "live": false
+          },
+          {
+            "priority": 11,
+            "source": "youtube.com",
+            "publisher": "Роскосмос ТВ",
+            "title": "Трансляция запуска пилотируемого корабля «Союз МС-28»",
+            "description": "27 ноября в 12:28 по московскому времени запланирован запуск корабля «Союз МС-28». В экипаж «Союза МС-28» входят участники 74-й длительной экспедиции на МКС: Сергей Кудь-Сверчков, Сергей Микаев и Джонатан Ким.\n\nНачало эфира: 10:30 мск\n\n\nСайт Роскосмоса: https://www.roscosmos.ru/\nРоскосмос в социальных сетях: \nVk: https://vk.com/roscosmos\nOk: https://ok.ru/roscosmos  \nTelegram: https://t.me/roscosmos_gk \nRutube: https://rutube.ru/channel/770606/\n\nНовый telegram-канал о путешествиях на космодромы: https://t.me/cosmotours\n\n#Роскосмос  #РоскосмосТВ",
+            "feature_image": "https://i.ytimg.com/vi/31YcLNm4IIE/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=31YcLNm4IIE",
+            "type": {
+              "id": 3,
+              "name": "Unofficial Webcast"
+            },
+            "language": {
+              "id": 3,
+              "name": "Russian",
+              "code": "ru"
+            },
+            "start_time": "2025-11-27T07:30:00Z",
             "end_time": null,
             "live": false
           },
@@ -1674,13 +1786,32 @@
               "code": "en"
             },
             "start_time": "2025-11-27T08:30:00Z",
-            "end_time": "2025-11-27T11:45:00Z",
+            "end_time": "2025-11-27T09:44:00Z",
             "live": false
           }
         ],
         "timeline": [],
         "pad_turnaround": "P76DT17H33M51S",
-        "mission_patches": []
+        "mission_patches": [
+          {
+            "id": 1234,
+            "name": "Soyuz MS-28",
+            "priority": 10,
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/mission_patch_images/soyuz2520ms-28_mission_patch_20251127092204.png",
+            "agency": {
+              "response_mode": "list",
+              "id": 63,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/63/?format=json",
+              "name": "Russian Federal Space Agency (ROSCOSMOS)",
+              "abbrev": "RFSA",
+              "type": {
+                "id": 1,
+                "name": "Government"
+              }
+            },
+            "response_mode": "normal"
+          }
+        ]
       },
       {
         "id": "41699701-2ef4-4b0c-ac9d-6757820cde87",
@@ -3323,8 +3454,8 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7347,
-              "successful_launches": 6799,
+              "total_attempted_launches": 7348,
+              "successful_launches": 6800,
               "failed_launches": 548,
               "total_attempted_landings": 1224,
               "successful_landings": 1179,
@@ -3609,11 +3740,11 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 335,
-          "consecutive_successful_launches": 59,
-          "successful_launches": 324,
+          "total_launch_count": 336,
+          "consecutive_successful_launches": 60,
+          "successful_launches": 325,
           "failed_launches": 11,
-          "pending_launches": 6,
+          "pending_launches": 5,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -3709,11 +3840,11 @@
                 "description": "",
                 "active": true,
                 "maiden_flight": "1965-12-27",
-                "total_launch_count": 1029,
-                "consecutive_successful_launches": 125,
-                "successful_launches": 998,
+                "total_launch_count": 1030,
+                "consecutive_successful_launches": 126,
+                "successful_launches": 999,
                 "failed_launches": 31,
-                "pending_launches": 7,
+                "pending_launches": 6,
                 "attempted_landings": 0,
                 "successful_landings": 0,
                 "failed_landings": 0,
@@ -3844,11 +3975,11 @@
                 "description": "",
                 "active": true,
                 "maiden_flight": "2004-11-08",
-                "total_launch_count": 196,
-                "consecutive_successful_launches": 125,
-                "successful_launches": 189,
+                "total_launch_count": 197,
+                "consecutive_successful_launches": 126,
+                "successful_launches": 190,
                 "failed_launches": 7,
-                "pending_launches": 7,
+                "pending_launches": 6,
                 "attempted_landings": 0,
                 "successful_landings": 0,
                 "failed_landings": 0,
@@ -3956,11 +4087,11 @@
             "sso_capacity": 4230.0,
             "to_thrust": 4149.0,
             "apogee": null,
-            "total_launch_count": 53,
-            "consecutive_successful_launches": 46,
-            "successful_launches": 52,
+            "total_launch_count": 54,
+            "consecutive_successful_launches": 47,
+            "successful_launches": 53,
             "failed_launches": 1,
-            "pending_launches": 3,
+            "pending_launches": 2,
             "attempted_landings": 0,
             "successful_landings": 0,
             "failed_landings": 0,
@@ -4127,9 +4258,9 @@
                       },
                       "parent": null,
                       "maiden_flight": "1966-11-28",
-                      "spacecraft_flown": 197,
-                      "total_launch_count": 197,
-                      "successful_launches": 182,
+                      "spacecraft_flown": 198,
+                      "total_launch_count": 198,
+                      "successful_launches": 183,
                       "failed_launches": 15,
                       "attempted_landings": 190,
                       "successful_landings": 184,
@@ -4165,9 +4296,9 @@
                   "flight_life": "210 days while docked",
                   "wiki_link": "https://en.wikipedia.org/wiki/Soyuz_MS",
                   "info_link": "",
-                  "spacecraft_flown": 27,
-                  "total_launch_count": 27,
-                  "successful_launches": 26,
+                  "spacecraft_flown": 28,
+                  "total_launch_count": 28,
+                  "successful_launches": 27,
                   "failed_launches": 1,
                   "attempted_landings": 26,
                   "successful_landings": 26,
@@ -4906,11 +5037,11 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 335,
-              "consecutive_successful_launches": 59,
-              "successful_launches": 324,
+              "total_launch_count": 336,
+              "consecutive_successful_launches": 60,
+              "successful_launches": 325,
               "failed_launches": 11,
-              "pending_launches": 6,
+              "pending_launches": 5,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -4965,8 +5096,8 @@
             "nationality_name_composed": "Kazakhstani"
           },
           "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_20_20200803143516.jpg",
-          "total_launch_count": 425,
-          "orbital_launch_attempt_count": 425,
+          "total_launch_count": 426,
+          "orbital_launch_attempt_count": 426,
           "fastest_turnaround": "P1DT23H9M9S",
           "location": {
             "response_mode": "normal",
@@ -5003,8 +5134,8 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7347,
-              "successful_launches": 6799,
+              "total_attempted_launches": 7348,
+              "successful_launches": 6800,
               "failed_launches": 548,
               "total_attempted_landings": 1224,
               "successful_landings": 1179,
@@ -5039,7 +5170,7 @@
             "longitude": 63.305,
             "latitude": 45.965,
             "timezone_name": "Asia/Qyzylorda",
-            "total_launch_count": 1558,
+            "total_launch_count": 1559,
             "total_landing_count": 0
           }
         },
