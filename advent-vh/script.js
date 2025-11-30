@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalImage = document.getElementById("modalImage");
     const modalText = document.getElementById("modalText");
     const fbButton = document.getElementById("fbButton");
+    const modalTitle = document.getElementById("modalTitle");
 
     document.querySelectorAll(".day-card").forEach((card) => {
         card.addEventListener("click", () => {
@@ -14,9 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((response) => response.text())
                 .then((data) => {
                     const lines = data.split("\n");
-                    const content = lines.slice(0, -1).join("<br>");
+                    const streetName = lines[0];
+                    const content = lines.slice(1, -1).join("<br>");
                     const link = lines[lines.length - 1];
 
+                    modalTitle.textContent = `${day}. ablak: ${streetName}`;
                     modalImage.src = `${day}.jpg`;
                     modalText.innerHTML = `<p>${content}</p>`;
                     fbButton.href = link;

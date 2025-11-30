@@ -107,6 +107,9 @@ h1 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     animation: modal-open 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
     color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 @keyframes modal-open {
   from {
@@ -127,26 +130,29 @@ h1 {
     max-height: 400px;
     max-width: 300px;
     height: auto;
-    width: 60vh;
+    width: 45vh;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 .close-button {
-    background: var(--advent-red);
-    color: white;
+    color: var(--advent-red);
+    background: none;
     border: none;
-    border-radius: 50%;
-    padding: 7px 10px;
+    padding: 15px 10px 10px 10px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 25px;
     font-weight: bold;
-    float: right;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
-.close-button:hover {
-  background-color: #8C2525;
-  transform: scale(1.1);
+#modalTitle {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: var(--advent-blue);
+    width: 100%;
 }
 .fb-button {
     margin-top: 15px;
