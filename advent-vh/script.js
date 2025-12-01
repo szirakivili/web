@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalImage = document.getElementById("modalImage");
     const modalText = document.getElementById("modalText");
     const fbButton = document.getElementById("fbButton");
+    const mapButton = document.getElementById("mapButton");
     const modalTitle = document.getElementById("modalTitle");
 
     document.querySelectorAll(".day-card").forEach((card) => {
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     modalImage.src = `${day}.jpg`;
                     modalText.innerHTML = `<p>${content}</p>`;
                     fbButton.href = link;
+                    mapButton.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Váchartyán, " + streetName)}`;
 
                     modal.style.display = "flex";
                 })

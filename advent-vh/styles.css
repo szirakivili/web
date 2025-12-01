@@ -154,6 +154,10 @@ h1 {
     color: var(--advent-blue);
     width: 100%;
 }
+.buttons {
+    display: flex;
+    gap: 15px;
+}
 .fb-button {
     margin-top: 15px;
     padding: 10px 20px;
@@ -171,6 +175,25 @@ h1 {
 }
 .fb-button:hover {
     background-color: #082A43;
+    transform: translateY(-2px);
+}
+.map-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--advent-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.map-button:hover {
+    background-color: #244c24;
     transform: translateY(-2px);
 }
 #snow-canvas {
