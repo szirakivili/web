@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-12-18T04:03:43Z",
+  "fetched_at": "2025-12-19T04:05:07Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=true&format=json&mode=detailed&limit=10",
   "payload": {
     "count": 4,
@@ -19,16 +19,16 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-12-12T16:12:07Z",
-        "net": "2025-12-18T14:30:00Z",
+        "last_updated": "2025-12-18T23:52:58Z",
+        "net": "2025-12-20T14:00:00Z",
         "net_precision": {
           "id": 1,
           "name": "Minute",
           "abbrev": "MIN",
           "description": "The T-0 is accurate to the minute."
         },
-        "window_end": "2025-12-18T22:30:00Z",
-        "window_start": "2025-12-18T14:30:00Z",
+        "window_end": "2025-12-20T22:30:00Z",
+        "window_start": "2025-12-20T14:00:00Z",
         "image": {
           "id": 2098,
           "name": "New Shepard liftoff (NS-25)",
@@ -292,25 +292,25 @@
             {
               "id": 826,
               "type": "Core",
-              "reused": null,
-              "launcher_flight_number": null,
+              "reused": true,
+              "launcher_flight_number": 6,
               "launcher": {
                 "response_mode": "normal",
-                "id": 144,
-                "url": "https://ll.thespacedevs.com/2.3.0/launchers/144/?format=json",
-                "flight_proven": false,
-                "serial_number": "Unknown NS",
-                "is_placeholder": true,
+                "id": 187,
+                "url": "https://ll.thespacedevs.com/2.3.0/launchers/187/?format=json",
+                "flight_proven": true,
+                "serial_number": "NS-5",
+                "is_placeholder": false,
                 "status": {
-                  "id": 8,
-                  "name": "N/A"
+                  "id": 3,
+                  "name": "active"
                 },
                 "image": {
-                  "id": 1676,
-                  "name": "[AUTO] Unknown NS - image",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/none_image_20231212212416.png",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193446.png",
-                  "credit": null,
+                  "id": 2317,
+                  "name": "NS-5 on the launch pad (NS-29)",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/ns-5_on_the_lau_image_20250204174818.jpg",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/ns-5_on_the_lau_image_thumbnail_20250204174819.jpeg",
+                  "credit": "Blue Origin",
                   "license": {
                     "id": 1,
                     "name": "Unknown",
@@ -320,22 +320,22 @@
                   "single_use": true,
                   "variants": []
                 },
-                "details": "Booster serial number unknown.",
-                "successful_landings": null,
-                "attempted_landings": null,
-                "flights": null,
-                "last_launch_date": null,
-                "first_launch_date": null,
-                "fastest_turnaround": null
+                "details": "5th New Shepard booster.",
+                "successful_landings": 5,
+                "attempted_landings": 5,
+                "flights": 5,
+                "last_launch_date": "2025-09-18T13:00:00Z",
+                "first_launch_date": "2024-10-23T15:27:00Z",
+                "fastest_turnaround": "P68DT21H30M"
               },
-              "previous_flight_date": null,
-              "turn_around_time": null,
+              "previous_flight_date": "2025-09-18T13:00:00Z",
+              "turn_around_time": "P93DT1H",
               "landing": {
                 "id": 1719,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1719/?format=json",
                 "attempt": true,
                 "success": null,
-                "description": "The New Shepard booster will land back on the landing pad.",
+                "description": "The New Shepard booster NS-5 will land back on the landing pad.",
                 "downrange_distance": 3.2,
                 "landing_location": {
                   "id": 11,
@@ -439,7 +439,11 @@
                   "description": "A return to launch site usually means that after stage separation the booster flips and does a burn back towards the launch site, landing near where it initially launched from."
                 }
               },
-              "previous_flight": null
+              "previous_flight": {
+                "id": "92ec4610-4576-4077-b538-65272a5d6491",
+                "url": "https://ll.thespacedevs.com/2.3.0/launches/92ec4610-4576-4077-b538-65272a5d6491/?format=json",
+                "name": "New Shepard | NS-35"
+              }
             }
           ],
           "spacecraft_stage": [
@@ -450,16 +454,16 @@
               "mission_end": null,
               "spacecraft": {
                 "response_mode": "normal",
-                "id": 608,
-                "url": "https://ll.thespacedevs.com/2.3.0/spacecraft/608/?format=json",
-                "name": "Unknown RSS",
-                "serial_number": "TBD",
+                "id": 599,
+                "url": "https://ll.thespacedevs.com/2.3.0/spacecraft/599/?format=json",
+                "name": "RSS Kármán Line",
+                "serial_number": null,
                 "is_placeholder": false,
                 "image": {
-                  "id": 2152,
-                  "name": "New Shepard Crew Capsule Jules Verne under parachutes",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_cre_image_20240812144851.jpg",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_cre_image_thumbnail_20240812144851.jpeg",
+                  "id": 1907,
+                  "name": "New Shepard M7 H. G. Wells landed",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/crew2520capsule25202.0_image_20190309095011.jpeg",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305194115.jpeg",
                   "credit": "Blue Origin",
                   "license": {
                     "id": 1,
@@ -471,15 +475,15 @@
                   "variants": []
                 },
                 "in_space": false,
-                "time_in_space": "P0D",
+                "time_in_space": "PT30M35S",
                 "time_docked": "P0D",
-                "flights_count": 0,
-                "mission_ends_count": 0,
+                "flights_count": 3,
+                "mission_ends_count": 3,
                 "status": {
                   "id": 1,
                   "name": "Active"
                 },
-                "description": "The specific spacecraft for this launch is currently unknown.",
+                "description": "Second human rated Crew Capsule for New Shepard.",
                 "spacecraft_config": {
                   "response_mode": "detailed",
                   "id": 21,
@@ -690,14 +694,14 @@
                   "failed_landings": 0,
                   "fastest_turnaround": "P59DT1M42S"
                 },
-                "fastest_turnaround": null
+                "fastest_turnaround": "P76DT59M35S"
               },
               "landing": {
                 "id": 1720,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1720/?format=json",
                 "attempt": true,
                 "success": null,
-                "description": "The RSS capsule will land at Blue Origin's Corn Ranch facility.",
+                "description": "The RSS capsule RSS Kármán Line will land at Blue Origin's Corn Ranch facility.",
                 "downrange_distance": null,
                 "landing_location": {
                   "id": 28,
@@ -802,7 +806,7 @@
                 }
               },
               "duration": null,
-              "turn_around_time": null,
+              "turn_around_time": "P173DT23H9M50S",
               "response_mode": "detailed",
               "launch_crew": [
                 {
@@ -2364,8 +2368,8 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7377,
-              "successful_launches": 6829,
+              "total_attempted_launches": 7378,
+              "successful_launches": 6830,
               "failed_launches": 548,
               "total_attempted_landings": 1240,
               "successful_landings": 1194,
@@ -2417,6 +2421,62 @@
         "flightclub_url": null,
         "updates": [
           {
+            "id": 13400,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Confirmed rescheduled for December 20.",
+            "info_url": "https://x.com/blueorigin/status/2001801885922005317",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-18T23:52:00Z"
+          },
+          {
+            "id": 13398,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "NET December 19, TBC.",
+            "info_url": "https://www.fly.faa.gov/adv/adv_spt",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-18T18:49:00Z"
+          },
+          {
+            "id": 13395,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Scrubbed for the day.",
+            "info_url": "https://x.com/blueorigin/status/2001696233430335668",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-18T16:50:00Z"
+          },
+          {
+            "id": 13393,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Hold at T-0:58.",
+            "info_url": "https://www.youtube.com/watch?v=ZSDhe8y_8t0",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-18T16:32:00Z"
+          },
+          {
+            "id": 13391,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "New T-0.",
+            "info_url": "https://x.com/blueorigin/status/2001689465979621721",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-18T16:23:00Z"
+          },
+          {
+            "id": 13390,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Holding at T-10.",
+            "info_url": "https://www.youtube.com/watch?v=ZSDhe8y_8t0",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-18T15:54:00Z"
+          },
+          {
+            "id": 13388,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "New T-0.",
+            "info_url": "https://x.com/blueorigin/status/2001341251296129335",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-18T06:17:00Z"
+          },
+          {
             "id": 13253,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
             "comment": "GO for launch.",
@@ -2442,9 +2502,31 @@
           }
         ],
         "info_urls": [],
-        "vid_urls": [],
+        "vid_urls": [
+          {
+            "priority": 10,
+            "source": "youtube.com",
+            "publisher": "Blue Origin",
+            "title": "Replay: New Shepard Mission NS-37 Webcast",
+            "description": "We are standing down from today’s NS-37 mission after the launch team observed an issue with our built-in checks prior to the flight. We are assessing our next opportunity for launch.",
+            "feature_image": "https://i.ytimg.com/vi/ZSDhe8y_8t0/maxresdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=ZSDhe8y_8t0",
+            "type": {
+              "id": 1,
+              "name": "Official Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-12-18T15:05:47Z",
+            "end_time": "2025-12-18T16:50:13Z",
+            "live": false
+          }
+        ],
         "timeline": [],
-        "pad_turnaround": "P71DT49M33S",
+        "pad_turnaround": "P73DT19M33S",
         "mission_patches": [
           {
             "id": 1244,
@@ -4107,8 +4189,8 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7377,
-              "successful_launches": 6829,
+              "total_attempted_launches": 7378,
+              "successful_launches": 6830,
               "failed_launches": 548,
               "total_attempted_landings": 1240,
               "successful_landings": 1194,
@@ -4194,11 +4276,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7194,
+        "orbital_launch_attempt_count": 7188,
         "location_launch_attempt_count": 280,
         "pad_launch_attempt_count": 59,
         "agency_launch_attempt_count": 142,
-        "orbital_launch_attempt_count_year": 8,
+        "orbital_launch_attempt_count_year": 9,
         "location_launch_attempt_count_year": 1,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 1,
@@ -4397,7 +4479,7 @@
           "consecutive_successful_launches": 104,
           "successful_launches": 604,
           "failed_launches": 15,
-          "pending_launches": 115,
+          "pending_launches": 116,
           "consecutive_successful_landings": 103,
           "successful_landings": 564,
           "failed_landings": 27,
@@ -4501,7 +4583,7 @@
                     "consecutive_successful_launches": 104,
                     "successful_launches": 604,
                     "failed_launches": 15,
-                    "pending_launches": 115,
+                    "pending_launches": 116,
                     "consecutive_successful_landings": 103,
                     "successful_landings": 564,
                     "failed_landings": 27,
@@ -4525,7 +4607,7 @@
                 "consecutive_successful_launches": 229,
                 "successful_launches": 592,
                 "failed_launches": 7,
-                "pending_launches": 112,
+                "pending_launches": 113,
                 "attempted_landings": 571,
                 "successful_landings": 553,
                 "failed_landings": 19,
@@ -4612,7 +4694,7 @@
                     "consecutive_successful_launches": 104,
                     "successful_launches": 604,
                     "failed_launches": 15,
-                    "pending_launches": 115,
+                    "pending_launches": 116,
                     "consecutive_successful_landings": 103,
                     "successful_landings": 564,
                     "failed_landings": 27,
@@ -4716,7 +4798,7 @@
                 "consecutive_successful_launches": 228,
                 "successful_launches": 579,
                 "failed_launches": 4,
-                "pending_launches": 97,
+                "pending_launches": 98,
                 "attempted_landings": 548,
                 "successful_landings": 534,
                 "failed_landings": 15,
@@ -4803,7 +4885,7 @@
               "consecutive_successful_launches": 104,
               "successful_launches": 604,
               "failed_launches": 15,
-              "pending_launches": 115,
+              "pending_launches": 116,
               "consecutive_successful_landings": 103,
               "successful_landings": 564,
               "failed_landings": 27,
@@ -5000,7 +5082,7 @@
             "consecutive_successful_launches": 228,
             "successful_launches": 525,
             "failed_launches": 1,
-            "pending_launches": 97,
+            "pending_launches": 98,
             "attempted_landings": 517,
             "successful_landings": 512,
             "failed_landings": 5,
@@ -6009,8 +6091,8 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7377,
-              "successful_launches": 6829,
+              "total_attempted_launches": 7378,
+              "successful_launches": 6830,
               "failed_launches": 548,
               "total_attempted_landings": 1240,
               "successful_landings": 1194,
@@ -6206,14 +6288,14 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7195,
+        "orbital_launch_attempt_count": 7189,
         "location_launch_attempt_count": 1080,
         "pad_launch_attempt_count": 1,
         "agency_launch_attempt_count": 625,
-        "orbital_launch_attempt_count_year": 9,
-        "location_launch_attempt_count_year": 2,
+        "orbital_launch_attempt_count_year": 10,
+        "location_launch_attempt_count_year": 3,
         "pad_launch_attempt_count_year": 1,
-        "agency_launch_attempt_count_year": 3,
+        "agency_launch_attempt_count_year": 4,
         "flightclub_url": null,
         "updates": [
           {
@@ -6350,7 +6432,7 @@
           "consecutive_successful_launches": 60,
           "successful_launches": 325,
           "failed_launches": 11,
-          "pending_launches": 5,
+          "pending_launches": 6,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -6450,7 +6532,7 @@
                 "consecutive_successful_launches": 126,
                 "successful_launches": 999,
                 "failed_launches": 31,
-                "pending_launches": 6,
+                "pending_launches": 7,
                 "attempted_landings": 0,
                 "successful_landings": 0,
                 "failed_landings": 0,
@@ -6585,7 +6667,7 @@
                 "consecutive_successful_launches": 126,
                 "successful_launches": 190,
                 "failed_launches": 7,
-                "pending_launches": 6,
+                "pending_launches": 7,
                 "attempted_landings": 0,
                 "successful_landings": 0,
                 "failed_landings": 0,
@@ -7647,7 +7729,7 @@
               "consecutive_successful_launches": 60,
               "successful_launches": 325,
               "failed_launches": 11,
-              "pending_launches": 5,
+              "pending_launches": 6,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -7740,8 +7822,8 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7377,
-              "successful_launches": 6829,
+              "total_attempted_launches": 7378,
+              "successful_launches": 6830,
               "failed_launches": 548,
               "total_attempted_landings": 1240,
               "successful_landings": 1194,
@@ -7926,11 +8008,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7246,
+        "orbital_launch_attempt_count": 7241,
         "location_launch_attempt_count": 1563,
         "pad_launch_attempt_count": 428,
         "agency_launch_attempt_count": 340,
-        "orbital_launch_attempt_count_year": 60,
+        "orbital_launch_attempt_count_year": 62,
         "location_launch_attempt_count_year": 4,
         "pad_launch_attempt_count_year": 2,
         "agency_launch_attempt_count_year": 2,
