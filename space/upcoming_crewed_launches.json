@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-12-20T03:55:51Z",
+  "fetched_at": "2025-12-21T04:08:34Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=true&format=json&mode=detailed&limit=10",
   "payload": {
     "count": 4,
@@ -14,18 +14,18 @@
         "slug": "new-shepard-ns-37",
         "launch_designator": null,
         "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
+          "id": 3,
+          "name": "Launch Successful",
+          "abbrev": "Success",
+          "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2025-12-19T22:47:11Z",
+        "last_updated": "2025-12-20T17:34:09Z",
         "net": "2025-12-20T14:15:00Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2025-12-20T22:30:00Z",
         "window_start": "2025-12-20T14:00:00Z",
@@ -121,18 +121,18 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 38,
-          "consecutive_successful_launches": 15,
-          "successful_launches": 37,
+          "total_launch_count": 39,
+          "consecutive_successful_launches": 16,
+          "successful_launches": 38,
           "failed_launches": 1,
-          "pending_launches": 5,
-          "consecutive_successful_landings": 9,
-          "successful_landings": 35,
+          "pending_launches": 4,
+          "consecutive_successful_landings": 10,
+          "successful_landings": 36,
           "failed_landings": 3,
-          "attempted_landings": 38,
-          "successful_landings_spacecraft": 36,
+          "attempted_landings": 39,
+          "successful_landings_spacecraft": 37,
           "failed_landings_spacecraft": 0,
-          "attempted_landings_spacecraft": 36,
+          "attempted_landings_spacecraft": 37,
           "successful_landings_payload": 0,
           "failed_landings_payload": 0,
           "attempted_landings_payload": 0,
@@ -224,18 +224,18 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 38,
-              "consecutive_successful_launches": 15,
-              "successful_launches": 37,
+              "total_launch_count": 39,
+              "consecutive_successful_launches": 16,
+              "successful_launches": 38,
               "failed_launches": 1,
-              "pending_launches": 5,
-              "consecutive_successful_landings": 9,
-              "successful_landings": 35,
+              "pending_launches": 4,
+              "consecutive_successful_landings": 10,
+              "successful_landings": 36,
               "failed_landings": 3,
-              "attempted_landings": 38,
-              "successful_landings_spacecraft": 36,
+              "attempted_landings": 39,
+              "successful_landings_spacecraft": 37,
               "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 36,
+              "attempted_landings_spacecraft": 37,
               "successful_landings_payload": 0,
               "failed_landings_payload": 0,
               "attempted_landings_payload": 0,
@@ -277,15 +277,15 @@
             "sso_capacity": null,
             "to_thrust": 490.0,
             "apogee": 100.0,
-            "total_launch_count": 36,
-            "consecutive_successful_launches": 13,
-            "successful_launches": 35,
+            "total_launch_count": 37,
+            "consecutive_successful_launches": 14,
+            "successful_launches": 36,
             "failed_launches": 1,
-            "pending_launches": 1,
-            "attempted_landings": 36,
-            "successful_landings": 34,
+            "pending_launches": 0,
+            "attempted_landings": 37,
+            "successful_landings": 35,
             "failed_landings": 2,
-            "consecutive_successful_landings": 13,
+            "consecutive_successful_landings": 14,
             "fastest_turnaround": "P20DT40M27S"
           },
           "launcher_stage": [
@@ -321,10 +321,10 @@
                   "variants": []
                 },
                 "details": "5th New Shepard booster.",
-                "successful_landings": 5,
-                "attempted_landings": 5,
-                "flights": 5,
-                "last_launch_date": "2025-09-18T13:00:00Z",
+                "successful_landings": 6,
+                "attempted_landings": 6,
+                "flights": 6,
+                "last_launch_date": "2025-12-20T14:15:00Z",
                 "first_launch_date": "2024-10-23T15:27:00Z",
                 "fastest_turnaround": "P68DT21H30M"
               },
@@ -334,8 +334,8 @@
                 "id": 1719,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1719/?format=json",
                 "attempt": true,
-                "success": null,
-                "description": "The New Shepard booster NS-5 will land back on the landing pad.",
+                "success": true,
+                "description": "The New Shepard booster NS-5 has landed back on the landing pad.",
                 "downrange_distance": 3.2,
                 "landing_location": {
                   "id": 11,
@@ -377,8 +377,8 @@
                     "longitude": -104.757152,
                     "latitude": 31.422927,
                     "timezone_name": "America/Chicago",
-                    "total_launch_count": 36,
-                    "total_landing_count": 36
+                    "total_launch_count": 37,
+                    "total_landing_count": 37
                   },
                   "longitude": -104.762793,
                   "latitude": 31.451665,
@@ -397,8 +397,8 @@
                     "single_use": true,
                     "variants": []
                   },
-                  "successful_landings": 31,
-                  "attempted_landings": 33,
+                  "successful_landings": 32,
+                  "attempted_landings": 34,
                   "failed_landings": 2,
                   "celestial_body": {
                     "response_mode": "normal",
@@ -451,7 +451,7 @@
               "id": 898,
               "url": "https://ll.thespacedevs.com/2.3.0/spacecraft_flights/898/?format=json",
               "destination": "Suborbital",
-              "mission_end": null,
+              "mission_end": "2025-12-20T14:25:26Z",
               "spacecraft": {
                 "response_mode": "normal",
                 "id": 599,
@@ -475,10 +475,10 @@
                   "variants": []
                 },
                 "in_space": false,
-                "time_in_space": "PT30M35S",
+                "time_in_space": "PT41M1S",
                 "time_docked": "P0D",
-                "flights_count": 3,
-                "mission_ends_count": 3,
+                "flights_count": 4,
+                "mission_ends_count": 4,
                 "status": {
                   "id": 1,
                   "name": "Active"
@@ -648,11 +648,11 @@
                       "parent": null,
                       "maiden_flight": "2015-04-29",
                       "spacecraft_flown": 4,
-                      "total_launch_count": 36,
-                      "successful_launches": 35,
+                      "total_launch_count": 37,
+                      "successful_launches": 36,
                       "failed_launches": 1,
-                      "attempted_landings": 36,
-                      "successful_landings": 36,
+                      "attempted_landings": 37,
+                      "successful_landings": 37,
                       "failed_landings": 0
                     }
                   ],
@@ -686,11 +686,11 @@
                   "wiki_link": "",
                   "info_link": "",
                   "spacecraft_flown": 3,
-                  "total_launch_count": 30,
-                  "successful_launches": 29,
+                  "total_launch_count": 31,
+                  "successful_launches": 30,
                   "failed_launches": 1,
-                  "attempted_landings": 30,
-                  "successful_landings": 30,
+                  "attempted_landings": 31,
+                  "successful_landings": 31,
                   "failed_landings": 0,
                   "fastest_turnaround": "P59DT1M42S"
                 },
@@ -700,8 +700,8 @@
                 "id": 1720,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1720/?format=json",
                 "attempt": true,
-                "success": null,
-                "description": "The RSS capsule RSS Kármán Line will land at Blue Origin's Corn Ranch facility.",
+                "success": true,
+                "description": "The RSS capsule RSS Kármán Line has landed at Blue Origin's Corn Ranch facility.",
                 "downrange_distance": null,
                 "landing_location": {
                   "id": 28,
@@ -743,8 +743,8 @@
                     "longitude": -104.757152,
                     "latitude": 31.422927,
                     "timezone_name": "America/Chicago",
-                    "total_launch_count": 36,
-                    "total_landing_count": 36
+                    "total_launch_count": 37,
+                    "total_landing_count": 37
                   },
                   "longitude": null,
                   "latitude": null,
@@ -763,8 +763,8 @@
                     "single_use": true,
                     "variants": []
                   },
-                  "successful_landings": 39,
-                  "attempted_landings": 39,
+                  "successful_landings": 40,
+                  "attempted_landings": 40,
                   "failed_landings": 0,
                   "celestial_body": {
                     "response_mode": "normal",
@@ -805,7 +805,7 @@
                   "description": "Unpowered landing using parachute(s)."
                 }
               },
-              "duration": null,
+              "duration": "PT10M26S",
               "turn_around_time": "P173DT23H24M50S",
               "response_mode": "detailed",
               "launch_crew": [
@@ -856,7 +856,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M26S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -873,8 +873,8 @@
                     ],
                     "bio": "Entrepreneur, investor, and mining engineer.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-12-20T14:15:00Z",
+                    "first_flight": "2025-12-20T14:15:00Z",
                     "social_media_links": []
                   }
                 },
@@ -925,7 +925,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M26S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -950,8 +950,8 @@
                     ],
                     "bio": "German-American aerospace engineer whose career has been dedicated to advancing reusable spacecraft and launch vehicles, most notably as an early team member at SpaceX, where he spent two decades.",
                     "wiki": "https://en.wikipedia.org/wiki/Hans_Koenigsmann",
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-12-20T14:15:00Z",
+                    "first_flight": "2025-12-20T14:15:00Z",
                     "social_media_links": [
                       {
                         "id": 351,
@@ -1075,7 +1075,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M26S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1092,8 +1092,8 @@
                     ],
                     "bio": "Space nerd with a degree in computer science from Tulane University.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-12-20T14:15:00Z",
+                    "first_flight": "2025-12-20T14:15:00Z",
                     "social_media_links": []
                   }
                 },
@@ -1144,7 +1144,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M26S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1161,8 +1161,8 @@
                     ],
                     "bio": "Retired physicist and quantitative investor.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-12-20T14:15:00Z",
+                    "first_flight": "2025-12-20T14:15:00Z",
                     "social_media_links": [
                       {
                         "id": 350,
@@ -1238,7 +1238,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M26S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1255,8 +1255,8 @@
                     ],
                     "bio": "Aerospace and mechatronics engineer. In 2018, she was involved in a mountain biking accident that resulted in a spinal cord injury impacting her ability to walk, but continues to pursue sporting activities outside of work, including wheelchair tennis. She flew aboard a Zero-G research flight in 2022 and completed an analog astronaut mission.",
                     "wiki": "https://en.wikipedia.org/wiki/Michaela_Benthaus",
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-12-20T14:15:00Z",
+                    "first_flight": "2025-12-20T14:15:00Z",
                     "social_media_links": [
                       {
                         "id": 345,
@@ -1414,7 +1414,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M26S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1431,8 +1431,8 @@
                     ],
                     "bio": "Business executive and entrepreneur.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-12-20T14:15:00Z",
+                    "first_flight": "2025-12-20T14:15:00Z",
                     "social_media_links": [
                       {
                         "id": 354,
@@ -1511,7 +1511,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M26S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1528,8 +1528,8 @@
                     ],
                     "bio": "Entrepreneur, investor, and mining engineer.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-12-20T14:15:00Z",
+                    "first_flight": "2025-12-20T14:15:00Z",
                     "social_media_links": []
                   }
                 },
@@ -1580,7 +1580,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M26S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1605,8 +1605,8 @@
                     ],
                     "bio": "German-American aerospace engineer whose career has been dedicated to advancing reusable spacecraft and launch vehicles, most notably as an early team member at SpaceX, where he spent two decades.",
                     "wiki": "https://en.wikipedia.org/wiki/Hans_Koenigsmann",
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-12-20T14:15:00Z",
+                    "first_flight": "2025-12-20T14:15:00Z",
                     "social_media_links": [
                       {
                         "id": 351,
@@ -1730,7 +1730,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M26S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1747,8 +1747,8 @@
                     ],
                     "bio": "Space nerd with a degree in computer science from Tulane University.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-12-20T14:15:00Z",
+                    "first_flight": "2025-12-20T14:15:00Z",
                     "social_media_links": []
                   }
                 },
@@ -1799,7 +1799,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M26S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1816,8 +1816,8 @@
                     ],
                     "bio": "Retired physicist and quantitative investor.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-12-20T14:15:00Z",
+                    "first_flight": "2025-12-20T14:15:00Z",
                     "social_media_links": [
                       {
                         "id": 350,
@@ -1893,7 +1893,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M26S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1910,8 +1910,8 @@
                     ],
                     "bio": "Aerospace and mechatronics engineer. In 2018, she was involved in a mountain biking accident that resulted in a spinal cord injury impacting her ability to walk, but continues to pursue sporting activities outside of work, including wheelchair tennis. She flew aboard a Zero-G research flight in 2022 and completed an analog astronaut mission.",
                     "wiki": "https://en.wikipedia.org/wiki/Michaela_Benthaus",
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-12-20T14:15:00Z",
+                    "first_flight": "2025-12-20T14:15:00Z",
                     "social_media_links": [
                       {
                         "id": 345,
@@ -2069,7 +2069,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M26S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -2086,8 +2086,8 @@
                     ],
                     "bio": "Business executive and entrepreneur.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2025-12-20T14:15:00Z",
+                    "first_flight": "2025-12-20T14:15:00Z",
                     "social_media_links": [
                       {
                         "id": 354,
@@ -2211,18 +2211,18 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 38,
-              "consecutive_successful_launches": 15,
-              "successful_launches": 37,
+              "total_launch_count": 39,
+              "consecutive_successful_launches": 16,
+              "successful_launches": 38,
               "failed_launches": 1,
-              "pending_launches": 5,
-              "consecutive_successful_landings": 9,
-              "successful_landings": 35,
+              "pending_launches": 4,
+              "consecutive_successful_landings": 10,
+              "successful_landings": 36,
               "failed_landings": 3,
-              "attempted_landings": 38,
-              "successful_landings_spacecraft": 36,
+              "attempted_landings": 39,
+              "successful_landings_spacecraft": 37,
               "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 36,
+              "attempted_landings_spacecraft": 37,
               "successful_landings_payload": 0,
               "failed_landings_payload": 0,
               "attempted_landings_payload": 0,
@@ -2330,7 +2330,7 @@
             "nationality_name_composed": "Americano"
           },
           "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_90_20200803143233.jpg",
-          "total_launch_count": 36,
+          "total_launch_count": 37,
           "orbital_launch_attempt_count": 0,
           "fastest_turnaround": "P20DT40M27S",
           "location": {
@@ -2368,11 +2368,11 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7378,
-              "successful_launches": 6830,
+              "total_attempted_launches": 7380,
+              "successful_launches": 6832,
               "failed_launches": 548,
-              "total_attempted_landings": 1240,
-              "successful_landings": 1194,
+              "total_attempted_landings": 1242,
+              "successful_landings": 1196,
               "failed_landings": 46
             },
             "active": true,
@@ -2404,8 +2404,8 @@
             "longitude": -104.757152,
             "latitude": 31.422927,
             "timezone_name": "America/Chicago",
-            "total_launch_count": 36,
-            "total_landing_count": 36
+            "total_launch_count": 37,
+            "total_landing_count": 37
           }
         },
         "webcast_live": false,
@@ -2420,6 +2420,22 @@
         "agency_launch_attempt_count_year": 11,
         "flightclub_url": null,
         "updates": [
+          {
+            "id": 13422,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Mission complete.",
+            "info_url": "https://www.youtube.com/watch?v=66VP21OjegA",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-20T14:38:00Z"
+          },
+          {
+            "id": 13421,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Liftoff.",
+            "info_url": "https://www.youtube.com/watch?v=66VP21OjegA",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-20T14:19:00Z"
+          },
           {
             "id": 13411,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -2510,7 +2526,29 @@
           }
         ],
         "info_urls": [],
-        "vid_urls": [],
+        "vid_urls": [
+          {
+            "priority": 10,
+            "source": "youtube.com",
+            "publisher": "Blue Origin",
+            "title": "Replay: New Shepard Mission NS-37 Webcast",
+            "description": "On December 20, Blue Origin successfully completed its 37th New Shepard mission and 16th human flight from Launch Site One in West Texas. The crew included: Michaela Benthaus, Joey Hyde, Hans Koenigsmann, Neal Milch, Adonis Pouroulis, and Jason Stansell. To date, New Shepard has flown 92 people (86 individuals) into space. \n\nLearn more: https://www.blueorigin.com/news/new-shepard-ns-37-mission",
+            "feature_image": "https://i.ytimg.com/vi/66VP21OjegA/maxresdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=66VP21OjegA",
+            "type": {
+              "id": 1,
+              "name": "Official Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2025-12-20T13:36:18Z",
+            "end_time": "2025-12-20T14:51:22Z",
+            "live": false
+          }
+        ],
         "timeline": [],
         "pad_turnaround": "P73DT34M33S",
         "mission_patches": [
@@ -4175,11 +4213,11 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7378,
-              "successful_launches": 6830,
+              "total_attempted_launches": 7380,
+              "successful_launches": 6832,
               "failed_launches": 548,
-              "total_attempted_landings": 1240,
-              "successful_landings": 1194,
+              "total_attempted_landings": 1242,
+              "successful_landings": 1196,
               "failed_landings": 46
             },
             "active": true,
@@ -4262,7 +4300,7 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7190,
+        "orbital_launch_attempt_count": 7187,
         "location_launch_attempt_count": 280,
         "pad_launch_attempt_count": 59,
         "agency_launch_attempt_count": 142,
@@ -5663,6 +5701,193 @@
               "response_mode": "detailed",
               "launch_crew": [
                 {
+                  "id": 5201,
+                  "role": {
+                    "id": 24,
+                    "role": "Spacecraft Commander",
+                    "priority": 1
+                  },
+                  "astronaut": {
+                    "id": 573,
+                    "url": "https://ll.thespacedevs.com/2.3.0/astronauts/573/?format=json",
+                    "name": "Jessica Meir",
+                    "status": {
+                      "id": 1,
+                      "name": "Active"
+                    },
+                    "agency": {
+                      "response_mode": "list",
+                      "id": 44,
+                      "url": "https://ll.thespacedevs.com/2.3.0/agencies/44/?format=json",
+                      "name": "National Aeronautics and Space Administration",
+                      "abbrev": "NASA",
+                      "type": {
+                        "id": 1,
+                        "name": "Government"
+                      }
+                    },
+                    "image": {
+                      "id": 842,
+                      "name": "[AUTO] Jessica Meir - image",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/jessica_meir_image_20200417064900.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305190924.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "response_mode": "list",
+                    "type": {
+                      "id": 2,
+                      "name": "Government"
+                    },
+                    "in_space": false,
+                    "time_in_space": "P204DT15H19M1S",
+                    "eva_time": "PT21H44M",
+                    "age": 48,
+                    "date_of_birth": "1977-07-01",
+                    "date_of_death": null,
+                    "nationality": [
+                      {
+                        "id": 2,
+                        "name": "United States of America",
+                        "alpha_2_code": "US",
+                        "alpha_3_code": "USA",
+                        "nationality_name": "American",
+                        "nationality_name_composed": "Americano"
+                      }
+                    ],
+                    "bio": "Jessica Ulrika Meir is Assistant Professor of Anesthesia at Harvard Medical School, Massachusetts General Hospital, Boston, following postdoctoral research in comparative physiology at the University of British Columbia. She has studied the diving physiology and behavior of emperor penguins in Antarctica, and the physiology of bar-headed geese, which are able to migrate over the Himalayas. In 2000, Meir graduated with a Master of Space Studies from the International Space University in Strasbourg, France. In September 2002, Meir served as an aquanaut on the NASA Extreme Environment Mission Operations 4 (NEEMO 4) crew. In June 2013 she was named an astronaut candidate by NASA, becoming one of the eight members of NASA Astronaut Group 21. She is from Caribou, Maine.",
+                    "wiki": "https://en.wikipedia.org/wiki/Jessica_Meir",
+                    "last_flight": "2019-09-25T13:57:42Z",
+                    "first_flight": "2019-09-25T13:57:42Z",
+                    "social_media_links": [
+                      {
+                        "id": 25,
+                        "social_media": {
+                          "id": 1,
+                          "name": "X",
+                          "url": "https://x.com",
+                          "logo": {
+                            "id": 2320,
+                            "name": "X logo",
+                            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_20250211191027.jpg",
+                            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_thumbnail_20250211191027.jpeg",
+                            "credit": "X",
+                            "license": {
+                              "id": 1,
+                              "name": "Unknown",
+                              "priority": 9,
+                              "link": null
+                            },
+                            "single_use": true,
+                            "variants": []
+                          }
+                        },
+                        "url": "https://twitter.com/Astro_Jessica"
+                      },
+                      {
+                        "id": 26,
+                        "social_media": {
+                          "id": 2,
+                          "name": "Instagram",
+                          "url": "https://instagram.com",
+                          "logo": {
+                            "id": 2322,
+                            "name": "Instagram logo",
+                            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_20250211191139.png",
+                            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_thumbnail_20250211191139.png",
+                            "credit": "Instagram",
+                            "license": {
+                              "id": 1,
+                              "name": "Unknown",
+                              "priority": 9,
+                              "link": null
+                            },
+                            "single_use": true,
+                            "variants": []
+                          }
+                        },
+                        "url": "https://www.instagram.com/astro_jessica/"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": 5203,
+                  "role": {
+                    "id": 2,
+                    "role": "Pilot",
+                    "priority": 2
+                  },
+                  "astronaut": {
+                    "id": 712,
+                    "url": "https://ll.thespacedevs.com/2.3.0/astronauts/712/?format=json",
+                    "name": "Jack Hathaway",
+                    "status": {
+                      "id": 3,
+                      "name": "In-Training"
+                    },
+                    "agency": {
+                      "response_mode": "list",
+                      "id": 44,
+                      "url": "https://ll.thespacedevs.com/2.3.0/agencies/44/?format=json",
+                      "name": "National Aeronautics and Space Administration",
+                      "abbrev": "NASA",
+                      "type": {
+                        "id": 1,
+                        "name": "Government"
+                      }
+                    },
+                    "image": {
+                      "id": 621,
+                      "name": "[AUTO] Jack Hathaway - image",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/jack_hathaway_image_20211206185407.jpg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305190331.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "response_mode": "list",
+                    "type": {
+                      "id": 2,
+                      "name": "Government"
+                    },
+                    "in_space": false,
+                    "time_in_space": "P0D",
+                    "eva_time": "P0D",
+                    "age": 43,
+                    "date_of_birth": "1982-01-01",
+                    "date_of_death": null,
+                    "nationality": [
+                      {
+                        "id": 2,
+                        "name": "United States of America",
+                        "alpha_2_code": "US",
+                        "alpha_3_code": "USA",
+                        "nationality_name": "American",
+                        "nationality_name_composed": "Americano"
+                      }
+                    ],
+                    "bio": "Jack Hathaway is a US Navy commander from Connecticut. He earned bachelors’ degrees in physics and history from the U.S. Naval Academy and completed graduate studies at Cranfield University in England and the U.S. Naval War College. A distinguished naval aviator, Hathaway flew and deployed with Navy’s Strike Fighter Squadron 14 aboard the USS Nimitz and Strike Fighter Squadron 136 aboard the USS Truman. He graduated from Empire Test Pilots’ School, supported the Joint Chiefs of Staff at the Pentagon, and was most recently assigned as the prospective executive officer for Strike Fighter Squadron 81. He has more than 2,500 flight hours in 30 types of aircraft, more than 500 carrier arrested landings, and flew 39 combat missions.\r\n\r\nExact date of birth unknown.",
+                    "wiki": "https://en.wikipedia.org/wiki/Jack_Hathaway",
+                    "last_flight": null,
+                    "first_flight": null,
+                    "social_media_links": []
+                  }
+                },
+                {
                   "id": 5194,
                   "role": {
                     "id": 3,
@@ -5828,6 +6053,193 @@
               ],
               "onboard_crew": [],
               "landing_crew": [
+                {
+                  "id": 5202,
+                  "role": {
+                    "id": 24,
+                    "role": "Spacecraft Commander",
+                    "priority": 1
+                  },
+                  "astronaut": {
+                    "id": 573,
+                    "url": "https://ll.thespacedevs.com/2.3.0/astronauts/573/?format=json",
+                    "name": "Jessica Meir",
+                    "status": {
+                      "id": 1,
+                      "name": "Active"
+                    },
+                    "agency": {
+                      "response_mode": "list",
+                      "id": 44,
+                      "url": "https://ll.thespacedevs.com/2.3.0/agencies/44/?format=json",
+                      "name": "National Aeronautics and Space Administration",
+                      "abbrev": "NASA",
+                      "type": {
+                        "id": 1,
+                        "name": "Government"
+                      }
+                    },
+                    "image": {
+                      "id": 842,
+                      "name": "[AUTO] Jessica Meir - image",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/jessica_meir_image_20200417064900.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305190924.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "response_mode": "list",
+                    "type": {
+                      "id": 2,
+                      "name": "Government"
+                    },
+                    "in_space": false,
+                    "time_in_space": "P204DT15H19M1S",
+                    "eva_time": "PT21H44M",
+                    "age": 48,
+                    "date_of_birth": "1977-07-01",
+                    "date_of_death": null,
+                    "nationality": [
+                      {
+                        "id": 2,
+                        "name": "United States of America",
+                        "alpha_2_code": "US",
+                        "alpha_3_code": "USA",
+                        "nationality_name": "American",
+                        "nationality_name_composed": "Americano"
+                      }
+                    ],
+                    "bio": "Jessica Ulrika Meir is Assistant Professor of Anesthesia at Harvard Medical School, Massachusetts General Hospital, Boston, following postdoctoral research in comparative physiology at the University of British Columbia. She has studied the diving physiology and behavior of emperor penguins in Antarctica, and the physiology of bar-headed geese, which are able to migrate over the Himalayas. In 2000, Meir graduated with a Master of Space Studies from the International Space University in Strasbourg, France. In September 2002, Meir served as an aquanaut on the NASA Extreme Environment Mission Operations 4 (NEEMO 4) crew. In June 2013 she was named an astronaut candidate by NASA, becoming one of the eight members of NASA Astronaut Group 21. She is from Caribou, Maine.",
+                    "wiki": "https://en.wikipedia.org/wiki/Jessica_Meir",
+                    "last_flight": "2019-09-25T13:57:42Z",
+                    "first_flight": "2019-09-25T13:57:42Z",
+                    "social_media_links": [
+                      {
+                        "id": 25,
+                        "social_media": {
+                          "id": 1,
+                          "name": "X",
+                          "url": "https://x.com",
+                          "logo": {
+                            "id": 2320,
+                            "name": "X logo",
+                            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_20250211191027.jpg",
+                            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_thumbnail_20250211191027.jpeg",
+                            "credit": "X",
+                            "license": {
+                              "id": 1,
+                              "name": "Unknown",
+                              "priority": 9,
+                              "link": null
+                            },
+                            "single_use": true,
+                            "variants": []
+                          }
+                        },
+                        "url": "https://twitter.com/Astro_Jessica"
+                      },
+                      {
+                        "id": 26,
+                        "social_media": {
+                          "id": 2,
+                          "name": "Instagram",
+                          "url": "https://instagram.com",
+                          "logo": {
+                            "id": 2322,
+                            "name": "Instagram logo",
+                            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_20250211191139.png",
+                            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_thumbnail_20250211191139.png",
+                            "credit": "Instagram",
+                            "license": {
+                              "id": 1,
+                              "name": "Unknown",
+                              "priority": 9,
+                              "link": null
+                            },
+                            "single_use": true,
+                            "variants": []
+                          }
+                        },
+                        "url": "https://www.instagram.com/astro_jessica/"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": 5204,
+                  "role": {
+                    "id": 2,
+                    "role": "Pilot",
+                    "priority": 2
+                  },
+                  "astronaut": {
+                    "id": 712,
+                    "url": "https://ll.thespacedevs.com/2.3.0/astronauts/712/?format=json",
+                    "name": "Jack Hathaway",
+                    "status": {
+                      "id": 3,
+                      "name": "In-Training"
+                    },
+                    "agency": {
+                      "response_mode": "list",
+                      "id": 44,
+                      "url": "https://ll.thespacedevs.com/2.3.0/agencies/44/?format=json",
+                      "name": "National Aeronautics and Space Administration",
+                      "abbrev": "NASA",
+                      "type": {
+                        "id": 1,
+                        "name": "Government"
+                      }
+                    },
+                    "image": {
+                      "id": 621,
+                      "name": "[AUTO] Jack Hathaway - image",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/jack_hathaway_image_20211206185407.jpg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305190331.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "response_mode": "list",
+                    "type": {
+                      "id": 2,
+                      "name": "Government"
+                    },
+                    "in_space": false,
+                    "time_in_space": "P0D",
+                    "eva_time": "P0D",
+                    "age": 43,
+                    "date_of_birth": "1982-01-01",
+                    "date_of_death": null,
+                    "nationality": [
+                      {
+                        "id": 2,
+                        "name": "United States of America",
+                        "alpha_2_code": "US",
+                        "alpha_3_code": "USA",
+                        "nationality_name": "American",
+                        "nationality_name_composed": "Americano"
+                      }
+                    ],
+                    "bio": "Jack Hathaway is a US Navy commander from Connecticut. He earned bachelors’ degrees in physics and history from the U.S. Naval Academy and completed graduate studies at Cranfield University in England and the U.S. Naval War College. A distinguished naval aviator, Hathaway flew and deployed with Navy’s Strike Fighter Squadron 14 aboard the USS Nimitz and Strike Fighter Squadron 136 aboard the USS Truman. He graduated from Empire Test Pilots’ School, supported the Joint Chiefs of Staff at the Pentagon, and was most recently assigned as the prospective executive officer for Strike Fighter Squadron 81. He has more than 2,500 flight hours in 30 types of aircraft, more than 500 carrier arrested landings, and flew 39 combat missions.\r\n\r\nExact date of birth unknown.",
+                    "wiki": "https://en.wikipedia.org/wiki/Jack_Hathaway",
+                    "last_flight": null,
+                    "first_flight": null,
+                    "social_media_links": []
+                  }
+                },
                 {
                   "id": 5195,
                   "role": {
@@ -6077,11 +6489,11 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7378,
-              "successful_launches": 6830,
+              "total_attempted_launches": 7380,
+              "successful_launches": 6832,
               "failed_launches": 548,
-              "total_attempted_landings": 1240,
-              "successful_landings": 1194,
+              "total_attempted_landings": 1242,
+              "successful_landings": 1196,
               "failed_landings": 46
             },
             "active": true,
@@ -6274,7 +6686,7 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7191,
+        "orbital_launch_attempt_count": 7188,
         "location_launch_attempt_count": 1080,
         "pad_launch_attempt_count": 1,
         "agency_launch_attempt_count": 625,
@@ -6518,7 +6930,7 @@
                 "consecutive_successful_launches": 126,
                 "successful_launches": 999,
                 "failed_launches": 31,
-                "pending_launches": 7,
+                "pending_launches": 5,
                 "attempted_landings": 0,
                 "successful_landings": 0,
                 "failed_landings": 0,
@@ -6653,7 +7065,7 @@
                 "consecutive_successful_launches": 126,
                 "successful_launches": 190,
                 "failed_launches": 7,
-                "pending_launches": 7,
+                "pending_launches": 5,
                 "attempted_landings": 0,
                 "successful_landings": 0,
                 "failed_landings": 0,
@@ -7808,11 +8220,11 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7378,
-              "successful_launches": 6830,
+              "total_attempted_launches": 7380,
+              "successful_launches": 6832,
               "failed_launches": 548,
-              "total_attempted_landings": 1240,
-              "successful_landings": 1194,
+              "total_attempted_landings": 1242,
+              "successful_landings": 1196,
               "failed_landings": 46
             },
             "active": true,
@@ -7994,14 +8406,14 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7240,
-        "location_launch_attempt_count": 1563,
-        "pad_launch_attempt_count": 428,
-        "agency_launch_attempt_count": 340,
-        "orbital_launch_attempt_count_year": 63,
-        "location_launch_attempt_count_year": 4,
-        "pad_launch_attempt_count_year": 2,
-        "agency_launch_attempt_count_year": 2,
+        "orbital_launch_attempt_count": 7242,
+        "location_launch_attempt_count": 1565,
+        "pad_launch_attempt_count": 430,
+        "agency_launch_attempt_count": 342,
+        "orbital_launch_attempt_count_year": 65,
+        "location_launch_attempt_count_year": 6,
+        "pad_launch_attempt_count_year": 4,
+        "agency_launch_attempt_count_year": 4,
         "flightclub_url": null,
         "updates": [
           {
@@ -8024,7 +8436,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P114DT2H44M",
+        "pad_turnaround": "P27DT13H3M",
         "mission_patches": []
       }
     ]
