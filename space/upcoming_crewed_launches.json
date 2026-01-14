@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-01-13T04:10:44Z",
+  "fetched_at": "2026-01-14T04:17:29Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=true&format=json&mode=detailed&limit=10",
   "payload": {
     "count": 3,
@@ -19,7 +19,7 @@
           "abbrev": "TBC",
           "description": "Awaiting official confirmation - current date is known with some certainty."
         },
-        "last_updated": "2026-01-10T00:21:26Z",
+        "last_updated": "2026-01-13T09:03:07Z",
         "net": "2026-02-07T02:41:00Z",
         "net_precision": {
           "id": 1,
@@ -1647,8 +1647,8 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7397,
-              "successful_launches": 6846,
+              "total_attempted_launches": 7399,
+              "successful_launches": 6848,
               "failed_launches": 551,
               "total_attempted_landings": 1248,
               "successful_landings": 1201,
@@ -1734,15 +1734,15 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7198,
+        "orbital_launch_attempt_count": 7201,
         "location_launch_attempt_count": 280,
         "pad_launch_attempt_count": 59,
         "agency_launch_attempt_count": 142,
-        "orbital_launch_attempt_count_year": 25,
+        "orbital_launch_attempt_count_year": 28,
         "location_launch_attempt_count_year": 1,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 1,
-        "flightclub_url": null,
+        "flightclub_url": "https://flightclub.io/result?llId=41699701-2ef4-4b0c-ac9d-6757820cde87",
         "updates": [
           {
             "id": 13578,
@@ -1847,7 +1847,7 @@
           "abbrev": "TBD",
           "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
         },
-        "last_updated": "2026-01-08T18:01:56Z",
+        "last_updated": "2026-01-13T06:00:26Z",
         "net": "2026-02-15T00:00:00Z",
         "net_precision": {
           "id": 5,
@@ -2272,7 +2272,7 @@
                 "consecutive_successful_launches": 233,
                 "successful_launches": 584,
                 "failed_launches": 4,
-                "pending_launches": 104,
+                "pending_launches": 105,
                 "attempted_landings": 553,
                 "successful_landings": 539,
                 "failed_landings": 15,
@@ -2556,7 +2556,7 @@
             "consecutive_successful_launches": 233,
             "successful_launches": 530,
             "failed_launches": 1,
-            "pending_launches": 104,
+            "pending_launches": 105,
             "attempted_landings": 522,
             "successful_landings": 517,
             "failed_landings": 5,
@@ -3866,18 +3866,106 @@
           "vid_urls": []
         },
         "pad": {
-          "id": 72,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/72/?format=json",
+          "id": 80,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/80/?format=json",
           "active": true,
-          "agencies": [],
-          "name": "Unknown Pad",
-          "image": null,
-          "description": null,
+          "agencies": [
+            {
+              "response_mode": "normal",
+              "id": 121,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/121/?format=json",
+              "name": "SpaceX",
+              "abbrev": "SpX",
+              "type": {
+                "id": 3,
+                "name": "Commercial"
+              },
+              "featured": true,
+              "country": [
+                {
+                  "id": 2,
+                  "name": "United States of America",
+                  "alpha_2_code": "US",
+                  "alpha_3_code": "USA",
+                  "nationality_name": "American",
+                  "nationality_name_composed": "Americano"
+                }
+              ],
+              "description": "Space Exploration Technologies Corp., known as SpaceX, is an American aerospace manufacturer and space transport services company headquartered in Hawthorne, California. It was founded in 2002 by entrepreneur Elon Musk with the goal of reducing space transportation costs and enabling the colonization of Mars. SpaceX operates from many pads, on the East Coast of the US they operate from SLC-40 at Cape Canaveral Space Force Station and historic LC-39A at Kennedy Space Center. They also operate from SLC-4E at Vandenberg Space Force Base, California, usually for polar launches. Another launch site is being developed at Boca Chica, Texas.",
+              "administrator": "CEO: Elon Musk",
+              "founding_year": 2002,
+              "launchers": "Falcon | Starship",
+              "spacecraft": "Dragon",
+              "parent": null,
+              "image": {
+                "id": 29,
+                "name": "[AUTO] SpaceX - image",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spacex_image_20190207032501.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184704.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "logo": {
+                "id": 186,
+                "name": "[AUTO] SpaceX - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spacex_logo_20220826094919.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185138.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 94,
+                "name": "[AUTO] SpaceX - social_logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spacex_nation_20230531064544.jpg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184848.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              }
+            }
+          ],
+          "name": "Space Launch Complex 40",
+          "image": {
+            "id": 2113,
+            "name": "F9 liftoff from SLC-40 (SES-24)",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/f9_liftoff_from_image_20240621050513.jpeg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/f9_liftoff_from_image_thumbnail_20240621050514.jpeg",
+            "credit": "SpaceX",
+            "license": {
+              "id": 5,
+              "name": "CC BY-NC 2.0",
+              "priority": 1,
+              "link": "https://creativecommons.org/licenses/by-nc/2.0/"
+            },
+            "single_use": false,
+            "variants": []
+          },
+          "description": "",
           "info_url": null,
-          "wiki_url": "",
-          "map_url": "https://www.google.com/maps?q=28.458,-80.528",
-          "latitude": 28.458,
-          "longitude": -80.528,
+          "wiki_url": "https://en.wikipedia.org/wiki/Cape_Canaveral_Air_Force_Station_Space_Launch_Complex_40",
+          "map_url": "https://www.google.com/maps?q=28.56194122,-80.57735736",
+          "latitude": 28.56194122,
+          "longitude": -80.57735736,
           "country": {
             "id": 2,
             "name": "United States of America",
@@ -3886,10 +3974,10 @@
             "nationality_name": "American",
             "nationality_name_composed": "Americano"
           },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_72_20200803143403.jpg",
-          "total_launch_count": 0,
-          "orbital_launch_attempt_count": 0,
-          "fastest_turnaround": null,
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_80_20200803143323.jpg",
+          "total_launch_count": 357,
+          "orbital_launch_attempt_count": 357,
+          "fastest_turnaround": "P2DT2H44M55S",
           "location": {
             "response_mode": "normal",
             "id": 12,
@@ -3925,8 +4013,8 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7397,
-              "successful_launches": 6846,
+              "total_attempted_launches": 7399,
+              "successful_launches": 6848,
               "failed_launches": 551,
               "total_attempted_landings": 1248,
               "successful_landings": 1201,
@@ -4122,16 +4210,24 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7200,
+        "orbital_launch_attempt_count": 7203,
         "location_launch_attempt_count": 1085,
-        "pad_launch_attempt_count": 1,
-        "agency_launch_attempt_count": 631,
-        "orbital_launch_attempt_count_year": 27,
+        "pad_launch_attempt_count": 362,
+        "agency_launch_attempt_count": 632,
+        "orbital_launch_attempt_count_year": 30,
         "location_launch_attempt_count_year": 9,
-        "pad_launch_attempt_count_year": 1,
-        "agency_launch_attempt_count_year": 12,
+        "pad_launch_attempt_count_year": 8,
+        "agency_launch_attempt_count_year": 13,
         "flightclub_url": "https://flightclub.io/result?llId=862b54e3-7bf8-48e5-8cd1-d77257d5fde9",
         "updates": [
+          {
+            "id": 13618,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Launch pad assigned.",
+            "info_url": "https://www.launchphotography.com/Launch_Viewing_Guide.html",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-13T06:00:00Z"
+          },
           {
             "id": 12967,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -4144,7 +4240,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P0D",
+        "pad_turnaround": "P15D",
         "mission_patches": [
           {
             "id": 1288,
@@ -5675,8 +5771,8 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7397,
-              "successful_launches": 6846,
+              "total_attempted_launches": 7399,
+              "successful_launches": 6848,
               "failed_launches": 551,
               "total_attempted_landings": 1248,
               "successful_landings": 1201,
@@ -5861,11 +5957,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7253,
+        "orbital_launch_attempt_count": 7256,
         "location_launch_attempt_count": 1565,
         "pad_launch_attempt_count": 430,
         "agency_launch_attempt_count": 342,
-        "orbital_launch_attempt_count_year": 80,
+        "orbital_launch_attempt_count_year": 83,
         "location_launch_attempt_count_year": 6,
         "pad_launch_attempt_count_year": 4,
         "agency_launch_attempt_count_year": 4,
