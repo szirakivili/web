@@ -1,757 +1,11 @@
 {
-  "fetched_at": "2026-01-21T03:51:45Z",
+  "fetched_at": "2026-01-22T03:55:47Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
-    "count": 360,
+    "count": 361,
     "next": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?format=json&is_crewed=false&limit=30&mode=detailed&offset=30",
     "previous": null,
     "results": [
-      {
-        "id": "1b23eb18-e06e-4058-9b42-e95ca0980511",
-        "url": "https://ll.thespacedevs.com/2.3.0/launches/1b23eb18-e06e-4058-9b42-e95ca0980511/?format=json",
-        "name": "Spectrum | Onward and Upward",
-        "response_mode": "detailed",
-        "slug": "spectrum-onward-and-upward",
-        "launch_designator": null,
-        "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
-        },
-        "last_updated": "2026-01-20T19:59:09Z",
-        "net": "2026-01-21T20:00:00Z",
-        "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
-        },
-        "window_end": "2026-01-21T20:50:00Z",
-        "window_start": "2026-01-21T20:00:00Z",
-        "image": {
-          "id": 2355,
-          "name": "Spectrum on the pad at Andøya Spaceport (Maiden Flight)",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_20250321072643.jpeg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_thumbnail_20250321072643.jpeg",
-          "credit": "Isar Aerospace | Robin Brillert, Wingmen Media",
-          "license": {
-            "id": 1,
-            "name": "Unknown",
-            "priority": 9,
-            "link": null
-          },
-          "single_use": false,
-          "variants": []
-        },
-        "infographic": null,
-        "probability": null,
-        "weather_concerns": null,
-        "failreason": "",
-        "hashtag": null,
-        "launch_service_provider": {
-          "response_mode": "normal",
-          "id": 1046,
-          "url": "https://ll.thespacedevs.com/2.3.0/agencies/1046/?format=json",
-          "name": "Isar Aerospace",
-          "abbrev": "ISAR",
-          "type": {
-            "id": 5,
-            "name": "Private"
-          },
-          "featured": false,
-          "country": [
-            {
-              "id": 4,
-              "name": "Germany",
-              "alpha_2_code": "DE",
-              "alpha_3_code": "DEU",
-              "nationality_name": "German",
-              "nationality_name_composed": "Germano"
-            }
-          ],
-          "description": "Isar Aerospace is a German aerospace company based in Munich, Germany. The company was founded in 2018.",
-          "administrator": "CEO: Daniel Metzler",
-          "founding_year": 2018,
-          "launchers": "Spectrum",
-          "spacecraft": "",
-          "parent": null,
-          "image": {
-            "id": 2355,
-            "name": "Spectrum on the pad at Andøya Spaceport (Maiden Flight)",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_20250321072643.jpeg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_thumbnail_20250321072643.jpeg",
-            "credit": "Isar Aerospace | Robin Brillert, Wingmen Media",
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": false,
-            "variants": []
-          },
-          "logo": {
-            "id": 147,
-            "name": "[AUTO] Isar Aerospace - logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/isar2520aerospace_logo_20230125151814.jpeg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185015.jpeg",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "social_logo": {
-            "id": 2262,
-            "name": "Isar Aerospace Social Logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/isar_aerospace__image_20241021093234.png",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/isar_aerospace__image_thumbnail_20241021093234.png",
-            "credit": "Isar Aerospace",
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "total_launch_count": 1,
-          "consecutive_successful_launches": 0,
-          "successful_launches": 0,
-          "failed_launches": 1,
-          "pending_launches": 6,
-          "consecutive_successful_landings": 0,
-          "successful_landings": 0,
-          "failed_landings": 0,
-          "attempted_landings": 0,
-          "successful_landings_spacecraft": 0,
-          "failed_landings_spacecraft": 0,
-          "attempted_landings_spacecraft": 0,
-          "successful_landings_payload": 0,
-          "failed_landings_payload": 0,
-          "attempted_landings_payload": 0,
-          "info_url": "https://www.isaraerospace.com/",
-          "wiki_url": "https://en.wikipedia.org/wiki/Isar_Aerospace",
-          "social_media_links": [
-            {
-              "id": 283,
-              "social_media": {
-                "id": 3,
-                "name": "Homepage",
-                "url": null,
-                "logo": null
-              },
-              "url": "https://www.isaraerospace.com/"
-            },
-            {
-              "id": 284,
-              "social_media": {
-                "id": 2,
-                "name": "Instagram",
-                "url": "https://instagram.com",
-                "logo": {
-                  "id": 2322,
-                  "name": "Instagram logo",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_20250211191139.png",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_thumbnail_20250211191139.png",
-                  "credit": "Instagram",
-                  "license": {
-                    "id": 1,
-                    "name": "Unknown",
-                    "priority": 9,
-                    "link": null
-                  },
-                  "single_use": true,
-                  "variants": []
-                }
-              },
-              "url": "https://www.instagram.com/isaraerospace/"
-            },
-            {
-              "id": 285,
-              "social_media": {
-                "id": 1,
-                "name": "X",
-                "url": "https://x.com",
-                "logo": {
-                  "id": 2320,
-                  "name": "X logo",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_20250211191027.jpg",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_thumbnail_20250211191027.jpeg",
-                  "credit": "X",
-                  "license": {
-                    "id": 1,
-                    "name": "Unknown",
-                    "priority": 9,
-                    "link": null
-                  },
-                  "single_use": true,
-                  "variants": []
-                }
-              },
-              "url": "https://x.com/isaraerospace/status/1845769149634503064"
-            },
-            {
-              "id": 286,
-              "social_media": {
-                "id": 4,
-                "name": "LinkedIn",
-                "url": "https://www.linkedin.com/",
-                "logo": {
-                  "id": 2321,
-                  "name": "LinkedIn logo",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_20250211191111.png",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_thumbnail_20250211191112.png",
-                  "credit": "LinkedIn",
-                  "license": {
-                    "id": 1,
-                    "name": "Unknown",
-                    "priority": 9,
-                    "link": null
-                  },
-                  "single_use": true,
-                  "variants": []
-                }
-              },
-              "url": "https://www.linkedin.com/company/isaraerospace"
-            },
-            {
-              "id": 287,
-              "social_media": {
-                "id": 6,
-                "name": "Youtube",
-                "url": "https://www.youtube.com/",
-                "logo": {
-                  "id": 2356,
-                  "name": "YouTube logo",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/youtube_logo_image_20250321073112.png",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/youtube_logo_image_thumbnail_20250321073112.png",
-                  "credit": "YouTube",
-                  "license": {
-                    "id": 1,
-                    "name": "Unknown",
-                    "priority": 9,
-                    "link": null
-                  },
-                  "single_use": true,
-                  "variants": []
-                }
-              },
-              "url": "https://www.youtube.com/channel/UCjRAGiZtCpR6lrkirDtJP0Q"
-            }
-          ]
-        },
-        "rocket": {
-          "id": 8716,
-          "configuration": {
-            "response_mode": "detailed",
-            "id": 491,
-            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/491/?format=json",
-            "name": "Spectrum",
-            "families": [],
-            "full_name": "Spectrum",
-            "variant": "",
-            "active": false,
-            "is_placeholder": false,
-            "manufacturer": {
-              "response_mode": "normal",
-              "id": 1046,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/1046/?format=json",
-              "name": "Isar Aerospace",
-              "abbrev": "ISAR",
-              "type": {
-                "id": 5,
-                "name": "Private"
-              },
-              "featured": false,
-              "country": [
-                {
-                  "id": 4,
-                  "name": "Germany",
-                  "alpha_2_code": "DE",
-                  "alpha_3_code": "DEU",
-                  "nationality_name": "German",
-                  "nationality_name_composed": "Germano"
-                }
-              ],
-              "description": "Isar Aerospace is a German aerospace company based in Munich, Germany. The company was founded in 2018.",
-              "administrator": "CEO: Daniel Metzler",
-              "founding_year": 2018,
-              "launchers": "Spectrum",
-              "spacecraft": "",
-              "parent": null,
-              "image": {
-                "id": 2355,
-                "name": "Spectrum on the pad at Andøya Spaceport (Maiden Flight)",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_20250321072643.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_thumbnail_20250321072643.jpeg",
-                "credit": "Isar Aerospace | Robin Brillert, Wingmen Media",
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": false,
-                "variants": []
-              },
-              "logo": {
-                "id": 147,
-                "name": "[AUTO] Isar Aerospace - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/isar2520aerospace_logo_20230125151814.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185015.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 2262,
-                "name": "Isar Aerospace Social Logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/isar_aerospace__image_20241021093234.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/isar_aerospace__image_thumbnail_20241021093234.png",
-                "credit": "Isar Aerospace",
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "total_launch_count": 1,
-              "consecutive_successful_launches": 0,
-              "successful_launches": 0,
-              "failed_launches": 1,
-              "pending_launches": 6,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 0,
-              "failed_landings": 0,
-              "attempted_landings": 0,
-              "successful_landings_spacecraft": 0,
-              "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 0,
-              "successful_landings_payload": 0,
-              "failed_landings_payload": 0,
-              "attempted_landings_payload": 0,
-              "info_url": "https://www.isaraerospace.com/",
-              "wiki_url": "https://en.wikipedia.org/wiki/Isar_Aerospace",
-              "social_media_links": [
-                {
-                  "id": 283,
-                  "social_media": {
-                    "id": 3,
-                    "name": "Homepage",
-                    "url": null,
-                    "logo": null
-                  },
-                  "url": "https://www.isaraerospace.com/"
-                },
-                {
-                  "id": 284,
-                  "social_media": {
-                    "id": 2,
-                    "name": "Instagram",
-                    "url": "https://instagram.com",
-                    "logo": {
-                      "id": 2322,
-                      "name": "Instagram logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_20250211191139.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_thumbnail_20250211191139.png",
-                      "credit": "Instagram",
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    }
-                  },
-                  "url": "https://www.instagram.com/isaraerospace/"
-                },
-                {
-                  "id": 285,
-                  "social_media": {
-                    "id": 1,
-                    "name": "X",
-                    "url": "https://x.com",
-                    "logo": {
-                      "id": 2320,
-                      "name": "X logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_20250211191027.jpg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_thumbnail_20250211191027.jpeg",
-                      "credit": "X",
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    }
-                  },
-                  "url": "https://x.com/isaraerospace/status/1845769149634503064"
-                },
-                {
-                  "id": 286,
-                  "social_media": {
-                    "id": 4,
-                    "name": "LinkedIn",
-                    "url": "https://www.linkedin.com/",
-                    "logo": {
-                      "id": 2321,
-                      "name": "LinkedIn logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_20250211191111.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_thumbnail_20250211191112.png",
-                      "credit": "LinkedIn",
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    }
-                  },
-                  "url": "https://www.linkedin.com/company/isaraerospace"
-                },
-                {
-                  "id": 287,
-                  "social_media": {
-                    "id": 6,
-                    "name": "Youtube",
-                    "url": "https://www.youtube.com/",
-                    "logo": {
-                      "id": 2356,
-                      "name": "YouTube logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/youtube_logo_image_20250321073112.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/youtube_logo_image_thumbnail_20250321073112.png",
-                      "credit": "YouTube",
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    }
-                  },
-                  "url": "https://www.youtube.com/channel/UCjRAGiZtCpR6lrkirDtJP0Q"
-                }
-              ]
-            },
-            "program": [],
-            "reusable": false,
-            "image": {
-              "id": 2355,
-              "name": "Spectrum on the pad at Andøya Spaceport (Maiden Flight)",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_20250321072643.jpeg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_thumbnail_20250321072643.jpeg",
-              "credit": "Isar Aerospace | Robin Brillert, Wingmen Media",
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": false,
-              "variants": []
-            },
-            "info_url": "https://www.isaraerospace.com/spectrum",
-            "wiki_url": null,
-            "description": "Spectrum is a small launch vehicle developed by German company Isar Aerospace.",
-            "alias": "",
-            "min_stage": 2,
-            "max_stage": 2,
-            "length": 28.0,
-            "diameter": 2.0,
-            "maiden_flight": "2025-03-30",
-            "launch_cost": null,
-            "launch_mass": null,
-            "leo_capacity": 1000.0,
-            "gto_capacity": null,
-            "geo_capacity": null,
-            "sso_capacity": 700.0,
-            "to_thrust": 675.0,
-            "apogee": null,
-            "total_launch_count": 1,
-            "consecutive_successful_launches": 0,
-            "successful_launches": 0,
-            "failed_launches": 1,
-            "pending_launches": 6,
-            "attempted_landings": 0,
-            "successful_landings": 0,
-            "failed_landings": 0,
-            "consecutive_successful_landings": 0,
-            "fastest_turnaround": null
-          },
-          "launcher_stage": [],
-          "spacecraft_stage": [],
-          "payloads": []
-        },
-        "mission": {
-          "id": 7309,
-          "name": "Onward and Upward",
-          "type": "Test Flight",
-          "description": "Second test flight of the Isar Spectrum launch vehicle. This launch will carry 5 cubesats and 1 non-separable experiment as part of European Space Agency (ESA)'s “Boost!” program:\r\n\r\n* CyBEEsat (TU Berlin)\r\n* TriSat-S (University of Maribor)\r\n* Platform 6 (EnduroSat)\r\n* FramSat-1 (NTNU)\r\n* SpaceTeamSat1 (TU Wien Space Team)\r\n* Let It Go (Dcubed, non-separable experiment)",
-          "image": null,
-          "orbit": {
-            "id": 17,
-            "name": "Sun-Synchronous Orbit",
-            "abbrev": "SSO",
-            "celestial_body": {
-              "response_mode": "list",
-              "id": 1,
-              "name": "Earth"
-            }
-          },
-          "agencies": [],
-          "info_urls": [],
-          "vid_urls": []
-        },
-        "pad": {
-          "id": 51,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/51/?format=json",
-          "active": true,
-          "agencies": [],
-          "name": "Orbital Launch Pad",
-          "image": null,
-          "description": null,
-          "info_url": null,
-          "wiki_url": "https://en.wikipedia.org/wiki/And%C3%B8ya_Space",
-          "map_url": "https://www.google.com/maps?q=69.1084,15.5895",
-          "latitude": 69.1084,
-          "longitude": 15.5895,
-          "country": {
-            "id": 49,
-            "name": "Norway",
-            "alpha_2_code": "NO",
-            "alpha_3_code": "NOR",
-            "nationality_name": "Norwegian",
-            "nationality_name_composed": "Norwegian"
-          },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_51_20200803143605.jpg",
-          "total_launch_count": 1,
-          "orbital_launch_attempt_count": 1,
-          "fastest_turnaround": null,
-          "location": {
-            "response_mode": "normal",
-            "id": 161,
-            "url": "https://ll.thespacedevs.com/2.3.0/locations/161/?format=json",
-            "name": "Andøya Spaceport",
-            "celestial_body": {
-              "response_mode": "normal",
-              "id": 1,
-              "name": "Earth",
-              "type": {
-                "id": 1,
-                "name": "Planet"
-              },
-              "diameter": 12742000.0,
-              "mass": 5.972168e+24,
-              "gravity": 9.80655,
-              "length_of_day": "1 00:00:00",
-              "atmosphere": true,
-              "image": {
-                "id": 2040,
-                "name": "Earth (Apollo 17)",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
-                "credit": "NASA",
-                "license": {
-                  "id": 4,
-                  "name": "NASA Image and Media Guidelines",
-                  "priority": 0,
-                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
-              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7407,
-              "successful_launches": 6854,
-              "failed_launches": 553,
-              "total_attempted_landings": 1252,
-              "successful_landings": 1205,
-              "failed_landings": 47
-            },
-            "active": true,
-            "country": {
-              "id": 49,
-              "name": "Norway",
-              "alpha_2_code": "NO",
-              "alpha_3_code": "NOR",
-              "nationality_name": "Norwegian",
-              "nationality_name_composed": "Norwegian"
-            },
-            "description": "Andøya Space, also named Andøya Space Center and formerly Andøya Rocket Range, is a rocket launch site, rocket range, and spaceport on Andøya island (the northernmost in the Vesterålen archipelago) in Andøy Municipality in Nordland county, Norway.",
-            "image": {
-              "id": 2137,
-              "name": "Andøya Spaceport",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/and25c325b8ya_image_20240808093551.jpg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/and25c325b8ya_image_thumbnail_20240808093552.jpeg",
-              "credit": "Andøya Space",
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_161_20240109072235.jpg",
-            "longitude": 16.020833,
-            "latitude": 69.294167,
-            "timezone_name": "Europe/Oslo",
-            "total_launch_count": 1,
-            "total_landing_count": 0
-          }
-        },
-        "webcast_live": false,
-        "program": [],
-        "orbital_launch_attempt_count": 7190,
-        "location_launch_attempt_count": 2,
-        "pad_launch_attempt_count": 2,
-        "agency_launch_attempt_count": 2,
-        "orbital_launch_attempt_count_year": 17,
-        "location_launch_attempt_count_year": 1,
-        "pad_launch_attempt_count_year": 1,
-        "agency_launch_attempt_count_year": 1,
-        "flightclub_url": null,
-        "updates": [
-          {
-            "id": 13665,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "GO for launch.",
-            "info_url": "https://isaraerospace.com/press/isar-aerospace-targets-second-launch-not-earlier-than-21-january-2026",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2026-01-16T12:02:00Z"
-          },
-          {
-            "id": 13620,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "NET January 20 per new NOTAMs.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=63983.msg2750598#msg2750598",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2026-01-13T15:52:00Z"
-          },
-          {
-            "id": 13447,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "NET January 17.",
-            "info_url": "https://www.vol.no/nyheter/i/XMgMMg/forbereder-seg-paa-ny-oppskyting",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-12-23T19:21:00Z"
-          },
-          {
-            "id": 13226,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Delayed to NET 13 January 2026.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=63983.msg2741767#msg2741767",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-12-10T01:42:00Z"
-          },
-          {
-            "id": 13124,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Moved to NET December 2025 with possibly related NOTAMs/marine navigation warnings issued for December 6-19, to be confirmed as for Spectrum.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=63983.msg2739811#msg2739811",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-12-03T20:54:00Z"
-          },
-          {
-            "id": 12262,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/arnaud2520muller_profile_20230607144351.jpg",
-            "comment": "Adding launch",
-            "info_url": "https://spacenews.com/isar-aerospace-prepares-for-second-spectrum-launch/",
-            "created_by": "Nosu",
-            "created_on": "2025-09-16T06:44:00Z"
-          }
-        ],
-        "info_urls": [
-          {
-            "priority": 10,
-            "source": "isaraerospace.com",
-            "title": "",
-            "description": "The second flight of our ‘Spectrum’ launch vehicle marks a significant milestone serving as both the vehicle’s qualification mission and its first flight carrying payload.\n\n \"Onward and Upward\" symbolizes our relentless drive for progress and continuous improvement, reflecting our determination to b...",
-            "feature_image": null,
-            "url": "https://isaraerospace.com/mission-2",
-            "type": {
-              "id": 1,
-              "name": "Official Page"
-            },
-            "language": {
-              "id": 1,
-              "name": "English",
-              "code": "en"
-            }
-          }
-        ],
-        "vid_urls": [
-          {
-            "priority": 10,
-            "source": "youtube.com",
-            "publisher": "Isar Aerospace",
-            "title": "Livestream: \"Onward and Upward\" Mission of Isar Aerospace",
-            "description": "Mission Name: 'Onward and Upward'\n\nLaunch Date: Updates via https://isaraerospace.com/mission-updates-overview\n\nLaunch site: Andøya Space\n\nThe second flight of our ‘Spectrum’ launch vehicle marks a significant milestone serving as both the vehicle’s qualification mission and its first flight carrying payload.\n\n\"Onward and Upward\" symbolizes our relentless drive for progress and continuous improvement, reflecting our determination to build upon the successes and lessons learned from our inaugural test flight.\n\nThe livestream is produced in collaboration with the @NASASpaceflight team.\n\nMore information on the Mission ‘Onward and Upward’ here: https://isaraerospace.com/mission-2",
-            "feature_image": "https://i.ytimg.com/vi/MsbZj8PxmUk/maxresdefault_live.jpg",
-            "url": "https://www.youtube.com/watch?v=MsbZj8PxmUk",
-            "type": {
-              "id": 1,
-              "name": "Official Webcast"
-            },
-            "language": {
-              "id": 1,
-              "name": "English",
-              "code": "en"
-            },
-            "start_time": "2026-01-21T19:00:00Z",
-            "end_time": null,
-            "live": false
-          }
-        ],
-        "timeline": [],
-        "pad_turnaround": "P297DT9H30M",
-        "mission_patches": [
-          {
-            "id": 1298,
-            "name": "Onward and Upward Patch",
-            "priority": 10,
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/mission_patch_images/onward2520and_mission_patch_20260120112758.png",
-            "agency": {
-              "response_mode": "list",
-              "id": 1046,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/1046/?format=json",
-              "name": "Isar Aerospace",
-              "abbrev": "ISAR",
-              "type": {
-                "id": 5,
-                "name": "Private"
-              }
-            },
-            "response_mode": "normal"
-          }
-        ]
-      },
       {
         "id": "18292387-fbeb-43ac-97a0-1ade50bd68f1",
         "url": "https://ll.thespacedevs.com/2.3.0/launches/18292387-fbeb-43ac-97a0-1ade50bd68f1/?format=json",
@@ -765,13 +19,13 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2026-01-13T09:03:00Z",
-        "net": "2026-01-22T02:43:00Z",
+        "last_updated": "2026-01-22T03:33:49Z",
+        "net": "2026-01-22T04:51:09Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2026-01-22T06:43:00Z",
         "window_start": "2026-01-22T02:43:00Z",
@@ -1522,7 +776,7 @@
                 "fastest_turnaround": "P21DT22H7M44S"
               },
               "previous_flight_date": "2025-12-14T05:49:00Z",
-              "turn_around_time": "P38DT20H54M",
+              "turn_around_time": "P38DT22H20M49S",
               "landing": {
                 "id": 1764,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1764/?format=json",
@@ -1898,16 +1152,48 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7191,
+        "orbital_launch_attempt_count": 7190,
         "location_launch_attempt_count": 856,
         "pad_launch_attempt_count": 242,
         "agency_launch_attempt_count": 628,
-        "orbital_launch_attempt_count_year": 18,
+        "orbital_launch_attempt_count_year": 17,
         "location_launch_attempt_count_year": 4,
         "pad_launch_attempt_count_year": 4,
         "agency_launch_attempt_count_year": 9,
         "flightclub_url": "https://flightclub.io/result?llId=18292387-fbeb-43ac-97a0-1ade50bd68f1",
         "updates": [
+          {
+            "id": 13743,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Now targeting Jan 22 at 04:51 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-17-30",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-22T03:33:00Z"
+          },
+          {
+            "id": 13742,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Tweaked T-0.",
+            "info_url": "https://www.spacex.com/launches/sl-17-30",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-22T03:07:00Z"
+          },
+          {
+            "id": 13740,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Now targeting Jan 22 at 04:09 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-17-30",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-22T01:28:00Z"
+          },
+          {
+            "id": 13732,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Now targeting Jan 22 at 02:46 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-17-30",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-21T12:07:00Z"
+          },
           {
             "id": 13603,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -1946,6 +1232,48 @@
         ],
         "vid_urls": [
           {
+            "priority": 8,
+            "source": "youtube.com",
+            "publisher": "SPACE AFFAIRS",
+            "title": "GO! - SpaceX - Falcon 9 - Starlink 17-30 - SLC-4E - Vandenberg SFB - Space Affairs Live",
+            "description": "Launch Date: January 21, 2026\nLaunch Time: 8:51 p.m. PST (January 22, 0451 UTC, 05:51 CET)\nLaunch Window: Open 10:43 p.m. PST\nLaunch Site: SLC-4E - Vandenberg Space Force Base, California\nTargeted Orbit: Low Earth Orbit (LEO)\nLaunch Inclination: South\nLaunch Status: Scheduled\n\nMission: Starlink Group 17-30\nLaunch Provider: SpaceX\nLauncher System: Falcon 9 (Booster 1093 - Turnaround time 40 days)\nFlight for the Booster: 10\nPrevious Flights of the Booster: 9 - SDA T1TL-B, SDA T1TL-C, and seven Starlink missions\nDroneship: Of Course I Still Love You (OCISLY)\n\nPrice: $69,75 million (without payload)\nDiameter: 3,7 m\nHeight: 70 meters\nPayload to Orbit: 22,800 LEO / 8,300 GTO\nLift-Off Thrust: 7,607 kilonewtons\nFairing: Diameter 5,2 meters / Height 13 meters\nStages: 2\n\nSpaceX’s Falcon 9 is ta...",
+            "feature_image": "https://i.ytimg.com/vi/_-1AZpYZ9s8/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=_-1AZpYZ9s8",
+            "type": {
+              "id": 4,
+              "name": "Unofficial Re-stream"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2026-01-22T04:41:00Z",
+            "end_time": null,
+            "live": false
+          },
+          {
+            "priority": 9,
+            "source": "youtube.com",
+            "publisher": "Spaceflight Now",
+            "title": "Watch Live: SpaceX to launch 25 Starlink satellites on Falcon 9 rocket from Vandenberg, California",
+            "description": "Watch live coverage as SpaceX launches a Falcon 9 rocket from California with 25 Starlink v2 mini internet relay satellites. Liftoff from Space Launch Complex 4E (SLC-4E) at Vandenberg Space Force Base is scheduled for Wednesday, Jan. 21 at 8:51 p.m. PST (11:51 p.m. EST / 0451 UTC).\n\nThe first-stage booster, tail number B1093, launching for a tenth time, will land on the drone ship 'Of Course I Still Love You' nearly 8.5 minutes into the flight.\n\nThe Starlink 17-30 mission will take a southerly trajectory upon departure from Vandenberg. \n\nLive commentary from Spaceflight Now's Will Robinson-Smith will be provided starting about 30 minutes prior to launch.\n\nVideos like this are made possible by the support of our members. Join this channel to get access to perks:\nhttps://www.youtube.co...",
+            "feature_image": "https://i.ytimg.com/vi/cmsTf8XwhlQ/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=cmsTf8XwhlQ",
+            "type": {
+              "id": 3,
+              "name": "Unofficial Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2026-01-22T04:21:00Z",
+            "end_time": null,
+            "live": false
+          },
+          {
             "priority": 10,
             "source": "x.com",
             "publisher": "SpaceX",
@@ -1962,8 +1290,8 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2026-01-22T02:36:00Z",
-            "end_time": "2026-01-22T04:00:00Z",
+            "start_time": "2026-01-22T04:44:00Z",
+            "end_time": "2026-01-22T10:02:00Z",
             "live": false
           }
         ],
@@ -2073,7 +1401,7 @@
             "relative_time": "PT1H2M6S"
           }
         ],
-        "pad_turnaround": "P4DT22H3M9S",
+        "pad_turnaround": "P4DT22H6M39S",
         "mission_patches": [
           {
             "id": 7,
@@ -2103,18 +1431,18 @@
         "slug": "electron-the-cosmos-will-see-you-now-open-cosmos-c",
         "launch_designator": null,
         "status": {
-          "id": 8,
-          "name": "To Be Confirmed",
-          "abbrev": "TBC",
-          "description": "Awaiting official confirmation - current date is known with some certainty."
+          "id": 1,
+          "name": "Go for Launch",
+          "abbrev": "Go",
+          "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2026-01-20T19:26:07Z",
-        "net": "2026-01-22T10:15:00Z",
+        "last_updated": "2026-01-21T23:44:41Z",
+        "net": "2026-01-22T10:52:00Z",
         "net_precision": {
-          "id": 2,
-          "name": "Hour",
-          "abbrev": "HR",
-          "description": "The T-0 is accurate to the hour."
+          "id": 1,
+          "name": "Minute",
+          "abbrev": "MIN",
+          "description": "The T-0 is accurate to the minute."
         },
         "window_end": "2026-01-22T13:20:00Z",
         "window_start": "2026-01-22T10:15:00Z",
@@ -2214,7 +1542,7 @@
           "consecutive_successful_launches": 38,
           "successful_launches": 75,
           "failed_launches": 4,
-          "pending_launches": 41,
+          "pending_launches": 42,
           "consecutive_successful_landings": 4,
           "successful_landings": 7,
           "failed_landings": 2,
@@ -2317,7 +1645,7 @@
               "consecutive_successful_launches": 38,
               "successful_launches": 75,
               "failed_launches": 4,
-              "pending_launches": 41,
+              "pending_launches": 42,
               "consecutive_successful_landings": 4,
               "successful_landings": 7,
               "failed_landings": 2,
@@ -2370,7 +1698,7 @@
             "consecutive_successful_launches": 38,
             "successful_launches": 75,
             "failed_launches": 4,
-            "pending_launches": 39,
+            "pending_launches": 40,
             "attempted_landings": 9,
             "successful_landings": 7,
             "failed_landings": 2,
@@ -2503,16 +1831,24 @@
         },
         "webcast_live": false,
         "program": [],
-        "orbital_launch_attempt_count": 7192,
+        "orbital_launch_attempt_count": 7191,
         "location_launch_attempt_count": 70,
         "pad_launch_attempt_count": 1,
         "agency_launch_attempt_count": 80,
-        "orbital_launch_attempt_count_year": 19,
+        "orbital_launch_attempt_count_year": 18,
         "location_launch_attempt_count_year": 1,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 1,
         "flightclub_url": null,
         "updates": [
+          {
+            "id": 13737,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "GO for launch.",
+            "info_url": "https://rocketlabcorp.com/launch/launch-safety/",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-21T21:59:00Z"
+          },
           {
             "id": 13721,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -2546,9 +1882,170 @@
             "created_on": "2026-01-14T16:22:00Z"
           }
         ],
-        "info_urls": [],
-        "vid_urls": [],
-        "timeline": [],
+        "info_urls": [
+          {
+            "priority": 10,
+            "source": "rocketlabcorp.com",
+            "title": "The Cosmos Will See You Now",
+            "description": "\"The Cosmos Will See You Now\" is a dedicated launch on Electron for Open Cosmos, a U.K.-based space technology company.",
+            "feature_image": null,
+            "url": "https://rocketlabcorp.com/missions/launches/the-cosmos-will-see-you-now/",
+            "type": {
+              "id": 1,
+              "name": "Official Page"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            }
+          }
+        ],
+        "vid_urls": [
+          {
+            "priority": 10,
+            "source": "youtube.com",
+            "publisher": "Rocket Lab",
+            "title": "Rocket Lab - 'The Cosmos Will See You Now' Launch",
+            "description": "",
+            "feature_image": "https://i.ytimg.com/vi/jNX7oNUpvE8/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=jNX7oNUpvE8",
+            "type": {
+              "id": 1,
+              "name": "Official Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2026-01-22T10:30:00Z",
+            "end_time": null,
+            "live": false
+          }
+        ],
+        "timeline": [
+          {
+            "type": {
+              "id": 6,
+              "abbrev": "Startup",
+              "description": "The onboard computer takes control over the countdown and runs last checks"
+            },
+            "relative_time": "-PT2M"
+          },
+          {
+            "type": {
+              "id": 9,
+              "abbrev": "Ignition",
+              "description": "Start of the engine ignition sequence"
+            },
+            "relative_time": "-PT2S"
+          },
+          {
+            "type": {
+              "id": 10,
+              "abbrev": "Liftoff",
+              "description": "First upwards movement of the rocket"
+            },
+            "relative_time": "P0D"
+          },
+          {
+            "type": {
+              "id": 25,
+              "abbrev": "Supersonic",
+              "description": "Vehicle is supersonic"
+            },
+            "relative_time": "PT56S"
+          },
+          {
+            "type": {
+              "id": 11,
+              "abbrev": "Max-Q",
+              "description": "Maximum dynamic pressure"
+            },
+            "relative_time": "PT1M7S"
+          },
+          {
+            "type": {
+              "id": 12,
+              "abbrev": "MECO",
+              "description": "Cut-off of the main engine"
+            },
+            "relative_time": "PT2M25S"
+          },
+          {
+            "type": {
+              "id": 13,
+              "abbrev": "Stage 2 Separation",
+              "description": "Separation of the second stage from the first"
+            },
+            "relative_time": "PT2M28S"
+          },
+          {
+            "type": {
+              "id": 31,
+              "abbrev": "SES",
+              "description": "Start of the second engine"
+            },
+            "relative_time": "PT2M31S"
+          },
+          {
+            "type": {
+              "id": 15,
+              "abbrev": "Fairing Separation",
+              "description": "Separation of the payload fairing"
+            },
+            "relative_time": "PT3M11S"
+          },
+          {
+            "type": {
+              "id": 72,
+              "abbrev": "Battery Hotswap",
+              "description": "Electron Second stages switches to a new set of batteries and jettisons the depleted ones."
+            },
+            "relative_time": "PT6M24S"
+          },
+          {
+            "type": {
+              "id": 24,
+              "abbrev": "SECO",
+              "description": "Cut-off of the second engine"
+            },
+            "relative_time": "PT8M59S"
+          },
+          {
+            "type": {
+              "id": 30,
+              "abbrev": "Kick Stage Separation",
+              "description": "Separation of the kick stage from the previous stage"
+            },
+            "relative_time": "PT9M4S"
+          },
+          {
+            "type": {
+              "id": 32,
+              "abbrev": "Kick Stage Ignition",
+              "description": "Start of the kick stage engine"
+            },
+            "relative_time": "PT1H4M13S"
+          },
+          {
+            "type": {
+              "id": 33,
+              "abbrev": "Kick Stage Cut-off",
+              "description": "Cut-off of the kick stage engine"
+            },
+            "relative_time": "PT1H8M57S"
+          },
+          {
+            "type": {
+              "id": 35,
+              "abbrev": "Payload Separation",
+              "description": "Final deployment of the payload from the rocket"
+            },
+            "relative_time": "PT1H9M47S"
+          }
+        ],
         "pad_turnaround": "P0D",
         "mission_patches": [
           {
@@ -3717,11 +3214,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7193,
+        "orbital_launch_attempt_count": 7192,
         "location_launch_attempt_count": 857,
         "pad_launch_attempt_count": 243,
         "agency_launch_attempt_count": 629,
-        "orbital_launch_attempt_count_year": 20,
+        "orbital_launch_attempt_count_year": 19,
         "location_launch_attempt_count_year": 5,
         "pad_launch_attempt_count_year": 5,
         "agency_launch_attempt_count_year": 10,
@@ -3892,7 +3389,7 @@
             "relative_time": "PT1H2M3S"
           }
         ],
-        "pad_turnaround": "P3DT12H34M",
+        "pad_turnaround": "P3DT11H8M",
         "mission_patches": [
           {
             "id": 7,
@@ -5083,11 +4580,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7194,
+        "orbital_launch_attempt_count": 7193,
         "location_launch_attempt_count": 1082,
         "pad_launch_attempt_count": 360,
         "agency_launch_attempt_count": 630,
-        "orbital_launch_attempt_count_year": 21,
+        "orbital_launch_attempt_count_year": 20,
         "location_launch_attempt_count_year": 6,
         "pad_launch_attempt_count_year": 6,
         "agency_launch_attempt_count_year": 11,
@@ -5881,11 +5378,11 @@
         },
         "webcast_live": false,
         "program": [],
-        "orbital_launch_attempt_count": 7195,
+        "orbital_launch_attempt_count": 7194,
         "location_launch_attempt_count": 58,
         "pad_launch_attempt_count": 29,
         "agency_launch_attempt_count": 576,
-        "orbital_launch_attempt_count_year": 22,
+        "orbital_launch_attempt_count_year": 21,
         "location_launch_attempt_count_year": 3,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 6,
@@ -6025,7 +5522,7 @@
           "consecutive_successful_launches": 38,
           "successful_launches": 75,
           "failed_launches": 4,
-          "pending_launches": 41,
+          "pending_launches": 42,
           "consecutive_successful_landings": 4,
           "successful_landings": 7,
           "failed_landings": 2,
@@ -6128,7 +5625,7 @@
               "consecutive_successful_launches": 38,
               "successful_launches": 75,
               "failed_launches": 4,
-              "pending_launches": 41,
+              "pending_launches": 42,
               "consecutive_successful_landings": 4,
               "successful_landings": 7,
               "failed_landings": 2,
@@ -6181,7 +5678,7 @@
             "consecutive_successful_launches": 38,
             "successful_launches": 75,
             "failed_launches": 4,
-            "pending_launches": 39,
+            "pending_launches": 40,
             "attempted_landings": 9,
             "successful_landings": 7,
             "failed_landings": 2,
@@ -6402,11 +5899,11 @@
         },
         "webcast_live": false,
         "program": [],
-        "orbital_launch_attempt_count": 7196,
+        "orbital_launch_attempt_count": 7195,
         "location_launch_attempt_count": 71,
         "pad_launch_attempt_count": 36,
         "agency_launch_attempt_count": 81,
-        "orbital_launch_attempt_count_year": 23,
+        "orbital_launch_attempt_count_year": 22,
         "location_launch_attempt_count_year": 2,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 2,
@@ -6700,16 +6197,16 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2026-01-20T19:53:27Z",
-        "net": "2026-01-29T02:14:00Z",
+        "last_updated": "2026-01-21T19:01:21Z",
+        "net": "2026-01-29T04:00:00Z",
         "net_precision": {
           "id": 1,
           "name": "Minute",
           "abbrev": "MIN",
           "description": "The T-0 is accurate to the minute."
         },
-        "window_end": "2026-01-29T06:14:00Z",
-        "window_start": "2026-01-29T02:14:00Z",
+        "window_end": "2026-01-29T08:00:00Z",
+        "window_start": "2026-01-29T04:00:00Z",
         "image": {
           "id": 1296,
           "name": "Starlink night fairing",
@@ -7457,7 +6954,7 @@
                 "fastest_turnaround": "P22DT15H50M16S"
               },
               "previous_flight_date": "2025-11-22T07:53:50Z",
-              "turn_around_time": "P67DT18H20M10S",
+              "turn_around_time": "P67DT20H6M10S",
               "landing": {
                 "id": 1800,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1800/?format=json",
@@ -7907,16 +7404,24 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7197,
+        "orbital_launch_attempt_count": 7196,
         "location_launch_attempt_count": 1083,
         "pad_launch_attempt_count": 361,
         "agency_launch_attempt_count": 631,
-        "orbital_launch_attempt_count_year": 24,
+        "orbital_launch_attempt_count_year": 23,
         "location_launch_attempt_count_year": 7,
         "pad_launch_attempt_count_year": 7,
         "agency_launch_attempt_count_year": 12,
         "flightclub_url": null,
         "updates": [
+          {
+            "id": 13733,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Now targeting Jan 29 at 04:00 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-6-101",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-21T19:01:00Z"
+          },
           {
             "id": 13724,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -7969,7 +7474,7 @@
           }
         ],
         "timeline": [],
-        "pad_turnaround": "P2DT21H36M",
+        "pad_turnaround": "P2DT23H22M",
         "mission_patches": [
           {
             "id": 7,
@@ -9137,11 +8642,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7198,
+        "orbital_launch_attempt_count": 7197,
         "location_launch_attempt_count": 858,
         "pad_launch_attempt_count": 244,
         "agency_launch_attempt_count": 632,
-        "orbital_launch_attempt_count_year": 25,
+        "orbital_launch_attempt_count_year": 24,
         "location_launch_attempt_count_year": 6,
         "pad_launch_attempt_count_year": 6,
         "agency_launch_attempt_count_year": 13,
@@ -10209,11 +9714,11 @@
         },
         "webcast_live": false,
         "program": [],
-        "orbital_launch_attempt_count": 7200,
+        "orbital_launch_attempt_count": 7199,
         "location_launch_attempt_count": 1084,
         "pad_launch_attempt_count": 362,
         "agency_launch_attempt_count": 633,
-        "orbital_launch_attempt_count_year": 27,
+        "orbital_launch_attempt_count_year": 26,
         "location_launch_attempt_count_year": 8,
         "pad_launch_attempt_count_year": 8,
         "agency_launch_attempt_count_year": 14,
@@ -10247,7 +9752,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P1DT21H46M",
+        "pad_turnaround": "P1DT20H",
         "mission_patches": []
       },
       {
@@ -10802,11 +10307,11 @@
         },
         "webcast_live": false,
         "program": [],
-        "orbital_launch_attempt_count": 7200,
+        "orbital_launch_attempt_count": 7199,
         "location_launch_attempt_count": 23,
         "pad_launch_attempt_count": 1,
         "agency_launch_attempt_count": 10,
-        "orbital_launch_attempt_count_year": 27,
+        "orbital_launch_attempt_count_year": 26,
         "location_launch_attempt_count_year": 2,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 1,
@@ -10880,16 +10385,16 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2026-01-20T19:53:44Z",
-        "net": "2026-01-31T23:37:00Z",
+        "last_updated": "2026-01-22T00:16:46Z",
+        "net": "2026-01-31T23:30:00Z",
         "net_precision": {
           "id": 1,
           "name": "Minute",
           "abbrev": "MIN",
           "description": "The T-0 is accurate to the minute."
         },
-        "window_end": "2026-02-01T03:37:00Z",
-        "window_start": "2026-01-31T23:37:00Z",
+        "window_end": "2026-02-01T03:30:00Z",
+        "window_start": "2026-01-31T23:30:00Z",
         "image": {
           "id": 1296,
           "name": "Starlink night fairing",
@@ -11637,7 +11142,7 @@
                 "fastest_turnaround": "P45DT22H17M"
               },
               "previous_flight_date": "2025-12-01T07:44:10Z",
-              "turn_around_time": "P61DT15H52M50S",
+              "turn_around_time": "P61DT15H45M50S",
               "landing": {
                 "id": 1802,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1802/?format=json",
@@ -12087,16 +11592,24 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7201,
+        "orbital_launch_attempt_count": 7200,
         "location_launch_attempt_count": 1085,
         "pad_launch_attempt_count": 363,
         "agency_launch_attempt_count": 634,
-        "orbital_launch_attempt_count_year": 28,
+        "orbital_launch_attempt_count_year": 27,
         "location_launch_attempt_count_year": 9,
         "pad_launch_attempt_count_year": 9,
         "agency_launch_attempt_count_year": 15,
         "flightclub_url": null,
         "updates": [
+          {
+            "id": 13738,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Now targeting Jan 31 at 23:30 UTC",
+            "info_url": "https://www.spacex.com/launches/sl-6-103",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-22T00:16:00Z"
+          },
           {
             "id": 13726,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -12149,7 +11662,7 @@
           }
         ],
         "timeline": [],
-        "pad_turnaround": "PT23H37M",
+        "pad_turnaround": "PT23H30M",
         "mission_patches": [
           {
             "id": 7,
@@ -12783,11 +12296,11 @@
         },
         "webcast_live": false,
         "program": [],
-        "orbital_launch_attempt_count": 7202,
+        "orbital_launch_attempt_count": 7201,
         "location_launch_attempt_count": 1086,
         "pad_launch_attempt_count": 121,
         "agency_launch_attempt_count": 171,
-        "orbital_launch_attempt_count_year": 29,
+        "orbital_launch_attempt_count_year": 28,
         "location_launch_attempt_count_year": 10,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 1,
@@ -14010,11 +13523,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7203,
+        "orbital_launch_attempt_count": 7202,
         "location_launch_attempt_count": 859,
         "pad_launch_attempt_count": 245,
         "agency_launch_attempt_count": 635,
-        "orbital_launch_attempt_count_year": 30,
+        "orbital_launch_attempt_count_year": 29,
         "location_launch_attempt_count_year": 7,
         "pad_launch_attempt_count_year": 7,
         "agency_launch_attempt_count_year": 16,
@@ -15296,11 +14809,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7205,
+        "orbital_launch_attempt_count": 7204,
         "location_launch_attempt_count": 1087,
         "pad_launch_attempt_count": 364,
         "agency_launch_attempt_count": 636,
-        "orbital_launch_attempt_count_year": 32,
+        "orbital_launch_attempt_count_year": 31,
         "location_launch_attempt_count_year": 11,
         "pad_launch_attempt_count_year": 10,
         "agency_launch_attempt_count_year": 17,
@@ -15503,7 +15016,7 @@
             "relative_time": "PT1H3M43S"
           }
         ],
-        "pad_turnaround": "P10DT23M",
+        "pad_turnaround": "P10DT30M",
         "mission_patches": [
           {
             "id": 7,
@@ -16998,11 +16511,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7207,
+        "orbital_launch_attempt_count": 7205,
         "location_launch_attempt_count": 331,
         "pad_launch_attempt_count": 6,
         "agency_launch_attempt_count": 325,
-        "orbital_launch_attempt_count_year": 34,
+        "orbital_launch_attempt_count_year": 32,
         "location_launch_attempt_count_year": 1,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 1,
@@ -17063,21 +16576,21 @@
         "slug": "proton-mblok-dm-03-elektro-l-no5",
         "launch_designator": null,
         "status": {
-          "id": 2,
-          "name": "To Be Determined",
-          "abbrev": "TBD",
-          "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
+          "id": 1,
+          "name": "Go for Launch",
+          "abbrev": "Go",
+          "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2025-12-24T17:29:53Z",
-        "net": "2026-02-12T00:00:00Z",
+        "last_updated": "2026-01-22T00:59:42Z",
+        "net": "2026-02-12T08:56:00Z",
         "net_precision": {
-          "id": 5,
-          "name": "Day",
-          "abbrev": "DAY",
-          "description": "The T-0 is expected on the given day."
+          "id": 1,
+          "name": "Minute",
+          "abbrev": "MIN",
+          "description": "The T-0 is accurate to the minute."
         },
-        "window_end": "2026-02-12T00:00:00Z",
-        "window_start": "2026-02-12T00:00:00Z",
+        "window_end": "2026-02-12T08:56:00Z",
+        "window_start": "2026-02-12T08:56:00Z",
         "image": {
           "id": 1804,
           "name": "[AUTO] Proton-M - image",
@@ -17575,16 +17088,24 @@
         },
         "webcast_live": false,
         "program": [],
-        "orbital_launch_attempt_count": 7207,
+        "orbital_launch_attempt_count": 7206,
         "location_launch_attempt_count": 1560,
         "pad_launch_attempt_count": 93,
         "agency_launch_attempt_count": 198,
-        "orbital_launch_attempt_count_year": 34,
+        "orbital_launch_attempt_count_year": 33,
         "location_launch_attempt_count_year": 1,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 1,
         "flightclub_url": null,
         "updates": [
+          {
+            "id": 13739,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Added launch time.",
+            "info_url": "https://t.me/rt_space/1543",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-22T00:59:00Z"
+          },
           {
             "id": 13458,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -17669,7 +17190,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P1102DT14H47M8S",
+        "pad_turnaround": "P1102DT23H43M8S",
         "mission_patches": []
       },
       {
@@ -18052,11 +17573,11 @@
         },
         "webcast_live": false,
         "program": [],
-        "orbital_launch_attempt_count": 7209,
+        "orbital_launch_attempt_count": 7208,
         "location_launch_attempt_count": 3,
         "pad_launch_attempt_count": 3,
         "agency_launch_attempt_count": 3,
-        "orbital_launch_attempt_count_year": 36,
+        "orbital_launch_attempt_count_year": 35,
         "location_launch_attempt_count_year": 1,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 1,
@@ -19119,6 +18640,768 @@
         "timeline": [],
         "pad_turnaround": "P25DT11H43M",
         "mission_patches": []
+      },
+      {
+        "id": "1b23eb18-e06e-4058-9b42-e95ca0980511",
+        "url": "https://ll.thespacedevs.com/2.3.0/launches/1b23eb18-e06e-4058-9b42-e95ca0980511/?format=json",
+        "name": "Spectrum | Onward and Upward",
+        "response_mode": "detailed",
+        "slug": "spectrum-onward-and-upward",
+        "launch_designator": null,
+        "status": {
+          "id": 2,
+          "name": "To Be Determined",
+          "abbrev": "TBD",
+          "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
+        },
+        "last_updated": "2026-01-21T19:07:32Z",
+        "net": "2026-02-28T00:00:00Z",
+        "net_precision": {
+          "id": 7,
+          "name": "Month",
+          "abbrev": "M",
+          "description": "The T-0 is expected in the given month."
+        },
+        "window_end": "2026-02-28T00:00:00Z",
+        "window_start": "2026-02-28T00:00:00Z",
+        "image": {
+          "id": 2355,
+          "name": "Spectrum on the pad at Andøya Spaceport (Maiden Flight)",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_20250321072643.jpeg",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_thumbnail_20250321072643.jpeg",
+          "credit": "Isar Aerospace | Robin Brillert, Wingmen Media",
+          "license": {
+            "id": 1,
+            "name": "Unknown",
+            "priority": 9,
+            "link": null
+          },
+          "single_use": false,
+          "variants": []
+        },
+        "infographic": null,
+        "probability": null,
+        "weather_concerns": null,
+        "failreason": "",
+        "hashtag": null,
+        "launch_service_provider": {
+          "response_mode": "normal",
+          "id": 1046,
+          "url": "https://ll.thespacedevs.com/2.3.0/agencies/1046/?format=json",
+          "name": "Isar Aerospace",
+          "abbrev": "ISAR",
+          "type": {
+            "id": 5,
+            "name": "Private"
+          },
+          "featured": false,
+          "country": [
+            {
+              "id": 4,
+              "name": "Germany",
+              "alpha_2_code": "DE",
+              "alpha_3_code": "DEU",
+              "nationality_name": "German",
+              "nationality_name_composed": "Germano"
+            }
+          ],
+          "description": "Isar Aerospace is a German aerospace company based in Munich, Germany. The company was founded in 2018.",
+          "administrator": "CEO: Daniel Metzler",
+          "founding_year": 2018,
+          "launchers": "Spectrum",
+          "spacecraft": "",
+          "parent": null,
+          "image": {
+            "id": 2355,
+            "name": "Spectrum on the pad at Andøya Spaceport (Maiden Flight)",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_20250321072643.jpeg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_thumbnail_20250321072643.jpeg",
+            "credit": "Isar Aerospace | Robin Brillert, Wingmen Media",
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": false,
+            "variants": []
+          },
+          "logo": {
+            "id": 147,
+            "name": "[AUTO] Isar Aerospace - logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/isar2520aerospace_logo_20230125151814.jpeg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185015.jpeg",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "social_logo": {
+            "id": 2262,
+            "name": "Isar Aerospace Social Logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/isar_aerospace__image_20241021093234.png",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/isar_aerospace__image_thumbnail_20241021093234.png",
+            "credit": "Isar Aerospace",
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "total_launch_count": 1,
+          "consecutive_successful_launches": 0,
+          "successful_launches": 0,
+          "failed_launches": 1,
+          "pending_launches": 6,
+          "consecutive_successful_landings": 0,
+          "successful_landings": 0,
+          "failed_landings": 0,
+          "attempted_landings": 0,
+          "successful_landings_spacecraft": 0,
+          "failed_landings_spacecraft": 0,
+          "attempted_landings_spacecraft": 0,
+          "successful_landings_payload": 0,
+          "failed_landings_payload": 0,
+          "attempted_landings_payload": 0,
+          "info_url": "https://www.isaraerospace.com/",
+          "wiki_url": "https://en.wikipedia.org/wiki/Isar_Aerospace",
+          "social_media_links": [
+            {
+              "id": 283,
+              "social_media": {
+                "id": 3,
+                "name": "Homepage",
+                "url": null,
+                "logo": null
+              },
+              "url": "https://www.isaraerospace.com/"
+            },
+            {
+              "id": 284,
+              "social_media": {
+                "id": 2,
+                "name": "Instagram",
+                "url": "https://instagram.com",
+                "logo": {
+                  "id": 2322,
+                  "name": "Instagram logo",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_20250211191139.png",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_thumbnail_20250211191139.png",
+                  "credit": "Instagram",
+                  "license": {
+                    "id": 1,
+                    "name": "Unknown",
+                    "priority": 9,
+                    "link": null
+                  },
+                  "single_use": true,
+                  "variants": []
+                }
+              },
+              "url": "https://www.instagram.com/isaraerospace/"
+            },
+            {
+              "id": 285,
+              "social_media": {
+                "id": 1,
+                "name": "X",
+                "url": "https://x.com",
+                "logo": {
+                  "id": 2320,
+                  "name": "X logo",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_20250211191027.jpg",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_thumbnail_20250211191027.jpeg",
+                  "credit": "X",
+                  "license": {
+                    "id": 1,
+                    "name": "Unknown",
+                    "priority": 9,
+                    "link": null
+                  },
+                  "single_use": true,
+                  "variants": []
+                }
+              },
+              "url": "https://x.com/isaraerospace/status/1845769149634503064"
+            },
+            {
+              "id": 286,
+              "social_media": {
+                "id": 4,
+                "name": "LinkedIn",
+                "url": "https://www.linkedin.com/",
+                "logo": {
+                  "id": 2321,
+                  "name": "LinkedIn logo",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_20250211191111.png",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_thumbnail_20250211191112.png",
+                  "credit": "LinkedIn",
+                  "license": {
+                    "id": 1,
+                    "name": "Unknown",
+                    "priority": 9,
+                    "link": null
+                  },
+                  "single_use": true,
+                  "variants": []
+                }
+              },
+              "url": "https://www.linkedin.com/company/isaraerospace"
+            },
+            {
+              "id": 287,
+              "social_media": {
+                "id": 6,
+                "name": "Youtube",
+                "url": "https://www.youtube.com/",
+                "logo": {
+                  "id": 2356,
+                  "name": "YouTube logo",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/youtube_logo_image_20250321073112.png",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/youtube_logo_image_thumbnail_20250321073112.png",
+                  "credit": "YouTube",
+                  "license": {
+                    "id": 1,
+                    "name": "Unknown",
+                    "priority": 9,
+                    "link": null
+                  },
+                  "single_use": true,
+                  "variants": []
+                }
+              },
+              "url": "https://www.youtube.com/channel/UCjRAGiZtCpR6lrkirDtJP0Q"
+            }
+          ]
+        },
+        "rocket": {
+          "id": 8716,
+          "configuration": {
+            "response_mode": "detailed",
+            "id": 491,
+            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/491/?format=json",
+            "name": "Spectrum",
+            "families": [],
+            "full_name": "Spectrum",
+            "variant": "",
+            "active": false,
+            "is_placeholder": false,
+            "manufacturer": {
+              "response_mode": "normal",
+              "id": 1046,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/1046/?format=json",
+              "name": "Isar Aerospace",
+              "abbrev": "ISAR",
+              "type": {
+                "id": 5,
+                "name": "Private"
+              },
+              "featured": false,
+              "country": [
+                {
+                  "id": 4,
+                  "name": "Germany",
+                  "alpha_2_code": "DE",
+                  "alpha_3_code": "DEU",
+                  "nationality_name": "German",
+                  "nationality_name_composed": "Germano"
+                }
+              ],
+              "description": "Isar Aerospace is a German aerospace company based in Munich, Germany. The company was founded in 2018.",
+              "administrator": "CEO: Daniel Metzler",
+              "founding_year": 2018,
+              "launchers": "Spectrum",
+              "spacecraft": "",
+              "parent": null,
+              "image": {
+                "id": 2355,
+                "name": "Spectrum on the pad at Andøya Spaceport (Maiden Flight)",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_20250321072643.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_thumbnail_20250321072643.jpeg",
+                "credit": "Isar Aerospace | Robin Brillert, Wingmen Media",
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": false,
+                "variants": []
+              },
+              "logo": {
+                "id": 147,
+                "name": "[AUTO] Isar Aerospace - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/isar2520aerospace_logo_20230125151814.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185015.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 2262,
+                "name": "Isar Aerospace Social Logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/isar_aerospace__image_20241021093234.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/isar_aerospace__image_thumbnail_20241021093234.png",
+                "credit": "Isar Aerospace",
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 1,
+              "consecutive_successful_launches": 0,
+              "successful_launches": 0,
+              "failed_launches": 1,
+              "pending_launches": 6,
+              "consecutive_successful_landings": 0,
+              "successful_landings": 0,
+              "failed_landings": 0,
+              "attempted_landings": 0,
+              "successful_landings_spacecraft": 0,
+              "failed_landings_spacecraft": 0,
+              "attempted_landings_spacecraft": 0,
+              "successful_landings_payload": 0,
+              "failed_landings_payload": 0,
+              "attempted_landings_payload": 0,
+              "info_url": "https://www.isaraerospace.com/",
+              "wiki_url": "https://en.wikipedia.org/wiki/Isar_Aerospace",
+              "social_media_links": [
+                {
+                  "id": 283,
+                  "social_media": {
+                    "id": 3,
+                    "name": "Homepage",
+                    "url": null,
+                    "logo": null
+                  },
+                  "url": "https://www.isaraerospace.com/"
+                },
+                {
+                  "id": 284,
+                  "social_media": {
+                    "id": 2,
+                    "name": "Instagram",
+                    "url": "https://instagram.com",
+                    "logo": {
+                      "id": 2322,
+                      "name": "Instagram logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_20250211191139.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_thumbnail_20250211191139.png",
+                      "credit": "Instagram",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    }
+                  },
+                  "url": "https://www.instagram.com/isaraerospace/"
+                },
+                {
+                  "id": 285,
+                  "social_media": {
+                    "id": 1,
+                    "name": "X",
+                    "url": "https://x.com",
+                    "logo": {
+                      "id": 2320,
+                      "name": "X logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_20250211191027.jpg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_thumbnail_20250211191027.jpeg",
+                      "credit": "X",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    }
+                  },
+                  "url": "https://x.com/isaraerospace/status/1845769149634503064"
+                },
+                {
+                  "id": 286,
+                  "social_media": {
+                    "id": 4,
+                    "name": "LinkedIn",
+                    "url": "https://www.linkedin.com/",
+                    "logo": {
+                      "id": 2321,
+                      "name": "LinkedIn logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_20250211191111.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_thumbnail_20250211191112.png",
+                      "credit": "LinkedIn",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    }
+                  },
+                  "url": "https://www.linkedin.com/company/isaraerospace"
+                },
+                {
+                  "id": 287,
+                  "social_media": {
+                    "id": 6,
+                    "name": "Youtube",
+                    "url": "https://www.youtube.com/",
+                    "logo": {
+                      "id": 2356,
+                      "name": "YouTube logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/youtube_logo_image_20250321073112.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/youtube_logo_image_thumbnail_20250321073112.png",
+                      "credit": "YouTube",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    }
+                  },
+                  "url": "https://www.youtube.com/channel/UCjRAGiZtCpR6lrkirDtJP0Q"
+                }
+              ]
+            },
+            "program": [],
+            "reusable": false,
+            "image": {
+              "id": 2355,
+              "name": "Spectrum on the pad at Andøya Spaceport (Maiden Flight)",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_20250321072643.jpeg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/spectrum_on_the_image_thumbnail_20250321072643.jpeg",
+              "credit": "Isar Aerospace | Robin Brillert, Wingmen Media",
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": false,
+              "variants": []
+            },
+            "info_url": "https://www.isaraerospace.com/spectrum",
+            "wiki_url": null,
+            "description": "Spectrum is a small launch vehicle developed by German company Isar Aerospace.",
+            "alias": "",
+            "min_stage": 2,
+            "max_stage": 2,
+            "length": 28.0,
+            "diameter": 2.0,
+            "maiden_flight": "2025-03-30",
+            "launch_cost": null,
+            "launch_mass": null,
+            "leo_capacity": 1000.0,
+            "gto_capacity": null,
+            "geo_capacity": null,
+            "sso_capacity": 700.0,
+            "to_thrust": 675.0,
+            "apogee": null,
+            "total_launch_count": 1,
+            "consecutive_successful_launches": 0,
+            "successful_launches": 0,
+            "failed_launches": 1,
+            "pending_launches": 6,
+            "attempted_landings": 0,
+            "successful_landings": 0,
+            "failed_landings": 0,
+            "consecutive_successful_landings": 0,
+            "fastest_turnaround": null
+          },
+          "launcher_stage": [],
+          "spacecraft_stage": [],
+          "payloads": []
+        },
+        "mission": {
+          "id": 7309,
+          "name": "Onward and Upward",
+          "type": "Test Flight",
+          "description": "Second test flight of the Isar Spectrum launch vehicle. This launch will carry 5 cubesats and 1 non-separable experiment as part of European Space Agency (ESA)'s “Boost!” program:\r\n\r\n* CyBEEsat (TU Berlin)\r\n* TriSat-S (University of Maribor)\r\n* Platform 6 (EnduroSat)\r\n* FramSat-1 (NTNU)\r\n* SpaceTeamSat1 (TU Wien Space Team)\r\n* Let It Go (Dcubed, non-separable experiment)",
+          "image": null,
+          "orbit": {
+            "id": 17,
+            "name": "Sun-Synchronous Orbit",
+            "abbrev": "SSO",
+            "celestial_body": {
+              "response_mode": "list",
+              "id": 1,
+              "name": "Earth"
+            }
+          },
+          "agencies": [],
+          "info_urls": [],
+          "vid_urls": []
+        },
+        "pad": {
+          "id": 51,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/51/?format=json",
+          "active": true,
+          "agencies": [],
+          "name": "Orbital Launch Pad",
+          "image": null,
+          "description": null,
+          "info_url": null,
+          "wiki_url": "https://en.wikipedia.org/wiki/And%C3%B8ya_Space",
+          "map_url": "https://www.google.com/maps?q=69.1084,15.5895",
+          "latitude": 69.1084,
+          "longitude": 15.5895,
+          "country": {
+            "id": 49,
+            "name": "Norway",
+            "alpha_2_code": "NO",
+            "alpha_3_code": "NOR",
+            "nationality_name": "Norwegian",
+            "nationality_name_composed": "Norwegian"
+          },
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_51_20200803143605.jpg",
+          "total_launch_count": 1,
+          "orbital_launch_attempt_count": 1,
+          "fastest_turnaround": null,
+          "location": {
+            "response_mode": "normal",
+            "id": 161,
+            "url": "https://ll.thespacedevs.com/2.3.0/locations/161/?format=json",
+            "name": "Andøya Spaceport",
+            "celestial_body": {
+              "response_mode": "normal",
+              "id": 1,
+              "name": "Earth",
+              "type": {
+                "id": 1,
+                "name": "Planet"
+              },
+              "diameter": 12742000.0,
+              "mass": 5.972168e+24,
+              "gravity": 9.80655,
+              "length_of_day": "1 00:00:00",
+              "atmosphere": true,
+              "image": {
+                "id": 2040,
+                "name": "Earth (Apollo 17)",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
+                "credit": "NASA",
+                "license": {
+                  "id": 4,
+                  "name": "NASA Image and Media Guidelines",
+                  "priority": 0,
+                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
+              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
+              "total_attempted_launches": 7407,
+              "successful_launches": 6854,
+              "failed_launches": 553,
+              "total_attempted_landings": 1252,
+              "successful_landings": 1205,
+              "failed_landings": 47
+            },
+            "active": true,
+            "country": {
+              "id": 49,
+              "name": "Norway",
+              "alpha_2_code": "NO",
+              "alpha_3_code": "NOR",
+              "nationality_name": "Norwegian",
+              "nationality_name_composed": "Norwegian"
+            },
+            "description": "Andøya Space, also named Andøya Space Center and formerly Andøya Rocket Range, is a rocket launch site, rocket range, and spaceport on Andøya island (the northernmost in the Vesterålen archipelago) in Andøy Municipality in Nordland county, Norway.",
+            "image": {
+              "id": 2137,
+              "name": "Andøya Spaceport",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/and25c325b8ya_image_20240808093551.jpg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/and25c325b8ya_image_thumbnail_20240808093552.jpeg",
+              "credit": "Andøya Space",
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": true,
+              "variants": []
+            },
+            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_161_20240109072235.jpg",
+            "longitude": 16.020833,
+            "latitude": 69.294167,
+            "timezone_name": "Europe/Oslo",
+            "total_launch_count": 1,
+            "total_landing_count": 0
+          }
+        },
+        "webcast_live": false,
+        "program": [],
+        "orbital_launch_attempt_count": 7211,
+        "location_launch_attempt_count": 2,
+        "pad_launch_attempt_count": 2,
+        "agency_launch_attempt_count": 2,
+        "orbital_launch_attempt_count_year": 38,
+        "location_launch_attempt_count_year": 1,
+        "pad_launch_attempt_count_year": 1,
+        "agency_launch_attempt_count_year": 1,
+        "flightclub_url": null,
+        "updates": [
+          {
+            "id": 13734,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Delayed to next range window in February.",
+            "info_url": "https://www.spiegel.de/wissenschaft/weltall/spectrum-von-isar-aerospace-raketenstart-verschoben-hoffnung-gewahrt-a-b6161249-7561-4055-acde-b718f530dc7e",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-21T19:07:00Z"
+          },
+          {
+            "id": 13731,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Scrubbed for the day due to pressurization valve issue.",
+            "info_url": "https://x.com/isaraerospace/status/2013940928835178662",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-21T11:55:00Z"
+          },
+          {
+            "id": 13665,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "GO for launch.",
+            "info_url": "https://isaraerospace.com/press/isar-aerospace-targets-second-launch-not-earlier-than-21-january-2026",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-16T12:02:00Z"
+          },
+          {
+            "id": 13620,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "NET January 20 per new NOTAMs.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=63983.msg2750598#msg2750598",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-13T15:52:00Z"
+          },
+          {
+            "id": 13447,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "NET January 17.",
+            "info_url": "https://www.vol.no/nyheter/i/XMgMMg/forbereder-seg-paa-ny-oppskyting",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-23T19:21:00Z"
+          },
+          {
+            "id": 13226,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Delayed to NET 13 January 2026.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=63983.msg2741767#msg2741767",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-10T01:42:00Z"
+          },
+          {
+            "id": 13124,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Moved to NET December 2025 with possibly related NOTAMs/marine navigation warnings issued for December 6-19, to be confirmed as for Spectrum.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=63983.msg2739811#msg2739811",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-03T20:54:00Z"
+          },
+          {
+            "id": 12262,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/arnaud2520muller_profile_20230607144351.jpg",
+            "comment": "Adding launch",
+            "info_url": "https://spacenews.com/isar-aerospace-prepares-for-second-spectrum-launch/",
+            "created_by": "Nosu",
+            "created_on": "2025-09-16T06:44:00Z"
+          }
+        ],
+        "info_urls": [
+          {
+            "priority": 10,
+            "source": "isaraerospace.com",
+            "title": "",
+            "description": "The second flight of our ‘Spectrum’ launch vehicle marks a significant milestone serving as both the vehicle’s qualification mission and its first flight carrying payload.\n\n \"Onward and Upward\" symbolizes our relentless drive for progress and continuous improvement, reflecting our determination to b...",
+            "feature_image": null,
+            "url": "https://isaraerospace.com/mission-2",
+            "type": {
+              "id": 1,
+              "name": "Official Page"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            }
+          }
+        ],
+        "vid_urls": [
+          {
+            "priority": 10,
+            "source": "youtube.com",
+            "publisher": "Isar Aerospace",
+            "title": "Livestream: \"Onward and Upward\" Mission of Isar Aerospace",
+            "description": "Mission Name: 'Onward and Upward'\n\nLaunch Date: Updates via https://isaraerospace.com/mission-updates-overview\n\nLaunch site: Andøya Space\n\nThe second flight of our ‘Spectrum’ launch vehicle marks a significant milestone serving as both the vehicle’s qualification mission and its first flight carrying payload.\n\n\"Onward and Upward\" symbolizes our relentless drive for progress and continuous improvement, reflecting our determination to build upon the successes and lessons learned from our inaugural test flight.\n\nThe livestream is produced in collaboration with the @NASASpaceflight team.\n\nMore information on the Mission ‘Onward and Upward’ here: https://isaraerospace.com/mission-2",
+            "feature_image": "https://i.ytimg.com/vi/MsbZj8PxmUk/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=MsbZj8PxmUk",
+            "type": {
+              "id": 1,
+              "name": "Official Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2026-01-21T19:00:00Z",
+            "end_time": null,
+            "live": false
+          }
+        ],
+        "timeline": [],
+        "pad_turnaround": "P334DT13H30M",
+        "mission_patches": [
+          {
+            "id": 1298,
+            "name": "Onward and Upward Patch",
+            "priority": 10,
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/mission_patch_images/onward2520and_mission_patch_20260120112758.png",
+            "agency": {
+              "response_mode": "list",
+              "id": 1046,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/1046/?format=json",
+              "name": "Isar Aerospace",
+              "abbrev": "ISAR",
+              "type": {
+                "id": 5,
+                "name": "Private"
+              }
+            },
+            "response_mode": "normal"
+          }
+        ]
       },
       {
         "id": "10fa7952-f00b-4292-80a2-4207e208844e",
@@ -20796,7 +21079,7 @@
           "consecutive_successful_launches": 38,
           "successful_launches": 75,
           "failed_launches": 4,
-          "pending_launches": 41,
+          "pending_launches": 42,
           "consecutive_successful_landings": 4,
           "successful_landings": 7,
           "failed_landings": 2,
@@ -20899,7 +21182,7 @@
               "consecutive_successful_launches": 38,
               "successful_launches": 75,
               "failed_launches": 4,
-              "pending_launches": 41,
+              "pending_launches": 42,
               "consecutive_successful_landings": 4,
               "successful_landings": 7,
               "failed_landings": 2,
@@ -20952,7 +21235,7 @@
             "consecutive_successful_launches": 38,
             "successful_launches": 75,
             "failed_launches": 4,
-            "pending_launches": 39,
+            "pending_launches": 40,
             "attempted_landings": 9,
             "successful_landings": 7,
             "failed_landings": 2,
@@ -21107,7 +21390,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P67DT13H45M",
+        "pad_turnaround": "P67DT13H8M",
         "mission_patches": []
       },
       {
@@ -22975,7 +23258,7 @@
           "consecutive_successful_launches": 38,
           "successful_launches": 75,
           "failed_launches": 4,
-          "pending_launches": 41,
+          "pending_launches": 42,
           "consecutive_successful_landings": 4,
           "successful_landings": 7,
           "failed_landings": 2,
@@ -23078,7 +23361,7 @@
               "consecutive_successful_launches": 38,
               "successful_launches": 75,
               "failed_launches": 4,
-              "pending_launches": 41,
+              "pending_launches": 42,
               "consecutive_successful_landings": 4,
               "successful_landings": 7,
               "failed_landings": 2,
@@ -23131,7 +23414,7 @@
             "consecutive_successful_launches": 38,
             "successful_launches": 75,
             "failed_launches": 4,
-            "pending_launches": 39,
+            "pending_launches": 40,
             "attempted_landings": 9,
             "successful_landings": 7,
             "failed_landings": 2,
@@ -23236,14 +23519,6 @@
                   "nationality_name_composed": "Swedo"
                 },
                 {
-                  "id": 20,
-                  "name": "Belgium",
-                  "alpha_2_code": "BE",
-                  "alpha_3_code": "BEL",
-                  "nationality_name": "Belgian",
-                  "nationality_name_composed": "Belgo"
-                },
-                {
                   "id": 23,
                   "name": "Portugal",
                   "alpha_2_code": "PT",
@@ -23346,6 +23621,14 @@
                   "alpha_3_code": "LUX",
                   "nationality_name": "Luxembourger",
                   "nationality_name_composed": "Luxembourgish"
+                },
+                {
+                  "id": 20,
+                  "name": "Belgium",
+                  "alpha_2_code": "BE",
+                  "alpha_3_code": "BEL",
+                  "nationality_name": "Belgian",
+                  "nationality_name_composed": "Belgo"
                 },
                 {
                   "id": 86,
@@ -23677,7 +23960,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P67DT13H45M",
+        "pad_turnaround": "P67DT13H8M",
         "mission_patches": [
           {
             "id": 1185,
@@ -23818,7 +24101,7 @@
           "consecutive_successful_launches": 38,
           "successful_launches": 75,
           "failed_launches": 4,
-          "pending_launches": 41,
+          "pending_launches": 42,
           "consecutive_successful_landings": 4,
           "successful_landings": 7,
           "failed_landings": 2,
@@ -23921,7 +24204,7 @@
               "consecutive_successful_launches": 38,
               "successful_launches": 75,
               "failed_launches": 4,
-              "pending_launches": 41,
+              "pending_launches": 42,
               "consecutive_successful_landings": 4,
               "successful_landings": 7,
               "failed_landings": 2,
@@ -23974,7 +24257,7 @@
             "consecutive_successful_launches": 38,
             "successful_launches": 75,
             "failed_launches": 4,
-            "pending_launches": 39,
+            "pending_launches": 40,
             "attempted_landings": 9,
             "successful_landings": 7,
             "failed_landings": 2,
@@ -24229,7 +24512,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P67DT13H45M",
+        "pad_turnaround": "P67DT13H8M",
         "mission_patches": [
           {
             "id": 1191,
@@ -24370,7 +24653,7 @@
           "consecutive_successful_launches": 38,
           "successful_launches": 75,
           "failed_launches": 4,
-          "pending_launches": 41,
+          "pending_launches": 42,
           "consecutive_successful_landings": 4,
           "successful_landings": 7,
           "failed_landings": 2,
@@ -24473,7 +24756,7 @@
               "consecutive_successful_launches": 38,
               "successful_launches": 75,
               "failed_launches": 4,
-              "pending_launches": 41,
+              "pending_launches": 42,
               "consecutive_successful_landings": 4,
               "successful_landings": 7,
               "failed_landings": 2,
@@ -24526,7 +24809,7 @@
             "consecutive_successful_launches": 38,
             "successful_launches": 75,
             "failed_launches": 4,
-            "pending_launches": 39,
+            "pending_launches": 40,
             "attempted_landings": 9,
             "successful_landings": 7,
             "failed_landings": 2,
@@ -24784,7 +25067,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P67DT13H45M",
+        "pad_turnaround": "P67DT13H8M",
         "mission_patches": []
       },
       {
