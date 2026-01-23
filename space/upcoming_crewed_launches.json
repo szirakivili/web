@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-01-22T04:18:04Z",
+  "fetched_at": "2026-01-23T04:13:06Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=true&format=json&mode=detailed&limit=10",
   "payload": {
     "count": 4,
@@ -14,18 +14,18 @@
         "slug": "new-shepard-ns-38",
         "launch_designator": null,
         "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
+          "id": 3,
+          "name": "Launch Successful",
+          "abbrev": "Success",
+          "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2026-01-21T19:59:10Z",
-        "net": "2026-01-22T16:00:00Z",
+        "last_updated": "2026-01-22T20:14:45Z",
+        "net": "2026-01-22T16:25:35Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
         "window_end": "2026-01-22T21:30:00Z",
         "window_start": "2026-01-22T16:00:00Z",
@@ -121,18 +121,18 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 39,
-          "consecutive_successful_launches": 16,
-          "successful_launches": 38,
+          "total_launch_count": 40,
+          "consecutive_successful_launches": 17,
+          "successful_launches": 39,
           "failed_launches": 1,
           "pending_launches": 5,
-          "consecutive_successful_landings": 10,
-          "successful_landings": 36,
+          "consecutive_successful_landings": 11,
+          "successful_landings": 37,
           "failed_landings": 3,
-          "attempted_landings": 39,
-          "successful_landings_spacecraft": 37,
+          "attempted_landings": 40,
+          "successful_landings_spacecraft": 38,
           "failed_landings_spacecraft": 0,
-          "attempted_landings_spacecraft": 37,
+          "attempted_landings_spacecraft": 38,
           "successful_landings_payload": 0,
           "failed_landings_payload": 0,
           "attempted_landings_payload": 0,
@@ -224,18 +224,18 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 39,
-              "consecutive_successful_launches": 16,
-              "successful_launches": 38,
+              "total_launch_count": 40,
+              "consecutive_successful_launches": 17,
+              "successful_launches": 39,
               "failed_launches": 1,
               "pending_launches": 5,
-              "consecutive_successful_landings": 10,
-              "successful_landings": 36,
+              "consecutive_successful_landings": 11,
+              "successful_landings": 37,
               "failed_landings": 3,
-              "attempted_landings": 39,
-              "successful_landings_spacecraft": 37,
+              "attempted_landings": 40,
+              "successful_landings_spacecraft": 38,
               "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 37,
+              "attempted_landings_spacecraft": 38,
               "successful_landings_payload": 0,
               "failed_landings_payload": 0,
               "attempted_landings_payload": 0,
@@ -277,39 +277,39 @@
             "sso_capacity": null,
             "to_thrust": 490.0,
             "apogee": 100.0,
-            "total_launch_count": 37,
-            "consecutive_successful_launches": 14,
-            "successful_launches": 36,
+            "total_launch_count": 38,
+            "consecutive_successful_launches": 15,
+            "successful_launches": 37,
             "failed_launches": 1,
-            "pending_launches": 1,
-            "attempted_landings": 37,
-            "successful_landings": 35,
+            "pending_launches": 0,
+            "attempted_landings": 38,
+            "successful_landings": 36,
             "failed_landings": 2,
-            "consecutive_successful_landings": 14,
+            "consecutive_successful_landings": 15,
             "fastest_turnaround": "P20DT40M27S"
           },
           "launcher_stage": [
             {
               "id": 873,
               "type": "Core",
-              "reused": null,
-              "launcher_flight_number": null,
+              "reused": true,
+              "launcher_flight_number": 17,
               "launcher": {
                 "response_mode": "normal",
-                "id": 144,
-                "url": "https://ll.thespacedevs.com/2.3.0/launchers/144/?format=json",
-                "flight_proven": false,
-                "serial_number": "Unknown NS",
-                "is_placeholder": true,
+                "id": 90,
+                "url": "https://ll.thespacedevs.com/2.3.0/launchers/90/?format=json",
+                "flight_proven": true,
+                "serial_number": "NS-4",
+                "is_placeholder": false,
                 "status": {
-                  "id": 8,
-                  "name": "N/A"
+                  "id": 3,
+                  "name": "active"
                 },
                 "image": {
-                  "id": 1676,
-                  "name": "[AUTO] Unknown NS - image",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/none_image_20231212212416.png",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193446.png",
+                  "id": 1659,
+                  "name": "[AUTO] NS-4 - image",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/90_image_20210412202510.jpeg",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193420.jpeg",
                   "credit": null,
                   "license": {
                     "id": 1,
@@ -320,22 +320,22 @@
                   "single_use": true,
                   "variants": []
                 },
-                "details": "Booster serial number unknown.",
-                "successful_landings": null,
-                "attempted_landings": null,
-                "flights": null,
-                "last_launch_date": null,
-                "first_launch_date": null,
-                "fastest_turnaround": null
+                "details": "New Shepard vehicle #4 is the fourth flight vehicle of the New Shepard suborbital rocket. It was used for Blue Origin's first crewed launches.",
+                "successful_landings": 17,
+                "attempted_landings": 17,
+                "flights": 17,
+                "last_launch_date": "2026-01-22T16:25:35Z",
+                "first_launch_date": "2021-01-14T17:19:00Z",
+                "fastest_turnaround": "P59DT11M42S"
               },
-              "previous_flight_date": null,
-              "turn_around_time": null,
+              "previous_flight_date": "2025-10-08T13:40:27Z",
+              "turn_around_time": "P106DT2H45M8S",
               "landing": {
                 "id": 1766,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1766/?format=json",
                 "attempt": true,
-                "success": null,
-                "description": "The New Shepard booster will land back on the landing pad.",
+                "success": true,
+                "description": "The New Shepard booster NS-4 has landed back on the landing pad.",
                 "downrange_distance": 3.2,
                 "landing_location": {
                   "id": 11,
@@ -377,8 +377,8 @@
                     "longitude": -104.757152,
                     "latitude": 31.422927,
                     "timezone_name": "America/Chicago",
-                    "total_launch_count": 37,
-                    "total_landing_count": 37
+                    "total_launch_count": 38,
+                    "total_landing_count": 38
                   },
                   "longitude": -104.762793,
                   "latitude": 31.451665,
@@ -397,8 +397,8 @@
                     "single_use": true,
                     "variants": []
                   },
-                  "successful_landings": 32,
-                  "attempted_landings": 34,
+                  "successful_landings": 33,
+                  "attempted_landings": 35,
                   "failed_landings": 2,
                   "celestial_body": {
                     "response_mode": "normal",
@@ -439,7 +439,11 @@
                   "description": "A return to launch site usually means that after stage separation the booster flips and does a burn back towards the launch site, landing near where it initially launched from."
                 }
               },
-              "previous_flight": null
+              "previous_flight": {
+                "id": "a7d60abb-c22d-41fe-9c17-35dbdd7f8029",
+                "url": "https://ll.thespacedevs.com/2.3.0/launches/a7d60abb-c22d-41fe-9c17-35dbdd7f8029/?format=json",
+                "name": "New Shepard | NS-36"
+              }
             }
           ],
           "spacecraft_stage": [
@@ -447,19 +451,19 @@
               "id": 902,
               "url": "https://ll.thespacedevs.com/2.3.0/spacecraft_flights/902/?format=json",
               "destination": "Suborbital",
-              "mission_end": null,
+              "mission_end": "2026-01-22T16:35:47Z",
               "spacecraft": {
                 "response_mode": "normal",
-                "id": 608,
-                "url": "https://ll.thespacedevs.com/2.3.0/spacecraft/608/?format=json",
-                "name": "Unknown RSS",
-                "serial_number": "TBD",
+                "id": 453,
+                "url": "https://ll.thespacedevs.com/2.3.0/spacecraft/453/?format=json",
+                "name": "RSS First Step",
+                "serial_number": "2.0-2",
                 "is_placeholder": false,
                 "image": {
-                  "id": 2152,
-                  "name": "New Shepard Crew Capsule Jules Verne under parachutes",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_cre_image_20240812144851.jpg",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/new_shepard_cre_image_thumbnail_20240812144851.jpeg",
+                  "id": 2153,
+                  "name": "NS-19 Capsule First Step landed",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/ns-19_capsule_f_image_20240812145125.jpg",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/ns-19_capsule_f_image_thumbnail_20240812145126.jpeg",
                   "credit": "Blue Origin",
                   "license": {
                     "id": 1,
@@ -471,15 +475,15 @@
                   "variants": []
                 },
                 "in_space": false,
-                "time_in_space": "P0D",
+                "time_in_space": "PT2H43M2S",
                 "time_docked": "P0D",
-                "flights_count": 0,
-                "mission_ends_count": 0,
+                "flights_count": 16,
+                "mission_ends_count": 16,
                 "status": {
                   "id": 1,
                   "name": "Active"
                 },
-                "description": "The specific spacecraft for this launch is currently unknown.",
+                "description": "First Blue Origin New Shepard Crew Capsule 2.0 to carry human passengers. This capsule is outfitted with improvements to environmental features such as acoustics and temperature regulation inside the capsule, crew display panels, and speakers with a microphone and push-to-talk button at each seat.",
                 "spacecraft_config": {
                   "response_mode": "detailed",
                   "id": 21,
@@ -644,11 +648,11 @@
                       "parent": null,
                       "maiden_flight": "2015-04-29",
                       "spacecraft_flown": 4,
-                      "total_launch_count": 37,
-                      "successful_launches": 36,
+                      "total_launch_count": 38,
+                      "successful_launches": 37,
                       "failed_launches": 1,
-                      "attempted_landings": 37,
-                      "successful_landings": 37,
+                      "attempted_landings": 38,
+                      "successful_landings": 38,
                       "failed_landings": 0
                     }
                   ],
@@ -682,22 +686,22 @@
                   "wiki_link": "",
                   "info_link": "",
                   "spacecraft_flown": 3,
-                  "total_launch_count": 31,
-                  "successful_launches": 30,
+                  "total_launch_count": 32,
+                  "successful_launches": 31,
                   "failed_launches": 1,
-                  "attempted_landings": 31,
-                  "successful_landings": 31,
+                  "attempted_landings": 32,
+                  "successful_landings": 32,
                   "failed_landings": 0,
                   "fastest_turnaround": "P59DT1M42S"
                 },
-                "fastest_turnaround": null
+                "fastest_turnaround": "P59DT1M42S"
               },
               "landing": {
                 "id": 1767,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1767/?format=json",
                 "attempt": true,
-                "success": null,
-                "description": "The RSS capsule will land at Blue Origin's Corn Ranch facility.",
+                "success": true,
+                "description": "The RSS First Step capsule has landed at Blue Origin's Corn Ranch facility.",
                 "downrange_distance": null,
                 "landing_location": {
                   "id": 28,
@@ -739,8 +743,8 @@
                     "longitude": -104.757152,
                     "latitude": 31.422927,
                     "timezone_name": "America/Chicago",
-                    "total_launch_count": 37,
-                    "total_landing_count": 37
+                    "total_launch_count": 38,
+                    "total_landing_count": 38
                   },
                   "longitude": null,
                   "latitude": null,
@@ -759,8 +763,8 @@
                     "single_use": true,
                     "variants": []
                   },
-                  "successful_landings": 40,
-                  "attempted_landings": 40,
+                  "successful_landings": 41,
+                  "attempted_landings": 41,
                   "failed_landings": 0,
                   "celestial_body": {
                     "response_mode": "normal",
@@ -801,8 +805,8 @@
                   "description": "Unpowered landing using parachute(s)."
                 }
               },
-              "duration": null,
-              "turn_around_time": null,
+              "duration": "PT10M12S",
+              "turn_around_time": "P106DT2H34M47S",
               "response_mode": "detailed",
               "launch_crew": [
                 {
@@ -852,7 +856,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M12S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -869,8 +873,8 @@
                     ],
                     "bio": "International real estate developer and investor",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-01-22T16:25:35Z",
+                    "first_flight": "2026-01-22T16:25:35Z",
                     "social_media_links": []
                   }
                 },
@@ -921,7 +925,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M12S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -938,8 +942,8 @@
                     ],
                     "bio": "Entrepreneur, technologist, and world traveler.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-01-22T16:25:35Z",
+                    "first_flight": "2026-01-22T16:25:35Z",
                     "social_media_links": [
                       {
                         "id": 386,
@@ -1039,7 +1043,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M12S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1056,8 +1060,8 @@
                     ],
                     "bio": "Retired U.S. Air Force Colonel, former F-15 fighter pilot, and past Commander of the 157th Combat Operations Squadron, with multiple overseas combat deployments",
                     "wiki": "https://en.wikipedia.org/wiki/Jim_Hendren",
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-01-22T16:25:35Z",
+                    "first_flight": "2026-01-22T16:25:35Z",
                     "social_media_links": [
                       {
                         "id": 388,
@@ -1133,7 +1137,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M12S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1150,8 +1154,8 @@
                     ],
                     "bio": "Blue Origin’s Director of New Shepard Launch Operations, with a B.S. in Engineering Physics from the University of Kansas and a Ph.D. from the University of Colorado at Boulder in Aerospace Engineering Sciences in the Astrodynamics and Satellite Navigation focus area.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-01-22T16:25:35Z",
+                    "first_flight": "2026-01-22T16:25:35Z",
                     "social_media_links": [
                       {
                         "id": 417,
@@ -1299,7 +1303,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M12S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1316,8 +1320,8 @@
                     ],
                     "bio": "Retired board-certified obstetrician/gynecologist.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-01-22T16:25:35Z",
+                    "first_flight": "2026-01-22T16:25:35Z",
                     "social_media_links": [
                       {
                         "id": 385,
@@ -1393,7 +1397,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M12S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1410,8 +1414,8 @@
                     ],
                     "bio": "Former owner and CEO of Ace Asphalt",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-01-22T16:25:35Z",
+                    "first_flight": "2026-01-22T16:25:35Z",
                     "social_media_links": [
                       {
                         "id": 384,
@@ -1490,7 +1494,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M12S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1507,8 +1511,8 @@
                     ],
                     "bio": "International real estate developer and investor",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-01-22T16:25:35Z",
+                    "first_flight": "2026-01-22T16:25:35Z",
                     "social_media_links": []
                   }
                 },
@@ -1559,7 +1563,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M12S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1576,8 +1580,8 @@
                     ],
                     "bio": "Entrepreneur, technologist, and world traveler.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-01-22T16:25:35Z",
+                    "first_flight": "2026-01-22T16:25:35Z",
                     "social_media_links": [
                       {
                         "id": 386,
@@ -1677,7 +1681,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M12S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1694,8 +1698,8 @@
                     ],
                     "bio": "Retired U.S. Air Force Colonel, former F-15 fighter pilot, and past Commander of the 157th Combat Operations Squadron, with multiple overseas combat deployments",
                     "wiki": "https://en.wikipedia.org/wiki/Jim_Hendren",
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-01-22T16:25:35Z",
+                    "first_flight": "2026-01-22T16:25:35Z",
                     "social_media_links": [
                       {
                         "id": 388,
@@ -1771,7 +1775,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M12S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1788,8 +1792,8 @@
                     ],
                     "bio": "Blue Origin’s Director of New Shepard Launch Operations, with a B.S. in Engineering Physics from the University of Kansas and a Ph.D. from the University of Colorado at Boulder in Aerospace Engineering Sciences in the Astrodynamics and Satellite Navigation focus area.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-01-22T16:25:35Z",
+                    "first_flight": "2026-01-22T16:25:35Z",
                     "social_media_links": [
                       {
                         "id": 417,
@@ -1937,7 +1941,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M12S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -1954,8 +1958,8 @@
                     ],
                     "bio": "Retired board-certified obstetrician/gynecologist.",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-01-22T16:25:35Z",
+                    "first_flight": "2026-01-22T16:25:35Z",
                     "social_media_links": [
                       {
                         "id": 385,
@@ -2031,7 +2035,7 @@
                       "name": "Private"
                     },
                     "in_space": false,
-                    "time_in_space": "P0D",
+                    "time_in_space": "PT10M12S",
                     "eva_time": "P0D",
                     "age": null,
                     "date_of_birth": null,
@@ -2048,8 +2052,8 @@
                     ],
                     "bio": "Former owner and CEO of Ace Asphalt",
                     "wiki": null,
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-01-22T16:25:35Z",
+                    "first_flight": "2026-01-22T16:25:35Z",
                     "social_media_links": [
                       {
                         "id": 384,
@@ -2200,7 +2204,7 @@
             "nationality_name_composed": "Americano"
           },
           "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_90_20200803143233.jpg",
-          "total_launch_count": 37,
+          "total_launch_count": 38,
           "orbital_launch_attempt_count": 0,
           "fastest_turnaround": "P20DT40M27S",
           "location": {
@@ -2238,11 +2242,11 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7407,
-              "successful_launches": 6854,
+              "total_attempted_launches": 7410,
+              "successful_launches": 6857,
               "failed_launches": 553,
-              "total_attempted_landings": 1252,
-              "successful_landings": 1205,
+              "total_attempted_landings": 1255,
+              "successful_landings": 1208,
               "failed_landings": 47
             },
             "active": true,
@@ -2274,8 +2278,8 @@
             "longitude": -104.757152,
             "latitude": 31.422927,
             "timezone_name": "America/Chicago",
-            "total_launch_count": 37,
-            "total_landing_count": 37
+            "total_launch_count": 38,
+            "total_landing_count": 38
           }
         },
         "webcast_live": false,
@@ -2290,6 +2294,54 @@
         "agency_launch_attempt_count_year": 1,
         "flightclub_url": null,
         "updates": [
+          {
+            "id": 13761,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Mission complete.",
+            "info_url": "https://www.youtube.com/watch?v=-T_hA6mPiIY",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-22T16:54:00Z"
+          },
+          {
+            "id": 13760,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Liftoff.",
+            "info_url": "https://www.youtube.com/watch?v=-T_hA6mPiIY",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-22T16:26:00Z"
+          },
+          {
+            "id": 13759,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "New T-0.",
+            "info_url": "https://www.youtube.com/watch?v=-T_hA6mPiIY",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-22T16:24:00Z"
+          },
+          {
+            "id": 13758,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Hold at T-02:54.",
+            "info_url": "https://www.youtube.com/watch?v=-T_hA6mPiIY",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-22T16:03:00Z"
+          },
+          {
+            "id": 13757,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "New T-0.",
+            "info_url": "https://www.youtube.com/watch?v=-T_hA6mPiIY",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-22T15:57:00Z"
+          },
+          {
+            "id": 13756,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Hold at T-09:00.",
+            "info_url": "https://www.youtube.com/watch?v=-T_hA6mPiIY",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-22T15:54:00Z"
+          },
           {
             "id": 13736,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -2334,9 +2386,31 @@
             }
           }
         ],
-        "vid_urls": [],
+        "vid_urls": [
+          {
+            "priority": 10,
+            "source": "youtube.com",
+            "publisher": "Blue Origin",
+            "title": "Replay: New Shepard Mission NS-38 Webcast",
+            "description": "On Jan. 22, Blue Origin successfully completed its 38th New Shepard mission and 17th human flight from Launch Site One in West Texas. The crew included: Tim Drexler, Linda Edwards, Alain Fernandez, Alberto Gutiérrez, Jim Hendren, and Laura Stiles. To date, New Shepard has flown 98 humans (92 individuals) into space. \n\nLearn more: https://www.blueorigin.com/news/new-shepard-ns-38-mission",
+            "feature_image": "https://i.ytimg.com/vi/-T_hA6mPiIY/maxresdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=-T_hA6mPiIY",
+            "type": {
+              "id": 1,
+              "name": "Official Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2026-01-22T15:16:02Z",
+            "end_time": "2026-01-22T17:06:48Z",
+            "live": false
+          }
+        ],
         "timeline": [],
-        "pad_turnaround": "P33DT1H45M",
+        "pad_turnaround": "P33DT2H10M35S",
         "mission_patches": [
           {
             "id": 1300,
@@ -3999,11 +4073,11 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7407,
-              "successful_launches": 6854,
+              "total_attempted_launches": 7410,
+              "successful_launches": 6857,
               "failed_launches": 553,
-              "total_attempted_landings": 1252,
-              "successful_landings": 1205,
+              "total_attempted_landings": 1255,
+              "successful_landings": 1208,
               "failed_landings": 47
             },
             "active": true,
@@ -4301,15 +4375,15 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 627,
-          "consecutive_successful_launches": 112,
-          "successful_launches": 612,
+          "total_launch_count": 628,
+          "consecutive_successful_launches": 113,
+          "successful_launches": 613,
           "failed_launches": 15,
           "pending_launches": 125,
-          "consecutive_successful_landings": 111,
-          "successful_landings": 572,
+          "consecutive_successful_landings": 112,
+          "successful_landings": 573,
           "failed_landings": 27,
-          "attempted_landings": 598,
+          "attempted_landings": 599,
           "successful_landings_spacecraft": 58,
           "failed_landings_spacecraft": 3,
           "attempted_landings_spacecraft": 62,
@@ -4405,15 +4479,15 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 627,
-                    "consecutive_successful_launches": 112,
-                    "successful_launches": 612,
+                    "total_launch_count": 628,
+                    "consecutive_successful_launches": 113,
+                    "successful_launches": 613,
                     "failed_launches": 15,
                     "pending_launches": 125,
-                    "consecutive_successful_landings": 111,
-                    "successful_landings": 572,
+                    "consecutive_successful_landings": 112,
+                    "successful_landings": 573,
                     "failed_landings": 27,
-                    "attempted_landings": 598,
+                    "attempted_landings": 599,
                     "successful_landings_spacecraft": 58,
                     "failed_landings_spacecraft": 3,
                     "attempted_landings_spacecraft": 62,
@@ -4429,15 +4503,15 @@
                 "description": "Family of two-stage partially reusable orbital launch vehicles developed by SpaceX.",
                 "active": true,
                 "maiden_flight": "2006-03-24",
-                "total_launch_count": 607,
-                "consecutive_successful_launches": 237,
-                "successful_launches": 600,
+                "total_launch_count": 608,
+                "consecutive_successful_launches": 238,
+                "successful_launches": 601,
                 "failed_launches": 7,
                 "pending_launches": 121,
-                "attempted_landings": 579,
-                "successful_landings": 561,
+                "attempted_landings": 580,
+                "successful_landings": 562,
                 "failed_landings": 19,
-                "consecutive_successful_landings": 220
+                "consecutive_successful_landings": 221
               },
               {
                 "response_mode": "detailed",
@@ -4516,15 +4590,15 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 627,
-                    "consecutive_successful_launches": 112,
-                    "successful_launches": 612,
+                    "total_launch_count": 628,
+                    "consecutive_successful_launches": 113,
+                    "successful_launches": 613,
                     "failed_launches": 15,
                     "pending_launches": 125,
-                    "consecutive_successful_landings": 111,
-                    "successful_landings": 572,
+                    "consecutive_successful_landings": 112,
+                    "successful_landings": 573,
                     "failed_landings": 27,
-                    "attempted_landings": 598,
+                    "attempted_landings": 599,
                     "successful_landings_spacecraft": 58,
                     "failed_landings_spacecraft": 3,
                     "attempted_landings_spacecraft": 62,
@@ -4620,15 +4694,15 @@
                 "description": "",
                 "active": true,
                 "maiden_flight": "2010-06-04",
-                "total_launch_count": 591,
-                "consecutive_successful_launches": 236,
-                "successful_launches": 587,
+                "total_launch_count": 592,
+                "consecutive_successful_launches": 237,
+                "successful_launches": 588,
                 "failed_launches": 4,
                 "pending_launches": 106,
-                "attempted_landings": 556,
-                "successful_landings": 542,
+                "attempted_landings": 557,
+                "successful_landings": 543,
                 "failed_landings": 15,
-                "consecutive_successful_landings": 220
+                "consecutive_successful_landings": 221
               }
             ],
             "full_name": "Falcon 9 Block 5",
@@ -4707,15 +4781,15 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 627,
-              "consecutive_successful_launches": 112,
-              "successful_launches": 612,
+              "total_launch_count": 628,
+              "consecutive_successful_launches": 113,
+              "successful_launches": 613,
               "failed_launches": 15,
               "pending_launches": 125,
-              "consecutive_successful_landings": 111,
-              "successful_landings": 572,
+              "consecutive_successful_landings": 112,
+              "successful_landings": 573,
               "failed_landings": 27,
-              "attempted_landings": 598,
+              "attempted_landings": 599,
               "successful_landings_spacecraft": 58,
               "failed_landings_spacecraft": 3,
               "attempted_landings_spacecraft": 62,
@@ -4904,15 +4978,15 @@
             "sso_capacity": null,
             "to_thrust": 7607.0,
             "apogee": 200.0,
-            "total_launch_count": 534,
-            "consecutive_successful_launches": 236,
-            "successful_launches": 533,
+            "total_launch_count": 535,
+            "consecutive_successful_launches": 237,
+            "successful_launches": 534,
             "failed_launches": 1,
             "pending_launches": 106,
-            "attempted_landings": 525,
-            "successful_landings": 520,
+            "attempted_landings": 526,
+            "successful_landings": 521,
             "failed_landings": 5,
-            "consecutive_successful_landings": 220,
+            "consecutive_successful_landings": 221,
             "fastest_turnaround": "PT1H5M"
           },
           "launcher_stage": [
@@ -6365,11 +6439,11 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7407,
-              "successful_launches": 6854,
+              "total_attempted_launches": 7410,
+              "successful_launches": 6857,
               "failed_launches": 553,
-              "total_attempted_landings": 1252,
-              "successful_landings": 1205,
+              "total_attempted_landings": 1255,
+              "successful_landings": 1208,
               "failed_landings": 47
             },
             "active": true,
@@ -8123,11 +8197,11 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7407,
-              "successful_launches": 6854,
+              "total_attempted_launches": 7410,
+              "successful_launches": 6857,
               "failed_launches": 553,
-              "total_attempted_landings": 1252,
-              "successful_landings": 1205,
+              "total_attempted_landings": 1255,
+              "successful_landings": 1208,
               "failed_landings": 47
             },
             "active": true,
@@ -8309,11 +8383,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7260,
+        "orbital_launch_attempt_count": 7261,
         "location_launch_attempt_count": 1565,
         "pad_launch_attempt_count": 430,
         "agency_launch_attempt_count": 342,
-        "orbital_launch_attempt_count_year": 87,
+        "orbital_launch_attempt_count_year": 88,
         "location_launch_attempt_count_year": 6,
         "pad_launch_attempt_count_year": 4,
         "agency_launch_attempt_count_year": 4,
