@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sakk amőba</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --bg-color: #1a252f;
+            --board-light: #ecf0f1;
+            --board-dark: #7f8c8d;
+            --highlight: #f1c40f;
+            --white-p: #ffffff;
+            --black-p: #000000;
+            --cell-size: min(20vw, 85px);
+            --piece-font: min(14vw, 60px);
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-color);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 10px;
+            min-height: 100vh;
+            user-select: none;
+        }
+
+        header { text-align: center; width: 100%; margin-bottom: 5px; }
+        h1 {
+            margin: 10px 0;
+            font-size: min(8vw, 2.8rem);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 900;
+            
+            /* Színátmenet */
+            background: linear-gradient(to bottom, #f1c40f 0%, #e67e22 100%);
+            
+            /* A warning javítása: standard és prefixelt verzió együtt */
+            -webkit-background-clip: text;
+            background-clip: text;
+            
+            /* Ez szükséges ahhoz, hogy a szöveg átlátszó legyen és átüssön a gradiens */
+            -webkit-text-fill-color: transparent;
+            color: transparent; /* Tartalék megoldás */
+            
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3)); }
+            to { filter: drop-shadow(0 0 15px rgba(241, 196, 15, 0.4)); }
+        }
+
+        #status-bar {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--highlight);
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        .game-container {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        @media (max-width: 768px) {
+            .game-container { flex-direction: column; gap: 10px; }
+            .hand { flex-direction: row !important; padding: 5px !important; }
+            .piece-box { width: min(18vw, 70px) !important; height: min(18vw, 70px) !important; }
+        }
+
+        .hand {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .piece-box {
+            position: relative;
+            width: 80px; height: 80px;
+            display: flex; justify-content: center; align-items: center;
+            cursor: pointer; border: 2px solid transparent; border-radius: 10px;
+            font-size: var(--piece-font); transition: 0.2s;
+        }
+
+        .piece-box.selected { border-color: var(--highlight); background: rgba(241,196,15,0.2); }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(4, var(--cell-size));
+            grid-template-rows: repeat(4, var(--cell-size));
+            border: 5px solid #34495e;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .cell {
+            width: var(--cell-size); height: var(--cell-size);
+            display: flex; justify-content: center; align-items: center;
+            font-size: var(--piece-font); cursor: pointer; position: relative;
+        }
+
+        .cell:nth-child(8n+1), .cell:nth-child(8n+3), .cell:nth-child(8n+6), .cell:nth-child(8n+8) { background-color: var(--board-light); }
+        .cell:nth-child(8n+2), .cell:nth-child(8n+4), .cell:nth-child(8n+5), .cell:nth-child(8n+7) { background-color: var(--board-dark); }
+
+        .cell.valid-move::after {
+            content: ''; position: absolute; width: 25%; height: 25%;
+            background: rgba(241,196,15,0.7); border-radius: 50%;
+        }
+
+        .white-piece { color: var(--white-p); text-shadow: 0 0 3px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+        .black-piece { color: var(--black-p); text-shadow: 0 0 2px #fff; }
+
+        .pawn-dir { position: absolute; bottom: 2px; right: 4px; font-size: 12px; color: #e74c3c; font-weight: bold; }
+
+        .btn-container { margin-top: 15px; display: flex; gap: 10px; }
+        button {
+            padding: 10px 20px; font-size: 0.9rem; font-weight: bold;
+            border: none; border-radius: 6px; cursor: pointer; color: white;
+        }
+        .rules-btn { background: #34495e; }
+        .reset-btn { background: #e67e22; display: none; }
+
+        /* MODAL / SZABÁLYOK */
+        .modal {
+            display: none; position: fixed; z-index: 100; left: 0; top: 0;
+            width: 100%; height: 100%; background: rgba(0,0,0,0.8);
+            align-items: center; justify-content: center; padding: 20px;
+        }
+        .modal-content {
+            background: #ecf0f1; color: #2c3e50; padding: 20px;
+            border-radius: 15px; max-width: 500px; width: 100%;
+            max-height: 80vh; overflow-y: auto; line-height: 1.5;
+        }
+        .modal-content h2 { margin-top: 0; color: #e67e22; }
+        .close-btn {
+            background: #e67e22; width: 100%; margin-top: 15px;
+            padding: 12px; color: white; border: none; border-radius: 6px; cursor: pointer;
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+
+    <header>
+        <h1>Sakk amőba</h1>
+    </header>
+
+    <div id="status-bar">Világos jön! Rakj le egy bábut.</div>
+
+    <div class="game-container">
+        <div id="black-hand" class="hand">
+            <div class="piece-box black-piece" data-type="R" data-color="black">♜</div>
+            <div class="piece-box black-piece" data-type="N" data-color="black">♞</div>
+            <div class="piece-box black-piece" data-type="B" data-color="black">♝</div>
+            <div class="piece-box black-piece" data-type="P" data-color="black">♟<span class="pawn-dir">↓</span></div>
+        </div>
+
+        <div id="board" class="board"></div>
+
+        <div id="white-hand" class="hand">
+            <div class="piece-box white-piece" data-type="R" data-color="white">♜</div>
+            <div class="piece-box white-piece" data-type="N" data-color="white">♞</div>
+            <div class="piece-box white-piece" data-type="B" data-color="white">♝</div>
+            <div class="piece-box white-piece" data-type="P" data-color="white">♟<span class="pawn-dir">↑</span></div>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <button class="rules-btn" onclick="toggleModal(true)">Játékszabály</button>
+        <button id="reset-btn" class="reset-btn" onclick="resetGame()">Új játék</button>
+    </div>
+
+    <div id="rules-modal" class="modal">
+        <div class="modal-content">
+            <h2>Hogyan kell játszani?</h2>
+            <ul>
+                <li><strong>A cél:</strong> Rakd ki a 4 bábudat egy sorba (vízszintesen, függőlegesen vagy átlósan).</li>
+                <li><strong>Játék eleje:</strong> Az első 3 körben felváltva helyezhetitek fel a bábukat az üres mezőkre.</li>
+                <li><strong>A játék további része:</strong> Amikor te vagy soron vagy lépj egy bábuval, vagy helyezd a tábla üres mezőjére egy még lent lévő bábudat.</li>
+                <li><strong>Mozgás:</strong> A bábuk a sakk szabályai szerint mozognak.</li>
+                <li><strong>Gyalog:</strong> Csak 1-et lép mindig előre és átlósan üt. Ha eléri a tábla szélét, nem alakul át, hanem megfordul (nyíl jelzi az aktuális irányát).</li>
+                <li><strong>Ütés:</strong> Ha leütsz egy bábut, az visszakerül az ellenfél kezébe, és később újra lerakhatja.</li>
+            </ul>
+            <button class="close-btn" onclick="toggleModal(false)">Értem!</button>
+        </div>
+    </div>
+
+    <script>
+        const boardEl = document.getElementById('board');
+        const statusEl = document.getElementById('status-bar');
+        const resetBtn = document.getElementById('reset-btn');
+        const modal = document.getElementById('rules-modal');
+        
+        let board = Array(16).fill(null);
+        let turn = 'white';
+        let selectedIdx = null;
+        let selectedHandPiece = null;
+        let gameOver = false;
+        let piecesOnBoard = { white: 0, black: 0 };
+        let phaseTwoReached = { white: false, black: false };
+
+        const PIECES = { 'R': '♜', 'N': '♞', 'B': '♝', 'P': '♟' };
+
+        function init() {
+            boardEl.innerHTML = '';
+            for (let i = 0; i < 16; i++) {
+                const c = document.createElement('div');
+                c.className = 'cell';
+                c.onclick = (e) => { e.preventDefault(); onCellClick(i); };
+                boardEl.appendChild(c);
+            }
+            document.querySelectorAll('.piece-box').forEach(p => {
+                p.onclick = (e) => { e.preventDefault(); onHandClick(p); };
+            });
+            render();
+        }
+
+        function toggleModal(show) { modal.style.display = show ? 'flex' : 'none'; }
+
+        function onHandClick(el) {
+            if (gameOver || el.dataset.color !== turn) return;
+            resetSelection();
+            selectedHandPiece = el;
+            el.classList.add('selected');
+            updateStatus(`${turn === 'white' ? 'Világos' : 'Sötét'} kiválasztva.`);
+        }
+
+        function updateStatus(msg, isError = false) {
+            statusEl.innerText = msg;
+            statusEl.style.color = isError ? '#e74c3c' : '#f1c40f';
+        }
+
+        function onCellClick(idx) {
+            if (gameOver) return;
+
+            if (selectedHandPiece) {
+                if (!board[idx]) {
+                    board[idx] = { type: selectedHandPiece.dataset.type, color: turn, dir: (turn === 'white' ? -1 : 1) };
+                    selectedHandPiece.style.visibility = 'hidden';
+                    piecesOnBoard[turn]++;
+                    if (piecesOnBoard[turn] >= 3) phaseTwoReached[turn] = true;
+                    checkPawnReverse(idx);
+                    endTurn();
+                } else updateStatus(`Foglalt mező!`, true);
+                resetSelection();
+                return;
+            }
+
+            if (board[idx] && board[idx].color === turn) {
+                if (!phaseTwoReached[turn]) { updateStatus(`Előbb tegyél le 3 bábut!`, true); return; }
+                resetSelection();
+                selectedIdx = idx;
+                boardEl.children[idx].classList.add('selected');
+                showValidMoves(idx);
+                return;
+            }
+
+            if (selectedIdx !== null) {
+                if (isValidMove(selectedIdx, idx)) {
+                    if (board[idx]) capture(idx);
+                    board[idx] = board[selectedIdx];
+                    board[selectedIdx] = null;
+                    checkPawnReverse(idx);
+                    endTurn();
+                } else { updateStatus(`Szabálytalan lépés!`, true); resetSelection(); }
+            }
+        }
+
+        function isValidMove(from, to) {
+            const p = board[from]; const target = board[to];
+            if (from === to || (target && target.color === turn)) return false;
+            const r1 = Math.floor(from / 4), c1 = from % 4, r2 = Math.floor(to / 4), c2 = to % 4;
+            const dr = r2 - r1, dc = Math.abs(c2 - c1);
+
+            if (p.type === 'R') return (r1 === r2 || c1 === c2) && isPathClear(r1, c1, r2, c2);
+            if (p.type === 'B') return (Math.abs(dr) === dc) && isPathClear(r1, c1, r2, c2);
+            if (p.type === 'N') return (Math.abs(dr) === 2 && dc === 1) || (Math.abs(dr) === 1 && dc === 2);
+            if (p.type === 'P') {
+                if (dc === 0 && dr === p.dir && !target) return true;
+                if (dc === 1 && dr === p.dir && target && target.color !== turn) return true;
+            }
+            return false;
+        }
+
+        function isPathClear(r1, c1, r2, c2) {
+            const stepR = Math.sign(r2 - r1), stepC = Math.sign(c2 - c1);
+            let currR = r1 + stepR, currC = c1 + stepC;
+            while (currR !== r2 || currC !== c2) {
+                if (board[currR * 4 + currC]) return false;
+                currR += stepR; currC += stepC;
+            }
+            return true;
+        }
+
+        function checkPawnReverse(idx) {
+            const p = board[idx];
+            if (p && p.type === 'P') {
+                const r = Math.floor(idx / 4);
+                if (r === 0) p.dir = 1; else if (r === 3) p.dir = -1;
+            }
+        }
+
+        function capture(idx) {
+            const v = board[idx];
+            const pBox = document.querySelector(`#${v.color}-hand [data-type="${v.type}"]`);
+            pBox.style.visibility = 'visible';
+            piecesOnBoard[v.color]--;
+        }
+
+        function checkWin() {
+            const l = [[0,1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15],[0,4,8,12],[1,5,9,13],[2,6,10,14],[3,7,11,15],[0,5,10,15],[3,6,9,12]];
+            return l.some(line => {
+                const p = board[line[0]];
+                return p && line.every(i => board[i] && board[i].color === p.color);
+            });
+        }
+
+        function endTurn() {
+            render();
+            if (checkWin()) {
+                updateStatus(`GYŐZELEM! ${turn === 'white' ? 'Világos' : 'Sötét'} nyert!`);
+                gameOver = true; resetBtn.style.display = 'block'; return;
+            }
+            turn = turn === 'white' ? 'black' : 'white';
+            updateStatus(`${turn === 'white' ? 'Világos' : 'Sötét'} jön!`);
+            resetSelection();
+        }
+
+        function resetSelection() {
+            selectedIdx = null; selectedHandPiece = null;
+            document.querySelectorAll('.cell, .piece-box').forEach(el => el.classList.remove('selected', 'valid-move'));
+        }
+
+        function showValidMoves(from) {
+            for (let i = 0; i < 16; i++) if (isValidMove(from, i)) boardEl.children[i].classList.add('valid-move');
+        }
+
+        function render() {
+            for (let i = 0; i < 16; i++) {
+                const c = boardEl.children[i], p = board[i];
+                c.innerHTML = ''; c.className = 'cell';
+                if (p) {
+                    c.classList.add(p.color + '-piece'); c.innerText = PIECES[p.type];
+                    if (p.type === 'P') {
+                        const a = document.createElement('span'); a.className = 'pawn-dir';
+                        a.innerText = p.dir === -1 ? '↑' : '↓'; c.appendChild(a);
+                    }
+                }
+            }
+        }
+
+        function resetGame() {
+            board = Array(16).fill(null); turn = 'white'; piecesOnBoard = { white: 0, black: 0 };
+            phaseTwoReached = { white: false, black: false }; gameOver = false;
+            updateStatus("Világos jön!"); resetBtn.style.display = 'none';
+            document.querySelectorAll('.piece-box').forEach(p => p.style.visibility = 'visible');
+            resetSelection(); render();
+        }
+
+        init();
+    </script>
+</body>
+</html>
