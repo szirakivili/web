@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Neon Fall - test game</title>
+
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0a0a12;
+            --neon-blue: #00f7ff;
+            --neon-pink: #ff00dd;
+            --neon-red: #ff3333;
+        }
+
+        body {
+            margin: 0; font-family: 'Montserrat', sans-serif;
+            background: var(--bg-color); color: #e0e0ff;
+            text-align: center; overflow: hidden; touch-action: none;
+        }
+
+        /* --- GÉP NÉZET --- */
+        #host-view { display: none; height: 100vh; width: 100vw; }
+        canvas { display: block; background: radial-gradient(circle at center, #1a1a2e 0%, #000000 100%); }
+
+        #lobby-container {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px);
+            padding: 40px; border-radius: 30px; border: 1px solid rgba(0, 247, 255, 0.2);
+        }
+        
+        #qr-container { background: white; padding: 15px; display: inline-block; border-radius: 10px; margin: 20px 0; }
+
+        /* --- TELEFON NÉZET --- */
+        #controller-view {
+            display: none; height: 100vh; flex-direction: column;
+            padding: 20px; box-sizing: border-box;
+            background: #05050a;
+        }
+
+        #restartBtn {
+            display: none; /* ALAPÉRTELMEZETTEN REJTVE */
+            background: var(--neon-red); color: white; border: none;
+            padding: 20px; font-size: 1.2rem; font-weight: bold;
+            border-radius: 15px; text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(255, 51, 51, 0.5);
+            margin-bottom: 20px; width: 100%;
+        }
+
+        .controls-container { display: flex; flex: 1; gap: 15px; }
+        .btn-ctrl {
+            flex: 1; background: #1a1a24; display: flex;
+            align-items: center; justify-content: center; font-size: 80px;
+            border-radius: 25px; border: 2px solid rgba(0, 247, 255, 0.2);
+            color: var(--neon-blue); transition: 0.1s;
+        }
+        .btn-ctrl:active { background: rgba(0, 247, 255, 0.2); border-color: var(--neon-blue); }
+    </style>
+</head>
+<body>
+
+    <div id="host-view">
+        <canvas id="gameCanvas"></canvas>
+        <div id="lobby-container">
+            <div style="color:var(--neon-blue); font-size: 1.5rem; margin-bottom: 10px;">NEON FALL</div>
+            <div id="qr-container"><div id="qrcode"></div></div>
+            <div style="font-size: 0.9rem; opacity: 0.7;">Szkenneld be az irányításhoz!</div>
+        </div>
+    </div>
+
+    <div id="controller-view">
+        <button id="restartBtn">Újraindítás</button>
+        <div class="controls-container">
+            <div class="btn-ctrl" id="leftBtn">❮</div>
+            <div class="btn-ctrl" id="rightBtn">❯</div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const isControllerMode = urlParams.has('hostid');
+
+        if (isControllerMode) {
+            document.getElementById('controller-view').style.display = 'flex';
+            initController(urlParams.get('hostid'));
+        } else {
+            document.getElementById('host-view').style.display = 'block';
+            initHost();
+        }
+
+        // --- KONTROLLER LOGIKA ---
+        function initController(hostId) {
+            const peer = new Peer();
+            let conn = null;
+            const restartBtn = document.getElementById('restartBtn');
+
+            peer.on('open', () => {
+                conn = peer.connect(hostId);
+                conn.on('data', (data) => {
+                    if (data === 'SHOW_RESTART') {
+                        restartBtn.style.display = 'block'; // Megjelenik, ha meghalsz
+                    }
+                });
+            });
+
+            function send(msg) { if (conn && conn.open) conn.send(msg); }
+
+            restartBtn.onclick = () => {
+                send('RESTART');
+                restartBtn.style.display = 'none'; // Újra elrejtjük
+            };
+
+            const setupBtn = (id, startMsg) => {
+                const el = document.getElementById(id);
+                const start = (e) => { e.preventDefault(); send(startMsg); };
+                const stop = (e) => { if(e.cancelable) e.preventDefault(); send('STOP'); };
+                el.onmousedown = start; el.ontouchstart = start;
+                el.onmouseup = stop; el.ontouchend = stop; el.onmouseleave = stop;
+            };
+
+            setupBtn('leftBtn', 'LEFT');
+            setupBtn('rightBtn', 'RIGHT');
+        }
+
+        // --- HOST LOGIKA ---
+        function initHost() {
+            const peer = new Peer();
+            const canvas = document.getElementById('gameCanvas');
+            
+            window.onresize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
+            window.onresize();
+
+            peer.on('open', (id) => {
+                const url = `${window.location.origin}${window.location.pathname}?hostid=${id}`;
+                new QRCode(document.getElementById("qrcode"), { text: url, width: 200, height: 200 });
+            });
+
+            peer.on('connection', (conn) => {
+                document.getElementById('lobby-container').style.display = 'none';
+                startGame(conn, canvas);
+            });
+        }
+
+        function startGame(connection, canvas) {
+            const ctx = canvas.getContext('2d');
+            let player, obstacles, score, gameOver, animId;
+
+            function reset() {
+                player = { x: canvas.width/2-30, y: canvas.height-80, w: 60, h: 60, speed: 0 };
+                obstacles = []; score = 0; gameOver = false;
+                if (animId) cancelAnimationFrame(animId);
+                loop();
+            }
+
+            connection.on('data', (data) => {
+                if (data === 'LEFT') player.speed = -12;
+                else if (data === 'RIGHT') player.speed = 12;
+                else if (data === 'STOP') player.speed = 0;
+                else if (data === 'RESTART') reset();
+            });
+
+            function loop() {
+                if (gameOver) return;
+
+                ctx.fillStyle = 'rgba(10, 10, 18, 0.4)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Player update
+                player.x += player.speed;
+                player.x = Math.max(0, Math.min(canvas.width - player.w, player.x));
+
+                // Player draw (Neon Glow)
+                ctx.shadowBlur = 15; ctx.shadowColor = '#00f7ff';
+                ctx.fillStyle = '#00f7ff';
+                ctx.fillRect(player.x, player.y, player.w, player.h);
+
+                // Obstacles
+                if (Math.random() < 0.04 + (score * 0.001)) {
+                    obstacles.push({ x: Math.random()*(canvas.width-40), y: -50, s: 30+Math.random()*30, v: 5+Math.random()*7 });
+                }
+
+                obstacles.forEach((o, i) => {
+                    o.y += o.v;
+                    ctx.shadowColor = '#ff00dd'; ctx.fillStyle = '#ff00dd';
+                    ctx.fillRect(o.x, o.y, o.s, o.s);
+
+                    // Collision
+                    if (player.x < o.x + o.s && player.x + player.w > o.x && player.y < o.y + o.s && player.h + player.y > o.y) {
+                        gameOver = true;
+                        connection.send('SHOW_RESTART'); // ÜZENET A TELEFONNAK!
+                        
+                        ctx.shadowBlur = 0;
+                        ctx.fillStyle = "rgba(0,0,0,0.8)";
+                        ctx.fillRect(0,0,canvas.width, canvas.height);
+                        ctx.fillStyle = "white"; ctx.textAlign = "center";
+                        ctx.font = "bold 40px Montserrat";
+                        ctx.fillText("VÉGE A JÁTÉKNAK", canvas.width/2, canvas.height/2);
+                        ctx.font = "20px Montserrat";
+                        ctx.fillText("Pontszám: " + score, canvas.width/2, canvas.height/2 + 50);
+                    }
+
+                    if (o.y > canvas.height) { obstacles.splice(i, 1); score++; }
+                });
+
+                ctx.shadowBlur = 0; ctx.fillStyle = "white"; ctx.textAlign = "left";
+                ctx.font = "bold 20px Montserrat";
+                ctx.fillText("SCORE: " + score, 20, 40);
+
+                animId = requestAnimationFrame(loop);
+            }
+            reset();
+        }
+    </script>
+</body>
+</html>
