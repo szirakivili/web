@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Black Hole</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --p1-color: #ff4757;
+            --p2-color: #3498db;
+            --p3-color: #2ecc71;
+            --bg-dark: #0a0c10;
+            --card-bg: rgba(22, 27, 34, 0.9);
+            --text-main: #e6edf3;
+            --border-glow: rgba(255, 255, 255, 0.1);
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at center, #1a1f2c 0%, #0a0c10 100%);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 10px;
+        }
+
+        /* --- Menü Design --- */
+        #setup-screen {
+            width: 100%;
+            max-width: 400px;
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid var(--border-glow);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            text-align: center;
+        }
+
+        .title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .o-hole {
+            width: 28px; height: 28px;
+            background: #000;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            margin: 0 6px;
+            box-shadow: 0 0 15px #fff;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 10px #fff; }
+            50% { transform: scale(1.1); box-shadow: 0 0 20px #fff; }
+        }
+
+        .mode-selector {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .mode-btn {
+            padding: 12px;
+            cursor: pointer;
+            background: #21262d;
+            border: 1px solid #30363d;
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .mode-btn.active {
+            background: #3498db;
+            box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+            border-color: #fff;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            background: rgba(0,0,0,0.3);
+            padding: 5px 15px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+        }
+
+        .color-dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 12px; }
+
+        input {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 10px 0;
+            width: 100%;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        /* --- Gombok --- */
+        .btn-action {
+            width: 100%;
+            margin-top: 10px;
+            padding: 15px;
+            background: #238636;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-action:hover { background: #2ea043; transform: translateY(-2px); }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid #30363d;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        /* --- Játékszabály Modal --- */
+        #rules-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #161b22;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 450px;
+            border: 1px solid #30363d;
+            line-height: 1.6;
+        }
+
+        .modal-content h2 { margin-top: 0; color: #3498db; }
+        .modal-content ul { padding-left: 20px; }
+        .modal-content li { margin-bottom: 10px; }
+
+        /* --- Játékfelület --- */
+        #game-ui { display: none; width: 100%; max-width: 500px; flex-direction: column; align-items: center; }
+
+        #status-container {
+            background: rgba(255,255,255,0.05);
+            padding: 12px 25px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-glow);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        #game-container { position: relative; width: 100%; display: flex; justify-content: center; padding: 10px; }
+
+        #svg-connections {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0;
+        }
+
+        .connection-line {
+            stroke: rgba(255, 255, 255, 0.3);
+            stroke-width: 2;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 1s ease-out forwards;
+        }
+
+        @keyframes drawLine { to { stroke-dashoffset: 0; } }
+
+        #pyramid { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: clamp(5px, 2vw, 8px); }
+        .row { display: flex; gap: clamp(5px, 2vw, 8px); }
+
+        .circle {
+            width: clamp(38px, 12vw, 55px);
+            height: clamp(38px, 12vw, 55px);
+            border-radius: 50%;
+            border: 2px solid #30363d;
+            background: #161b22;
+            display: flex; align-items: center; justify-content: center;
+            font-size: clamp(1rem, 4vw, 1.4rem);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            user-select: none;
+        }
+
+        .circle.small { width: 35px; height: 35px; border-width: 2px; font-size: 1rem; }
+        
+        .p1 { background: var(--p1-color) !important; box-shadow: 0 0 15px rgba(255,71,87,0.4); border-color: rgba(255,255,255,0.3); }
+        .p2 { background: var(--p2-color) !important; box-shadow: 0 0 15px rgba(52,152,219,0.4); border-color: rgba(255,255,255,0.3); }
+        .p3 { background: var(--p3-color) !important; box-shadow: 0 0 15px rgba(46,204,113,0.4); border-color: rgba(255,255,255,0.3); }
+        .black-hole { background: #000 !important; border: 2px solid #fff !important; box-shadow: 0 0 25px #fff; }
+
+        #reset-btn { display: none; background: #30363d; margin-top: 20px; }
+
+        @media (max-width: 400px) {
+            .circle { border-width: 1px; }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+
+    <div id="setup-screen">
+        <div class="title">Black H<span class="o-hole"></span>le</div>
+        <div class="mode-selector">
+            <button class="mode-btn active" id="btn2" onclick="setMode(2)">2 játékos</button>
+            <button class="mode-btn" id="btn3" onclick="setMode(3)">3 játékos</button>
+        </div>
+        <div class="input-group">
+            <div class="color-dot" style="background: var(--p1-color)"></div>
+            <input type="text" id="p1-name" placeholder="Piros játékos">
+        </div>
+        <div class="input-group">
+            <div class="color-dot" style="background: var(--p2-color)"></div>
+            <input type="text" id="p2-name" placeholder="Kék játékos">
+        </div>
+        <div class="input-group" id="p3-input" style="display:none">
+            <div class="color-dot" style="background: var(--p3-color)"></div>
+            <input type="text" id="p3-name" placeholder="Zöld játékos">
+        </div>
+        <button class="btn-action" onclick="startGame()">INDÍTÁS</button>
+        <button class="btn-action btn-secondary" onclick="toggleRules(true)">JÁTÉKSZABÁLY</button>
+    </div>
+
+    <div id="rules-modal">
+        <div class="modal-content">
+            <h2>Hogyan kell játszani?</h2>
+            <ul>
+                <li>A játékosok felváltva írnak be számokat a piramis üres köreibe növekvő sorrendben (kattintással)</li>
+                <ul>
+                    <li><b>2 játékos esetén:</b> 1-től 10-ig</li>
+                    <li><b>3 játékos esetén:</b> 1-től 9-ig</li>
+                </ul>
+                <li>A játék végén egyetlen üres mező marad: a <b>Fekete Lyuk</b></li>
+                <li>A Fekete Lyukkal szomszédos mezőkben lévő saját számaidat összeadjuk</li>
+                <li><b>A cél:</b> Hogy a te pontszámod legyen a <b>legkisebb</b>!</li>
+            </ul>
+            <button class="btn-action" onclick="toggleRules(false)">BEZÁRÁS</button>
+        </div>
+    </div>
+
+    <div id="game-ui">
+        <div class="title" style="font-size: 1.5rem">Black H<span class="o-hole" style="width:20px; height:20px"></span>le</div>
+        <div id="status-container">
+            <span id="status-msg"></span>
+            <div id="next-preview" class="circle small"></div>
+        </div>
+        <div id="game-container">
+            <svg id="svg-connections"></svg>
+            <div id="pyramid"></div>
+        </div>
+        <button id="reset-btn" class="btn-action" onclick="backToMenu()">VISSZA A MENÜBE</button>
+    </div>
+
+    <script>
+        let numPlayers = 2;
+        let maxNumber = 10;
+        let currentPlayer = 1;
+        let playerNumbers = { 1: 1, 2: 1, 3: 1 };
+        let playerNames = {};
+        let board = [];
+        let totalMoves = 0;
+
+        function setMode(m) {
+            numPlayers = m;
+            document.getElementById('btn2').classList.toggle('active', m === 2);
+            document.getElementById('btn3').classList.toggle('active', m === 3);
+            document.getElementById('p3-input').style.display = (m === 3) ? 'flex' : 'none';
+        }
+
+        function toggleRules(show) {
+            document.getElementById('rules-modal').style.display = show ? 'flex' : 'none';
+        }
+
+        function startGame() {
+            playerNames[1] = document.getElementById('p1-name').value || "Piros játékos";
+            playerNames[2] = document.getElementById('p2-name').value || "Kék játékos";
+            if(numPlayers === 3) {
+                playerNames[3] = document.getElementById('p3-name').value || "Zöld játékos";
+                maxNumber = 9;
+            } else {
+                maxNumber = 10;
+            }
+
+            playerNumbers = { 1: 1, 2: 1, 3: 1 };
+            totalMoves = 0;
+            currentPlayer = 1;
+
+            document.getElementById('setup-screen').style.display = 'none';
+            document.getElementById('game-ui').style.display = 'flex';
+            document.getElementById('reset-btn').style.display = 'none';
+            
+            createBoard();
+            updateStatus();
+        }
+
+        function createBoard() {
+            const pyramid = document.getElementById('pyramid');
+            const svg = document.getElementById('svg-connections');
+            pyramid.innerHTML = '';
+            svg.innerHTML = '';
+            board = [];
+            const rows = (numPlayers === 3) ? 7 : 6;
+            for (let r = 0; r < rows; r++) {
+                const rowDiv = document.createElement('div');
+                rowDiv.className = 'row';
+                const rowArray = [];
+                for (let i = 0; i <= r; i++) {
+                    const circle = document.createElement('div');
+                    circle.className = 'circle';
+                    circle.onclick = () => handleMove(r, i, circle);
+                    rowDiv.appendChild(circle);
+                    rowArray.push({ element: circle, player: null, value: null });
+                }
+                board.push(rowArray);
+                pyramid.appendChild(rowDiv);
+            }
+        }
+
+        function updateStatus() {
+            const msg = document.getElementById('status-msg');
+            const preview = document.getElementById('next-preview');
+            msg.innerHTML = `<span style="color:var(--p${currentPlayer}-color)">${playerNames[currentPlayer]}</span> következik:`;
+            preview.textContent = playerNumbers[currentPlayer];
+            preview.className = `circle small p${currentPlayer}`;
+            preview.style.display = "flex";
+        }
+
+        function handleMove(r, i, element) {
+            if (totalMoves >= numPlayers * maxNumber || element.classList.contains('occupied')) return;
+            
+            element.textContent = playerNumbers[currentPlayer];
+            element.classList.add('occupied', `p${currentPlayer}`);
+            board[r][i].player = currentPlayer;
+            board[r][i].value = playerNumbers[currentPlayer];
+
+            playerNumbers[currentPlayer]++;
+            totalMoves++;
+
+            if (totalMoves < numPlayers * maxNumber) {
+                currentPlayer = (currentPlayer % numPlayers) + 1;
+                updateStatus();
+            } else {
+                finishGame();
+            }
+        }
+
+        function finishGame() {
+            let holePos = null;
+            board.forEach((row, r) => row.forEach((cell, i) => {
+                if (cell.player === null) {
+                    holePos = { r, i };
+                    cell.element.classList.add('black-hole');
+                }
+            }));
+
+            const neighbors = [
+                {r: holePos.r, i: holePos.i - 1}, {r: holePos.r, i: holePos.i + 1},
+                {r: holePos.r - 1, i: holePos.i - 1}, {r: holePos.r - 1, i: holePos.i},
+                {r: holePos.r + 1, i: holePos.i}, {r: holePos.r + 1, i: holePos.i + 1}
+            ];
+
+            let scores = { 1: 0, 2: 0, 3: 0 };
+            drawLines(board[holePos.r][holePos.i].element, neighbors);
+
+            neighbors.forEach(n => {
+                if (board[n.r] && board[n.r][n.i]) {
+                    const cell = board[n.r][n.i];
+                    if (cell.player) scores[cell.player] += cell.value;
+                }
+            });
+
+            let activeScores = {};
+            for(let p=1; p<=numPlayers; p++) activeScores[p] = scores[p];
+            let minVal = Math.min(...Object.values(activeScores));
+            let winners = Object.keys(activeScores).filter(p => activeScores[p] === minVal);
+
+            const statusMsg = document.getElementById('status-msg');
+            document.getElementById('next-preview').style.display = "none";
+
+            if (winners.length > 1) {
+                statusMsg.innerHTML = "DÖNTETLEN!";
+            } else {
+                const wId = winners[0];
+                statusMsg.innerHTML = `<span style="color:var(--p${wId}-color)">${playerNames[wId]} nyert!</span>`;
+            }
+            document.getElementById('reset-btn').style.display = "block";
+        }
+
+        function drawLines(holeEl, neighbors) {
+            const svg = document.getElementById('svg-connections');
+            const rect = document.getElementById('game-container').getBoundingClientRect();
+            const hR = holeEl.getBoundingClientRect();
+            const hX = hR.left + hR.width/2 - rect.left;
+            const hY = hR.top + hR.height/2 - rect.top;
+            neighbors.forEach(c => {
+                if (board[c.r] && board[c.r][c.i]) {
+                    const nR = board[c.r][c.i].element.getBoundingClientRect();
+                    const nX = nR.left + nR.width/2 - rect.left;
+                    const nY = nR.top + nR.height/2 - rect.top;
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', hX); line.setAttribute('y1', hY);
+                    line.setAttribute('x2', nX); line.setAttribute('y2', nY);
+                    line.classList.add('connection-line');
+                    svg.appendChild(line);
+                }
+            });
+        }
+
+        function backToMenu() {
+            document.getElementById('game-ui').style.display = 'none';
+            document.getElementById('setup-screen').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
