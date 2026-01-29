@@ -71,6 +71,12 @@
     outline: none;
   }
 
+  .button-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
   button {
     padding: 12px 30px;
     font-size: 20px;
@@ -88,6 +94,14 @@
   button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  }
+
+  #remoteBtn {
+    padding: 6px 15px;
+    font-size: 12px;
+    background: none;
+    border: 1px solid #00ffcc;
+    color: white;
   }
 
   #winnerMessage {
@@ -140,7 +154,10 @@
       </div>
     </div>
     <p id="winnerMessage"></p>
-    <button id="startBtn">Start!</button>
+    <div class="button-group"></div>
+      <button id="startBtn">Start!</button><br>
+      <button id="remoteBtn">Külön gépről játszunk!</button>
+    </div>
   </div>
   <div id="mobileMsg" style="display:none;">
     <p>Kérlek, számítógépről nyisd meg az oldalt, a játék csak ott játszható!</p>
@@ -190,6 +207,7 @@ if(isMobile){
 }
 
 const startBtn = document.getElementById('startBtn');
+const remoteBtn = document.getElementById('remoteBtn');
 const winnerMessage = document.getElementById('winnerMessage');
 const player1Input = document.getElementById('player1Name');
 const player2Input = document.getElementById('player2Name');
@@ -228,6 +246,9 @@ if(!isMobile){
     startScreen.classList.add('hidden');
     initGame();
     update();
+  });
+  remoteBtn.addEventListener('click', () => {
+    window.location.href = './p2p';
   });
 }
 
