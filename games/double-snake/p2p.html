@@ -12,17 +12,41 @@
   #lobby, #gameOverOverlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 10; text-align: center; }
   .hidden { display: none !important; }
 
-  .box { background: #252525; padding: 30px; border-radius: 15px; border: 1px solid #444; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+  .box { background: #252525; padding: 30px; border-radius: 15px; border: 1px solid #444; box-shadow: 0 10px 30px rgba(0,0,0,0.5); min-width: 320px; }
   h1 { color: #00ffcc; margin: 0 0 20px 0; font-size: 32px; }
+  h2 { color: #aaa; font-size: 18px; margin-bottom: 10px; }
   
-  input#inviteLink { padding: 12px; width: 280px; border-radius: 8px; border: 1px solid #555; background: #111; color: #00ffcc; margin-bottom: 15px; font-family: monospace; }
-  button { padding: 12px 24px; border-radius: 8px; border: none; background: #00ffcc; color: #121212; font-weight: bold; cursor: pointer; transition: 0.3s; font-size: 16px; }
+  .code-display { font-size: 24px; font-weight: bold; color: #00ffcc; letter-spacing: 5px; background: #111; padding: 10px; border-radius: 8px; margin-bottom: 20px; border: 1px dashed #555; }
+  
+  input { padding: 12px; width: 200px; border-radius: 8px; border: 1px solid #555; background: #111; color: #00ffcc; margin-bottom: 15px; font-family: monospace; text-align: center; font-size: 18px; }
+  button { padding: 12px 24px; border-radius: 8px; border: none; background: #00ffcc; color: #121212; font-weight: bold; cursor: pointer; transition: 0.3s; font-size: 16px; margin: 5px; }
   button:hover { background: #00ccaa; transform: scale(1.05); }
+  button.secondary { background: #444; color: #fff; }
 
   #resultMessage { font-size: 48px; font-weight: bold; margin-bottom: 20px; }
   .win { color: #00ffcc; text-shadow: 0 0 15px #00ffcc; }
   .lose { color: #ff4444; text-shadow: 0 0 15px #ff4444; }
-  #guestWaiting { font-style: italic; color: #aaa; }
+  #status { color: #888; margin-top: 15px; font-size: 14px; }
+
+  /* MOBIL BLOKKOLÓ STÍLUS */
+  #mobileMsg {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #121212;
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* Ha a képernyő 768px-nél kisebb, vagy érintőképernyős (durva becslés) */
+  @media (max-width: 768px) {
+    #mobileMsg { display: flex; }
+    #lobby, canvas, #gameOverOverlay { display: none !important; }
+  }
 </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -36,14 +60,35 @@
 </script>
 <body>
 
-<div id="lobby">
-  <div class="box" id="hostBox">
-    <h1>P2P Snake</h1>
-    <p>Küldd el ezt a linket a barátodnak:</p>
-    <input type="text" id="inviteLink" readonly>
-    <button onclick="copyLink()">Link másolása</button>
-    <p id="status">Várakozás a partnerre...</p>
+<div id="mobileMsg">
+  <div class="box">
+    <h1>Hoppá! 🐍</h1>
+    <p>Ez a játék billentyűzetet igényel.</p>
+    <p style="color: #00ffcc; font-weight: bold;">Kérjük, csatlakozz számítógépről!</p>
   </div>
+</div>
+
+<div id="lobby">
+  <div class="box" id="startBox">
+    <h1>P2P Snake</h1>
+    <button onclick="initHost()">Játék indítása</button>
+    <br><br>
+    <div style="border-top: 1px solid #444; padding-top: 20px;">
+      <h2>Csatlakozás kóddal:</h2>
+      <input type="text" id="joinCodeInput" placeholder="ABC12">
+      <br>
+      <button class="secondary" onclick="joinByCode()">Csatlakozás</button>
+    </div>
+  </div>
+
+  <div class="box hidden" id="hostBox">
+    <h1>P2P Snake</h1>
+    <p>A csatlakozási kódod:</p>
+    <div id="myCodeDisplay" class="code-display">----</div>
+    <p id="status">Várakozás a partnerre...</p>
+    <button class="secondary" onclick="location.reload()">Vissza</button>
+  </div>
+
   <div class="box hidden" id="guestBox">
     <h1>Csatlakozás...</h1>
     <p>Pályaméret egyeztetése és betöltés.</p>
@@ -56,62 +101,91 @@
     <div id="hostControls" class="hidden">
       <button onclick="requestRestart()">Új játék indítása</button>
     </div>
-    <p id="guestWaiting" class="hidden">Várakozás az újraindítására...</p>
+    <p id="guestWaiting" class="hidden">Várakozás a Host indítására...</p>
   </div>
 </div>
 
 <canvas id="gameCanvas"></canvas>
 
 <script>
-// --- KONFIGURÁCIÓ ---
 const cellSize = 20;
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 let cols, rows;
 
-// Megkeresi a böngésző számára még kényelmes legnagyobb rácsot
-function getMaxGridSize() {
-  return {
-    c: Math.floor((window.innerWidth - 40) / cellSize),
-    r: Math.floor((window.innerHeight - 100) / cellSize)
-  };
-}
+const generateShortId = () => Math.random().toString(36).substring(2, 7).toUpperCase();
 
-// --- HÁLÓZAT (PeerJS) ---
-let peer = new Peer();
+let peer = null;
 let conn = null;
 let isHost = false;
 let gameRunning = false;
 let gameState = null;
 
-peer.on('open', (id) => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const targetId = urlParams.get('peer');
+// Mobil ellenőrzés JavaScripttel is a biztonság kedvéért
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 
-  if (targetId) {
-    isHost = false;
-    document.getElementById('hostBox').classList.add('hidden');
-    document.getElementById('guestBox').classList.remove('hidden');
-    conn = peer.connect(targetId);
-    setupConnection();
-  } else {
+window.onload = () => {
+    if (isMobile()) {
+        document.getElementById('mobileMsg').style.display = 'flex';
+        return;
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetId = urlParams.get('peer');
+    if (targetId) {
+        joinByLink(targetId);
+    }
+};
+
+// --- HÁLÓZAT ÉS JÁTÉK LOGIKA (Változatlan, a javított UI-kezeléssel) ---
+
+function initHost() {
     isHost = true;
-    document.getElementById('inviteLink').value = window.location.origin + window.location.pathname + '?peer=' + id;
-  }
-});
+    const shortId = generateShortId();
+    peer = new Peer(shortId);
 
-peer.on('connection', (c) => {
-  if (isHost) {
-    conn = c;
-    setupConnection();
-  }
-});
+    peer.on('open', (id) => {
+        document.getElementById('startBox').classList.add('hidden');
+        document.getElementById('hostBox').classList.remove('hidden');
+        document.getElementById('myCodeDisplay').innerText = id;
+    });
+
+    peer.on('connection', (c) => {
+        conn = c;
+        setupConnection();
+    });
+
+    peer.on('error', (err) => {
+        if(err.type === 'unavailable-id') initHost();
+        else alert("Hiba: " + err.type);
+    });
+}
+
+function joinByCode() {
+    const code = document.getElementById('joinCodeInput').value.trim().toUpperCase();
+    if (!code) return alert("Írj be egy kódot!");
+    joinByLink(code);
+}
+
+function joinByLink(targetId) {
+    isHost = false;
+    peer = new Peer();
+    peer.on('open', () => {
+        document.getElementById('startBox').classList.add('hidden');
+        document.getElementById('hostBox').classList.add('hidden');
+        document.getElementById('guestBox').classList.remove('hidden');
+        conn = peer.connect(targetId);
+        setupConnection();
+    });
+    peer.on('error', (err) => alert("Nem sikerült csatlakozni. A kód valószínűleg hibás."));
+}
 
 function setupConnection() {
   conn.on('open', () => {
     const mySize = getMaxGridSize();
     if (!isHost) {
-      // Vendég elküldi a saját max méretét
       conn.send({ type: 'dimensions', cols: mySize.c, rows: mySize.r });
     }
   });
@@ -122,24 +196,28 @@ function setupConnection() {
       if (data.type === 'input') updateDirection('d2', data.key);
     } else {
       if (data.type === 'init') {
-        cols = data.cols;
-        rows = data.rows;
+        cols = data.cols; rows = data.rows;
         initCanvas();
       } else {
         gameState = data;
         draw();
-        handleUIState();
+        handleUIState(); 
       }
     }
   });
 }
 
-// --- PÁLYA EGYEZTETÉS ---
+function getMaxGridSize() {
+  return {
+    c: Math.floor((window.innerWidth - 40) / cellSize),
+    r: Math.floor((window.innerHeight - 100) / cellSize)
+  };
+}
+
 function negotiateSize(guestSize) {
   const hostSize = getMaxGridSize();
   cols = Math.min(hostSize.c, guestSize.cols);
   rows = Math.min(hostSize.r, guestSize.rows);
-  
   initCanvas();
   conn.send({ type: 'init', cols: cols, rows: rows });
   startNewRound();
@@ -152,50 +230,24 @@ function initCanvas() {
   document.getElementById('lobby').classList.add('hidden');
 }
 
-// --- JÁTÉK LOGIKA (Csak a Host futtatja) ---
-function spawnFoodBatch() {
-  const totalCells = cols * rows;
-  const foodCount = Math.floor(totalCells / 500) || 1;
-  const foods = [];
-  while (foods.length < foodCount) {
-    const pos = { x: Math.floor(Math.random() * cols), y: Math.floor(Math.random() * rows) };
-    foods.push(pos);
-  }
-  return foods;
-}
-
-function getInitialState() {
-  return {
+function startNewRound() {
+  gameState = {
     s1: [{x: 5, y: Math.floor(rows/2)}],
     s2: [{x: cols-6, y: Math.floor(rows/2)}],
     d1: {x: 1, y: 0},
     d2: {x: -1, y: 0},
-    food: spawnFoodBatch(),
+    food: Array.from({length: Math.floor((cols*rows)/500)||1}, () => ({x: Math.floor(Math.random()*cols), y: Math.floor(Math.random()*rows)})),
     winner: null
   };
-}
-
-function startNewRound() {
-  gameState = getInitialState();
-  document.getElementById('gameOverOverlay').classList.add('hidden');
-  if (!gameRunning) {
-    gameRunning = true;
-    gameLoop();
-  }
+  handleUIState(); 
+  if (!gameRunning) { gameRunning = true; gameLoop(); }
 }
 
 function gameLoop() {
-  if (gameState.winner) {
-    gameRunning = false;
-    conn.send(gameState);
-    handleUIState();
-    return;
-  }
-
+  if (gameState.winner) { gameRunning = false; conn.send(gameState); handleUIState(); return; }
   updateSnake(gameState.s1, gameState.d1);
   updateSnake(gameState.s2, gameState.d2);
   checkCollisions();
-
   conn.send(gameState);
   draw();
   setTimeout(gameLoop, 110);
@@ -204,39 +256,23 @@ function gameLoop() {
 function updateSnake(snake, dir) {
   const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
   snake.unshift(head);
-  
-  const foodIndex = gameState.food.findIndex(f => f.x === head.x && f.y === head.y);
-  if (foodIndex !== -1) {
-    // Új kaja generálása a megevett helyett
-    gameState.food[foodIndex] = { x: Math.floor(Math.random() * cols), y: Math.floor(Math.random() * rows) };
-  } else {
-    snake.pop();
-  }
+  const fIdx = gameState.food.findIndex(f => f.x === head.x && f.y === head.y);
+  if (fIdx !== -1) gameState.food[fIdx] = { x: Math.floor(Math.random() * cols), y: Math.floor(Math.random() * rows) };
+  else snake.pop();
 }
 
 function checkCollisions() {
-  const h1 = gameState.s1[0];
-  const h2 = gameState.s2[0];
-  
-  const dead1 = h1.x < 0 || h1.x >= cols || h1.y < 0 || h1.y >= rows || 
-                gameState.s1.slice(1).some(p => p.x === h1.x && p.y === h1.y) ||
-                gameState.s2.some(p => p.x === h1.x && p.y === h1.y);
-                
-  const dead2 = h2.x < 0 || h2.x >= cols || h2.y < 0 || h2.y >= rows || 
-                gameState.s2.slice(1).some(p => p.x === h2.x && p.y === h2.y) ||
-                gameState.s1.some(p => p.x === h2.x && p.y === h2.y);
-
-  if (dead1 && dead2) gameState.winner = 'draw';
-  else if (dead1) gameState.winner = 2;
-  else if (dead2) gameState.winner = 1;
+  const h1 = gameState.s1[0], h2 = gameState.s2[0];
+  const d1 = h1.x<0||h1.x>=cols||h1.y<0||h1.y>=rows||gameState.s1.slice(1).some(p=>p.x===h1.x&&p.y===h1.y)||gameState.s2.some(p=>p.x===h1.x&&p.y===h1.y);
+  const d2 = h2.x<0||h2.x>=cols||h2.y<0||h2.y>=rows||gameState.s2.slice(1).some(p=>p.x===h2.x&&p.y===h2.y)||gameState.s1.some(p=>p.x===h2.x&&p.y===h2.y);
+  if (d1 && d2) gameState.winner = 'draw'; else if (d1) gameState.winner = 2; else if (d2) gameState.winner = 1;
 }
 
-// --- IRÁNYÍTÁS ---
 document.addEventListener('keydown', (e) => {
   const key = e.key.toLowerCase();
   if (!['w','a','s','d'].includes(key)) return;
   if (isHost) updateDirection('d1', key);
-  else conn.send({ type: 'input', key: key });
+  else if (conn) conn.send({ type: 'input', key: key });
 });
 
 function updateDirection(dirKey, key) {
@@ -248,60 +284,39 @@ function updateDirection(dirKey, key) {
 }
 
 function handleUIState() {
-  if (gameState.winner) {
-    const overlay = document.getElementById('gameOverOverlay');
-    const msg = document.getElementById('resultMessage');
+  const overlay = document.getElementById('gameOverOverlay');
+  const hostControls = document.getElementById('hostControls');
+  const guestWaiting = document.getElementById('guestWaiting');
+
+  if (gameState && gameState.winner) {
     overlay.classList.remove('hidden');
-    
-    if (gameState.winner === 'draw') {
-      msg.innerText = "DÖNTETLEN!";
-      msg.className = "";
-    } else {
+    const msg = document.getElementById('resultMessage');
+    if (gameState.winner === 'draw') msg.innerText = "DÖNTETLEN!";
+    else {
       const iWon = (isHost && gameState.winner === 1) || (!isHost && gameState.winner === 2);
       msg.innerText = iWon ? "NYERTÉL!" : "VESZTETTÉL!";
       msg.className = iWon ? "win" : "lose";
     }
-
-    if (isHost) document.getElementById('hostControls').classList.remove('hidden');
-    else document.getElementById('guestWaiting').classList.remove('hidden');
+    if (isHost) { hostControls.classList.remove('hidden'); guestWaiting.classList.add('hidden'); }
+    else { hostControls.classList.add('hidden'); guestWaiting.classList.remove('hidden'); }
   } else {
-    document.getElementById('gameOverOverlay').classList.add('hidden');
+    overlay.classList.add('hidden');
   }
 }
 
 function requestRestart() { if (isHost) startNewRound(); }
 
-// --- RAJZOLÁS ---
 function draw() {
   if (!gameState) return;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Kaják (narancssárga bogyók)
   ctx.fillStyle = 'orange';
-  gameState.food.forEach(f => {
-    ctx.beginPath();
-    ctx.arc(f.x * cellSize + cellSize/2, f.y * cellSize + cellSize/2, cellSize/3, 0, Math.PI*2);
-    ctx.fill();
-  });
-
-  // Kígyók színei: Te = kék, Ellenfél = fehér
+  gameState.food.forEach(f => ctx.fillRect(f.x*cellSize+4, f.y*cellSize+4, cellSize-8, cellSize-8));
   const mySnake = isHost ? gameState.s1 : gameState.s2;
   const enemySnake = isHost ? gameState.s2 : gameState.s1;
-
-  // Ellenfél rajzolása
   ctx.fillStyle = '#ffffff';
-  enemySnake.forEach(p => ctx.fillRect(p.x * cellSize + 1, p.y * cellSize + 1, cellSize - 2, cellSize - 2));
-
-  // Saját kígyó rajzolása (teljesen kék)
+  enemySnake.forEach(p => ctx.fillRect(p.x*cellSize+1, p.y*cellSize+1, cellSize-2, cellSize-2));
   ctx.fillStyle = '#00d9ff';
-  mySnake.forEach(p => ctx.fillRect(p.x * cellSize + 1, p.y * cellSize + 1, cellSize - 2, cellSize - 2));
-}
-
-function copyLink() {
-  const link = document.getElementById('inviteLink');
-  link.select();
-  document.execCommand('copy');
-  alert('Link másolva a vágólapra!');
+  mySnake.forEach(p => ctx.fillRect(p.x*cellSize+1, p.y*cellSize+1, cellSize-2, cellSize-2));
 }
 </script>
 </body>
