@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <name>Széles/normál nyomtávú vasútállomások</name>
-    <Style id="icon-1739-0288D1-nodesc-normal">
+    <Style id="icon-1739-0288D1-normal">
       <IconStyle>
         <color>ffd18802</color>
         <scale>1</scale>
@@ -13,11 +13,8 @@
       <LabelStyle>
         <scale>0</scale>
       </LabelStyle>
-      <BalloonStyle>
-        <text><![CDATA[<h3>$[name]</h3>]]></text>
-      </BalloonStyle>
     </Style>
-    <Style id="icon-1739-0288D1-nodesc-highlight">
+    <Style id="icon-1739-0288D1-highlight">
       <IconStyle>
         <color>ffd18802</color>
         <scale>1</scale>
@@ -28,23 +25,29 @@
       <LabelStyle>
         <scale>1</scale>
       </LabelStyle>
-      <BalloonStyle>
-        <text><![CDATA[<h3>$[name]</h3>]]></text>
-      </BalloonStyle>
     </Style>
-    <StyleMap id="icon-1739-0288D1-nodesc">
+    <StyleMap id="icon-1739-0288D1">
       <Pair>
         <key>normal</key>
-        <styleUrl>#icon-1739-0288D1-nodesc-normal</styleUrl>
+        <styleUrl>#icon-1739-0288D1-normal</styleUrl>
       </Pair>
       <Pair>
         <key>highlight</key>
-        <styleUrl>#icon-1739-0288D1-nodesc-highlight</styleUrl>
+        <styleUrl>#icon-1739-0288D1-highlight</styleUrl>
       </Pair>
     </StyleMap>
     <Placemark>
       <name>Vác-Alsóváros</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1493654,47.7735745,0
@@ -53,7 +56,16 @@
     </Placemark>
     <Placemark>
       <name>Vác</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1330556,47.7827778,0
@@ -62,7 +74,16 @@
     </Placemark>
     <Placemark>
       <name>Máriaudvar</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1635219,47.7526891,0
@@ -71,7 +92,16 @@
     </Placemark>
     <Placemark>
       <name>Vácrátót</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.2177778,47.7327778,0
@@ -80,7 +110,16 @@
     </Placemark>
     <Placemark>
       <name>Váchartyán</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.2488889,47.7258333,0
@@ -89,7 +128,16 @@
     </Placemark>
     <Placemark>
       <name>Rudnaykert</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.2577778,47.7175,0
@@ -98,7 +146,16 @@
     </Placemark>
     <Placemark>
       <name>Erdőkertes</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.2958764,47.6622115,0
@@ -107,7 +164,16 @@
     </Placemark>
     <Placemark>
       <name>Veresegyház</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.2886111,47.6491667,0
@@ -116,7 +182,16 @@
     </Placemark>
     <Placemark>
       <name>Ivacs</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.2740768,47.6418694,0
@@ -125,7 +200,16 @@
     </Placemark>
     <Placemark>
       <name>Fótújfalu</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1927778,47.615,0
@@ -134,7 +218,16 @@
     </Placemark>
     <Placemark>
       <name>Rákospalota-Újpest</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1120093,47.5658063,0
@@ -143,7 +236,16 @@
     </Placemark>
     <Placemark>
       <name>Istvántelek</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.106338,47.5502901,0
@@ -152,7 +254,16 @@
     </Placemark>
     <Placemark>
       <name>Rákosrendező</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0893862,47.5253531,0
@@ -161,7 +272,16 @@
     </Placemark>
     <Placemark>
       <name>Budapest-Nyugati</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0577611,47.510468,0
@@ -170,7 +290,16 @@
     </Placemark>
     <Placemark>
       <name>Zugló</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1014661,47.5112561,0
@@ -179,7 +308,16 @@
     </Placemark>
     <Placemark>
       <name>Budapest-Keleti</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0839882,47.5004423,0
@@ -188,7 +326,16 @@
     </Placemark>
     <Placemark>
       <name>Kőbánya-Kispest</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1492484,47.4634574,0
@@ -197,7 +344,16 @@
     </Placemark>
     <Placemark>
       <name>Budapest-Kelenföld</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0216485,47.4651712,0
@@ -206,7 +362,16 @@
     </Placemark>
     <Placemark>
       <name>Budapest-Déli</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0247399,47.5002831,0
@@ -215,7 +380,16 @@
     </Placemark>
     <Placemark>
       <name>Dunakeszi alsó</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1288032,47.6079023,0
@@ -224,7 +398,16 @@
     </Placemark>
     <Placemark>
       <name>Dunakeszi-Gyártelep</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1348364,47.6436955,0
@@ -233,7 +416,16 @@
     </Placemark>
     <Placemark>
       <name>Dunakeszi</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1359312,47.625584,0
@@ -242,7 +434,16 @@
     </Placemark>
     <Placemark>
       <name>Alsógöd</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1343783,47.6770598,0
@@ -251,7 +452,16 @@
     </Placemark>
     <Placemark>
       <name>Göd</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1373944,47.6878744,0
@@ -260,7 +470,16 @@
     </Placemark>
     <Placemark>
       <name>Felsőgöd</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1431162,47.705554,0
@@ -269,7 +488,16 @@
     </Placemark>
     <Placemark>
       <name>Sződ-Sződliget</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.1549673,47.7280397,0
@@ -278,7 +506,16 @@
     </Placemark>
     <Placemark>
       <name>Verőce</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0317968,47.8237035,0
@@ -287,7 +524,16 @@
     </Placemark>
     <Placemark>
       <name>Magyarkút-Verőce</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0401277,47.831149,0
@@ -296,7 +542,16 @@
     </Placemark>
     <Placemark>
       <name>Kismaros</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0102778,47.8275,0
@@ -305,7 +560,16 @@
     </Placemark>
     <Placemark>
       <name>Nagymaros-Visegrád</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.9591659,47.7913605,0
@@ -314,7 +578,16 @@
     </Placemark>
     <Placemark>
       <name>Nagymaros</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.9520973,47.7805617,0
@@ -323,7 +596,16 @@
     </Placemark>
     <Placemark>
       <name>Zebegény</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.9088889,47.8013889,0
@@ -332,7 +614,16 @@
     </Placemark>
     <Placemark>
       <name>Szob</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.8617268,47.8211555,0
@@ -341,7 +632,16 @@
     </Placemark>
     <Placemark>
       <name>Bratislava Hlavna</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.1062057,48.1586781,0
@@ -350,7 +650,16 @@
     </Placemark>
     <Placemark>
       <name>Poprad-Tatry</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           20.2951452,49.0597235,0
@@ -359,7 +668,16 @@
     </Placemark>
     <Placemark>
       <name>Košice</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           21.2677787,48.7226797,0
@@ -368,7 +686,16 @@
     </Placemark>
     <Placemark>
       <name>Prágai Főpályaudvar</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           14.4353058,50.0832088,0
@@ -377,7 +704,16 @@
     </Placemark>
     <Placemark>
       <name>Prague Holesovice Train Station</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           14.43971,50.110321,0
@@ -386,7 +722,16 @@
     </Placemark>
     <Placemark>
       <name>Wien Hbf</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           16.3778549,48.1850101,0
@@ -395,7 +740,16 @@
     </Placemark>
     <Placemark>
       <name>Salzburg</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           13.0450707,47.8130704,0
@@ -404,7 +758,16 @@
     </Placemark>
     <Placemark>
       <name>Venezia Santa Lucia</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           12.3210436,45.4410697,0
@@ -413,7 +776,16 @@
     </Placemark>
     <Placemark>
       <name>Bologna Centrale</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           11.3433694,44.5059073,0
@@ -422,7 +794,16 @@
     </Placemark>
     <Placemark>
       <name>Roma Termini</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           12.5015756,41.9012873,0
@@ -431,7 +812,16 @@
     </Placemark>
     <Placemark>
       <name>Brussels Airport - Zaventem</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           4.482072,50.89646,0
@@ -440,7 +830,16 @@
     </Placemark>
     <Placemark>
       <name>Brussel-Centraal</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           4.3570964,50.845504,0
@@ -449,7 +848,16 @@
     </Placemark>
     <Placemark>
       <name>Gent-Sint-Pieters</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           3.7108392,51.0361132,0
@@ -458,7 +866,16 @@
     </Placemark>
     <Placemark>
       <name>Brugge</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           3.2178509,51.1976659,0
@@ -467,7 +884,16 @@
     </Placemark>
     <Placemark>
       <name>Blankenberge</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           3.1336659,51.312581,0
@@ -476,7 +902,16 @@
     </Placemark>
     <Placemark>
       <name>Oostende</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           2.9258779,51.2293029,0
@@ -485,7 +920,16 @@
     </Placemark>
     <Placemark>
       <name>Nógrád</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0475,47.9019444,0
@@ -494,7 +938,16 @@
     </Placemark>
     <Placemark>
       <name>Szokolya</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0305556,47.8711111,0
@@ -503,7 +956,16 @@
     </Placemark>
     <Placemark>
       <name>Aszód</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.4926989,47.6479165,0
@@ -512,7 +974,16 @@
     </Placemark>
     <Placemark>
       <name>Velence</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.6637937,47.2268829,0
@@ -521,7 +992,16 @@
     </Placemark>
     <Placemark>
       <name>Székesfehérvár</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.4247249,47.1834817,0
@@ -530,7 +1010,16 @@
     </Placemark>
     <Placemark>
       <name>Alsóörs</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.9747222,46.9852778,0
@@ -539,7 +1028,16 @@
     </Placemark>
     <Placemark>
       <name>Balatonfüred</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.8830556,46.9558333,0
@@ -548,7 +1046,16 @@
     </Placemark>
     <Placemark>
       <name>Aszófő</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.8325,46.9255556,0
@@ -557,7 +1064,16 @@
     </Placemark>
     <Placemark>
       <name>Badacsonytomaj</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.5180556,46.8047222,0
@@ -566,7 +1082,16 @@
     </Placemark>
     <Placemark>
       <name>Balatonszárszó</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.8302778,46.8322222,0
@@ -575,7 +1100,16 @@
     </Placemark>
     <Placemark>
       <name>Tatabánya</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.3929884,47.5853909,0
@@ -584,7 +1118,16 @@
     </Placemark>
     <Placemark>
       <name>Vértesszőlős</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.3752778,47.6194444,0
@@ -593,7 +1136,16 @@
     </Placemark>
     <Placemark>
       <name>Tata</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.3270736,47.665038,0
@@ -602,7 +1154,16 @@
     </Placemark>
     <Placemark>
       <name>Győr</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.6344396,47.6822129,0
@@ -611,7 +1172,16 @@
     </Placemark>
     <Placemark>
       <name>Győrszabadhegy</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.6480556,47.6630556,0
@@ -620,7 +1190,16 @@
     </Placemark>
     <Placemark>
       <name>Pápa</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.4588889,47.3405556,0
@@ -629,7 +1208,16 @@
     </Placemark>
     <Placemark>
       <name>Nyúl</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.6980556,47.5877778,0
@@ -638,7 +1226,16 @@
     </Placemark>
     <Placemark>
       <name>Pannonhalma</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.7408333,47.5477778,0
@@ -647,7 +1244,16 @@
     </Placemark>
     <Placemark>
       <name>Vinye</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.8196537,47.3603578,0
@@ -656,7 +1262,16 @@
     </Placemark>
     <Placemark>
       <name>Porva-Csesznek</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.8411111,47.3269444,0
@@ -665,7 +1280,16 @@
     </Placemark>
     <Placemark>
       <name>Zirc</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.8780556,47.2666667,0
@@ -674,7 +1298,16 @@
     </Placemark>
     <Placemark>
       <name>Veszprém</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.91,47.1188889,0
@@ -683,7 +1316,16 @@
     </Placemark>
     <Placemark>
       <name>Sopron</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           16.58673,47.677904,0
@@ -692,7 +1334,16 @@
     </Placemark>
     <Placemark>
       <name>Eger</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           20.3814988,47.891711,0
@@ -701,7 +1352,16 @@
     </Placemark>
     <Placemark>
       <name>Füzesabony</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           20.4152778,47.7513889,0
@@ -710,7 +1370,16 @@
     </Placemark>
     <Placemark>
       <name>Miskolc-Tiszai</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           20.8122861,48.0991695,0
@@ -719,7 +1388,16 @@
     </Placemark>
     <Placemark>
       <name>Hatvan</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.6713889,47.6636111,0
@@ -728,7 +1406,16 @@
     </Placemark>
     <Placemark>
       <name>Ferihegy</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.2238652,47.4371136,0
@@ -737,7 +1424,16 @@
     </Placemark>
     <Placemark>
       <name>Üllő</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.3487777,47.3907285,0
@@ -746,7 +1442,16 @@
     </Placemark>
     <Placemark>
       <name>Kiskőrös</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.2970471,46.6260341,0
@@ -755,7 +1460,16 @@
     </Placemark>
     <Placemark>
       <name>Heves</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           20.3061111,47.6094444,0
@@ -764,7 +1478,16 @@
     </Placemark>
     <Placemark>
       <name>Kál-Kápolna</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           20.2541667,47.7341667,0
@@ -773,7 +1496,16 @@
     </Placemark>
     <Placemark>
       <name>Balatonalmádi</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.015,47.0283333,0
@@ -782,7 +1514,16 @@
     </Placemark>
     <Placemark>
       <name>Villánykövesd</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.4258333,45.8797222,0
@@ -791,7 +1532,16 @@
     </Placemark>
     <Placemark>
       <name>Palkonya</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.3938889,45.8916667,0
@@ -800,7 +1550,16 @@
     </Placemark>
     <Placemark>
       <name>Perkupa</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           20.6911111,48.4713889,0
@@ -809,7 +1568,16 @@
     </Placemark>
     <Placemark>
       <name>Tornanádaska</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           20.7872222,48.5583333,0
@@ -818,7 +1586,16 @@
     </Placemark>
     <Placemark>
       <name>Csorvás</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           20.8408333,46.6236111,0
@@ -827,7 +1604,16 @@
     </Placemark>
     <Placemark>
       <name>Békéscsaba</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           21.081542,46.670041,0
@@ -836,7 +1622,16 @@
     </Placemark>
     <Placemark>
       <name>Vámosgyörk</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.9280096,47.6858098,0
@@ -845,7 +1640,16 @@
     </Placemark>
     <Placemark>
       <name>Jászapáti</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           20.155,47.5136111,0
@@ -854,7 +1658,16 @@
     </Placemark>
     <Placemark>
       <name>Kisnémedi</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.2647966,47.7244009,0
@@ -863,7 +1676,16 @@
     </Placemark>
     <Placemark>
       <name>Váckisújfalu</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.3402778,47.705,0
@@ -872,7 +1694,16 @@
     </Placemark>
     <Placemark>
       <name>Őrbottyán</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.2837921,47.685573,0
@@ -881,7 +1712,16 @@
     </Placemark>
     <Placemark>
       <name>Dorog</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.7326863,47.7233783,0
@@ -890,7 +1730,16 @@
     </Placemark>
     <Placemark>
       <name>Split</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           16.4429578,43.5047301,0
@@ -899,7 +1748,16 @@
     </Placemark>
     <Placemark>
       <name>Veszprémvarsány</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.8183333,47.4433333,0
@@ -908,7 +1766,16 @@
     </Placemark>
     <Placemark>
       <name>Bakonyszentlászló</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           17.8175,47.3955556,0
@@ -917,7 +1784,16 @@
     </Placemark>
     <Placemark>
       <name>Orvieto</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           12.126565,42.7238473,0
@@ -926,7 +1802,16 @@
     </Placemark>
     <Placemark>
       <name>Orte</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           12.4086829,42.4374928,0
@@ -935,7 +1820,16 @@
     </Placemark>
     <Placemark>
       <name>Roma Tiburtina</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           12.5308661,41.9108193,0
@@ -944,7 +1838,16 @@
     </Placemark>
     <Placemark>
       <name>Fiumicino Aeroporto</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           12.2516675,41.7936718,0
@@ -953,7 +1856,16 @@
     </Placemark>
     <Placemark>
       <name>Magyarkút</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.045314,47.8503608,0
@@ -962,7 +1874,16 @@
     </Placemark>
     <Placemark>
       <name>Fenyveshegy</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0680556,47.8183333,0
@@ -971,7 +1892,16 @@
     </Placemark>
     <Placemark>
       <name>Drégelyvár</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0794444,48.0019444,0
@@ -980,7 +1910,16 @@
     </Placemark>
     <Placemark>
       <name>Sáferkút</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0441343,48.0288531,0
@@ -989,7 +1928,16 @@
     </Placemark>
     <Placemark>
       <name>Diósjenő</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0494444,47.94,0
@@ -998,7 +1946,16 @@
     </Placemark>
     <Placemark>
       <name>Brassó</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           25.613602,45.661229,0
@@ -1007,7 +1964,16 @@
     </Placemark>
     <Placemark>
       <name>Bregenz</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           9.7398993,47.5029932,0
@@ -1016,7 +1982,16 @@
     </Placemark>
     <Placemark>
       <name>Lindau-Insel</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           9.6812849,47.5441988,0
@@ -1025,7 +2000,16 @@
     </Placemark>
     <Placemark>
       <name>Széchenyi-hegy</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.9797334,47.4951804,0
@@ -1034,7 +2018,16 @@
     </Placemark>
     <Placemark>
       <name>Városmajor</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.0127171,47.5094324,0
@@ -1043,7 +2036,16 @@
     </Placemark>
     <Placemark>
       <name>York Street Train Station</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           -5.9222173,54.6105037,0
@@ -1052,7 +2054,16 @@
     </Placemark>
     <Placemark>
       <name>Coleraine</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           -6.6630046,55.1341116,0
@@ -1061,7 +2072,16 @@
     </Placemark>
     <Placemark>
       <name>Portrush</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           -6.6530476,55.2034362,0
@@ -1070,7 +2090,16 @@
     </Placemark>
     <Placemark>
       <name>Belfast Grand Central Station</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           -5.9401127,54.5947817,0
@@ -1079,7 +2108,16 @@
     </Placemark>
     <Placemark>
       <name>Dublin Connolly</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           -6.2471806,53.3524888,0
@@ -1088,7 +2126,16 @@
     </Placemark>
     <Placemark>
       <name>Kiskunfélegyháza</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           19.8346919,46.707067,0
@@ -1097,10 +2144,91 @@
     </Placemark>
     <Placemark>
       <name>Biatorbágy</name>
-      <styleUrl>#icon-1739-0288D1-nodesc</styleUrl>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
       <Point>
         <coordinates>
           18.8343104,47.4799234,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Galgamácsa</name>
+      <description><![CDATA[leírás: <br>name: ]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          19.3925,47.6938889,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Schiphol Airport</name>
+      <description><![CDATA[leírás: <br>name: Schiphol Airport]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value>Schiphol Airport</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          4.76228,52.30946,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Amsterdam Sloterdijk</name>
+      <description><![CDATA[leírás: <br>name: Amsterdam Sloterdijk]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value>Amsterdam Sloterdijk</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          4.838294,52.3890328,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Amsterdam Centraal</name>
+      <description><![CDATA[leírás: <br>name: Amsterdam Centraal]]></description>
+      <styleUrl>#icon-1739-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="leírás">
+          <value/>
+        </Data>
+        <Data name="name">
+          <value>Amsterdam Centraal</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          4.900272,52.3791283,0
         </coordinates>
       </Point>
     </Placemark>
