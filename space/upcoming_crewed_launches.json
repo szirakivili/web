@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-02-08T05:11:41Z",
+  "fetched_at": "2026-02-09T05:12:16Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=true&format=json&mode=detailed&limit=10",
   "payload": {
     "count": 3,
@@ -19,7 +19,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2026-02-07T17:06:24Z",
+        "last_updated": "2026-02-08T17:13:55Z",
         "net": "2026-02-11T11:01:04Z",
         "net_precision": {
           "id": 0,
@@ -30,18 +30,18 @@
         "window_end": "2026-02-11T11:01:04Z",
         "window_start": "2026-02-11T11:01:04Z",
         "image": {
-          "id": 1385,
-          "name": "Crew Dragon at sunset",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20220301072106.jpeg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192609.jpeg",
+          "id": 2689,
+          "name": "Falcon 9 at SLC-40 (Crew-12)",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_at_slc_image_20260208171226.jpg",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_at_slc_image_thumbnail_20260208171228.jpeg",
           "credit": "SpaceX",
           "license": {
-            "id": 5,
-            "name": "CC BY-NC 2.0",
-            "priority": 1,
-            "link": "https://creativecommons.org/licenses/by-nc/2.0/"
+            "id": 1,
+            "name": "Unknown",
+            "priority": 9,
+            "link": null
           },
-          "single_use": false,
+          "single_use": true,
           "variants": []
         },
         "infographic": null,
@@ -753,11 +753,11 @@
                   "name": "active"
                 },
                 "image": {
-                  "id": 1736,
-                  "name": "[AUTO] Falcon 9 - image",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193628.jpeg",
-                  "credit": null,
+                  "id": 2688,
+                  "name": "B1101 at SLC-40 (Crew-12)",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/b1101_at_slc-40_image_20260208171031.jpg",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/b1101_at_slc-40_image_thumbnail_20260208171033.jpeg",
+                  "credit": "SpaceX",
                   "license": {
                     "id": 1,
                     "name": "Unknown",
@@ -2762,6 +2762,24 @@
         ],
         "pad_turnaround": "P12DT3H39M4S",
         "mission_patches": [
+          {
+            "id": 1303,
+            "name": "Crew-12",
+            "priority": 9,
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/mission_patch_images/crew-12_mission_patch_20260208171350.png",
+            "agency": {
+              "response_mode": "list",
+              "id": 121,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/121/?format=json",
+              "name": "SpaceX",
+              "abbrev": "SpX",
+              "type": {
+                "id": 3,
+                "name": "Commercial"
+              }
+            },
+            "response_mode": "normal"
+          },
           {
             "id": 1288,
             "name": "Crew-12",
