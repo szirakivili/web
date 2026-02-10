@@ -1,636 +1,11 @@
 {
-  "fetched_at": "2026-02-09T04:35:24Z",
+  "fetched_at": "2026-02-10T04:38:45Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 362,
     "next": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?format=json&is_crewed=false&limit=30&mode=detailed&offset=30",
     "previous": null,
     "results": [
-      {
-        "id": "b7c38b80-6ce7-4ab0-8010-19ee11e26fc5",
-        "url": "https://ll.thespacedevs.com/2.3.0/launches/b7c38b80-6ce7-4ab0-8010-19ee11e26fc5/?format=json",
-        "name": "Smart Dragon 3 | Unknown Payload",
-        "response_mode": "detailed",
-        "slug": "smart-dragon-3-unknown-payload",
-        "launch_designator": null,
-        "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
-        },
-        "last_updated": "2026-02-05T16:07:38Z",
-        "net": "2026-02-11T06:30:00Z",
-        "net_precision": {
-          "id": 2,
-          "name": "Hour",
-          "abbrev": "HR",
-          "description": "The T-0 is accurate to the hour."
-        },
-        "window_end": "2026-02-11T06:47:00Z",
-        "window_start": "2026-02-11T06:26:00Z",
-        "image": {
-          "id": 2251,
-          "name": "Smart Dragon 3 liftoff (8 satellites)",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_20240925074606.jpg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_thumbnail_20240925074607.jpeg",
-          "credit": "CASC",
-          "license": {
-            "id": 1,
-            "name": "Unknown",
-            "priority": 9,
-            "link": null
-          },
-          "single_use": false,
-          "variants": []
-        },
-        "infographic": null,
-        "probability": null,
-        "weather_concerns": null,
-        "failreason": "",
-        "hashtag": null,
-        "launch_service_provider": {
-          "response_mode": "normal",
-          "id": 272,
-          "url": "https://ll.thespacedevs.com/2.3.0/agencies/272/?format=json",
-          "name": "China Rocket Co. Ltd.",
-          "abbrev": "CHNR",
-          "type": {
-            "id": 3,
-            "name": "Commercial"
-          },
-          "featured": false,
-          "country": [
-            {
-              "id": 6,
-              "name": "China",
-              "alpha_2_code": "CN",
-              "alpha_3_code": "CHN",
-              "nationality_name": "Chinese",
-              "nationality_name_composed": "Sino"
-            }
-          ],
-          "description": "China Rocket Co. Ltd. is a spinoff of China’s state-owned launch vehicle manufacturer using a “commercial business model”.",
-          "administrator": null,
-          "founding_year": null,
-          "launchers": "",
-          "spacecraft": "",
-          "parent": null,
-          "image": null,
-          "logo": {
-            "id": 126,
-            "name": "China Rocket Co. Ltd. - logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520rocket2520co.2520ltd._logo_20221001084159.png",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184937.png",
-            "credit": "China Rocket Co. Ltd",
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "social_logo": {
-            "id": 2250,
-            "name": "China Rocket Co. Ltd. - logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_20240922154013.jpg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_thumbnail_20240922154014.jpeg",
-            "credit": "China Rocket Co. Ltd.",
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "total_launch_count": 9,
-          "consecutive_successful_launches": 9,
-          "successful_launches": 9,
-          "failed_launches": 0,
-          "pending_launches": 1,
-          "consecutive_successful_landings": 0,
-          "successful_landings": 0,
-          "failed_landings": 0,
-          "attempted_landings": 0,
-          "successful_landings_spacecraft": 0,
-          "failed_landings_spacecraft": 0,
-          "attempted_landings_spacecraft": 0,
-          "successful_landings_payload": 0,
-          "failed_landings_payload": 0,
-          "attempted_landings_payload": 0,
-          "info_url": null,
-          "wiki_url": null,
-          "social_media_links": []
-        },
-        "rocket": {
-          "id": 8861,
-          "configuration": {
-            "response_mode": "detailed",
-            "id": 484,
-            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/484/?format=json",
-            "name": "Smart Dragon 3",
-            "families": [
-              {
-                "response_mode": "detailed",
-                "id": 145,
-                "name": "Smart Dragon",
-                "manufacturer": [
-                  {
-                    "response_mode": "normal",
-                    "id": 272,
-                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/272/?format=json",
-                    "name": "China Rocket Co. Ltd.",
-                    "abbrev": "CHNR",
-                    "type": {
-                      "id": 3,
-                      "name": "Commercial"
-                    },
-                    "featured": false,
-                    "country": [
-                      {
-                        "id": 6,
-                        "name": "China",
-                        "alpha_2_code": "CN",
-                        "alpha_3_code": "CHN",
-                        "nationality_name": "Chinese",
-                        "nationality_name_composed": "Sino"
-                      }
-                    ],
-                    "description": "China Rocket Co. Ltd. is a spinoff of China’s state-owned launch vehicle manufacturer using a “commercial business model”.",
-                    "administrator": null,
-                    "founding_year": null,
-                    "launchers": "",
-                    "spacecraft": "",
-                    "parent": null,
-                    "image": null,
-                    "logo": {
-                      "id": 126,
-                      "name": "China Rocket Co. Ltd. - logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520rocket2520co.2520ltd._logo_20221001084159.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184937.png",
-                      "credit": "China Rocket Co. Ltd",
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "social_logo": {
-                      "id": 2250,
-                      "name": "China Rocket Co. Ltd. - logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_20240922154013.jpg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_thumbnail_20240922154014.jpeg",
-                      "credit": "China Rocket Co. Ltd.",
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "total_launch_count": 9,
-                    "consecutive_successful_launches": 9,
-                    "successful_launches": 9,
-                    "failed_launches": 0,
-                    "pending_launches": 1,
-                    "consecutive_successful_landings": 0,
-                    "successful_landings": 0,
-                    "failed_landings": 0,
-                    "attempted_landings": 0,
-                    "successful_landings_spacecraft": 0,
-                    "failed_landings_spacecraft": 0,
-                    "attempted_landings_spacecraft": 0,
-                    "successful_landings_payload": 0,
-                    "failed_landings_payload": 0,
-                    "attempted_landings_payload": 0,
-                    "info_url": null,
-                    "wiki_url": null,
-                    "social_media_links": []
-                  }
-                ],
-                "parent": null,
-                "description": "",
-                "active": true,
-                "maiden_flight": "2019-08-17",
-                "total_launch_count": 9,
-                "consecutive_successful_launches": 9,
-                "successful_launches": 9,
-                "failed_launches": 0,
-                "pending_launches": 1,
-                "attempted_landings": 0,
-                "successful_landings": 0,
-                "failed_landings": 0,
-                "consecutive_successful_landings": 0
-              }
-            ],
-            "full_name": "Smart Dragon 3",
-            "variant": "",
-            "active": true,
-            "is_placeholder": false,
-            "manufacturer": {
-              "response_mode": "normal",
-              "id": 272,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/272/?format=json",
-              "name": "China Rocket Co. Ltd.",
-              "abbrev": "CHNR",
-              "type": {
-                "id": 3,
-                "name": "Commercial"
-              },
-              "featured": false,
-              "country": [
-                {
-                  "id": 6,
-                  "name": "China",
-                  "alpha_2_code": "CN",
-                  "alpha_3_code": "CHN",
-                  "nationality_name": "Chinese",
-                  "nationality_name_composed": "Sino"
-                }
-              ],
-              "description": "China Rocket Co. Ltd. is a spinoff of China’s state-owned launch vehicle manufacturer using a “commercial business model”.",
-              "administrator": null,
-              "founding_year": null,
-              "launchers": "",
-              "spacecraft": "",
-              "parent": null,
-              "image": null,
-              "logo": {
-                "id": 126,
-                "name": "China Rocket Co. Ltd. - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520rocket2520co.2520ltd._logo_20221001084159.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184937.png",
-                "credit": "China Rocket Co. Ltd",
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 2250,
-                "name": "China Rocket Co. Ltd. - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_20240922154013.jpg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_thumbnail_20240922154014.jpeg",
-                "credit": "China Rocket Co. Ltd.",
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "total_launch_count": 9,
-              "consecutive_successful_launches": 9,
-              "successful_launches": 9,
-              "failed_launches": 0,
-              "pending_launches": 1,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 0,
-              "failed_landings": 0,
-              "attempted_landings": 0,
-              "successful_landings_spacecraft": 0,
-              "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 0,
-              "successful_landings_payload": 0,
-              "failed_landings_payload": 0,
-              "attempted_landings_payload": 0,
-              "info_url": null,
-              "wiki_url": null,
-              "social_media_links": []
-            },
-            "program": [],
-            "reusable": false,
-            "image": {
-              "id": 2251,
-              "name": "Smart Dragon 3 liftoff (8 satellites)",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_20240925074606.jpg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_thumbnail_20240925074607.jpeg",
-              "credit": "CASC",
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": false,
-              "variants": []
-            },
-            "info_url": null,
-            "wiki_url": null,
-            "description": "Smart Dragon-3 is a solid fuel orbital rocket designed by a subsidiary of the state-owned CASC group built for the commercial market.",
-            "alias": "",
-            "min_stage": null,
-            "max_stage": null,
-            "length": 32.0,
-            "diameter": 2.64,
-            "maiden_flight": "2022-12-09",
-            "launch_cost": null,
-            "launch_mass": 140.0,
-            "leo_capacity": null,
-            "gto_capacity": null,
-            "geo_capacity": null,
-            "sso_capacity": 1500.0,
-            "to_thrust": null,
-            "apogee": null,
-            "total_launch_count": 8,
-            "consecutive_successful_launches": 8,
-            "successful_launches": 8,
-            "failed_launches": 0,
-            "pending_launches": 1,
-            "attempted_landings": 0,
-            "successful_landings": 0,
-            "failed_landings": 0,
-            "consecutive_successful_landings": 0,
-            "fastest_turnaround": "P15DT12H8M"
-          },
-          "launcher_stage": [],
-          "spacecraft_stage": [],
-          "payloads": []
-        },
-        "mission": {
-          "id": 7452,
-          "name": "Unknown Payload",
-          "type": "Unknown",
-          "description": "Possibly an Earth observation satellite for the Pakistan government's SUPARCO, details TBD.",
-          "image": null,
-          "orbit": {
-            "id": 25,
-            "name": "Unknown",
-            "abbrev": "N/A",
-            "celestial_body": {
-              "response_mode": "list",
-              "id": 1,
-              "name": "Earth"
-            }
-          },
-          "agencies": [],
-          "info_urls": [],
-          "vid_urls": []
-        },
-        "pad": {
-          "id": 251,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/251/?format=json",
-          "active": true,
-          "agencies": [
-            {
-              "response_mode": "normal",
-              "id": 88,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
-              "name": "China Aerospace Science and Technology Corporation",
-              "abbrev": "CASC",
-              "type": {
-                "id": 1,
-                "name": "Government"
-              },
-              "featured": true,
-              "country": [
-                {
-                  "id": 6,
-                  "name": "China",
-                  "alpha_2_code": "CN",
-                  "alpha_3_code": "CHN",
-                  "nationality_name": "Chinese",
-                  "nationality_name_composed": "Sino"
-                }
-              ],
-              "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
-              "administrator": "Chairman & President: Lei Fanpei",
-              "founding_year": 1999,
-              "launchers": "Long March",
-              "spacecraft": "",
-              "parent": null,
-              "image": {
-                "id": 8,
-                "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "logo": {
-                "id": 124,
-                "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 50,
-                "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              }
-            }
-          ],
-          "name": "South China Sea (launch location 3)",
-          "image": null,
-          "description": "",
-          "info_url": null,
-          "wiki_url": null,
-          "map_url": "https://www.google.com/maps?q=21.366667,112.116667",
-          "latitude": 21.366667,
-          "longitude": 112.116667,
-          "country": {
-            "id": 6,
-            "name": "China",
-            "alpha_2_code": "CN",
-            "alpha_3_code": "CHN",
-            "nationality_name": "Chinese",
-            "nationality_name_composed": "Sino"
-          },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_south_china_sea_2528launch_location_32529_20260116130538.jpg",
-          "total_launch_count": 0,
-          "orbital_launch_attempt_count": 0,
-          "fastest_turnaround": null,
-          "location": {
-            "response_mode": "normal",
-            "id": 185,
-            "url": "https://ll.thespacedevs.com/2.3.0/locations/185/?format=json",
-            "name": "Haiyang Oriental Spaceport",
-            "celestial_body": {
-              "response_mode": "normal",
-              "id": 1,
-              "name": "Earth",
-              "type": {
-                "id": 1,
-                "name": "Planet"
-              },
-              "diameter": 12742000.0,
-              "mass": 5.972168e+24,
-              "gravity": 9.80655,
-              "length_of_day": "1 00:00:00",
-              "atmosphere": true,
-              "image": {
-                "id": 2040,
-                "name": "Earth (Apollo 17)",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
-                "credit": "NASA",
-                "license": {
-                  "id": 4,
-                  "name": "NASA Image and Media Guidelines",
-                  "priority": 0,
-                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
-              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7420,
-              "successful_launches": 6867,
-              "failed_launches": 553,
-              "total_attempted_landings": 1261,
-              "successful_landings": 1214,
-              "failed_landings": 47
-            },
-            "active": true,
-            "country": {
-              "id": 6,
-              "name": "China",
-              "alpha_2_code": "CN",
-              "alpha_3_code": "CHN",
-              "nationality_name": "Chinese",
-              "nationality_name_composed": "Sino"
-            },
-            "description": "Chinese orbital launch vehicle launches supporting sea port located at Haiyang, Shandong Province, with dedicated piers and rocket/payload processing facilities for Chinese launch vehicles’ sea launches, and (as part of its expansion project) land based launch pads on artificial islands for various test vehicles and launch vehicles of private and government launch services providers.\r\n\r\nIn operation as a remote base of Taiyuan Satellite Launch Center since 2019.",
-            "image": {
-              "id": 1355,
-              "name": "Gravity-1 liftoff from Haiyang Spaceport (Maiden flight)",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/gravity-12520_image_20240112065126.jpg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192513.jpeg",
-              "credit": "OrienSpace",
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_haiyang_oriental_spaceport_20251128181322.jpg",
-            "longitude": 121.235103,
-            "latitude": 36.676794,
-            "timezone_name": "Asia/Shanghai",
-            "total_launch_count": 22,
-            "total_landing_count": 0
-          }
-        },
-        "webcast_live": false,
-        "program": [],
-        "orbital_launch_attempt_count": 7202,
-        "location_launch_attempt_count": 23,
-        "pad_launch_attempt_count": 1,
-        "agency_launch_attempt_count": 10,
-        "orbital_launch_attempt_count_year": 29,
-        "location_launch_attempt_count_year": 2,
-        "pad_launch_attempt_count_year": 1,
-        "agency_launch_attempt_count_year": 1,
-        "flightclub_url": null,
-        "updates": [
-          {
-            "id": 13891,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Rescheduled for February 11 per new NOTAMs.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2757200#msg2757200",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2026-02-05T16:07:00Z"
-          },
-          {
-            "id": 13728,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Reverted back to NET January TBD per cancellation of NOTAMs.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=64067.msg2752344#msg2752344",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2026-01-20T20:03:00Z"
-          },
-          {
-            "id": 13633,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "NET January 25 per new NOTAM, to be confirmed.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2750729#msg2750729",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2026-01-14T01:57:00Z"
-          },
-          {
-            "id": 13530,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "NET January 20 per new NOTAMs, to be confirmed.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2748400#msg2748400",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2026-01-07T01:56:00Z"
-          },
-          {
-            "id": 13479,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Launch apparently delayed with launch ship observed to have left its launch location, to be confirmed.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=64067.msg2746542#msg2746542",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-12-27T19:38:00Z"
-          },
-          {
-            "id": 13467,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Delayed to December 29 per new NOTAMs.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2746187#msg2746187",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-12-25T13:26:00Z"
-          },
-          {
-            "id": 13439,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Added launch per NOTAMs; Payload identity uncertain.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2745524#msg2745524",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-12-22T15:53:00Z"
-          }
-        ],
-        "info_urls": [],
-        "vid_urls": [],
-        "timeline": [],
-        "pad_turnaround": "P0D",
-        "mission_patches": []
-      },
       {
         "id": "d9c4e13d-abab-4ddc-9821-710a81d54e57",
         "url": "https://ll.thespacedevs.com/2.3.0/launches/d9c4e13d-abab-4ddc-9821-710a81d54e57/?format=json",
@@ -1777,14 +1152,14 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7204,
+        "orbital_launch_attempt_count": 7202,
         "location_launch_attempt_count": 861,
         "pad_launch_attempt_count": 247,
-        "agency_launch_attempt_count": 636,
-        "orbital_launch_attempt_count_year": 31,
+        "agency_launch_attempt_count": 635,
+        "orbital_launch_attempt_count_year": 29,
         "location_launch_attempt_count_year": 9,
         "pad_launch_attempt_count_year": 9,
-        "agency_launch_attempt_count_year": 17,
+        "agency_launch_attempt_count_year": 16,
         "flightclub_url": "https://flightclub.io/result?llId=d9c4e13d-abab-4ddc-9821-710a81d54e57",
         "updates": [
           {
@@ -2071,6 +1446,639 @@
         ]
       },
       {
+        "id": "b7c38b80-6ce7-4ab0-8010-19ee11e26fc5",
+        "url": "https://ll.thespacedevs.com/2.3.0/launches/b7c38b80-6ce7-4ab0-8010-19ee11e26fc5/?format=json",
+        "name": "Smart Dragon 3 | Unknown Payload",
+        "response_mode": "detailed",
+        "slug": "smart-dragon-3-unknown-payload",
+        "launch_designator": null,
+        "status": {
+          "id": 1,
+          "name": "Go for Launch",
+          "abbrev": "Go",
+          "description": "Current T-0 confirmed by official or reliable sources."
+        },
+        "last_updated": "2026-02-09T06:20:31Z",
+        "net": "2026-02-12T06:30:00Z",
+        "net_precision": {
+          "id": 2,
+          "name": "Hour",
+          "abbrev": "HR",
+          "description": "The T-0 is accurate to the hour."
+        },
+        "window_end": "2026-02-12T06:47:00Z",
+        "window_start": "2026-02-12T06:26:00Z",
+        "image": {
+          "id": 2251,
+          "name": "Smart Dragon 3 liftoff (8 satellites)",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_20240925074606.jpg",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_thumbnail_20240925074607.jpeg",
+          "credit": "CASC",
+          "license": {
+            "id": 1,
+            "name": "Unknown",
+            "priority": 9,
+            "link": null
+          },
+          "single_use": false,
+          "variants": []
+        },
+        "infographic": null,
+        "probability": null,
+        "weather_concerns": null,
+        "failreason": "",
+        "hashtag": null,
+        "launch_service_provider": {
+          "response_mode": "normal",
+          "id": 272,
+          "url": "https://ll.thespacedevs.com/2.3.0/agencies/272/?format=json",
+          "name": "China Rocket Co. Ltd.",
+          "abbrev": "CHNR",
+          "type": {
+            "id": 3,
+            "name": "Commercial"
+          },
+          "featured": false,
+          "country": [
+            {
+              "id": 6,
+              "name": "China",
+              "alpha_2_code": "CN",
+              "alpha_3_code": "CHN",
+              "nationality_name": "Chinese",
+              "nationality_name_composed": "Sino"
+            }
+          ],
+          "description": "China Rocket Co. Ltd. is a spinoff of China’s state-owned launch vehicle manufacturer using a “commercial business model”.",
+          "administrator": null,
+          "founding_year": null,
+          "launchers": "",
+          "spacecraft": "",
+          "parent": null,
+          "image": null,
+          "logo": {
+            "id": 126,
+            "name": "China Rocket Co. Ltd. - logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520rocket2520co.2520ltd._logo_20221001084159.png",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184937.png",
+            "credit": "China Rocket Co. Ltd",
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "social_logo": {
+            "id": 2250,
+            "name": "China Rocket Co. Ltd. - logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_20240922154013.jpg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_thumbnail_20240922154014.jpeg",
+            "credit": "China Rocket Co. Ltd.",
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "total_launch_count": 9,
+          "consecutive_successful_launches": 9,
+          "successful_launches": 9,
+          "failed_launches": 0,
+          "pending_launches": 1,
+          "consecutive_successful_landings": 0,
+          "successful_landings": 0,
+          "failed_landings": 0,
+          "attempted_landings": 0,
+          "successful_landings_spacecraft": 0,
+          "failed_landings_spacecraft": 0,
+          "attempted_landings_spacecraft": 0,
+          "successful_landings_payload": 0,
+          "failed_landings_payload": 0,
+          "attempted_landings_payload": 0,
+          "info_url": null,
+          "wiki_url": null,
+          "social_media_links": []
+        },
+        "rocket": {
+          "id": 8861,
+          "configuration": {
+            "response_mode": "detailed",
+            "id": 484,
+            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/484/?format=json",
+            "name": "Smart Dragon 3",
+            "families": [
+              {
+                "response_mode": "detailed",
+                "id": 145,
+                "name": "Smart Dragon",
+                "manufacturer": [
+                  {
+                    "response_mode": "normal",
+                    "id": 272,
+                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/272/?format=json",
+                    "name": "China Rocket Co. Ltd.",
+                    "abbrev": "CHNR",
+                    "type": {
+                      "id": 3,
+                      "name": "Commercial"
+                    },
+                    "featured": false,
+                    "country": [
+                      {
+                        "id": 6,
+                        "name": "China",
+                        "alpha_2_code": "CN",
+                        "alpha_3_code": "CHN",
+                        "nationality_name": "Chinese",
+                        "nationality_name_composed": "Sino"
+                      }
+                    ],
+                    "description": "China Rocket Co. Ltd. is a spinoff of China’s state-owned launch vehicle manufacturer using a “commercial business model”.",
+                    "administrator": null,
+                    "founding_year": null,
+                    "launchers": "",
+                    "spacecraft": "",
+                    "parent": null,
+                    "image": null,
+                    "logo": {
+                      "id": 126,
+                      "name": "China Rocket Co. Ltd. - logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520rocket2520co.2520ltd._logo_20221001084159.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184937.png",
+                      "credit": "China Rocket Co. Ltd",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "social_logo": {
+                      "id": 2250,
+                      "name": "China Rocket Co. Ltd. - logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_20240922154013.jpg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_thumbnail_20240922154014.jpeg",
+                      "credit": "China Rocket Co. Ltd.",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "total_launch_count": 9,
+                    "consecutive_successful_launches": 9,
+                    "successful_launches": 9,
+                    "failed_launches": 0,
+                    "pending_launches": 1,
+                    "consecutive_successful_landings": 0,
+                    "successful_landings": 0,
+                    "failed_landings": 0,
+                    "attempted_landings": 0,
+                    "successful_landings_spacecraft": 0,
+                    "failed_landings_spacecraft": 0,
+                    "attempted_landings_spacecraft": 0,
+                    "successful_landings_payload": 0,
+                    "failed_landings_payload": 0,
+                    "attempted_landings_payload": 0,
+                    "info_url": null,
+                    "wiki_url": null,
+                    "social_media_links": []
+                  }
+                ],
+                "parent": null,
+                "description": "",
+                "active": true,
+                "maiden_flight": "2019-08-17",
+                "total_launch_count": 9,
+                "consecutive_successful_launches": 9,
+                "successful_launches": 9,
+                "failed_launches": 0,
+                "pending_launches": 1,
+                "attempted_landings": 0,
+                "successful_landings": 0,
+                "failed_landings": 0,
+                "consecutive_successful_landings": 0
+              }
+            ],
+            "full_name": "Smart Dragon 3",
+            "variant": "",
+            "active": true,
+            "is_placeholder": false,
+            "manufacturer": {
+              "response_mode": "normal",
+              "id": 272,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/272/?format=json",
+              "name": "China Rocket Co. Ltd.",
+              "abbrev": "CHNR",
+              "type": {
+                "id": 3,
+                "name": "Commercial"
+              },
+              "featured": false,
+              "country": [
+                {
+                  "id": 6,
+                  "name": "China",
+                  "alpha_2_code": "CN",
+                  "alpha_3_code": "CHN",
+                  "nationality_name": "Chinese",
+                  "nationality_name_composed": "Sino"
+                }
+              ],
+              "description": "China Rocket Co. Ltd. is a spinoff of China’s state-owned launch vehicle manufacturer using a “commercial business model”.",
+              "administrator": null,
+              "founding_year": null,
+              "launchers": "",
+              "spacecraft": "",
+              "parent": null,
+              "image": null,
+              "logo": {
+                "id": 126,
+                "name": "China Rocket Co. Ltd. - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520rocket2520co.2520ltd._logo_20221001084159.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184937.png",
+                "credit": "China Rocket Co. Ltd",
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 2250,
+                "name": "China Rocket Co. Ltd. - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_20240922154013.jpg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china_rocket_co_image_thumbnail_20240922154014.jpeg",
+                "credit": "China Rocket Co. Ltd.",
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 9,
+              "consecutive_successful_launches": 9,
+              "successful_launches": 9,
+              "failed_launches": 0,
+              "pending_launches": 1,
+              "consecutive_successful_landings": 0,
+              "successful_landings": 0,
+              "failed_landings": 0,
+              "attempted_landings": 0,
+              "successful_landings_spacecraft": 0,
+              "failed_landings_spacecraft": 0,
+              "attempted_landings_spacecraft": 0,
+              "successful_landings_payload": 0,
+              "failed_landings_payload": 0,
+              "attempted_landings_payload": 0,
+              "info_url": null,
+              "wiki_url": null,
+              "social_media_links": []
+            },
+            "program": [],
+            "reusable": false,
+            "image": {
+              "id": 2251,
+              "name": "Smart Dragon 3 liftoff (8 satellites)",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_20240925074606.jpg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/smart_dragon_3__image_thumbnail_20240925074607.jpeg",
+              "credit": "CASC",
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": false,
+              "variants": []
+            },
+            "info_url": null,
+            "wiki_url": null,
+            "description": "Smart Dragon-3 is a solid fuel orbital rocket designed by a subsidiary of the state-owned CASC group built for the commercial market.",
+            "alias": "",
+            "min_stage": null,
+            "max_stage": null,
+            "length": 32.0,
+            "diameter": 2.64,
+            "maiden_flight": "2022-12-09",
+            "launch_cost": null,
+            "launch_mass": 140.0,
+            "leo_capacity": null,
+            "gto_capacity": null,
+            "geo_capacity": null,
+            "sso_capacity": 1500.0,
+            "to_thrust": null,
+            "apogee": null,
+            "total_launch_count": 8,
+            "consecutive_successful_launches": 8,
+            "successful_launches": 8,
+            "failed_launches": 0,
+            "pending_launches": 1,
+            "attempted_landings": 0,
+            "successful_landings": 0,
+            "failed_landings": 0,
+            "consecutive_successful_landings": 0,
+            "fastest_turnaround": "P15DT12H8M"
+          },
+          "launcher_stage": [],
+          "spacecraft_stage": [],
+          "payloads": []
+        },
+        "mission": {
+          "id": 7452,
+          "name": "Unknown Payload",
+          "type": "Unknown",
+          "description": "Possibly an Earth observation satellite for the Pakistan government's SUPARCO, details TBD.",
+          "image": null,
+          "orbit": {
+            "id": 25,
+            "name": "Unknown",
+            "abbrev": "N/A",
+            "celestial_body": {
+              "response_mode": "list",
+              "id": 1,
+              "name": "Earth"
+            }
+          },
+          "agencies": [],
+          "info_urls": [],
+          "vid_urls": []
+        },
+        "pad": {
+          "id": 251,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/251/?format=json",
+          "active": true,
+          "agencies": [
+            {
+              "response_mode": "normal",
+              "id": 88,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
+              "name": "China Aerospace Science and Technology Corporation",
+              "abbrev": "CASC",
+              "type": {
+                "id": 1,
+                "name": "Government"
+              },
+              "featured": true,
+              "country": [
+                {
+                  "id": 6,
+                  "name": "China",
+                  "alpha_2_code": "CN",
+                  "alpha_3_code": "CHN",
+                  "nationality_name": "Chinese",
+                  "nationality_name_composed": "Sino"
+                }
+              ],
+              "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
+              "administrator": "Chairman & President: Lei Fanpei",
+              "founding_year": 1999,
+              "launchers": "Long March",
+              "spacecraft": "",
+              "parent": null,
+              "image": {
+                "id": 8,
+                "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "logo": {
+                "id": 124,
+                "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 50,
+                "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              }
+            }
+          ],
+          "name": "South China Sea (launch location 3)",
+          "image": null,
+          "description": "",
+          "info_url": null,
+          "wiki_url": null,
+          "map_url": "https://www.google.com/maps?q=21.366667,112.116667",
+          "latitude": 21.366667,
+          "longitude": 112.116667,
+          "country": {
+            "id": 6,
+            "name": "China",
+            "alpha_2_code": "CN",
+            "alpha_3_code": "CHN",
+            "nationality_name": "Chinese",
+            "nationality_name_composed": "Sino"
+          },
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_south_china_sea_2528launch_location_32529_20260116130538.jpg",
+          "total_launch_count": 0,
+          "orbital_launch_attempt_count": 0,
+          "fastest_turnaround": null,
+          "location": {
+            "response_mode": "normal",
+            "id": 185,
+            "url": "https://ll.thespacedevs.com/2.3.0/locations/185/?format=json",
+            "name": "Haiyang Oriental Spaceport",
+            "celestial_body": {
+              "response_mode": "normal",
+              "id": 1,
+              "name": "Earth",
+              "type": {
+                "id": 1,
+                "name": "Planet"
+              },
+              "diameter": 12742000.0,
+              "mass": 5.972168e+24,
+              "gravity": 9.80655,
+              "length_of_day": "1 00:00:00",
+              "atmosphere": true,
+              "image": {
+                "id": 2040,
+                "name": "Earth (Apollo 17)",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
+                "credit": "NASA",
+                "license": {
+                  "id": 4,
+                  "name": "NASA Image and Media Guidelines",
+                  "priority": 0,
+                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
+              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
+              "total_attempted_launches": 7420,
+              "successful_launches": 6867,
+              "failed_launches": 553,
+              "total_attempted_landings": 1261,
+              "successful_landings": 1214,
+              "failed_landings": 47
+            },
+            "active": true,
+            "country": {
+              "id": 6,
+              "name": "China",
+              "alpha_2_code": "CN",
+              "alpha_3_code": "CHN",
+              "nationality_name": "Chinese",
+              "nationality_name_composed": "Sino"
+            },
+            "description": "Chinese orbital launch vehicle launches supporting sea port located at Haiyang, Shandong Province, with dedicated piers and rocket/payload processing facilities for Chinese launch vehicles’ sea launches, and (as part of its expansion project) land based launch pads on artificial islands for various test vehicles and launch vehicles of private and government launch services providers.\r\n\r\nIn operation as a remote base of Taiyuan Satellite Launch Center since 2019.",
+            "image": {
+              "id": 1355,
+              "name": "Gravity-1 liftoff from Haiyang Spaceport (Maiden flight)",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/gravity-12520_image_20240112065126.jpg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192513.jpeg",
+              "credit": "OrienSpace",
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": true,
+              "variants": []
+            },
+            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_haiyang_oriental_spaceport_20251128181322.jpg",
+            "longitude": 121.235103,
+            "latitude": 36.676794,
+            "timezone_name": "Asia/Shanghai",
+            "total_launch_count": 22,
+            "total_landing_count": 0
+          }
+        },
+        "webcast_live": false,
+        "program": [],
+        "orbital_launch_attempt_count": 7203,
+        "location_launch_attempt_count": 23,
+        "pad_launch_attempt_count": 1,
+        "agency_launch_attempt_count": 10,
+        "orbital_launch_attempt_count_year": 30,
+        "location_launch_attempt_count_year": 2,
+        "pad_launch_attempt_count_year": 1,
+        "agency_launch_attempt_count_year": 1,
+        "flightclub_url": null,
+        "updates": [
+          {
+            "id": 13910,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Delayed to February 12 per new NOTAMs.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2758353#msg2758353",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-02-09T06:20:00Z"
+          },
+          {
+            "id": 13891,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Rescheduled for February 11 per new NOTAMs.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2757200#msg2757200",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-02-05T16:07:00Z"
+          },
+          {
+            "id": 13728,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Reverted back to NET January TBD per cancellation of NOTAMs.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=64067.msg2752344#msg2752344",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-20T20:03:00Z"
+          },
+          {
+            "id": 13633,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "NET January 25 per new NOTAM, to be confirmed.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2750729#msg2750729",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-14T01:57:00Z"
+          },
+          {
+            "id": 13530,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "NET January 20 per new NOTAMs, to be confirmed.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2748400#msg2748400",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-01-07T01:56:00Z"
+          },
+          {
+            "id": 13479,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Launch apparently delayed with launch ship observed to have left its launch location, to be confirmed.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=64067.msg2746542#msg2746542",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-27T19:38:00Z"
+          },
+          {
+            "id": 13467,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Delayed to December 29 per new NOTAMs.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2746187#msg2746187",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-25T13:26:00Z"
+          },
+          {
+            "id": 13439,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Added launch per NOTAMs; Payload identity uncertain.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2745524#msg2745524",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-12-22T15:53:00Z"
+          }
+        ],
+        "info_urls": [],
+        "vid_urls": [],
+        "timeline": [],
+        "pad_turnaround": "P0D",
+        "mission_patches": []
+      },
+      {
         "id": "550f778d-6c2d-41fc-b182-6f0cd8feda93",
         "url": "https://ll.thespacedevs.com/2.3.0/launches/550f778d-6c2d-41fc-b182-6f0cd8feda93/?format=json",
         "name": "Vulcan VC4S | USSF-87",
@@ -2083,16 +2091,16 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2026-02-04T18:19:26Z",
-        "net": "2026-02-12T08:00:00Z",
+        "last_updated": "2026-02-09T21:44:05Z",
+        "net": "2026-02-12T08:30:00Z",
         "net_precision": {
           "id": 1,
           "name": "Minute",
           "abbrev": "MIN",
           "description": "The T-0 is accurate to the minute."
         },
-        "window_end": "2026-02-12T12:50:00Z",
-        "window_start": "2026-02-12T08:00:00Z",
+        "window_end": "2026-02-12T10:30:00Z",
+        "window_start": "2026-02-12T08:30:00Z",
         "image": {
           "id": 2436,
           "name": "Vulcan VC4S V-003 USSF-106 at SLC-41",
@@ -2109,7 +2117,7 @@
           "variants": []
         },
         "infographic": null,
-        "probability": null,
+        "probability": 90,
         "weather_concerns": null,
         "failreason": "",
         "hashtag": null,
@@ -2682,16 +2690,24 @@
         },
         "webcast_live": false,
         "program": [],
-        "orbital_launch_attempt_count": 7205,
-        "location_launch_attempt_count": 1085,
+        "orbital_launch_attempt_count": 7204,
+        "location_launch_attempt_count": 1084,
         "pad_launch_attempt_count": 121,
         "agency_launch_attempt_count": 171,
-        "orbital_launch_attempt_count_year": 32,
-        "location_launch_attempt_count_year": 9,
+        "orbital_launch_attempt_count_year": 31,
+        "location_launch_attempt_count_year": 8,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 1,
         "flightclub_url": null,
         "updates": [
+          {
+            "id": 13914,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Updated launch window.",
+            "info_url": "https://x.com/ulalaunch/status/2020881522379690244",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-02-09T15:37:00Z"
+          },
           {
             "id": 13885,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -2774,9 +2790,31 @@
           }
         ],
         "info_urls": [],
-        "vid_urls": [],
+        "vid_urls": [
+          {
+            "priority": 10,
+            "source": "youtube.com",
+            "publisher": "United Launch Alliance",
+            "title": "Rocket Launch:  Vulcan USSF-87",
+            "description": "A United Launch Alliance (ULA) Vulcan rocket will deliver national security spacecraft directly to geosynchronous orbit for the U.S. Space Force Space Systems Command on the USSF-87 mission. Liftoff will occur from Space Launch Complex-41 at Cape Canaveral Space Force Station in Florida on Monday, Feb. 2.  The window opens at 3:30 a.m. EST. \n\nGO Vulcan! GO Centaur! GO USSF-87!",
+            "feature_image": "https://i.ytimg.com/vi/AFw6xy2zGCo/maxresdefault_live.jpg",
+            "url": "https://www.youtube.com/watch?v=AFw6xy2zGCo",
+            "type": {
+              "id": 1,
+              "name": "Official Webcast"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            },
+            "start_time": "2026-02-12T08:09:00Z",
+            "end_time": null,
+            "live": false
+          }
+        ],
         "timeline": [],
-        "pad_turnaround": "P57DT23H32M",
+        "pad_turnaround": "P58DT2M",
         "mission_patches": []
       },
       {
@@ -3299,11 +3337,11 @@
         },
         "webcast_live": false,
         "program": [],
-        "orbital_launch_attempt_count": 7206,
+        "orbital_launch_attempt_count": 7205,
         "location_launch_attempt_count": 1560,
         "pad_launch_attempt_count": 93,
         "agency_launch_attempt_count": 198,
-        "orbital_launch_attempt_count_year": 33,
+        "orbital_launch_attempt_count_year": 32,
         "location_launch_attempt_count_year": 1,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 1,
@@ -3425,7 +3463,7 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2026-02-02T11:09:11Z",
+        "last_updated": "2026-02-09T18:07:50Z",
         "net": "2026-02-12T16:45:00Z",
         "net_precision": {
           "id": 1,
@@ -4944,7 +4982,25 @@
             "created_on": "2025-01-10T14:23:00Z"
           }
         ],
-        "info_urls": [],
+        "info_urls": [
+          {
+            "priority": 10,
+            "source": null,
+            "title": null,
+            "description": null,
+            "feature_image": null,
+            "url": "https://newsroom.arianespace.com/download/?n=fc4e60f773b4aca6f928292422e6294e.pdf&id=48692",
+            "type": {
+              "id": 2,
+              "name": "Official Press Kit"
+            },
+            "language": {
+              "id": 1,
+              "name": "English",
+              "code": "en"
+            }
+          }
+        ],
         "vid_urls": [
           {
             "priority": 10,
@@ -4992,550 +5048,6 @@
         "timeline": [],
         "pad_turnaround": "P57DT11H43M2S",
         "mission_patches": []
-      },
-      {
-        "id": "3f6de963-7197-48aa-a49f-6c944cbf85e9",
-        "url": "https://ll.thespacedevs.com/2.3.0/launches/3f6de963-7197-48aa-a49f-6c944cbf85e9/?format=json",
-        "name": "Firefly Alpha | Stairway to Seven",
-        "response_mode": "detailed",
-        "slug": "firefly-alpha-stairway-to-seven",
-        "launch_designator": null,
-        "status": {
-          "id": 8,
-          "name": "To Be Confirmed",
-          "abbrev": "TBC",
-          "description": "Awaiting official confirmation - current date is known with some certainty."
-        },
-        "last_updated": "2026-02-04T18:42:31Z",
-        "net": "2026-02-14T00:50:00Z",
-        "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
-        },
-        "window_end": "2026-02-14T04:58:00Z",
-        "window_start": "2026-02-14T00:50:00Z",
-        "image": {
-          "id": 1740,
-          "name": "Firefly Alpha liftoff (FLTA004)",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly_alpha_l_image_20240605174156.jpeg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly_alpha_l_image_thumbnail_20240605174157.jpeg",
-          "credit": "Firefly Aerospace / Jack Beyer",
-          "license": {
-            "id": 1,
-            "name": "Unknown",
-            "priority": 9,
-            "link": null
-          },
-          "single_use": true,
-          "variants": []
-        },
-        "infographic": null,
-        "probability": null,
-        "weather_concerns": null,
-        "failreason": "",
-        "hashtag": null,
-        "launch_service_provider": {
-          "response_mode": "normal",
-          "id": 265,
-          "url": "https://ll.thespacedevs.com/2.3.0/agencies/265/?format=json",
-          "name": "Firefly Aerospace",
-          "abbrev": "FA",
-          "type": {
-            "id": 3,
-            "name": "Commercial"
-          },
-          "featured": true,
-          "country": [
-            {
-              "id": 2,
-              "name": "United States of America",
-              "alpha_2_code": "US",
-              "alpha_3_code": "USA",
-              "nationality_name": "American",
-              "nationality_name_composed": "Americano"
-            }
-          ],
-          "description": "Firefly Aerospace is an American private aerospace firm based in Austin, Texas, that develops small and medium-sized launch vehicles for commercial launches to orbit.",
-          "administrator": "CEO: Peter Schumacher",
-          "founding_year": 2014,
-          "launchers": "",
-          "spacecraft": "",
-          "parent": null,
-          "image": null,
-          "logo": {
-            "id": 134,
-            "name": "[AUTO] Firefly Aerospace - logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly2520aerospace_logo_20220826094423.jpg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184955.jpeg",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "social_logo": {
-            "id": 58,
-            "name": "[AUTO] Firefly Aerospace - social_logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly2520aerospace_nation_20230531050520.jpg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184757.jpeg",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "total_launch_count": 6,
-          "consecutive_successful_launches": 0,
-          "successful_launches": 3,
-          "failed_launches": 3,
-          "pending_launches": 4,
-          "consecutive_successful_landings": 0,
-          "successful_landings": 0,
-          "failed_landings": 0,
-          "attempted_landings": 0,
-          "successful_landings_spacecraft": 0,
-          "failed_landings_spacecraft": 0,
-          "attempted_landings_spacecraft": 0,
-          "successful_landings_payload": 1,
-          "failed_landings_payload": 0,
-          "attempted_landings_payload": 1,
-          "info_url": "https://firefly.com/",
-          "wiki_url": "https://en.wikipedia.org/wiki/Firefly_Aerospace",
-          "social_media_links": []
-        },
-        "rocket": {
-          "id": 8795,
-          "configuration": {
-            "response_mode": "detailed",
-            "id": 179,
-            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/179/?format=json",
-            "name": "Firefly Alpha",
-            "families": [
-              {
-                "response_mode": "detailed",
-                "id": 215,
-                "name": "Firefly Alpha",
-                "manufacturer": [
-                  {
-                    "response_mode": "normal",
-                    "id": 265,
-                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/265/?format=json",
-                    "name": "Firefly Aerospace",
-                    "abbrev": "FA",
-                    "type": {
-                      "id": 3,
-                      "name": "Commercial"
-                    },
-                    "featured": true,
-                    "country": [
-                      {
-                        "id": 2,
-                        "name": "United States of America",
-                        "alpha_2_code": "US",
-                        "alpha_3_code": "USA",
-                        "nationality_name": "American",
-                        "nationality_name_composed": "Americano"
-                      }
-                    ],
-                    "description": "Firefly Aerospace is an American private aerospace firm based in Austin, Texas, that develops small and medium-sized launch vehicles for commercial launches to orbit.",
-                    "administrator": "CEO: Peter Schumacher",
-                    "founding_year": 2014,
-                    "launchers": "",
-                    "spacecraft": "",
-                    "parent": null,
-                    "image": null,
-                    "logo": {
-                      "id": 134,
-                      "name": "[AUTO] Firefly Aerospace - logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly2520aerospace_logo_20220826094423.jpg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184955.jpeg",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "social_logo": {
-                      "id": 58,
-                      "name": "[AUTO] Firefly Aerospace - social_logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly2520aerospace_nation_20230531050520.jpg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184757.jpeg",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "total_launch_count": 6,
-                    "consecutive_successful_launches": 0,
-                    "successful_launches": 3,
-                    "failed_launches": 3,
-                    "pending_launches": 4,
-                    "consecutive_successful_landings": 0,
-                    "successful_landings": 0,
-                    "failed_landings": 0,
-                    "attempted_landings": 0,
-                    "successful_landings_spacecraft": 0,
-                    "failed_landings_spacecraft": 0,
-                    "attempted_landings_spacecraft": 0,
-                    "successful_landings_payload": 1,
-                    "failed_landings_payload": 0,
-                    "attempted_landings_payload": 1,
-                    "info_url": "https://firefly.com/",
-                    "wiki_url": "https://en.wikipedia.org/wiki/Firefly_Aerospace",
-                    "social_media_links": []
-                  }
-                ],
-                "parent": null,
-                "description": "",
-                "active": true,
-                "maiden_flight": "2021-09-03",
-                "total_launch_count": 6,
-                "consecutive_successful_launches": 0,
-                "successful_launches": 3,
-                "failed_launches": 3,
-                "pending_launches": 4,
-                "attempted_landings": 0,
-                "successful_landings": 0,
-                "failed_landings": 0,
-                "consecutive_successful_landings": 0
-              }
-            ],
-            "full_name": "Firefly Alpha",
-            "variant": "",
-            "active": true,
-            "is_placeholder": false,
-            "manufacturer": {
-              "response_mode": "normal",
-              "id": 265,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/265/?format=json",
-              "name": "Firefly Aerospace",
-              "abbrev": "FA",
-              "type": {
-                "id": 3,
-                "name": "Commercial"
-              },
-              "featured": true,
-              "country": [
-                {
-                  "id": 2,
-                  "name": "United States of America",
-                  "alpha_2_code": "US",
-                  "alpha_3_code": "USA",
-                  "nationality_name": "American",
-                  "nationality_name_composed": "Americano"
-                }
-              ],
-              "description": "Firefly Aerospace is an American private aerospace firm based in Austin, Texas, that develops small and medium-sized launch vehicles for commercial launches to orbit.",
-              "administrator": "CEO: Peter Schumacher",
-              "founding_year": 2014,
-              "launchers": "",
-              "spacecraft": "",
-              "parent": null,
-              "image": null,
-              "logo": {
-                "id": 134,
-                "name": "[AUTO] Firefly Aerospace - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly2520aerospace_logo_20220826094423.jpg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184955.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 58,
-                "name": "[AUTO] Firefly Aerospace - social_logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly2520aerospace_nation_20230531050520.jpg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184757.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "total_launch_count": 6,
-              "consecutive_successful_launches": 0,
-              "successful_launches": 3,
-              "failed_launches": 3,
-              "pending_launches": 4,
-              "consecutive_successful_landings": 0,
-              "successful_landings": 0,
-              "failed_landings": 0,
-              "attempted_landings": 0,
-              "successful_landings_spacecraft": 0,
-              "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 0,
-              "successful_landings_payload": 1,
-              "failed_landings_payload": 0,
-              "attempted_landings_payload": 1,
-              "info_url": "https://firefly.com/",
-              "wiki_url": "https://en.wikipedia.org/wiki/Firefly_Aerospace",
-              "social_media_links": []
-            },
-            "program": [],
-            "reusable": false,
-            "image": {
-              "id": 1740,
-              "name": "Firefly Alpha liftoff (FLTA004)",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly_alpha_l_image_20240605174156.jpeg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly_alpha_l_image_thumbnail_20240605174157.jpeg",
-              "credit": "Firefly Aerospace / Jack Beyer",
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "info_url": "https://fireflyspace.com/alpha/",
-            "wiki_url": "https://en.wikipedia.org/wiki/Firefly_Alpha",
-            "description": "Firefly Alpha (Firefly α) is a two-stage orbital expendable launch vehicle developed by the American aerospace company Firefly Aerospace to cover the commercial small satellite launch market. Alpha is intended to provide launch options for both full vehicle and ride share customers.",
-            "alias": "",
-            "min_stage": 2,
-            "max_stage": 2,
-            "length": 29.6,
-            "diameter": 1.82,
-            "maiden_flight": "2021-09-03",
-            "launch_cost": 15000000,
-            "launch_mass": 54.0,
-            "leo_capacity": 1000.0,
-            "gto_capacity": null,
-            "geo_capacity": null,
-            "sso_capacity": 630.0,
-            "to_thrust": 736.0,
-            "apogee": null,
-            "total_launch_count": 6,
-            "consecutive_successful_launches": 0,
-            "successful_launches": 3,
-            "failed_launches": 3,
-            "pending_launches": 0,
-            "attempted_landings": 0,
-            "successful_landings": 0,
-            "failed_landings": 0,
-            "consecutive_successful_landings": 0,
-            "fastest_turnaround": "P98DT15H4M30S"
-          },
-          "launcher_stage": [],
-          "spacecraft_stage": [],
-          "payloads": []
-        },
-        "mission": {
-          "id": 7386,
-          "name": "Stairway to Seven",
-          "type": "Test Flight",
-          "description": "Firefly Alpha's Flight 7 will be a test flight and return-To-Flight for the launch vehicle after its April 2025 launch failure. It will test and validate key systems ahead of Firefly’s Block II configuration upgrade on Flight 8 that’s designed to enhance reliability and manufacturability across the vehicle.\r\n\r\nFlight 7 will be the last flown in Alpha’s current configuration and will test multiple Block II subsystems, including the in-house avionics and thermal improvements, to gain flight heritage and validate lessons learned ahead of the full configuration upgrade on Flight 8.",
-          "image": null,
-          "orbit": {
-            "id": 8,
-            "name": "Low Earth Orbit",
-            "abbrev": "LEO",
-            "celestial_body": {
-              "response_mode": "list",
-              "id": 1,
-              "name": "Earth"
-            }
-          },
-          "agencies": [],
-          "info_urls": [],
-          "vid_urls": []
-        },
-        "pad": {
-          "id": 39,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/39/?format=json",
-          "active": true,
-          "agencies": [],
-          "name": "Space Launch Complex 2W",
-          "image": {
-            "id": 2248,
-            "name": "Delta II 7920-10 liftoff from SLC-2W (NROL-21)",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/delta_ii_7920-1_image_20240922115616.jpg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/delta_ii_7920-1_image_thumbnail_20240922115616.jpeg",
-            "credit": "USAF/Michael Stonecypher",
-            "license": {
-              "id": 17,
-              "name": "Department of Defense Image Use Policy",
-              "priority": 6,
-              "link": "https://www.dimoc.mil/resources/limitations/"
-            },
-            "single_use": false,
-            "variants": []
-          },
-          "description": "SLC-2W was originally used for Delta, Thor-Agena and Delta II launches. After the last Delta II flight in 2018, SLC-2W was repurposed to launch Firefly Alpha rockets.",
-          "info_url": null,
-          "wiki_url": "https://en.wikipedia.org/wiki/Vandenberg_Space_Launch_Complex_2",
-          "map_url": "https://www.google.com/maps?q=34.7556,-120.6224",
-          "latitude": 34.7556,
-          "longitude": -120.6224,
-          "country": {
-            "id": 2,
-            "name": "United States of America",
-            "alpha_2_code": "US",
-            "alpha_3_code": "USA",
-            "nationality_name": "American",
-            "nationality_name_composed": "Americano"
-          },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_39_20200803143542.jpg",
-          "total_launch_count": 98,
-          "orbital_launch_attempt_count": 98,
-          "fastest_turnaround": "P26DT16H39M49S",
-          "location": {
-            "response_mode": "normal",
-            "id": 11,
-            "url": "https://ll.thespacedevs.com/2.3.0/locations/11/?format=json",
-            "name": "Vandenberg SFB, CA, USA",
-            "celestial_body": {
-              "response_mode": "normal",
-              "id": 1,
-              "name": "Earth",
-              "type": {
-                "id": 1,
-                "name": "Planet"
-              },
-              "diameter": 12742000.0,
-              "mass": 5.972168e+24,
-              "gravity": 9.80655,
-              "length_of_day": "1 00:00:00",
-              "atmosphere": true,
-              "image": {
-                "id": 2040,
-                "name": "Earth (Apollo 17)",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
-                "credit": "NASA",
-                "license": {
-                  "id": 4,
-                  "name": "NASA Image and Media Guidelines",
-                  "priority": 0,
-                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
-              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7420,
-              "successful_launches": 6867,
-              "failed_launches": 553,
-              "total_attempted_landings": 1261,
-              "successful_landings": 1214,
-              "failed_landings": 47
-            },
-            "active": true,
-            "country": {
-              "id": 2,
-              "name": "United States of America",
-              "alpha_2_code": "US",
-              "alpha_3_code": "USA",
-              "nationality_name": "American",
-              "nationality_name_composed": "Americano"
-            },
-            "description": "Vandenberg Space Force Base is a United States Space Force Base in Santa Barbara County, California. Established in 1941, Vandenberg Space Force Base is a space launch base, launching spacecraft from the Western Range, and also performs missile testing. The United States Space Force's Space Launch Delta 30 serves as the host delta for the base, equivalent to an Air Force air base wing. In addition to its military space launch mission, Vandenberg Space Force Base also hosts space launches for civil and commercial space entities, such as NASA and SpaceX.",
-            "image": {
-              "id": 2226,
-              "name": "Vandenberg SFB imaged by Sentinel-2",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/vandenberg_sfb__image_20240920082910.jpeg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/vandenberg_sfb__image_thumbnail_20240920082910.jpeg",
-              "credit": "Contains modified Copernicus Sentinel data 2020",
-              "license": {
-                "id": 33,
-                "name": "Copernicus Image Use Policy",
-                "priority": 0,
-                "link": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013R1159"
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_11_20200803142416.jpg",
-            "longitude": -120.52023,
-            "latitude": 34.75133,
-            "timezone_name": "America/Los_Angeles",
-            "total_launch_count": 860,
-            "total_landing_count": 33
-          }
-        },
-        "webcast_live": false,
-        "program": [],
-        "orbital_launch_attempt_count": 7208,
-        "location_launch_attempt_count": 862,
-        "pad_launch_attempt_count": 99,
-        "agency_launch_attempt_count": 7,
-        "orbital_launch_attempt_count_year": 35,
-        "location_launch_attempt_count_year": 10,
-        "pad_launch_attempt_count_year": 1,
-        "agency_launch_attempt_count_year": 1,
-        "flightclub_url": null,
-        "updates": [
-          {
-            "id": 13886,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "NET February 14 UTC, to be confirmed.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=61069.msg2757010#msg2757010",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2026-02-04T18:42:00Z"
-          },
-          {
-            "id": 12865,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Added launch.",
-            "info_url": "https://fireflyspace.com/missions/alpha-flta007/",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2025-11-12T21:23:00Z"
-          }
-        ],
-        "info_urls": [],
-        "vid_urls": [],
-        "timeline": [],
-        "pad_turnaround": "P290DT11H13M",
-        "mission_patches": [
-          {
-            "id": 1302,
-            "name": "FLTA007_patch",
-            "priority": 10,
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/mission_patch_images/flta007_patch_mission_patch_20260204183927.png",
-            "agency": {
-              "response_mode": "list",
-              "id": 265,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/265/?format=json",
-              "name": "Firefly Aerospace",
-              "abbrev": "FA",
-              "type": {
-                "id": 3,
-                "name": "Commercial"
-              }
-            },
-            "response_mode": "normal"
-          }
-        ]
       },
       {
         "id": "a0ed15aa-4d23-48ac-a712-950228663b43",
@@ -6757,11 +6269,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7209,
+        "orbital_launch_attempt_count": 7208,
         "location_launch_attempt_count": 1086,
         "pad_launch_attempt_count": 363,
         "agency_launch_attempt_count": 637,
-        "orbital_launch_attempt_count_year": 36,
+        "orbital_launch_attempt_count_year": 35,
         "location_launch_attempt_count_year": 10,
         "pad_launch_attempt_count_year": 9,
         "agency_launch_attempt_count_year": 18,
@@ -6996,7 +6508,7 @@
             "relative_time": "PT1H4M59S"
           }
         ],
-        "pad_turnaround": "P2DT17H58M56S",
+        "pad_turnaround": "P1DT18H22M",
         "mission_patches": [
           {
             "id": 7,
@@ -8164,12 +7676,12 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7210,
-        "location_launch_attempt_count": 863,
+        "orbital_launch_attempt_count": 7209,
+        "location_launch_attempt_count": 862,
         "pad_launch_attempt_count": 248,
         "agency_launch_attempt_count": 638,
-        "orbital_launch_attempt_count_year": 37,
-        "location_launch_attempt_count_year": 11,
+        "orbital_launch_attempt_count_year": 36,
+        "location_launch_attempt_count_year": 10,
         "pad_launch_attempt_count_year": 10,
         "agency_launch_attempt_count_year": 19,
         "flightclub_url": null,
@@ -9677,11 +9189,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7211,
+        "orbital_launch_attempt_count": 7210,
         "location_launch_attempt_count": 1087,
         "pad_launch_attempt_count": 364,
         "agency_launch_attempt_count": 639,
-        "orbital_launch_attempt_count_year": 38,
+        "orbital_launch_attempt_count_year": 37,
         "location_launch_attempt_count_year": 11,
         "pad_launch_attempt_count_year": 10,
         "agency_launch_attempt_count_year": 20,
@@ -11060,12 +10572,12 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7212,
-        "location_launch_attempt_count": 864,
+        "orbital_launch_attempt_count": 7211,
+        "location_launch_attempt_count": 863,
         "pad_launch_attempt_count": 249,
         "agency_launch_attempt_count": 640,
-        "orbital_launch_attempt_count_year": 39,
-        "location_launch_attempt_count_year": 12,
+        "orbital_launch_attempt_count_year": 38,
+        "location_launch_attempt_count_year": 11,
         "pad_launch_attempt_count_year": 11,
         "agency_launch_attempt_count_year": 21,
         "flightclub_url": null,
@@ -11320,6 +10832,558 @@
               "url": "https://ll.thespacedevs.com/2.3.0/agencies/121/?format=json",
               "name": "SpaceX",
               "abbrev": "SpX",
+              "type": {
+                "id": 3,
+                "name": "Commercial"
+              }
+            },
+            "response_mode": "normal"
+          }
+        ]
+      },
+      {
+        "id": "3f6de963-7197-48aa-a49f-6c944cbf85e9",
+        "url": "https://ll.thespacedevs.com/2.3.0/launches/3f6de963-7197-48aa-a49f-6c944cbf85e9/?format=json",
+        "name": "Firefly Alpha | Stairway to Seven",
+        "response_mode": "detailed",
+        "slug": "firefly-alpha-stairway-to-seven",
+        "launch_designator": null,
+        "status": {
+          "id": 1,
+          "name": "Go for Launch",
+          "abbrev": "Go",
+          "description": "Current T-0 confirmed by official or reliable sources."
+        },
+        "last_updated": "2026-02-09T14:04:14Z",
+        "net": "2026-02-19T00:50:00Z",
+        "net_precision": {
+          "id": 1,
+          "name": "Minute",
+          "abbrev": "MIN",
+          "description": "The T-0 is accurate to the minute."
+        },
+        "window_end": "2026-02-19T04:58:00Z",
+        "window_start": "2026-02-19T00:50:00Z",
+        "image": {
+          "id": 1740,
+          "name": "Firefly Alpha liftoff (FLTA004)",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly_alpha_l_image_20240605174156.jpeg",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly_alpha_l_image_thumbnail_20240605174157.jpeg",
+          "credit": "Firefly Aerospace / Jack Beyer",
+          "license": {
+            "id": 1,
+            "name": "Unknown",
+            "priority": 9,
+            "link": null
+          },
+          "single_use": true,
+          "variants": []
+        },
+        "infographic": null,
+        "probability": null,
+        "weather_concerns": null,
+        "failreason": "",
+        "hashtag": null,
+        "launch_service_provider": {
+          "response_mode": "normal",
+          "id": 265,
+          "url": "https://ll.thespacedevs.com/2.3.0/agencies/265/?format=json",
+          "name": "Firefly Aerospace",
+          "abbrev": "FA",
+          "type": {
+            "id": 3,
+            "name": "Commercial"
+          },
+          "featured": true,
+          "country": [
+            {
+              "id": 2,
+              "name": "United States of America",
+              "alpha_2_code": "US",
+              "alpha_3_code": "USA",
+              "nationality_name": "American",
+              "nationality_name_composed": "Americano"
+            }
+          ],
+          "description": "Firefly Aerospace is an American private aerospace firm based in Austin, Texas, that develops small and medium-sized launch vehicles for commercial launches to orbit.",
+          "administrator": "CEO: Peter Schumacher",
+          "founding_year": 2014,
+          "launchers": "",
+          "spacecraft": "",
+          "parent": null,
+          "image": null,
+          "logo": {
+            "id": 134,
+            "name": "[AUTO] Firefly Aerospace - logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly2520aerospace_logo_20220826094423.jpg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184955.jpeg",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "social_logo": {
+            "id": 58,
+            "name": "[AUTO] Firefly Aerospace - social_logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly2520aerospace_nation_20230531050520.jpg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184757.jpeg",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "total_launch_count": 6,
+          "consecutive_successful_launches": 0,
+          "successful_launches": 3,
+          "failed_launches": 3,
+          "pending_launches": 5,
+          "consecutive_successful_landings": 0,
+          "successful_landings": 0,
+          "failed_landings": 0,
+          "attempted_landings": 0,
+          "successful_landings_spacecraft": 0,
+          "failed_landings_spacecraft": 0,
+          "attempted_landings_spacecraft": 0,
+          "successful_landings_payload": 1,
+          "failed_landings_payload": 0,
+          "attempted_landings_payload": 1,
+          "info_url": "https://firefly.com/",
+          "wiki_url": "https://en.wikipedia.org/wiki/Firefly_Aerospace",
+          "social_media_links": []
+        },
+        "rocket": {
+          "id": 8795,
+          "configuration": {
+            "response_mode": "detailed",
+            "id": 179,
+            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/179/?format=json",
+            "name": "Firefly Alpha",
+            "families": [
+              {
+                "response_mode": "detailed",
+                "id": 215,
+                "name": "Firefly Alpha",
+                "manufacturer": [
+                  {
+                    "response_mode": "normal",
+                    "id": 265,
+                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/265/?format=json",
+                    "name": "Firefly Aerospace",
+                    "abbrev": "FA",
+                    "type": {
+                      "id": 3,
+                      "name": "Commercial"
+                    },
+                    "featured": true,
+                    "country": [
+                      {
+                        "id": 2,
+                        "name": "United States of America",
+                        "alpha_2_code": "US",
+                        "alpha_3_code": "USA",
+                        "nationality_name": "American",
+                        "nationality_name_composed": "Americano"
+                      }
+                    ],
+                    "description": "Firefly Aerospace is an American private aerospace firm based in Austin, Texas, that develops small and medium-sized launch vehicles for commercial launches to orbit.",
+                    "administrator": "CEO: Peter Schumacher",
+                    "founding_year": 2014,
+                    "launchers": "",
+                    "spacecraft": "",
+                    "parent": null,
+                    "image": null,
+                    "logo": {
+                      "id": 134,
+                      "name": "[AUTO] Firefly Aerospace - logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly2520aerospace_logo_20220826094423.jpg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184955.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "social_logo": {
+                      "id": 58,
+                      "name": "[AUTO] Firefly Aerospace - social_logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly2520aerospace_nation_20230531050520.jpg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184757.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "total_launch_count": 6,
+                    "consecutive_successful_launches": 0,
+                    "successful_launches": 3,
+                    "failed_launches": 3,
+                    "pending_launches": 5,
+                    "consecutive_successful_landings": 0,
+                    "successful_landings": 0,
+                    "failed_landings": 0,
+                    "attempted_landings": 0,
+                    "successful_landings_spacecraft": 0,
+                    "failed_landings_spacecraft": 0,
+                    "attempted_landings_spacecraft": 0,
+                    "successful_landings_payload": 1,
+                    "failed_landings_payload": 0,
+                    "attempted_landings_payload": 1,
+                    "info_url": "https://firefly.com/",
+                    "wiki_url": "https://en.wikipedia.org/wiki/Firefly_Aerospace",
+                    "social_media_links": []
+                  }
+                ],
+                "parent": null,
+                "description": "",
+                "active": true,
+                "maiden_flight": "2021-09-03",
+                "total_launch_count": 6,
+                "consecutive_successful_launches": 0,
+                "successful_launches": 3,
+                "failed_launches": 3,
+                "pending_launches": 5,
+                "attempted_landings": 0,
+                "successful_landings": 0,
+                "failed_landings": 0,
+                "consecutive_successful_landings": 0
+              }
+            ],
+            "full_name": "Firefly Alpha",
+            "variant": "",
+            "active": true,
+            "is_placeholder": false,
+            "manufacturer": {
+              "response_mode": "normal",
+              "id": 265,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/265/?format=json",
+              "name": "Firefly Aerospace",
+              "abbrev": "FA",
+              "type": {
+                "id": 3,
+                "name": "Commercial"
+              },
+              "featured": true,
+              "country": [
+                {
+                  "id": 2,
+                  "name": "United States of America",
+                  "alpha_2_code": "US",
+                  "alpha_3_code": "USA",
+                  "nationality_name": "American",
+                  "nationality_name_composed": "Americano"
+                }
+              ],
+              "description": "Firefly Aerospace is an American private aerospace firm based in Austin, Texas, that develops small and medium-sized launch vehicles for commercial launches to orbit.",
+              "administrator": "CEO: Peter Schumacher",
+              "founding_year": 2014,
+              "launchers": "",
+              "spacecraft": "",
+              "parent": null,
+              "image": null,
+              "logo": {
+                "id": 134,
+                "name": "[AUTO] Firefly Aerospace - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly2520aerospace_logo_20220826094423.jpg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184955.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 58,
+                "name": "[AUTO] Firefly Aerospace - social_logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly2520aerospace_nation_20230531050520.jpg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184757.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 6,
+              "consecutive_successful_launches": 0,
+              "successful_launches": 3,
+              "failed_launches": 3,
+              "pending_launches": 5,
+              "consecutive_successful_landings": 0,
+              "successful_landings": 0,
+              "failed_landings": 0,
+              "attempted_landings": 0,
+              "successful_landings_spacecraft": 0,
+              "failed_landings_spacecraft": 0,
+              "attempted_landings_spacecraft": 0,
+              "successful_landings_payload": 1,
+              "failed_landings_payload": 0,
+              "attempted_landings_payload": 1,
+              "info_url": "https://firefly.com/",
+              "wiki_url": "https://en.wikipedia.org/wiki/Firefly_Aerospace",
+              "social_media_links": []
+            },
+            "program": [],
+            "reusable": false,
+            "image": {
+              "id": 1740,
+              "name": "Firefly Alpha liftoff (FLTA004)",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly_alpha_l_image_20240605174156.jpeg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/firefly_alpha_l_image_thumbnail_20240605174157.jpeg",
+              "credit": "Firefly Aerospace / Jack Beyer",
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": true,
+              "variants": []
+            },
+            "info_url": "https://fireflyspace.com/alpha/",
+            "wiki_url": "https://en.wikipedia.org/wiki/Firefly_Alpha",
+            "description": "Firefly Alpha (Firefly α) is a two-stage orbital expendable launch vehicle developed by the American aerospace company Firefly Aerospace to cover the commercial small satellite launch market. Alpha is intended to provide launch options for both full vehicle and ride share customers.",
+            "alias": "",
+            "min_stage": 2,
+            "max_stage": 2,
+            "length": 29.6,
+            "diameter": 1.82,
+            "maiden_flight": "2021-09-03",
+            "launch_cost": 15000000,
+            "launch_mass": 54.0,
+            "leo_capacity": 1000.0,
+            "gto_capacity": null,
+            "geo_capacity": null,
+            "sso_capacity": 630.0,
+            "to_thrust": 736.0,
+            "apogee": null,
+            "total_launch_count": 6,
+            "consecutive_successful_launches": 0,
+            "successful_launches": 3,
+            "failed_launches": 3,
+            "pending_launches": 1,
+            "attempted_landings": 0,
+            "successful_landings": 0,
+            "failed_landings": 0,
+            "consecutive_successful_landings": 0,
+            "fastest_turnaround": "P98DT15H4M30S"
+          },
+          "launcher_stage": [],
+          "spacecraft_stage": [],
+          "payloads": []
+        },
+        "mission": {
+          "id": 7386,
+          "name": "Stairway to Seven",
+          "type": "Test Flight",
+          "description": "Firefly Alpha's Flight 7 will be a test flight and return-To-Flight for the launch vehicle after its April 2025 launch failure. It will test and validate key systems ahead of Firefly’s Block II configuration upgrade on Flight 8 that’s designed to enhance reliability and manufacturability across the vehicle.\r\n\r\nFlight 7 will be the last flown in Alpha’s current configuration and will test multiple Block II subsystems, including the in-house avionics and thermal improvements, to gain flight heritage and validate lessons learned ahead of the full configuration upgrade on Flight 8.",
+          "image": null,
+          "orbit": {
+            "id": 8,
+            "name": "Low Earth Orbit",
+            "abbrev": "LEO",
+            "celestial_body": {
+              "response_mode": "list",
+              "id": 1,
+              "name": "Earth"
+            }
+          },
+          "agencies": [],
+          "info_urls": [],
+          "vid_urls": []
+        },
+        "pad": {
+          "id": 39,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/39/?format=json",
+          "active": true,
+          "agencies": [],
+          "name": "Space Launch Complex 2W",
+          "image": {
+            "id": 2248,
+            "name": "Delta II 7920-10 liftoff from SLC-2W (NROL-21)",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/delta_ii_7920-1_image_20240922115616.jpg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/delta_ii_7920-1_image_thumbnail_20240922115616.jpeg",
+            "credit": "USAF/Michael Stonecypher",
+            "license": {
+              "id": 17,
+              "name": "Department of Defense Image Use Policy",
+              "priority": 6,
+              "link": "https://www.dimoc.mil/resources/limitations/"
+            },
+            "single_use": false,
+            "variants": []
+          },
+          "description": "SLC-2W was originally used for Delta, Thor-Agena and Delta II launches. After the last Delta II flight in 2018, SLC-2W was repurposed to launch Firefly Alpha rockets.",
+          "info_url": null,
+          "wiki_url": "https://en.wikipedia.org/wiki/Vandenberg_Space_Launch_Complex_2",
+          "map_url": "https://www.google.com/maps?q=34.7556,-120.6224",
+          "latitude": 34.7556,
+          "longitude": -120.6224,
+          "country": {
+            "id": 2,
+            "name": "United States of America",
+            "alpha_2_code": "US",
+            "alpha_3_code": "USA",
+            "nationality_name": "American",
+            "nationality_name_composed": "Americano"
+          },
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_39_20200803143542.jpg",
+          "total_launch_count": 98,
+          "orbital_launch_attempt_count": 98,
+          "fastest_turnaround": "P26DT16H39M49S",
+          "location": {
+            "response_mode": "normal",
+            "id": 11,
+            "url": "https://ll.thespacedevs.com/2.3.0/locations/11/?format=json",
+            "name": "Vandenberg SFB, CA, USA",
+            "celestial_body": {
+              "response_mode": "normal",
+              "id": 1,
+              "name": "Earth",
+              "type": {
+                "id": 1,
+                "name": "Planet"
+              },
+              "diameter": 12742000.0,
+              "mass": 5.972168e+24,
+              "gravity": 9.80655,
+              "length_of_day": "1 00:00:00",
+              "atmosphere": true,
+              "image": {
+                "id": 2040,
+                "name": "Earth (Apollo 17)",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
+                "credit": "NASA",
+                "license": {
+                  "id": 4,
+                  "name": "NASA Image and Media Guidelines",
+                  "priority": 0,
+                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
+              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
+              "total_attempted_launches": 7420,
+              "successful_launches": 6867,
+              "failed_launches": 553,
+              "total_attempted_landings": 1261,
+              "successful_landings": 1214,
+              "failed_landings": 47
+            },
+            "active": true,
+            "country": {
+              "id": 2,
+              "name": "United States of America",
+              "alpha_2_code": "US",
+              "alpha_3_code": "USA",
+              "nationality_name": "American",
+              "nationality_name_composed": "Americano"
+            },
+            "description": "Vandenberg Space Force Base is a United States Space Force Base in Santa Barbara County, California. Established in 1941, Vandenberg Space Force Base is a space launch base, launching spacecraft from the Western Range, and also performs missile testing. The United States Space Force's Space Launch Delta 30 serves as the host delta for the base, equivalent to an Air Force air base wing. In addition to its military space launch mission, Vandenberg Space Force Base also hosts space launches for civil and commercial space entities, such as NASA and SpaceX.",
+            "image": {
+              "id": 2226,
+              "name": "Vandenberg SFB imaged by Sentinel-2",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/vandenberg_sfb__image_20240920082910.jpeg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/vandenberg_sfb__image_thumbnail_20240920082910.jpeg",
+              "credit": "Contains modified Copernicus Sentinel data 2020",
+              "license": {
+                "id": 33,
+                "name": "Copernicus Image Use Policy",
+                "priority": 0,
+                "link": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013R1159"
+              },
+              "single_use": true,
+              "variants": []
+            },
+            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_11_20200803142416.jpg",
+            "longitude": -120.52023,
+            "latitude": 34.75133,
+            "timezone_name": "America/Los_Angeles",
+            "total_launch_count": 860,
+            "total_landing_count": 33
+          }
+        },
+        "webcast_live": false,
+        "program": [],
+        "orbital_launch_attempt_count": 7212,
+        "location_launch_attempt_count": 864,
+        "pad_launch_attempt_count": 99,
+        "agency_launch_attempt_count": 7,
+        "orbital_launch_attempt_count_year": 39,
+        "location_launch_attempt_count_year": 12,
+        "pad_launch_attempt_count_year": 1,
+        "agency_launch_attempt_count_year": 1,
+        "flightclub_url": null,
+        "updates": [
+          {
+            "id": 13911,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "GO for launch, NET February 18 PST.",
+            "info_url": "https://x.com/FireflySpace/status/2020860385973145659",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-02-09T14:04:00Z"
+          },
+          {
+            "id": 13886,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "NET February 14 UTC, to be confirmed.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=61069.msg2757010#msg2757010",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-02-04T18:42:00Z"
+          },
+          {
+            "id": 12865,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Added launch.",
+            "info_url": "https://fireflyspace.com/missions/alpha-flta007/",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2025-11-12T21:23:00Z"
+          }
+        ],
+        "info_urls": [],
+        "vid_urls": [],
+        "timeline": [],
+        "pad_turnaround": "P295DT11H13M",
+        "mission_patches": [
+          {
+            "id": 1302,
+            "name": "FLTA007_patch",
+            "priority": 10,
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/mission_patch_images/flta007_patch_mission_patch_20260204183927.png",
+            "agency": {
+              "response_mode": "list",
+              "id": 265,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/265/?format=json",
+              "name": "Firefly Aerospace",
+              "abbrev": "FA",
               "type": {
                 "id": 3,
                 "name": "Commercial"
@@ -22924,7 +22988,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P46DT16H",
+        "pad_turnaround": "P46DT15H30M",
         "mission_patches": []
       },
       {
