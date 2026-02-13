@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-02-12T05:08:41Z",
+  "fetched_at": "2026-02-13T05:02:44Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=true&format=json&mode=detailed&limit=10",
   "payload": {
     "count": 3,
@@ -19,16 +19,16 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2026-02-11T16:12:41Z",
-        "net": "2026-02-13T10:15:00Z",
+        "last_updated": "2026-02-12T19:43:41Z",
+        "net": "2026-02-13T10:15:56Z",
         "net_precision": {
-          "id": 1,
-          "name": "Minute",
-          "abbrev": "MIN",
-          "description": "The T-0 is accurate to the minute."
+          "id": 0,
+          "name": "Second",
+          "abbrev": "SEC",
+          "description": "The T-0 is accurate to the second."
         },
-        "window_end": "2026-02-13T10:15:00Z",
-        "window_start": "2026-02-13T10:15:00Z",
+        "window_end": "2026-02-13T10:15:56Z",
+        "window_start": "2026-02-13T10:15:56Z",
         "image": {
           "id": 2689,
           "name": "Falcon 9 at SLC-40 (Crew-12)",
@@ -45,7 +45,7 @@
           "variants": []
         },
         "infographic": null,
-        "probability": 85,
+        "probability": 90,
         "weather_concerns": "Cumulus Cloud Rule, Flight Through Precipitation",
         "failreason": "",
         "hashtag": null,
@@ -125,7 +125,7 @@
           "consecutive_successful_launches": 120,
           "successful_launches": 620,
           "failed_launches": 15,
-          "pending_launches": 125,
+          "pending_launches": 127,
           "consecutive_successful_landings": 119,
           "successful_landings": 580,
           "failed_landings": 27,
@@ -229,7 +229,7 @@
                     "consecutive_successful_launches": 120,
                     "successful_launches": 620,
                     "failed_launches": 15,
-                    "pending_launches": 125,
+                    "pending_launches": 127,
                     "consecutive_successful_landings": 119,
                     "successful_landings": 580,
                     "failed_landings": 27,
@@ -253,7 +253,7 @@
                 "consecutive_successful_launches": 245,
                 "successful_launches": 608,
                 "failed_launches": 7,
-                "pending_launches": 121,
+                "pending_launches": 123,
                 "attempted_landings": 587,
                 "successful_landings": 569,
                 "failed_landings": 19,
@@ -340,7 +340,7 @@
                     "consecutive_successful_launches": 120,
                     "successful_launches": 620,
                     "failed_launches": 15,
-                    "pending_launches": 125,
+                    "pending_launches": 127,
                     "consecutive_successful_landings": 119,
                     "successful_landings": 580,
                     "failed_landings": 27,
@@ -444,7 +444,7 @@
                 "consecutive_successful_launches": 244,
                 "successful_launches": 595,
                 "failed_launches": 4,
-                "pending_launches": 106,
+                "pending_launches": 108,
                 "attempted_landings": 564,
                 "successful_landings": 550,
                 "failed_landings": 15,
@@ -531,7 +531,7 @@
               "consecutive_successful_launches": 120,
               "successful_launches": 620,
               "failed_launches": 15,
-              "pending_launches": 125,
+              "pending_launches": 127,
               "consecutive_successful_landings": 119,
               "successful_landings": 580,
               "failed_landings": 27,
@@ -728,7 +728,7 @@
             "consecutive_successful_launches": 244,
             "successful_launches": 541,
             "failed_launches": 1,
-            "pending_launches": 106,
+            "pending_launches": 108,
             "attempted_landings": 533,
             "successful_landings": 528,
             "failed_landings": 5,
@@ -776,7 +776,7 @@
                 "fastest_turnaround": null
               },
               "previous_flight_date": "2026-01-04T06:48:10Z",
-              "turn_around_time": "P40DT3H26M50S",
+              "turn_around_time": "P40DT3H27M46S",
               "landing": {
                 "id": 286,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/286/?format=json",
@@ -824,7 +824,7 @@
                     "longitude": -80.577778,
                     "latitude": 28.488889,
                     "timezone_name": "America/New_York",
-                    "total_launch_count": 1083,
+                    "total_launch_count": 1084,
                     "total_landing_count": 70
                   },
                   "longitude": -80.5752619,
@@ -1309,7 +1309,7 @@
                 }
               },
               "duration": null,
-              "turn_around_time": "P331DT12H18M",
+              "turn_around_time": "P331DT12H18M56S",
               "response_mode": "detailed",
               "launch_crew": [
                 {
@@ -2037,7 +2037,564 @@
               "name": "Earth"
             }
           },
-          "agencies": [],
+          "agencies": [
+            {
+              "response_mode": "normal",
+              "id": 27,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/27/?format=json",
+              "name": "European Space Agency",
+              "abbrev": "ESA",
+              "type": {
+                "id": 2,
+                "name": "Multinational"
+              },
+              "featured": false,
+              "country": [
+                {
+                  "id": 1,
+                  "name": "France",
+                  "alpha_2_code": "FR",
+                  "alpha_3_code": "FRA",
+                  "nationality_name": "French",
+                  "nationality_name_composed": "Franco"
+                },
+                {
+                  "id": 3,
+                  "name": "Italy",
+                  "alpha_2_code": "IT",
+                  "alpha_3_code": "ITA",
+                  "nationality_name": "Italian",
+                  "nationality_name_composed": "Italo"
+                },
+                {
+                  "id": 4,
+                  "name": "Germany",
+                  "alpha_2_code": "DE",
+                  "alpha_3_code": "DEU",
+                  "nationality_name": "German",
+                  "nationality_name_composed": "Germano"
+                },
+                {
+                  "id": 7,
+                  "name": "Spain",
+                  "alpha_2_code": "ES",
+                  "alpha_3_code": "ESP",
+                  "nationality_name": "Spanish",
+                  "nationality_name_composed": "Hispano"
+                },
+                {
+                  "id": 8,
+                  "name": "Switzerland",
+                  "alpha_2_code": "CH",
+                  "alpha_3_code": "CHE",
+                  "nationality_name": "Swiss",
+                  "nationality_name_composed": "Swiss"
+                },
+                {
+                  "id": 10,
+                  "name": "United Kingdom",
+                  "alpha_2_code": "GB",
+                  "alpha_3_code": "GBR",
+                  "nationality_name": "British",
+                  "nationality_name_composed": "Brito"
+                },
+                {
+                  "id": 11,
+                  "name": "Austria",
+                  "alpha_2_code": "AT",
+                  "alpha_3_code": "AUT",
+                  "nationality_name": "Austrian",
+                  "nationality_name_composed": "Austro"
+                },
+                {
+                  "id": 15,
+                  "name": "Sweden",
+                  "alpha_2_code": "SE",
+                  "alpha_3_code": "SWE",
+                  "nationality_name": "Swedish",
+                  "nationality_name_composed": "Swedo"
+                },
+                {
+                  "id": 23,
+                  "name": "Portugal",
+                  "alpha_2_code": "PT",
+                  "alpha_3_code": "PRT",
+                  "nationality_name": "Portuguese",
+                  "nationality_name_composed": "Luso"
+                },
+                {
+                  "id": 27,
+                  "name": "Netherlands",
+                  "alpha_2_code": "NL",
+                  "alpha_3_code": "NLD",
+                  "nationality_name": "Dutch",
+                  "nationality_name_composed": "Dutch"
+                },
+                {
+                  "id": 31,
+                  "name": "Hungary",
+                  "alpha_2_code": "HU",
+                  "alpha_3_code": "HUN",
+                  "nationality_name": "Hungarian",
+                  "nationality_name_composed": "Hungarian"
+                },
+                {
+                  "id": 39,
+                  "name": "Poland",
+                  "alpha_2_code": "PL",
+                  "alpha_3_code": "POL",
+                  "nationality_name": "Polish",
+                  "nationality_name_composed": "Polono"
+                },
+                {
+                  "id": 45,
+                  "name": "Denmark",
+                  "alpha_2_code": "DK",
+                  "alpha_3_code": "DNK",
+                  "nationality_name": "Danish",
+                  "nationality_name_composed": "Dano"
+                },
+                {
+                  "id": 46,
+                  "name": "Czechia",
+                  "alpha_2_code": "CZ",
+                  "alpha_3_code": "CZE",
+                  "nationality_name": "Czech",
+                  "nationality_name_composed": "Czech"
+                },
+                {
+                  "id": 47,
+                  "name": "Romania",
+                  "alpha_2_code": "RO",
+                  "alpha_3_code": "ROU",
+                  "nationality_name": "Romanian",
+                  "nationality_name_composed": "Romanian"
+                },
+                {
+                  "id": 49,
+                  "name": "Norway",
+                  "alpha_2_code": "NO",
+                  "alpha_3_code": "NOR",
+                  "nationality_name": "Norwegian",
+                  "nationality_name_composed": "Norwegian"
+                },
+                {
+                  "id": 77,
+                  "name": "Finland",
+                  "alpha_2_code": "FI",
+                  "alpha_3_code": "FIN",
+                  "nationality_name": "Finnish",
+                  "nationality_name_composed": "Finno"
+                },
+                {
+                  "id": 78,
+                  "name": "Greece",
+                  "alpha_2_code": "GR",
+                  "alpha_3_code": "GRC",
+                  "nationality_name": "Greek",
+                  "nationality_name_composed": "Greco"
+                },
+                {
+                  "id": 80,
+                  "name": "Estonia",
+                  "alpha_2_code": "EE",
+                  "alpha_3_code": "EST",
+                  "nationality_name": "Estonian",
+                  "nationality_name_composed": "Estonian"
+                },
+                {
+                  "id": 81,
+                  "name": "Ireland",
+                  "alpha_2_code": "IE",
+                  "alpha_3_code": "IRL",
+                  "nationality_name": "Irish",
+                  "nationality_name_composed": "Irish"
+                },
+                {
+                  "id": 85,
+                  "name": "Luxembourg",
+                  "alpha_2_code": "LU",
+                  "alpha_3_code": "LUX",
+                  "nationality_name": "Luxembourger",
+                  "nationality_name_composed": "Luxembourgish"
+                },
+                {
+                  "id": 20,
+                  "name": "Belgium",
+                  "alpha_2_code": "BE",
+                  "alpha_3_code": "BEL",
+                  "nationality_name": "Belgian",
+                  "nationality_name_composed": "Belgo"
+                },
+                {
+                  "id": 86,
+                  "name": "Slovenia",
+                  "alpha_2_code": "SI",
+                  "alpha_3_code": "SVN",
+                  "nationality_name": "Slovenian",
+                  "nationality_name_composed": "Slovenian"
+                }
+              ],
+              "description": "The European Space Agency is an intergovernmental organisation of 22 member states. Established in 1975 and headquartered in Paris, France, ESA has a worldwide staff of about 2,000 employees.\r\n\r\nESA's space flight programme includes human spaceflight (mainly through participation in the International Space Station program); the launch and operation of unmanned exploration missions to other planets and the Moon; Earth observation, science and telecommunication; designing launch vehicles; and maintaining a major spaceport, the Guiana Space Centre at Kourou, French Guiana.",
+              "administrator": "Director General: Josef Aschbacher",
+              "founding_year": 1975,
+              "launchers": "Ariane | Vega",
+              "spacecraft": "Space Rider",
+              "parent": null,
+              "image": {
+                "id": 2324,
+                "name": "ESA patch floating in the ISS Cupola",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/esa_patch_float_image_20250211192109.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/esa_patch_float_image_thumbnail_20250211192110.png",
+                "credit": "ESA",
+                "license": {
+                  "id": 2,
+                  "name": "ESA Standard Licence",
+                  "priority": 2,
+                  "link": "https://www.esa.int/ESA_Multimedia/Terms_and_conditions_of_use_of_images_and_videos_available_on_the_esa_website"
+                },
+                "single_use": false,
+                "variants": []
+              },
+              "logo": {
+                "id": 130,
+                "name": "European Space Agency logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/european2520space2520agency_logo_20221130101442.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184947.png",
+                "credit": "ESA",
+                "license": {
+                  "id": 2,
+                  "name": "ESA Standard Licence",
+                  "priority": 2,
+                  "link": "https://www.esa.int/ESA_Multimedia/Terms_and_conditions_of_use_of_images_and_videos_available_on_the_esa_website"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 130,
+                "name": "European Space Agency logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/european2520space2520agency_logo_20221130101442.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184947.png",
+                "credit": "ESA",
+                "license": {
+                  "id": 2,
+                  "name": "ESA Standard Licence",
+                  "priority": 2,
+                  "link": "https://www.esa.int/ESA_Multimedia/Terms_and_conditions_of_use_of_images_and_videos_available_on_the_esa_website"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 7,
+              "consecutive_successful_launches": 5,
+              "successful_launches": 6,
+              "failed_launches": 1,
+              "pending_launches": 1,
+              "consecutive_successful_landings": 0,
+              "successful_landings": 0,
+              "failed_landings": 0,
+              "attempted_landings": 0,
+              "successful_landings_spacecraft": 0,
+              "failed_landings_spacecraft": 0,
+              "attempted_landings_spacecraft": 0,
+              "successful_landings_payload": 0,
+              "failed_landings_payload": 0,
+              "attempted_landings_payload": 0,
+              "info_url": "https://www.esa.int/",
+              "wiki_url": "https://en.wikipedia.org/wiki/European_Space_Agency",
+              "social_media_links": [
+                {
+                  "id": 242,
+                  "social_media": {
+                    "id": 3,
+                    "name": "Homepage",
+                    "url": null,
+                    "logo": null
+                  },
+                  "url": "https://www.esa.int/"
+                },
+                {
+                  "id": 243,
+                  "social_media": {
+                    "id": 4,
+                    "name": "LinkedIn",
+                    "url": "https://www.linkedin.com/",
+                    "logo": {
+                      "id": 2321,
+                      "name": "LinkedIn logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_20250211191111.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/linkedin_logo_image_thumbnail_20250211191112.png",
+                      "credit": "LinkedIn",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    }
+                  },
+                  "url": "https://www.linkedin.com/company/european-space-agency/"
+                },
+                {
+                  "id": 244,
+                  "social_media": {
+                    "id": 2,
+                    "name": "Instagram",
+                    "url": "https://instagram.com",
+                    "logo": {
+                      "id": 2322,
+                      "name": "Instagram logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_20250211191139.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/instagram_logo_image_thumbnail_20250211191139.png",
+                      "credit": "Instagram",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    }
+                  },
+                  "url": "https://www.instagram.com/europeanspaceagency/"
+                },
+                {
+                  "id": 245,
+                  "social_media": {
+                    "id": 1,
+                    "name": "X",
+                    "url": "https://x.com",
+                    "logo": {
+                      "id": 2320,
+                      "name": "X logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_20250211191027.jpg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/x_logo_image_thumbnail_20250211191027.jpeg",
+                      "credit": "X",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    }
+                  },
+                  "url": "https://x.com/esa"
+                },
+                {
+                  "id": 246,
+                  "social_media": {
+                    "id": 5,
+                    "name": "Bluesky",
+                    "url": "https://bsky.app/",
+                    "logo": {
+                      "id": 2323,
+                      "name": "Bluesky logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/bluesky_logo_image_20250211191214.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/bluesky_logo_image_thumbnail_20250211191214.png",
+                      "credit": "Bluesky",
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    }
+                  },
+                  "url": "https://bsky.app/profile/esa.int"
+                }
+              ]
+            },
+            {
+              "response_mode": "normal",
+              "id": 44,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/44/?format=json",
+              "name": "National Aeronautics and Space Administration",
+              "abbrev": "NASA",
+              "type": {
+                "id": 1,
+                "name": "Government"
+              },
+              "featured": true,
+              "country": [
+                {
+                  "id": 2,
+                  "name": "United States of America",
+                  "alpha_2_code": "US",
+                  "alpha_3_code": "USA",
+                  "nationality_name": "American",
+                  "nationality_name_composed": "Americano"
+                }
+              ],
+              "description": "The National Aeronautics and Space Administration is an independent agency of the executive branch of the United States federal government responsible for the civilian space program, as well as aeronautics and aerospace research. NASA have many launch facilities but most are inactive. The most commonly used pad will be LC-39B at Kennedy Space Center in Florida.",
+              "administrator": "Administrator: Jared Isaacman",
+              "founding_year": 1958,
+              "launchers": "Space Shuttle | SLS",
+              "spacecraft": "Orion",
+              "parent": null,
+              "image": {
+                "id": 19,
+                "name": "[AUTO] National Aeronautics and Space Administration - image",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/national2520aeronautics2520and2520space2520administration_image_20190207032448.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184631.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "logo": {
+                "id": 161,
+                "name": "[AUTO] National Aeronautics and Space Administration - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/national2520aeronautics2520and2520space2520administration_logo_20190207032448.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185043.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 76,
+                "name": "[AUTO] National Aeronautics and Space Administration - social_logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/national2520aeronautics2520and2520space2520administration_nation_20230803040809.jpg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184823.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 141,
+              "consecutive_successful_launches": 11,
+              "successful_launches": 121,
+              "failed_launches": 20,
+              "pending_launches": 5,
+              "consecutive_successful_landings": 0,
+              "successful_landings": 0,
+              "failed_landings": 0,
+              "attempted_landings": 0,
+              "successful_landings_spacecraft": 178,
+              "failed_landings_spacecraft": 2,
+              "attempted_landings_spacecraft": 180,
+              "successful_landings_payload": 0,
+              "failed_landings_payload": 0,
+              "attempted_landings_payload": 0,
+              "info_url": "https://www.nasa.gov",
+              "wiki_url": "https://en.wikipedia.org/wiki/National_Aeronautics_and_Space_Administration",
+              "social_media_links": []
+            },
+            {
+              "response_mode": "normal",
+              "id": 63,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/63/?format=json",
+              "name": "Russian Federal Space Agency (ROSCOSMOS)",
+              "abbrev": "RFSA",
+              "type": {
+                "id": 1,
+                "name": "Government"
+              },
+              "featured": true,
+              "country": [
+                {
+                  "id": 5,
+                  "name": "Russia",
+                  "alpha_2_code": "RU",
+                  "alpha_3_code": "RUS",
+                  "nationality_name": "Russian",
+                  "nationality_name_composed": "Russo"
+                }
+              ],
+              "description": "The Roscosmos State Corporation for Space Activities, commonly known as Roscosmos, is the governmental body responsible for the space science program of the Russian Federation and general aerospace research. Soyuz has many launch locations the Russian sites are Baikonur, Plesetsk and Vostochny however Ariane also purchases the vehicle and launches it from French Guiana.",
+              "administrator": "Administrator: Yuri Borisov",
+              "founding_year": 1992,
+              "launchers": "Soyuz",
+              "spacecraft": "Soyuz",
+              "parent": null,
+              "image": {
+                "id": 25,
+                "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - image",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_image_20190207032459.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184652.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "logo": {
+                "id": 177,
+                "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_logo_20190207032459.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305185118.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 89,
+                "name": "[AUTO] Russian Federal Space Agency (ROSCOSMOS) - social_logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/russian2520federal2520space2520agency25202528roscosmos2529_nation_20230531052758.jpg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184841.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 338,
+              "consecutive_successful_launches": 62,
+              "successful_launches": 327,
+              "failed_launches": 11,
+              "pending_launches": 2,
+              "consecutive_successful_landings": 0,
+              "successful_landings": 0,
+              "failed_landings": 0,
+              "attempted_landings": 0,
+              "successful_landings_spacecraft": 200,
+              "failed_landings_spacecraft": 7,
+              "attempted_landings_spacecraft": 207,
+              "successful_landings_payload": 0,
+              "failed_landings_payload": 1,
+              "attempted_landings_payload": 1,
+              "info_url": "https://en.roscosmos.ru/",
+              "wiki_url": "https://en.wikipedia.org/wiki/Russian_Federal_Space_Agency",
+              "social_media_links": []
+            }
+          ],
           "info_urls": [],
           "vid_urls": []
         },
@@ -2189,8 +2746,8 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7421,
-              "successful_launches": 6868,
+              "total_attempted_launches": 7425,
+              "successful_launches": 6872,
               "failed_launches": 553,
               "total_attempted_landings": 1262,
               "successful_landings": 1215,
@@ -2225,7 +2782,7 @@
             "longitude": -80.577778,
             "latitude": 28.488889,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1083,
+            "total_launch_count": 1084,
             "total_landing_count": 70
           }
         },
@@ -2396,6 +2953,22 @@
         "agency_launch_attempt_count_year": 17,
         "flightclub_url": "https://flightclub.io/result?llId=862b54e3-7bf8-48e5-8cd1-d77257d5fde9",
         "updates": [
+          {
+            "id": 13949,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/lucas2520stauder_profile_20230526163835.jpg",
+            "comment": "Adjusted T-0",
+            "info_url": "https://www.spacex.com/launches/crew12",
+            "created_by": "hitura-nobad",
+            "created_on": "2026-02-12T19:44:00Z"
+          },
+          {
+            "id": 13942,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Updated launch weather, 90% GO.",
+            "info_url": "https://45thweathersquadron.nebula.spaceforce.mil/assets/LaunchForecasts/Falcon%209%20NASA%20Crew-12%20L-1%20Forecast%20-%2013%20Feb%20Launch.pdf",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-02-12T14:18:00Z"
+          },
           {
             "id": 13929,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -2784,7 +3357,7 @@
             "relative_time": "PT10M25S"
           }
         ],
-        "pad_turnaround": "P14DT2H53M",
+        "pad_turnaround": "P14DT2H53M56S",
         "mission_patches": [
           {
             "id": 1303,
@@ -4465,8 +5038,8 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7421,
-              "successful_launches": 6868,
+              "total_attempted_launches": 7425,
+              "successful_launches": 6872,
               "failed_launches": 553,
               "total_attempted_landings": 1262,
               "successful_landings": 1215,
@@ -6185,8 +6758,8 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7421,
-              "successful_launches": 6868,
+              "total_attempted_launches": 7425,
+              "successful_launches": 6872,
               "failed_launches": 553,
               "total_attempted_landings": 1262,
               "successful_landings": 1215,
@@ -6221,7 +6794,7 @@
             "longitude": 63.305,
             "latitude": 45.965,
             "timezone_name": "Asia/Qyzylorda",
-            "total_launch_count": 1559,
+            "total_launch_count": 1560,
             "total_landing_count": 0
           }
         },
@@ -6371,11 +6944,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7275,
+        "orbital_launch_attempt_count": 7276,
         "location_launch_attempt_count": 1565,
         "pad_launch_attempt_count": 430,
         "agency_launch_attempt_count": 342,
-        "orbital_launch_attempt_count_year": 102,
+        "orbital_launch_attempt_count_year": 103,
         "location_launch_attempt_count_year": 6,
         "pad_launch_attempt_count_year": 4,
         "agency_launch_attempt_count_year": 4,
