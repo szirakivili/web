@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Python Editor</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+    <style>
+        /* --- ALAP BEÁLLÍTÁSOK --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- FEJLÉC --- */
+        header {
+            background-color: #2d2d2d;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+            border-bottom: 1px solid #3e3e3e;
+            flex-shrink: 0;
+        }
+
+        h1 {
+            font-size: 16px;
+            margin: 0;
+            color: #4CAF50;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .controls { display: flex; gap: 8px; }
+
+        button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .btn-run { background-color: #4CAF50; color: white; }
+        .btn-run:disabled { background-color: #555; opacity: 0.6; }
+        
+        /* ÚJ: Beküldés gomb stílusa */
+        .btn-send { 
+            background-color: #2196F3; /* Kék */
+            color: white; 
+            display: none; /* Alapból rejtve, csak challenge esetén látszik */
+        }
+        .btn-send:hover { background-color: #1976D2; }
+
+        /* --- TASK PANEL --- */
+        #task-panel {
+            background-color: #2d2d30;
+            border-bottom: 1px solid #4CAF50;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            max-height: 0;
+            flex-shrink: 0;
+        }
+
+        #task-panel.open {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .task-content {
+            padding: 15px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #e0e0e0;
+        }
+
+        .task-toggle-btn {
+            background: none;
+            border: 1px solid #4CAF50;
+            color: #4CAF50;
+            padding: 4px 10px;
+            font-size: 12px;
+            margin-right: 10px;
+            display: none;
+        }
+        
+        .task-title {
+            font-weight: bold;
+            color: #ff9800;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* --- FŐ TARTALOM --- */
+        .main-container {
+            display: flex;
+            flex: 1;
+            position: relative;
+            height: 100%; 
+            overflow: hidden;
+        }
+
+        .editor-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            border-right: 1px solid #3e3e3e;
+        }
+
+        .output-container {
+            flex: 1;
+            background-color: #1e1e1e;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            position: relative;
+        }
+
+        .panel-label {
+            background-color: #252526;
+            padding: 8px 10px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            border-bottom: 1px solid #3e3e3e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-terminal-btn {
+            display: none; 
+            background: #f44336;
+            color: white;
+            border: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .CodeMirror {
+            height: 100%;
+            font-size: 14px;
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+
+        #output {
+            font-family: 'Consolas', 'Monaco', monospace;
+            padding: 15px;
+            color: #d4d4d4;
+            white-space: pre-wrap;
+            overflow-y: auto;
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.5;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .output-error { color: #ff6b6b; }
+        .output-system { color: #61afef; font-style: italic; }
+        .output-success { color: #4CAF50; font-weight: bold; }
+
+        /* --- MOBIL NÉZET --- */
+        @media (max-width: 768px) {
+            .editor-container { width: 100%; border-right: none; }
+            .output-container {
+                position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                z-index: 1000; display: none; background-color: #1e1e1e;
+            }
+            .output-container.active { display: flex; }
+            .close-terminal-btn { display: block; }
+            .btn-text-full { display: none; }
+            .btn-text-short { display: inline; }
+            h1 span:last-child { display: none; }
+        }
+        @media (min-width: 769px) {
+            .btn-text-short { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>
+            <span class="status-dot" style="height:10px; width:10px; background:#ff9800; border-radius:50%; display:inline-block;" id="status-dot"></span>
+            <span>SzVili.hu Python Editor</span>
+        </h1>
+        
+        <button id="toggle-task-btn" class="task-toggle-btn" onclick="toggleTaskPanel()">Feladat</button>
+
+        <div class="controls">
+            <button id="send-btn" class="btn-send" onclick="sendSolution()">Beküldés</button>
+            <button id="run-btn" class="btn-run" onclick="runPythonCode()" disabled>
+                <span class="btn-text-full">⌛ Betöltés...</span>
+                <span class="btn-text-short">⌛</span>
+            </button>
+        </div>
+    </header>
+
+    <div id="task-panel">
+        <div class="task-content" id="task-text"></div>
+    </div>
+
+    <div class="main-container">
+        <div class="editor-container">
+            <div class="panel-label">main.py</div>
+            <textarea id="code-editor">
+print('Hello World!')
+</textarea>
+        </div>
+
+        <div class="output-container" id="terminal-window">
+            <div class="panel-label">
+                <span>Terminal</span>
+                <button class="close-terminal-btn" onclick="closeTerminal()">×</button>
+            </div>
+            <div id="output"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+
+<script>
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwMTj3HHA5DOOy7_Ku-PHhU03Y0LOdipZ_N8r7e3lMDRkkwkIwgqzcdsyALtlnkbtDI/exec"; 
+
+        // --- 1. SETUP ---
+        var editor = CodeMirror.fromTextArea(document.getElementById("code-editor"), {
+            mode: "python",
+            theme: "dracula",
+            lineNumbers: true,
+            autoCloseBrackets: true,
+            indentUnit: 4,
+            lineWrapping: true
+        });
+
+        let pyodide = null;
+        
+        // Globális változók az adatok tárolására
+        let currentChallengeDate = null;
+        let loadedUserEmail = null; // Ezt a JSON-ből szedjük ki
+        let loadedUserName = null;  // Ezt is a JSON-ből, ha van
+
+        const outputDiv = document.getElementById("output");
+        const terminalWindow = document.getElementById("terminal-window");
+        const runBtn = document.getElementById("run-btn");
+        const sendBtn = document.getElementById("send-btn");
+        const statusDot = document.getElementById("status-dot");
+        const taskPanel = document.getElementById("task-panel");
+        const taskText = document.getElementById("task-text");
+        const toggleTaskBtn = document.getElementById("toggle-task-btn");
+
+        // --- 2. EXCEL DATE HELPER ---
+        function getExcelDate() {
+            const now = new Date();
+            const tempDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            const excelBaseDate = new Date(1899, 11, 30);
+            const oneDay = 24 * 60 * 60 * 1000;
+            return Math.round((tempDate - excelBaseDate) / oneDay);
+        }
+
+        // --- 3. CHALLENGE LOGIC ---
+        async function loadChallenge() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            const pass = params.get('pass');
+
+            if (!id || !pass) return;
+
+            editor.setValue("# Adatok betöltése folyamatban...");
+            
+            try {
+                const response = await fetch(`${id}.szvpy`);
+                if (!response.ok) throw new Error(`Nem található a fájl: ${id}.szvpy`);
+                const encryptedText = await response.text();
+
+                const bytes = CryptoJS.AES.decrypt(encryptedText.trim(), pass);
+                const decryptedString = bytes.toString(CryptoJS.enc.Utf8);
+
+                if (!decryptedString) throw new Error("Hibás jelszó vagy sérült fájl!");
+
+                const data = JSON.parse(decryptedString);
+                const todayExcel = getExcelDate();
+                
+                // --- ÚJ RÉSZ: Felhasználói adatok kinyerése a JSON-ből ---
+                // Ha a JSON tartalmaz "email" vagy "name" mezőt a gyökérben
+                if (data.email) loadedUserEmail = data.email;
+                if (data.name) loadedUserName = data.name;
+
+                const challenge = data.challenges.find(c => c.date === todayExcel);
+
+                if (challenge) {
+                    editor.setValue(challenge.code);
+                    currentChallengeDate = todayExcel;
+
+                    const today = new Date();
+                    taskText.innerHTML = `<span class="task-title">Mai feladat (${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()})</span>` + challenge.task;
+                    toggleTaskBtn.style.display = "inline-block";
+                    toggleTaskPanel();
+                    
+                    sendBtn.style.display = "inline-block";
+                    
+                    addToOutput(`Rendszer: Napi kihívás betöltve! (${todayExcel})`, "system");
+                    if(loadedUserEmail) addToOutput(`Rendszer: Felhasználó azonosítva: ${loadedUserEmail}`, "system");
+                    
+                } else {
+                    editor.setValue("print('Hello World!')");
+                    addToOutput("Rendszer: Nem található a mai naphoz tartozó feladat.", "error");
+                }
+
+            } catch (err) {
+                console.error(err);
+                editor.setValue(`# HIBA TÖRTÉNT:\n# ${err.message}`);
+                addToOutput("Hiba a feladat betöltésekor: " + err.message, "error");
+            }
+        }
+
+// --- 4. MEGOLDÁS BEKÜLDÉSE (CONFIRM ABLAKKAL) ---
+        async function sendSolution() {
+            // 1. BIZTONSÁGI KÉRDÉS (ÚJ RÉSZ)
+            // Ha a felhasználó a Mégse gombra kattint, a ! jel miatt igaz lesz, és kilépünk (return).
+            if (!confirm("Biztosan be szeretnéd küldeni a megoldást?")) {
+                return;
+            }
+
+            if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("AK...")) {
+                alert("Hiba: Nincs beállítva a Google Script URL!");
+                return;
+            }
+
+            // Név bekérése (ha nincs a JSON-ben)
+            let name = loadedUserName;
+            if (!name) {
+                name = prompt("Kérlek add meg a neved a beküldéshez:");
+                if (!name) return;
+            }
+
+            // Email bekérése (ha nincs a JSON-ben)
+            let email = loadedUserEmail;
+            if (!email) {
+                email = prompt("Kérlek add meg az email címed (erre érkezhet válasz):");
+                if (!email) return; 
+            }
+
+            // Feladat szövegének kinyerése
+            let taskContent = "";
+            if (taskText && taskText.innerHTML.includes('</span>')) {
+                 taskContent = taskText.innerHTML.substring(taskText.innerHTML.indexOf('</span>') + 7, taskText.innerHTML.length);
+            }
+
+            const code = editor.getValue();
+            
+            const payload = {
+                userName: name,
+                userEmail: email,
+                code: code,
+                date: currentChallengeDate || "Ismeretlen",
+                taskDescription: taskContent
+            };
+
+            openTerminal();
+            addToOutput("Rendszer: Megoldás küldése folyamatban...", "system");
+            sendBtn.disabled = true;
+            sendBtn.textContent = "Küldés...";
+
+            try {
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: "POST",
+                    body: JSON.stringify(payload)
+                });
+                addToOutput("Siker: A megoldásod elküldve!", "success");
+            } catch (err) {
+                console.error(err);
+                addToOutput("Hiba: A beküldés valószínűleg nem sikerült. :(", "error");
+            } finally {
+                sendBtn.disabled = false;
+                sendBtn.innerHTML = "Beküldés";
+            }
+        }
+
+        // --- 5. PYODIDE INIT & EGYÉB FÜGGVÉNYEK (Változatlan) ---
+        function addToOutput(text, type = "normal") {
+            const span = document.createElement("span");
+            span.textContent = text + "\n";
+            if (type === "error") span.className = "output-error";
+            if (type === "system") span.className = "output-system";
+            if (type === "success") span.className = "output-success";
+            outputDiv.appendChild(span);
+        }
+
+        async function main() {
+            addToOutput("Rendszer: Python betöltése...", "system");
+            loadChallenge();
+            try {
+                pyodide = await loadPyodide({
+                    stdout: (text) => addToOutput(text),
+                    stderr: (text) => addToOutput(text, "error")
+                });
+                statusDot.style.backgroundColor = "#4CAF50";
+                statusDot.style.boxShadow = "0 0 5px #4CAF50";
+                runBtn.disabled = false;
+                runBtn.innerHTML = `<span class="btn-text-full">▶ Futtatás</span><span class="btn-text-short">▶</span>`;
+                addToOutput("Rendszer: Python betöltve", "system");
+            } catch (err) {
+                addToOutput("Python hiba: " + err, "error");
+            }
+        }
+        main();
+
+        // --- 6. Futtatás (JAVÍTOTT INPUT KEZELÉSSEL) ---
+        async function runPythonCode() {
+            clearOutput();
+            if (!pyodide) return;
+            openTerminal();
+            
+            // Ez a Python kód, ami "megjavítja" az input()-ot
+            const inputFix = `
+import js
+import builtins
+
+def custom_input(prompt_text=""):
+    if prompt_text:
+        print(prompt_text, end=" ")
+    val = js.prompt(prompt_text if prompt_text else "Input")
+    if val is None:
+        val = ""
+    print(val)
+    
+    return str(val)
+builtins.input = custom_input
+`;
+
+            // Összefűzzük a javító kódot a szerkesztőben lévő kóddal
+            const userCode = editor.getValue();
+            const fullCode = inputFix + "\n" + userCode;
+
+            try { 
+                await pyodide.runPythonAsync(fullCode); 
+            } catch (err) { 
+                addToOutput(err, "error"); 
+            }
+        }
+
+        function openTerminal() { terminalWindow.classList.add("active"); }
+        function closeTerminal() { terminalWindow.classList.remove("active"); }
+        function clearOutput() { outputDiv.innerHTML = ""; }
+        
+        function toggleTaskPanel() {
+            if (taskPanel.classList.contains('open')) {
+                taskPanel.classList.remove('open');
+                toggleTaskBtn.textContent = 'Feladat megnyitása';
+            } else {
+                taskPanel.classList.add('open');
+                toggleTaskBtn.textContent = 'Feladat elrejtése';
+            }
+        }
+    </script>
+</body>
+</html>
