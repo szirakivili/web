@@ -142,7 +142,8 @@ print('Welcome on SzVili.hu!')
             "list": ["append", "extend", "insert", "remove", "pop", "clear", "index", "count", "sort", "reverse", "copy"],
             "dict": ["keys", "values", "items", "get", "pop", "popitem", "clear", "update", "copy"],
             "int": ["bit_length", "to_bytes", "from_bytes"],
-            "float": ["as_integer_ratio", "is_integer", "hex", "fromhex"]
+            "float": ["as_integer_ratio", "is_integer", "hex", "fromhex"],
+            "random": ["randint", "choice", "choices", "shuffle", "sample", "random", "uniform", "randrange", "seed", "gauss", "betavariate"]
         };
 
         CodeMirror.registerHelper("hint", "python", function(editor) {
@@ -249,6 +250,19 @@ except:
             // 3. Dict: var = {...}
             var dictRegex = new RegExp(`${varName}\\s*=\\s*\\{`, "g");
             if (dictRegex.test(fullCode)) return STATIC_METHODS["dict"];
+
+            // Random modul detektálása ***
+            // A) Ha a változó neve "random", és van "import random" a kódban
+            if (varName === "random" && /import\s+random/.test(fullCode)) {
+                return STATIC_METHODS["random"];
+            }
+
+            // B) Ha alias-t használsz (pl. import random as r -> r.)
+            // Megnézzük, van-e "import random as [változónév]"
+            var aliasRegex = new RegExp(`import\\s+random\\s+as\\s+${varName}\\b`);
+            if (aliasRegex.test(fullCode)) {
+                return STATIC_METHODS["random"];
+            }
             
             return [];
         }
