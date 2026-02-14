@@ -9,201 +9,82 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.css">
+    
     <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
     <style>
         /* --- ALAP BEÁLLÍTÁSOK --- */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1e1e1e;
-            color: #ffffff;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        /* --- FEJLÉC --- */
-        header {
-            background-color: #2d2d2d;
-            padding: 0 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 50px;
-            border-bottom: 1px solid #3e3e3e;
-            flex-shrink: 0;
-        }
-
-        h1 {
-            font-size: 16px;
-            margin: 0;
-            color: #4CAF50;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #1e1e1e; color: #ffffff; margin: 0; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        header { background-color: #2d2d2d; padding: 0 15px; display: flex; justify-content: space-between; align-items: center; height: 50px; border-bottom: 1px solid #3e3e3e; flex-shrink: 0; }
+        h1 { font-size: 16px; margin: 0; color: #4CAF50; display: flex; align-items: center; gap: 8px; }
         .controls { display: flex; gap: 8px; }
-
-        button {
-            padding: 6px 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 13px;
-            transition: all 0.2s;
-        }
-
+        button { padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 13px; transition: all 0.2s; }
         .btn-run { background-color: #4CAF50; color: white; }
         .btn-run:disabled { background-color: #555; opacity: 0.6; }
-        
-        .btn-send { 
-            background-color: #2196F3;
-            color: white; 
-            display: none;
-        }
+        .btn-send { background-color: #2196F3; color: white; display: none; }
         .btn-send:hover { background-color: #1976D2; }
+        
+        #task-panel { background-color: #2d2d30; border-bottom: 1px solid #4CAF50; overflow: hidden; transition: max-height 0.3s ease-out; max-height: 0; flex-shrink: 0; }
+        #task-panel.open { max-height: 300px; overflow-y: auto; }
+        .task-content { padding: 15px; font-size: 14px; line-height: 1.5; color: #e0e0e0; }
+        .task-toggle-btn { background: none; border: 1px solid #4CAF50; color: #4CAF50; padding: 4px 10px; font-size: 12px; margin-right: 10px; display: none; }
+        .task-title { font-weight: bold; color: #ff9800; margin-bottom: 5px; display: block; }
 
-        /* --- TASK PANEL --- */
-        #task-panel {
-            background-color: #2d2d30;
-            border-bottom: 1px solid #4CAF50;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            max-height: 0;
-            flex-shrink: 0;
-        }
+        .main-container { display: flex; flex: 1; position: relative; height: 100%; overflow: hidden; }
+        .editor-container { flex: 1; display: flex; flex-direction: column; width: 50%; border-right: 1px solid #3e3e3e; }
+        .output-container { flex: 1; background-color: #1e1e1e; display: flex; flex-direction: column; width: 50%; position: relative; }
+        .panel-label { background-color: #252526; padding: 8px 10px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #888; border-bottom: 1px solid #3e3e3e; display: flex; justify-content: space-between; align-items: center; }
+        .close-terminal-btn { display: none; background: #f44336; color: white; border: none; width: 24px; height: 24px; border-radius: 4px; cursor: pointer; }
+        
+        .CodeMirror { height: 100%; font-size: 14px; font-family: 'Consolas', 'Monaco', monospace; line-height: 1.5; }
+        .cm-indent-guide { box-shadow: -1px 0 0 0 rgba(255, 255, 255, 0.15); display: inline-block; }
+        
+        #output { font-family: 'Consolas', 'Monaco', monospace; padding: 15px; color: #d4d4d4; white-space: pre-wrap; overflow-y: auto; flex: 1; font-size: 14px; line-height: 1.5; -webkit-overflow-scrolling: touch; }
+        .output-error { color: #ff6b6b; } .output-system { color: #61afef; font-style: italic; } .output-success { color: #4CAF50; font-weight: bold; }
+        
+        @media (max-width: 768px) { .editor-container { width: 100%; border-right: none; } .output-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; display: none; background-color: #1e1e1e; } .output-container.active { display: flex; } .close-terminal-btn { display: block; } .btn-text-full { display: none; } .btn-text-short { display: inline; } h1 span:last-child { display: none; } }
+        @media (min-width: 769px) { .btn-text-short { display: none; } }
 
-        #task-panel.open {
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .task-content {
-            padding: 15px;
-            font-size: 14px;
-            line-height: 1.5;
-            color: #e0e0e0;
-        }
-
-        .task-toggle-btn {
-            background: none;
-            border: 1px solid #4CAF50;
-            color: #4CAF50;
-            padding: 4px 10px;
-            font-size: 12px;
-            margin-right: 10px;
-            display: none;
+        /* --- AUTOCOMPLETE STÍLUSOK (VS Code szerű) --- */
+        .CodeMirror-hints {
+            background: #252526 !important;
+            border: 1px solid #454545 !important;
+            border-radius: 4px !important;
+            padding: 0 !important;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
+            font-family: 'Consolas', monospace;
+            font-size: 13px;
+            z-index: 9999 !important; /* Hogy biztosan minden felett legyen */
         }
         
-        .task-title {
-            font-weight: bold;
-            color: #ff9800;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        /* --- FŐ TARTALOM --- */
-        .main-container {
-            display: flex;
-            flex: 1;
-            position: relative;
-            height: 100%; 
-            overflow: hidden;
-        }
-
-        .editor-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-            border-right: 1px solid #3e3e3e;
-        }
-
-        .output-container {
-            flex: 1;
-            background-color: #1e1e1e;
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-            position: relative;
-        }
-
-        .panel-label {
-            background-color: #252526;
-            padding: 8px 10px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #888;
-            border-bottom: 1px solid #3e3e3e;
-            display: flex;
-            justify-content: space-between;
+        .CodeMirror-hint {
+            padding: 4px 10px !important;
+            color: #ccc !important;
+            display: flex !important;
             align-items: center;
         }
 
-        .close-terminal-btn {
-            display: none; 
-            background: #f44336;
-            color: white;
-            border: none;
-            width: 24px;
-            height: 24px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+        li.CodeMirror-hint-active { background: #094771 !important; color: white !important; }
 
-        /* --- CODEMIRROR MÓDOSÍTÁSOK --- */
-        .CodeMirror {
-            height: 100%;
-            font-size: 14px;
-            font-family: 'Consolas', 'Monaco', monospace; 
-            line-height: 1.5;
+        .hint-icon {
+            display: inline-block; width: 14px; height: 14px; line-height: 14px;
+            text-align: center; font-size: 10px; font-weight: bold; margin-right: 8px; border-radius: 3px;
         }
-
-        .cm-indent-guide {
-            box-shadow: -1px 0 0 0 rgba(255, 255, 255, 0.15);
-            display: inline-block;
-        }
-
-        #output {
-            font-family: 'Consolas', 'Monaco', monospace;
-            padding: 15px;
-            color: #d4d4d4;
-            white-space: pre-wrap;
-            overflow-y: auto;
-            flex: 1;
-            font-size: 14px;
-            line-height: 1.5;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        .output-error { color: #ff6b6b; }
-        .output-system { color: #61afef; font-style: italic; }
-        .output-success { color: #4CAF50; font-weight: bold; }
-
-        /* --- MOBIL NÉZET --- */
-        @media (max-width: 768px) {
-            .editor-container { width: 100%; border-right: none; }
-            .output-container {
-                position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-                z-index: 1000; display: none; background-color: #1e1e1e;
-            }
-            .output-container.active { display: flex; }
-            .close-terminal-btn { display: block; }
-            .btn-text-full { display: none; }
-            .btn-text-short { display: inline; }
-            h1 span:last-child { display: none; }
-        }
-        @media (min-width: 769px) {
-            .btn-text-short { display: none; }
-        }
+        .icon-method { background: #b180f7; color: #1e1e1e; }
+        .icon-kw { background: #cccccc; color: #1e1e1e; }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
 <body>
 
     <header>
@@ -247,9 +128,145 @@ print('Welcome on SzVili.hu!')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.js"></script>
 
 <script>
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwMTj3HHA5DOOy7_Ku-PHhU03Y0LOdipZ_N8r7e3lMDRkkwkIwgqzcdsyALtlnkbtDI/exec"; 
+
+        // --- 0. INTELLISENSE KONFIGURÁCIÓ (JAVÍTOTT VERZIÓ) ---
+        
+        // Statikus metódusok, ha még nem futott a kód (Fallback)
+        const STATIC_METHODS = {
+            "str": ["upper", "lower", "split", "strip", "replace", "join", "format", "startswith", "endswith", "find", "count", "isalpha", "isdigit"],
+            "list": ["append", "extend", "insert", "remove", "pop", "clear", "index", "count", "sort", "reverse", "copy"],
+            "dict": ["keys", "values", "items", "get", "pop", "popitem", "clear", "update", "copy"],
+            "int": ["bit_length", "to_bytes", "from_bytes"],
+            "float": ["as_integer_ratio", "is_integer", "hex", "fromhex"]
+        };
+
+        CodeMirror.registerHelper("hint", "python", function(editor) {
+            var cur = editor.getCursor();
+            var token = editor.getTokenAt(cur);
+            var line = editor.getLine(cur.line);
+            
+            var start = token.start;
+            var end = cur.ch;
+            var currentWord = token.string;
+            
+            var searchObj = "";
+            var searchPrefix = "";
+            
+            // 1. Eset: Pontot írtál ("szoveg.")
+            if (currentWord === ".") {
+                var beforeDot = line.substring(0, start).trim();
+                var match = beforeDot.match(/([a-zA-Z0-9_\[\]"']+)$/);
+                if (match) searchObj = match[1];
+                start = end; 
+            } 
+            // 2. Eset: Már írsz a pont után ("szoveg.up")
+            else if (line.charAt(start - 1) === ".") {
+                searchPrefix = currentWord;
+                var beforeDot = line.substring(0, start - 1).trim();
+                var match = beforeDot.match(/([a-zA-Z0-9_\[\]"']+)$/);
+                if (match) searchObj = match[1];
+            } 
+            // 3. Eset: Sima szó ("pri") -> Kulcsszavak
+            else {
+                return {
+                    list: getPythonKeywords(currentWord),
+                    from: CodeMirror.Pos(cur.line, start),
+                    to: CodeMirror.Pos(cur.line, end)
+                };
+            }
+
+            if (searchObj) {
+                let methods = [];
+
+                // A) Próbáljuk megkérdezni a futó Pythont (HA LEFUTOTT MÁR A KÓD)
+                if (pyodide) {
+                    try {
+                        let pyCode = `
+try:
+    obj = eval("${searchObj}")
+    methods = [d for d in dir(obj) if not d.startswith('_')]
+    methods
+except:
+    []
+`;
+                        let results = pyodide.runPython(pyCode);
+                        methods = results.toJs();
+                    } catch (e) {
+                        // Nem baj, ha hiba van (pl. nem létezik a változó), megyünk a B tervre
+                        methods = [];
+                    }
+                }
+
+                // B) Ha a Python nem tudja (mert még nem futtattuk), próbáljuk kitalálni a kódból
+                if (methods.length === 0) {
+                    methods = guessTypeFromCode(editor.getValue(), searchObj);
+                }
+
+                // Szűrés
+                if (searchPrefix) {
+                    methods = methods.filter(item => item.startsWith(searchPrefix));
+                }
+
+                // Formázás
+                var suggestions = methods.map(function(item) {
+                    return {
+                        text: item,
+                        displayText: item,
+                        render: function(el, self, data) {
+                            var icon = document.createElement("span");
+                            icon.className = "hint-icon icon-method";
+                            icon.textContent = "ƒ"; 
+                            el.appendChild(icon);
+                            el.appendChild(document.createTextNode(item));
+                        }
+                    };
+                });
+
+                return {
+                    list: suggestions,
+                    from: CodeMirror.Pos(cur.line, start),
+                    to: CodeMirror.Pos(cur.line, end)
+                };
+            }
+        });
+
+        // Segédfüggvény: Kitalálja a típust a szöveges kódból (Statikus elemzés)
+        function guessTypeFromCode(fullCode, varName) {
+            // Nagyon egyszerű Regex keresés: varName = "..." vagy varName = [...]
+            // 1. String: var = "..." vagy var = '...'
+            var strRegex = new RegExp(`${varName}\\s*=\\s*["']`, "g");
+            if (strRegex.test(fullCode)) return STATIC_METHODS["str"];
+
+            // 2. List: var = [...]
+            var listRegex = new RegExp(`${varName}\\s*=\\s*\\[`, "g");
+            if (listRegex.test(fullCode)) return STATIC_METHODS["list"];
+
+            // 3. Dict: var = {...}
+            var dictRegex = new RegExp(`${varName}\\s*=\\s*\\{`, "g");
+            if (dictRegex.test(fullCode)) return STATIC_METHODS["dict"];
+            
+            return [];
+        }
+
+        function getPythonKeywords(prefix) {
+            var keywords = ["print", "len", "range", "def", "class", "import", "from", "if", "else", "elif", "for", "while", "return", "True", "False", "None", "try", "except", "input", "int", "str", "list", "dict"];
+            var filtered = keywords.filter(k => k.startsWith(prefix));
+            return filtered.map(k => ({
+                text: k,
+                render: function(el, self, data) {
+                    var icon = document.createElement("span");
+                    icon.className = "hint-icon icon-kw";
+                    icon.textContent = "k";
+                    el.appendChild(icon);
+                    el.appendChild(document.createTextNode(k));
+                }
+            }));
+        }
 
         // --- 1. SETUP ---
         var editor = CodeMirror.fromTextArea(document.getElementById("code-editor"), {
@@ -263,48 +280,62 @@ print('Welcome on SzVili.hu!')
             lineWrapping: true,
             extraKeys: {
                 "Tab": function(cm) {
-                    if (cm.somethingSelected()) {
-                        cm.indentSelection("add");
-                    } else {
-                        cm.replaceSelection("    ", "end");
-                    }
+                    if (cm.somethingSelected()) { cm.indentSelection("add"); } 
+                    else { cm.replaceSelection("    ", "end"); }
                 },
-                "Shift-Tab": "indentLess"
+                "Shift-Tab": "indentLess",
+                
+                // AUTOCOMPLETE TRIGGER
+                "Ctrl-Space": "autocomplete", 
+                ".": function(cm) {
+                    cm.replaceSelection(".");
+                    // Késleltetve hívjuk, hogy a pont bekerüljön a dokumentumba
+                    setTimeout(function() { 
+                        cm.showHint({completeSingle: false}); // Ne válassza ki automatikusan az elsőt, ha csak 1 van
+                    }, 100);
+                },
+
+                // KÓD MENTÉSE
+                "Ctrl-S": function(cm) { saveCode(); }
             }
         });
 
-        // *** JAVÍTOTT OVERLAY A TABULÁTOROK (INDENT GUIDE) MEGJELENÍTÉSÉHEZ ***
-        // Ez végigmegy a sor eleji szóközökön, és minden 4. karakternél kirajzol egy vonalat.
+        function saveCode() {
+            // 1. Kód lekérése a szerkesztőből
+            const code = editor.getValue();
+            
+            // 2. Fájl készítése a memóriában
+            const blob = new Blob([code], { type: "text/x-python;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            
+            // 3. Letöltés indítása
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "main.py"; // Fájlnév
+            document.body.appendChild(a);
+            a.click();
+            
+            // 4. Takarítás
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Visszajelzés a terminálon (ha létezik az addToOutput függvényed)
+            if (typeof addToOutput === "function") {
+                addToOutput("Rendszer: Fájl mentve (main.py)", "system");
+            }
+        }
+
         editor.addOverlay({
             token: function(stream) {
-                // 1. Megnézzük, meddig tart a sor eleji üres rész (whitespace)
-                var leadingSpaces = stream.string.search(/\S|$/); // Az első nem-szóköz karakter indexe
-                
-                // Ha a kurzor (stream.pos) már túl van a behúzáson, nem csinálunk semmit
-                if (stream.pos >= leadingSpaces) {
-                    stream.skipToEnd();
-                    return null;
-                }
-
-                // 2. Léptetjük a streamet egy karakterrel
+                var leadingSpaces = stream.string.search(/\S|$/);
+                if (stream.pos >= leadingSpaces) { stream.skipToEnd(); return null; }
                 stream.next();
-                
-                // 3. Ellenőrizzük, hogy ez a karakter hányadik a sorban
-                // stream.column() az aktuális pozíciót adja (már a next() után)
-                // Tehát: 1, 2, 3, 4, 5, 6, 7, 8...
-                // Mi a 0., 4., 8., 12. indexnél akarunk vonalat (a szóköz "bal" oldalán).
-                // Mivel a next() után vagyunk, a (column - 1) adja az indexet.
-                
-                if (stream.column() % 4 === 0) {
-                    return "indent-guide"; // CSS osztály alkalmazása
-                }
-                
+                if (stream.column() % 4 === 0) return "indent-guide";
                 return null;
             }
         });
 
         let pyodide = null;
-        
         let currentChallengeDate = null;
         let loadedUserEmail = null;
         let loadedUserName = null;
@@ -318,16 +349,13 @@ print('Welcome on SzVili.hu!')
         const taskText = document.getElementById("task-text");
         const toggleTaskBtn = document.getElementById("toggle-task-btn");
 
-        // --- 2. EXCEL DATE HELPER ---
         function getExcelDate() {
             const now = new Date();
             const tempDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
             const excelBaseDate = new Date(1899, 11, 30);
-            const oneDay = 24 * 60 * 60 * 1000;
-            return Math.round((tempDate - excelBaseDate) / oneDay);
+            return Math.round((tempDate - excelBaseDate) / (24 * 60 * 60 * 1000));
         }
 
-        // --- 3. CHALLENGE LOGIC ---
         async function loadChallenge() {
             const params = new URLSearchParams(window.location.search);
             const id = params.get('id');
@@ -341,83 +369,50 @@ print('Welcome on SzVili.hu!')
                 const response = await fetch(`${id}.szvpy`);
                 if (!response.ok) throw new Error(`Nem található a fájl: ${id}.szvpy`);
                 const encryptedText = await response.text();
-
                 const bytes = CryptoJS.AES.decrypt(encryptedText.trim(), pass);
                 const decryptedString = bytes.toString(CryptoJS.enc.Utf8);
-
                 if (!decryptedString) throw new Error("Hibás jelszó vagy sérült fájl!");
-
                 const data = JSON.parse(decryptedString);
                 const todayExcel = getExcelDate();
-                
                 if (data.email) loadedUserEmail = data.email;
                 if (data.name) loadedUserName = data.name;
-
                 const challenge = data.challenges.find(c => c.date === todayExcel);
 
                 if (challenge) {
                     editor.setValue(challenge.code);
                     currentChallengeDate = todayExcel;
-
                     const today = new Date();
                     taskText.innerHTML = `<span class="task-title">Mai feladat (${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()})</span>` + challenge.task;
                     toggleTaskBtn.style.display = "inline-block";
                     toggleTaskPanel();
-                    
                     sendBtn.style.display = "inline-block";
-                    
                     addToOutput(`Rendszer: Napi kihívás betöltve! (${todayExcel})`, "system");
                     if(loadedUserEmail) addToOutput(`Rendszer: Felhasználó azonosítva: ${loadedUserEmail}`, "system");
-                    
                 } else {
                     editor.setValue("print('Hello World!')");
                     addToOutput("Rendszer: Nem található a mai naphoz tartozó feladat.", "error");
                 }
-
             } catch (err) {
-                console.error(err);
                 editor.setValue(`# HIBA TÖRTÉNT:\n# ${err.message}`);
                 addToOutput("Hiba a feladat betöltésekor: " + err.message, "error");
             }
         }
 
-        // --- 4. MEGOLDÁS BEKÜLDÉSE ---
         async function sendSolution() {
-            if (!confirm("Biztosan be szeretnéd küldeni a megoldást?")) {
-                return;
-            }
-
-            if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("AK...")) {
-                alert("Hiba: Nincs beállítva a Google Script URL!");
-                return;
-            }
+            if (!confirm("Biztosan be szeretnéd küldeni a megoldást?")) return;
+            if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("AK...")) { alert("Hiba: Nincs beállítva a Google Script URL!"); return; }
 
             let name = loadedUserName;
-            if (!name) {
-                name = prompt("Kérlek add meg a neved a beküldéshez:");
-                if (!name) return;
-            }
-
+            if (!name) { name = prompt("Kérlek add meg a neved a beküldéshez:"); if (!name) return; }
             let email = loadedUserEmail;
-            if (!email) {
-                email = prompt("Kérlek add meg az email címed (erre érkezhet válasz):");
-                if (!email) return; 
-            }
+            if (!email) { email = prompt("Kérlek add meg az email címed (erre érkezhet válasz):"); if (!email) return; }
 
             let taskContent = "";
             if (taskText && taskText.innerHTML.includes('</span>')) {
                  taskContent = taskText.innerHTML.substring(taskText.innerHTML.indexOf('</span>') + 7, taskText.innerHTML.length);
             }
-
             const code = editor.getValue();
-            
-            const payload = {
-                userName: name,
-                userEmail: email,
-                code: code,
-                date: currentChallengeDate || "Ismeretlen",
-                taskDescription: taskContent
-            };
+            const payload = { userName: name, userEmail: email, code: code, date: currentChallengeDate || "Ismeretlen", taskDescription: taskContent };
 
             openTerminal();
             addToOutput("Rendszer: Megoldás küldése folyamatban...", "system");
@@ -425,10 +420,7 @@ print('Welcome on SzVili.hu!')
             sendBtn.textContent = "Küldés...";
 
             try {
-                await fetch(GOOGLE_SCRIPT_URL, {
-                    method: "POST",
-                    body: JSON.stringify(payload)
-                });
+                await fetch(GOOGLE_SCRIPT_URL, { method: "POST", body: JSON.stringify(payload) });
                 addToOutput("Siker: A megoldásod elküldve!", "success");
             } catch (err) {
                 console.error(err);
@@ -439,7 +431,6 @@ print('Welcome on SzVili.hu!')
             }
         }
 
-        // --- 5. PYODIDE INIT ---
         function addToOutput(text, type = "normal") {
             const span = document.createElement("span");
             span.textContent = text + "\n";
@@ -453,10 +444,7 @@ print('Welcome on SzVili.hu!')
             addToOutput("Rendszer: Python betöltése...", "system");
             loadChallenge();
             try {
-                pyodide = await loadPyodide({
-                    stdout: (text) => addToOutput(text),
-                    stderr: (text) => addToOutput(text, "error")
-                });
+                pyodide = await loadPyodide({ stdout: (text) => addToOutput(text), stderr: (text) => addToOutput(text, "error") });
                 statusDot.style.backgroundColor = "#4CAF50";
                 statusDot.style.boxShadow = "0 0 5px #4CAF50";
                 runBtn.disabled = false;
@@ -468,40 +456,29 @@ print('Welcome on SzVili.hu!')
         }
         main();
 
-        // --- 6. Futtatás ---
         async function runPythonCode() {
             clearOutput();
             if (!pyodide) return;
             openTerminal();
-            
             const inputFix = `
 import js
 import builtins
 def custom_input(prompt_text=""):
-    if prompt_text:
-        print(prompt_text, end="")
+    if prompt_text: print(prompt_text, end="")
     val = js.prompt(prompt_text if prompt_text else "Input")
-    if val is None:
-        val = ""
+    if val is None: val = ""
     print(val)
     return str(val)
 builtins.input = custom_input
 `;
-
             const userCode = editor.getValue();
             const fullCode = inputFix + "\n" + userCode;
-
-            try { 
-                await pyodide.runPythonAsync(fullCode); 
-            } catch (err) { 
-                addToOutput(err, "error"); 
-            }
+            try { await pyodide.runPythonAsync(fullCode); } catch (err) { addToOutput(err, "error"); }
         }
 
         function openTerminal() { terminalWindow.classList.add("active"); }
         function closeTerminal() { terminalWindow.classList.remove("active"); }
         function clearOutput() { outputDiv.innerHTML = ""; }
-        
         function toggleTaskPanel() {
             if (taskPanel.classList.contains('open')) {
                 taskPanel.classList.remove('open');
