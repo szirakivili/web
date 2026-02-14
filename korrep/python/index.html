@@ -61,11 +61,10 @@
         .btn-run { background-color: #4CAF50; color: white; }
         .btn-run:disabled { background-color: #555; opacity: 0.6; }
         
-        /* ÚJ: Beküldés gomb stílusa */
         .btn-send { 
-            background-color: #2196F3; /* Kék */
+            background-color: #2196F3;
             color: white; 
-            display: none; /* Alapból rejtve, csak challenge esetén látszik */
+            display: none;
         }
         .btn-send:hover { background-color: #1976D2; }
 
@@ -158,10 +157,17 @@
             cursor: pointer;
         }
 
+        /* --- CODEMIRROR MÓDOSÍTÁSOK --- */
         .CodeMirror {
             height: 100%;
             font-size: 14px;
-            font-family: 'Consolas', 'Monaco', monospace;
+            font-family: 'Consolas', 'Monaco', monospace; 
+            line-height: 1.5;
+        }
+
+        .cm-indent-guide {
+            box-shadow: -1px 0 0 0 rgba(255, 255, 255, 0.15);
+            display: inline-block;
         }
 
         #output {
@@ -225,7 +231,7 @@
         <div class="editor-container">
             <div class="panel-label">main.py</div>
             <textarea id="code-editor">
-print('Hello World!')
+print('Welcome on SzVili.hu!')
 </textarea>
         </div>
 
@@ -252,15 +258,56 @@ print('Hello World!')
             lineNumbers: true,
             autoCloseBrackets: true,
             indentUnit: 4,
-            lineWrapping: true
+            tabSize: 4,
+            indentWithTabs: false,
+            lineWrapping: true,
+            extraKeys: {
+                "Tab": function(cm) {
+                    if (cm.somethingSelected()) {
+                        cm.indentSelection("add");
+                    } else {
+                        cm.replaceSelection("    ", "end");
+                    }
+                },
+                "Shift-Tab": "indentLess"
+            }
+        });
+
+        // *** JAVÍTOTT OVERLAY A TABULÁTOROK (INDENT GUIDE) MEGJELENÍTÉSÉHEZ ***
+        // Ez végigmegy a sor eleji szóközökön, és minden 4. karakternél kirajzol egy vonalat.
+        editor.addOverlay({
+            token: function(stream) {
+                // 1. Megnézzük, meddig tart a sor eleji üres rész (whitespace)
+                var leadingSpaces = stream.string.search(/\S|$/); // Az első nem-szóköz karakter indexe
+                
+                // Ha a kurzor (stream.pos) már túl van a behúzáson, nem csinálunk semmit
+                if (stream.pos >= leadingSpaces) {
+                    stream.skipToEnd();
+                    return null;
+                }
+
+                // 2. Léptetjük a streamet egy karakterrel
+                stream.next();
+                
+                // 3. Ellenőrizzük, hogy ez a karakter hányadik a sorban
+                // stream.column() az aktuális pozíciót adja (már a next() után)
+                // Tehát: 1, 2, 3, 4, 5, 6, 7, 8...
+                // Mi a 0., 4., 8., 12. indexnél akarunk vonalat (a szóköz "bal" oldalán).
+                // Mivel a next() után vagyunk, a (column - 1) adja az indexet.
+                
+                if (stream.column() % 4 === 0) {
+                    return "indent-guide"; // CSS osztály alkalmazása
+                }
+                
+                return null;
+            }
         });
 
         let pyodide = null;
         
-        // Globális változók az adatok tárolására
         let currentChallengeDate = null;
-        let loadedUserEmail = null; // Ezt a JSON-ből szedjük ki
-        let loadedUserName = null;  // Ezt is a JSON-ből, ha van
+        let loadedUserEmail = null;
+        let loadedUserName = null;
 
         const outputDiv = document.getElementById("output");
         const terminalWindow = document.getElementById("terminal-window");
@@ -303,8 +350,6 @@ print('Hello World!')
                 const data = JSON.parse(decryptedString);
                 const todayExcel = getExcelDate();
                 
-                // --- ÚJ RÉSZ: Felhasználói adatok kinyerése a JSON-ből ---
-                // Ha a JSON tartalmaz "email" vagy "name" mezőt a gyökérben
                 if (data.email) loadedUserEmail = data.email;
                 if (data.name) loadedUserName = data.name;
 
@@ -336,10 +381,8 @@ print('Hello World!')
             }
         }
 
-// --- 4. MEGOLDÁS BEKÜLDÉSE (CONFIRM ABLAKKAL) ---
+        // --- 4. MEGOLDÁS BEKÜLDÉSE ---
         async function sendSolution() {
-            // 1. BIZTONSÁGI KÉRDÉS (ÚJ RÉSZ)
-            // Ha a felhasználó a Mégse gombra kattint, a ! jel miatt igaz lesz, és kilépünk (return).
             if (!confirm("Biztosan be szeretnéd küldeni a megoldást?")) {
                 return;
             }
@@ -349,21 +392,18 @@ print('Hello World!')
                 return;
             }
 
-            // Név bekérése (ha nincs a JSON-ben)
             let name = loadedUserName;
             if (!name) {
                 name = prompt("Kérlek add meg a neved a beküldéshez:");
                 if (!name) return;
             }
 
-            // Email bekérése (ha nincs a JSON-ben)
             let email = loadedUserEmail;
             if (!email) {
                 email = prompt("Kérlek add meg az email címed (erre érkezhet válasz):");
                 if (!email) return; 
             }
 
-            // Feladat szövegének kinyerése
             let taskContent = "";
             if (taskText && taskText.innerHTML.includes('</span>')) {
                  taskContent = taskText.innerHTML.substring(taskText.innerHTML.indexOf('</span>') + 7, taskText.innerHTML.length);
@@ -399,7 +439,7 @@ print('Hello World!')
             }
         }
 
-        // --- 5. PYODIDE INIT & EGYÉB FÜGGVÉNYEK (Változatlan) ---
+        // --- 5. PYODIDE INIT ---
         function addToOutput(text, type = "normal") {
             const span = document.createElement("span");
             span.textContent = text + "\n";
@@ -428,30 +468,26 @@ print('Hello World!')
         }
         main();
 
-        // --- 6. Futtatás (JAVÍTOTT INPUT KEZELÉSSEL) ---
+        // --- 6. Futtatás ---
         async function runPythonCode() {
             clearOutput();
             if (!pyodide) return;
             openTerminal();
             
-            // Ez a Python kód, ami "megjavítja" az input()-ot
             const inputFix = `
 import js
 import builtins
-
 def custom_input(prompt_text=""):
     if prompt_text:
-        print(prompt_text, end=" ")
+        print(prompt_text, end="")
     val = js.prompt(prompt_text if prompt_text else "Input")
     if val is None:
         val = ""
     print(val)
-    
     return str(val)
 builtins.input = custom_input
 `;
 
-            // Összefűzzük a javító kódot a szerkesztőben lévő kóddal
             const userCode = editor.getValue();
             const fullCode = inputFix + "\n" + userCode;
 
