@@ -372,12 +372,18 @@ except:
 
         async function loadChallenge() {
             const params = new URLSearchParams(window.location.search);
+            
+            // ÚJ RÉSZ: Beküldés gomb megjelenítése, ha send=true
+            if (params.get('send') === 'true') {
+                document.getElementById("send-btn").style.display = "inline-block";
+            }
+
             const id = params.get('id');
             const pass = params.get('pass');
 
             if (!id || !pass) return;
 
-            editor.setValue("# Adatok betöltése folyamatban...");
+            // editor.setValue("# Adatok betöltése folyamatban...");
             
             try {
                 const response = await fetch(`${id}.szvpy`);
@@ -392,17 +398,19 @@ except:
                 if (data.name) loadedUserName = data.name;
                 const challenge = data.challenges.find(c => c.date === todayExcel);
 
-                if (challenge) {
+                if (challenge && params.get('send') !== 'true') {
                     editor.setValue(challenge.code);
                     currentChallengeDate = todayExcel;
                     const today = new Date();
                     taskText.innerHTML = `<span class="task-title">Mai feladat (${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()})</span>` + challenge.task;
+                    
                     toggleTaskBtn.style.display = "inline-block";
                     toggleTaskPanel();
+                    
                     sendBtn.style.display = "inline-block";
                     addToOutput(`Rendszer: Napi kihívás betöltve! (${todayExcel})`, "system");
                     if(loadedUserEmail) addToOutput(`Rendszer: Felhasználó azonosítva: ${loadedUserEmail}`, "system");
-                } else {
+                } else if (params.get('send') !== 'true') {
                     editor.setValue("print('Hello World!')");
                     addToOutput("Rendszer: Nem található a mai naphoz tartozó feladat.", "error");
                 }
@@ -421,12 +429,25 @@ except:
             let email = loadedUserEmail;
             if (!email) { email = prompt("Kérlek add meg az email címed (erre érkezhet válasz):"); if (!email) return; }
 
+            // ÚJ LOGIKA: Paraméter ellenőrzés és egyedi üzenet/dátum kezelése
+            const params = new URLSearchParams(window.location.search);
             let taskContent = "";
-            if (taskText && taskText.innerHTML.includes('</span>')) {
-                 taskContent = taskText.innerHTML.substring(taskText.innerHTML.indexOf('</span>') + 7, taskText.innerHTML.length);
+            let dateToSend = currentChallengeDate || "Ismeretlen";
+
+            if (params.get('send') === 'true') {
+                const comment = prompt("Megvalósított feladat (vagy megjegyzés a kódhoz):");
+                if (comment === null) return; // Ha a mégsére kattint
+                taskContent = comment;
+                dateToSend = "- egyéni";
+            } else {
+                // Eredeti logika: feladat szövegének kinyerése
+                if (taskText && taskText.innerHTML.includes('</span>')) {
+                     taskContent = taskText.innerHTML.substring(taskText.innerHTML.indexOf('</span>') + 7, taskText.innerHTML.length);
+                }
             }
+
             const code = editor.getValue();
-            const payload = { userName: name, userEmail: email, code: code, date: currentChallengeDate || "Ismeretlen", taskDescription: taskContent };
+            const payload = { userName: name, userEmail: email, code: code, date: dateToSend, taskDescription: taskContent };
 
             openTerminal();
             addToOutput("Rendszer: Megoldás küldése folyamatban...", "system");
