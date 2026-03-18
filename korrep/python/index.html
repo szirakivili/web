@@ -307,10 +307,7 @@ except:
                     setTimeout(function() { 
                         cm.showHint({completeSingle: false}); // Ne válassza ki automatikusan az elsőt, ha csak 1 van
                     }, 100);
-                },
-
-                // KÓD MENTÉSE
-                "Ctrl-S": function(cm) { saveCode(); }
+                }
             }
         });
 
@@ -523,6 +520,14 @@ builtins.input = custom_input
                 toggleTaskBtn.textContent = 'Feladat elrejtése';
             }
         }
+
+        // KÓD MENTÉSE
+        window.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                e.preventDefault();
+                saveCode();
+            }
+        });
     </script>
 </body>
 </html>
