@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-04-01T05:32:18Z",
+  "fetched_at": "2026-04-02T05:13:57Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=true&format=json&mode=detailed&limit=10",
   "payload": {
     "count": 2,
@@ -14,13 +14,13 @@
         "slug": "sls-block-1-artemis-ii",
         "launch_designator": null,
         "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
+          "id": 3,
+          "name": "Launch Successful",
+          "abbrev": "Success",
+          "description": "The launch vehicle successfully inserted its payload(s) into the target orbit(s)."
         },
-        "last_updated": "2026-03-30T20:46:15Z",
-        "net": "2026-04-01T22:24:00Z",
+        "last_updated": "2026-04-02T02:01:34Z",
+        "net": "2026-04-01T22:35:12Z",
         "net_precision": {
           "id": 0,
           "name": "Second",
@@ -45,8 +45,8 @@
           "variants": []
         },
         "infographic": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/infographic_images/sls2520block2_infographic_20260329082241.jpeg",
-        "probability": 80,
-        "weather_concerns": "Cumulus Cloud Rule, Thick Cloud Layers Rule, Ground Winds",
+        "probability": 90,
+        "weather_concerns": "Cumulus Cloud Rule, Ground Winds",
         "failreason": "",
         "hashtag": null,
         "launch_service_provider": {
@@ -121,11 +121,11 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 141,
-          "consecutive_successful_launches": 11,
-          "successful_launches": 121,
+          "total_launch_count": 142,
+          "consecutive_successful_launches": 12,
+          "successful_launches": 122,
           "failed_launches": 20,
-          "pending_launches": 6,
+          "pending_launches": 5,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -225,11 +225,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 141,
-                    "consecutive_successful_launches": 11,
-                    "successful_launches": 121,
+                    "total_launch_count": 142,
+                    "consecutive_successful_launches": 12,
+                    "successful_launches": 122,
                     "failed_launches": 20,
-                    "pending_launches": 6,
+                    "pending_launches": 5,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -249,11 +249,11 @@
                 "description": "",
                 "active": true,
                 "maiden_flight": "2022-11-16",
-                "total_launch_count": 1,
+                "total_launch_count": 2,
                 "consecutive_successful_launches": 1,
                 "successful_launches": 1,
                 "failed_launches": 0,
-                "pending_launches": 6,
+                "pending_launches": 5,
                 "attempted_landings": 0,
                 "successful_landings": 0,
                 "failed_landings": 0,
@@ -336,11 +336,11 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 141,
-              "consecutive_successful_launches": 11,
-              "successful_launches": 121,
+              "total_launch_count": 142,
+              "consecutive_successful_launches": 12,
+              "successful_launches": 122,
               "failed_launches": 20,
-              "pending_launches": 6,
+              "pending_launches": 5,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -434,16 +434,16 @@
             "sso_capacity": null,
             "to_thrust": 39000.0,
             "apogee": null,
-            "total_launch_count": 1,
-            "consecutive_successful_launches": 1,
-            "successful_launches": 1,
+            "total_launch_count": 2,
+            "consecutive_successful_launches": 2,
+            "successful_launches": 2,
             "failed_launches": 0,
-            "pending_launches": 2,
+            "pending_launches": 1,
             "attempted_landings": 0,
             "successful_landings": 0,
             "failed_landings": 0,
             "consecutive_successful_landings": 0,
-            "fastest_turnaround": null
+            "fastest_turnaround": "P1232DT15H47M28S"
           },
           "launcher_stage": [],
           "spacecraft_stage": [
@@ -474,10 +474,10 @@
                   "single_use": false,
                   "variants": []
                 },
-                "in_space": false,
-                "time_in_space": "P0D",
+                "in_space": true,
+                "time_in_space": "PT5H10M22S",
                 "time_docked": "P0D",
-                "flights_count": 0,
+                "flights_count": 1,
                 "mission_ends_count": 0,
                 "status": {
                   "id": 1,
@@ -596,9 +596,9 @@
                   "flight_life": "21.1 days",
                   "wiki_link": "https://en.wikipedia.org/wiki/Orion_(spacecraft)",
                   "info_link": "",
-                  "spacecraft_flown": 2,
-                  "total_launch_count": 2,
-                  "successful_launches": 2,
+                  "spacecraft_flown": 3,
+                  "total_launch_count": 3,
+                  "successful_launches": 3,
                   "failed_launches": 0,
                   "attempted_landings": 2,
                   "successful_landings": 2,
@@ -680,7 +680,7 @@
                   "description": "Unpowered landing using parachute(s)."
                 }
               },
-              "duration": null,
+              "duration": "PT5H17M2.062342S",
               "turn_around_time": null,
               "response_mode": "detailed",
               "launch_crew": [
@@ -730,8 +730,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P165DT8H19S",
+                    "in_space": true,
+                    "time_in_space": "P165DT12H56M59S",
                     "eva_time": "PT12H47M",
                     "age": 50,
                     "date_of_birth": "1975-11-11",
@@ -748,7 +748,7 @@
                     ],
                     "bio": "Gregory Reid Wiseman is an American astronaut, engineer, and naval aviator. Wiseman was selected in June 2009 as a member of the NASA Astronaut Group 20 and qualified as an astronaut in 2011. Wiseman took part in his first spaceflight as part of the crew of Expedition 40/41, which launched to the International Space Station on May 28, 2014, and returned on November 10, 2014. Before joining NASA, Wiseman was a Naval Aviator and test pilot. Wiseman has been the Deputy Chief of the Astronaut Office since June, 2017, working under Chief Astronaut Patrick Forrester.",
                     "wiki": "https://en.wikipedia.org/wiki/Gregory_R._Wiseman",
-                    "last_flight": "2014-05-28T19:57:41Z",
+                    "last_flight": "2026-04-01T22:35:12Z",
                     "first_flight": "2014-05-28T19:57:41Z",
                     "social_media_links": [
                       {
@@ -824,8 +824,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P167DT6H29M43S",
+                    "in_space": true,
+                    "time_in_space": "P167DT11H26M28S",
                     "eva_time": "P1DT2H24M",
                     "age": 49,
                     "date_of_birth": "1976-04-30",
@@ -842,7 +842,7 @@
                     ],
                     "bio": "Victor Jerome Glover is a NASA astronaut of the class of 2013.\r\n\r\nGlover is a Commander in the U.S. Navy who hails from Pomona, California and Prosper, Texas. He is an F/A-18 pilot and graduate of the U.S. Air Force Test Pilot School. Glover holds degrees from California Polytechnic State University at San Luis Obispo, Air University and Naval Postgraduate School. He was a naval legislative fellow working on the personal staff of the Honorable John McCain supporting defense and foreign relations policy and oversight.",
                     "wiki": "https://en.wikipedia.org/wiki/Victor_J._Glover",
-                    "last_flight": "2020-11-16T00:27:17Z",
+                    "last_flight": "2026-04-01T22:35:12Z",
                     "first_flight": "2020-11-16T00:27:17Z",
                     "social_media_links": [
                       {
@@ -918,8 +918,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P0D",
+                    "in_space": true,
+                    "time_in_space": "PT4H44M44S",
                     "eva_time": "P0D",
                     "age": 50,
                     "date_of_birth": "1976-01-27",
@@ -936,8 +936,8 @@
                     ],
                     "bio": "Jeremy Roger Hansen  is a Canadian astronaut with the Canadian Space Agency (CSA). He was selected to join the CSA in the 2009 CSA selection.",
                     "wiki": "https://en.wikipedia.org/wiki/Jeremy_Hansen",
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-04-01T22:35:12Z",
+                    "first_flight": "2026-04-01T22:35:12Z",
                     "social_media_links": [
                       {
                         "id": 197,
@@ -1012,8 +1012,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P328DT13H58M37S",
+                    "in_space": true,
+                    "time_in_space": "P328DT18H56M40S",
                     "eva_time": "P1DT18H15M",
                     "age": 47,
                     "date_of_birth": "1979-01-29",
@@ -1030,7 +1030,7 @@
                     ],
                     "bio": "Christina Hammock Koch (born January 29, 1979) is a NASA astronaut of the class of 2013.",
                     "wiki": "https://en.wikipedia.org/wiki/Christina_Koch",
-                    "last_flight": "2019-03-14T19:14:08Z",
+                    "last_flight": "2026-04-01T22:35:12Z",
                     "first_flight": "2019-03-14T19:14:08Z",
                     "social_media_links": [
                       {
@@ -1133,8 +1133,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P165DT8H19S",
+                    "in_space": true,
+                    "time_in_space": "P165DT12H56M59S",
                     "eva_time": "PT12H47M",
                     "age": 50,
                     "date_of_birth": "1975-11-11",
@@ -1151,7 +1151,7 @@
                     ],
                     "bio": "Gregory Reid Wiseman is an American astronaut, engineer, and naval aviator. Wiseman was selected in June 2009 as a member of the NASA Astronaut Group 20 and qualified as an astronaut in 2011. Wiseman took part in his first spaceflight as part of the crew of Expedition 40/41, which launched to the International Space Station on May 28, 2014, and returned on November 10, 2014. Before joining NASA, Wiseman was a Naval Aviator and test pilot. Wiseman has been the Deputy Chief of the Astronaut Office since June, 2017, working under Chief Astronaut Patrick Forrester.",
                     "wiki": "https://en.wikipedia.org/wiki/Gregory_R._Wiseman",
-                    "last_flight": "2014-05-28T19:57:41Z",
+                    "last_flight": "2026-04-01T22:35:12Z",
                     "first_flight": "2014-05-28T19:57:41Z",
                     "social_media_links": [
                       {
@@ -1227,8 +1227,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P167DT6H29M43S",
+                    "in_space": true,
+                    "time_in_space": "P167DT11H26M28S",
                     "eva_time": "P1DT2H24M",
                     "age": 49,
                     "date_of_birth": "1976-04-30",
@@ -1245,7 +1245,7 @@
                     ],
                     "bio": "Victor Jerome Glover is a NASA astronaut of the class of 2013.\r\n\r\nGlover is a Commander in the U.S. Navy who hails from Pomona, California and Prosper, Texas. He is an F/A-18 pilot and graduate of the U.S. Air Force Test Pilot School. Glover holds degrees from California Polytechnic State University at San Luis Obispo, Air University and Naval Postgraduate School. He was a naval legislative fellow working on the personal staff of the Honorable John McCain supporting defense and foreign relations policy and oversight.",
                     "wiki": "https://en.wikipedia.org/wiki/Victor_J._Glover",
-                    "last_flight": "2020-11-16T00:27:17Z",
+                    "last_flight": "2026-04-01T22:35:12Z",
                     "first_flight": "2020-11-16T00:27:17Z",
                     "social_media_links": [
                       {
@@ -1321,8 +1321,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P0D",
+                    "in_space": true,
+                    "time_in_space": "PT4H44M44S",
                     "eva_time": "P0D",
                     "age": 50,
                     "date_of_birth": "1976-01-27",
@@ -1339,8 +1339,8 @@
                     ],
                     "bio": "Jeremy Roger Hansen  is a Canadian astronaut with the Canadian Space Agency (CSA). He was selected to join the CSA in the 2009 CSA selection.",
                     "wiki": "https://en.wikipedia.org/wiki/Jeremy_Hansen",
-                    "last_flight": null,
-                    "first_flight": null,
+                    "last_flight": "2026-04-01T22:35:12Z",
+                    "first_flight": "2026-04-01T22:35:12Z",
                     "social_media_links": [
                       {
                         "id": 197,
@@ -1415,8 +1415,8 @@
                       "id": 2,
                       "name": "Government"
                     },
-                    "in_space": false,
-                    "time_in_space": "P328DT13H58M37S",
+                    "in_space": true,
+                    "time_in_space": "P328DT18H56M40S",
                     "eva_time": "P1DT18H15M",
                     "age": 47,
                     "date_of_birth": "1979-01-29",
@@ -1433,7 +1433,7 @@
                     ],
                     "bio": "Christina Hammock Koch (born January 29, 1979) is a NASA astronaut of the class of 2013.",
                     "wiki": "https://en.wikipedia.org/wiki/Christina_Koch",
-                    "last_flight": "2019-03-14T19:14:08Z",
+                    "last_flight": "2026-04-01T22:35:12Z",
                     "first_flight": "2019-03-14T19:14:08Z",
                     "social_media_links": [
                       {
@@ -1609,8 +1609,8 @@
             "nationality_name_composed": "Americano"
           },
           "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_4_20200803143518.jpg",
-          "total_launch_count": 58,
-          "orbital_launch_attempt_count": 57,
+          "total_launch_count": 59,
+          "orbital_launch_attempt_count": 58,
           "fastest_turnaround": "P28DT11H55M4S",
           "location": {
             "response_mode": "normal",
@@ -1683,7 +1683,7 @@
             "longitude": -80.650833,
             "latitude": 28.524167,
             "timezone_name": "America/New_York",
-            "total_launch_count": 279,
+            "total_launch_count": 280,
             "total_landing_count": 0
           }
         },
@@ -1734,16 +1734,72 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7247,
+        "orbital_launch_attempt_count": 7246,
         "location_launch_attempt_count": 280,
         "pad_launch_attempt_count": 59,
         "agency_launch_attempt_count": 142,
-        "orbital_launch_attempt_count_year": 74,
+        "orbital_launch_attempt_count_year": 73,
         "location_launch_attempt_count_year": 1,
         "pad_launch_attempt_count_year": 1,
         "agency_launch_attempt_count_year": 1,
         "flightclub_url": "https://flightclub.io/result?llId=41699701-2ef4-4b0c-ac9d-6757820cde87",
         "updates": [
+          {
+            "id": 14551,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Launch success with Orion separation.",
+            "info_url": "https://www.youtube.com/watch?v=m3kR2KK8TEs",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-04-02T02:01:00Z"
+          },
+          {
+            "id": 14547,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Liftoff.",
+            "info_url": "https://www.youtube.com/watch?v=Tf_UjBMIzNo",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-04-01T22:49:00Z"
+          },
+          {
+            "id": 14546,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "New T-0.",
+            "info_url": "https://www.youtube.com/watch?v=Tf_UjBMIzNo",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-04-01T22:25:00Z"
+          },
+          {
+            "id": 14545,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Extending hold at T-10 minutes.",
+            "info_url": "https://www.youtube.com/watch?v=Tf_UjBMIzNo",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-04-01T22:15:00Z"
+          },
+          {
+            "id": 14544,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Updated launch weather.",
+            "info_url": "https://www.youtube.com/watch?v=Tf_UjBMIzNo",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-04-01T21:33:00Z"
+          },
+          {
+            "id": 14540,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/ll2_profile_20230311134739.png",
+            "comment": "Official Webcast by NASA has started",
+            "info_url": "https://www.youtube.com/watch?v=Tf_UjBMIzNo",
+            "created_by": "LL2",
+            "created_on": "2026-04-01T16:58:00Z"
+          },
+          {
+            "id": 14536,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Updated launch weather.",
+            "info_url": "https://45thweathersquadron.nebula.spaceforce.mil/assets/LaunchForecasts/SLS%20Artemis%20II%20L-1%20Forecast%20-%201%20Apr%20Launch.pdf",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-04-01T15:05:00Z"
+          },
           {
             "id": 14525,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -1899,7 +1955,7 @@
             "publisher": "NASA",
             "title": "NASA's Artemis II Crew Launches To The Moon (Official Broadcast)",
             "description": "We're sending astronauts around the Moon for the first time in 50 years. Come watch with us.\n\nNASA's Artemis II mission is scheduled to lift off from Kennedy Space Center on April 1. The two-hour launch window starts at 6:24 p.m. EDT (2224 UTC). \n\nFour astronauts — three from NASA and one from the CSA (Canadian Space Agency) — make up the Artemis II crew:\n- NASA astronaut Reid Wiseman, Artemis II commander\n- NASA astronaut Victor Glover, Artemis II pilot\n- NASA astronaut Christina Koch, Artemis II mission specialist\n- Canadian Space Agency (CSA) astronaut Jeremy Hansen, Artemis II mission specialist\n\nAfter launching into space atop NASA's Space Launch System (SLS) rocket, the crew will journey around the Moon and back in their Orion spacecraft, named Integrity, on an approximately 10-...",
-            "feature_image": "https://i.ytimg.com/vi/Tf_UjBMIzNo/maxresdefault_live.jpg",
+            "feature_image": "https://i.ytimg.com/vi/Tf_UjBMIzNo/maxresdefault.jpg",
             "url": "https://www.youtube.com/watch?v=Tf_UjBMIzNo",
             "type": {
               "id": 1,
@@ -1910,8 +1966,8 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2026-04-01T16:50:00Z",
-            "end_time": null,
+            "start_time": "2026-04-01T16:58:21Z",
+            "end_time": "2026-04-01T23:21:01Z",
             "live": false
           },
           {
@@ -1920,7 +1976,7 @@
             "publisher": "NASA",
             "title": "NASA’s Artemis II Crew Launches to the Moon (Official Broadcast)",
             "description": "Artemis II is NASA’s first crewed mission under the Artemis program and will launch from the agency’s Kennedy Space Center in Florida. It will send NASA astronauts Reid Wiseman, Victor […]",
-            "feature_image": "https://plus.nasa.gov/wp-content/uploads/2026/03/artemis-ii-launch-key-art-crew-photo-option-r1-horizontal-program-tile-16-9-without-title.jpg",
+            "feature_image": "https://plus.nasa.gov/wp-content/uploads/2026/03/victor.png",
             "url": "https://plus.nasa.gov/scheduled-video/nasas-artemis-ii-crew-launches-to-the-moon-official-broadcast/",
             "type": {
               "id": 1,
@@ -1931,8 +1987,8 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2026-04-01T16:50:00Z",
-            "end_time": "2026-04-02T02:00:00Z",
+            "start_time": "2026-04-01T17:00:00Z",
+            "end_time": "2026-04-01T23:24:00Z",
             "live": false
           }
         ],
@@ -2994,7 +3050,7 @@
             "relative_time": "P9DT2H1M"
           }
         ],
-        "pad_turnaround": "P1232DT15H36M16S",
+        "pad_turnaround": "P1232DT15H47M28S",
         "mission_patches": [
           {
             "id": 1120,
@@ -3231,7 +3287,7 @@
                 "description": "",
                 "active": true,
                 "maiden_flight": "1965-12-27",
-                "total_launch_count": 1036,
+                "total_launch_count": 1035,
                 "consecutive_successful_launches": 131,
                 "successful_launches": 1004,
                 "failed_launches": 31,
@@ -3366,7 +3422,7 @@
                 "description": "",
                 "active": true,
                 "maiden_flight": "2004-11-08",
-                "total_launch_count": 203,
+                "total_launch_count": 202,
                 "consecutive_successful_launches": 131,
                 "successful_launches": 195,
                 "failed_launches": 7,
@@ -4337,11 +4393,11 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 141,
-              "consecutive_successful_launches": 11,
-              "successful_launches": 121,
+              "total_launch_count": 142,
+              "consecutive_successful_launches": 12,
+              "successful_launches": 122,
               "failed_launches": 20,
-              "pending_launches": 6,
+              "pending_launches": 5,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -4711,11 +4767,11 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7298,
+        "orbital_launch_attempt_count": 7300,
         "location_launch_attempt_count": 1565,
         "pad_launch_attempt_count": 430,
         "agency_launch_attempt_count": 343,
-        "orbital_launch_attempt_count_year": 125,
+        "orbital_launch_attempt_count_year": 127,
         "location_launch_attempt_count_year": 6,
         "pad_launch_attempt_count_year": 4,
         "agency_launch_attempt_count_year": 5,
