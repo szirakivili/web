@@ -30,7 +30,7 @@
         }
 
         h1 {
-            color: #333;
+            color: var(--text-color);
             margin-bottom: 40px;
             font-size: 2.5em;
             font-weight: bold;
@@ -50,17 +50,86 @@
             flex-direction: column;
             align-items: center;
             text-decoration: none; /* Link aláhúzás eltávolítása */
-            color: #333; /* Szöveg színe */
+            color: var(--text-color); /* Szöveg színe */
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             border-radius: 10px;
             padding: 15px 10px;
-            background-color: #f9f9f9; /* Enyhe háttér a kártyáknak */
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            background-color: var(--card-color); /* Enyhe háttér a kártyáknak */
+            box-shadow: 0 2px 8px var(--shadow-color);
         }
 
         .app-item:hover {
             transform: translateY(-5px); /* Enyhe felfelé mozgás hoverre */
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Erősebb árnyék */
+        }
+
+        :root {
+            color-scheme: light dark;
+            --bg-color: #f0f2f5;
+            --container-color: #ffffff;
+            --text-color: #333333;
+            --card-color: #f9f9f9;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --footer-color: #333333;
+            --footer-link-color: #333333;
+            --warning-color: #b80f0f;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            background-color: var(--container-color);
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+
+        .app-item {
+            background-color: var(--card-color);
+            box-shadow: 0 2px 8px var(--shadow-color);
+        }
+
+        footer p,
+        footer a {
+            color: var(--footer-color);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0d1117;
+                --container-color: #141a24;
+                --text-color: #e6edf3;
+                --card-color: #192231;
+                --shadow-color: rgba(0, 0, 0, 0.6);
+                --footer-color: #c9d1d9;
+                --footer-link-color: #c9d1d9;
+                --warning-color: #ff8b8b;
+            }
+
+            body {
+                background-color: var(--bg-color);
+                color: var(--text-color);
+            }
+
+            .container {
+                background-color: var(--container-color);
+                box-shadow: 0 4px 15px var(--shadow-color);
+            }
+
+            .app-item {
+                background-color: var(--card-color);
+                box-shadow: 0 2px 8px var(--shadow-color);
+            }
+
+            .app-item:hover {
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+            }
+
+            footer p,
+            footer a {
+                color: var(--footer-color);
+            }
         }
 
         .app-icon {
@@ -86,11 +155,16 @@
         }
 
         footer p {
-            color: #333;
+            color: var(--footer-color);
             margin-bottom: 3px;
         }
 
+        footer p.warning {
+            color: var(--warning-color);
+        }
+
         footer a {
+            color: var(--footer-link-color);
             text-decoration: none;
         }
 
@@ -282,7 +356,7 @@
     </div>
 
     <footer>
-        <p style="color: red;">Figyelem! A teljes oldal és minden aloldala saját felhasználásra készült!</p>
+        <p class="warning">Figyelem! A teljes oldal és minden aloldala saját felhasználásra készült!</p>
         <p>Kapcsolat:</p>
         <a href="mailto:hello@szvili.hu">hello@szvili.hu</a>
     </footer>
