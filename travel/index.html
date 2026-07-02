@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utazási napló</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<style>
+  :root{
+    --paper:#F1E9D8;
+    --paper-dark:#E4D6B8;
+    --ink:#26211A;
+    --ink-soft:#5B4E3C;
+    --navy:#24344D;
+    --navy-dark:#182635;
+    --stamp:#9C3A2D;
+    --gold:#A9823C;
+    --green:#4B6355;
+    --line: rgba(38,33,26,0.16);
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at top left, rgba(169,130,60,0.08), transparent 60%),
+      var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* subtle paper grain */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    pointer-events:none;
+    opacity:.35;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- HERO / "PASSZPORT BORÍTÓ" ---------- */
+  .cover{
+    position:relative;
+    background:
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color:var(--paper);
+    padding:64px 24px 48px;
+    overflow:hidden;
+  }
+  .cover::after{
+    content:"";
+    position:absolute; inset:14px;
+    border:1.5px solid rgba(241,233,216,0.35);
+    pointer-events:none;
+  }
+  .cover-inner{
+    max-width:980px;
+    margin:0 auto;
+    position:relative;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 18px;
+  }
+  h1.title{
+    font-family:'Fraunces', serif;
+    font-optical-sizing:auto;
+    font-weight:600;
+    font-size:clamp(40px, 7vw, 76px);
+    line-height:0.98;
+    margin:0 0 10px;
+    letter-spacing:-0.01em;
+  }
+  .subtitle{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:rgba(241,233,216,0.7);
+    letter-spacing:.03em;
+    margin:0 0 40px;
+  }
+
+  .stats-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    border-top:1px solid rgba(241,233,216,0.25);
+  }
+  .stat{
+    flex:1 1 140px;
+    padding:18px 20px 0;
+    border-right:1px solid rgba(241,233,216,0.25);
+  }
+  .stat:last-child{border-right:none;}
+  .stat-link{
+    display:block;
+    color:inherit;
+    text-decoration:none;
+    cursor:pointer;
+    transition:background .15s ease;
+  }
+  .stat-link:hover{
+    background:rgba(241,233,216,0.06);
+  }
+  .stat-link:hover .stat-num{
+    color:var(--gold);
+  }
+  .stat-link:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:-2px;
+  }
+  .stat-num{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:34px;
+    display:block;
+    color:var(--paper);
+  }
+  .stat-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+
+  /* ---------- TOOLBAR ---------- */
+  .toolbar{
+    max-width:1080px;
+    margin:0 auto;
+    padding:28px 24px 0;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  .search{
+    flex:1 1 240px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    padding:12px 14px;
+    background:var(--paper-dark);
+    border:1px solid var(--line);
+    color:var(--ink);
+    outline:none;
+  }
+  .search::placeholder{color:var(--ink-soft);}
+  .sort-select{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    padding:12px 14px;
+    background:var(--paper-dark);
+    border:1px solid var(--line);
+    color:var(--ink);
+  }
+
+  /* ---------- GRID ---------- */
+  .grid{
+    max-width:1080px;
+    margin:0 auto;
+    padding:24px 24px 90px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+    gap:22px;
+  }
+
+  .card{
+    position:relative;
+    background:var(--paper-dark);
+    border:1px dashed rgba(38,33,26,0.32);
+    padding:22px 20px 20px;
+    overflow:hidden;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px rgba(38,33,26,0.14);
+  }
+
+  .card.has-img{
+    background-size:cover;
+    background-position:center;
+  }
+  .card.has-img::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:var(--paper-dark);
+    opacity:.85;
+  }
+  .card-content{
+    position:relative;
+    z-index:1;
+  }
+
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .flag{
+    font-size:38px;
+    line-height:1;
+    filter:drop-shadow(0 1px 1px rgba(0,0,0,0.15));
+  }
+  .country-name{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:22px;
+    margin:14px 0 2px;
+    line-height:1.05;
+  }
+  .country-code{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.16em;
+    color:var(--ink-soft);
+  }
+
+  /* --- the stamp (signature element) --- */
+  .stamp{
+    --sr: 50px;
+    width:calc(var(--sr) * 2);
+    height:calc(var(--sr) * 2);
+    flex:none;
+    position:relative;
+    transform:rotate(-9deg);
+    color:var(--stamp);
+    opacity:.92;
+  }
+  .stamp svg{width:100%; height:100%; overflow:visible;}
+  .stamp-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    fill:var(--stamp);
+  }
+
+  .divider{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:16px 0 14px;
+  }
+
+  .meta-row{
+    display:flex;
+    justify-content:space-between;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:.06em;
+  }
+  .meta-row b{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:19px;
+    color:var(--ink);
+    text-transform:none;
+    letter-spacing:0;
+  }
+
+  .cities-heading{
+    margin-top:16px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--green);
+  }
+
+  .cities-ticker{
+    margin-top:8px;
+    overflow:hidden;
+    white-space:nowrap;
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
+  .cities-ticker-track{
+    display:inline-flex;
+    animation: ticker-scroll linear infinite;
+  }
+  .cities-ticker-track span{
+    display:inline-block;
+    padding-right:22px;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:14.5px;
+    color:var(--ink);
+    white-space:nowrap;
+  }
+  .cities-ticker-track span::after{
+    content:"·";
+    margin-left:22px;
+    color:var(--gold);
+  }
+  @keyframes ticker-scroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+
+  .empty, .error{
+    max-width:1080px;
+    margin:40px auto;
+    padding:0 24px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .error{color:var(--stamp);}
+
+  footer{
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.1em;
+    color:var(--ink-soft);
+    padding:0 24px 40px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .card{transition:none;}
+    .cities-ticker-track{animation-play-state:paused;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="cover">
+    <div class="cover-inner">
+      <p class="eyebrow">Személyes útlevél</p>
+      <h1 class="title">Utazási napló</h1>
+      <p class="subtitle" id="subtitle">Betöltés folyamatban&hellip;</p>
+
+      <div class="stats-row" id="statsRow">
+        <div class="stat"><span class="stat-num" id="statCountries">–</span><span class="stat-label">Ország</span></div>
+        <div class="stat"><span class="stat-num" id="statCities">–</span><span class="stat-label">város</span></div>
+        <div class="stat"><span class="stat-num" id="statVisits">–</span><span class="stat-label">utazás</span></div>
+        <a class="stat stat-link" href="https://www.google.com/maps/d/u/0/edit?mid=1eXypwr0uwRkDLH80I0lwUHymxqsOFBA&amp;usp=sharing" target="_blank" rel="noopener">
+          <span class="stat-num" id="statStays">–</span><span class="stat-label">Szállás</span>
+        </a>
+        <a class="stat stat-link" href="../mytrainmap" target="_blank" rel="noopener">
+          <span class="stat-num" id="statStations">–</span><span class="stat-label">Vasútállomás</span>
+        </a>
+        <a class="stat stat-link" href="../mytrainmap" target="_blank" rel="noopener">
+          <span class="stat-num" id="statRailKm">–</span><span class="stat-label">Km vasúton</span>
+        </a>
+        <a class="stat stat-link" href="https://my.flightradar24.com/szirakivili" target="_blank" rel="noopener">
+          <span class="stat-num" id="statFlights">–</span><span class="stat-label">Repülés</span>
+        </a>
+        <a class="stat stat-link" href="https://my.flightradar24.com/szirakivili" target="_blank" rel="noopener">
+          <span class="stat-num" id="statFlightKm">–</span><span class="stat-label">Km levegőben</span>
+        </a>
+        <a class="stat stat-link" href="https://my.flightradar24.com/szirakivili" target="_blank" rel="noopener">
+          <span class="stat-num" id="statAirports">–</span><span class="stat-label">Reptér</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <input class="search" id="search" type="text" placeholder="Keresés ország szerint&hellip;">
+    <select class="sort-select" id="sortSelect">
+      <option value="name">Rendezés: Név (A–Z)</option>
+      <option value="times">Rendezés: utazások száma</option>
+      <option value="cities">Rendezés: városok száma</option>
+    </select>
+  </div>
+
+  <main id="grid" class="grid" aria-live="polite"></main>
+
+<script>
+(function(){
+  const grid = document.getElementById('grid');
+  const subtitle = document.getElementById('subtitle');
+  const searchInput = document.getElementById('search');
+  const sortSelect = document.getElementById('sortSelect');
+
+  let countries = [];
+
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, s => ({
+      '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+    }[s]));
+  }
+
+  function safeImgUrl(url){
+    if(!url) return null;
+    try{
+      const u = new URL(url, window.location.href);
+      if(u.protocol === 'http:' || u.protocol === 'https:') return u.href;
+    }catch(e){ /* érvénytelen URL, figyelmen kívül hagyjuk */ }
+    return null;
+  }
+
+  function stampSVG(times){
+    const label = times === -1 ? 'otthon' : (times === 0 ? 'sok' : times);
+    const fontSize = String(label).length > 3 ? 16 : 28;
+    const cx = 50, cy = 50;
+    const outerR = 47;   // külső kör
+    const innerR = 36;   // belső kör - nagyobb, jól látható középső mező
+    const textR = 39;    // a felirat pályájának sugara, a két kör közötti sávban
+    const pathId = 'p' + Math.random().toString(36).slice(2, 9);
+    return `
+      <svg viewBox="0 0 100 100">
+        <defs>
+          <path id="${pathId}" d="M ${cx},${cy} m -${textR},0 a ${textR},${textR} 0 1,1 ${textR*2},0 a ${textR},${textR} 0 1,1 -${textR*2},0" />
+        </defs>
+        <circle cx="${cx}" cy="${cy}" r="${outerR}" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="${cx}" cy="${cy}" r="${innerR}" fill="none" stroke="currentColor" stroke-width="1.25"/>
+        <text font-family="IBM Plex Mono, monospace" font-size="6.6" font-weight="500" letter-spacing="1.2" fill="currentColor">
+          <textPath href="#${pathId}" startOffset="2%">utazásOK · UTAZÁSI NAPLÓ ·</textPath>
+        </text>
+        <text x="${cx}" y="${cy+9}" text-anchor="middle" font-size="${fontSize}" class="stamp-num">${label}</text>
+      </svg>`;
+  }
+
+  function cardHTML(c){
+    const times = Number(c.times) || 0;
+    const isHome = times === -1;
+    const isMany = times === 0;
+    const timesValue = isHome ? 'otthon' : (isMany ? 'sok' : times);
+    const timesLabel = isHome ? '' : 'utazás';
+    const cities = Array.isArray(c.cities) ? c.cities : [];
+    const stays = Number(c.accomodations) || 0;
+    const cityCountLabel = cities.length > 10 ? '10+' : cities.length;
+
+    const imgUrl = safeImgUrl(c.img);
+    const cardClass = 'card' + (imgUrl ? ' has-img' : '');
+    const cardStyle = imgUrl ? ` style="background-image:url('${imgUrl.replace(/'/g, '%27')}')"` : '';
+
+    return `
+      <article class="${cardClass}"${cardStyle}>
+        <div class="card-content">
+          <div class="card-top">
+            <div>
+              <div class="country-name">${escapeHtml(c.name)}</div>
+              <div class="country-code">${escapeHtml((c.code || '').toUpperCase())}</div>
+            </div>
+            <div class="flag" aria-hidden="true">${c.flag || ''}</div>
+          </div>
+
+          <div class="stamp" aria-hidden="true">${stampSVG(times)}</div>
+
+          <hr class="divider">
+
+          <div class="meta-row">
+            <span><b>${timesValue}</b>${timesLabel}</span>
+            <span><b>${stays}</b>szállás</span>
+            <span><b>${cityCountLabel}</b>város</span>
+          </div>
+
+          ${cities.length ? `
+          <div class="cities-heading">városok</div>
+          <div class="cities-ticker" aria-label="városok: ${escapeHtml(cities.join(', '))}">
+            <div class="cities-ticker-track" style="animation-duration:${Math.max(8, cities.join(' ').length * 0.35)}s" aria-hidden="true">
+              ${cities.map(city => `<span>${escapeHtml(city)}</span>`).join('')}
+              ${cities.map(city => `<span>${escapeHtml(city)}</span>`).join('')}
+            </div>
+          </div>` : ''}
+        </div>
+      </article>`;
+  }
+
+  function render(list){
+    if(!list.length){
+      grid.innerHTML = `<p class="empty">Nincs a keresésnek megfelelő ország.</p>`;
+      return;
+    }
+    grid.innerHTML = list.map(cardHTML).join('');
+  }
+
+  function applyFilters(){
+    const q = searchInput.value.trim().toLowerCase();
+    const sortBy = sortSelect.value;
+
+    let list = countries.filter(c => c.name.toLowerCase().includes(q));
+
+    list.sort((a, b) => {
+      if(sortBy === 'times') return (Number(b.times)||0) - (Number(a.times)||0);
+      if(sortBy === 'cities') return (b.cities?.length||0) - (a.cities?.length||0);
+      return a.name.localeCompare(b.name, 'hu');
+    });
+
+    render(list);
+  }
+
+  function renderStats(list){
+    const totalCountries = list.length;
+    const totalCities = list.reduce((sum, c) => sum + (c.cities?.length || 0), 0);
+    const totalVisits = list.reduce((sum, c) => {
+      const t = Number(c.times) || 0;
+      return sum + (t > 0 ? t : 0);
+    }, 0);
+    const totalStays = list.reduce((sum, c) => sum + (Number(c.accomodations) || 0), 0);
+    const hasMany = list.some(c => Number(c.times) === 0);
+
+    document.getElementById('statCountries').textContent = totalCountries;
+    document.getElementById('statCities').textContent = totalCities + (totalCities ? '+' : '');
+    document.getElementById('statVisits').textContent = totalVisits + (hasMany ? '+' : '');
+    document.getElementById('statStays').textContent = totalStays;
+  }
+
+  // ---------- Vasúti adatok: állomások és vonalak KML-ekből ----------
+  // A fájlok relatív útvonala a mytrainmap mappához képest.
+  // Ha nálad más a fájlnév (pl. "keskeny_allomaok.kml" elgépelés nélkül),
+  // csak írd át itt a megfelelő listát.
+  const STATION_FILES = [
+    '../mytrainmap/normal_allomasok.kml',
+    '../mytrainmap/keskeny_allomasok.kml',
+    '../mytrainmap/hev_allomasok.kml'
+  ];
+  const LINE_FILES = [
+    '../mytrainmap/normal_vasut.kml',
+    '../mytrainmap/keskeny_vasut.kml',
+    '../mytrainmap/hev_vasut.kml'
+  ];
+
+  function fetchKml(path){
+    return fetch(path)
+      .then(res => {
+        if(!res.ok) throw new Error('HTTP ' + res.status);
+        return res.text();
+      })
+      .then(text => {
+        const doc = new DOMParser().parseFromString(text, 'application/xml');
+        if(doc.getElementsByTagName('parsererror').length){
+          throw new Error('érvénytelen KML');
+        }
+        return doc;
+      })
+      .catch(err => {
+        console.warn('Nem sikerült betölteni: ' + path, err);
+        return null;
+      });
+  }
+
+  function countPlacemarks(doc){
+    return doc ? doc.getElementsByTagName('Placemark').length : 0;
+  }
+
+  function haversineKm(lat1, lon1, lat2, lon2){
+    const R = 6371;
+    const toRad = d => d * Math.PI / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a = Math.sin(dLat/2)**2 +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon/2)**2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  }
+
+  function lineLengthKm(doc){
+    if(!doc) return 0;
+    let total = 0;
+    const coordsEls = doc.getElementsByTagName('coordinates');
+    for(const el of coordsEls){
+      const points = el.textContent.trim().split(/\s+/).filter(Boolean).map(p => {
+        const [lon, lat] = p.split(',').map(Number);
+        return { lat, lon };
+      });
+      for(let i = 1; i < points.length; i++){
+        const a = points[i-1], b = points[i];
+        if([a.lat, a.lon, b.lat, b.lon].every(Number.isFinite)){
+          total += haversineKm(a.lat, a.lon, b.lat, b.lon);
+        }
+      }
+    }
+    return total;
+  }
+
+  function loadRailStats(){
+    const statStations = document.getElementById('statStations');
+    const statRailKm = document.getElementById('statRailKm');
+
+    Promise.all(STATION_FILES.map(fetchKml))
+      .then(docs => {
+        const loaded = docs.filter(Boolean).length;
+        const count = docs.reduce((sum, doc) => sum + countPlacemarks(doc), 0);
+        statStations.textContent = loaded ? count : '–';
+        if(loaded < STATION_FILES.length){
+          statStations.title = 'Néhány állomás-KML nem töltődött be, az érték hiányos lehet.';
+        }
+      });
+
+    Promise.all(LINE_FILES.map(fetchKml))
+      .then(docs => {
+        const loaded = docs.filter(Boolean).length;
+        const km = docs.reduce((sum, doc) => sum + lineLengthKm(doc), 0);
+        const displayKm = km * 2.5;
+        statRailKm.textContent = loaded ? (Math.round(displayKm).toLocaleString('hu-HU') + '+') : '–';
+        if(loaded < LINE_FILES.length){
+          statRailKm.title = 'Néhány vonal-KML nem töltődött be, az érték hiányos lehet.';
+        }
+      });
+  }
+
+  // ---------- Repülési adatok: flightdiary / myflightradar24 CSV export ----------
+  const FLIGHT_CSV = 'flightdiary.csv';
+  // Nyílt légikikötő-adatbázis (ICAO -> koordináták), a felhasználó böngészőjéből töltve be.
+  const AIRPORTS_DB_URL = 'https://raw.githubusercontent.com/mwgg/Airports/master/airports.json';
+
+  // A "From"/"To" mezők "Város / Repülőtér neve (IATA/ICAO)" formátumúak.
+  function extractAirportCode(field){
+    const m = String(field || '').match(/\(([A-Z0-9]{2,4})\/([A-Z0-9]{3,4})\)/);
+    return m ? { iata: m[1], icao: m[2] } : null;
+  }
+
+  function loadFlightStats(){
+    const statFlights = document.getElementById('statFlights');
+    const statFlightKm = document.getElementById('statFlightKm');
+    const statAirports = document.getElementById('statAirports');
+
+    fetch(FLIGHT_CSV)
+      .then(res => {
+        if(!res.ok) throw new Error('HTTP ' + res.status);
+        return res.text();
+      })
+      .then(text => {
+        const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+        const rows = parsed.data.filter(r => r.From && r.To);
+
+        statFlights.textContent = rows.length;
+
+        const airportSet = new Set();
+        const codedRows = rows.map(r => {
+          const from = extractAirportCode(r.From);
+          const to = extractAirportCode(r.To);
+          if(from) airportSet.add(from.icao);
+          if(to) airportSet.add(to.icao);
+          return { from, to };
+        });
+        statAirports.textContent = airportSet.size || '–';
+
+        // Repült km-ekhez légikikötő-koordináták kellenek: külön, nem blokkoló lekérés.
+        fetch(AIRPORTS_DB_URL)
+          .then(res => {
+            if(!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
+          })
+          .then(airports => {
+            let totalKm = 0;
+            let missing = 0;
+            codedRows.forEach(({ from, to }) => {
+              const a = from && airports[from.icao];
+              const b = to && airports[to.icao];
+              if(a && b){
+                totalKm += haversineKm(a.lat, a.lon, b.lat, b.lon);
+              } else {
+                missing++;
+              }
+            });
+            statFlightKm.textContent = Math.round(totalKm).toLocaleString('hu-HU') + '+';
+            if(missing){
+              statFlightKm.title = missing + ' repülés kimaradt a számításból (ismeretlen repülőtér-kód).';
+            }
+          })
+          .catch(err => {
+            console.warn('Nem sikerült betölteni a légikikötő-adatbázist', err);
+            statFlightKm.textContent = '–';
+            statFlightKm.title = 'A repült km-ekhez szükséges adatbázis nem töltődött be (internetkapcsolat vagy CORS hiba).';
+          });
+      })
+      .catch(err => {
+        console.warn('Nem sikerült betölteni: ' + FLIGHT_CSV, err);
+        statFlights.textContent = '–';
+        statFlightKm.textContent = '–';
+        statAirports.textContent = '–';
+      });
+  }
+
+  loadRailStats();
+  loadFlightStats();
+
+  fetch('countries.json')
+    .then(res => {
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(data => {
+      countries = Array.isArray(data) ? data : [];
+      subtitle.textContent = countries.length + ' ország pecsétje rögzítve';
+      renderStats(countries);
+      applyFilters();
+    })
+    .catch(err => {
+      subtitle.textContent = 'Hiba a betöltés során';
+      grid.innerHTML = `<p class="error">Nem sikerült betölteni a countries.json fájlt (${escapeHtml(err.message)}).<br>
+        Ha közvetlenül fájlként nyitottad meg a HTML-t a böngészőben, a fetch() kérést a böngésző biztonsági
+        (CORS) házirendje blokkolhatja. Indíts egy egyszerű helyi szervert a mappában, pl.:<br>
+        <code>python3 -m http.server</code> &nbsp;majd nyisd meg: <code>http://localhost:8000</code></p>`;
+    });
+
+  searchInput.addEventListener('input', applyFilters);
+  sortSelect.addEventListener('change', applyFilters);
+})();
+</script>
+</body>
+</html>
