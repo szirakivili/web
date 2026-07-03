@@ -89,6 +89,11 @@
     letter-spacing:.03em;
     margin:0 0 40px;
   }
+  .subtitle.flags{
+    font-size:19px;
+    letter-spacing:.12em;
+    line-height:1.6;
+  }
 
   .stats-row{
     display:flex;
@@ -125,6 +130,27 @@
     font-size:34px;
     display:block;
     color:var(--paper);
+    position:relative;
+    min-height:1.15em;
+  }
+  .stat-num.loading{
+    color:transparent;
+  }
+  .stat-num.loading::after{
+    content:"";
+    position:absolute;
+    left:2px;
+    top:50%;
+    width:20px;
+    height:20px;
+    margin-top:-10px;
+    border:2.5px solid rgba(241,233,216,0.25);
+    border-top-color:var(--gold);
+    border-radius:50%;
+    animation:stat-spin .8s linear infinite;
+  }
+  @keyframes stat-spin{
+    to{ transform:rotate(360deg); }
   }
   .stat-label{
     font-family:'IBM Plex Mono', monospace;
@@ -284,12 +310,18 @@
     margin-top:8px;
     overflow:hidden;
     white-space:nowrap;
+  }
+  .cities-ticker.scrolling{
     -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
     mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   }
   .cities-ticker-track{
     display:inline-flex;
-    animation: ticker-scroll linear infinite;
+  }
+  .cities-ticker-track.scrolling{
+    animation-name:ticker-scroll;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
   }
   .cities-ticker-track span{
     display:inline-block;
@@ -304,6 +336,10 @@
     content:"·";
     margin-left:22px;
     color:var(--gold);
+  }
+  .cities-ticker-track:not(.scrolling) span:last-child::after{
+    content:"";
+    margin-left:0;
   }
   @keyframes ticker-scroll{
     from{ transform:translateX(0); }
@@ -331,19 +367,12 @@
 
   @media (prefers-reduced-motion: reduce){
     .card{transition:none;}
-    .cities-ticker-track{animation-play-state:paused;}
+    .cities-ticker-track.scrolling{animation-play-state:paused;}
+    .stat-num.loading::after{animation-play-state:paused;}
   }
 </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-F7NERFLG67');
-</script>
 <body>
   <header class="cover">
     <div class="cover-inner">
@@ -352,28 +381,28 @@
       <p class="subtitle" id="subtitle">Betöltés folyamatban&hellip;</p>
 
       <div class="stats-row" id="statsRow">
-        <div class="stat"><span class="stat-num" id="statCountries">–</span><span class="stat-label">Ország</span></div>
-        <div class="stat"><span class="stat-num" id="statCities">–</span><span class="stat-label">város</span></div>
-        <div class="stat"><span class="stat-num" id="statVisits">–</span><span class="stat-label">utazás</span></div>
+        <div class="stat"><span class="stat-num loading" id="statCountries"></span><span class="stat-label">Ország</span></div>
+        <div class="stat"><span class="stat-num loading" id="statCities"></span><span class="stat-label">város</span></div>
+        <div class="stat"><span class="stat-num loading" id="statVisits"></span><span class="stat-label">utazás</span></div>
         <a class="stat stat-link" href="https://www.google.com/maps/d/u/0/edit?mid=1eXypwr0uwRkDLH80I0lwUHymxqsOFBA&amp;usp=sharing" target="_blank" rel="noopener">
-          <span class="stat-num" id="statStays">–</span><span class="stat-label">Szállás</span>
+          <span class="stat-num loading" id="statStays"></span><span class="stat-label">Szállás</span>
         </a>
         <a class="stat stat-link" href="../mytrainmap" target="_blank" rel="noopener">
-          <span class="stat-num" id="statStations">–</span><span class="stat-label">Vasútállomás</span>
+          <span class="stat-num loading" id="statStations"></span><span class="stat-label">Vasútállomás</span>
         </a>
         <a class="stat stat-link" href="../mytrainmap" target="_blank" rel="noopener">
-          <span class="stat-num" id="statRailKm">–</span><span class="stat-label">Km vasúton</span>
+          <span class="stat-num loading" id="statRailKm"></span><span class="stat-label">Km vasúton</span>
         </a>
         <a class="stat stat-link" href="https://my.flightradar24.com/szirakivili" target="_blank" rel="noopener">
-          <span class="stat-num" id="statFlights">–</span><span class="stat-label">Repülés</span>
+          <span class="stat-num loading" id="statFlights"></span><span class="stat-label">Repülés</span>
         </a>
         <a class="stat stat-link" href="https://my.flightradar24.com/szirakivili" target="_blank" rel="noopener">
-          <span class="stat-num" id="statFlightKm">–</span><span class="stat-label">Km levegőben</span>
+          <span class="stat-num loading" id="statFlightKm"></span><span class="stat-label">Km levegőben</span>
         </a>
         <a class="stat stat-link" href="https://my.flightradar24.com/szirakivili" target="_blank" rel="noopener">
-          <span class="stat-num" id="statAirports">–</span><span class="stat-label">Reptér</span>
+          <span class="stat-num loading" id="statAirports"></span><span class="stat-label">Reptér</span>
         </a>
-        <div class="stat"><span class="stat-num" id="statCarKm">–</span><span class="stat-label">Km autóval</span></div>
+        <div class="stat"><span class="stat-num loading" id="statCarKm"></span><span class="stat-label">Km autóval</span></div>
       </div>
     </div>
   </header>
@@ -411,6 +440,24 @@
       if(u.protocol === 'http:' || u.protocol === 'https:') return u.href;
     }catch(e){ /* érvénytelen URL, figyelmen kívül hagyjuk */ }
     return null;
+  }
+
+  function animateNumber(el, target, opts = {}){
+    const { duration = 1100, suffix = '', formatter = n => String(n), startTime } = opts;
+    if(!el) return;
+    const start = startTime || performance.now();
+    function tick(now){
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const value = Math.round(target * eased);
+      el.textContent = formatter(value) + suffix;
+      if(t < 1){
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = formatter(target) + suffix;
+      }
+    }
+    requestAnimationFrame(tick);
   }
 
   function stampSVG(times){
@@ -473,13 +520,27 @@
           ${cities.length ? `
           <div class="cities-heading">városok</div>
           <div class="cities-ticker" aria-label="városok: ${escapeHtml(cities.join(', '))}">
-            <div class="cities-ticker-track" style="animation-duration:${Math.max(8, cities.join(' ').length * 0.35)}s" aria-hidden="true">
-              ${cities.map(city => `<span>${escapeHtml(city)}</span>`).join('')}
+            <div class="cities-ticker-track">
               ${cities.map(city => `<span>${escapeHtml(city)}</span>`).join('')}
             </div>
           </div>` : ''}
         </div>
       </article>`;
+  }
+
+  function setupTickers(){
+    document.querySelectorAll('.cities-ticker').forEach(ticker => {
+      const track = ticker.querySelector('.cities-ticker-track');
+      if(!track) return;
+      const overflowing = track.scrollWidth > ticker.clientWidth + 1;
+      if(overflowing){
+        track.innerHTML += track.innerHTML; // duplikálás a végtelenített pörgetéshez
+        const totalLength = track.textContent.length;
+        track.style.animationDuration = Math.max(8, totalLength * 0.35) + 's';
+        track.classList.add('scrolling');
+        ticker.classList.add('scrolling');
+      }
+    });
   }
 
   function render(list){
@@ -488,6 +549,21 @@
       return;
     }
     grid.innerHTML = list.map(cardHTML).join('');
+    requestAnimationFrame(setupTickers);
+  }
+
+  function timesRank(t){
+    if(t === -1) return 2; // otthon - mindig legelöl
+    if(t === 0) return 1;  // sok (megszámlálhatatlan) - utána
+    return 0;               // normál, számmal megadott látogatásszám
+  }
+
+  function compareTimes(a, b){
+    const ta = Number(a.times) || 0, tb = Number(b.times) || 0;
+    const ra = timesRank(ta), rb = timesRank(tb);
+    if(ra !== rb) return rb - ra;
+    if(ra === 0 && ta !== tb) return tb - ta;
+    return a.name.localeCompare(b.name, 'hu');
   }
 
   function applyFilters(){
@@ -497,7 +573,7 @@
     let list = countries.filter(c => c.name.toLowerCase().includes(q));
 
     list.sort((a, b) => {
-      if(sortBy === 'times') return (Number(b.times)||0) - (Number(a.times)||0);
+      if(sortBy === 'times') return compareTimes(a, b);
       if(sortBy === 'cities') return (b.cities?.length||0) - (a.cities?.length||0);
       return a.name.localeCompare(b.name, 'hu');
     });
@@ -505,7 +581,7 @@
     render(list);
   }
 
-  function renderStats(list){
+  function computeCountryStats(list){
     const totalCountries = list.length;
     const totalCities = list.reduce((sum, c) => sum + (c.cities?.length || 0), 0);
     const totalVisits = list.reduce((sum, c) => {
@@ -514,11 +590,15 @@
     }, 0);
     const totalStays = list.reduce((sum, c) => sum + (Number(c.accomodations) || 0), 0);
     const hasMany = list.some(c => Number(c.times) === 0);
+    return { totalCountries, totalCities, totalVisits, totalStays, hasMany };
+  }
 
-    document.getElementById('statCountries').textContent = totalCountries;
-    document.getElementById('statCities').textContent = totalCities + (totalCities ? '+' : '');
-    document.getElementById('statVisits').textContent = totalVisits + (hasMany ? '+' : '');
-    document.getElementById('statStays').textContent = totalStays;
+  function flagsSubtitle(list){
+    const flags = [...list]
+      .sort(compareTimes)
+      .map(c => c.flag)
+      .filter(Boolean);
+    return flags.length ? flags.join(' ') : (list.length + ' ország bejegyzésben rögzítve');
   }
 
   // ---------- Vasúti adatok: állomások és vonalak KML-ekből ----------
@@ -589,43 +669,26 @@
     return total;
   }
 
-  function loadCarStats(){
-    const statCarKm = document.getElementById('statCarKm');
-    Promise.all(CAR_FILES.map(fetchKml))
-      .then(docs => {
-        const loaded = docs.filter(Boolean).length;
-        const km = docs.reduce((sum, doc) => sum + lineLengthKm(doc), 0);
-        statCarKm.textContent = loaded ? (Math.round(km).toLocaleString('hu-HU') + '+') : '–';
-        if(loaded < LINE_FILES.length){
-          statCarKm.title = 'Néhány autóút-KML nem töltődött be, az érték hiányos lehet.';
-        }
-      });
+  function loadCarStatsData(){
+    return Promise.all(CAR_FILES.map(fetchKml)).then(docs => {
+      const loaded = docs.filter(Boolean).length;
+      const km = docs.reduce((sum, doc) => sum + lineLengthKm(doc), 0);
+      return { carKm: loaded ? Math.round(km) : null, partial: loaded < CAR_FILES.length };
+    });
   }
 
-  function loadRailStats(){
-    const statStations = document.getElementById('statStations');
-    const statRailKm = document.getElementById('statRailKm');
-
-    Promise.all(STATION_FILES.map(fetchKml))
-      .then(docs => {
-        const loaded = docs.filter(Boolean).length;
-        const count = docs.reduce((sum, doc) => sum + countPlacemarks(doc), 0);
-        statStations.textContent = loaded ? count : '–';
-        if(loaded < STATION_FILES.length){
-          statStations.title = 'Néhány állomás-KML nem töltődött be, az érték hiányos lehet.';
-        }
-      });
-
-    Promise.all(LINE_FILES.map(fetchKml))
-      .then(docs => {
-        const loaded = docs.filter(Boolean).length;
-        const km = docs.reduce((sum, doc) => sum + lineLengthKm(doc), 0);
-        const displayKm = km * 2.5;
-        statRailKm.textContent = loaded ? (Math.round(displayKm).toLocaleString('hu-HU') + '+') : '–';
-        if(loaded < LINE_FILES.length){
-          statRailKm.title = 'Néhány vonal-KML nem töltődött be, az érték hiányos lehet.';
-        }
-      });
+  function loadRailStatsData(){
+    const stationsP = Promise.all(STATION_FILES.map(fetchKml)).then(docs => {
+      const loaded = docs.filter(Boolean).length;
+      const count = docs.reduce((sum, doc) => sum + countPlacemarks(doc), 0);
+      return { value: loaded ? count : null, partial: loaded < STATION_FILES.length };
+    });
+    const railKmP = Promise.all(LINE_FILES.map(fetchKml)).then(docs => {
+      const loaded = docs.filter(Boolean).length;
+      const km = docs.reduce((sum, doc) => sum + lineLengthKm(doc), 0);
+      return { value: loaded ? Math.round(km * 2.5) : null, partial: loaded < LINE_FILES.length };
+    });
+    return Promise.all([stationsP, railKmP]).then(([stations, railKm]) => ({ stations, railKm }));
   }
 
   // ---------- Repülési adatok: flightdiary / myflightradar24 CSV export ----------
@@ -639,12 +702,8 @@
     return m ? { iata: m[1], icao: m[2] } : null;
   }
 
-  function loadFlightStats(){
-    const statFlights = document.getElementById('statFlights');
-    const statFlightKm = document.getElementById('statFlightKm');
-    const statAirports = document.getElementById('statAirports');
-
-    fetch(FLIGHT_CSV)
+  function loadFlightStatsData(){
+    return fetch(FLIGHT_CSV)
       .then(res => {
         if(!res.ok) throw new Error('HTTP ' + res.status);
         return res.text();
@@ -652,8 +711,6 @@
       .then(text => {
         const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
         const rows = parsed.data.filter(r => r.From && r.To);
-
-        statFlights.textContent = rows.length;
 
         const airportSet = new Set();
         const codedRows = rows.map(r => {
@@ -663,10 +720,8 @@
           if(to) airportSet.add(to.icao);
           return { from, to };
         });
-        statAirports.textContent = airportSet.size || '–';
 
-        // Repült km-ekhez légikikötő-koordináták kellenek: külön, nem blokkoló lekérés.
-        fetch(AIRPORTS_DB_URL)
+        return fetch(AIRPORTS_DB_URL)
           .then(res => {
             if(!res.ok) throw new Error('HTTP ' + res.status);
             return res.json();
@@ -683,47 +738,99 @@
                 missing++;
               }
             });
-            statFlightKm.textContent = Math.round(totalKm).toLocaleString('hu-HU') + '+';
-            if(missing){
-              statFlightKm.title = missing + ' repülés kimaradt a számításból (ismeretlen repülőtér-kód).';
-            }
+            return { flights: rows.length, airports: airportSet.size || null, flightKm: Math.round(totalKm), missing };
           })
           .catch(err => {
             console.warn('Nem sikerült betölteni a légikikötő-adatbázist', err);
-            statFlightKm.textContent = '–';
-            statFlightKm.title = 'A repült km-ekhez szükséges adatbázis nem töltődött be (internetkapcsolat vagy CORS hiba).';
+            return { flights: rows.length, airports: airportSet.size || null, flightKm: null, missing: null };
           });
       })
       .catch(err => {
         console.warn('Nem sikerült betölteni: ' + FLIGHT_CSV, err);
-        statFlights.textContent = '–';
-        statFlightKm.textContent = '–';
-        statAirports.textContent = '–';
+        return { flights: null, airports: null, flightKm: null, missing: null };
       });
   }
 
-  loadRailStats();
-  loadFlightStats();
-  loadCarStats();
+  function loadCountriesAndRender(){
+    return fetch('countries.json')
+      .then(res => {
+        if(!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(data => {
+        countries = Array.isArray(data) ? data : [];
+        subtitle.textContent = flagsSubtitle(countries);
+        subtitle.classList.toggle('flags', countries.some(c => c.flag));
+        applyFilters();
+        return computeCountryStats(countries);
+      })
+      .catch(err => {
+        subtitle.textContent = 'Hiba a betöltés során';
+        grid.innerHTML = `<p class="error">Nem sikerült betölteni a countries.json fájlt (${escapeHtml(err.message)}).<br>
+          Ha közvetlenül fájlként nyitottad meg a HTML-t a böngészőben, a fetch() kérést a böngésző biztonsági
+          (CORS) házirendje blokkolhatja. Indíts egy egyszerű helyi szervert a mappában, pl.:<br>
+          <code>python3 -m http.server</code> &nbsp;majd nyisd meg: <code>http://localhost:8000</code></p>`;
+        return null;
+      });
+  }
 
-  fetch('countries.json')
-    .then(res => {
-      if(!res.ok) throw new Error('HTTP ' + res.status);
-      return res.json();
-    })
-    .then(data => {
-      countries = Array.isArray(data) ? data : [];
-      subtitle.textContent = countries.length + ' ország pecsétje rögzítve';
-      renderStats(countries);
-      applyFilters();
-    })
-    .catch(err => {
-      subtitle.textContent = 'Hiba a betöltés során';
-      grid.innerHTML = `<p class="error">Nem sikerült betölteni a countries.json fájlt (${escapeHtml(err.message)}).<br>
-        Ha közvetlenül fájlként nyitottad meg a HTML-t a böngészőben, a fetch() kérést a böngésző biztonsági
-        (CORS) házirendje blokkolhatja. Indíts egy egyszerű helyi szervert a mappában, pl.:<br>
-        <code>python3 -m http.server</code> &nbsp;majd nyisd meg: <code>http://localhost:8000</code></p>`;
+  // ---------- Minden statcsoport önállóan pörög fel, amint elkészült ----------
+  function revealAndAnimate(id, value, opts){
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.classList.remove('loading');
+    if(value === null || value === undefined){
+      el.textContent = '–';
+      return;
+    }
+    animateNumber(el, value, { duration: 2400, ...opts });
+  }
+
+  function initStats(){
+    loadCountriesAndRender().then(countryStats => {
+      if(countryStats){
+        revealAndAnimate('statCountries', countryStats.totalCountries);
+        revealAndAnimate('statCities', countryStats.totalCities, { suffix: countryStats.totalCities ? '+' : '' });
+        revealAndAnimate('statVisits', countryStats.totalVisits, { suffix: countryStats.hasMany ? '+' : '' });
+        revealAndAnimate('statStays', countryStats.totalStays);
+      } else {
+        ['statCountries', 'statCities', 'statVisits', 'statStays'].forEach(id => revealAndAnimate(id, null));
+      }
     });
+
+    loadRailStatsData().then(railStats => {
+      revealAndAnimate('statStations', railStats.stations.value);
+      if(railStats.stations.partial){
+        const el = document.getElementById('statStations');
+        if(el) el.title = 'Néhány állomás-KML nem töltődött be, az érték hiányos lehet.';
+      }
+      revealAndAnimate('statRailKm', railStats.railKm.value, { suffix: '+', formatter: n => n.toLocaleString('hu-HU') });
+      if(railStats.railKm.partial){
+        const el = document.getElementById('statRailKm');
+        if(el) el.title = 'Néhány vonal-KML nem töltődött be, az érték hiányos lehet.';
+      }
+    });
+
+    loadFlightStatsData().then(flightStats => {
+      revealAndAnimate('statFlights', flightStats.flights);
+      revealAndAnimate('statAirports', flightStats.airports);
+      revealAndAnimate('statFlightKm', flightStats.flightKm, { suffix: '+', formatter: n => n.toLocaleString('hu-HU') });
+      if(flightStats.missing){
+        const el = document.getElementById('statFlightKm');
+        if(el) el.title = flightStats.missing + ' repülés kimaradt a számításból (ismeretlen repülőtér-kód).';
+      }
+    });
+
+    loadCarStatsData().then(carStats => {
+      revealAndAnimate('statCarKm', carStats.carKm, { suffix: '+', formatter: n => n.toLocaleString('hu-HU') });
+      if(carStats.partial){
+        const el = document.getElementById('statCarKm');
+        if(el) el.title = 'Néhány autóút-KML nem töltődött be, az érték hiányos lehet.';
+      }
+    });
+  }
+
+  initStats();
 
   searchInput.addEventListener('input', applyFilters);
   sortSelect.addEventListener('change', applyFilters);
