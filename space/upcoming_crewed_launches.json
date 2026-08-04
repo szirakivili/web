@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-03T06:35:47Z",
+  "fetched_at": "2026-08-04T06:04:29Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=true&format=json&mode=detailed&limit=10",
   "payload": {
     "count": 5,
@@ -14,21 +14,21 @@
         "slug": "falcon-9-block-5-crew-13",
         "launch_designator": null,
         "status": {
-          "id": 2,
-          "name": "To Be Determined",
-          "abbrev": "TBD",
-          "description": "Current date is a placeholder or rough estimation based on unreliable or interpreted sources."
+          "id": 1,
+          "name": "Go for Launch",
+          "abbrev": "Go",
+          "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2026-08-01T00:05:25Z",
-        "net": "2026-09-30T00:00:00Z",
+        "last_updated": "2026-08-03T16:17:11Z",
+        "net": "2026-09-12T22:34:00Z",
         "net_precision": {
-          "id": 7,
-          "name": "Month",
-          "abbrev": "M",
-          "description": "The T-0 is expected in the given month."
+          "id": 1,
+          "name": "Minute",
+          "abbrev": "MIN",
+          "description": "The T-0 is accurate to the minute."
         },
-        "window_end": "2026-09-30T00:00:00Z",
-        "window_start": "2026-09-30T00:00:00Z",
+        "window_end": "2026-09-12T22:34:00Z",
+        "window_start": "2026-09-12T22:34:00Z",
         "image": {
           "id": 1385,
           "name": "Crew Dragon at sunset",
@@ -125,7 +125,7 @@
           "consecutive_successful_launches": 196,
           "successful_launches": 696,
           "failed_launches": 15,
-          "pending_launches": 128,
+          "pending_launches": 127,
           "consecutive_successful_landings": 3,
           "successful_landings": 654,
           "failed_landings": 29,
@@ -312,7 +312,7 @@
                     "consecutive_successful_launches": 196,
                     "successful_launches": 696,
                     "failed_launches": 15,
-                    "pending_launches": 128,
+                    "pending_launches": 127,
                     "consecutive_successful_landings": 3,
                     "successful_landings": 654,
                     "failed_landings": 29,
@@ -419,7 +419,7 @@
                 "consecutive_successful_launches": 319,
                 "successful_launches": 682,
                 "failed_launches": 7,
-                "pending_launches": 125,
+                "pending_launches": 124,
                 "attempted_landings": 661,
                 "successful_landings": 643,
                 "failed_landings": 19,
@@ -506,7 +506,7 @@
                     "consecutive_successful_launches": 196,
                     "successful_launches": 696,
                     "failed_launches": 15,
-                    "pending_launches": 128,
+                    "pending_launches": 127,
                     "consecutive_successful_landings": 3,
                     "successful_landings": 654,
                     "failed_landings": 29,
@@ -693,7 +693,7 @@
                 "consecutive_successful_launches": 317,
                 "successful_launches": 668,
                 "failed_launches": 4,
-                "pending_launches": 111,
+                "pending_launches": 110,
                 "attempted_landings": 636,
                 "successful_landings": 622,
                 "failed_landings": 15,
@@ -780,7 +780,7 @@
               "consecutive_successful_launches": 196,
               "successful_launches": 696,
               "failed_launches": 15,
-              "pending_launches": 128,
+              "pending_launches": 127,
               "consecutive_successful_landings": 3,
               "successful_landings": 654,
               "failed_landings": 29,
@@ -1060,7 +1060,7 @@
             "consecutive_successful_launches": 317,
             "successful_launches": 614,
             "failed_launches": 1,
-            "pending_launches": 111,
+            "pending_launches": 110,
             "attempted_landings": 605,
             "successful_landings": 600,
             "failed_landings": 5,
@@ -1071,25 +1071,25 @@
             {
               "id": 924,
               "type": "Core",
-              "reused": null,
-              "launcher_flight_number": null,
+              "reused": true,
+              "launcher_flight_number": 3,
               "launcher": {
                 "response_mode": "normal",
-                "id": 106,
-                "url": "https://ll.thespacedevs.com/2.3.0/launchers/106/?format=json",
-                "flight_proven": false,
-                "serial_number": "Unknown F9",
-                "is_placeholder": true,
+                "id": 240,
+                "url": "https://ll.thespacedevs.com/2.3.0/launchers/240/?format=json",
+                "flight_proven": true,
+                "serial_number": "B1101",
+                "is_placeholder": false,
                 "status": {
-                  "id": 8,
-                  "name": "N/A"
+                  "id": 3,
+                  "name": "active"
                 },
                 "image": {
-                  "id": 1674,
-                  "name": "[AUTO] Unknown F9 - image",
-                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/106_image_20230708172214.png",
-                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193443.png",
-                  "credit": null,
+                  "id": 2688,
+                  "name": "B1101 at SLC-40 (Crew-12)",
+                  "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/b1101_at_slc-40_image_20260208171031.jpg",
+                  "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/b1101_at_slc-40_image_thumbnail_20260208171033.jpeg",
+                  "credit": "SpaceX",
                   "license": {
                     "id": 1,
                     "name": "Unknown",
@@ -1099,22 +1099,22 @@
                   "single_use": true,
                   "variants": []
                 },
-                "details": "Booster serial number unknown.",
-                "successful_landings": null,
-                "attempted_landings": null,
-                "flights": null,
-                "last_launch_date": null,
-                "first_launch_date": null,
-                "fastest_turnaround": null
+                "details": "Falcon 9 booster.",
+                "successful_landings": 2,
+                "attempted_landings": 2,
+                "flights": 2,
+                "last_launch_date": "2026-02-13T10:15:56Z",
+                "first_launch_date": "2026-01-04T06:48:10Z",
+                "fastest_turnaround": "P40DT3H27M46S"
               },
-              "previous_flight_date": null,
-              "turn_around_time": null,
+              "previous_flight_date": "2026-02-13T10:15:56Z",
+              "turn_around_time": "P211DT12H18M4S",
               "landing": {
                 "id": 1847,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1847/?format=json",
                 "attempt": true,
                 "success": null,
-                "description": "The Falcon 9 first stage will land back at the launch site after its flight.",
+                "description": "The Falcon 9 first stage B1101 will land back at the launch site after its 3rd flight.",
                 "downrange_distance": 0.3,
                 "landing_location": {
                   "id": 62,
@@ -1218,7 +1218,11 @@
                   "description": "A return to launch site usually means that after stage separation the booster flips and does a burn back towards the launch site, landing near where it initially launched from."
                 }
               },
-              "previous_flight": null
+              "previous_flight": {
+                "id": "862b54e3-7bf8-48e5-8cd1-d77257d5fde9",
+                "url": "https://ll.thespacedevs.com/2.3.0/launches/862b54e3-7bf8-48e5-8cd1-d77257d5fde9/?format=json",
+                "name": "Falcon 9 Block 5 | Crew-12"
+              }
             }
           ],
           "spacecraft_stage": [
@@ -1229,11 +1233,11 @@
               "mission_end": null,
               "spacecraft": {
                 "response_mode": "normal",
-                "id": 452,
-                "url": "https://ll.thespacedevs.com/2.3.0/spacecraft/452/?format=json",
-                "name": "Crew Dragon",
-                "serial_number": "TBD",
-                "is_placeholder": true,
+                "id": 595,
+                "url": "https://ll.thespacedevs.com/2.3.0/spacecraft/595/?format=json",
+                "name": "Crew Dragon Grace",
+                "serial_number": "C213",
+                "is_placeholder": false,
                 "image": {
                   "id": 1181,
                   "name": "Crew Dragon docking",
@@ -1250,15 +1254,15 @@
                   "variants": []
                 },
                 "in_space": false,
-                "time_in_space": "P0D",
-                "time_docked": "P0D",
-                "flights_count": 0,
-                "mission_ends_count": 0,
+                "time_in_space": "P20DT2H58M8S",
+                "time_docked": "P18DT44M",
+                "flights_count": 1,
+                "mission_ends_count": 1,
                 "status": {
                   "id": 1,
                   "name": "Active"
                 },
-                "description": "The specific spacecraft for this launch is currently unknown.",
+                "description": "Crew Dragon spacecraft first used for Axiom-4.",
                 "spacecraft_config": {
                   "response_mode": "detailed",
                   "id": 6,
@@ -1582,7 +1586,7 @@
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1848/?format=json",
                 "attempt": true,
                 "success": null,
-                "description": "The Crew Dragon capsule will splash down in the Pacific Ocean.",
+                "description": "The Crew Dragon Grace capsule will splash down in the Pacific Ocean.",
                 "downrange_distance": null,
                 "landing_location": {
                   "id": 18,
@@ -1651,7 +1655,7 @@
                 }
               },
               "duration": null,
-              "turn_around_time": null,
+              "turn_around_time": "P424DT13H4M",
               "response_mode": "detailed",
               "launch_crew": [
                 {
@@ -1853,8 +1857,8 @@
                     "url": "https://ll.thespacedevs.com/2.3.0/astronauts/710/?format=json",
                     "name": "Luke Delaney",
                     "status": {
-                      "id": 3,
-                      "name": "In-Training"
+                      "id": 1,
+                      "name": "Active"
                     },
                     "agency": {
                       "response_mode": "list",
@@ -2181,8 +2185,8 @@
                     "url": "https://ll.thespacedevs.com/2.3.0/astronauts/710/?format=json",
                     "name": "Luke Delaney",
                     "status": {
-                      "id": 3,
-                      "name": "In-Training"
+                      "id": 1,
+                      "name": "Active"
                     },
                     "agency": {
                       "response_mode": "list",
@@ -2938,16 +2942,32 @@
             }
           }
         ],
-        "orbital_launch_attempt_count": 7390,
-        "location_launch_attempt_count": 1129,
+        "orbital_launch_attempt_count": 7376,
+        "location_launch_attempt_count": 1127,
         "pad_launch_attempt_count": 399,
-        "agency_launch_attempt_count": 727,
-        "orbital_launch_attempt_count_year": 217,
-        "location_launch_attempt_count_year": 53,
+        "agency_launch_attempt_count": 719,
+        "orbital_launch_attempt_count_year": 203,
+        "location_launch_attempt_count_year": 51,
         "pad_launch_attempt_count_year": 45,
-        "agency_launch_attempt_count_year": 108,
+        "agency_launch_attempt_count_year": 100,
         "flightclub_url": "https://flightclub.io/result?llId=18441371-8b2e-457c-afb5-1ec1b11ab630",
         "updates": [
+          {
+            "id": 15726,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Updated launch time.",
+            "info_url": "https://www.launchphotography.com/Launch_Viewing_Guide.html",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-08-03T16:17:00Z"
+          },
+          {
+            "id": 15724,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "NET September 12.",
+            "info_url": "https://www.youtube.com/watch?v=IDUtReQSlb0",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-08-03T16:09:00Z"
+          },
           {
             "id": 14796,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -2960,7 +2980,7 @@
         "info_urls": [],
         "vid_urls": [],
         "timeline": [],
-        "pad_turnaround": "P30D",
+        "pad_turnaround": "P27DT21H22M",
         "mission_patches": []
       },
       {
@@ -3731,8 +3751,8 @@
                     "url": "https://ll.thespacedevs.com/2.3.0/astronauts/709/?format=json",
                     "name": "Deniz Burnham",
                     "status": {
-                      "id": 3,
-                      "name": "In-Training"
+                      "id": 1,
+                      "name": "Active"
                     },
                     "agency": {
                       "response_mode": "list",
@@ -3941,8 +3961,8 @@
                     "url": "https://ll.thespacedevs.com/2.3.0/astronauts/709/?format=json",
                     "name": "Deniz Burnham",
                     "status": {
-                      "id": 3,
-                      "name": "In-Training"
+                      "id": 1,
+                      "name": "Active"
                     },
                     "agency": {
                       "response_mode": "list",
@@ -6497,7 +6517,7 @@
           "consecutive_successful_launches": 196,
           "successful_launches": 696,
           "failed_launches": 15,
-          "pending_launches": 128,
+          "pending_launches": 127,
           "consecutive_successful_landings": 3,
           "successful_landings": 654,
           "failed_landings": 29,
@@ -6684,7 +6704,7 @@
                     "consecutive_successful_launches": 196,
                     "successful_launches": 696,
                     "failed_launches": 15,
-                    "pending_launches": 128,
+                    "pending_launches": 127,
                     "consecutive_successful_landings": 3,
                     "successful_landings": 654,
                     "failed_landings": 29,
@@ -6791,7 +6811,7 @@
                 "consecutive_successful_launches": 319,
                 "successful_launches": 682,
                 "failed_launches": 7,
-                "pending_launches": 125,
+                "pending_launches": 124,
                 "attempted_landings": 661,
                 "successful_landings": 643,
                 "failed_landings": 19,
@@ -6878,7 +6898,7 @@
                     "consecutive_successful_launches": 196,
                     "successful_launches": 696,
                     "failed_launches": 15,
-                    "pending_launches": 128,
+                    "pending_launches": 127,
                     "consecutive_successful_landings": 3,
                     "successful_landings": 654,
                     "failed_landings": 29,
@@ -7065,7 +7085,7 @@
                 "consecutive_successful_launches": 317,
                 "successful_launches": 668,
                 "failed_launches": 4,
-                "pending_launches": 111,
+                "pending_launches": 110,
                 "attempted_landings": 636,
                 "successful_landings": 622,
                 "failed_landings": 15,
@@ -7152,7 +7172,7 @@
               "consecutive_successful_launches": 196,
               "successful_launches": 696,
               "failed_launches": 15,
-              "pending_launches": 128,
+              "pending_launches": 127,
               "consecutive_successful_landings": 3,
               "successful_landings": 654,
               "failed_landings": 29,
@@ -7432,7 +7452,7 @@
             "consecutive_successful_launches": 317,
             "successful_launches": 614,
             "failed_launches": 1,
-            "pending_launches": 111,
+            "pending_launches": 110,
             "attempted_landings": 605,
             "successful_landings": 600,
             "failed_landings": 5,
@@ -8480,7 +8500,7 @@
           "consecutive_successful_launches": 196,
           "successful_launches": 696,
           "failed_launches": 15,
-          "pending_launches": 128,
+          "pending_launches": 127,
           "consecutive_successful_landings": 3,
           "successful_landings": 654,
           "failed_landings": 29,
@@ -8667,7 +8687,7 @@
                     "consecutive_successful_launches": 196,
                     "successful_launches": 696,
                     "failed_launches": 15,
-                    "pending_launches": 128,
+                    "pending_launches": 127,
                     "consecutive_successful_landings": 3,
                     "successful_landings": 654,
                     "failed_landings": 29,
@@ -8774,7 +8794,7 @@
                 "consecutive_successful_launches": 319,
                 "successful_launches": 682,
                 "failed_launches": 7,
-                "pending_launches": 125,
+                "pending_launches": 124,
                 "attempted_landings": 661,
                 "successful_landings": 643,
                 "failed_landings": 19,
@@ -8861,7 +8881,7 @@
                     "consecutive_successful_launches": 196,
                     "successful_launches": 696,
                     "failed_launches": 15,
-                    "pending_launches": 128,
+                    "pending_launches": 127,
                     "consecutive_successful_landings": 3,
                     "successful_landings": 654,
                     "failed_landings": 29,
@@ -9048,7 +9068,7 @@
                 "consecutive_successful_launches": 317,
                 "successful_launches": 668,
                 "failed_launches": 4,
-                "pending_launches": 111,
+                "pending_launches": 110,
                 "attempted_landings": 636,
                 "successful_landings": 622,
                 "failed_landings": 15,
@@ -9135,7 +9155,7 @@
               "consecutive_successful_launches": 196,
               "successful_launches": 696,
               "failed_launches": 15,
-              "pending_launches": 128,
+              "pending_launches": 127,
               "consecutive_successful_landings": 3,
               "successful_landings": 654,
               "failed_landings": 29,
@@ -9415,7 +9435,7 @@
             "consecutive_successful_launches": 317,
             "successful_launches": 614,
             "failed_launches": 1,
-            "pending_launches": 111,
+            "pending_launches": 110,
             "attempted_landings": 605,
             "successful_landings": 600,
             "failed_landings": 5,
