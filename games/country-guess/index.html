@@ -402,6 +402,14 @@
             color: var(--primary-color);
             margin-bottom: 20px;
         }
+
+        .timer-display {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--warning-color);
+            margin-bottom: 15px;
+            transition: color 0.3s;
+        }
     </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -453,6 +461,17 @@
         </div>
 
         <div class="option-group">
+            <label for="rounds">Körök száma:</label>
+            <select id="rounds" name="rounds">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="all">Az összes</option>
+            </select>
+        </div>
+
+        <div class="option-group">
             <div class="checkbox-container">
                 <input type="checkbox" id="timed" name="timed">
                 <label for="timed">Időre menjen</label>
@@ -492,6 +511,8 @@
     let paramsGlobal = {};
     let isGameActive = false;
     let gameArea = null;
+    let timerInterval;
+    let timeLeft = 20;
 
     function getContinentName(continent) {
         const translations = {
@@ -524,7 +545,8 @@
             type: params.get('type'),
             area: params.get('area'),
             timed: params.get('timed'),
-            mode: params.get('mode')
+            mode: params.get('mode'),
+            rounds: params.get('rounds')
         };
     }
 
@@ -568,7 +590,7 @@
         paramsGlobal = params;
         countriesDataGlobal = countriesData;
         
-        const hardMode = params.difficulty === 'hard' || params.timed === 'on';
+        const hardMode = params.difficulty === 'hard';
         const continentGame = params.type.startsWith('continent-');
         
         if (hardMode) {
@@ -588,6 +610,13 @@
         currentCountryIndex = 0;
         shuffledCountries = [...countriesData].sort(() => Math.random() - 0.5);
         displayQuestion();
+
+        if (params.rounds && params.rounds !== 'all') {
+            const numRounds = parseInt(params.rounds, 10);
+            if (!isNaN(numRounds) && numRounds < shuffledCountries.length) {
+                shuffledCountries = shuffledCountries.slice(0, numRounds);
+            }
+        }
     }
 
     function displayQuestion() {
@@ -699,19 +728,107 @@
             return `<button onclick="checkAnswer(this, '${btoa(option)}')">${buttonContent}</button>`;
         }).join('');
 
+        clearInterval(timerInterval); // Előző időzítő törlése biztos ami biztos
+        
+        let timerHTML = '';
+        if (paramsGlobal.timed === 'on') {
+            timerHTML = `<div class="timer-display" id="timer-display">20 mp</div>`;
+        }
+
         gameArea.innerHTML = `
             <div class="score-display">Helyes: ${score} | Rossz: ${incorrectAnswers}</div>
+            ${timerHTML}
             <div class="question-item">
                 <p>${questionText}</p>
                 ${questionItemHTML}
             </div>
             <div class="options-grid">${optionsHTML}</div>
         `;
+
+        if (paramsGlobal.timed === 'on') {
+            startTimer();
+        }
+    }
+
+    function startTimer() {
+        timeLeft = 20;
+        const timerDisplay = document.getElementById('timer-display');
+        timerDisplay.innerText = `${timeLeft} mp`;
+        timerDisplay.style.color = "var(--warning-color)";
+        
+        timerInterval = setInterval(() => {
+            timeLeft--;
+            if (timerDisplay) {
+                timerDisplay.innerText = `${timeLeft} mp`;
+                if (timeLeft <= 5) {
+                    timerDisplay.style.color = "var(--incorrect-answer)"; // Pirosra vált az utolsó 5 mp-ben
+                }
+            }
+            
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                handleTimeOut();
+            }
+        }, 1000);
+    }
+
+    function handleTimeOut() {
+        if (!isGameActive) return;
+        isGameActive = false;
+        
+        incorrectAnswers++;
+        document.querySelector('.score-display').innerText = `Helyes: ${score} | Rossz: ${incorrectAnswers}`;
+        
+        const timerDisplay = document.getElementById('timer-display');
+        if (timerDisplay) {
+            timerDisplay.innerText = "⏰ Lejárt az idő!";
+        }
+
+        // Helyes válasz kikeresése
+        let correctAnswers = [];
+        switch (paramsGlobal.type) {
+            case 'country-from-flag':
+            case 'country-from-coat-of-arms':
+            case 'country-from-capital':
+                correctAnswers.push(currentQuestion.translations.hun?.common || currentQuestion.translations.hun.official);
+                break;
+            case 'capital-from-country':
+                correctAnswers.push(currentQuestion.capital?.[0] || 'nincs fővárosa');
+                break;
+            case 'flag-from-country':
+                correctAnswers.push(currentQuestion.flags.png);
+                break;
+            case 'coat-of-arms-from-country':
+                correctAnswers.push(currentQuestion.coatOfArms.png);
+                break;
+            case 'continent-from-country':
+            case 'continent-from-flag':
+                correctAnswers = currentQuestion.continents.map(c => getContinentName(c));
+                break;
+        }
+
+        // Gombok letiltása és a helyes válasz megjelölése
+        const buttons = document.querySelectorAll('.options-grid button');
+        buttons.forEach(btn => {
+            btn.disabled = true;
+        });
+
+        correctAnswers.forEach(ans => {
+            const correctButton = Array.from(buttons).find(btn => atob(btn.onclick.toString().split("'")[1]) === ans);
+            if (correctButton) {
+                correctButton.classList.add('correct');
+            }
+        });
+
+        currentCountryIndex++;
+        setTimeout(displayQuestion, 3000);
     }
 
     function checkAnswer(button, encodedAnswer) {
         if (!isGameActive) return;
         isGameActive = false;
+
+        clearInterval(timerInterval); // időzítő leállítása kattintáskor
         
         const selectedAnswer = atob(encodedAnswer);
         let correctAnswers = [];
@@ -720,7 +837,7 @@
             case 'country-from-flag':
             case 'country-from-coat-of-arms':
             case 'country-from-capital':
-                correctAnswers.push(currentQuestion.translations.hun?.common || currentQuestion.name.common);
+                correctAnswers.push(currentQuestion.translations.hun?.common || currentQuestion.translations.hun.official);
                 break;
             case 'capital-from-country':
                 correctAnswers.push(currentQuestion.capital?.[0] || 'nincs fővárosa');
@@ -792,7 +909,7 @@
         }
 
         const currentCountry = countriesDataGlobal[currentCountryIndex];
-        const officialName = currentCountry.translations.hun?.official || currentCountry.name.common;
+        const officialName = currentCountry.translations.hun?.official || currentCountry.translations.hun?.common || 'Ismeretlen ország';
         const commonName = currentCountry.translations.hun?.common || '';
 
         let countryTitle = officialName;
@@ -857,9 +974,6 @@
         if (difficulty === 'hard') {
             isDisabled = true;
             message = 'A Nehéz játékmód még nem elérhető.';
-        } else if (isTimed) {
-            isDisabled = true;
-            message = 'Az időre menő játékmód még nem elérhető.';
         }
 
         startGameButton.disabled = isDisabled;
@@ -894,11 +1008,13 @@
             const difficulty = params.get('difficulty');
             const type = params.get('type');
             const timed = params.get('timed');
+            const rounds = params.get('rounds');
 
             if (difficulty) document.getElementById('difficulty').value = difficulty;
             if (type) document.getElementById('type').value = type;
             if (area) document.getElementById('area').value = area;
             if (timed === 'on') document.getElementById('timed').checked = true;
+            if (rounds) document.getElementById('rounds').value = rounds;
             
             showLoading();
             try {
