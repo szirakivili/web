@@ -350,6 +350,43 @@
             box-shadow: none;
             background: none;
         }
+
+        .hard-mode-input-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        #hard-answer-input {
+            flex-grow: 1;
+            max-width: 400px;
+            padding: 15px;
+            font-size: 1.2em;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s;
+            text-align: center;
+        }
+        #hard-answer-input:focus {
+            border-color: var(--primary-color);
+        }
+        #hard-answer-btn {
+            padding: 15px 25px;
+            font-size: 1.2em;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        #hard-answer-btn:hover:not(:disabled) {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
         @keyframes pulse-correct {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
@@ -501,6 +538,41 @@
         'oceania': 'oceania.json', // https://restcountries.com/v3.1/region/oceania?fields=translations,flags,capital,continents,subregion,coatOfArms,independent,cca2
         'america': 'america.json' // https://restcountries.com/v3.1/region/america?fields=translations,flags,capital,continents,subregion,coatOfArms,independent,cca2
     };
+
+    // Szöveg "tisztítása" (ékezetek, szóközök, kötőjelek eltávolítása, kisbetűsítés)
+    function normalizeString(str) {
+        if (!str) return "";
+        return str
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "") // Ékezetek levágása
+            .toLowerCase()                   // Kisbetűssé alakítás
+            .replace(/[-\s]/g, "");          // Szóközök és kötőjelek törlése
+    }
+
+    // Levenshtein-távolság
+    function getLevenshteinDistance(a, b) {
+        if (a.length === 0) return b.length;
+        if (b.length === 0) return a.length;
+
+        const matrix = [];
+        for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+        for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+
+        for (let i = 1; i <= b.length; i++) {
+            for (let j = 1; j <= a.length; j++) {
+                if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                    matrix[i][j] = matrix[i - 1][j - 1];
+                } else {
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j - 1] + 1, // helyettesítés
+                        Math.min(matrix[i][j - 1] + 1, // beszúrás
+                                 matrix[i - 1][j] + 1) // törlés
+                    );
+                }
+            }
+        }
+        return matrix[b.length][a.length];
+    }
     
     let countriesDataGlobal = [];
     let shuffledCountries = []; // A kevert országok tömbje
@@ -592,17 +664,6 @@
         
         const hardMode = params.difficulty === 'hard';
         const continentGame = params.type.startsWith('continent-');
-        
-        if (hardMode) {
-            gameArea.innerHTML = `
-                <h2>Később...</h2>
-                <p>Ezt a játékmódot (${hardMode ? (params.difficulty === 'hard' ? '<strong>Nehéz</strong>' : '<strong>Időre menő</strong>') : '<strong>Kontinens kitalálós</strong>'}) még nem fejlesztettük ki.</p>
-                <div class="buttons">
-                    <button class="study-mode" onclick="window.location.href = './'">Vissza a menübe</button>
-                </div>
-            `;
-            return;
-        }
         
         document.getElementById('loading-message').style.display = 'none';
         score = 0;
@@ -716,17 +777,35 @@
             allOptions.sort(() => Math.random() - 0.5);
         }
 
-        const optionsHTML = allOptions.map(option => {
-            const isImageOption = (paramsGlobal.type === 'flag-from-country' || paramsGlobal.type === 'coat-of-arms-from-country');
-            const imageClass = paramsGlobal.type === 'flag-from-country' ? 'flag-img' : 'coat-of-arms-img';
-            const height = imageClass === 'flag-img' ? 35 : 80;
-            
-            const buttonContent = (isImageOption && option !== 'nincs fővárosa' && option !== 'nincs címere') ? 
-                `<img class="${imageClass}" style="height: ${height}px;" src="${option}" style="pointer-events: none;" alt="Válasz">` :
-                option;
+        // Ellenőrizzük, hogy ez olyan játékmód-e, ami szöveges választ vár
+        const isTextAnswerMode = ['country-from-flag', 'country-from-coat-of-arms', 'country-from-capital', 'capital-from-country'].includes(paramsGlobal.type);
+        const isHardTextMode = paramsGlobal.difficulty === 'hard' && isTextAnswerMode;
 
-            return `<button onclick="checkAnswer(this, '${btoa(option)}')">${buttonContent}</button>`;
-        }).join('');
+        let optionsHTML = '';
+
+        if (isHardTextMode) {
+            // Nehéz mód: Szövegbeviteli mező
+            optionsHTML = `
+                <div class="hard-mode-input-container">
+                    <input type="text" id="hard-answer-input" placeholder="Írd ide a választ..." autocomplete="off">
+                    <button id="hard-answer-btn" onclick="checkHardAnswer()">Beküldés</button>
+                </div>
+                <div id="hard-feedback" style="margin-top: 15px; font-weight: bold; font-size: 1.2em; height: 1.5em;"></div>
+            `;
+        } else {
+            // Normál mód (vagy kontinens/képválasztós mód): Gombok generálása
+            optionsHTML = allOptions.map(option => {
+                const isImageOption = (paramsGlobal.type === 'flag-from-country' || paramsGlobal.type === 'coat-of-arms-from-country');
+                const imageClass = paramsGlobal.type === 'flag-from-country' ? 'flag-img' : 'coat-of-arms-img';
+                const height = imageClass === 'flag-img' ? 35 : 80;
+                
+                const buttonContent = (isImageOption && option !== 'nincs fővárosa' && option !== 'nincs címere') ? 
+                    `<img class="${imageClass}" style="height: ${height}px;" src="${option}" style="pointer-events: none;" alt="Válasz">` :
+                    option;
+
+                return `<button onclick="checkAnswer(this, '${btoa(option)}')">${buttonContent}</button>`;
+            }).join('');
+        }
 
         clearInterval(timerInterval); // Előző időzítő törlése biztos ami biztos
         
@@ -735,6 +814,12 @@
             timerHTML = `<div class="timer-display" id="timer-display">20 mp</div>`;
         }
 
+        // Nehéz módban nem használjuk a gombokhoz való grid elrendezést, 
+        // hogy a szövegdoboz tökéletesen középre kerülhessen
+        const optionsWrapper = isHardTextMode 
+            ? `<div class="hard-mode-wrapper">${optionsHTML}</div>` 
+            : `<div class="options-grid">${optionsHTML}</div>`;
+
         gameArea.innerHTML = `
             <div class="score-display">Helyes: ${score} | Rossz: ${incorrectAnswers}</div>
             ${timerHTML}
@@ -742,11 +827,21 @@
                 <p>${questionText}</p>
                 ${questionItemHTML}
             </div>
-            <div class="options-grid">${optionsHTML}</div>
+            ${optionsWrapper}
         `;
 
         if (paramsGlobal.timed === 'on') {
             startTimer();
+        }
+
+        if (isHardTextMode) {
+            const inputField = document.getElementById('hard-answer-input');
+            inputField.focus(); // Kurzor automatikus beállítása
+            inputField.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    checkHardAnswer();
+                }
+            });
         }
     }
 
@@ -807,18 +902,36 @@
                 break;
         }
 
-        // Gombok letiltása és a helyes válasz megjelölése
-        const buttons = document.querySelectorAll('.options-grid button');
-        buttons.forEach(btn => {
-            btn.disabled = true;
-        });
+        // Játékmód ellenőrzése
+        const isTextAnswerMode = ['country-from-flag', 'country-from-coat-of-arms', 'country-from-capital', 'capital-from-country'].includes(paramsGlobal.type);
+        const isHardTextMode = paramsGlobal.difficulty === 'hard' && isTextAnswerMode;
 
-        correctAnswers.forEach(ans => {
-            const correctButton = Array.from(buttons).find(btn => atob(btn.onclick.toString().split("'")[1]) === ans);
-            if (correctButton) {
-                correctButton.classList.add('correct');
+        if (isHardTextMode) {
+            // Nehéz mód esetén letiltjuk a beviteli mezőt
+            const inputField = document.getElementById('hard-answer-input');
+            const submitBtn = document.getElementById('hard-answer-btn');
+            const feedbackDiv = document.getElementById('hard-feedback');
+            
+            if (inputField) inputField.disabled = true;
+            if (submitBtn) submitBtn.disabled = true;
+            if (feedbackDiv) {
+                feedbackDiv.innerText = `A helyes válasz: ${correctAnswers[0]}`;
+                feedbackDiv.style.color = "var(--incorrect-answer)";
             }
-        });
+        } else {
+            // Normál mód esetén gombok letiltása és a helyes válasz megjelölése
+            const buttons = document.querySelectorAll('.options-grid button');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+            });
+
+            correctAnswers.forEach(ans => {
+                const correctButton = Array.from(buttons).find(btn => atob(btn.onclick.toString().split("'")[1]) === ans);
+                if (correctButton) {
+                    correctButton.classList.add('correct');
+                }
+            });
+        }
 
         currentCountryIndex++;
         setTimeout(displayQuestion, 3000);
@@ -875,6 +988,69 @@
         
         document.querySelector('.score-display').innerText = `Helyes: ${score} | Rossz: ${incorrectAnswers}`;
 
+        currentCountryIndex++;
+        setTimeout(displayQuestion, 3000);
+    }
+
+    function checkHardAnswer() {
+        if (!isGameActive) return;
+        isGameActive = false;
+        clearInterval(timerInterval); // Időzítő leállítása
+
+        const inputField = document.getElementById('hard-answer-input');
+        const submitBtn = document.getElementById('hard-answer-btn');
+        const feedbackDiv = document.getElementById('hard-feedback');
+        
+        const userAnswer = inputField.value;
+        inputField.disabled = true;
+        submitBtn.disabled = true;
+
+        // Helyes válasz(ok) begyűjtése
+        let correctAnswers = [];
+        switch (paramsGlobal.type) {
+            case 'country-from-flag':
+            case 'country-from-coat-of-arms':
+            case 'country-from-capital':
+                if (currentQuestion.translations.hun?.common) correctAnswers.push(currentQuestion.translations.hun.common);
+                if (currentQuestion.translations.hun?.official) correctAnswers.push(currentQuestion.translations.hun.official);
+                break;
+            case 'capital-from-country':
+                correctAnswers.push(currentQuestion.capital?.[0] || 'nincs fővárosa');
+                break;
+        }
+
+        const normalizedUser = normalizeString(userAnswer);
+        let isCorrect = false;
+        let bestMatch = correctAnswers[0];
+
+        // Végigmegyünk a lehetséges helyes válaszokon (pl. official és common név is jó)
+        for (const ans of correctAnswers) {
+            const normalizedAns = normalizeString(ans);
+            const distance = getLevenshteinDistance(normalizedUser, normalizedAns);
+            
+            // Ha a különbség max 2 karakter, akkor elfogadjuk!
+            if (distance <= 2) {
+                isCorrect = true;
+                bestMatch = ans;
+                break;
+            }
+        }
+
+        if (isCorrect) {
+            inputField.style.backgroundColor = "var(--correct-answer)";
+            inputField.style.color = "white";
+            feedbackDiv.innerText = `Helyes! (${bestMatch})`;
+            feedbackDiv.style.color = "var(--correct-answer)";
+            score++;
+        } else {
+            inputField.style.backgroundColor = "var(--incorrect-answer)";
+            inputField.style.color = "white";
+            feedbackDiv.innerText = `Helytelen! A helyes válasz: ${correctAnswers[0]}`;
+            feedbackDiv.style.color = "var(--incorrect-answer)";
+            incorrectAnswers++;
+        }
+        
+        document.querySelector('.score-display').innerText = `Helyes: ${score} | Rossz: ${incorrectAnswers}`;
         currentCountryIndex++;
         setTimeout(displayQuestion, 3000);
     }
@@ -960,22 +1136,25 @@
     function checkUnavailable() {
         const typeSelect = document.getElementById('type');
         const difficultySelect = document.getElementById('difficulty');
-        const timedCheckbox = document.getElementById('timed');
         const startGameButton = document.querySelector('.start-game');
         const unavailableMessage = document.getElementById('unavailable-message');
 
         const type = typeSelect.value;
         const difficulty = difficultySelect.value;
-        const isTimed = timedCheckbox.checked;
 
         let isDisabled = false;
         let message = '';
 
-        if (difficulty === 'hard') {
+        // Mik azok a játékmódok, amikhez van szöveges nehéz mód?
+        const isTextAnswerMode = ['country-from-flag', 'country-from-coat-of-arms', 'country-from-capital', 'capital-from-country'].includes(type);
+
+        // Ha a játékos nehéz módot választott, de a játékmód nem támogatja (pl. kontinens vagy képválasztás)
+        if (difficulty === 'hard' && !isTextAnswerMode) {
             isDisabled = true;
-            message = 'A Nehéz játékmód még nem elérhető.';
+            message = 'Ehhez a játékmódhoz nem elérhető a nehéz mód.';
         }
 
+        // Gomb letiltása és üzenet megjelenítése
         startGameButton.disabled = isDisabled;
         unavailableMessage.textContent = message;
 
