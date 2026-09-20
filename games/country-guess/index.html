@@ -547,7 +547,8 @@
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "") // Ékezetek levágása
             .toLowerCase()                   // Kisbetűssé alakítás
-            .replace(/[-\s]/g, "");          // Szóközök és kötőjelek törlése
+            .replace(/\bsaint\b/g, "st")     // A "saint" szavakat "st"-re cseréljük (pl. Saint John's -> st john's)
+            .replace(/[^a-z0-9]/g, "");      // Minden, ami nem betű vagy szám (szóköz, pont, aposztróf, kötőjel stb.) törlése
     }
 
     // Levenshtein-távolság
