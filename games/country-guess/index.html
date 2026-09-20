@@ -479,6 +479,7 @@
                 <option value="country-from-coat-of-arms">Országot címer alapján</option>
                 <option value="flag-from-country">Zászlót ország alapján</option>
                 <option value="capital-from-country">Fővárost ország alapján</option>
+                <option value="capital-from-flag">Fővárost zászló alapján</option>
                 <option value="coat-of-arms-from-country">Címert ország alapján</option>
                 <option value="continent-from-country">Ország helyét név alapján</option>
                 <option value="continent-from-flag">Ország helyét zászló alapján</option>
@@ -717,6 +718,11 @@
                 correctOptionValues.push(questionCountry.capital?.[0] || 'nincs fővárosa');
                 questionText = 'Mi a fővárosa ennek az országnak?';
                 break;
+            case 'capital-from-flag':
+                questionItemHTML = `<img class="flag-img" src="${questionCountry.flags.png}" alt="Zászló">`;
+                correctOptionValues.push(questionCountry.capital?.[0] || 'nincs fővárosa');
+                questionText = 'Mi a fővárosa a zászlón látható országnak?';
+                break;
             case 'flag-from-country':
                 questionItemHTML = `<h3>${questionCountry.translations.hun?.common || questionCountry.translations.hun.official}</h3>`;
                 correctOptionValues.push(questionCountry.flags.png);
@@ -757,6 +763,7 @@
                         option = randomCountry.translations.hun?.common || randomCountry.translations.hun.official;
                         break;
                     case 'capital-from-country':
+                    case 'capital-from-flag':
                         option = randomCountry.capital?.[0] || 'nincs fővárosa';
                         break;
                     case 'flag-from-country':
@@ -778,7 +785,7 @@
         }
 
         // Ellenőrizzük, hogy ez olyan játékmód-e, ami szöveges választ vár
-        const isTextAnswerMode = ['country-from-flag', 'country-from-coat-of-arms', 'country-from-capital', 'capital-from-country'].includes(paramsGlobal.type);
+        const isTextAnswerMode = ['country-from-flag', 'country-from-coat-of-arms', 'country-from-capital', 'capital-from-country', 'capital-from-flag'].includes(paramsGlobal.type);
         const isHardTextMode = paramsGlobal.difficulty === 'hard' && isTextAnswerMode;
 
         let optionsHTML = '';
@@ -888,6 +895,7 @@
                 correctAnswers.push(currentQuestion.translations.hun?.common || currentQuestion.translations.hun.official);
                 break;
             case 'capital-from-country':
+            case 'capital-from-flag':
                 correctAnswers.push(currentQuestion.capital?.[0] || 'nincs fővárosa');
                 break;
             case 'flag-from-country':
@@ -903,7 +911,7 @@
         }
 
         // Játékmód ellenőrzése
-        const isTextAnswerMode = ['country-from-flag', 'country-from-coat-of-arms', 'country-from-capital', 'capital-from-country'].includes(paramsGlobal.type);
+        const isTextAnswerMode = ['country-from-flag', 'country-from-coat-of-arms', 'country-from-capital', 'capital-from-country', 'capital-from-flag'].includes(paramsGlobal.type);
         const isHardTextMode = paramsGlobal.difficulty === 'hard' && isTextAnswerMode;
 
         if (isHardTextMode) {
@@ -953,6 +961,7 @@
                 correctAnswers.push(currentQuestion.translations.hun?.common || currentQuestion.translations.hun.official);
                 break;
             case 'capital-from-country':
+            case 'capital-from-flag':
                 correctAnswers.push(currentQuestion.capital?.[0] || 'nincs fővárosa');
                 break;
             case 'flag-from-country':
@@ -1015,17 +1024,30 @@
                 if (currentQuestion.translations.hun?.official) correctAnswers.push(currentQuestion.translations.hun.official);
                 break;
             case 'capital-from-country':
+            case 'capital-from-flag':
                 correctAnswers.push(currentQuestion.capital?.[0] || 'nincs fővárosa');
                 break;
         }
 
-        const normalizedUser = normalizeString(userAnswer);
+        let normalizedUser = normalizeString(userAnswer);
         let isCorrect = false;
         let bestMatch = correctAnswers[0];
 
+        // Ha fővárost kell kitalálni, kivesszük a "city" és "cityof" szavakat
+        const isCapitalMode = ['capital-from-country', 'capital-from-flag'].includes(paramsGlobal.type);
+        if (isCapitalMode) {
+            normalizedUser = normalizedUser.replace(/cityof/g, '').replace(/city/g, '');
+        }
+
         // Végigmegyünk a lehetséges helyes válaszokon (pl. official és common név is jó)
         for (const ans of correctAnswers) {
-            const normalizedAns = normalizeString(ans);
+            let normalizedAns = normalizeString(ans);
+            
+            // A helyes válaszból is kivesszük ezeket a szavakat az összehasonlításhoz
+            if (isCapitalMode) {
+                normalizedAns = normalizedAns.replace(/cityof/g, '').replace(/city/g, '');
+            }
+
             const distance = getLevenshteinDistance(normalizedUser, normalizedAns);
             
             // Ha a különbség max 2 karakter, akkor elfogadjuk!
@@ -1146,7 +1168,7 @@
         let message = '';
 
         // Mik azok a játékmódok, amikhez van szöveges nehéz mód?
-        const isTextAnswerMode = ['country-from-flag', 'country-from-coat-of-arms', 'country-from-capital', 'capital-from-country'].includes(type);
+        const isTextAnswerMode = ['country-from-flag', 'country-from-coat-of-arms', 'country-from-capital', 'capital-from-country', 'capital-from-flag'].includes(type);
 
         // Ha a játékos nehéz módot választott, de a játékmód nem támogatja (pl. kontinens vagy képválasztás)
         if (difficulty === 'hard' && !isTextAnswerMode) {
