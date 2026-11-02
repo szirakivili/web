@@ -18,8 +18,8 @@
       top: 12px;
       left: 12px;
       z-index: 1000;
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 4px 8px;
+      background-color: rgba(255, 255, 255, 0.92);
+      padding: 6px 12px;
       border-radius: 8px;
       font-family: 'Segoe UI', Roboto, sans-serif;
       font-size: 1.2rem;
@@ -38,8 +38,8 @@
       bottom: 12px;
       left: 12px;
       z-index: 1100;
-      background: rgba(255, 255, 255, 0.9);
-      border: none;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #ccc;
       border-radius: 6px;
       padding: 6px 12px;
       font-family: 'Segoe UI', Roboto, sans-serif;
@@ -74,68 +74,56 @@
       align-items: center;
       margin-bottom: 8px;
     }
+    #legend .item:last-child {
+      margin-bottom: 0;
+    }
 
-    /* Vonalkázó és kör jelölő (egy elemként) */
     #legend .lineWithCircle {
-    position: relative;
-    width: 40px;
-    height: 14px;  /* magasabb, hogy a kör középen legyen */
-    margin-right: 12px;
-    flex-shrink: 0;
+      position: relative;
+      width: 40px;
+      height: 14px;
+      margin-right: 12px;
+      flex-shrink: 0;
     }
 
     #legend .lineWithCircle .line {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    border-radius: 2px;
-    transform: translateY(-50%);
-    background-color: currentColor; /* szín a szülőtől */
-    border: none;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: 2px;
+      transform: translateY(-50%);
+      background-color: currentColor;
     }
 
     #legend .lineWithCircle .circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid currentColor;
-    background-color: currentColor;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 2px solid currentColor;
+      background-color: #FFFFFF;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
     }
 
-    /* Színek beállítása szülőn */
-    #legend .lineWithCircle.blue {
-    color: blue;
-    }
-    #legend .lineWithCircle.orange {
-    color: orange;
-    }
-    #legend .lineWithCircle.green {
-    color: green;
-    }
-    #legend .lineWithCircle.black-dashed {
-    color: black;
-    }
-    #legend .lineWithCircle.black-dashed .line {
-    background: none;
-    background-image: repeating-linear-gradient(
-        45deg,
-        black,
-        black 4px,
+    /* Színosztályok a jelmagyarázathoz */
+    #legend .lineWithCircle.normal { color: #1A237E; }
+    #legend .lineWithCircle.narrow { color: #E65100; }
+    #legend .lineWithCircle.hev { color: #2E7D32; }
+    #legend .lineWithCircle.future { color: #37474F; }
+    #legend .lineWithCircle.future .line {
+      background: repeating-linear-gradient(
+        90deg,
+        #37474F,
+        #37474F 4px,
         transparent 4px,
         transparent 8px
-    );
+      );
     }
-    #legend .lineWithCircle.black-dashed .circle {
-    background-color: transparent;
-    }
-
   </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -154,28 +142,28 @@
   <button id="legendToggle" aria-expanded="false" aria-controls="legend" title="Jelmagyarázat mutatása">Jelmagyarázat ▲</button>
   <div id="legend" role="region" aria-label="Jelmagyarázat">
     <div class="item">
-      <div class="lineWithCircle blue">
+      <div class="lineWithCircle normal">
         <div class="line"></div>
         <div class="circle"></div>
       </div>
       Normál- / szélesnyomtáv
     </div>
     <div class="item">
-      <div class="lineWithCircle orange">
+      <div class="lineWithCircle narrow">
         <div class="line"></div>
         <div class="circle"></div>
       </div>
       Keskenynyomtáv
     </div>
     <div class="item">
-      <div class="lineWithCircle green">
+      <div class="lineWithCircle hev">
         <div class="line"></div>
         <div class="circle"></div>
       </div>
       HÉV
     </div>
     <div class="item">
-      <div class="lineWithCircle black-dashed">
+      <div class="lineWithCircle future">
         <div class="line"></div>
         <div class="circle"></div>
       </div>
@@ -187,6 +175,7 @@
   <script src="https://unpkg.com/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
 
   <script>
+    // Térkép inicializálása
     const map = L.map('map', { zoomControl: false }).setView([47.0, 19.0], 7);
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 
@@ -194,61 +183,96 @@
       attribution: '&copy; OpenStreetMap'
     }).addTo(map);
 
-    // Stílusok vonalakra és pontokra
-    const styleLine = (color) => ({ color, weight: 3, opacity: 0.8 });
-    const styleDashedLine = { color: 'black', weight: 2, opacity: 0.6, dashArray: '4 4' };
+    // Külön réteg (pane) létrehozása az állomásoknak, hogy a vonalak felett jelenjenek meg
+    map.createPane('stationsPane');
+    map.getPane('stationsPane').style.zIndex = 650;
 
+    // Kiterjedés kiszámításához gyűjtőcsoport
+    const featureGroup = L.featureGroup().addTo(map);
+
+    // Színpaletta
+    const COLORS = {
+      normal: '#1A237E', // Sötétkék
+      narrow: '#E65100', // Narancssárga
+      hev: '#2E7D32',    // Zöld
+      future: '#37474F'  // Sötétszürke / fekete
+    };
+
+    // Stílusok vonalakra és pontokra
+    const styleLine = (color) => ({ color, weight: 3.5, opacity: 0.85 });
+    const styleDashedLine = { color: COLORS.future, weight: 3, opacity: 0.8, dashArray: '5 5' };
+
+    // Kisebb állomáskörök fehér belsővel a vonalak felett
     const stylePoint = (color) => (feature, latlng) =>
       L.circleMarker(latlng, {
-        radius: 3,
-        fillColor: color,
+        pane: 'stationsPane',
+        radius: 3.5,
+        fillColor: '#FFFFFF',
         color: color,
-        weight: 1,
+        weight: 2,
         opacity: 1,
-        fillOpacity: 0.9
-      }).bindTooltip(feature?.properties?.name || '', { permanent: false });
+        fillOpacity: 1
+      });
 
-    // Jövőbeli vonal és pont egyben: a pontok kitöltetlen fekete körök,
-    // és vonalak szaggatott fekete vonal
+    // Jövőbeli állomás stílusa
     const styleFuturePoint = (feature, latlng) =>
       L.circleMarker(latlng, {
-        radius: 4,
-        color: 'black',
-        weight: 1,
-        fillOpacity: 0
-      }).bindTooltip(feature?.properties?.name || '', { permanent: false });
+        pane: 'stationsPane',
+        radius: 3.5,
+        fillColor: '#FFFFFF',
+        color: COLORS.future,
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 1
+      });
+
+    let pendingLayers = 0;
+
+    function checkFitBounds() {
+      pendingLayers--;
+      if (pendingLayers === 0 && featureGroup.getLayers().length > 0) {
+        map.fitBounds(featureGroup.getBounds(), { padding: [30, 30] });
+      }
+    }
 
     function addLineLayer(file, color) {
+      pendingLayers++;
       omnivore.kml(file)
         .on('ready', function () {
           this.setStyle(styleLine(color));
-          this.eachLayer(layer => {
-            if (layer.feature?.properties?.name) {
-              layer.bindTooltip(layer.feature.properties.name, { permanent: false });
+          this.eachLayer(l => {
+            if (l.feature?.properties?.name) {
+              l.bindTooltip(l.feature.properties.name, { sticky: true });
             }
           });
+          featureGroup.addLayer(this);
+          checkFitBounds();
         })
-        .addTo(map);
+        .on('error', checkFitBounds);
     }
 
     function addStationLayer(file, color) {
+      pendingLayers++;
       omnivore.kml(file, null, L.geoJson(null, {
         pointToLayer: stylePoint(color)
       }))
         .on('ready', function () {
-          this.eachLayer(layer => {
-            if (layer.feature?.properties?.name) {
-              layer.bindTooltip(layer.feature.properties.name, { permanent: false });
+          this.eachLayer(l => {
+            if (l.feature?.properties?.name) {
+              l.bindTooltip(l.feature.properties.name, { sticky: true });
             }
           });
+          featureGroup.addLayer(this);
+          checkFitBounds();
         })
-        .addTo(map);
+        .on('error', checkFitBounds);
     }
 
     function addFutureLayer(file) {
+      pendingLayers++;
       omnivore.kml(file, null, L.geoJson(null, {
         style: feature => {
-          if (feature.geometry.type === "LineString") {
+          if (feature.geometry.type === "LineString" || feature.geometry.type === "MultiLineString") {
             return styleDashedLine;
           }
           return {};
@@ -256,23 +280,26 @@
         pointToLayer: styleFuturePoint
       }))
         .on('ready', function () {
-          this.eachLayer(layer => {
-            if (layer.feature?.properties?.name) {
-              layer.bindTooltip(layer.feature.properties.name, { permanent: false });
+          this.eachLayer(l => {
+            if (l.feature?.properties?.name) {
+              l.bindTooltip(l.feature.properties.name, { sticky: true });
             }
           });
+          featureGroup.addLayer(this);
+          checkFitBounds();
         })
-        .addTo(map);
+        .on('error', checkFitBounds);
     }
 
-    addLineLayer('normal_vasut.kml', 'blue');
-    addStationLayer('normal_allomasok.kml', 'blue');
+    // Rétegek betöltése
+    addLineLayer('normal_vasut.kml', COLORS.normal);
+    addStationLayer('normal_allomasok.kml', COLORS.normal);
 
-    addLineLayer('keskeny_vasut.kml', 'orange');
-    addStationLayer('keskeny_allomasok.kml', 'orange');
+    addLineLayer('keskeny_vasut.kml', COLORS.narrow);
+    addStationLayer('keskeny_allomasok.kml', COLORS.narrow);
 
-    addLineLayer('hev_vasut.kml', 'green');
-    addStationLayer('hev_allomasok.kml', 'green');
+    addLineLayer('hev_vasut.kml', COLORS.hev);
+    addStationLayer('hev_allomasok.kml', COLORS.hev);
 
     addFutureLayer('jovo.kml');
 
