@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyFlightMap</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    html, body, #map {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #title {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .leaflet-bottom.leaflet-right {
+      margin-bottom: 20px;
+      margin-right: 20px;
+    }
+
+    /* Jelmagyarázat gomb és panel */
+    #legendToggle {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      z-index: 1100;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: background-color 0.2s ease;
+    }
+    #legendToggle:hover {
+      background-color: rgba(240,240,240,1);
+    }
+
+    #legend {
+      position: absolute;
+      bottom: 48px;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      line-height: 1.4;
+      min-width: 180px;
+      display: none;
+    }
+
+    #legend .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    #legend .item:last-child {
+      margin-bottom: 0;
+    }
+
+    #legend .lineWithCircle {
+      position: relative;
+      width: 40px;
+      height: 14px;
+      margin-right: 12px;
+      flex-shrink: 0;
+      color: #000000;
+    }
+
+    #legend .lineWithCircle .line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: 2px;
+      transform: translateY(-50%);
+    }
+
+    #legend .lineWithCircle .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      background-color: #000000;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+    }
+
+    /* Szaggatott vonal stílusa a földi mozgáshoz (taxi) */
+    #legend .lineWithCircle.ground .line {
+      background: repeating-linear-gradient(
+        90deg,
+        #000000,
+        #000000 4px,
+        transparent 4px,
+        transparent 8px
+      );
+    }
+  </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
+<body>
+  <div id="title">✈️ MyFlightMap</div>
+  <div id="map"></div>
+
+  <button id="legendToggle" aria-expanded="false" aria-controls="legend">Jelmagyarázat ▲</button>
+  <div id="legend" role="region" aria-label="Jelmagyarázat">
+    <div class="item">
+      <div class="lineWithCircle airport"><div class="circle"></div></div>
+      Repülőterek
+    </div>
+    <div class="item">
+      <div class="lineWithCircle ground"><div class="line"></div></div>
+      Földi mozgás (taxi)
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    // Térkép inicializálása
+    const map = L.map('map', { zoomControl: false }).setView([50.0, 10.0], 5);
+    L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    // KML színkód (AABBGGRR) átalakítása Hex színkódra (#RRGGBB)
+    function parseKmlColor(kmlColor) {
+      if (!kmlColor || kmlColor.trim().length < 8) return '#3388ff';
+      const cleanColor = kmlColor.trim();
+      const r = cleanColor.substring(6, 8);
+      const g = cleanColor.substring(4, 6);
+      const b = cleanColor.substring(2, 4);
+      return `#${r}${g}${b}`;
+    }
+
+    // A repulesek.kml fájl beolvasása
+    fetch('repulesek.kml')
+      .then(response => {
+        if (!response.ok) throw new Error('A repulesek.kml fájl nem található.');
+        return response.text();
+      })
+      .then(kmlText => {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(kmlText, 'text/xml');
+
+        // Stílusok és színkódok feloldása az ID-k alapján
+        const styleMap = {};
+        const styles = xmlDoc.getElementsByTagName('Style');
+        for (let style of styles) {
+          const id = style.getAttribute('id');
+          const lineStyle = style.getElementsByTagName('LineStyle')[0];
+          if (id && lineStyle) {
+            const colorEl = lineStyle.getElementsByTagName('color')[0];
+            if (colorEl) {
+              styleMap['#' + id] = parseKmlColor(colorEl.textContent);
+            }
+          }
+        }
+
+        const styleMaps = xmlDoc.getElementsByTagName('StyleMap');
+        for (let sm of styleMaps) {
+          const id = sm.getAttribute('id');
+          const pairs = sm.getElementsByTagName('Pair');
+          for (let pair of pairs) {
+            const key = pair.getElementsByTagName('key')[0]?.textContent;
+            if (key === 'normal') {
+              const styleUrl = pair.getElementsByTagName('styleUrl')[0]?.textContent.trim();
+              if (id && styleUrl && styleMap[styleUrl]) {
+                styleMap['#' + id] = styleMap[styleUrl];
+              }
+            }
+          }
+        }
+
+        const allBounds = [];
+
+        // Placemark elemek kirajzolása
+        const placemarks = xmlDoc.getElementsByTagName('Placemark');
+        for (let placemark of placemarks) {
+          const nameEl = placemark.getElementsByTagName('name')[0];
+          const name = nameEl ? nameEl.textContent.trim() : 'Névtelen elem';
+
+          const descEl = placemark.getElementsByTagName('description')[0];
+          const description = descEl ? descEl.textContent.trim() : '';
+
+          const styleUrlEl = placemark.getElementsByTagName('styleUrl')[0];
+          const styleUrl = styleUrlEl ? styleUrlEl.textContent.trim() : '';
+          const strokeColor = styleMap[styleUrl] || '#3388ff';
+
+          // Vonalak (LineString) feldolgozása
+          const lineStrings = placemark.getElementsByTagName('LineString');
+          for (let ls of lineStrings) {
+            const coordNode = ls.getElementsByTagName('coordinates')[0];
+            if (coordNode) {
+              const coordStrings = coordNode.textContent.trim().split(/\s+/);
+              const latLngs = [];
+
+              coordStrings.forEach(coordStr => {
+                const parts = coordStr.split(',');
+                if (parts.length >= 2) {
+                  const lng = parseFloat(parts[0]);
+                  const lat = parseFloat(parts[1]);
+                  if (!isNaN(lat) && !isNaN(lng)) {
+                    latLngs.push([lat, lng]);
+                    allBounds.push([lat, lng]);
+                  }
+                }
+              });
+
+              if (latLngs.length > 0) {
+                const isGround = strokeColor === '#000000' || name.toLowerCase().includes('ground') || name.toLowerCase().includes('taxi');
+
+                const polyline = L.polyline(latLngs, {
+                  color: strokeColor,
+                  weight: 3,
+                  opacity: 0.85,
+                  dashArray: isGround ? '5, 5' : null
+                }).addTo(map);
+
+                let popupContent = `<b>${name}</b>`;
+                if (description) popupContent += `<br/><small>${description}</small>`;
+                polyline.bindTooltip(popupContent, { sticky: true });
+              }
+            }
+          }
+
+          // Pontok (Repülőterek) feldolgozása
+          const points = placemark.getElementsByTagName('Point');
+          for (let pt of points) {
+            const coordNode = pt.getElementsByTagName('coordinates')[0];
+            if (coordNode) {
+              const parts = coordNode.textContent.trim().split(',');
+              if (parts.length >= 2) {
+                const lng = parseFloat(parts[0]);
+                const lat = parseFloat(parts[1]);
+                if (!isNaN(lat) && !isNaN(lng)) {
+                  allBounds.push([lat, lng]);
+
+                  const marker = L.circleMarker([lat, lng], {
+                    radius: 5,
+                    fillColor: '#000000',
+                    color: '#ffffff',
+                    weight: 1.5,
+                    opacity: 1,
+                    fillOpacity: 0.9
+                  }).addTo(map);
+
+                  let popupContent = `<b>${name}</b>`;
+                  if (description) popupContent += `<br/><small>${description}</small>`;
+                  marker.bindTooltip(popupContent, { sticky: true });
+                }
+              }
+            }
+          }
+        }
+
+        // Térkép igazítása az összes elemhez
+        if (allBounds.length > 0) {
+          map.fitBounds(allBounds, { padding: [30, 30] });
+        }
+      })
+      .catch(error => {
+        console.error('Hiba történt a repulesek.kml feldolgozása során:', error);
+      });
+
+    // Jelmagyarázat gomb kezelése
+    const legendToggle = document.getElementById('legendToggle');
+    const legend = document.getElementById('legend');
+    legendToggle.addEventListener('click', () => {
+      const isVisible = legend.style.display === 'block';
+      legend.style.display = isVisible ? 'none' : 'block';
+      legendToggle.setAttribute('aria-expanded', !isVisible);
+      legendToggle.textContent = isVisible ? 'Jelmagyarázat ▲' : 'Jelmagyarázat ▼';
+    });
+  </script>
+</body>
+</html>
