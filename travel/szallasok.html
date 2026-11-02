@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Szállások</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    html, body, #map {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #title {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    #legend {
+      position: absolute;
+      bottom: 24px;
+      left: 12px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-size: 0.85rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .legend-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .legend-circle {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      margin-right: 8px;
+      background-color: #FFFFFF;
+      box-sizing: border-box;
+    }
+    .legend-circle.visited {
+      border: 3px solid #0288D1;
+    }
+    .legend-circle.future {
+      border: 3px solid #000000;
+    }
+  </style>
+</head>
+<body>
+  <div id="title">📍 Szállások</div>
+  <div id="map"></div>
+
+  <div id="legend">
+    <div class="legend-item">
+      <div class="legend-circle visited"></div>
+      Települések, ahol megszálltam
+    </div>
+    <div class="legend-item">
+      <div class="legend-circle future"></div>
+      Jövőbeni úticélok
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Térkép inicializálása
+    const map = L.map('map', { zoomControl: false }).setView([48.0, 15.0], 5);
+    L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    const bounds = [];
+
+    // KML fájl beolvasása és megjelenítése
+    fetch('szallasok.kml')
+      .then(response => {
+        if (!response.ok) throw new Error('A szallasok.kml fájl nem található.');
+        return response.text();
+      })
+      .then(kmlText => {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(kmlText, 'text/xml');
+
+        const folders = xmlDoc.getElementsByTagName('Folder');
+
+        for (let folder of folders) {
+          const folderNameEl = folder.getElementsByTagName('name')[0];
+          const folderName = folderNameEl ? folderNameEl.textContent.trim() : '';
+          const isFuture = folderName.toLowerCase().includes('jövőbeni');
+
+          const placemarks = folder.getElementsByTagName('Placemark');
+
+          for (let placemark of placemarks) {
+            const nameEl = placemark.getElementsByTagName('name')[0];
+            const name = nameEl ? nameEl.textContent.trim() : 'Névtelen';
+
+            const coordEl = placemark.getElementsByTagName('coordinates')[0];
+            if (coordEl) {
+              const parts = coordEl.textContent.trim().split(',');
+              if (parts.length >= 2) {
+                const lng = parseFloat(parts[0]);
+                const lat = parseFloat(parts[1]);
+
+                if (!isNaN(lat) && !isNaN(lng)) {
+                  bounds.push([lat, lng]);
+
+                  // Nagyobb pont, fehér belsővel és vastag színes szegéllyel
+                  const marker = L.circleMarker([lat, lng], {
+                    radius: 7, // Nagyobb körök
+                    fillColor: '#FFFFFF', // Fehér belső
+                    color: isFuture ? '#000000' : '#0288D1', // Fekete (jövőbeni) vagy kék (meglátogatott)
+                    weight: 3, // Vastagabb szegély
+                    opacity: 1,
+                    fillOpacity: 1
+                  }).addTo(map);
+
+                  marker.bindTooltip(`<b>${name}</b>${isFuture ? ' <small>(Jövőbeni)</small>' : ''}`, {
+                    sticky: true
+                  });
+                }
+              }
+            }
+          }
+        }
+
+        // Térkép igazítása az összes pont elhelyezkedéséhez
+        if (bounds.length > 0) {
+          map.fitBounds(bounds, { padding: [30, 30] });
+        }
+      })
+      .catch(error => {
+        console.error('Hiba történt a szallasok.kml betöltése során:', error);
+      });
+  </script>
+</body>
+</html>
