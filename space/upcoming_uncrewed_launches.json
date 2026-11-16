@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-15T09:28:12Z",
+  "fetched_at": "2026-11-16T09:46:09Z",
   "source_url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?is_crewed=false&format=json&mode=detailed&limit=30",
   "payload": {
     "count": 468,
@@ -14,20 +14,20 @@
         "slug": "vulcan-vc6l-amazon-leo-lv-01",
         "launch_designator": null,
         "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
+          "id": 4,
+          "name": "Launch Failure",
+          "abbrev": "Failure",
+          "description": "Either the launch vehicle did not reach orbit, or the payload(s) failed to separate."
         },
-        "last_updated": "2026-11-14T14:18:08Z",
-        "net": "2026-11-15T17:11:30Z",
+        "last_updated": "2026-11-15T19:30:04Z",
+        "net": "2026-11-15T17:40:30Z",
         "net_precision": {
           "id": 0,
           "name": "Second",
           "abbrev": "SEC",
           "description": "The T-0 is accurate to the second."
         },
-        "window_end": "2026-11-15T17:31:00Z",
+        "window_end": "2026-11-15T17:40:30Z",
         "window_start": "2026-11-15T17:11:30Z",
         "image": {
           "id": 2845,
@@ -121,11 +121,11 @@
             "single_use": true,
             "variants": []
           },
-          "total_launch_count": 175,
-          "consecutive_successful_launches": 175,
+          "total_launch_count": 176,
+          "consecutive_successful_launches": 0,
           "successful_launches": 175,
-          "failed_launches": 0,
-          "pending_launches": 72,
+          "failed_launches": 1,
+          "pending_launches": 71,
           "consecutive_successful_landings": 0,
           "successful_landings": 0,
           "failed_landings": 0,
@@ -225,11 +225,11 @@
                       "single_use": true,
                       "variants": []
                     },
-                    "total_launch_count": 175,
-                    "consecutive_successful_launches": 175,
+                    "total_launch_count": 176,
+                    "consecutive_successful_launches": 0,
                     "successful_launches": 175,
-                    "failed_launches": 0,
-                    "pending_launches": 72,
+                    "failed_launches": 1,
+                    "pending_launches": 71,
                     "consecutive_successful_landings": 0,
                     "successful_landings": 0,
                     "failed_landings": 0,
@@ -249,11 +249,11 @@
                 "description": "",
                 "active": true,
                 "maiden_flight": "2024-01-08",
-                "total_launch_count": 4,
-                "consecutive_successful_launches": 4,
+                "total_launch_count": 5,
+                "consecutive_successful_launches": 0,
                 "successful_launches": 4,
-                "failed_launches": 0,
-                "pending_launches": 66,
+                "failed_launches": 1,
+                "pending_launches": 65,
                 "attempted_landings": 0,
                 "successful_landings": 0,
                 "failed_landings": 0,
@@ -336,11 +336,11 @@
                 "single_use": true,
                 "variants": []
               },
-              "total_launch_count": 175,
-              "consecutive_successful_launches": 175,
+              "total_launch_count": 176,
+              "consecutive_successful_launches": 0,
               "successful_launches": 175,
-              "failed_launches": 0,
-              "pending_launches": 72,
+              "failed_launches": 1,
+              "pending_launches": 71,
               "consecutive_successful_landings": 0,
               "successful_landings": 0,
               "failed_landings": 0,
@@ -380,7 +380,7 @@
             "max_stage": 2,
             "length": 67.4,
             "diameter": 5.4,
-            "maiden_flight": null,
+            "maiden_flight": "2026-11-15",
             "launch_cost": null,
             "launch_mass": 877.0,
             "leo_capacity": 27200.0,
@@ -389,11 +389,11 @@
             "sso_capacity": 23900.0,
             "to_thrust": 18110.0,
             "apogee": null,
-            "total_launch_count": 0,
+            "total_launch_count": 1,
             "consecutive_successful_launches": 0,
             "successful_launches": 0,
-            "failed_launches": 0,
-            "pending_launches": 38,
+            "failed_launches": 1,
+            "pending_launches": 37,
             "attempted_landings": 0,
             "successful_landings": 0,
             "failed_landings": 0,
@@ -631,8 +631,8 @@
             "nationality_name_composed": "Americano"
           },
           "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_29_20200803143528.jpg",
-          "total_launch_count": 125,
-          "orbital_launch_attempt_count": 125,
+          "total_launch_count": 126,
+          "orbital_launch_attempt_count": 126,
           "fastest_turnaround": "P15DT22H26M17S",
           "location": {
             "response_mode": "normal",
@@ -669,9 +669,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -705,7 +705,7 @@
             "longitude": -80.577778,
             "latitude": 28.488889,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1132,
+            "total_launch_count": 1133,
             "total_landing_count": 83
           }
         },
@@ -766,6 +766,54 @@
         "agency_launch_attempt_count_year": 6,
         "flightclub_url": "https://flightclub.io/result?llId=ef9850ad-1096-425b-9d27-f7bbd186e61a",
         "updates": [
+          {
+            "id": 16783,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/lucas2520stauder_profile_20230526163835.jpg",
+            "comment": "Launch failed to reach orbit. Anomaly aroud T+10 Minutes",
+            "info_url": "https://www.ulalaunch.com/missions/next-launch/vulcan-leo-1",
+            "created_by": "hitura-nobad",
+            "created_on": "2026-11-15T18:32:00Z"
+          },
+          {
+            "id": 16782,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/lucas2520stauder_profile_20230526163835.jpg",
+            "comment": "Liftoff!",
+            "info_url": "https://www.youtube.com/watch?v=qM5A1ZO9oh8",
+            "created_by": "hitura-nobad",
+            "created_on": "2026-11-15T17:40:00Z"
+          },
+          {
+            "id": 16781,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "New T-0.",
+            "info_url": "https://www.youtube.com/live/qM5A1ZO9oh8",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-11-15T17:19:00Z"
+          },
+          {
+            "id": 16780,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/lucas2520stauder_profile_20230526163835.jpg",
+            "comment": "Launch on hold!",
+            "info_url": "https://www.youtube.com/watch?v=qM5A1ZO9oh8",
+            "created_by": "hitura-nobad",
+            "created_on": "2026-11-15T17:12:00Z"
+          },
+          {
+            "id": 16779,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/ll2_profile_20230311134739.png",
+            "comment": "Official Webcast by United Launch Alliance has started",
+            "info_url": "https://www.youtube.com/watch?v=qM5A1ZO9oh8",
+            "created_by": "LL2",
+            "created_on": "2026-11-15T16:51:00Z"
+          },
+          {
+            "id": 16778,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/lucas2520stauder_profile_20230526163835.jpg",
+            "comment": "Launch delayed by 10 seconds",
+            "info_url": "https://www.ulalaunch.com/missions/next-launch/vulcan-leo-1",
+            "created_by": "hitura-nobad",
+            "created_on": "2026-11-15T16:41:00Z"
+          },
           {
             "id": 16775,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/lucas2520stauder_profile_20230526163835.jpg",
@@ -897,7 +945,7 @@
             "publisher": "United Launch Alliance",
             "title": "Rocket Launch: Vulcan Leo 1",
             "description": "ULA's optimized Vulcan heavy-lifter is delivering spacecraft into low Earth orbit for Amazon Leo. The advanced broadband satellites are designed to deliver fast, reliable internet to customers beyond the reach of existing networks. The initial Amazon constellation will include more than 3,000 satellites working together in coordinated orbits around Earth.\n\nGO Vulcan! GO Centaur! GO Amazon Leo!",
-            "feature_image": "https://i.ytimg.com/vi/qM5A1ZO9oh8/maxresdefault.jpg?v=6ae88e98",
+            "feature_image": "https://i.ytimg.com/vi/qM5A1ZO9oh8/maxresdefault.jpg",
             "url": "https://www.youtube.com/watch?v=qM5A1ZO9oh8",
             "type": {
               "id": 1,
@@ -908,17 +956,17 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2026-11-15T16:51:00Z",
-            "end_time": null,
+            "start_time": "2026-11-15T16:50:46Z",
+            "end_time": "2026-11-15T17:59:12Z",
             "live": false
           },
           {
             "priority": 11,
             "source": "youtube.com",
             "publisher": "Spaceflight Now",
-            "title": "Watch live: ULA Vulcan rocket launches from Cape Canaveral with 40 satellites for Amazon Leo",
-            "description": "Watch live coverage from Cape Canaveral Space Force Station as United Launch Alliance (ULA) launches a Vulcan rocket carrying 40 satellites for Amazon’s Leo internet service.  Liftoff from pad 41 at Cape Canaveral Space Force Station is scheduled for 12:11 p.m. EST (1711 UTC) on Sunday.\n\nThis will be the fifth launch of a Vulcan rocket and the first flying in a VC6L configuration, using six Northrop Grumman Graphite Epoxy Motor (GEM) 63XL solid rocket boosters. It's the first flight for Vulcan in nine months as launches were paused after the failure of solid rocket motor nozzles on two previous missions.\n\nCommentary will be provided starting about 30 mins prior to liftoff.\n\nVideos like this are made possible by the support of our members. Join this channel to get access to perks:\nhttp...",
-            "feature_image": "https://i.ytimg.com/vi/qcA9uMBhTmo/maxresdefault.jpg?v=6af70d39",
+            "title": "Replay: ULA Vulcan rocket fails after launch from Cape Canaveral",
+            "description": "Watch a replay of our live coverage from Cape Canaveral as news comes in on the failure of a United Launch Alliance (ULA) Vulcan rocket carrying 40 satellites for Amazon’s Leo internet service.  Liftoff from pad 41 at Cape Canaveral Space Force Station occurred at 12:40 p.m. EST (1740 UTC) on Sunday.\n\nThis was the fifth launch of a Vulcan rocket and the first flying in a VC6L configuration, using six Northrop Grumman Graphite Epoxy Motor (GEM) 63XL solid rocket boosters. It's the first flight for Vulcan in nine months as launches were paused after the failure of solid rocket motor nozzles on two previous missions. The rocket will fly on a north-easterly trajectory upon leaving the pad.\n\nCommentary from Spaceflight Now Reporter Will Robinson-Smith will begin about 30 mins prior to lift...",
+            "feature_image": "https://i.ytimg.com/vi/qcA9uMBhTmo/maxresdefault.jpg",
             "url": "https://www.youtube.com/watch?v=qcA9uMBhTmo",
             "type": {
               "id": 3,
@@ -929,13 +977,763 @@
               "name": "English",
               "code": "en"
             },
-            "start_time": "2026-11-15T16:41:00Z",
-            "end_time": null,
+            "start_time": "2026-11-15T16:41:08Z",
+            "end_time": "2026-11-15T18:51:52Z",
             "live": false
           }
         ],
         "timeline": [],
-        "pad_turnaround": "P136DT12H41M15S",
+        "pad_turnaround": "P136DT13H10M15S",
+        "mission_patches": []
+      },
+      {
+        "id": "e0a11eb1-0bda-4872-b36b-140247fd5c60",
+        "url": "https://ll.thespacedevs.com/2.3.0/launches/e0a11eb1-0bda-4872-b36b-140247fd5c60/?format=json",
+        "name": "Long March 2D | Unknown Payload",
+        "response_mode": "detailed",
+        "slug": "long-march-2d-unknown-payload",
+        "launch_designator": null,
+        "status": {
+          "id": 1,
+          "name": "Go for Launch",
+          "abbrev": "Go",
+          "description": "Current T-0 confirmed by official or reliable sources."
+        },
+        "last_updated": "2026-11-12T19:18:17Z",
+        "net": "2026-11-18T22:50:00Z",
+        "net_precision": {
+          "id": 2,
+          "name": "Hour",
+          "abbrev": "HR",
+          "description": "The T-0 is accurate to the hour."
+        },
+        "window_end": "2026-11-18T23:05:00Z",
+        "window_start": "2026-11-18T22:43:00Z",
+        "image": {
+          "id": 1768,
+          "name": "[AUTO] Long March 2D - image",
+          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/long2520march25202d_image_20190222031211.jpeg",
+          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193719.jpeg",
+          "credit": null,
+          "license": {
+            "id": 1,
+            "name": "Unknown",
+            "priority": 9,
+            "link": null
+          },
+          "single_use": true,
+          "variants": []
+        },
+        "infographic": null,
+        "probability": null,
+        "weather_concerns": null,
+        "failreason": "",
+        "hashtag": null,
+        "launch_service_provider": {
+          "response_mode": "normal",
+          "id": 88,
+          "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
+          "name": "China Aerospace Science and Technology Corporation",
+          "abbrev": "CASC",
+          "type": {
+            "id": 1,
+            "name": "Government"
+          },
+          "featured": true,
+          "country": [
+            {
+              "id": 6,
+              "name": "China",
+              "alpha_2_code": "CN",
+              "alpha_3_code": "CHN",
+              "nationality_name": "Chinese",
+              "nationality_name_composed": "Sino"
+            }
+          ],
+          "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
+          "administrator": "Chairman & President: Lei Fanpei",
+          "founding_year": 1999,
+          "launchers": "Long March",
+          "spacecraft": "",
+          "parent": null,
+          "image": {
+            "id": 8,
+            "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "logo": {
+            "id": 124,
+            "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "social_logo": {
+            "id": 50,
+            "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
+            "credit": null,
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": true,
+            "variants": []
+          },
+          "total_launch_count": 624,
+          "consecutive_successful_launches": 15,
+          "successful_launches": 608,
+          "failed_launches": 16,
+          "pending_launches": 8,
+          "consecutive_successful_landings": 1,
+          "successful_landings": 1,
+          "failed_landings": 1,
+          "attempted_landings": 2,
+          "successful_landings_spacecraft": 3,
+          "failed_landings_spacecraft": 0,
+          "attempted_landings_spacecraft": 3,
+          "successful_landings_payload": 2,
+          "failed_landings_payload": 0,
+          "attempted_landings_payload": 2,
+          "info_url": "https://english.spacechina.com/",
+          "wiki_url": "https://en.wikipedia.org/wiki/China_Aerospace_Science_and_Technology_Corporation",
+          "social_media_links": []
+        },
+        "rocket": {
+          "id": 9299,
+          "configuration": {
+            "response_mode": "detailed",
+            "id": 17,
+            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/17/?format=json",
+            "name": "Long March 2D",
+            "families": [
+              {
+                "response_mode": "detailed",
+                "id": 106,
+                "name": "Long March",
+                "manufacturer": [
+                  {
+                    "response_mode": "normal",
+                    "id": 88,
+                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
+                    "name": "China Aerospace Science and Technology Corporation",
+                    "abbrev": "CASC",
+                    "type": {
+                      "id": 1,
+                      "name": "Government"
+                    },
+                    "featured": true,
+                    "country": [
+                      {
+                        "id": 6,
+                        "name": "China",
+                        "alpha_2_code": "CN",
+                        "alpha_3_code": "CHN",
+                        "nationality_name": "Chinese",
+                        "nationality_name_composed": "Sino"
+                      }
+                    ],
+                    "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
+                    "administrator": "Chairman & President: Lei Fanpei",
+                    "founding_year": 1999,
+                    "launchers": "Long March",
+                    "spacecraft": "",
+                    "parent": null,
+                    "image": {
+                      "id": 8,
+                      "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "logo": {
+                      "id": 124,
+                      "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "social_logo": {
+                      "id": 50,
+                      "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "total_launch_count": 624,
+                    "consecutive_successful_launches": 15,
+                    "successful_launches": 608,
+                    "failed_launches": 16,
+                    "pending_launches": 8,
+                    "consecutive_successful_landings": 1,
+                    "successful_landings": 1,
+                    "failed_landings": 1,
+                    "attempted_landings": 2,
+                    "successful_landings_spacecraft": 3,
+                    "failed_landings_spacecraft": 0,
+                    "attempted_landings_spacecraft": 3,
+                    "successful_landings_payload": 2,
+                    "failed_landings_payload": 0,
+                    "attempted_landings_payload": 2,
+                    "info_url": "https://english.spacechina.com/",
+                    "wiki_url": "https://en.wikipedia.org/wiki/China_Aerospace_Science_and_Technology_Corporation",
+                    "social_media_links": []
+                  }
+                ],
+                "parent": null,
+                "description": "",
+                "active": true,
+                "maiden_flight": "1970-04-24",
+                "total_launch_count": 677,
+                "consecutive_successful_launches": 15,
+                "successful_launches": 657,
+                "failed_launches": 20,
+                "pending_launches": 8,
+                "attempted_landings": 2,
+                "successful_landings": 1,
+                "failed_landings": 1,
+                "consecutive_successful_landings": 1
+              },
+              {
+                "response_mode": "detailed",
+                "id": 109,
+                "name": "Long March 2",
+                "manufacturer": [
+                  {
+                    "response_mode": "normal",
+                    "id": 88,
+                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
+                    "name": "China Aerospace Science and Technology Corporation",
+                    "abbrev": "CASC",
+                    "type": {
+                      "id": 1,
+                      "name": "Government"
+                    },
+                    "featured": true,
+                    "country": [
+                      {
+                        "id": 6,
+                        "name": "China",
+                        "alpha_2_code": "CN",
+                        "alpha_3_code": "CHN",
+                        "nationality_name": "Chinese",
+                        "nationality_name_composed": "Sino"
+                      }
+                    ],
+                    "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
+                    "administrator": "Chairman & President: Lei Fanpei",
+                    "founding_year": 1999,
+                    "launchers": "Long March",
+                    "spacecraft": "",
+                    "parent": null,
+                    "image": {
+                      "id": 8,
+                      "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "logo": {
+                      "id": 124,
+                      "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "social_logo": {
+                      "id": 50,
+                      "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
+                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
+                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
+                      "credit": null,
+                      "license": {
+                        "id": 1,
+                        "name": "Unknown",
+                        "priority": 9,
+                        "link": null
+                      },
+                      "single_use": true,
+                      "variants": []
+                    },
+                    "total_launch_count": 624,
+                    "consecutive_successful_launches": 15,
+                    "successful_launches": 608,
+                    "failed_launches": 16,
+                    "pending_launches": 8,
+                    "consecutive_successful_landings": 1,
+                    "successful_landings": 1,
+                    "failed_landings": 1,
+                    "attempted_landings": 2,
+                    "successful_landings_spacecraft": 3,
+                    "failed_landings_spacecraft": 0,
+                    "attempted_landings_spacecraft": 3,
+                    "successful_landings_payload": 2,
+                    "failed_landings_payload": 0,
+                    "attempted_landings_payload": 2,
+                    "info_url": "https://english.spacechina.com/",
+                    "wiki_url": "https://en.wikipedia.org/wiki/China_Aerospace_Science_and_Technology_Corporation",
+                    "social_media_links": []
+                  }
+                ],
+                "parent": {
+                  "response_mode": "normal",
+                  "id": 106,
+                  "name": "Long March",
+                  "manufacturer": [
+                    {
+                      "response_mode": "normal",
+                      "id": 88,
+                      "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
+                      "name": "China Aerospace Science and Technology Corporation",
+                      "abbrev": "CASC",
+                      "type": {
+                        "id": 1,
+                        "name": "Government"
+                      },
+                      "featured": true,
+                      "country": [
+                        {
+                          "id": 6,
+                          "name": "China",
+                          "alpha_2_code": "CN",
+                          "alpha_3_code": "CHN",
+                          "nationality_name": "Chinese",
+                          "nationality_name_composed": "Sino"
+                        }
+                      ],
+                      "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
+                      "administrator": "Chairman & President: Lei Fanpei",
+                      "founding_year": 1999,
+                      "launchers": "Long March",
+                      "spacecraft": "",
+                      "parent": null,
+                      "image": {
+                        "id": 8,
+                        "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
+                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
+                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
+                        "credit": null,
+                        "license": {
+                          "id": 1,
+                          "name": "Unknown",
+                          "priority": 9,
+                          "link": null
+                        },
+                        "single_use": true,
+                        "variants": []
+                      },
+                      "logo": {
+                        "id": 124,
+                        "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
+                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
+                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
+                        "credit": null,
+                        "license": {
+                          "id": 1,
+                          "name": "Unknown",
+                          "priority": 9,
+                          "link": null
+                        },
+                        "single_use": true,
+                        "variants": []
+                      },
+                      "social_logo": {
+                        "id": 50,
+                        "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
+                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
+                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
+                        "credit": null,
+                        "license": {
+                          "id": 1,
+                          "name": "Unknown",
+                          "priority": 9,
+                          "link": null
+                        },
+                        "single_use": true,
+                        "variants": []
+                      }
+                    }
+                  ],
+                  "parent": null
+                },
+                "description": "",
+                "active": true,
+                "maiden_flight": "1974-11-05",
+                "total_launch_count": 235,
+                "consecutive_successful_launches": 41,
+                "successful_launches": 229,
+                "failed_launches": 6,
+                "pending_launches": 2,
+                "attempted_landings": 0,
+                "successful_landings": 0,
+                "failed_landings": 0,
+                "consecutive_successful_landings": 0
+              }
+            ],
+            "full_name": "Long March 2D",
+            "variant": "D",
+            "active": true,
+            "is_placeholder": false,
+            "manufacturer": {
+              "response_mode": "normal",
+              "id": 88,
+              "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
+              "name": "China Aerospace Science and Technology Corporation",
+              "abbrev": "CASC",
+              "type": {
+                "id": 1,
+                "name": "Government"
+              },
+              "featured": true,
+              "country": [
+                {
+                  "id": 6,
+                  "name": "China",
+                  "alpha_2_code": "CN",
+                  "alpha_3_code": "CHN",
+                  "nationality_name": "Chinese",
+                  "nationality_name_composed": "Sino"
+                }
+              ],
+              "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
+              "administrator": "Chairman & President: Lei Fanpei",
+              "founding_year": 1999,
+              "launchers": "Long March",
+              "spacecraft": "",
+              "parent": null,
+              "image": {
+                "id": 8,
+                "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "logo": {
+                "id": 124,
+                "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "social_logo": {
+                "id": 50,
+                "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
+                "credit": null,
+                "license": {
+                  "id": 1,
+                  "name": "Unknown",
+                  "priority": 9,
+                  "link": null
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "total_launch_count": 624,
+              "consecutive_successful_launches": 15,
+              "successful_launches": 608,
+              "failed_launches": 16,
+              "pending_launches": 8,
+              "consecutive_successful_landings": 1,
+              "successful_landings": 1,
+              "failed_landings": 1,
+              "attempted_landings": 2,
+              "successful_landings_spacecraft": 3,
+              "failed_landings_spacecraft": 0,
+              "attempted_landings_spacecraft": 3,
+              "successful_landings_payload": 2,
+              "failed_landings_payload": 0,
+              "attempted_landings_payload": 2,
+              "info_url": "https://english.spacechina.com/",
+              "wiki_url": "https://en.wikipedia.org/wiki/China_Aerospace_Science_and_Technology_Corporation",
+              "social_media_links": []
+            },
+            "program": [],
+            "reusable": false,
+            "image": {
+              "id": 1768,
+              "name": "[AUTO] Long March 2D - image",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/long2520march25202d_image_20190222031211.jpeg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193719.jpeg",
+              "credit": null,
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": true,
+              "variants": []
+            },
+            "info_url": null,
+            "wiki_url": "https://en.wikipedia.org/wiki/Long_March_(rocket_family)",
+            "description": "The Long March 2D, also known as the Chang Zheng 2D, CZ-2D and LM-2D, is a Chinese orbital carrier rocket. It is a 2-stage carrier rocket mainly used for launching LEO and SSO satellites.",
+            "alias": "",
+            "min_stage": 1,
+            "max_stage": 2,
+            "length": 38.3,
+            "diameter": 3.35,
+            "maiden_flight": "1992-08-09",
+            "launch_cost": 30000000,
+            "launch_mass": 232.0,
+            "leo_capacity": 3500.0,
+            "gto_capacity": 0.0,
+            "geo_capacity": null,
+            "sso_capacity": 1300.0,
+            "to_thrust": 2962.0,
+            "apogee": 500.0,
+            "total_launch_count": 102,
+            "consecutive_successful_launches": 70,
+            "successful_launches": 101,
+            "failed_launches": 1,
+            "pending_launches": 1,
+            "attempted_landings": 0,
+            "successful_landings": 0,
+            "failed_landings": 0,
+            "consecutive_successful_landings": 0,
+            "fastest_turnaround": "P1DT20H14M"
+          },
+          "launcher_stage": [],
+          "spacecraft_stage": [],
+          "payloads": []
+        },
+        "mission": {
+          "id": 7898,
+          "name": "Unknown Payload",
+          "type": "Unknown",
+          "description": "Details TBD.",
+          "image": null,
+          "orbit": {
+            "id": 25,
+            "name": "Unknown",
+            "abbrev": "N/A",
+            "celestial_body": {
+              "response_mode": "list",
+              "id": 1,
+              "name": "Earth"
+            }
+          },
+          "agencies": [],
+          "info_urls": [],
+          "vid_urls": []
+        },
+        "pad": {
+          "id": 25,
+          "url": "https://ll.thespacedevs.com/2.3.0/pads/25/?format=json",
+          "active": true,
+          "agencies": [],
+          "name": "Launch Complex 9",
+          "image": {
+            "id": 2125,
+            "name": "CZ-4B liftoff from LC-9 (Gaofen-11-05)",
+            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/cz-4b_liftoff__image_20240719064703.jpeg",
+            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/cz-4b_liftoff__image_thumbnail_20240719064704.jpeg",
+            "credit": "中国航天科技集团",
+            "license": {
+              "id": 1,
+              "name": "Unknown",
+              "priority": 9,
+              "link": null
+            },
+            "single_use": false,
+            "variants": []
+          },
+          "description": "",
+          "info_url": null,
+          "wiki_url": null,
+          "map_url": "https://www.google.com/maps?q=38.863128,111.589567",
+          "latitude": 38.863128,
+          "longitude": 111.589567,
+          "country": {
+            "id": 6,
+            "name": "China",
+            "alpha_2_code": "CN",
+            "alpha_3_code": "CHN",
+            "nationality_name": "Chinese",
+            "nationality_name_composed": "Sino"
+          },
+          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_25_20200803143501.jpg",
+          "total_launch_count": 80,
+          "orbital_launch_attempt_count": 80,
+          "fastest_turnaround": "P16DT20H3M",
+          "location": {
+            "response_mode": "normal",
+            "id": 19,
+            "url": "https://ll.thespacedevs.com/2.3.0/locations/19/?format=json",
+            "name": "Taiyuan Satellite Launch Center, People's Republic of China",
+            "celestial_body": {
+              "response_mode": "normal",
+              "id": 1,
+              "name": "Earth",
+              "type": {
+                "id": 1,
+                "name": "Planet"
+              },
+              "diameter": 12742000.0,
+              "mass": 5.972168e+24,
+              "gravity": 9.80655,
+              "length_of_day": "1 00:00:00",
+              "atmosphere": true,
+              "image": {
+                "id": 2040,
+                "name": "Earth (Apollo 17)",
+                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
+                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
+                "credit": "NASA",
+                "license": {
+                  "id": 4,
+                  "name": "NASA Image and Media Guidelines",
+                  "priority": 0,
+                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+                },
+                "single_use": true,
+                "variants": []
+              },
+              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
+              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
+              "total_attempted_launches": 7664,
+              "successful_launches": 7106,
+              "failed_launches": 558,
+              "total_attempted_landings": 1388,
+              "successful_landings": 1338,
+              "failed_landings": 50
+            },
+            "active": true,
+            "country": {
+              "id": 6,
+              "name": "China",
+              "alpha_2_code": "CN",
+              "alpha_3_code": "CHN",
+              "nationality_name": "Chinese",
+              "nationality_name_composed": "Sino"
+            },
+            "description": "The Taiyuan Satellite Launch Center is a People's Republic of China space and defense launch facility. It is situated in Kelan County, Xinzhou, Shanxi Province and is the second of four launch sites having been founded in March 1966 and coming into full operation in 1968.",
+            "image": {
+              "id": 1369,
+              "name": "[AUTO] Long March 2D | 6 x Jilin-1, Qilu-2/3 & others - image",
+              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/long2520march_image_20230907134308.jpeg",
+              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192538.jpeg",
+              "credit": null,
+              "license": {
+                "id": 1,
+                "name": "Unknown",
+                "priority": 9,
+                "link": null
+              },
+              "single_use": true,
+              "variants": []
+            },
+            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_19_20200803142421.jpg",
+            "longitude": 111.608,
+            "latitude": 38.8491,
+            "timezone_name": "Asia/Shanghai",
+            "total_launch_count": 163,
+            "total_landing_count": 0
+          }
+        },
+        "webcast_live": false,
+        "program": [],
+        "orbital_launch_attempt_count": 7441,
+        "location_launch_attempt_count": 164,
+        "pad_launch_attempt_count": 81,
+        "agency_launch_attempt_count": 625,
+        "orbital_launch_attempt_count_year": 268,
+        "location_launch_attempt_count_year": 15,
+        "pad_launch_attempt_count_year": 4,
+        "agency_launch_attempt_count_year": 55,
+        "flightclub_url": null,
+        "updates": [
+          {
+            "id": 16754,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
+            "comment": "Added launch per NOTAMs; Payload and launch vehicle identities uncertain.",
+            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2840235#msg2840235",
+            "created_by": "Cosmic_Penguin",
+            "created_on": "2026-11-12T19:18:00Z"
+          }
+        ],
+        "info_urls": [],
+        "vid_urls": [],
+        "timeline": [],
+        "pad_turnaround": "P60DT12H",
         "mission_patches": []
       },
       {
@@ -951,16 +1749,16 @@
           "abbrev": "Go",
           "description": "Current T-0 confirmed by official or reliable sources."
         },
-        "last_updated": "2026-11-13T01:52:13Z",
-        "net": "2026-11-18T03:14:00Z",
+        "last_updated": "2026-11-15T19:01:05Z",
+        "net": "2026-11-19T03:00:00Z",
         "net_precision": {
           "id": 1,
           "name": "Minute",
           "abbrev": "MIN",
           "description": "The T-0 is accurate to the minute."
         },
-        "window_end": "2026-11-18T07:14:00Z",
-        "window_start": "2026-11-18T03:14:00Z",
+        "window_end": "2026-11-19T07:00:00Z",
+        "window_start": "2026-11-19T03:00:00Z",
         "image": {
           "id": 2797,
           "name": "Falcon 9 liftoff from SLC-4E (USSF-366)",
@@ -2040,7 +2838,7 @@
                 "fastest_turnaround": "P23DT12H53M36S"
               },
               "previous_flight_date": "2026-09-26T14:00:54Z",
-              "turn_around_time": "P52DT13H13M6S",
+              "turn_around_time": "P53DT12H59M6S",
               "landing": {
                 "id": 1977,
                 "url": "https://ll.thespacedevs.com/2.3.0/landings/1977/?format=json",
@@ -2296,9 +3094,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -2338,16 +3136,24 @@
         },
         "webcast_live": false,
         "program": [],
-        "orbital_launch_attempt_count": 7441,
+        "orbital_launch_attempt_count": 7442,
         "location_launch_attempt_count": 925,
         "pad_launch_attempt_count": 309,
         "agency_launch_attempt_count": 747,
-        "orbital_launch_attempt_count_year": 268,
+        "orbital_launch_attempt_count_year": 269,
         "location_launch_attempt_count_year": 73,
         "pad_launch_attempt_count_year": 71,
         "agency_launch_attempt_count_year": 128,
         "flightclub_url": "https://flightclub.io/result?llId=76617033-4dc0-4448-b50c-e5b0d5a18539",
         "updates": [
+          {
+            "id": 16784,
+            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/lucas2520stauder_profile_20230526163835.jpg",
+            "comment": "Now targeting Nov 19 at 03:00 UTC",
+            "info_url": "https://www.spacex.com/launches/ussf317",
+            "created_by": "hitura-nobad",
+            "created_on": "2026-11-15T19:00:00Z"
+          },
           {
             "id": 16756,
             "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
@@ -2585,757 +3391,7 @@
             "relative_time": "PT8M11S"
           }
         ],
-        "pad_turnaround": "P5DT22H37M30S",
-        "mission_patches": []
-      },
-      {
-        "id": "e0a11eb1-0bda-4872-b36b-140247fd5c60",
-        "url": "https://ll.thespacedevs.com/2.3.0/launches/e0a11eb1-0bda-4872-b36b-140247fd5c60/?format=json",
-        "name": "Long March 2D | Unknown Payload",
-        "response_mode": "detailed",
-        "slug": "long-march-2d-unknown-payload",
-        "launch_designator": null,
-        "status": {
-          "id": 1,
-          "name": "Go for Launch",
-          "abbrev": "Go",
-          "description": "Current T-0 confirmed by official or reliable sources."
-        },
-        "last_updated": "2026-11-12T19:18:17Z",
-        "net": "2026-11-18T22:50:00Z",
-        "net_precision": {
-          "id": 2,
-          "name": "Hour",
-          "abbrev": "HR",
-          "description": "The T-0 is accurate to the hour."
-        },
-        "window_end": "2026-11-18T23:05:00Z",
-        "window_start": "2026-11-18T22:43:00Z",
-        "image": {
-          "id": 1768,
-          "name": "[AUTO] Long March 2D - image",
-          "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/long2520march25202d_image_20190222031211.jpeg",
-          "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193719.jpeg",
-          "credit": null,
-          "license": {
-            "id": 1,
-            "name": "Unknown",
-            "priority": 9,
-            "link": null
-          },
-          "single_use": true,
-          "variants": []
-        },
-        "infographic": null,
-        "probability": null,
-        "weather_concerns": null,
-        "failreason": "",
-        "hashtag": null,
-        "launch_service_provider": {
-          "response_mode": "normal",
-          "id": 88,
-          "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
-          "name": "China Aerospace Science and Technology Corporation",
-          "abbrev": "CASC",
-          "type": {
-            "id": 1,
-            "name": "Government"
-          },
-          "featured": true,
-          "country": [
-            {
-              "id": 6,
-              "name": "China",
-              "alpha_2_code": "CN",
-              "alpha_3_code": "CHN",
-              "nationality_name": "Chinese",
-              "nationality_name_composed": "Sino"
-            }
-          ],
-          "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
-          "administrator": "Chairman & President: Lei Fanpei",
-          "founding_year": 1999,
-          "launchers": "Long March",
-          "spacecraft": "",
-          "parent": null,
-          "image": {
-            "id": 8,
-            "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "logo": {
-            "id": 124,
-            "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "social_logo": {
-            "id": 50,
-            "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
-            "credit": null,
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": true,
-            "variants": []
-          },
-          "total_launch_count": 624,
-          "consecutive_successful_launches": 15,
-          "successful_launches": 608,
-          "failed_launches": 16,
-          "pending_launches": 8,
-          "consecutive_successful_landings": 1,
-          "successful_landings": 1,
-          "failed_landings": 1,
-          "attempted_landings": 2,
-          "successful_landings_spacecraft": 3,
-          "failed_landings_spacecraft": 0,
-          "attempted_landings_spacecraft": 3,
-          "successful_landings_payload": 2,
-          "failed_landings_payload": 0,
-          "attempted_landings_payload": 2,
-          "info_url": "https://english.spacechina.com/",
-          "wiki_url": "https://en.wikipedia.org/wiki/China_Aerospace_Science_and_Technology_Corporation",
-          "social_media_links": []
-        },
-        "rocket": {
-          "id": 9299,
-          "configuration": {
-            "response_mode": "detailed",
-            "id": 17,
-            "url": "https://ll.thespacedevs.com/2.3.0/launcher_configurations/17/?format=json",
-            "name": "Long March 2D",
-            "families": [
-              {
-                "response_mode": "detailed",
-                "id": 106,
-                "name": "Long March",
-                "manufacturer": [
-                  {
-                    "response_mode": "normal",
-                    "id": 88,
-                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
-                    "name": "China Aerospace Science and Technology Corporation",
-                    "abbrev": "CASC",
-                    "type": {
-                      "id": 1,
-                      "name": "Government"
-                    },
-                    "featured": true,
-                    "country": [
-                      {
-                        "id": 6,
-                        "name": "China",
-                        "alpha_2_code": "CN",
-                        "alpha_3_code": "CHN",
-                        "nationality_name": "Chinese",
-                        "nationality_name_composed": "Sino"
-                      }
-                    ],
-                    "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
-                    "administrator": "Chairman & President: Lei Fanpei",
-                    "founding_year": 1999,
-                    "launchers": "Long March",
-                    "spacecraft": "",
-                    "parent": null,
-                    "image": {
-                      "id": 8,
-                      "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "logo": {
-                      "id": 124,
-                      "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "social_logo": {
-                      "id": 50,
-                      "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "total_launch_count": 624,
-                    "consecutive_successful_launches": 15,
-                    "successful_launches": 608,
-                    "failed_launches": 16,
-                    "pending_launches": 8,
-                    "consecutive_successful_landings": 1,
-                    "successful_landings": 1,
-                    "failed_landings": 1,
-                    "attempted_landings": 2,
-                    "successful_landings_spacecraft": 3,
-                    "failed_landings_spacecraft": 0,
-                    "attempted_landings_spacecraft": 3,
-                    "successful_landings_payload": 2,
-                    "failed_landings_payload": 0,
-                    "attempted_landings_payload": 2,
-                    "info_url": "https://english.spacechina.com/",
-                    "wiki_url": "https://en.wikipedia.org/wiki/China_Aerospace_Science_and_Technology_Corporation",
-                    "social_media_links": []
-                  }
-                ],
-                "parent": null,
-                "description": "",
-                "active": true,
-                "maiden_flight": "1970-04-24",
-                "total_launch_count": 677,
-                "consecutive_successful_launches": 15,
-                "successful_launches": 657,
-                "failed_launches": 20,
-                "pending_launches": 8,
-                "attempted_landings": 2,
-                "successful_landings": 1,
-                "failed_landings": 1,
-                "consecutive_successful_landings": 1
-              },
-              {
-                "response_mode": "detailed",
-                "id": 109,
-                "name": "Long March 2",
-                "manufacturer": [
-                  {
-                    "response_mode": "normal",
-                    "id": 88,
-                    "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
-                    "name": "China Aerospace Science and Technology Corporation",
-                    "abbrev": "CASC",
-                    "type": {
-                      "id": 1,
-                      "name": "Government"
-                    },
-                    "featured": true,
-                    "country": [
-                      {
-                        "id": 6,
-                        "name": "China",
-                        "alpha_2_code": "CN",
-                        "alpha_3_code": "CHN",
-                        "nationality_name": "Chinese",
-                        "nationality_name_composed": "Sino"
-                      }
-                    ],
-                    "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
-                    "administrator": "Chairman & President: Lei Fanpei",
-                    "founding_year": 1999,
-                    "launchers": "Long March",
-                    "spacecraft": "",
-                    "parent": null,
-                    "image": {
-                      "id": 8,
-                      "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "logo": {
-                      "id": 124,
-                      "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "social_logo": {
-                      "id": 50,
-                      "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
-                      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
-                      "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
-                      "credit": null,
-                      "license": {
-                        "id": 1,
-                        "name": "Unknown",
-                        "priority": 9,
-                        "link": null
-                      },
-                      "single_use": true,
-                      "variants": []
-                    },
-                    "total_launch_count": 624,
-                    "consecutive_successful_launches": 15,
-                    "successful_launches": 608,
-                    "failed_launches": 16,
-                    "pending_launches": 8,
-                    "consecutive_successful_landings": 1,
-                    "successful_landings": 1,
-                    "failed_landings": 1,
-                    "attempted_landings": 2,
-                    "successful_landings_spacecraft": 3,
-                    "failed_landings_spacecraft": 0,
-                    "attempted_landings_spacecraft": 3,
-                    "successful_landings_payload": 2,
-                    "failed_landings_payload": 0,
-                    "attempted_landings_payload": 2,
-                    "info_url": "https://english.spacechina.com/",
-                    "wiki_url": "https://en.wikipedia.org/wiki/China_Aerospace_Science_and_Technology_Corporation",
-                    "social_media_links": []
-                  }
-                ],
-                "parent": {
-                  "response_mode": "normal",
-                  "id": 106,
-                  "name": "Long March",
-                  "manufacturer": [
-                    {
-                      "response_mode": "normal",
-                      "id": 88,
-                      "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
-                      "name": "China Aerospace Science and Technology Corporation",
-                      "abbrev": "CASC",
-                      "type": {
-                        "id": 1,
-                        "name": "Government"
-                      },
-                      "featured": true,
-                      "country": [
-                        {
-                          "id": 6,
-                          "name": "China",
-                          "alpha_2_code": "CN",
-                          "alpha_3_code": "CHN",
-                          "nationality_name": "Chinese",
-                          "nationality_name_composed": "Sino"
-                        }
-                      ],
-                      "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
-                      "administrator": "Chairman & President: Lei Fanpei",
-                      "founding_year": 1999,
-                      "launchers": "Long March",
-                      "spacecraft": "",
-                      "parent": null,
-                      "image": {
-                        "id": 8,
-                        "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
-                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
-                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
-                        "credit": null,
-                        "license": {
-                          "id": 1,
-                          "name": "Unknown",
-                          "priority": 9,
-                          "link": null
-                        },
-                        "single_use": true,
-                        "variants": []
-                      },
-                      "logo": {
-                        "id": 124,
-                        "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
-                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
-                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
-                        "credit": null,
-                        "license": {
-                          "id": 1,
-                          "name": "Unknown",
-                          "priority": 9,
-                          "link": null
-                        },
-                        "single_use": true,
-                        "variants": []
-                      },
-                      "social_logo": {
-                        "id": 50,
-                        "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
-                        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
-                        "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
-                        "credit": null,
-                        "license": {
-                          "id": 1,
-                          "name": "Unknown",
-                          "priority": 9,
-                          "link": null
-                        },
-                        "single_use": true,
-                        "variants": []
-                      }
-                    }
-                  ],
-                  "parent": null
-                },
-                "description": "",
-                "active": true,
-                "maiden_flight": "1974-11-05",
-                "total_launch_count": 235,
-                "consecutive_successful_launches": 41,
-                "successful_launches": 229,
-                "failed_launches": 6,
-                "pending_launches": 2,
-                "attempted_landings": 0,
-                "successful_landings": 0,
-                "failed_landings": 0,
-                "consecutive_successful_landings": 0
-              }
-            ],
-            "full_name": "Long March 2D",
-            "variant": "D",
-            "active": true,
-            "is_placeholder": false,
-            "manufacturer": {
-              "response_mode": "normal",
-              "id": 88,
-              "url": "https://ll.thespacedevs.com/2.3.0/agencies/88/?format=json",
-              "name": "China Aerospace Science and Technology Corporation",
-              "abbrev": "CASC",
-              "type": {
-                "id": 1,
-                "name": "Government"
-              },
-              "featured": true,
-              "country": [
-                {
-                  "id": 6,
-                  "name": "China",
-                  "alpha_2_code": "CN",
-                  "alpha_3_code": "CHN",
-                  "nationality_name": "Chinese",
-                  "nationality_name_composed": "Sino"
-                }
-              ],
-              "description": "The China Aerospace Science and Technology Corporation (CASC) is the main contractor for the Chinese space program. It is state-owned and has a number of subordinate entities which design, develop and manufacture a range of spacecraft, launch vehicles, strategic and tactical missile systems, and ground equipment. It was officially established in July 1999 as part of a Chinese government reform drive, having previously been one part of the former China Aerospace Corporation. Various incarnations of the program date back to 1956.",
-              "administrator": "Chairman & President: Lei Fanpei",
-              "founding_year": 1999,
-              "launchers": "Long March",
-              "spacecraft": "",
-              "parent": null,
-              "image": {
-                "id": 8,
-                "name": "[AUTO] China Aerospace Science and Technology Corporation - image",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_image_20191228094408.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184558.jpeg",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "logo": {
-                "id": 124,
-                "name": "[AUTO] China Aerospace Science and Technology Corporation - logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184933.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "social_logo": {
-                "id": 50,
-                "name": "[AUTO] China Aerospace Science and Technology Corporation - social_logo",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/china2520aerospace2520science2520and2520technology2520corporation_nation_20230604193716.png",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305184746.png",
-                "credit": null,
-                "license": {
-                  "id": 1,
-                  "name": "Unknown",
-                  "priority": 9,
-                  "link": null
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "total_launch_count": 624,
-              "consecutive_successful_launches": 15,
-              "successful_launches": 608,
-              "failed_launches": 16,
-              "pending_launches": 8,
-              "consecutive_successful_landings": 1,
-              "successful_landings": 1,
-              "failed_landings": 1,
-              "attempted_landings": 2,
-              "successful_landings_spacecraft": 3,
-              "failed_landings_spacecraft": 0,
-              "attempted_landings_spacecraft": 3,
-              "successful_landings_payload": 2,
-              "failed_landings_payload": 0,
-              "attempted_landings_payload": 2,
-              "info_url": "https://english.spacechina.com/",
-              "wiki_url": "https://en.wikipedia.org/wiki/China_Aerospace_Science_and_Technology_Corporation",
-              "social_media_links": []
-            },
-            "program": [],
-            "reusable": false,
-            "image": {
-              "id": 1768,
-              "name": "[AUTO] Long March 2D - image",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/long2520march25202d_image_20190222031211.jpeg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305193719.jpeg",
-              "credit": null,
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "info_url": null,
-            "wiki_url": "https://en.wikipedia.org/wiki/Long_March_(rocket_family)",
-            "description": "The Long March 2D, also known as the Chang Zheng 2D, CZ-2D and LM-2D, is a Chinese orbital carrier rocket. It is a 2-stage carrier rocket mainly used for launching LEO and SSO satellites.",
-            "alias": "",
-            "min_stage": 1,
-            "max_stage": 2,
-            "length": 38.3,
-            "diameter": 3.35,
-            "maiden_flight": "1992-08-09",
-            "launch_cost": 30000000,
-            "launch_mass": 232.0,
-            "leo_capacity": 3500.0,
-            "gto_capacity": 0.0,
-            "geo_capacity": null,
-            "sso_capacity": 1300.0,
-            "to_thrust": 2962.0,
-            "apogee": 500.0,
-            "total_launch_count": 102,
-            "consecutive_successful_launches": 70,
-            "successful_launches": 101,
-            "failed_launches": 1,
-            "pending_launches": 1,
-            "attempted_landings": 0,
-            "successful_landings": 0,
-            "failed_landings": 0,
-            "consecutive_successful_landings": 0,
-            "fastest_turnaround": "P1DT20H14M"
-          },
-          "launcher_stage": [],
-          "spacecraft_stage": [],
-          "payloads": []
-        },
-        "mission": {
-          "id": 7898,
-          "name": "Unknown Payload",
-          "type": "Unknown",
-          "description": "Details TBD.",
-          "image": null,
-          "orbit": {
-            "id": 25,
-            "name": "Unknown",
-            "abbrev": "N/A",
-            "celestial_body": {
-              "response_mode": "list",
-              "id": 1,
-              "name": "Earth"
-            }
-          },
-          "agencies": [],
-          "info_urls": [],
-          "vid_urls": []
-        },
-        "pad": {
-          "id": 25,
-          "url": "https://ll.thespacedevs.com/2.3.0/pads/25/?format=json",
-          "active": true,
-          "agencies": [],
-          "name": "Launch Complex 9",
-          "image": {
-            "id": 2125,
-            "name": "CZ-4B liftoff from LC-9 (Gaofen-11-05)",
-            "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/cz-4b_liftoff__image_20240719064703.jpeg",
-            "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/cz-4b_liftoff__image_thumbnail_20240719064704.jpeg",
-            "credit": "中国航天科技集团",
-            "license": {
-              "id": 1,
-              "name": "Unknown",
-              "priority": 9,
-              "link": null
-            },
-            "single_use": false,
-            "variants": []
-          },
-          "description": "",
-          "info_url": null,
-          "wiki_url": null,
-          "map_url": "https://www.google.com/maps?q=38.863128,111.589567",
-          "latitude": 38.863128,
-          "longitude": 111.589567,
-          "country": {
-            "id": 6,
-            "name": "China",
-            "alpha_2_code": "CN",
-            "alpha_3_code": "CHN",
-            "nationality_name": "Chinese",
-            "nationality_name_composed": "Sino"
-          },
-          "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/pad_25_20200803143501.jpg",
-          "total_launch_count": 80,
-          "orbital_launch_attempt_count": 80,
-          "fastest_turnaround": "P16DT20H3M",
-          "location": {
-            "response_mode": "normal",
-            "id": 19,
-            "url": "https://ll.thespacedevs.com/2.3.0/locations/19/?format=json",
-            "name": "Taiyuan Satellite Launch Center, People's Republic of China",
-            "celestial_body": {
-              "response_mode": "normal",
-              "id": 1,
-              "name": "Earth",
-              "type": {
-                "id": 1,
-                "name": "Planet"
-              },
-              "diameter": 12742000.0,
-              "mass": 5.972168e+24,
-              "gravity": 9.80655,
-              "length_of_day": "1 00:00:00",
-              "atmosphere": true,
-              "image": {
-                "id": 2040,
-                "name": "Earth (Apollo 17)",
-                "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_20240402194304.jpeg",
-                "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/earth_2528apol_image_thumbnail_20240402194305.jpeg",
-                "credit": "NASA",
-                "license": {
-                  "id": 4,
-                  "name": "NASA Image and Media Guidelines",
-                  "priority": 0,
-                  "link": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
-                },
-                "single_use": true,
-                "variants": []
-              },
-              "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
-              "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
-              "successful_launches": 7106,
-              "failed_launches": 557,
-              "total_attempted_landings": 1388,
-              "successful_landings": 1338,
-              "failed_landings": 50
-            },
-            "active": true,
-            "country": {
-              "id": 6,
-              "name": "China",
-              "alpha_2_code": "CN",
-              "alpha_3_code": "CHN",
-              "nationality_name": "Chinese",
-              "nationality_name_composed": "Sino"
-            },
-            "description": "The Taiyuan Satellite Launch Center is a People's Republic of China space and defense launch facility. It is situated in Kelan County, Xinzhou, Shanxi Province and is the second of four launch sites having been founded in March 1966 and coming into full operation in 1968.",
-            "image": {
-              "id": 1369,
-              "name": "[AUTO] Long March 2D | 6 x Jilin-1, Qilu-2/3 & others - image",
-              "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/long2520march_image_20230907134308.jpeg",
-              "thumbnail_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/255bauto255d__image_thumbnail_20240305192538.jpeg",
-              "credit": null,
-              "license": {
-                "id": 1,
-                "name": "Unknown",
-                "priority": 9,
-                "link": null
-              },
-              "single_use": true,
-              "variants": []
-            },
-            "map_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/map_images/location_19_20200803142421.jpg",
-            "longitude": 111.608,
-            "latitude": 38.8491,
-            "timezone_name": "Asia/Shanghai",
-            "total_launch_count": 163,
-            "total_landing_count": 0
-          }
-        },
-        "webcast_live": false,
-        "program": [],
-        "orbital_launch_attempt_count": 7442,
-        "location_launch_attempt_count": 164,
-        "pad_launch_attempt_count": 81,
-        "agency_launch_attempt_count": 625,
-        "orbital_launch_attempt_count_year": 269,
-        "location_launch_attempt_count_year": 15,
-        "pad_launch_attempt_count_year": 4,
-        "agency_launch_attempt_count_year": 55,
-        "flightclub_url": null,
-        "updates": [
-          {
-            "id": 16754,
-            "profile_image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/profile_images/cosmic2520penguin_profile_20210817212020.png",
-            "comment": "Added launch per NOTAMs; Payload and launch vehicle identities uncertain.",
-            "info_url": "https://forum.nasaspaceflight.com/index.php?topic=57867.msg2840235#msg2840235",
-            "created_by": "Cosmic_Penguin",
-            "created_on": "2026-11-12T19:18:00Z"
-          }
-        ],
-        "info_urls": [],
-        "vid_urls": [],
-        "timeline": [],
-        "pad_turnaround": "P60DT12H",
+        "pad_turnaround": "P6DT22H23M30S",
         "mission_patches": []
       },
       {
@@ -4007,9 +4063,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -5454,9 +5510,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -5727,7 +5783,7 @@
             "relative_time": "PT7M34S"
           }
         ],
-        "pad_turnaround": "P3DT9H16M",
+        "pad_turnaround": "P2DT9H30M",
         "mission_patches": [
           {
             "id": 1057,
@@ -7135,9 +7191,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -8648,9 +8704,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -9595,9 +9651,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -10428,9 +10484,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -11270,9 +11326,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -12014,9 +12070,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -13367,9 +13423,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -13403,7 +13459,7 @@
             "longitude": -80.577778,
             "latitude": 28.488889,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1132,
+            "total_launch_count": 1133,
             "total_landing_count": 83
           }
         },
@@ -14101,9 +14157,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -15552,9 +15608,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -16920,9 +16976,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -18491,9 +18547,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -19335,9 +19391,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -20218,9 +20274,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -20902,9 +20958,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -21679,9 +21735,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -23033,9 +23089,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -24304,9 +24360,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -24340,7 +24396,7 @@
             "longitude": -80.577778,
             "latitude": 28.488889,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1132,
+            "total_launch_count": 1133,
             "total_landing_count": 83
           }
         },
@@ -25795,9 +25851,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -25831,7 +25887,7 @@
             "longitude": -80.577778,
             "latitude": 28.488889,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1132,
+            "total_launch_count": 1133,
             "total_landing_count": 83
           }
         },
@@ -27132,9 +27188,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -27168,7 +27224,7 @@
             "longitude": -80.577778,
             "latitude": 28.488889,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1132,
+            "total_launch_count": 1133,
             "total_landing_count": 83
           }
         },
@@ -28475,9 +28531,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -29200,9 +29256,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -29657,9 +29713,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -30106,9 +30162,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -31531,9 +31587,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
@@ -31567,7 +31623,7 @@
             "longitude": -80.577778,
             "latitude": 28.488889,
             "timezone_name": "America/New_York",
-            "total_launch_count": 1132,
+            "total_launch_count": 1133,
             "total_landing_count": 83
           }
         },
@@ -32821,9 +32877,9 @@
               },
               "description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
               "wiki_url": "https://en.wikipedia.org/wiki/Earth",
-              "total_attempted_launches": 7663,
+              "total_attempted_launches": 7664,
               "successful_launches": 7106,
-              "failed_launches": 557,
+              "failed_launches": 558,
               "total_attempted_landings": 1388,
               "successful_landings": 1338,
               "failed_landings": 50
