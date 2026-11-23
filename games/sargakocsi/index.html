@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sárga Kocsi! – Lecsaptad?</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    body {
+      background: #1a1d24;
+      color: #f8f9fa;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 12px;
+    }
+
+    .game-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      border: 3px solid #2f3542;
+      background: #2d6a4f;
+    }
+
+    .hud {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111318;
+      padding: 12px 16px;
+      border-bottom: 2px solid #2f3542;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .hud-group {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .badge {
+      background: #222630;
+      padding: 5px 10px;
+      border-radius: 8px;
+      border: 1px solid #373d4d;
+    }
+
+    .badge span {
+      color: #ffd60a;
+    }
+
+    .mute-btn {
+      background: #222630;
+      border: 1px solid #373d4d;
+      color: #fff;
+      border-radius: 8px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.15s;
+    }
+
+    .mute-btn:hover {
+      background: #323846;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+      cursor: crosshair;
+      touch-action: manipulation;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 52px 0 0 0;
+      background: rgba(17, 19, 24, 0.9);
+      backdrop-filter: blur(4px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 28px;
+      gap: 16px;
+    }
+
+    .overlay.hidden {
+      display: none;
+    }
+
+    .overlay h1 {
+      font-size: 2.2rem;
+      color: #ffd60a;
+      text-shadow: 0 3px 12px rgba(255, 214, 10, 0.35);
+      letter-spacing: 0.5px;
+    }
+
+    .overlay p {
+      color: #ced4da;
+      line-height: 1.55;
+      font-size: 0.98rem;
+      max-width: 360px;
+    }
+
+    .btn-primary {
+      margin-top: 8px;
+      background: #ffd60a;
+      color: #111318;
+      border: none;
+      padding: 14px 32px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255, 214, 10, 0.35);
+      transition: transform 0.1s, background 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: #ffe033;
+      transform: translateY(-2px);
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px);
+    }
+
+    .stats-box {
+      background: #1c2029;
+      border: 1px solid #343a46;
+      border-radius: 12px;
+      padding: 14px 24px;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .stats-box div {
+      display: flex;
+      justify-content: space-between;
+      margin: 6px 0;
+      font-size: 1.05rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game-wrapper">
+    <div class="hud">
+      <div class="hud-group">
+        <div class="badge">Pont: <span id="scoreEl">0</span></div>
+        <div class="badge">Kombó: <span id="comboEl">0x</span></div>
+      </div>
+      <div class="hud-group">
+        <div id="livesEl" aria-label="Életek">❤️❤️❤️</div>
+        <button id="muteBtn" class="mute-btn" title="Hang ki/be">🔊</button>
+      </div>
+    </div>
+
+    <canvas id="gameCanvas" width="480" height="680"></canvas>
+
+    <!-- Kezdőképernyő -->
+    <div id="startScreen" class="overlay">
+      <h1>👊 SÁRGA KOCSI!</h1>
+      <p>
+        Csapj le minden <strong>sima sárga személyautóra</strong>!<br><br>
+        <strong>NEM ÉR:</strong> a sárga <strong>taxi</strong>, busz és kamion, valamint a szirénázó <strong>rendőr</strong>, <strong>tűzoltó</strong> és <strong>sárga mentő</strong> sem!
+      </p>
+      <button id="startBtn" class="btn-primary">JÁTÉK INDÍTÁSA</button>
+    </div>
+
+    <!-- Játék vége képernyő -->
+    <div id="gameOverScreen" class="overlay hidden">
+      <h1>VÉGE A JÁTÉKNAK!</h1>
+      <div class="stats-box">
+        <div><span>Elért pontszám:</span><strong id="finalScore">0</strong></div>
+        <div><span>Legnagyobb kombó:</span><strong id="finalCombo">0x</strong></div>
+        <div><span>Rekord:</span><strong id="highScore">0</strong></div>
+      </div>
+      <button id="restartBtn" class="btn-primary">ÚJRA JÁTSZOM</button>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // UI elemek
+    const scoreEl = document.getElementById('scoreEl');
+    const comboEl = document.getElementById('comboEl');
+    const livesEl = document.getElementById('livesEl');
+    const muteBtn = document.getElementById('muteBtn');
+    const startScreen = document.getElementById('startScreen');
+    const gameOverScreen = document.getElementById('gameOverScreen');
+    const startBtn = document.getElementById('startBtn');
+    const restartBtn = document.getElementById('restartBtn');
+    const finalScoreEl = document.getElementById('finalScore');
+    const finalComboEl = document.getElementById('finalCombo');
+    const highScoreEl = document.getElementById('highScore');
+
+    // Hang generátor (Web Audio API)
+    let audioCtx = null;
+    let isMuted = false;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playSound(type) {
+      if (isMuted) return;
+      initAudio();
+
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      if (type === 'slap') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(220, now);
+        osc.frequency.exponentialRampToValueAtTime(580, now + 0.12);
+        gain.gain.setValueAtTime(0.35, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.16);
+        osc.start(now);
+        osc.stop(now + 0.16);
+      } else if (type === 'error') {
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(150, now);
+        osc.frequency.linearRampToValueAtTime(85, now + 0.25);
+        gain.gain.setValueAtTime(0.3, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.26);
+        osc.start(now);
+        osc.stop(now + 0.26);
+      } else if (type === 'miss') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(320, now);
+        osc.frequency.linearRampToValueAtTime(140, now + 0.3);
+        gain.gain.setValueAtTime(0.25, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.32);
+        osc.start(now);
+        osc.stop(now + 0.32);
+      } else if (type === 'siren') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(660, now);
+        osc.frequency.setValueAtTime(520, now + 0.11);
+        gain.gain.setValueAtTime(0.09, now);
+        gain.gain.exponentialRampToValueAtTime(0.005, now + 0.22);
+        osc.start(now);
+        osc.stop(now + 0.23);
+      }
+    }
+
+    muteBtn.addEventListener('click', () => {
+      isMuted = !isMuted;
+      muteBtn.textContent = isMuted ? '🔇' : '🔊';
+    });
+
+    // Játék konstansok
+    const ROAD_X = 64;
+    const ROAD_WIDTH = 352;
+    const LANE_COUNT = 4;
+    const LANE_WIDTH = ROAD_WIDTH / LANE_COUNT;
+
+    const VEHICLE_SPECS = {
+      car:       { width: 48, height: 86 },
+      taxi:      { width: 48, height: 86 },
+      police:    { width: 48, height: 88 },
+      fire:      { width: 50, height: 92 },
+      ambulance: { width: 50, height: 92 },
+      bus:       { width: 52, height: 146 },
+      truck:     { width: 54, height: 176 }
+    };
+
+    const NON_YELLOW_COLORS = [
+      { body: '#e63946', roof: '#c1121f', cargo: '#d62828' }, // Piros
+      { body: '#3a86ff', roof: '#1d4ed8', cargo: '#2563eb' }, // Kék
+      { body: '#f1faee', roof: '#ced4da', cargo: '#e9ecef' }, // Fehér
+      { body: '#495057', roof: '#343a40', cargo: '#6c757d' }, // Sötétszürke
+      { body: '#2a9d8f', roof: '#1f7a6f', cargo: '#21867a' }, // Türkiz
+      { body: '#8338ec', roof: '#5e17eb', cargo: '#7209b7' }  // Lila
+    ];
+
+    const YELLOW_COLOR = { body: '#ffd60a', roof: '#ffc300', cargo: '#ffea00' };
+
+    // Játék állapot
+    let state = {
+      running: false,
+      time: 0,
+      score: 0,
+      combo: 0,
+      maxCombo: 0,
+      lives: 3,
+      highScore: Number(localStorage.getItem('sargaKocsiHighScore') || 0),
+      spawnTimer: 0,
+      shakeTime: 0,
+      flashRed: 0,
+      vehicles: [],
+      effects: [],
+      trees: []
+    };
+
+    // Fix fák elhelyezése az út két oldalán
+    function initTrees() {
+      state.trees = [];
+      for (let y = 45; y < canvas.height - 20; y += 95) {
+        state.trees.push({ x: 30, y, r: 18 + Math.random() * 5 });
+        state.trees.push({ x: canvas.width - 30, y: y + 42, r: 18 + Math.random() * 5 });
+      }
+    }
+
+    function updateHUD() {
+      scoreEl.textContent = state.score;
+      comboEl.textContent = `${state.combo}x`;
+      livesEl.textContent = '❤️'.repeat(Math.max(0, state.lives)) + '🖤'.repeat(Math.max(0, 3 - state.lives));
+    }
+
+    function addEffect(x, y, text, color, isSlap = false) {
+      state.effects.push({
+        x,
+        y,
+        text,
+        color,
+        isSlap,
+        alpha: 1,
+        radius: 12,
+        life: 0.78
+      });
+    }
+
+    function pickVehicleType() {
+      const r = Math.random();
+      if (r < 0.44) return 'car';        // 44% személyautó
+      if (r < 0.54) return 'taxi';       // 10% sárga taxi (csapda)
+      if (r < 0.67) return 'bus';        // 13% busz
+      if (r < 0.80) return 'truck';      // 13% kamion
+      if (r < 0.88) return 'ambulance';  //  8% sárga mentő (szirénázó csapda)
+      if (r < 0.94) return 'police';     //  6% fehér rendőr
+      return 'fire';                     //  6% piros tűzoltó
+    }
+
+    function spawnVehicle() {
+      const lanes = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
+      const difficulty = 1 + state.score * 0.025;
+      const baseSpeed = 230 * Math.min(difficulty, 2.6);
+
+      for (const lane of lanes) {
+        const vehiclesInLane = state.vehicles.filter(v => v.lane === lane);
+        const topVehicleY = vehiclesInLane.reduce((min, v) => (v.y < min ? v.y : min), Infinity);
+
+        if (topVehicleY > 165) {
+          const type = pickVehicleType();
+          const spec = VEHICLE_SPECS[type];
+
+          let isYellow = false;
+          let color = null;
+
+          if (type === 'police') {
+            color = { body: '#f8f9fa', roof: '#e9ecef' };
+          } else if (type === 'fire') {
+            color = { body: '#d90429', roof: '#b50020' };
+          } else if (type === 'ambulance' || type === 'taxi') {
+            isYellow = true;
+            color = { body: '#ffd60a', roof: '#ffc300' };
+          } else {
+            isYellow = Math.random() < 0.48;
+            color = isYellow
+              ? YELLOW_COLOR
+              : NON_YELLOW_COLORS[Math.floor(Math.random() * NON_YELLOW_COLORS.length)];
+          }
+
+          // Kizárólag a sima sárga személyautó érvényes célpont!
+          const isTarget = type === 'car' && isYellow;
+
+          const isEmergency = type === 'police' || type === 'fire' || type === 'ambulance';
+          const typeSpeedFactor =
+            type === 'truck' ? 0.86 :
+            type === 'bus' ? 0.92 :
+            isEmergency ? 1.12 : 1.0;
+
+          let speed = baseSpeed * typeSpeedFactor + (Math.random() * 50 - 15);
+
+          // Ne érje utol az előtte haladó járművet a sávban
+          if (vehiclesInLane.length > 0) {
+            const slowestAhead = Math.min(...vehiclesInLane.map(v => v.speed));
+            speed = Math.min(speed, slowestAhead);
+          }
+
+          if (isEmergency) {
+            playSound('siren');
+          }
+
+          const laneCenterX = ROAD_X + lane * LANE_WIDTH + LANE_WIDTH / 2;
+
+          state.vehicles.push({
+            lane,
+            type,
+            x: laneCenterX - spec.width / 2,
+            y: -spec.height - 10,
+            width: spec.width,
+            height: spec.height,
+            speed,
+            isYellow,
+            isTarget,
+            color,
+            slapped: false
+          });
+          break;
+        }
+      }
+    }
+
+    function startGame() {
+      initAudio();
+      state.running = true;
+      state.time = 0;
+      state.score = 0;
+      state.combo = 0;
+      state.maxCombo = 0;
+      state.lives = 3;
+      state.spawnTimer = 0.2;
+      state.shakeTime = 0;
+      state.flashRed = 0;
+      state.vehicles = [];
+      state.effects = [];
+      updateHUD();
+
+      startScreen.classList.add('hidden');
+      gameOverScreen.classList.add('hidden');
+    }
+
+    function endGame() {
+      state.running = false;
+      if (state.score > state.highScore) {
+        state.highScore = state.score;
+        localStorage.setItem('sargaKocsiHighScore', String(state.highScore));
+      }
+      finalScoreEl.textContent = state.score;
+      finalComboEl.textContent = `${state.maxCombo}x`;
+      highScoreEl.textContent = state.highScore;
+      gameOverScreen.classList.remove('hidden');
+    }
+
+    function handleInput(clientX, clientY) {
+      if (!state.running) return;
+
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const clickX = (clientX - rect.left) * scaleX;
+      const clickY = (clientY - rect.top) * scaleY;
+
+      const pad = 8;
+      for (let i = state.vehicles.length - 1; i >= 0; i--) {
+        const v = state.vehicles[i];
+        if (
+          clickX >= v.x - pad &&
+          clickX <= v.x + v.width + pad &&
+          clickY >= v.y - pad &&
+          clickY <= v.y + v.height + pad
+        ) {
+          if (v.isTarget && !v.slapped) {
+            v.slapped = true;
+            state.combo += 1;
+            state.maxCombo = Math.max(state.maxCombo, state.combo);
+            const bonus = state.combo >= 5 ? 2 : 1;
+            state.score += bonus;
+            state.shakeTime = 0.14;
+
+            playSound('slap');
+            const label = bonus > 1 ? `SÁRGA KOCSI! +${bonus}` : 'SÁRGA KOCSI! +1';
+            addEffect(clickX, clickY, label, '#ffd60a', true);
+            updateHUD();
+          } else if (!v.isTarget) {
+            state.combo = 0;
+            state.lives -= 1;
+            state.flashRed = 0.22;
+            state.shakeTime = 0.18;
+
+            playSound('error');
+            let errMsg = 'NEM SÁRGA!';
+            if (v.type === 'taxi') errMsg = 'A TAXI NEM ÉR!';
+            else if (v.type === 'police') errMsg = 'A RENDŐR NEM ÉR!';
+            else if (v.type === 'fire') errMsg = 'A TŰZOLTÓ NEM ÉR!';
+            else if (v.type === 'ambulance') errMsg = 'A MENTŐ NEM ÉR!';
+            else if (v.isYellow && v.type === 'bus') errMsg = 'A BUSZ NEM ÉR!';
+            else if (v.isYellow && v.type === 'truck') errMsg = 'A KAMION NEM ÉR!';
+
+            addEffect(clickX, clickY, errMsg, '#ff4d6d', false);
+            updateHUD();
+
+            if (state.lives <= 0) {
+              endGame();
+            }
+          }
+          return;
+        }
+      }
+    }
+
+    canvas.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      handleInput(e.clientX, e.clientY);
+    });
+
+    startBtn.addEventListener('click', startGame);
+    restartBtn.addEventListener('click', startGame);
+
+    function update(dt) {
+      if (!state.running) return;
+      state.time += dt;
+
+      // Új járművek generálása
+      state.spawnTimer -= dt;
+      if (state.spawnTimer <= 0) {
+        spawnVehicle();
+        const minInterval = Math.max(0.38, 0.90 - state.score * 0.015);
+        state.spawnTimer = minInterval + Math.random() * 0.35;
+      }
+
+      // Csak a járművek mozognak
+      for (let i = state.vehicles.length - 1; i >= 0; i--) {
+        const v = state.vehicles[i];
+        v.y += v.speed * dt;
+
+        if (v.y > canvas.height + 20) {
+          // Csak a lecsapatlan sima sárga személyautó elengedése jelent hibát
+          if (v.isTarget && !v.slapped) {
+            state.combo = 0;
+            state.lives -= 1;
+            state.flashRed = 0.22;
+            playSound('miss');
+            addEffect(v.x + v.width / 2, canvas.height - 45, 'ELMENT!', '#ff9f1c', false);
+            updateHUD();
+
+            if (state.lives <= 0) {
+              endGame();
+              return;
+            }
+          }
+          state.vehicles.splice(i, 1);
+        }
+      }
+
+      // Vizuális effektek frissítése
+      if (state.shakeTime > 0) state.shakeTime = Math.max(0, state.shakeTime - dt);
+      if (state.flashRed > 0) state.flashRed = Math.max(0, state.flashRed - dt);
+
+      for (let i = state.effects.length - 1; i >= 0; i--) {
+        const fx = state.effects[i];
+        fx.y -= 55 * dt;
+        fx.radius += 140 * dt;
+        fx.life -= dt;
+        fx.alpha = Math.max(0, fx.life / 0.78);
+        if (fx.life <= 0) {
+          state.effects.splice(i, 1);
+        }
+      }
+    }
+
+    function drawSirenLightbar(v, yPos, leftColor, rightColor) {
+      const barWidth = v.width - 14;
+      const barX = 7;
+      const flashLeft = Math.sin(state.time * 18) > 0;
+
+      ctx.fillStyle = '#1b263b';
+      ctx.beginPath();
+      ctx.roundRect(barX, yPos, barWidth, 7, 3);
+      ctx.fill();
+
+      ctx.fillStyle = flashLeft ? leftColor : 'rgba(255,255,255,0.25)';
+      ctx.fillRect(barX + 2, yPos + 1, barWidth / 2 - 4, 5);
+
+      ctx.fillStyle = !flashLeft ? rightColor : 'rgba(255,255,255,0.25)';
+      ctx.fillRect(barX + barWidth / 2 + 2, yPos + 1, barWidth / 2 - 4, 5);
+
+      const activeX = flashLeft ? barX + barWidth * 0.25 : barX + barWidth * 0.75;
+      const activeColor = flashLeft ? leftColor : rightColor;
+      const grad = ctx.createRadialGradient(activeX, yPos + 3.5, 2, activeX, yPos + 3.5, 26);
+      grad.addColorStop(0, activeColor);
+      grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+      ctx.save();
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(activeX, yPos + 3.5, 26, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawCar(v) {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.32)';
+      ctx.beginPath();
+      ctx.roundRect(4, 6, v.width, v.height, 12);
+      ctx.fill();
+
+      ctx.fillStyle = v.color.body;
+      ctx.beginPath();
+      ctx.roundRect(0, 0, v.width, v.height, 12);
+      ctx.fill();
+
+      if (v.isYellow) {
+        ctx.strokeStyle = '#fff3b0';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
+      ctx.fillStyle = '#1d2d44';
+      ctx.beginPath();
+      ctx.roundRect(6, v.height - 28, v.width - 12, 16, 4);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.roundRect(8, 12, v.width - 16, 11, 3);
+      ctx.fill();
+
+      ctx.fillStyle = v.color.roof;
+      ctx.beginPath();
+      ctx.roundRect(7, 26, v.width - 14, 30, 5);
+      ctx.fill();
+
+      ctx.fillStyle = '#fff9db';
+      ctx.fillRect(6, v.height - 4, 9, 4);
+      ctx.fillRect(v.width - 15, v.height - 4, 9, 4);
+
+      ctx.fillStyle = '#e63946';
+      ctx.fillRect(6, 0, 9, 3);
+      ctx.fillRect(v.width - 15, 0, 9, 3);
+    }
+
+    function drawTaxi(v) {
+      // Alap sárga személyautó karosszéria
+      drawCar(v);
+
+      // Kockás taxi csík az autó két oldalán
+      for (let i = 0; i < 6; i++) {
+        const y = 26 + i * 5;
+        ctx.fillStyle = i % 2 === 0 ? '#111318' : '#ffffff';
+        ctx.fillRect(1, y, 3, 5);
+        ctx.fillStyle = i % 2 === 1 ? '#111318' : '#ffffff';
+        ctx.fillRect(v.width - 4, y, 3, 5);
+      }
+
+      // Világító TAXI szabadjelző a tető közepén
+      const signW = 34;
+      const signH = 13;
+      const signX = (v.width - signW) / 2;
+      const signY = 35;
+
+      // Finom fényudvar a tábla körül
+      ctx.save();
+      ctx.shadowColor = 'rgba(255, 255, 255, 0.85)';
+      ctx.shadowBlur = 8;
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.roundRect(signX, signY, signW, signH, 3);
+      ctx.fill();
+      ctx.restore();
+
+      ctx.strokeStyle = '#111318';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.roundRect(signX, signY, signW, signH, 3);
+      ctx.stroke();
+
+      // TAXI felirat
+      ctx.fillStyle = '#111318';
+      ctx.font = '900 9.5px "Segoe UI", Arial, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('TAXI', v.width / 2, signY + signH / 2 + 0.5);
+    }
+
+    function drawEmergencyCar(v) {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.34)';
+      ctx.beginPath();
+      ctx.roundRect(4, 6, v.width, v.height, 11);
+      ctx.fill();
+
+      ctx.fillStyle = v.color.body;
+      ctx.beginPath();
+      ctx.roundRect(0, 0, v.width, v.height, 11);
+      ctx.fill();
+
+      if (v.type === 'police') {
+        ctx.fillStyle = '#00509d';
+        ctx.fillRect(10, v.height - 13, v.width - 20, 8);
+        ctx.fillRect(0, 26, 4, 34);
+        ctx.fillRect(v.width - 4, 26, 4, 34);
+      } else if (v.type === 'fire') {
+        ctx.fillStyle = '#f8f9fa';
+        ctx.fillRect(0, 26, 4, 36);
+        ctx.fillRect(v.width - 4, 26, 4, 36);
+        ctx.fillRect(10, v.height - 12, v.width - 20, 6);
+      } else if (v.type === 'ambulance') {
+        ctx.fillStyle = '#e63946';
+        ctx.fillRect(0, 24, 4, 40);
+        ctx.fillRect(v.width - 4, 24, 4, 40);
+        ctx.fillRect(10, v.height - 12, v.width - 20, 6);
+      }
+
+      ctx.fillStyle = '#1d2d44';
+      ctx.beginPath();
+      ctx.roundRect(6, v.height - 28, v.width - 12, 15, 4);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.roundRect(8, 10, v.width - 16, 10, 3);
+      ctx.fill();
+
+      ctx.fillStyle = v.color.roof;
+      ctx.beginPath();
+      ctx.roundRect(7, 23, v.width - 14, 36, 5);
+      ctx.fill();
+
+      if (v.type === 'ambulance') {
+        ctx.fillStyle = '#e63946';
+        ctx.fillRect(v.width / 2 - 2.5, 27, 5, 15);
+        ctx.fillRect(v.width / 2 - 7.5, 32, 15, 5);
+      } else if (v.type === 'fire') {
+        ctx.strokeStyle = '#f8f9fa';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(14, 27, v.width - 28, 14);
+      } else if (v.type === 'police') {
+        ctx.fillStyle = '#00509d';
+        ctx.fillRect(12, 31, v.width - 24, 6);
+      }
+
+      ctx.fillStyle = '#fff9db';
+      ctx.fillRect(6, v.height - 4, 9, 4);
+      ctx.fillRect(v.width - 15, v.height - 4, 9, 4);
+
+      ctx.fillStyle = '#e63946';
+      ctx.fillRect(6, 0, 9, 3);
+      ctx.fillRect(v.width - 15, 0, 9, 3);
+
+      if (v.type === 'police') {
+        drawSirenLightbar(v, 47, '#00b4ff', '#ff1e56');
+      } else if (v.type === 'fire') {
+        drawSirenLightbar(v, 48, '#00b4ff', '#ff5400');
+      } else if (v.type === 'ambulance') {
+        drawSirenLightbar(v, 48, '#00b4ff', '#00e5ff');
+      }
+    }
+
+    function drawBus(v) {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.34)';
+      ctx.beginPath();
+      ctx.roundRect(5, 7, v.width, v.height, 9);
+      ctx.fill();
+
+      ctx.fillStyle = v.color.body;
+      ctx.beginPath();
+      ctx.roundRect(0, 0, v.width, v.height, 9);
+      ctx.fill();
+
+      ctx.fillStyle = v.color.roof;
+      ctx.beginPath();
+      ctx.roundRect(5, 10, v.width - 10, v.height - 26, 6);
+      ctx.fill();
+
+      ctx.fillStyle = '#1d2d44';
+      for (let wy = 18; wy < v.height - 32; wy += 22) {
+        ctx.fillRect(1, wy, 3, 15);
+        ctx.fillRect(v.width - 4, wy, 3, 15);
+      }
+
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.78)';
+      ctx.beginPath();
+      ctx.roundRect(12, 32, v.width - 24, 24, 4);
+      ctx.roundRect(14, 82, v.width - 28, 18, 3);
+      ctx.fill();
+
+      ctx.fillStyle = '#1d2d44';
+      ctx.beginPath();
+      ctx.roundRect(5, v.height - 18, v.width - 10, 12, 3);
+      ctx.fill();
+
+      ctx.fillRect(8, 3, v.width - 16, 5);
+
+      ctx.fillStyle = '#fff9db';
+      ctx.fillRect(5, v.height - 3, 10, 3);
+      ctx.fillRect(v.width - 15, v.height - 3, 10, 3);
+
+      ctx.fillStyle = '#e63946';
+      ctx.fillRect(5, 0, 10, 3);
+      ctx.fillRect(v.width - 15, 0, 10, 3);
+    }
+
+    function drawTruck(v) {
+      const trailerHeight = 118;
+      const cabY = 126;
+      const cabHeight = v.height - cabY;
+
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.34)';
+      ctx.beginPath();
+      ctx.roundRect(5, 7, v.width, trailerHeight, 6);
+      ctx.roundRect(7, cabY + 6, v.width - 4, cabHeight, 8);
+      ctx.fill();
+
+      ctx.fillStyle = '#1f242d';
+      ctx.fillRect(10, trailerHeight - 4, v.width - 20, 16);
+
+      ctx.fillStyle = v.color.cargo;
+      ctx.beginPath();
+      ctx.roundRect(0, 0, v.width, trailerHeight, 6);
+      ctx.fill();
+
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.16)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(5, 5, v.width - 10, trailerHeight - 10);
+      for (let ry = 22; ry < trailerHeight - 12; ry += 22) {
+        ctx.beginPath();
+        ctx.moveTo(6, ry);
+        ctx.lineTo(v.width - 6, ry);
+        ctx.stroke();
+      }
+
+      ctx.fillStyle = '#111318';
+      ctx.fillRect(-4, cabY + 26, 5, 8);
+      ctx.fillRect(v.width - 1, cabY + 26, 5, 8);
+
+      ctx.fillStyle = v.color.body;
+      ctx.beginPath();
+      ctx.roundRect(2, cabY, v.width - 4, cabHeight, 8);
+      ctx.fill();
+
+      ctx.fillStyle = v.color.roof;
+      ctx.beginPath();
+      ctx.roundRect(7, cabY + 6, v.width - 14, 22, 4);
+      ctx.fill();
+
+      ctx.fillStyle = '#1d2d44';
+      ctx.beginPath();
+      ctx.roundRect(6, v.height - 18, v.width - 12, 12, 3);
+      ctx.fill();
+
+      ctx.fillStyle = '#fff9db';
+      ctx.fillRect(6, v.height - 3, 10, 3);
+      ctx.fillRect(v.width - 16, v.height - 3, 10, 3);
+
+      ctx.fillStyle = '#e63946';
+      ctx.fillRect(4, 0, 11, 3);
+      ctx.fillRect(v.width - 15, 0, 11, 3);
+    }
+
+    function drawVehicle(v) {
+      ctx.save();
+      ctx.translate(v.x, v.y);
+
+      if (v.type === 'bus') {
+        drawBus(v);
+      } else if (v.type === 'truck') {
+        drawTruck(v);
+      } else if (v.type === 'police' || v.type === 'fire' || v.type === 'ambulance') {
+        drawEmergencyCar(v);
+      } else if (v.type === 'taxi') {
+        drawTaxi(v);
+      } else {
+        drawCar(v);
+      }
+
+      // Ha már lecsaptuk a sárga kocsit
+      if (v.slapped) {
+        ctx.fillStyle = 'rgba(17, 19, 24, 0.55)';
+        ctx.beginPath();
+        ctx.roundRect(0, 0, v.width, v.height, 12);
+        ctx.fill();
+
+        ctx.font = 'bold 26px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('👊', v.width / 2, v.height / 2);
+      }
+
+      ctx.restore();
+    }
+
+    function draw() {
+      ctx.save();
+
+      if (state.shakeTime > 0) {
+        const dx = (Math.random() - 0.5) * 10;
+        const dy = (Math.random() - 0.5) * 10;
+        ctx.translate(dx, dy);
+      }
+
+      // Fix zöld útpadka
+      ctx.fillStyle = '#2d6a4f';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Fix fák az út szélén
+      for (const tree of state.trees) {
+        ctx.fillStyle = '#1b4332';
+        ctx.beginPath();
+        ctx.arc(tree.x + 3, tree.y + 4, tree.r, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#40916c';
+        ctx.beginPath();
+        ctx.arc(tree.x, tree.y, tree.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Fix aszfalt
+      ctx.fillStyle = '#2b2d42';
+      ctx.fillRect(ROAD_X, 0, ROAD_WIDTH, canvas.height);
+
+      // Fix szélső fehér záróvonalak
+      ctx.fillStyle = '#edf2f4';
+      ctx.fillRect(ROAD_X + 4, 0, 4, canvas.height);
+      ctx.fillRect(ROAD_X + ROAD_WIDTH - 8, 0, 4, canvas.height);
+
+      // Fix szaggatott sávválasztó vonalak
+      ctx.fillStyle = 'rgba(237, 242, 244, 0.55)';
+      for (let lane = 1; lane < LANE_COUNT; lane++) {
+        const lineX = ROAD_X + lane * LANE_WIDTH - 2;
+        for (let y = 16; y < canvas.height; y += 60) {
+          ctx.fillRect(lineX, y, 4, 32);
+        }
+      }
+
+      // Járművek kirajzolása
+      for (const v of state.vehicles) {
+        drawVehicle(v);
+      }
+
+      // Ütés és felirat effektek
+      for (const fx of state.effects) {
+        ctx.save();
+        ctx.globalAlpha = fx.alpha;
+
+        if (fx.isSlap) {
+          ctx.strokeStyle = fx.color;
+          ctx.lineWidth = 4;
+          ctx.beginPath();
+          ctx.arc(fx.x, fx.y, fx.radius, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+
+        ctx.font = '900 18px "Segoe UI", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = '#111318';
+        ctx.fillText(fx.text, fx.x + 2, fx.y + 2);
+        ctx.fillStyle = fx.color;
+        ctx.fillText(fx.text, fx.x, fx.y);
+        ctx.restore();
+      }
+
+      // Piros villanás hiba esetén
+      if (state.flashRed > 0) {
+        ctx.fillStyle = `rgba(230, 57, 70, ${state.flashRed * 1.4})`;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+
+      ctx.restore();
+    }
+
+    let lastTime = 0;
+    function gameLoop(timestamp) {
+      const dt = Math.min((timestamp - lastTime) / 1000, 0.1);
+      lastTime = timestamp;
+
+      update(dt);
+      draw();
+
+      requestAnimationFrame(gameLoop);
+    }
+
+    initTrees();
+    updateHUD();
+    requestAnimationFrame(gameLoop);
+  </script>
+</body>
+</html>
