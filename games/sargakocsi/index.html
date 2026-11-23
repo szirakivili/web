@@ -2,8 +2,9 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sárga Kocsi! – Lecsaptad?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Sárga Kocsi!</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <style>
     * {
       box-sizing: border-box;
@@ -13,15 +14,20 @@
       -webkit-user-select: none;
     }
 
-    body {
+    html, body {
       background: #1a1d24;
       color: #f8f9fa;
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      overscroll-behavior: none;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+      min-height: 100dvh;
       padding: 12px;
     }
 
@@ -34,6 +40,8 @@
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
       border: 3px solid #2f3542;
       background: #2d6a4f;
+      display: flex;
+      flex-direction: column;
     }
 
     .hud {
@@ -45,11 +53,13 @@
       border-bottom: 2px solid #2f3542;
       font-weight: 700;
       font-size: 1rem;
+      flex-shrink: 0;
+      z-index: 2;
     }
 
     .hud-group {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       align-items: center;
     }
 
@@ -79,6 +89,13 @@
       background: #323846;
     }
 
+    .stage {
+      position: relative;
+      width: 100%;
+      flex: 1;
+      min-height: 0;
+    }
+
     canvas {
       display: block;
       width: 100%;
@@ -89,7 +106,7 @@
 
     .overlay {
       position: absolute;
-      inset: 52px 0 0 0;
+      inset: 0;
       background: rgba(17, 19, 24, 0.9);
       backdrop-filter: blur(4px);
       display: flex;
@@ -99,6 +116,7 @@
       text-align: center;
       padding: 28px;
       gap: 16px;
+      z-index: 3;
     }
 
     .overlay.hidden {
@@ -157,8 +175,48 @@
       margin: 6px 0;
       font-size: 1.05rem;
     }
+
+    /* Telefonon teljes képernyő kitöltése */
+    @media (max-width: 600px) {
+      body {
+        padding: 0;
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
+      }
+
+      .game-wrapper {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        max-width: none;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+      }
+
+      .hud {
+        padding-top: max(10px, env(safe-area-inset-top));
+        padding-left: max(14px, env(safe-area-inset-left));
+        padding-right: max(14px, env(safe-area-inset-right));
+      }
+
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+    }
   </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7NERFLG67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F7NERFLG67');
+</script>
 <body>
 
   <div class="game-wrapper">
@@ -173,31 +231,34 @@
       </div>
     </div>
 
-    <canvas id="gameCanvas" width="480" height="680"></canvas>
+    <div id="stageEl" class="stage">
+      <canvas id="gameCanvas" width="480" height="680"></canvas>
 
-    <!-- Kezdőképernyő -->
-    <div id="startScreen" class="overlay">
-      <h1>👊 SÁRGA KOCSI!</h1>
-      <p>
-        Csapj le minden <strong>sima sárga személyautóra</strong>!<br><br>
-        <strong>NEM ÉR:</strong> a sárga <strong>taxi</strong>, busz és kamion, valamint a szirénázó <strong>rendőr</strong>, <strong>tűzoltó</strong> és <strong>sárga mentő</strong> sem!
-      </p>
-      <button id="startBtn" class="btn-primary">JÁTÉK INDÍTÁSA</button>
-    </div>
-
-    <!-- Játék vége képernyő -->
-    <div id="gameOverScreen" class="overlay hidden">
-      <h1>VÉGE A JÁTÉKNAK!</h1>
-      <div class="stats-box">
-        <div><span>Elért pontszám:</span><strong id="finalScore">0</strong></div>
-        <div><span>Legnagyobb kombó:</span><strong id="finalCombo">0x</strong></div>
-        <div><span>Rekord:</span><strong id="highScore">0</strong></div>
+      <!-- Kezdőképernyő -->
+      <div id="startScreen" class="overlay">
+        <h1>👊 SÁRGA KOCSI!</h1>
+        <p>
+          Csapj le minden <strong>sima sárga személyautóra</strong>!<br><br>
+          <strong>NEM ÉR:</strong> a narancssárga, a taxi, busz, kamion,  és mentő!
+        </p>
+        <button id="startBtn" class="btn-primary">JÁTÉK INDÍTÁSA</button>
       </div>
-      <button id="restartBtn" class="btn-primary">ÚJRA JÁTSZOM</button>
+
+      <!-- Játék vége képernyő -->
+      <div id="gameOverScreen" class="overlay hidden">
+        <h1>VÉGE A JÁTÉKNAK!</h1>
+        <div class="stats-box">
+          <div><span>Elért pontszám:</span><strong id="finalScore">0</strong></div>
+          <div><span>Legnagyobb kombó:</span><strong id="finalCombo">0x</strong></div>
+          <div><span>Rekord:</span><strong id="highScore">0</strong></div>
+        </div>
+        <button id="restartBtn" class="btn-primary">ÚJRA JÁTSZOM</button>
+      </div>
     </div>
   </div>
 
   <script>
+    const stageEl = document.getElementById('stageEl');
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');
 
@@ -217,6 +278,7 @@
     // Hang generátor (Web Audio API)
     let audioCtx = null;
     let isMuted = false;
+    let lastSirenTime = 0;
 
     function initAudio() {
       if (!audioCtx) {
@@ -232,20 +294,99 @@
       initAudio();
 
       const now = audioCtx.currentTime;
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
 
       if (type === 'slap') {
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(220, now);
-        osc.frequency.exponentialRampToValueAtTime(580, now + 0.12);
-        gain.gain.setValueAtTime(0.35, now);
-        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.16);
-        osc.start(now);
-        osc.stop(now + 0.16);
+        // Lágy telítő fokozat (soft-clipper), hogy mobil hangszórón is dögös és hangos legyen
+        const shaper = audioCtx.createWaveShaper();
+        const curve = new Float32Array(256);
+        for (let i = 0; i < 256; i++) {
+          const x = (i * 2) / 256 - 1;
+          curve[i] = Math.tanh(x * 2.3);
+        }
+        shaper.curve = curve;
+
+        const masterSlapGain = audioCtx.createGain();
+        masterSlapGain.gain.setValueAtTime(0.95, now);
+        shaper.connect(masterSlapGain);
+        masterSlapGain.connect(audioCtx.destination);
+
+        // 1. Mély szub-dübbenés
+        const subOsc = audioCtx.createOscillator();
+        const subGain = audioCtx.createGain();
+        subOsc.type = 'sine';
+        subOsc.frequency.setValueAtTime(170, now);
+        subOsc.frequency.exponentialRampToValueAtTime(42, now + 0.22);
+
+        subGain.gain.setValueAtTime(0.01, now);
+        subGain.gain.linearRampToValueAtTime(0.92, now + 0.005);
+        subGain.gain.exponentialRampToValueAtTime(0.001, now + 0.24);
+
+        subOsc.connect(subGain);
+        subGain.connect(shaper);
+        subOsc.start(now);
+        subOsc.stop(now + 0.25);
+
+        // 2. Testes középmély ütés (kis hangszórón is átütő "PUMM" hatás)
+        const bodyOsc = audioCtx.createOscillator();
+        const bodyGain = audioCtx.createGain();
+        bodyOsc.type = 'triangle';
+        bodyOsc.frequency.setValueAtTime(380, now);
+        bodyOsc.frequency.exponentialRampToValueAtTime(92, now + 0.11);
+
+        bodyGain.gain.setValueAtTime(0.01, now);
+        bodyGain.gain.linearRampToValueAtTime(0.78, now + 0.004);
+        bodyGain.gain.exponentialRampToValueAtTime(0.001, now + 0.13);
+
+        bodyOsc.connect(bodyGain);
+        bodyGain.connect(shaper);
+        bodyOsc.start(now);
+        bodyOsc.stop(now + 0.14);
+
+        // 3. Éles becsapódási impulzus az ütés pillanatában
+        const snapOsc = audioCtx.createOscillator();
+        const snapGain = audioCtx.createGain();
+        snapOsc.type = 'square';
+        snapOsc.frequency.setValueAtTime(920, now);
+        snapOsc.frequency.exponentialRampToValueAtTime(190, now + 0.032);
+
+        snapGain.gain.setValueAtTime(0.45, now);
+        snapGain.gain.exponentialRampToValueAtTime(0.001, now + 0.036);
+
+        snapOsc.connect(snapGain);
+        snapGain.connect(shaper);
+        snapOsc.start(now);
+        snapOsc.stop(now + 0.04);
+
+        // 4. Erőteljes csattanó zaj (tenyér/lemez csapás tranziens)
+        const bufferSize = Math.floor(audioCtx.sampleRate * 0.09);
+        const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = noiseBuffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.28));
+        }
+
+        const noiseSource = audioCtx.createBufferSource();
+        noiseSource.buffer = noiseBuffer;
+
+        const bandpass = audioCtx.createBiquadFilter();
+        bandpass.type = 'bandpass';
+        bandpass.frequency.setValueAtTime(1750, now);
+        bandpass.Q.setValueAtTime(0.9, now);
+
+        const noiseGain = audioCtx.createGain();
+        noiseGain.gain.setValueAtTime(0.78, now);
+        noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+
+        noiseSource.connect(bandpass);
+        bandpass.connect(noiseGain);
+        noiseGain.connect(shaper);
+        noiseSource.start(now);
       } else if (type === 'error') {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
         osc.type = 'sawtooth';
         osc.frequency.setValueAtTime(150, now);
         osc.frequency.linearRampToValueAtTime(85, now + 0.25);
@@ -254,6 +395,11 @@
         osc.start(now);
         osc.stop(now + 0.26);
       } else if (type === 'miss') {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
         osc.type = 'sine';
         osc.frequency.setValueAtTime(320, now);
         osc.frequency.linearRampToValueAtTime(140, now + 0.3);
@@ -262,13 +408,54 @@
         osc.start(now);
         osc.stop(now + 0.32);
       } else if (type === 'siren') {
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(660, now);
-        osc.frequency.setValueAtTime(520, now + 0.11);
-        gain.gain.setValueAtTime(0.09, now);
-        gain.gain.exponentialRampToValueAtTime(0.005, now + 0.22);
-        osc.start(now);
-        osc.stop(now + 0.23);
+        if (now - lastSirenTime < 0.55) return;
+        lastSirenTime = now;
+
+        const osc1 = audioCtx.createOscillator();
+        const osc2 = audioCtx.createOscillator();
+        const filter = audioCtx.createBiquadFilter();
+        const gain = audioCtx.createGain();
+
+        osc1.type = 'triangle';
+        osc2.type = 'sawtooth';
+
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(1350, now);
+
+        const hi = 635;
+        const lo = 475;
+
+        [osc1, osc2].forEach((osc, idx) => {
+          const detune = idx === 1 ? 3 : 0;
+          osc.frequency.setValueAtTime(hi + detune, now);
+          osc.frequency.setValueAtTime(hi + detune, now + 0.14);
+          osc.frequency.linearRampToValueAtTime(lo + detune, now + 0.18);
+          osc.frequency.setValueAtTime(lo + detune, now + 0.33);
+          osc.frequency.linearRampToValueAtTime(hi + detune, now + 0.37);
+          osc.frequency.setValueAtTime(hi + detune, now + 0.51);
+          osc.frequency.linearRampToValueAtTime(lo + detune, now + 0.55);
+          osc.frequency.setValueAtTime(lo + detune, now + 0.72);
+        });
+
+        const osc2Gain = audioCtx.createGain();
+        osc2Gain.gain.setValueAtTime(0.35, now);
+
+        osc1.connect(filter);
+        osc2.connect(osc2Gain);
+        osc2Gain.connect(filter);
+
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        gain.gain.setValueAtTime(0.001, now);
+        gain.gain.linearRampToValueAtTime(0.11, now + 0.03);
+        gain.gain.setValueAtTime(0.11, now + 0.58);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.74);
+
+        osc1.start(now);
+        osc2.start(now);
+        osc1.stop(now + 0.75);
+        osc2.stop(now + 0.75);
       }
     }
 
@@ -282,6 +469,7 @@
     const ROAD_WIDTH = 352;
     const LANE_COUNT = 4;
     const LANE_WIDTH = ROAD_WIDTH / LANE_COUNT;
+    const INITIAL_BASE_SPEED = 230;
 
     const VEHICLE_SPECS = {
       car:       { width: 48, height: 86 },
@@ -303,6 +491,7 @@
     ];
 
     const YELLOW_COLOR = { body: '#ffd60a', roof: '#ffc300', cargo: '#ffea00' };
+    const ORANGE_COLOR = { body: '#ff7b00', roof: '#e05a00', cargo: '#f77f00' };
 
     // Játék állapot
     let state = {
@@ -313,6 +502,7 @@
       maxCombo: 0,
       lives: 3,
       highScore: Number(localStorage.getItem('sargaKocsiHighScore') || 0),
+      speedMultiplier: 1,
       spawnTimer: 0,
       shakeTime: 0,
       flashRed: 0,
@@ -320,6 +510,11 @@
       effects: [],
       trees: []
     };
+
+    // Pontszámmal szép lassan növekvő sebességszorzó (pontonként +1.2%)
+    function getTargetSpeedMultiplier() {
+      return Math.min(1 + state.score * 0.012, 2.5);
+    }
 
     // Fix fák elhelyezése az út két oldalán
     function initTrees() {
@@ -329,6 +524,23 @@
         state.trees.push({ x: canvas.width - 30, y: y + 42, r: 18 + Math.random() * 5 });
       }
     }
+
+    // Vászon méretének igazítása mobil teljes képernyőhöz
+    function resizeCanvas() {
+      canvas.width = 480;
+      if (window.innerWidth <= 600) {
+        const rect = stageEl.getBoundingClientRect();
+        if (rect.width > 0 && rect.height > 0) {
+          canvas.height = Math.max(540, Math.round(480 * (rect.height / rect.width)));
+        }
+      } else {
+        canvas.height = 680;
+      }
+      initTrees();
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('orientationchange', () => setTimeout(resizeCanvas, 100));
 
     function updateHUD() {
       scoreEl.textContent = state.score;
@@ -351,29 +563,33 @@
 
     function pickVehicleType() {
       const r = Math.random();
-      if (r < 0.44) return 'car';        // 44% személyautó
-      if (r < 0.54) return 'taxi';       // 10% sárga taxi (csapda)
-      if (r < 0.67) return 'bus';        // 13% busz
-      if (r < 0.80) return 'truck';      // 13% kamion
-      if (r < 0.88) return 'ambulance';  //  8% sárga mentő (szirénázó csapda)
-      if (r < 0.94) return 'police';     //  6% fehér rendőr
-      return 'fire';                     //  6% piros tűzoltó
+      if (r < 0.50) return 'car';        // 50% személyautó (sárga, narancssárga és egyéb színek)
+      if (r < 0.73) return 'taxi';       // 13% sárga taxi (csapda)
+      if (r < 0.83) return 'bus';        // 10% busz
+      if (r < 0.88) return 'truck';      //  5% kamion
+      if (r < 0.94) return 'ambulance';  //  6% sárga mentő (szirénázó csapda)
+      if (r < 0.98) return 'police';     //  4% fehér rendőr
+      return 'fire';                     //  2% piros tűzoltó
     }
 
     function spawnVehicle() {
       const lanes = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
-      const difficulty = 1 + state.score * 0.025;
-      const baseSpeed = 230 * Math.min(difficulty, 2.6);
+
+      // Egyszerre akár két sávban is indulhatnak járművek fentről
+      const doubleSpawnChance = Math.min(0.45 + state.score * 0.003, 0.65);
+      const targetCount = Math.random() < doubleSpawnChance ? 2 : 1;
+      let spawnedCount = 0;
 
       for (const lane of lanes) {
         const vehiclesInLane = state.vehicles.filter(v => v.lane === lane);
         const topVehicleY = vehiclesInLane.reduce((min, v) => (v.y < min ? v.y : min), Infinity);
 
-        if (topVehicleY > 165) {
+        if (topVehicleY > 135) {
           const type = pickVehicleType();
           const spec = VEHICLE_SPECS[type];
 
           let isYellow = false;
+          let isOrange = false;
           let color = null;
 
           if (type === 'police') {
@@ -383,11 +599,28 @@
           } else if (type === 'ambulance' || type === 'taxi') {
             isYellow = true;
             color = { body: '#ffd60a', roof: '#ffc300' };
+          } else if (type === 'car') {
+            const colorRoll = Math.random();
+            if (colorRoll < 0.44) {
+              isYellow = true;
+              color = YELLOW_COLOR;
+            } else if (colorRoll < 0.66) {
+              isOrange = true;
+              color = ORANGE_COLOR;
+            } else {
+              color = NON_YELLOW_COLORS[Math.floor(Math.random() * NON_YELLOW_COLORS.length)];
+            }
           } else {
-            isYellow = Math.random() < 0.48;
-            color = isYellow
-              ? YELLOW_COLOR
-              : NON_YELLOW_COLORS[Math.floor(Math.random() * NON_YELLOW_COLORS.length)];
+            const colorRoll = Math.random();
+            if (colorRoll < 0.45) {
+              isYellow = true;
+              color = YELLOW_COLOR;
+            } else if (colorRoll < 0.58) {
+              isOrange = true;
+              color = ORANGE_COLOR;
+            } else {
+              color = NON_YELLOW_COLORS[Math.floor(Math.random() * NON_YELLOW_COLORS.length)];
+            }
           }
 
           // Kizárólag a sima sárga személyautó érvényes célpont!
@@ -399,12 +632,12 @@
             type === 'bus' ? 0.92 :
             isEmergency ? 1.12 : 1.0;
 
-          let speed = baseSpeed * typeSpeedFactor + (Math.random() * 50 - 15);
+          let baseSpeed = INITIAL_BASE_SPEED * typeSpeedFactor + (Math.random() * 44 - 14);
 
           // Ne érje utol az előtte haladó járművet a sávban
           if (vehiclesInLane.length > 0) {
-            const slowestAhead = Math.min(...vehiclesInLane.map(v => v.speed));
-            speed = Math.min(speed, slowestAhead);
+            const slowestAhead = Math.min(...vehiclesInLane.map(v => v.baseSpeed));
+            baseSpeed = Math.min(baseSpeed, slowestAhead);
           }
 
           if (isEmergency) {
@@ -420,30 +653,38 @@
             y: -spec.height - 10,
             width: spec.width,
             height: spec.height,
-            speed,
+            baseSpeed,
             isYellow,
+            isOrange,
             isTarget,
             color,
             slapped: false
           });
-          break;
+
+          spawnedCount++;
+          if (spawnedCount >= targetCount) {
+            break;
+          }
         }
       }
     }
 
     function startGame() {
       initAudio();
+      resizeCanvas();
       state.running = true;
       state.time = 0;
       state.score = 0;
       state.combo = 0;
       state.maxCombo = 0;
       state.lives = 3;
-      state.spawnTimer = 0.2;
+      state.speedMultiplier = 1;
+      state.spawnTimer = 0.15;
       state.shakeTime = 0;
       state.flashRed = 0;
       state.vehicles = [];
       state.effects = [];
+      lastSirenTime = 0;
       updateHUD();
 
       startScreen.classList.add('hidden');
@@ -484,12 +725,11 @@
             v.slapped = true;
             state.combo += 1;
             state.maxCombo = Math.max(state.maxCombo, state.combo);
-            const bonus = state.combo >= 5 ? 2 : 1;
-            state.score += bonus;
-            state.shakeTime = 0.14;
+            state.score += 1;
+            state.shakeTime = 0.16;
 
             playSound('slap');
-            const label = bonus > 1 ? `SÁRGA KOCSI! +${bonus}` : 'SÁRGA KOCSI! +1';
+            const label = 'SÁRGA KOCSI!';
             addEffect(clickX, clickY, label, '#ffd60a', true);
             updateHUD();
           } else if (!v.isTarget) {
@@ -501,11 +741,10 @@
             playSound('error');
             let errMsg = 'NEM SÁRGA!';
             if (v.type === 'taxi') errMsg = 'A TAXI NEM ÉR!';
-            else if (v.type === 'police') errMsg = 'A RENDŐR NEM ÉR!';
-            else if (v.type === 'fire') errMsg = 'A TŰZOLTÓ NEM ÉR!';
             else if (v.type === 'ambulance') errMsg = 'A MENTŐ NEM ÉR!';
             else if (v.isYellow && v.type === 'bus') errMsg = 'A BUSZ NEM ÉR!';
             else if (v.isYellow && v.type === 'truck') errMsg = 'A KAMION NEM ÉR!';
+            else if (v.isOrange) errMsg = 'A NARANCS NEM ÉR!';
 
             addEffect(clickX, clickY, errMsg, '#ff4d6d', false);
             updateHUD();
@@ -531,18 +770,22 @@
       if (!state.running) return;
       state.time += dt;
 
-      // Új járművek generálása
+      // Mindegyik sáv fokozatos, lágy gyorsítása a pontszám alapján
+      const targetMult = getTargetSpeedMultiplier();
+      state.speedMultiplier += (targetMult - state.speedMultiplier) * Math.min(1, dt * 2.5);
+
+      // Új járművek generálása (a sebességhez igazodó ütemben)
       state.spawnTimer -= dt;
       if (state.spawnTimer <= 0) {
         spawnVehicle();
-        const minInterval = Math.max(0.38, 0.90 - state.score * 0.015);
-        state.spawnTimer = minInterval + Math.random() * 0.35;
+        const minInterval = Math.max(0.36, 0.78 / Math.sqrt(state.speedMultiplier));
+        state.spawnTimer = minInterval + Math.random() * 0.26;
       }
 
-      // Csak a járművek mozognak
+      // Minden sáv járműve az aktuális szorzóval halad
       for (let i = state.vehicles.length - 1; i >= 0; i--) {
         const v = state.vehicles[i];
-        v.y += v.speed * dt;
+        v.y += v.baseSpeed * state.speedMultiplier * dt;
 
         if (v.y > canvas.height + 20) {
           // Csak a lecsapatlan sima sárga személyautó elengedése jelent hibát
@@ -625,6 +868,10 @@
         ctx.strokeStyle = '#fff3b0';
         ctx.lineWidth = 2;
         ctx.stroke();
+      } else if (v.isOrange) {
+        ctx.strokeStyle = '#ffb703';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
       }
 
       ctx.fillStyle = '#1d2d44';
@@ -651,10 +898,8 @@
     }
 
     function drawTaxi(v) {
-      // Alap sárga személyautó karosszéria
       drawCar(v);
 
-      // Kockás taxi csík az autó két oldalán
       for (let i = 0; i < 6; i++) {
         const y = 26 + i * 5;
         ctx.fillStyle = i % 2 === 0 ? '#111318' : '#ffffff';
@@ -663,13 +908,11 @@
         ctx.fillRect(v.width - 4, y, 3, 5);
       }
 
-      // Világító TAXI szabadjelző a tető közepén
       const signW = 34;
       const signH = 13;
       const signX = (v.width - signW) / 2;
       const signY = 35;
 
-      // Finom fényudvar a tábla körül
       ctx.save();
       ctx.shadowColor = 'rgba(255, 255, 255, 0.85)';
       ctx.shadowBlur = 8;
@@ -685,7 +928,6 @@
       ctx.roundRect(signX, signY, signW, signH, 3);
       ctx.stroke();
 
-      // TAXI felirat
       ctx.fillStyle = '#111318';
       ctx.font = '900 9.5px "Segoe UI", Arial, sans-serif';
       ctx.textAlign = 'center';
@@ -989,7 +1231,7 @@
       requestAnimationFrame(gameLoop);
     }
 
-    initTrees();
+    resizeCanvas();
     updateHUD();
     requestAnimationFrame(gameLoop);
   </script>
